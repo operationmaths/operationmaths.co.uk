@@ -12,6 +12,9 @@ permalink: /:name/
 collections:
   worksheets:
     output: false   # worksheets render via topic pages, not as standalone URLs
+   pages:
+    output: true
+    permalink: /:name/
 
 # Defaults
 defaults:
