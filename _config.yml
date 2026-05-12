@@ -11,8 +11,8 @@ permalink: /:name/
 # Collections
 collections:
   worksheets:
-    output: false   # worksheets render via topic pages, not as standalone URLs
-   pages:
+    output: false
+  pages:
     output: true
     permalink: /:name/
 
