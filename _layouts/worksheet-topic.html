@@ -1,0 +1,79 @@
+---
+layout: default
+---
+
+<!--
+  worksheet-topic.html
+  =====================
+  Used by all worksheets-*.md topic pages.
+  Reads page.topic_key to filter site.worksheets, then:
+    1. Collects unique section names (preserving first-seen order).
+    2. Renders hero jump-to pills from those section names.
+    3. Groups worksheets under section headings, sorted by `order`.
+  No template edits needed when new sections are added via CMS.
+-->
+
+{% assign topic_key = page.topic_key %}
+{% assign all_worksheets = site.worksheets | where: "topic", topic_key | sort: "order" %}
+
+<!-- Collect ordered unique sections -->
+{% assign sections = "" | split: "" %}
+{% for ws in all_worksheets %}
+  {% unless sections contains ws.section %}
+    {% assign sections = sections | push: ws.section %}
+  {% endunless %}
+{% endfor %}
+
+<!-- Hero -->
+<section class="topic-hero">
+  <div class="container">
+    <h1 class="topic-hero__title">{{ page.title }}</h1>
+    {% if page.hero_intro %}<p class="topic-hero__intro">{{ page.hero_intro }}</p>{% endif %}
+
+    {% if sections.size > 0 %}
+    <div class="pill-nav" aria-label="Jump to section">
+      {% for section in sections %}
+        {% assign anchor = section | slugify %}
+        <a href="#{{ anchor }}" class="pill">{{ section }}</a>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<!-- Worksheet sections -->
+<div class="worksheets-body container">
+
+  {% if all_worksheets.size == 0 %}
+    <p class="no-worksheets">No worksheets added yet. Add some via the CMS admin panel.</p>
+  {% else %}
+    {% for section in sections %}
+      {% assign anchor = section | slugify %}
+      {% assign section_worksheets = all_worksheets | where: "section", section %}
+
+      <section class="worksheet-section" id="{{ anchor }}">
+        <h2 class="worksheet-section__title">{{ section }}</h2>
+
+        <div class="worksheet-grid">
+          {% for ws in section_worksheets %}
+          <article class="worksheet-card">
+            <h3 class="worksheet-card__title">{{ ws.title }}</h3>
+            {% if ws.description %}<p class="worksheet-card__desc">{{ ws.description }}</p>{% endif %}
+
+            <div class="worksheet-card__actions">
+              {% if ws.free_pdf %}
+                <a href="{{ ws.free_pdf }}" class="btn btn--secondary">Free sample PDF</a>
+              {% endif %}
+              {% if ws.tes_url %}
+                <a href="{{ ws.tes_url }}" class="btn btn--primary" target="_blank" rel="noopener">Buy full pack on TES</a>
+              {% endif %}
+            </div>
+          </article>
+          {% endfor %}
+        </div><!-- .worksheet-grid -->
+
+      </section><!-- .worksheet-section -->
+    {% endfor %}
+  {% endif %}
+
+</div><!-- .worksheets-body -->
