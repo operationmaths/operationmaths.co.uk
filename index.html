@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="/assets/images/favicon-32x32.png">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Operation Maths | Free Maths Worksheets for Primary & Secondary</title>
+<meta name="description" content="Free maths worksheets, SATs revision resources and maths books for primary and secondary students. Download worksheet A of every set free — or get the full A–G pack on TES.">
+<meta property="og:title" content="Operation Maths | Free Maths Worksheets">
+<meta property="og:description" content="Free maths worksheets for primary and secondary students. Worksheet A always free. Full packs on TES.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.operationmaths.co.uk/assets/images/og-image.png" />
+<meta property="og:url" content="https://www.operationmaths.co.uk">
+<link rel="canonical" href="https://www.operationmaths.co.uk">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&display=swap');
+
+  :root {
+    --blue: #1c75bc;
+    --blue-dark: #155f99;
+    --green: #009444;
+    --green-dark: #007a38;
+    --purple: #800080;
+    --orange: #f7941e;
+    --orange-dark: #d47c10;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: #f5f6f8; color: #111827; font-size: 16px; }
+
+  /* NAV */
+  .om-nav { background: #fff; border-bottom: 1px solid #e5e7eb; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 68px; position: sticky; top: 0; z-index: 100; }
+  .om-logo { display: flex; align-items: center; gap: 10px; cursor: pointer; text-decoration: none; flex-shrink: 0; }
+  .om-logo-icon { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; width: 34px; height: 34px; background: #fff; border: 2px solid #111827; border-radius: 7px; padding: 4px; }
+  .om-logo-icon span { display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 900; line-height: 1; }
+  .om-logo-text { font-size: 20px; font-weight: 700; color: #111827; letter-spacing: -0.3px; white-space: nowrap; }
+  .om-nav-links { display: flex; align-items: center; gap: 2px; }
+  .om-nav-links > a { color: #374151; font-size: 15px; font-weight: 700; text-decoration: none; padding: 7px 10px; border-radius: 6px; transition: background 0.12s; white-space: nowrap; }
+  .om-nav-links > a:hover { background: #f3f4f6; }
+  .om-nav-cta { background: #1c75bc !important; color: #fff !important; margin-left: 4px; border-radius: 6px; padding: 7px 14px !important; }
+  .om-nav-cta:hover { background: #155f99 !important; }
+
+  /* DROPDOWN */
+  .om-nav-dropdown { position: relative; }
+  .om-dropdown-menu { display: none; position: absolute; top: calc(100% + 10px); left: 0; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.10); min-width: 180px; padding: 6px; z-index: 200; }
+  .om-nav-dropdown:hover .om-dropdown-menu { display: block; }
+  .om-dropdown-menu a { display: block; font-size: 14px; font-weight: 700; color: #374151; text-decoration: none; padding: 5px 12px 5px 8px; border-radius: 5px; white-space: nowrap; background: none; transition: background 0.12s; border-left: 3px solid transparent; margin-bottom: 7px; }
+  .om-dropdown-menu a:last-child { margin-bottom: 0; }
+  .om-dropdown-menu a:hover { background: #f3f4f6; color: #111827; }
+  .om-dropdown-menu a[href="/worksheets/number"]        { border-left-color: #009444; }
+  .om-dropdown-menu a[href="/worksheets/shape"]         { border-left-color: #1c75bc; }
+  .om-dropdown-menu a[href="/worksheets/algebra"]       { border-left-color: #800080; }
+  .om-dropdown-menu a[href="/worksheets/formulae"]      { border-left-color: #f7941e; }
+  .om-dropdown-menu a[href="/worksheets/times-tables"]  { border-left-color: #1c75bc; }
+  .om-dropdown-menu a[href="/worksheets/support-sheets"]{ border-left-color: #009444; }
+  .om-dropdown-toggle { color: #374151; font-size: 15px; font-weight: 700; text-decoration: none; padding: 7px 10px; border-radius: 6px; transition: background 0.12s; white-space: nowrap; cursor: pointer; background: none; border: none; font-family: 'DM Sans', sans-serif; display: block; }
+  .om-dropdown-toggle:hover, .om-nav-dropdown:hover .om-dropdown-toggle { background: #f3f4f6; }
+
+  /* HAMBURGER */
+  .om-nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; flex-shrink: 0; }
+  .om-nav-hamburger span { display: block; width: 24px; height: 2px; background: #374151; border-radius: 2px; }
+
+  /* MOBILE/TABLET NAV DRAWER */
+  .om-nav-drawer { display: none; position: absolute; top: 68px; left: 0; right: 0; background: #fff; border-bottom: 1px solid #e5e7eb; padding: 1rem 2rem; flex-direction: column; gap: 2px; z-index: 99; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+  .om-nav-drawer.open { display: flex; }
+  .om-nav-drawer > a { color: #374151; font-size: 16px; font-weight: 700; text-decoration: none; padding: 12px 0; border-bottom: 1px solid #f3f4f6; }
+  .om-nav-drawer > a:last-child { border-bottom: none; color: #1c75bc; }
+  .om-nav-drawer > a:last-child { display: block; background: #1c75bc; color: #fff !important; border-radius: 6px; padding: 10px 14px; margin-top: 8px; text-align: center; }
+  .om-drawer-section { border-bottom: 1px solid #f3f4f6; }
+  .om-drawer-section-title { font-size: 16px; font-weight: 700; color: #374151; padding: 12px 0 8px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; }
+  .om-drawer-sub { padding-left: 0; border-left: none; margin: 0 0 8px; display: none; flex-direction: column; }
+  .om-drawer-sub.open { display: flex; }
+  .om-drawer-sub a { font-size: 14px !important; font-weight: 300 !important; color: #6b7280 !important; padding: 5px 12px 5px 8px !important; border-bottom: none !important; border-left: 3px solid transparent; margin-bottom: 7px; display: block; text-decoration: none; border-radius: 5px; }
+  .om-drawer-sub a:last-child { margin-bottom: 0; }
+  .om-drawer-sub a:hover { color: #111827 !important; background: #f3f4f6; }
+  .om-drawer-sub a[href="/worksheets/number"]        { border-left-color: #009444 !important; }
+  .om-drawer-sub a[href="/worksheets/shape"]         { border-left-color: #1c75bc !important; }
+  .om-drawer-sub a[href="/worksheets/algebra"]       { border-left-color: #800080 !important; }
+  .om-drawer-sub a[href="/worksheets/formulae"]      { border-left-color: #f7941e !important; }
+  .om-drawer-sub a[href="/worksheets/times-tables"]  { border-left-color: #1c75bc !important; }
+  .om-drawer-sub a[href="/worksheets/support-sheets"]{ border-left-color: #009444 !important; }
+  .om-drawer-sub a[href="/online-maths-tests/#times-tables"]      { border-left-color: #1c75bc !important; }
+  .om-drawer-sub a[href="/online-maths-tests/#number-bonds"]      { border-left-color: #009444 !important; }
+  .om-drawer-sub a[href="/online-maths-tests/#metric-conversions"]{ border-left-color: #f7941e !important; }
+
+  /* HERO */
+  .om-hero { background: #0f1120; padding: 4.5rem 2rem 3.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; min-height: 460px; position: relative; overflow: hidden; }
+  .om-hero-bg { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+  .om-ws-float { position: absolute; background: #fff; border-radius: 3px; opacity: 0.07; display: flex; flex-direction: column; padding: 6px 7px; gap: 3px; }
+  .om-ws-float .wf-title { height: 5px; border-radius: 2px; margin-bottom: 3px; }
+  .om-ws-float .wf-line { height: 3px; background: #e5e7eb; border-radius: 2px; }
+  .om-ws-float .wf-box { height: 10px; border: 1.5px solid #d1d5db; border-radius: 1px; }
+  .om-hero-content { position: relative; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 1; }
+  .om-hero h1 { font-size: 52px; color: #fff; margin: 0 0 0.85rem; line-height: 1.12; font-weight: 700; letter-spacing: -0.5px; white-space: nowrap; }
+  .om-hero h1 em { color: var(--green); font-style: normal; }
+  .om-hero p { color: #9ca3af; font-size: 18px; max-width: 560px; margin: 0; line-height: 1.7; font-weight: 300; }
+  .om-hero-btns { position: relative; z-index: 1; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; padding-top: 3rem; width: 100%; }
+  .om-btn-green { background: var(--green); color: #fff; padding: 13px 26px; border-radius: 8px; font-size: 15px; font-weight: 700; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: background 0.12s; text-decoration: none; display: inline-block; }
+  .om-btn-green:hover { background: var(--green-dark); }
+  .om-btn-dark-outline { background: transparent; color: #fff; padding: 13px 26px; border-radius: 8px; font-size: 15px; font-weight: 700; border: 1.5px solid rgba(255,255,255,0.25); cursor: pointer; font-family: 'DM Sans', sans-serif; transition: border-color 0.12s; text-decoration: none; display: inline-block; }
+  .om-btn-dark-outline:hover { border-color: rgba(255,255,255,0.55); }
+
+  /* STRIP */
+  .om-strip { background: #fff; border-bottom: 1px solid #e5e7eb; display: flex; }
+  .om-strip-item { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 1.5rem 0.75rem; border-right: 1px solid #e5e7eb; text-decoration: none; transition: background 0.12s; border-top: 3px solid var(--sc); }
+  .om-strip-item:last-child { border-right: none; }
+  .om-strip-item:hover { background: #f9fafb; }
+  .om-strip-item:hover .om-strip-title { color: var(--sc); }
+  .om-strip-title { font-size: 15px; font-weight: 700; color: #111827; transition: color 0.12s; }
+  .om-strip-sub { font-size: 13px; color: #6b7280; margin-top: 4px; font-weight: 300; }
+
+  /* BODY */
+  .om-body { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; }
+  .om-section-hd { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 1.5rem; }
+  .om-section-hd h2 { font-size: 30px; color: #111827; font-weight: 700; letter-spacing: -0.3px; }
+  .om-section-hd a { font-size: 14px; color: var(--green); text-decoration: none; font-weight: 500; }
+
+  /* LATEST WORKSHEETS */
+  .om-latest { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 3rem; }
+  .om-latest-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; }
+  .om-latest-card-top { height: 5px; }
+  .om-ws-img { background: #f3f4f6; border-bottom: 1px solid #e5e7eb; height: 155px; display: flex; align-items: center; justify-content: center; padding: 10px; }
+  .om-ws-img-inner { background: #fff; border: 1px solid #e0e0e0; box-shadow: 0 1px 4px rgba(0,0,0,0.1); display: flex; flex-direction: column; padding: 7px 8px; gap: 4px; border-radius: 2px; }
+  .om-ws-img-inner.portrait { width: 88px; height: 130px; }
+  .om-ws-img-inner.landscape { width: 180px; height: 95px; }
+  .om-wsi-title { height: 6px; border-radius: 2px; margin-bottom: 2px; }
+  .om-wsi-line { height: 4px; background: #e5e7eb; border-radius: 2px; }
+  .om-wsi-line.s { width: 50%; } .om-wsi-line.m { width: 70%; } .om-wsi-line.f { width: 100%; }
+  .om-wsi-row { display: flex; gap: 5px; align-items: center; }
+  .om-wsi-num { font-size: 7px; color: #d1d5db; width: 8px; flex-shrink: 0; font-weight: 700; }
+  .om-wsi-box { width: 20px; height: 11px; border: 1.5px solid #d1d5db; border-radius: 1px; flex-shrink: 0; }
+  .om-latest-card-body { padding: 14px 16px; flex: 1; display: flex; flex-direction: column; }
+  .om-latest-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: #9ca3af; margin-bottom: 6px; }
+  .om-latest-title { font-size: 16px; font-weight: 700; color: #111827; margin: 0 0 6px; line-height: 1.4; }
+  .om-latest-desc { font-size: 14px; color: #6b7280; margin: 0 0 14px; line-height: 1.6; flex: 1; font-weight: 300; }
+  .om-latest-btns { display: flex; flex-direction: column; gap: 6px; }
+
+  /* BUTTONS — solid filled, full width */
+  .om-cbtn { font-size: 12px; font-weight: 700; padding: 8px 11px; border-radius: 6px; border: 1.5px solid; cursor: pointer; text-decoration: none; white-space: nowrap; transition: background 0.12s, border-color 0.12s; font-family: 'DM Sans', sans-serif; color: #fff; display: block; text-align: center; width: 100%; }
+  .om-cbtn-ws  { background: var(--blue);   border-color: var(--blue); }
+  .om-cbtn-ws:hover  { background: var(--blue-dark);   border-color: var(--blue-dark); }
+  .om-cbtn-ans { background: var(--green);  border-color: var(--green); }
+  .om-cbtn-ans:hover { background: var(--green-dark);  border-color: var(--green-dark); }
+  .om-cbtn-tes { background: var(--orange); border-color: var(--orange); }
+  .om-cbtn-tes:hover { background: var(--orange-dark); border-color: var(--orange-dark); }
+
+  .om-divider { border: none; border-top: 1px solid #e5e7eb; margin: 3rem 0; }
+
+  /* BOOKS */
+  .om-books { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .om-book-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; text-decoration: none; transition: border-color 0.12s, transform 0.12s; }
+  .om-book-card:hover { border-color: var(--blue); transform: translateY(-2px); }
+  .om-book-cover { height: 155px; display: flex; align-items: center; justify-content: center; }
+  .om-book-cover-inner { width: 84px; height: 114px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 28px; box-shadow: 3px 3px 12px rgba(0,0,0,0.18); }
+  .om-book-body { padding: 14px 16px; flex: 1; display: flex; flex-direction: column; }
+  .om-book-title { font-size: 15px; font-weight: 700; color: #111827; margin: 0 0 5px; line-height: 1.4; }
+  .om-book-sub { font-size: 13px; color: #6b7280; margin: 0 0 14px; flex: 1; font-weight: 300; }
+  .om-book-btn { display: block; text-align: center; font-size: 13px; font-weight: 700; color: #fff; background: var(--orange); border: 1.5px solid var(--orange); padding: 8px 12px; border-radius: 6px; width: 100%; transition: background 0.12s, border-color 0.12s; }
+  .om-book-btn:hover { background: var(--orange-dark); border-color: var(--orange-dark); }
+
+  /* SATS BANNER */
+  .om-sats { background: #0f1120; border-radius: 12px; padding: 2.25rem 2.25rem 2.25rem 2.75rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; margin-top: 3rem; overflow: hidden; }
+  .om-sats h2 { font-size: 26px; color: #fff; margin: 0 0 8px; font-weight: 700; }
+  .om-sats p { color: #9ca3af; font-size: 15px; margin: 0 0 1.5rem; line-height: 1.65; max-width: 440px; font-weight: 300; }
+  .om-sats-image { flex-shrink: 0; width: 180px; height: 140px; background: #1e2240; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; border: 1.5px solid #2e3460; }
+  .om-sats-screen { width: 130px; height: 80px; background: #2a3060; border-radius: 6px; display: flex; align-items: center; justify-content: center; }
+  .om-sats-slide { width: 110px; height: 65px; background: #fff; border-radius: 4px; display: flex; flex-direction: column; padding: 6px 8px; gap: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+  .om-sats-slide-title { height: 7px; background: var(--blue); border-radius: 2px; width: 70%; }
+  .om-sats-slide-line { height: 4px; background: #e5e7eb; border-radius: 2px; }
+  .om-sats-slide-line.s { width: 55%; } .om-sats-slide-line.m { width: 75%; }
+  .om-sats-slide-accent { height: 18px; background: #f0faf4; border-radius: 3px; border-left: 3px solid var(--green); }
+  .om-sats-stand { width: 4px; height: 20px; background: #2e3460; border-radius: 2px; }
+  .om-sats-base { width: 50px; height: 6px; background: #2e3460; border-radius: 3px; }
+
+  /* FOOTER */
+  .om-footer { background: #0f1120; display: flex; justify-content: space-between; align-items: center; padding: 0.85rem 2rem; font-size: 13px; color: #6b7280; margin-top: 1px; font-weight: 300; flex-wrap: wrap; gap: 8px; }
+  .om-footer div { display: flex; align-items: center; }
+  .om-footer a { color: #9ca3af; text-decoration: none; margin-left: 1.25rem; font-weight: 500; transition: color 0.12s; display: inline-flex; align-items: center; gap: 5px; }
+  .om-footer a:hover { color: #fff; }
+  .om-footer-fb svg { width: 14px; height: 14px; fill: currentColor; flex-shrink: 0; position: relative; top: -1px; }
+
+  /* TABLET */
+  @media (max-width: 900px) {
+    .om-nav-links { display: none; }
+    .om-nav-hamburger { display: flex; }
+    .om-hero h1 { font-size: 38px; white-space: normal; }
+    .om-hero p { font-size: 16px; }
+    .om-strip { flex-wrap: wrap; }
+    .om-strip-item { flex: 1 1 33.333%; }
+    .om-strip-item:nth-child(3) { border-right: none; }
+    .om-strip-item:nth-child(4), .om-strip-item:nth-child(5) { border-top: 1px solid #e5e7eb; }
+    .om-strip-item:nth-child(5) { border-right: none; }
+    .om-sats-image { display: none; }
+  }
+
+  /* MOBILE */
+  @media (max-width: 600px) {
+    .om-hero { min-height: 400px; padding: 3rem 1.5rem 2.5rem; }
+    .om-hero h1 { font-size: 30px; }
+    .om-hero p { font-size: 15px; }
+    .om-hero-btns { flex-direction: column; align-items: center; padding-top: 2rem; }
+    .om-btn-green, .om-btn-dark-outline { width: 100%; max-width: 300px; text-align: center; }
+    .om-strip { flex-direction: column; flex-wrap: nowrap; }
+    .om-strip-item { flex: none; border-right: none; border-top: none !important; border-left: 3px solid var(--sc); border-bottom: 1px solid #e5e7eb; flex-direction: row; justify-content: flex-start; gap: 12px; padding: 1rem 1.5rem; text-align: left; }
+    .om-strip-item:last-child { border-bottom: none; }
+    .om-latest { grid-template-columns: 1fr; }
+    .om-books { grid-template-columns: 1fr; }
+    .om-section-hd h2 { font-size: 24px; }
+    .om-latest-title { font-size: 15px; }
+    .om-latest-desc { font-size: 13px; }
+    .om-sats { flex-direction: column; padding: 1.75rem; }
+    .om-sats h2 { font-size: 22px; }
+    .om-sats p { font-size: 14px; }
+    .om-body { padding: 2rem 1.25rem; }
+    .om-footer { flex-direction: column; text-align: center; }
+    .om-footer a { margin-left: 0.75rem; }
+    .om-footer div { display: flex; flex-wrap: wrap; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="om-nav" aria-label="Main navigation">
+    <a href="/" class="om-logo" aria-label="Operation Maths home">
+      <div class="om-logo-icon" aria-hidden="true">
+        <span style="color:#1c75bc">+</span>
+        <span style="color:#f7941e">−</span>
+        <span style="color:#009444">×</span>
+        <span style="color:#800080">÷</span>
+      </div>
+      <div class="om-logo-text"><strong>Operation</strong>Maths</div>
+    </a>
+    <div class="om-nav-links">
+      <div class="om-nav-dropdown">
+        <button class="om-dropdown-toggle">Worksheets ▾</button>
+        <div class="om-dropdown-menu">
+          <a href="/worksheets/number" style="border-left-color:#009444">Number</a>
+          <a href="/worksheets/shape" style="border-left-color:#1c75bc">Shape</a>
+          <a href="/worksheets/algebra" style="border-left-color:#800080">Algebra</a>
+          <a href="/worksheets/formulae" style="border-left-color:#f7941e">Formulae</a>
+          <a href="/worksheets/times-tables" style="border-left-color:#1c75bc">Times tables</a>
+          <a href="/worksheets/support-sheets" style="border-left-color:#009444">Support sheets</a>
+        </div>
+      </div>
+      <a href="/maths-sats-papers">Maths SATs papers</a>
+      <a href="/books">Books</a>
+      <div class="om-nav-dropdown">
+        <button class="om-dropdown-toggle">Online maths tests ▾</button>
+        <div class="om-dropdown-menu" style="min-width:180px;">
+          <a href="/online-maths-tests/#times-tables" style="border-left-color:#1c75bc">Times tables</a>
+          <a href="/online-maths-tests/#number-bonds" style="border-left-color:#009444">Number bonds</a>
+          <a href="/online-maths-tests/#metric-conversions" style="border-left-color:#f7941e">Metric conversions</a>
+        </div>
+      </div>
+      <a href="/sats-course" class="om-nav-cta">SATs course</a>
+    </div>
+    <div class="om-nav-hamburger" onclick="document.getElementById('nav-drawer').classList.toggle('open')" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+  <nav class="om-nav-drawer" id="nav-drawer" aria-label="Mobile navigation">
+    <div class="om-drawer-section">
+      <div class="om-drawer-section-title" onclick="document.getElementById('worksheets-sub').classList.toggle('open')">Worksheets <span>▾</span></div>
+      <div class="om-drawer-sub" id="worksheets-sub">
+        <a href="/worksheets/number">Number</a>
+        <a href="/worksheets/shape">Shape</a>
+        <a href="/worksheets/algebra">Algebra</a>
+        <a href="/worksheets/formulae">Formulae</a>
+        <a href="/worksheets/times-tables">Times tables</a>
+        <a href="/worksheets/support-sheets">Support sheets</a>
+      </div>
+    </div>
+    <a href="/maths-sats-papers">Maths SATs papers</a>
+    <a href="/books">Books</a>
+    <div class="om-drawer-section">
+      <div class="om-drawer-section-title" onclick="document.getElementById('tests-sub').classList.toggle('open')">Online maths tests <span>▾</span></div>
+      <div class="om-drawer-sub" id="tests-sub">
+        <a href="/online-maths-tests/#times-tables">Times tables</a>
+        <a href="/online-maths-tests/#number-bonds">Number bonds</a>
+        <a href="/online-maths-tests/#metric-conversions">Metric conversions</a>
+      </div>
+    </div>
+    <a href="/sats-course">SATs course</a>
+  </nav>
+</header>
+
+<main>
+  <section class="om-hero" aria-label="Hero">
+    <div class="om-hero-bg" aria-hidden="true">
+      <div class="om-ws-float" style="width:80px;height:110px;left:3%;top:8%;transform:rotate(-12deg)">
+        <div class="wf-title" style="background:var(--blue)"></div>
+        <div class="wf-line" style="width:90%"></div><div class="wf-line" style="width:70%"></div>
+        <div class="wf-box"></div><div class="wf-line" style="width:80%"></div><div class="wf-box"></div>
+      </div>
+      <div class="om-ws-float" style="width:100px;height:70px;left:8%;top:58%;transform:rotate(8deg)">
+        <div class="wf-title" style="background:var(--orange)"></div>
+        <div class="wf-line" style="width:90%"></div><div class="wf-line" style="width:70%"></div><div class="wf-line" style="width:80%"></div>
+      </div>
+      <div class="om-ws-float" style="width:70px;height:95px;left:1%;top:30%;transform:rotate(5deg)">
+        <div class="wf-title" style="background:var(--green)"></div>
+        <div class="wf-line" style="width:90%"></div><div class="wf-box"></div><div class="wf-line" style="width:70%"></div><div class="wf-box"></div>
+      </div>
+      <div class="om-ws-float" style="width:90px;height:55px;left:14%;top:74%;transform:rotate(-6deg)">
+        <div class="wf-title" style="background:var(--purple)"></div>
+        <div class="wf-line" style="width:90%"></div><div class="wf-line" style="width:60%"></div>
+      </div>
+      <div class="om-ws-float" style="width:80px;height:110px;right:3%;top:10%;transform:rotate(11deg)">
+        <div class="wf-title" style="background:var(--green)"></div>
+        <div class="wf-line" style="width:90%"></div><div class="wf-box"></div><div class="wf-line" style="width:70%"></div><div class="wf-box"></div><div class="wf-line" style="width:80%"></div>
+      </div>
+      <div class="om-ws-float" style="width:95px;height:68px;right:9%;top:60%;transform:rotate(-9deg)">
+        <div class="wf-title" style="background:var(--blue)"></div>
+        <div class="wf-line" style="width:90%"></div><div class="wf-line" style="width:75%"></div><div class="wf-box"></div>
+      </div>
+      <div class="om-ws-float" style="width:72px;height:90px;right:1%;top:32%;transform:rotate(-4deg)">
+        <div class="wf-title" style="background:var(--orange)"></div>
+        <div class="wf-line" style="width:90%"></div><div class="wf-box"></div><div class="wf-line" style="width:65%"></div><div class="wf-box"></div>
+      </div>
+      <div class="om-ws-float" style="width:88px;height:55px;right:15%;top:76%;transform:rotate(7deg)">
+        <div class="wf-title" style="background:var(--purple)"></div>
+        <div class="wf-line" style="width:90%"></div><div class="wf-line" style="width:55%"></div>
+      </div>
+    </div>
+    <div class="om-hero-content">
+      <h1>More practice, <em>better results</em></h1>
+      <p>Worksheets, SATs resources and maths books for primary and secondary students. Every worksheet topic includes 7 sheets, so there's always another chance to build confidence and fluency. Worksheet A is always free.</p>
+    </div>
+    <div class="om-hero-btns">
+      <a href="/worksheets" class="om-btn-green">Browse free worksheets</a>
+      <a href="/sats-course" class="om-btn-dark-outline">SATs course →</a>
+    </div>
+  </section>
+
+  <section aria-label="What's on Operation Maths">
+    <div class="om-strip">
+      <a class="om-strip-item" style="--sc:var(--blue)" href="/worksheets">
+        <div class="om-strip-title">Worksheets</div>
+        <div class="om-strip-sub">Free worksheet A with every set</div>
+      </a>
+      <a class="om-strip-item" style="--sc:var(--orange)" href="/books">
+        <div class="om-strip-title">Books</div>
+        <div class="om-strip-sub">Available on Amazon</div>
+      </a>
+      <a class="om-strip-item" style="--sc:var(--green)" href="/maths-sats-papers">
+        <div class="om-strip-title">Maths SATs papers</div>
+        <div class="om-strip-sub">Key Stage 2 practice papers</div>
+      </a>
+      <a class="om-strip-item" style="--sc:var(--blue)" href="/online-maths-tests">
+        <div class="om-strip-title">Online maths tests</div>
+        <div class="om-strip-sub">Times tables, number bonds and more</div>
+      </a>
+      <a class="om-strip-item" style="--sc:var(--purple)" href="/sats-course">
+        <div class="om-strip-title">SATs course</div>
+        <div class="om-strip-sub">Revision for Year 6</div>
+      </a>
+    </div>
+  </section>
+
+  <div class="om-body">
+
+    <section aria-labelledby="latest-worksheets-heading">
+      <div class="om-section-hd">
+        <h2 id="latest-worksheets-heading">Latest worksheets</h2>
+        <a href="/worksheets">Browse all worksheets</a>
+      </div>
+      <div class="om-latest">
+        <article class="om-latest-card">
+          <div class="om-latest-card-top" style="background:var(--green)"></div>
+          <div class="om-ws-img">
+            <div class="om-ws-img-inner portrait" role="img" aria-label="Fractions of amounts worksheet preview">
+              <div class="om-wsi-title" style="background:var(--green)"></div>
+              <div class="om-wsi-row"><div class="om-wsi-num">1</div><div class="om-wsi-line f"></div><div class="om-wsi-box"></div></div>
+              <div class="om-wsi-row"><div class="om-wsi-num">2</div><div class="om-wsi-line m"></div><div class="om-wsi-box"></div></div>
+              <div class="om-wsi-row"><div class="om-wsi-num">3</div><div class="om-wsi-line f"></div><div class="om-wsi-box"></div></div>
+              <div class="om-wsi-row"><div class="om-wsi-num">4</div><div class="om-wsi-line s"></div><div class="om-wsi-box"></div></div>
+              <div class="om-wsi-row"><div class="om-wsi-num">5</div><div class="om-wsi-line m"></div><div class="om-wsi-box"></div></div>
+            </div>
+          </div>
+          <div class="om-latest-card-body">
+            <div class="om-latest-tag">Number</div>
+            <h3 class="om-latest-title">Fractions of amounts — Set 1</h3>
+            <p class="om-latest-desc">Finding fractions of whole numbers, from unit fractions to non-unit fractions. Years 4–6.</p>
+            <div class="om-latest-btns">
+              <a class="om-cbtn om-cbtn-ws" href="/worksheets/number/fractions-of-amounts-set-1.pdf">Worksheet (A)</a>
+              <a class="om-cbtn om-cbtn-ans" href="/worksheets/number/fractions-of-amounts-set-1-answers.pdf">Answers (A)</a>
+              <a class="om-cbtn om-cbtn-tes" href="#" target="_blank" rel="noopener">Full pack on TES ↗</a>
+            </div>
+          </div>
+        </article>
+        <article class="om-latest-card">
+          <div class="om-latest-card-top" style="background:var(--blue)"></div>
+          <div class="om-ws-img">
+            <div class="om-ws-img-inner landscape" role="img" aria-label="Solving one-step equations worksheet preview">
+              <div class="om-wsi-title" style="background:var(--blue)"></div>
+              <div class="om-wsi-row"><div class="om-wsi-num">1</div><div class="om-wsi-line f"></div><div class="om-wsi-box"></div></div>
+              <div class="om-wsi-row"><div class="om-wsi-num">2</div><div class="om-wsi-line m"></div><div class="om-wsi-box"></div></div>
+              <div class="om-wsi-row"><div class="om-wsi-num">3</div><div class="om-wsi-line f"></div><div class="om-wsi-box"></div></div>
+              <div class="om-wsi-row"><div class="om-wsi-num">4</div><div class="om-wsi-line s"></div><div class="om-wsi-box"></div></div>
+            </div>
+          </div>
+          <div class="om-latest-card-body">
+            <div class="om-latest-tag">Algebra</div>
+            <h3 class="om-latest-title">Solving one-step equations — Set 1</h3>
+            <p class="om-latest-desc">Using inverse operations to solve equations with one unknown. Suitable for Years 6–8.</p>
+            <div class="om-latest-btns">
+              <a class="om-cbtn om-cbtn-ws" href="/worksheets/algebra/solving-one-step-equations-set-1.pdf">Worksheet (A)</a>
+              <a class="om-cbtn om-cbtn-ans" href="/worksheets/algebra/solving-one-step-equations-set-1-answers.pdf">Answers (A)</a>
+              <a class="om-cbtn om-cbtn-tes" href="#" target="_blank" rel="noopener">Full pack on TES ↗</a>
+            </div>
+          </div>
+        </article>
+        <article class="om-latest-card">
+          <div class="om-latest-card-top" style="background:var(--purple)"></div>
+          <div class="om-ws-img">
+            <div class="om-ws-img-inner portrait" role="img" aria-label="Area of triangles worksheet preview">
+              <div class="om-wsi-title" style="background:var(--purple)"></div>
+              <div class="om-wsi-row"><div class="om-wsi-num">1</div><div class="om-wsi-line f"></div><div class="om-wsi-box"></div></div>
+              <div class="om-wsi-row"><div class="om-wsi-num">2</div><div class="om-wsi-line s"></div><div class="om-wsi-box"></div></div>
+              <div class="om-wsi-row"><div class="om-wsi-num">3</div><div class="om-wsi-line m"></div><div class="om-wsi-box"></div></div>
+              <div class="om-wsi-row"><div class="om-wsi-num">4</div><div class="om-wsi-line f"></div><div class="om-wsi-box"></div></div>
+              <div class="om-wsi-row"><div class="om-wsi-num">5</div><div class="om-wsi-line s"></div><div class="om-wsi-box"></div></div>
+            </div>
+          </div>
+          <div class="om-latest-card-body">
+            <div class="om-latest-tag">Shape</div>
+            <h3 class="om-latest-title">Area of triangles — Set 1</h3>
+            <p class="om-latest-desc">Calculating the area of triangles using the formula. Progresses from whole numbers to decimals. Years 5–7.</p>
+            <div class="om-latest-btns">
+              <a class="om-cbtn om-cbtn-ws" href="/worksheets/shape/area-of-triangles-set-1.pdf">Worksheet (A)</a>
+              <a class="om-cbtn om-cbtn-ans" href="/worksheets/shape/area-of-triangles-set-1-answers.pdf">Answers (A)</a>
+              <a class="om-cbtn om-cbtn-tes" href="#" target="_blank" rel="noopener">Full pack on TES ↗</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <hr class="om-divider">
+
+    <section aria-labelledby="books-heading">
+      <div class="om-section-hd">
+        <h2 id="books-heading">Books by Operation Maths</h2>
+        <a href="/books">View all books</a>
+      </div>
+      <div class="om-books">
+        <a class="om-book-card" href="https://www.amazon.co.uk/dp/B09DJ7LQ3S/" target="_blank" rel="noopener">
+          <div class="om-book-cover" style="background:#e8f4ee">
+            <div class="om-book-cover-inner" style="background:var(--green)">📖</div>
+          </div>
+          <div class="om-book-body">
+            <h3 class="om-book-title">6 Times Table: 26 Times Table Tests</h3>
+            <p class="om-book-sub">Repeated practice to build times table fluency.</p>
+            <span class="om-book-btn">View on Amazon ↗</span>
+          </div>
+        </a>
+        <a class="om-book-card" href="https://www.amazon.co.uk/dp/B0C87F2ZJ8/" target="_blank" rel="noopener">
+          <div class="om-book-cover" style="background:#eef3fa">
+            <div class="om-book-cover-inner" style="background:var(--blue)">📖</div>
+          </div>
+          <div class="om-book-body">
+            <h3 class="om-book-title">Number Bonds to 10: 26 Number Bond Tests</h3>
+            <p class="om-book-sub">Build number bond confidence through structured testing.</p>
+            <span class="om-book-btn">View on Amazon ↗</span>
+          </div>
+        </a>
+        <a class="om-book-card" href="https://www.amazon.co.uk/dp/B09DMTZGLH/" target="_blank" rel="noopener">
+          <div class="om-book-cover" style="background:#f5eefa">
+            <div class="om-book-cover-inner" style="background:var(--purple)">📖</div>
+          </div>
+          <div class="om-book-body">
+            <h3 class="om-book-title">8 Times Table: 26 Times Table Tests</h3>
+            <p class="om-book-sub">Repeated practice to build times table fluency.</p>
+            <span class="om-book-btn">View on Amazon ↗</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section aria-labelledby="sats-course-heading">
+      <div class="om-sats">
+        <div>
+          <h2 id="sats-course-heading">Preparing for SATs?</h2>
+          <p>Structured revision course with practice papers and worked examples for Year 6 pupils.</p>
+          <a href="/sats-course" class="om-btn-green">View SATs course</a>
+        </div>
+        <div class="om-sats-image" aria-hidden="true">
+          <div class="om-sats-screen">
+            <div class="om-sats-slide">
+              <div class="om-sats-slide-title"></div>
+              <div class="om-sats-slide-line m"></div>
+              <div class="om-sats-slide-line s"></div>
+              <div class="om-sats-slide-accent"></div>
+              <div class="om-sats-slide-line m"></div>
+            </div>
+          </div>
+          <div class="om-sats-stand"></div>
+          <div class="om-sats-base"></div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="om-footer">
+    <span>© 2026 Operation Maths. All rights reserved.</span>
+    <div>
+      <a href="https://www.facebook.com/OperationMaths/" target="_blank" rel="noopener" class="om-footer-fb">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Facebook"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.268h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+        Facebook
+      </a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.om-nav-dropdown')) {
+      document.querySelectorAll('.om-dropdown-menu').forEach(m => m.classList.remove('open'));
+    }
+  });
+</script>
+
+</body>
+</html>

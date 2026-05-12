@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="/assets/images/favicon-32x32.png">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Books | Operation Maths</title>
+  <meta name="description" content="Maths books available on Amazon from Operation Maths — including SATs revision, times tables and number facts practice books.">
+  <link rel="canonical" href="https://www.operationmaths.co.uk/books">
+  <meta property="og:title" content="Books | Operation Maths">
+  <meta property="og:description" content="Maths books available on Amazon from Operation Maths — including SATs revision, times tables and number facts practice books.">
+  <meta property="og:url" content="https://www.operationmaths.co.uk/books">
+  <meta property="og:type" content="website">
+<meta property="og:image" content="https://www.operationmaths.co.uk/assets/images/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.operationmaths.co.uk/" },
+      { "@type": "ListItem", "position": 2, "name": "Books", "item": "https://www.operationmaths.co.uk/books" }
+    ]
+  }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue: #1c75bc;
+      --blue-dark: #155f99;
+      --green: #009444;
+      --green-dark: #007a38;
+      --purple: #800080;
+      --orange: #f7941e;
+      --orange-dark: #d47c10;
+      --bg: #f5f6f8;
+      --border: #e5e7eb;
+      --text-muted: #9ca3af;
+      --text-mid: #6b7280;
+      --dark-hero: #0f1120;
+      --max: 1100px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      background: var(--bg);
+      color: #1a1a2e;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    .om-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      height: 68px;
+      display: flex;
+      align-items: center;
+    }
+
+    .om-nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 2rem;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    /* Logo 2×2 grid */
+    .om-logo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .om-logo span {
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      border-radius: 3px;
+      color: #fff;
+    }
+
+    .om-logo span:nth-child(1) { background: #1c75bc; }
+    .om-logo span:nth-child(2) { background: #009444; }
+    .om-logo span:nth-child(3) { background: #800080; }
+    .om-logo span:nth-child(4) { background: #f7941e; }
+
+    .om-logo-text {
+      font-weight: 700;
+      font-size: 15px;
+      color: #111827;
+      text-decoration: none;
+      margin-left: 0.4rem;
+      white-space: nowrap;
+    }
+
+    /* Desktop nav links */
+    .om-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      list-style: none;
+      margin-left: auto;
+    }
+
+    .om-nav-links a {
+      color: #374151;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 7px 10px;
+      border-radius: 6px;
+      transition: background 0.12s;
+      white-space: nowrap;
+    }
+
+    .om-nav-links a:hover { background: #f3f4f6; }
+    .om-nav-links a.active { color: #1c75bc; }
+
+    /* Dropdown toggle buttons */
+    .om-dropdown-toggle {
+      background: none;
+      border: none;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: #374151;
+      cursor: pointer;
+      padding: 7px 10px;
+      border-radius: 6px;
+      transition: background 0.12s;
+    }
+
+    .om-dropdown-toggle:hover { background: #f3f4f6; }
+    .om-dropdown-toggle.active { color: #1c75bc; }
+
+    /* SATs course CTA button */
+    .om-nav-cta {
+      background: #009444 !important;
+      color: #fff !important;
+      margin-left: 4px;
+      border-radius: 6px;
+      padding: 7px 14px !important;
+    }
+
+    .om-nav-cta:hover { background: #007a38 !important; }
+
+    /* Dropdown panel */
+    .om-dropdown {
+      display: none;
+      position: absolute;
+      top: calc(100% + 4px);
+      left: 0;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 8px;
+      min-width: 185px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      z-index: 200;
+    }
+
+    .om-nav-links li { position: relative; }
+    .om-nav-links li:hover .om-dropdown { display: block; }
+
+    /* Dropdown menu links */
+    .om-dropdown-menu a {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      color: #374151;
+      text-decoration: none;
+      padding: 5px 12px 5px 8px;
+      border-radius: 5px;
+      white-space: nowrap;
+      background: none;
+      transition: background 0.12s;
+      border-left: 3px solid transparent;
+      margin-bottom: 7px;
+    }
+
+    .om-dropdown-menu a:last-child { margin-bottom: 0; }
+    .om-dropdown-menu a:hover { background: #f3f4f6; color: #111827; }
+
+    /* Worksheets dropdown — coloured left borders per spec */
+    .om-dropdown-menu.worksheets a:nth-child(1) { border-left-color: #1c75bc; }
+    .om-dropdown-menu.worksheets a:nth-child(2) { border-left-color: #009444; }
+    .om-dropdown-menu.worksheets a:nth-child(3) { border-left-color: #800080; }
+    .om-dropdown-menu.worksheets a:nth-child(4) { border-left-color: #f7941e; }
+    .om-dropdown-menu.worksheets a:nth-child(5) { border-left-color: #1c75bc; }
+    .om-dropdown-menu.worksheets a:nth-child(6) { border-left-color: #009444; }
+
+    .om-dropdown-menu.tests a { border-left-color: #1c75bc; }
+
+    /* Hamburger */
+    .om-hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+      margin-left: auto;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .om-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #374151;
+      border-radius: 2px;
+    }
+
+    /* Mobile drawer */
+    .om-nav-drawer {
+      display: none;
+      position: fixed;
+      inset: 68px 0 0 0;
+      background: #fff;
+      z-index: 99;
+      overflow-y: auto;
+      padding: 0 1.5rem 2rem;
+      border-top: 1px solid #e5e7eb;
+      flex-direction: column;
+    }
+
+    .om-nav-drawer.open { display: flex; }
+
+    .om-nav-drawer > a {
+      color: #374151;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 12px 0;
+      border-bottom: 1px solid #f3f4f6;
+      display: block;
+    }
+
+    .om-nav-drawer > a.active { color: #1c75bc; }
+    .om-nav-drawer > a:last-child { border-bottom: none; color: #1c75bc; }
+  .om-nav-drawer > a:last-child { display: block; background: #1c75bc; color: #fff !important; border-radius: 6px; padding: 10px 14px; margin-top: 8px; text-align: center; }
+
+    /* Drawer expandable section header */
+    .om-drawer-section-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 16px;
+      font-weight: 700;
+      color: #374151;
+      padding: 12px 0;
+      border-bottom: 1px solid #f3f4f6;
+      cursor: pointer;
+      background: none;
+      border-left: none;
+      border-right: none;
+      border-top: none;
+      font-family: 'DM Sans', sans-serif;
+      width: 100%;
+      text-align: left;
+    }
+
+    .om-drawer-section-toggle::after {
+      content: '▾';
+      font-size: 12px;
+      transition: transform 0.2s;
+    }
+
+    .om-drawer-section-toggle.expanded::after { transform: rotate(180deg); }
+
+    /* Mobile drawer sub-links */
+    .om-drawer-sub {
+      display: none;
+      padding: 4px 0 4px;
+    }
+
+    .om-drawer-sub.open { display: block; }
+
+    .om-drawer-sub a {
+      font-size: 14px;
+      font-weight: 300;
+      color: #6b7280;
+      padding: 5px 12px 5px 8px;
+      border-left: 3px solid transparent;
+      margin-bottom: 7px;
+      display: block;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .om-drawer-sub a:hover { color: #111827; background: #f3f4f6; }
+    .om-drawer-sub.worksheets a:nth-child(1) { border-left-color: #1c75bc; }
+    .om-drawer-sub.worksheets a:nth-child(2) { border-left-color: #009444; }
+    .om-drawer-sub.worksheets a:nth-child(3) { border-left-color: #800080; }
+    .om-drawer-sub.worksheets a:nth-child(4) { border-left-color: #f7941e; }
+    .om-drawer-sub.worksheets a:nth-child(5) { border-left-color: #1c75bc; }
+    .om-drawer-sub.worksheets a:nth-child(6) { border-left-color: #009444; }
+    .om-drawer-sub.tests a { border-left-color: #1c75bc; }
+
+    @media (max-width: 900px) {
+      .om-nav-links { display: none; }
+      .om-hamburger { display: flex; }
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--dark-hero);
+      padding: 4rem 2rem 3.5rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 46px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.75rem;
+      line-height: 1.15;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--orange);
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      font-size: 17px;
+      font-weight: 300;
+      max-width: 560px;
+      margin: 0 auto 1.75rem;
+    }
+
+    /* Jump-to nav (matches .test-tab style from homepage) */
+    .jump-nav {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .jump-link {
+      display: inline-block;
+      background: transparent;
+      border: 1.5px solid #4b5563;
+      color: #9ca3af;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 7px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+
+    .jump-link:hover {
+      background: #1e2235;
+      color: #e5e7eb;
+      border-color: #6b7280;
+    }
+
+    .jump-link.active {
+      background: #1e2235;
+      color: #fff;
+      border-color: #9ca3af;
+    }
+
+    /* ── MAIN ── */
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 3rem 2rem 4rem;
+    }
+
+    /* Section heading */
+    .section-heading {
+      font-size: 15px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--blue);
+      letter-spacing: 0.06em;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--blue);
+      display: inline-block;
+    }
+
+    section {
+      margin-bottom: 3rem;
+      scroll-margin-top: 80px;
+    }
+
+    /* Book cards grid */
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.25rem;
+    }
+
+    /* Single book for ebook (wider) */
+    .books-grid.single {
+      grid-template-columns: repeat(auto-fill, minmax(220px, 280px));
+    }
+
+    .book-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem 1.25rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.85rem;
+      text-align: center;
+    }
+
+    .book-covers {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    /* Portrait covers */
+    .cover-placeholder {
+      background: #e5e7eb;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: var(--text-mid);
+      font-weight: 700;
+      text-align: center;
+      line-height: 1.3;
+      overflow: hidden;
+    }
+
+    /* Single cover (ebook / number fact books with 1 displayed) */
+    .cover-placeholder.portrait-lg {
+      width: 90px;
+      height: 130px;
+    }
+
+    /* Pair of covers (Test A + Test B) */
+    .cover-placeholder.portrait-a {
+      width: 78px;
+      height: 130px;
+    }
+
+    .cover-placeholder.portrait-b {
+      width: 72px;
+      height: 120px;
+    }
+
+    .book-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1a1a2e;
+    }
+
+    .book-subtitle {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-mid);
+      margin-top: -0.5rem;
+    }
+
+    .btn-amazon {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: var(--orange);
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 0.65rem 1.6rem;
+      border-radius: 8px;
+      border: none;
+      transition: background 0.15s;
+      margin-top: auto;
+      white-space: nowrap;
+    }
+
+    .btn-amazon:hover {
+      background: var(--orange-dark);
+    }
+
+    /* Times tables grid — responsive 3-col then 2-col */
+    .books-grid.times-tables {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #fff;
+      border-top: 1px solid var(--border);
+      padding: 0.85rem 2rem;
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 300;
+    }
+
+    .footer-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.25rem;
+    }
+
+    .footer-links a {
+      color: var(--text-mid);
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .footer-links a:hover { color: var(--blue); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+    }
+
+    @media (max-width: 780px) {
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 30px; }
+      .hero p { font-size: 15px; }
+      .books-grid,
+      .books-grid.times-tables { grid-template-columns: 1fr 1fr; }
+      .books-grid.single { grid-template-columns: 1fr; }
+
+      .cover-placeholder.portrait-lg { width: 70px; height: 110px; }
+      .cover-placeholder.portrait-a { width: 62px; height: 110px; }
+      .cover-placeholder.portrait-b { width: 56px; height: 100px; }
+
+      /* Stack images full-width */
+      .book-covers { width: 100%; }
+      .cover-placeholder { flex: 1; min-width: 0; }
+      .cover-placeholder.portrait-lg { width: 100%; height: 120px; }
+      .cover-placeholder.portrait-a { width: 100%; height: 120px; }
+      .cover-placeholder.portrait-b { display: none; }
+    }
+
+    @media (max-width: 400px) {
+      .books-grid,
+      .books-grid.times-tables { grid-template-columns: 1fr; }
+    }
+    /* ── FOOTER ── */
+  .om-footer { background: #0f1120; display: flex; justify-content: space-between; align-items: center; padding: 0.85rem 2rem; font-size: 13px; color: #6b7280; margin-top: 1px; font-weight: 300; flex-wrap: wrap; gap: 8px; }
+  .om-footer div { display: flex; align-items: center; }
+  .om-footer span { display: flex; align-items: center; }
+  .om-footer a { color: #9ca3af; text-decoration: none; margin-left: 1.25rem; font-weight: 500; transition: color 0.12s; display: inline-flex; align-items: center; gap: 5px; }
+  .om-footer a:hover { color: #fff; }
+  .om-footer-fb svg { width: 14px; height: 14px; fill: currentColor; flex-shrink: 0; }
+  @media (max-width: 600px) {
+    .om-footer { flex-direction: column; text-align: center; }
+    .om-footer a { margin-left: 0.75rem; }
+    .om-footer div { display: flex; flex-wrap: wrap; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="om-nav">
+  <div class="om-nav-inner">
+    <a href="/" class="om-logo" aria-label="Operation Maths home">
+      <span>+</span><span>−</span><span>×</span><span>÷</span>
+    </a>
+    <a href="/" class="om-logo-text">Operation Maths</a>
+
+    <ul class="om-nav-links">
+      <li>
+        <button class="om-dropdown-toggle" aria-expanded="false">Worksheets ▾</button>
+        <div class="om-dropdown">
+          <div class="om-dropdown-menu worksheets">
+            <a href="/number">Number</a>
+            <a href="/shape">Shape</a>
+            <a href="/algebra">Algebra</a>
+            <a href="/formulae">Formulae</a>
+            <a href="/times-tables">Times tables</a>
+            <a href="/support-sheets">Support sheets</a>
+          </div>
+        </div>
+      </li>
+      <li><a href="/maths-sats-papers">Maths SATs papers</a></li>
+      <li><a href="/books" class="active">Books</a></li>
+      <li>
+        <button class="om-dropdown-toggle" aria-expanded="false">Online maths tests ▾</button>
+        <div class="om-dropdown">
+          <div class="om-dropdown-menu tests">
+            <a href="/times-tables-test">Times tables</a>
+            <a href="/number-bonds-test">Number bonds</a>
+            <a href="/metric-conversions-test">Metric conversions</a>
+          </div>
+        </div>
+      </li>
+      <li><a href="/sats-course" class="om-nav-cta">SATs course</a></li>
+    </ul>
+
+    <button class="om-hamburger" id="om-hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE DRAWER -->
+<div class="om-nav-drawer" id="om-drawer">
+  <button class="om-drawer-section-toggle" id="toggle-worksheets">Worksheets</button>
+  <div class="om-drawer-sub worksheets" id="sub-worksheets">
+    <a href="/number">Number</a>
+    <a href="/shape">Shape</a>
+    <a href="/algebra">Algebra</a>
+    <a href="/formulae">Formulae</a>
+    <a href="/times-tables">Times tables</a>
+    <a href="/support-sheets">Support sheets</a>
+  </div>
+  <a href="/maths-sats-papers">Maths SATs papers</a>
+  <a href="/books" class="active">Books</a>
+  <button class="om-drawer-section-toggle" id="toggle-tests">Online maths tests</button>
+  <div class="om-drawer-sub tests" id="sub-tests">
+    <a href="/times-tables-test">Times tables</a>
+    <a href="/number-bonds-test">Number bonds</a>
+    <a href="/metric-conversions-test">Metric conversions</a>
+  </div>
+  <a href="/sats-course">SATs course</a>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <h1>Maths <em>books</em></h1>
+  <p>A selection of books available on Amazon to support learning the foundations of maths.</p>
+  <p style="color:#6b7280;font-size:13px;font-weight:300;margin-bottom:1.5rem;">(As an Amazon Associate I earn from qualifying purchases.)</p>
+  <nav class="jump-nav" aria-label="Jump to section">
+    <a href="#ebook" class="jump-link">eBook</a>
+    <a href="#number-facts" class="jump-link">Number facts</a>
+    <a href="#times-tables" class="jump-link">Times tables</a>
+  </nav>
+</header>
+
+<!-- MAIN -->
+<main>
+  <!-- EBOOK -->
+  <section id="ebook">
+    <h2 class="section-heading">Ebook</h2>
+    <div class="books-grid single">
+      <div class="book-card">
+        <div class="book-covers">
+          <div class="cover-placeholder portrait-lg">2026<br>Maths<br>SATs</div>
+        </div>
+        <div class="book-title">2026 Maths SATs</div>
+        <a href="https://amzn.to/4a3XxiU" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUMBER FACTS -->
+  <section id="number-facts">
+    <h2 class="section-heading">Number facts</h2>
+    <div class="books-grid">
+      <div class="book-card">
+        <div class="book-covers">
+          <div class="cover-placeholder portrait-a">Number<br>bonds<br>A</div>
+          <div class="cover-placeholder portrait-b">Number<br>bonds<br>B</div>
+        </div>
+        <div class="book-title">Number bonds</div>
+        <a href="https://amzn.to/41pSNho" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon ↗</a>
+      </div>
+
+      <div class="book-card">
+        <div class="book-covers">
+          <div class="cover-placeholder portrait-a">Double<br>&amp; halve<br>A</div>
+          <div class="cover-placeholder portrait-b">Double<br>&amp; halve<br>B</div>
+        </div>
+        <div class="book-title">Double and halve</div>
+        <a href="https://amzn.to/41BKujL" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMES TABLES -->
+  <section id="times-tables">
+    <h2 class="section-heading">Times table books</h2>
+    <div class="books-grid times-tables">
+
+      <div class="book-card">
+        <div class="book-covers">
+          <div class="cover-placeholder portrait-a">2×<br>A</div>
+          <div class="cover-placeholder portrait-b">2×<br>B</div>
+        </div>
+        <div class="book-title">2 times table</div>
+        <a href="https://amzn.to/3DaaTfm" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon ↗</a>
+      </div>
+
+      <div class="book-card">
+        <div class="book-covers">
+          <div class="cover-placeholder portrait-a">3×<br>A</div>
+          <div class="cover-placeholder portrait-b">3×<br>B</div>
+        </div>
+        <div class="book-title">3 times table</div>
+        <a href="https://amzn.to/3DapiIu" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon ↗</a>
+      </div>
+
+      <div class="book-card">
+        <div class="book-covers">
+          <div class="cover-placeholder portrait-a">4×<br>A</div>
+          <div class="cover-placeholder portrait-b">4×<br>B</div>
+        </div>
+        <div class="book-title">4 times table</div>
+        <a href="https://amzn.to/3Ddmp9G" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon ↗</a>
+      </div>
+
+      <div class="book-card">
+        <div class="book-covers">
+          <div class="cover-placeholder portrait-a">5×<br>A</div>
+          <div class="cover-placeholder portrait-b">5×<br>B</div>
+        </div>
+        <div class="book-title">5 times table</div>
+        <a href="https://amzn.to/4hbsyBq" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon ↗</a>
+      </div>
+
+      <div class="book-card">
+        <div class="book-covers">
+          <div class="cover-placeholder portrait-a">6×<br>A</div>
+          <div class="cover-placeholder portrait-b">6×<br>B</div>
+        </div>
+        <div class="book-title">6 times table</div>
+        <a href="https://amzn.to/43iWs3k" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon ↗</a>
+      </div>
+
+      <div class="book-card">
+        <div class="book-covers">
+          <div class="cover-placeholder portrait-a">7×<br>A</div>
+          <div class="cover-placeholder portrait-b">7×<br>B</div>
+        </div>
+        <div class="book-title">7 times table</div>
+        <a href="https://amzn.to/3EZTqqw" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon ↗</a>
+      </div>
+
+      <div class="book-card">
+        <div class="book-covers">
+          <div class="cover-placeholder portrait-a">8×<br>A</div>
+          <div class="cover-placeholder portrait-b">8×<br>B</div>
+        </div>
+        <div class="book-title">8 times table</div>
+        <a href="https://amzn.to/3Fa4XU2" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon ↗</a>
+      </div>
+
+      <div class="book-card">
+        <div class="book-covers">
+          <div class="cover-placeholder portrait-a">9×<br>A</div>
+          <div class="cover-placeholder portrait-b">9×<br>B</div>
+        </div>
+        <div class="book-title">9 times table</div>
+        <a href="https://amzn.to/4ikLyyk" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon ↗</a>
+      </div>
+
+      <div class="book-card">
+        <div class="book-covers">
+          <div class="cover-placeholder portrait-a">10×<br>A</div>
+          <div class="cover-placeholder portrait-b">10×<br>B</div>
+        </div>
+        <div class="book-title">10 times table</div>
+        <a href="https://amzn.to/4ikLCy4" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon ↗</a>
+      </div>
+
+      <div class="book-card">
+        <div class="book-covers">
+          <div class="cover-placeholder portrait-a">11×<br>A</div>
+          <div class="cover-placeholder portrait-b">11×<br>B</div>
+        </div>
+        <div class="book-title">11 times table</div>
+        <a href="https://amzn.to/3QHctIS" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon ↗</a>
+      </div>
+
+      <div class="book-card">
+        <div class="book-covers">
+          <div class="cover-placeholder portrait-a">12×<br>A</div>
+          <div class="cover-placeholder portrait-b">12×<br>B</div>
+        </div>
+        <div class="book-title">12 times table</div>
+        <a href="https://amzn.to/3DcOQ7I" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon ↗</a>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="om-footer">
+    <span>© 2026 Operation Maths. All rights reserved.</span>
+    <div>
+      <a href="https://www.facebook.com/OperationMaths/" target="_blank" rel="noopener" class="om-footer-fb">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Facebook"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.268h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+        Facebook
+      </a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Hamburger — mobile drawer
+  const hamburger = document.getElementById('om-hamburger');
+  const drawer = document.getElementById('om-drawer');
+  hamburger.addEventListener('click', () => {
+    drawer.classList.toggle('open');
+  });
+
+  // Drawer expandable sections
+  ['worksheets', 'tests'].forEach(id => {
+    const toggle = document.getElementById('toggle-' + id);
+    const sub = document.getElementById('sub-' + id);
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('expanded');
+      sub.classList.toggle('open');
+    });
+  });
+</script>
+</body>
+</html>

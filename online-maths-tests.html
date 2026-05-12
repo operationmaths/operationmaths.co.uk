@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="/assets/images/favicon-32x32.png">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online maths tests | Operation Maths</title>
+<meta name="description" content="Free online maths tests for times tables and number bonds. Choose your table, set your time and test yourself.">
+<link rel="canonical" href="https://www.operationmaths.co.uk/online-maths-tests">
+<meta property="og:title" content="Online maths tests – Operation Maths">
+<meta property="og:description" content="Free online maths tests for times tables and number bonds. Choose your table, set your time and test yourself.">
+<meta property="og:url" content="https://www.operationmaths.co.uk/online-maths-tests">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.operationmaths.co.uk/assets/images/og-image.png" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://operationmaths.co.uk/"},
+    {"@type":"ListItem","position":2,"name":"Online maths tests","item":"https://operationmaths.co.uk/online-maths-tests"}
+  ]
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&display=swap');
+
+  :root {
+    --blue: #1c75bc;
+    --blue-dark: #155f99;
+    --green: #009444;
+    --green-dark: #007a38;
+    --purple: #800080;
+    --orange: #f7941e;
+    --orange-dark: #d47c10;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: #f5f6f8; color: #111827; font-size: 16px; display: flex; flex-direction: column; min-height: 100vh; }
+
+  /* NAV */
+  .om-nav { background: #fff; border-bottom: 1px solid #e5e7eb; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 68px; position: sticky; top: 0; z-index: 100; }
+  .om-logo { display: flex; align-items: center; gap: 10px; cursor: pointer; text-decoration: none; flex-shrink: 0; }
+  .om-logo-icon { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; width: 34px; height: 34px; background: #fff; border: 2px solid #111827; border-radius: 7px; padding: 4px; }
+  .om-logo-icon span { display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 900; line-height: 1; }
+  .om-logo-text { font-size: 20px; font-weight: 700; color: #111827; letter-spacing: -0.3px; white-space: nowrap; }
+  .om-nav-links { display: flex; align-items: center; gap: 1px; }
+  .om-nav-links a { color: #374151; font-size: 15px; font-weight: 700; text-decoration: none; padding: 7px 8px; border-radius: 6px; transition: background 0.12s; white-space: nowrap; }
+  .om-nav-links a:hover { background: #f3f4f6; }
+  .om-nav-links a.active { color: var(--blue); }
+  .om-nav-cta { background: var(--blue) !important; color: #fff !important; margin-left: 4px; border-radius: 6px; padding: 7px 12px !important; border: 1.5px solid var(--blue) !important; }
+  .om-nav-cta:hover { background: var(--blue-dark) !important; border-color: var(--blue-dark) !important; }
+  .om-nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; flex-shrink: 0; }
+  .om-nav-hamburger span { display: block; width: 24px; height: 2px; background: #374151; border-radius: 2px; }
+
+  .om-nav-drawer { display: none; position: absolute; top: 68px; left: 0; right: 0; background: #fff; border-bottom: 1px solid #e5e7eb; padding: 1rem 2rem; flex-direction: column; gap: 2px; z-index: 99; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+  .om-nav-drawer.open { display: flex; }
+  .om-nav-drawer > a { color: #374151; font-size: 16px; font-weight: 700; text-decoration: none; padding: 12px 0; border-bottom: 1px solid #f3f4f6; }
+  .om-nav-drawer > a:last-child { border-bottom: none; color: var(--blue); }
+  .om-nav-drawer > a:last-child { display: block; background: #1c75bc; color: #fff !important; border-radius: 6px; padding: 10px 14px; margin-top: 8px; text-align: center; }
+  .om-drawer-section { border-bottom: 1px solid #f3f4f6; }
+  .om-drawer-section-title { font-size: 16px; font-weight: 700; color: #374151; padding: 12px 0 8px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; }
+  .om-drawer-sub { padding-left: 0; border-left: none; margin: 0 0 8px; display: none; flex-direction: column; }
+  .om-drawer-sub.open { display: flex; }
+  .om-drawer-sub a { font-size: 14px !important; font-weight: 300 !important; color: #6b7280 !important; padding: 5px 12px 5px 8px !important; border-bottom: none !important; border-left: 3px solid transparent; margin-bottom: 7px; display: block; text-decoration: none; border-radius: 5px; }
+  .om-drawer-sub a:last-child { margin-bottom: 0; }
+  .om-drawer-sub a:hover { color: #111827 !important; background: #f3f4f6; }
+
+  .om-nav-dropdown { position: relative; }
+  .om-dropdown-menu { display: none; position: absolute; top: calc(100% + 10px); left: 0; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.10); min-width: 180px; padding: 6px; z-index: 200; }
+  .om-nav-dropdown:hover .om-dropdown-menu { display: block; }
+  .om-dropdown-menu a { display: block; font-size: 14px; font-weight: 700; color: #374151; text-decoration: none; padding: 5px 12px 5px 8px; border-radius: 5px; white-space: nowrap; background: none; transition: background 0.12s; border-left: 3px solid transparent; margin-bottom: 7px; }
+  .om-dropdown-menu a:last-child { margin-bottom: 0; }
+  .om-dropdown-menu a:hover { background: #f3f4f6; color: #111827; }
+  .om-dropdown-menu a.active { color: var(--blue); }
+  .om-dropdown-divider { height: 1px; background: #f3f4f6; margin: 4px 0; }
+  .om-dropdown-toggle { background: none; border: none; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 700; color: #374151; cursor: pointer; padding: 7px 10px; border-radius: 6px; transition: background 0.12s; }
+  .om-dropdown-toggle:hover { background: #f3f4f6; }
+  .om-dropdown-toggle.active { color: var(--blue); }
+
+  /* HERO */
+  .om-hero { background: #0f1120; padding: 4rem 2rem 3.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; }
+  .om-hero h1 { font-size: 46px; color: #fff; margin: 0 0 0.85rem; line-height: 1.12; font-weight: 700; letter-spacing: -0.5px; }
+  .om-hero h1 em { color: var(--blue); font-style: normal; }
+  .om-hero p { color: #9ca3af; font-size: 17px; max-width: 520px; margin: 0 0 2rem; line-height: 1.7; font-weight: 300; }
+
+  /* TEST TYPE TABS in hero */
+  .test-tabs { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+  .test-tab { background: transparent; border: 1.5px solid #4b5563; color: #9ca3af; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 700; padding: 7px 16px; border-radius: 6px; cursor: pointer; transition: background 0.15s, color 0.15s, border-color 0.15s; }
+  .test-tab:hover { background: #1e2235; color: #e5e7eb; border-color: #6b7280; }
+  .test-tab.active { background: #1e2235; color: #fff; border-color: #9ca3af; }
+
+  /* MAIN */
+  main { flex: 1; }
+  .om-body { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; }
+
+  /* TEST PANELS */
+  .test-panel { display: none; }
+  .test-panel.active { display: block; }
+
+  /* SETUP CARD */
+  .setup-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 0; max-width: 760px; margin: 0 auto; overflow: hidden; }
+
+  .setup-section { padding: 1.25rem 1.75rem; border-bottom: 1px solid #f3f4f6; }
+  .setup-section:last-of-type { border-bottom: none; }
+  .setup-section-title { font-size: 11px; font-weight: 700; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 0.65rem; display: block; }
+
+  .setup-group { margin-bottom: 0; }
+  .setup-label { font-size: 13px; font-weight: 700; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.6rem; display: block; }
+
+  /* Table selector */
+  .table-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+  .table-btn { background: #f5f6f8; border: 1.5px solid #e5e7eb; color: #374151; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 700; padding: 7px 14px; border-radius: 6px; cursor: pointer; transition: background 0.12s, border-color 0.12s, color 0.12s; }
+  .table-btn:hover { background: #e5e7eb; border-color: #9ca3af; color: #111827; }
+  .table-btn.selected { background: #111827; border-color: #111827; color: #fff; }
+  .table-btn.all-btn { border-color: #374151; }
+  .table-btn.all-btn.selected { background: #111827; border-color: #111827; color: #fff; }
+
+  /* Option rows */
+  .option-row { display: flex; gap: 8px; flex-wrap: wrap; }
+  .option-btn { background: #f5f6f8; border: 1.5px solid #e5e7eb; color: #374151; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 700; padding: 7px 18px; border-radius: 6px; cursor: pointer; transition: background 0.12s, border-color 0.12s, color 0.12s; }
+
+  /* Blue — operation */
+  .option-btn.blue-btn:hover { background: #eef5fd; border-color: var(--blue); color: var(--blue); }
+  .option-btn.blue-btn.selected { background: var(--blue); border-color: var(--blue); color: #fff; }
+
+  /* Green — questions */
+  .option-btn.green-btn:hover { background: #f0faf4; border-color: var(--green); color: var(--green); }
+  .option-btn.green-btn.selected { background: var(--green); border-color: var(--green); color: #fff; }
+
+  /* Purple — timing */
+  .option-btn.purple-btn:hover { background: #f9f0f9; border-color: var(--purple); color: var(--purple); }
+  .option-btn.purple-btn.selected { background: var(--purple); border-color: var(--purple); color: #fff; }
+
+  /* Time options — only shown when timed selected */
+  .time-options { margin-top: 0.75rem; display: none; }
+  .time-options.visible { display: block; }
+
+  .start-btn { display: block; width: 100%; padding: 14px; background: var(--orange); border: 1.5px solid var(--orange); color: #fff; font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 700; border-radius: 6px; cursor: pointer; transition: background 0.12s, border-color 0.12s; letter-spacing: 0.5px; text-transform: uppercase; }
+  .start-btn:hover { background: var(--orange-dark); border-color: var(--orange-dark); }
+  .start-btn:disabled { background: #d1d5db; border-color: #d1d5db; cursor: not-allowed; }
+
+  /* QUIZ AREA */
+  .quiz-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 2rem; max-width: 680px; margin: 0 auto; display: none; }
+  .quiz-card.active { display: block; }
+
+  .quiz-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 8px; }
+  .quiz-progress { font-size: 13px; font-weight: 700; color: #6b7280; }
+  .quiz-timer { font-size: 18px; font-weight: 700; color: var(--blue); font-variant-numeric: tabular-nums; }
+  .quiz-timer.warning { color: var(--orange); }
+  .quiz-timer.danger { color: #dc2626; }
+
+  .progress-bar-track { height: 4px; background: #f3f4f6; border-radius: 2px; margin-bottom: 2rem; }
+  .progress-bar-fill { height: 4px; background: var(--blue); border-radius: 2px; transition: width 0.3s ease; }
+
+  .quiz-question { font-size: 36px; font-weight: 700; color: #111827; text-align: center; margin-bottom: 2rem; letter-spacing: -0.5px; }
+
+  .quiz-input-wrap { display: flex; justify-content: center; margin-bottom: 0.75rem; }
+  .quiz-input { font-family: 'DM Sans', sans-serif; font-size: 36px; font-weight: 700; color: #111827; text-align: center; width: 180px; padding: 12px 16px; border: 2px solid #e5e7eb; border-radius: 8px; outline: none; transition: border-color 0.15s; -moz-appearance: textfield; }
+  .quiz-input::-webkit-outer-spin-button,
+  .quiz-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+  .quiz-input:focus { border-color: var(--blue); }
+
+  .quiz-hint { display: none; }
+
+  .quiz-next-btn { display: block; width: 100%; padding: 12px; background: var(--blue); border: 1.5px solid var(--blue); color: #fff; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 700; border-radius: 6px; cursor: pointer; transition: background 0.12s, border-color 0.12s; }
+  .quiz-next-btn:hover { background: var(--blue-dark); border-color: var(--blue-dark); }
+
+  .quiz-menu-btn { display: block; width: 100%; margin-top: 10px; padding: 10px; background: #fff; border: 1.5px solid #e5e7eb; color: #374151; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 700; border-radius: 6px; cursor: pointer; transition: background 0.12s, border-color 0.12s; text-transform: uppercase; letter-spacing: 0.4px; }
+  .quiz-menu-btn:hover { background: #f5f6f8; border-color: #d1d5db; }
+
+  /* RESULTS */
+  .results-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 2rem; max-width: 680px; margin: 0 auto; display: none; text-align: center; }
+  .results-card.active { display: block; }
+
+  .results-score { font-size: 64px; font-weight: 700; color: var(--blue); line-height: 1; margin-bottom: 0.25rem; }
+  .results-label { font-size: 16px; color: #6b7280; font-weight: 300; margin-bottom: 0.5rem; }
+  .results-time { font-size: 14px; color: #9ca3af; font-weight: 300; margin-bottom: 1.5rem; }
+  .results-perfect { font-size: 20px; font-weight: 700; color: var(--green); margin-bottom: 1.5rem; }
+
+  .results-wrong { text-align: left; margin-bottom: 1.5rem; }
+  .results-wrong h3 { font-size: 13px; font-weight: 700; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.75rem; }
+  .wrong-list { list-style: none; display: flex; flex-direction: column; gap: 6px; max-height: 320px; overflow-y: auto; padding-right: 4px; }
+  .wrong-list li { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 300; flex-wrap: wrap; }
+  .wrong-list li .q { font-weight: 700; color: #111827; min-width: 90px; }
+  .wrong-list li .your-ans { color: #dc2626; }
+  .wrong-list li .not-ans { color: #9ca3af; font-style: italic; }
+
+  .results-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+  .results-btn { flex: 1; min-width: 140px; padding: 12px 16px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 700; border-radius: 6px; cursor: pointer; transition: background 0.12s, border-color 0.12s; text-transform: uppercase; letter-spacing: 0.4px; }
+  .results-btn.primary { background: var(--blue); border: 1.5px solid var(--blue); color: #fff; }
+  .results-btn.primary:hover { background: var(--blue-dark); border-color: var(--blue-dark); }
+  .results-btn.secondary { background: #fff; border: 1.5px solid #e5e7eb; color: #374151; }
+  .results-btn.secondary:hover { background: #f5f6f8; border-color: #d1d5db; }
+  .results-btn.green-btn { background: var(--green); border: 1.5px solid var(--green); color: #fff; }
+  .results-btn.green-btn:hover { background: var(--green-dark); border-color: var(--green-dark); }
+
+  /* NUMBER BONDS coming soon */
+  .coming-soon { text-align: center; padding: 4rem 2rem; color: #9ca3af; }
+  .coming-soon p { font-size: 17px; font-weight: 300; }
+
+  /* FOOTER */
+  .om-footer { background: #0f1120; display: flex; justify-content: space-between; align-items: center; padding: 0.85rem 2rem; font-size: 13px; color: #6b7280; margin-top: 1px; font-weight: 300; flex-wrap: wrap; gap: 8px; }
+  .om-footer a { color: #6b7280; text-decoration: none; margin-left: 1.25rem; font-weight: 500; }
+  .om-footer a:hover { color: #111827; }
+
+  /* TABLET */
+  @media (max-width: 1100px) {
+    .om-nav-links { display: none; }
+    .om-nav-hamburger { display: flex; }
+    .om-hero h1 { font-size: 34px; }
+  }
+
+  /* MOBILE */
+  @media (max-width: 600px) {
+    .om-hero { padding: 3rem 1.5rem 2.5rem; }
+    .om-hero h1 { font-size: 28px; }
+    .om-hero p { font-size: 15px; }
+    .om-body { padding: 2rem 1.25rem 3rem; }
+    .setup-card, .quiz-card, .results-card { padding: 1.25rem; }
+    .quiz-question { font-size: 28px; }
+    .results-score { font-size: 48px; }
+    .results-actions { flex-direction: column; }
+    .results-btn { min-width: 0; width: 100%; }
+    .om-footer { flex-direction: column; text-align: center; }
+    .om-footer a { margin-left: 0.75rem; }
+    .om-footer div { display: flex; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="om-nav" aria-label="Main navigation">
+    <a href="/" class="om-logo" aria-label="Operation Maths home">
+      <div class="om-logo-icon" aria-hidden="true">
+        <span style="color:#1c75bc">+</span>
+        <span style="color:#f7941e">−</span>
+        <span style="color:#009444">×</span>
+        <span style="color:#800080">÷</span>
+      </div>
+      <div class="om-logo-text"><strong>Operation</strong>Maths</div>
+    </a>
+    <div class="om-nav-links">
+      <div class="om-nav-dropdown">
+        <button class="om-dropdown-toggle">Worksheets ▾</button>
+        <div class="om-dropdown-menu">
+          <a href="/worksheets/number" style="border-left-color:var(--green)">Number</a>
+          <a href="/worksheets/shape" style="border-left-color:var(--blue)">Shape</a>
+          <a href="/worksheets/algebra" style="border-left-color:var(--purple)">Algebra</a>
+          <a href="/worksheets/formulae" style="border-left-color:var(--orange)">Formulae</a>
+          <a href="/worksheets/times-tables" style="border-left-color:var(--blue)">Times tables</a>
+          <a href="/worksheets/support-sheets" style="border-left-color:var(--green)">Support sheets</a>
+        </div>
+      </div>
+      <a href="/maths-sats-papers">Maths SATs papers</a>
+      <a href="/books">Books</a>
+      <div class="om-nav-dropdown">
+        <button class="om-dropdown-toggle active" onclick="window.location='/online-maths-tests/'">Online maths tests ▾</button>
+        <div class="om-dropdown-menu" style="min-width:180px;">
+          <a href="/online-maths-tests/#times-tables" style="border-left-color:var(--blue)">Times tables</a>
+          <a href="/online-maths-tests/#number-bonds" style="border-left-color:var(--green)">Number bonds</a>
+          <a href="/online-maths-tests/#metric-conversions" style="border-left-color:var(--orange)">Metric conversions</a>
+        </div>
+      </div>
+      <a href="/sats-course" class="om-nav-cta">SATs course</a>
+    </div>
+    <div class="om-nav-hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+  <nav class="om-nav-drawer" id="nav-drawer" aria-label="Mobile navigation">
+    <div class="om-drawer-section">
+      <div class="om-drawer-section-title" onclick="document.getElementById('worksheets-sub').classList.toggle('open')">Worksheets <span>▾</span></div>
+      <div class="om-drawer-sub" id="worksheets-sub">
+        <a href="/worksheets/number" style="border-left-color:#009444">Number</a>
+        <a href="/worksheets/shape" style="border-left-color:#1c75bc">Shape</a>
+        <a href="/worksheets/algebra" style="border-left-color:#800080">Algebra</a>
+        <a href="/worksheets/formulae" style="border-left-color:#f7941e">Formulae</a>
+        <a href="/worksheets/times-tables" style="border-left-color:#1c75bc">Times tables</a>
+        <a href="/worksheets/support-sheets" style="border-left-color:#009444">Support sheets</a>
+      </div>
+    </div>
+    <a href="/maths-sats-papers">Maths SATs papers</a>
+    <a href="/books">Books</a>
+    <div class="om-drawer-section">
+      <div class="om-drawer-section-title" onclick="document.getElementById('tests-sub').classList.toggle('open')">Online maths tests <span>▾</span></div>
+      <div class="om-drawer-sub" id="tests-sub">
+        <a href="/online-maths-tests/#times-tables" style="border-left-color:#1c75bc">Times tables</a>
+        <a href="/online-maths-tests/#number-bonds" style="border-left-color:#009444">Number bonds</a>
+        <a href="/online-maths-tests/#metric-conversions" style="border-left-color:#f7941e">Metric conversions</a>
+      </div>
+    </div>
+    <a href="/sats-course">SATs course</a>
+  </nav>
+</header>
+
+<div class="om-hero">
+  <h1>Online <em>maths tests</em></h1>
+  <p>Choose a test below, pick your settings and go.<br><span style="font-size:15px">One question at a time – results at the end.</span></p>
+  <div class="test-tabs">
+    <button class="test-tab active" data-target="times-tables">Times tables</button>
+    <button class="test-tab" data-target="number-bonds">Number bonds</button>
+    <button class="test-tab" data-target="metric-conversions">Metric conversions</button>
+  </div>
+</div>
+
+<main>
+  <div class="om-body">
+
+    <!-- TIMES TABLES PANEL -->
+    <div class="test-panel active" id="panel-times-tables">
+
+      <!-- SETUP -->
+      <div class="setup-card" id="tt-setup">
+
+        <div class="setup-section">
+          <span class="setup-section-title">Operation</span>
+          <div class="option-row">
+            <button class="option-btn blue-btn selected" data-op="times">Times tables (×)</button>
+            <button class="option-btn blue-btn" data-op="division">Division (÷)</button>
+            <button class="option-btn blue-btn" data-op="mixed">Mixed (× and ÷)</button>
+          </div>
+        </div>
+
+        <div class="setup-section">
+          <div class="table-grid">
+            <div style="width:100%"><button class="table-btn all-btn" data-table="all" id="all-btn">ALL × 2 to × 12</button></div>
+            <button class="table-btn" data-table="2" data-n="2">× 2</button>
+            <button class="table-btn" data-table="3" data-n="3">× 3</button>
+            <button class="table-btn" data-table="4" data-n="4">× 4</button>
+            <button class="table-btn" data-table="5" data-n="5">× 5</button>
+            <button class="table-btn" data-table="6" data-n="6">× 6</button>
+            <button class="table-btn" data-table="7" data-n="7">× 7</button>
+            <button class="table-btn" data-table="8" data-n="8">× 8</button>
+            <button class="table-btn" data-table="9" data-n="9">× 9</button>
+            <button class="table-btn" data-table="10" data-n="10">× 10</button>
+            <button class="table-btn" data-table="11" data-n="11">× 11</button>
+            <button class="table-btn" data-table="12" data-n="12">× 12</button>
+          </div>
+        </div>
+
+        <div class="setup-section">
+          <span class="setup-section-title">Questions</span>
+          <div class="option-row">
+            <button class="option-btn green-btn" data-qcount="20">Quick test (20 questions)</button>
+            <button class="option-btn green-btn" data-qcount="60">Full test (60 questions)</button>
+          </div>
+        </div>
+
+        <div class="setup-section">
+          <span class="setup-section-title">Timing</span>
+          <div class="option-row">
+            <button class="option-btn purple-btn" data-timed="false">Untimed</button>
+            <button class="option-btn purple-btn" data-timed="true">Timed</button>
+          </div>
+          <div class="time-options" id="time-options">
+            <span class="setup-section-title" style="margin-top:0.75rem;display:block">Time limit</span>
+            <div class="option-row">
+              <button class="option-btn purple-btn" data-timelimit="120">2 minutes</button>
+              <button class="option-btn purple-btn" data-timelimit="300">5 minutes</button>
+              <button class="option-btn purple-btn" data-timelimit="600">10 minutes</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="setup-section">
+          <button class="start-btn" id="tt-start-btn" disabled>Start test</button>
+        </div>
+
+      </div>
+
+      <!-- QUIZ -->
+      <div class="quiz-card" id="tt-quiz">
+        <div class="quiz-meta">
+          <span class="quiz-progress" id="tt-progress">Question 1 of 20</span>
+          <span class="quiz-timer" id="tt-timer" style="display:none"></span>
+        </div>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="tt-progress-bar" style="width:0%"></div>
+        </div>
+        <div class="quiz-question" id="tt-question">6 × 7 = ?</div>
+        <div class="quiz-input-wrap">
+          <input class="quiz-input" id="tt-answer" type="text" inputmode="numeric" autocomplete="off" placeholder="?" pattern="[0-9]*">
+        </div>
+        <p class="quiz-hint">Type your answer and press Enter to continue</p>
+        <button class="quiz-next-btn" id="tt-next-btn">Next question →</button>
+        <button class="quiz-menu-btn" id="tt-quiz-menu-btn">← Menu</button>
+      </div>
+
+      <!-- RESULTS -->
+      <div class="results-card" id="tt-results">
+        <div class="results-score" id="tt-score">17/20</div>
+        <div class="results-label">correct answers</div>
+        <div class="results-time" id="tt-time-taken"></div>
+        <div class="results-perfect" id="tt-perfect" style="display:none">🎉 Full marks! Brilliant work!</div>
+        <div class="results-wrong" id="tt-wrong-wrap" style="display:none">
+          <h3>Incorrect or unanswered questions</h3>
+          <ul class="wrong-list" id="tt-wrong-list"></ul>
+        </div>
+        <div class="results-actions" id="tt-actions"></div>
+      </div>
+
+    </div>
+
+    <!-- NUMBER BONDS PANEL -->
+    <div class="test-panel" id="panel-number-bonds">
+      <div class="coming-soon">
+        <p>Number bonds test — coming soon!</p>
+      </div>
+    </div>
+
+    <!-- METRIC CONVERSIONS PANEL -->
+    <div class="test-panel" id="panel-metric-conversions">
+      <div class="coming-soon">
+        <p>Metric conversions test — coming soon!</p>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="om-footer">
+    <span>© 2026 Operation Maths. All rights reserved.</span>
+    <div>
+      <a href="https://www.facebook.com/OperationMaths/" target="_blank" rel="noopener" class="om-footer-fb">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Facebook"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.268h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+        Facebook
+      </a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // NAV
+  document.querySelector('.om-nav-hamburger').addEventListener('click', function() {
+    document.getElementById('nav-drawer').classList.toggle('open');
+  });
+
+  // ── STATE — declared first so resetSetup and activateTab can reference it ──
+  const state = {
+    tables: new Set(),
+    op: null,
+    qcount: null,
+    timed: null,
+    timelimit: null,
+    questions: [],
+    current: 0,
+    userAnswers: [],
+    timerInterval: null,
+    elapsed: 0,
+    remaining: 0,
+    wrongOnly: false,
+  };
+
+  let selTables = new Set();
+  let selOp = null, selCount = null, selTimed = null, selTime = null;
+
+  // ── RESET SETUP ───────────────────────────────────────────────────────────
+  function resetSetup() {
+    clearInterval(state.timerInterval);
+    document.getElementById('tt-quiz').classList.remove('active');
+    document.getElementById('tt-results').classList.remove('active');
+    document.getElementById('tt-setup').style.display = '';
+
+    // Clear all selections
+    selTables.clear();
+    selOp = null;
+    selCount = null;
+    selTimed = null;
+    selTime = null;
+
+    document.querySelectorAll('.table-btn').forEach(b => b.classList.remove('selected'));
+    document.querySelectorAll('[data-op]').forEach(b => b.classList.remove('selected'));
+    document.querySelector('[data-op="times"]').classList.add('selected');
+    selOp = 'times';
+    document.querySelectorAll('[data-qcount]').forEach(b => b.classList.remove('selected'));
+    document.querySelectorAll('[data-timed]').forEach(b => b.classList.remove('selected'));
+    document.querySelectorAll('[data-timelimit]').forEach(b => b.classList.remove('selected'));
+    document.getElementById('time-options').classList.remove('visible');
+    updateTableLabels('times');
+    updateStartBtn();
+  }
+
+  // HASH-BASED TAB ROUTING
+  function activateTab(target) {
+    document.querySelectorAll('.test-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.test-panel').forEach(p => p.classList.remove('active'));
+    const tab = document.querySelector('.test-tab[data-target="' + target + '"]');
+    const panel = document.getElementById('panel-' + target);
+    if (tab) tab.classList.add('active');
+    if (panel) panel.classList.add('active');
+    resetSetup();
+  }
+
+  // TEST TABS — update hash on click
+  document.querySelectorAll('.test-tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+      const target = this.dataset.target;
+      history.pushState(null, '', '/online-maths-tests/#' + target);
+      activateTab(target);
+    });
+  });
+
+  // On load — read hash and activate correct tab, default to times-tables
+  (function() {
+    const hash = window.location.hash.replace('#', '') || 'times-tables';
+    const valid = ['times-tables', 'number-bonds', 'metric-conversions'];
+    activateTab(valid.includes(hash) ? hash : 'times-tables');
+  })();
+
+  // Handle browser back/forward
+  window.addEventListener('popstate', function() {
+    const hash = window.location.hash.replace('#', '') || 'times-tables';
+    activateTab(hash);
+  });
+
+  // ── TIMES TABLES QUIZ ENGINE ──────────────────────────────────────────────
+
+  // Pre-select times tables operation on load
+
+  function updateStartBtn() {
+    const timedOk = selTimed === false || (selTimed === true && selTime !== null);
+    document.getElementById('tt-start-btn').disabled = !(selTables.size > 0 && selOp !== null && selCount !== null && selTimed !== null && timedOk);
+  }
+
+  // Update table button labels based on chosen operation
+  function updateTableLabels(op) {
+    const allBtn = document.getElementById('all-btn');
+    if (op === 'times') {
+      allBtn.textContent = 'ALL × 2 to × 12';
+      document.querySelectorAll('.table-btn[data-n]').forEach(b => {
+        b.textContent = '× ' + b.dataset.n;
+      });
+    } else if (op === 'division') {
+      allBtn.textContent = 'ALL ÷ 2 to ÷ 12';
+      document.querySelectorAll('.table-btn[data-n]').forEach(b => {
+        b.textContent = '÷ ' + b.dataset.n;
+      });
+    } else {
+      allBtn.textContent = 'ALL × and ÷ 2 to × and ÷ 12';
+      document.querySelectorAll('.table-btn[data-n]').forEach(b => {
+        b.textContent = '× and ÷ ' + b.dataset.n;
+      });
+    }
+  }
+
+  // Pre-select times tables operation on load
+  selOp = 'times';
+
+  // Operation selector
+  document.querySelectorAll('[data-op]').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('[data-op]').forEach(b => b.classList.remove('selected'));
+      this.classList.add('selected');
+      selOp = this.dataset.op;
+      updateTableLabels(selOp);
+      updateStartBtn();
+    });
+  });
+
+  // Table buttons — multi-select, All deselects individuals and vice versa
+  document.querySelectorAll('.table-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const val = this.dataset.table;
+      if (val === 'all') {
+        if (this.classList.contains('selected')) {
+          this.classList.remove('selected');
+          selTables.clear();
+        } else {
+          document.querySelectorAll('.table-btn').forEach(b => b.classList.remove('selected'));
+          this.classList.add('selected');
+          selTables.clear();
+          selTables.add('all');
+        }
+      } else {
+        const allBtn = document.querySelector('.all-btn');
+        if (selTables.has('all')) {
+          allBtn.classList.remove('selected');
+          selTables.clear();
+        }
+        const n = parseInt(val);
+        if (this.classList.contains('selected')) {
+          this.classList.remove('selected');
+          selTables.delete(n);
+        } else {
+          this.classList.add('selected');
+          selTables.add(n);
+        }
+        // Auto-switch to All if all 11 individual tables are selected
+        if (selTables.size === 11) {
+          document.querySelectorAll('.table-btn').forEach(b => b.classList.remove('selected'));
+          allBtn.classList.add('selected');
+          selTables.clear();
+          selTables.add('all');
+        }
+      }
+      updateStartBtn();
+    });
+  });
+
+  // Question count
+  document.querySelectorAll('[data-qcount]').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('[data-qcount]').forEach(b => b.classList.remove('selected'));
+      this.classList.add('selected');
+      selCount = parseInt(this.dataset.qcount);
+      updateStartBtn();
+    });
+  });
+
+  // Timed toggle
+  document.querySelectorAll('[data-timed]').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('[data-timed]').forEach(b => b.classList.remove('selected'));
+      this.classList.add('selected');
+      selTimed = this.dataset.timed === 'true';
+      const opts = document.getElementById('time-options');
+      if (selTimed) {
+        opts.classList.add('visible');
+      } else {
+        opts.classList.remove('visible');
+        selTime = null;
+        document.querySelectorAll('[data-timelimit]').forEach(b => b.classList.remove('selected'));
+      }
+      updateStartBtn();
+    });
+  });
+
+  // Time limit
+  document.querySelectorAll('[data-timelimit]').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('[data-timelimit]').forEach(b => b.classList.remove('selected'));
+      this.classList.add('selected');
+      selTime = parseInt(this.dataset.timelimit);
+      updateStartBtn();
+    });
+  });
+
+  // Generate questions — supports times, division and mixed
+  // For times tables, each fact appears in both orders (a×b and b×a)
+  function generateQuestions(tables, op, count) {
+    const tableList = tables.has('all')
+      ? [2,3,4,5,6,7,8,9,10,11,12]
+      : [...tables].sort((a,b) => a - b);
+
+    const timesPool = [], divPool = [];
+    for (const t of tableList) {
+      for (let m = 1; m <= 12; m++) {
+        // Add both orders for times tables
+        timesPool.push({ type: 'times', a: t, b: m, answer: t * m });
+        if (m !== t) timesPool.push({ type: 'times', a: m, b: t, answer: m * t });
+        divPool.push({ type: 'div', a: t * m, b: t, answer: m });
+      }
+    }
+
+    let pool;
+    if (op === 'times') pool = timesPool;
+    else if (op === 'division') pool = divPool;
+    else pool = [...timesPool, ...divPool];
+
+    const qs = [];
+    while (qs.length < count) {
+      qs.push(...[...pool].sort(() => Math.random() - 0.5));
+    }
+    return qs.slice(0, count);
+  }
+
+  // Format time
+  function formatTime(secs) {
+    const m = Math.floor(secs / 60).toString().padStart(2, '0');
+    const s = (secs % 60).toString().padStart(2, '0');
+    return m + ':' + s;
+  }
+
+  // Format a question for display and results
+  function questionLabel(q) {
+    if (q.type === 'div') return q.a + ' ÷ ' + q.b + ' = ?';
+    return q.a + ' × ' + q.b + ' = ?';
+  }
+  function questionResultLabel(q) {
+    if (q.type === 'div') return q.a + ' ÷ ' + q.b + ' = ' + q.answer;
+    return q.a + ' × ' + q.b + ' = ' + q.answer;
+  }
+
+  // Show question
+  function showQuestion() {
+    const q = state.questions[state.current];
+    const total = state.questions.length;
+    document.getElementById('tt-progress').textContent = 'Question ' + (state.current + 1) + ' of ' + total;
+    document.getElementById('tt-progress-bar').style.width = (state.current / total * 100) + '%';
+    document.getElementById('tt-question').textContent = questionLabel(q);
+    const input = document.getElementById('tt-answer');
+    input.value = '';
+    input.focus();
+  }
+
+  // Start test
+  document.getElementById('tt-start-btn').addEventListener('click', function() {
+    state.tables = new Set(selTables);
+    state.op = selOp;
+    state.qcount = selCount;
+    state.timed = selTimed;
+    state.timelimit = selTime;
+    state.wrongOnly = false;
+    startTest(generateQuestions(selTables, selOp, selCount));
+  });
+
+  function startTest(questions) {
+    state.questions = questions;
+    state.current = 0;
+    state.userAnswers = [];
+    state.elapsed = 0;
+
+    document.getElementById('tt-setup').style.display = 'none';
+    document.getElementById('tt-results').classList.remove('active');
+    document.getElementById('tt-quiz').classList.add('active');
+
+    const timerEl = document.getElementById('tt-timer');
+
+    if (state.timed) {
+      state.remaining = state.timelimit;
+      timerEl.style.display = 'block';
+      timerEl.textContent = formatTime(state.remaining);
+      timerEl.className = 'quiz-timer';
+      state.timerInterval = setInterval(() => {
+        state.remaining--;
+        timerEl.textContent = formatTime(state.remaining);
+        if (state.remaining <= 30) timerEl.className = 'quiz-timer warning';
+        if (state.remaining <= 10) timerEl.className = 'quiz-timer danger';
+        if (state.remaining <= 0) {
+          clearInterval(state.timerInterval);
+          finishTest(true);
+        }
+      }, 1000);
+    } else {
+      timerEl.style.display = 'none';
+      state.timerInterval = setInterval(() => { state.elapsed++; }, 1000);
+    }
+
+    showQuestion();
+  }
+
+  function submitAnswer() {
+    const input = document.getElementById('tt-answer');
+    const raw = input.value.trim();
+    if (raw === '') return;
+    const given = parseInt(raw, 10);
+    if (isNaN(given)) return;
+    const q = state.questions[state.current];
+    state.userAnswers.push({
+      q: q,
+      correct: q.answer,
+      given: given,
+      isCorrect: given === q.answer,
+      unanswered: false
+    });
+    state.current++;
+    if (state.current >= state.questions.length) {
+      finishTest(false);
+    } else {
+      showQuestion();
+    }
+  }
+
+  document.getElementById('tt-next-btn').addEventListener('click', submitAnswer);
+  document.getElementById('tt-answer').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') { e.preventDefault(); submitAnswer(); return; }
+    // Allow: backspace, delete, tab, arrows, home, end
+    const allowed = ['Backspace','Delete','Tab','ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home','End'];
+    if (allowed.includes(e.key)) return;
+    // Allow digits only (no letters, symbols etc.)
+    if (!/^\d$/.test(e.key)) e.preventDefault();
+  });
+
+  function finishTest(timedOut) {
+    clearInterval(state.timerInterval);
+
+    // If timed out, mark remaining as unanswered (not retried)
+    if (timedOut) {
+      for (let i = state.current; i < state.questions.length; i++) {
+        const q = state.questions[i];
+        state.userAnswers.push({ q: q, correct: q.answer, given: null, isCorrect: false, unanswered: true });
+      }
+    }
+
+    document.getElementById('tt-quiz').classList.remove('active');
+
+    const correct = state.userAnswers.filter(a => a.isCorrect).length;
+    const total = state.userAnswers.length;
+    // For retry: only questions answered incorrectly (not unanswered/timed-out)
+    const answeredWrong = state.userAnswers.filter(a => !a.isCorrect && !a.unanswered);
+    const allWrong = state.userAnswers.filter(a => !a.isCorrect);
+    const perfect = correct === total;
+
+    document.getElementById('tt-score').textContent = correct + '/' + total;
+
+    const timeEl = document.getElementById('tt-time-taken');
+    if (state.timed) {
+      const used = state.timelimit - state.remaining;
+      timeEl.textContent = timedOut ? 'Time ran out' : 'Time taken: ' + formatTime(used);
+    } else {
+      timeEl.textContent = 'Time taken: ' + formatTime(state.elapsed);
+    }
+
+    const perfectEl = document.getElementById('tt-perfect');
+    const wrongWrap = document.getElementById('tt-wrong-wrap');
+    const wrongList = document.getElementById('tt-wrong-list');
+    const actionsEl = document.getElementById('tt-actions');
+
+    if (perfect) {
+      perfectEl.style.display = 'block';
+      wrongWrap.style.display = 'none';
+      actionsEl.innerHTML = `
+        <button class="results-btn secondary" onclick="resetSetup()">← Menu</button>
+        <button class="results-btn primary" onclick="retakeSame()">Try again</button>
+      `;
+    } else {
+      perfectEl.style.display = 'none';
+      wrongWrap.style.display = 'block';
+      wrongList.innerHTML = allWrong.map(a =>
+        `<li>
+          <span class="q">${questionResultLabel(a.q)}</span>
+          ${a.unanswered
+            ? `<span class="not-ans">Not answered</span>`
+            : `<span class="your-ans">You answered: ${a.given}</span>`}
+        </li>`
+      ).join('');
+
+      // Only show "Retry wrong answers" if there are answered-wrong questions
+      const retryBtn = answeredWrong.length > 0
+        ? `<button class="results-btn green-btn" onclick="retakeWrong()">Retry wrong answers</button>`
+        : '';
+
+      actionsEl.innerHTML = `
+        <button class="results-btn secondary" onclick="resetSetup()">← Menu</button>
+        <button class="results-btn primary" onclick="retakeSame()">Try again</button>
+        ${retryBtn}
+      `;
+    }
+
+    document.getElementById('tt-results').classList.add('active');
+  }
+
+  function retakeSame() {
+    document.getElementById('tt-results').classList.remove('active');
+    startTest(generateQuestions(state.tables, state.op, state.qcount));
+  }
+
+  function retakeWrong() {
+    const answeredWrong = state.userAnswers.filter(a => !a.isCorrect && !a.unanswered);
+    const wrongQs = answeredWrong.map(a => a.q);
+    const count = Math.min(wrongQs.length, state.qcount);
+    const filled = [];
+    while (filled.length < count) {
+      filled.push(...[...wrongQs].sort(() => Math.random() - 0.5));
+    }
+    document.getElementById('tt-results').classList.remove('active');
+    state.wrongOnly = true;
+    state.timed = false;
+    startTest(filled.slice(0, count));
+  }
+
+  // Menu button during quiz
+  document.getElementById('tt-quiz-menu-btn').addEventListener('click', resetSetup);
+</script>
+</body>
+</html>
