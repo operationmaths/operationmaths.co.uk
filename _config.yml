@@ -1,0 +1,46 @@
+title: Operation Maths
+description: Maths worksheets, books and tuition for primary and secondary students.
+url: "https://www.operationmaths.co.uk"
+baseurl: ""
+
+# Build
+timezone: Europe/London
+markdown: kramdown
+permalink: /:name/
+
+# Collections
+collections:
+  worksheets:
+    output: false   # worksheets render via topic pages, not as standalone URLs
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "worksheets"
+    values:
+      layout: null
+
+# Plugins
+plugins:
+  - jekyll-sitemap
+
+# Sitemap
+# jekyll-sitemap reads url + baseurl automatically
+
+# Sass
+sass:
+  style: compressed
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+  - vendor

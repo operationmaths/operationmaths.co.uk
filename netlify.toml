@@ -1,0 +1,21 @@
+[build]
+  command   = "jekyll build"
+  publish   = "_site"
+
+[build.environment]
+  RUBY_VERSION = "3.2.0"
+  JEKYLL_ENV   = "production"
+
+# Redirect bare domain → www (add after DNS cutover)
+# [[redirects]]
+#   from   = "https://operationmaths.co.uk/*"
+#   to     = "https://www.operationmaths.co.uk/:splat"
+#   status = 301
+#   force  = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options        = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy        = "strict-origin-when-cross-origin"
