@@ -1,0 +1,138 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Netlify Identity
+local_backend: false
+
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+# ─────────────────────────────────────────────
+# COLLECTIONS
+# ─────────────────────────────────────────────
+
+collections:
+
+  # ── WORKSHEETS ──────────────────────────────
+  - name: "worksheets"
+    label: "Worksheets"
+    label_singular: "Worksheet"
+    folder: "_worksheets"
+    create: true
+    slug: "{{topic}}-{{slug}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        hint: "e.g. Place Value — Hundreds, Tens and Ones"
+
+      - label: "Topic"
+        name: "topic"
+        widget: "select"
+        options:
+          - { label: "Number",        value: "number" }
+          - { label: "Shape",         value: "shape" }
+          - { label: "Algebra",       value: "algebra" }
+          - { label: "Formulae",      value: "formulae" }
+          - { label: "Times Tables",  value: "times-tables" }
+          - { label: "Support Sheets", value: "support-sheets" }
+        hint: "Which topic page should this worksheet appear on?"
+
+      - label: "Section"
+        name: "section"
+        widget: "string"
+        hint: "Group heading, e.g. 'Place Value' or 'Fractions'. A new name creates a new section automatically."
+
+      - label: "Order within section"
+        name: "order"
+        widget: "number"
+        default: 1
+        value_type: "int"
+        hint: "Lower numbers appear first. Worksheets in the same section are sorted by this value."
+
+      - label: "Description"
+        name: "description"
+        widget: "text"
+        required: false
+        hint: "Short description shown on the card (1–2 sentences)."
+
+      - label: "Free sample PDF link"
+        name: "free_pdf"
+        widget: "string"
+        required: false
+        hint: "Path to the PDF, e.g. /assets/pdfs/my-worksheet.pdf — opens in the same window."
+
+      - label: "Full pack TES URL"
+        name: "tes_url"
+        widget: "string"
+        required: false
+        hint: "Full URL of the TES listing for the paid pack."
+
+  # ── PAGES (editable front matter) ───────────
+  - name: "pages"
+    label: "Pages"
+    files:
+
+      - label: "Homepage"
+        name: "index"
+        file: "_pages/index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Meta description", name: "description", widget: "text" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - label: "About"
+        name: "about"
+        file: "_pages/about.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Meta description", name: "description", widget: "text" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - label: "Books"
+        name: "books"
+        file: "_pages/books.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Meta description", name: "description", widget: "text" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - label: "Contact"
+        name: "contact"
+        file: "_pages/contact.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Meta description", name: "description", widget: "text" }
+
+      - label: "Maths SATs Papers"
+        name: "maths-sats-papers"
+        file: "_pages/maths-sats-papers.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Meta description", name: "description", widget: "text" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - label: "Online Maths Tests"
+        name: "online-maths-tests"
+        file: "_pages/online-maths-tests.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Meta description", name: "description", widget: "text" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - label: "SATs Course"
+        name: "sats-course"
+        file: "_pages/sats-course.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Meta description", name: "description", widget: "text" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - label: "Worksheets Overview"
+        name: "worksheets-overview"
+        file: "_pages/worksheets-overview.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Meta description", name: "description", widget: "text" }
+          - { label: "Body", name: "body", widget: "markdown" }
