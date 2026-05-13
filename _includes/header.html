@@ -1,48 +1,64 @@
-<header class="site-header">
-  <div class="header-inner">
-
-    <a href="/" class="site-logo" aria-label="{{ site.title }} home">
-      <img src="/assets/images/logo.png" alt="{{ site.title }} logo" width="180" height="auto">
+<header>
+  <nav class="om-nav" aria-label="Main navigation">
+    <a href="/" class="om-logo" aria-label="Operation Maths home">
+      <div class="om-logo-icon" aria-hidden="true">
+        <span style="color:#1c75bc">+</span>
+        <span style="color:#f7941e">−</span>
+        <span style="color:#009444">×</span>
+        <span style="color:#800080">÷</span>
+      </div>
+      <div class="om-logo-text"><strong>Operation</strong>Maths</div>
     </a>
-
-    <!-- Desktop nav -->
-    <nav class="site-nav" aria-label="Main navigation">
-      <ul class="nav-list">
-        <li><a href="/"                      class="nav-link{% if page.url == '/' %} nav-link--active{% endif %}">Home</a></li>
-        <li><a href="/worksheets-overview/"  class="nav-link{% if page.url contains 'worksheets' %} nav-link--active{% endif %}">Worksheets</a></li>
-        <li><a href="/books/"                class="nav-link{% if page.url == '/books/' %} nav-link--active{% endif %}">Books</a></li>
-        <li><a href="/maths-sats-papers/"    class="nav-link{% if page.url == '/maths-sats-papers/' %} nav-link--active{% endif %}">SATs Papers</a></li>
-        <li><a href="/online-maths-tests/"   class="nav-link{% if page.url == '/online-maths-tests/' %} nav-link--active{% endif %}">Online Tests</a></li>
-        <li><a href="/about/"                class="nav-link{% if page.url == '/about/' %} nav-link--active{% endif %}">About</a></li>
-        <li><a href="/contact/"              class="nav-link{% if page.url == '/contact/' %} nav-link--active{% endif %}">Contact</a></li>
-        <li><a href="/sats-course/" class="nav-btn nav-btn--filled">SATs Course</a></li>
-      </ul>
-    </nav>
-
-    <!-- Hamburger toggle (mobile) -->
-    <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
-      <span class="hamburger__bar"></span>
-      <span class="hamburger__bar"></span>
-      <span class="hamburger__bar"></span>
-    </button>
-
-  </div><!-- .header-inner -->
-</header>
-
-<!-- Mobile drawer -->
-<div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
-  <nav aria-label="Mobile navigation">
-    <ul class="drawer-list">
-      <li><a href="/"                      class="drawer-link{% if page.url == '/' %} drawer-link--active{% endif %}">Home</a></li>
-      <li><a href="/worksheets-overview/"  class="drawer-link{% if page.url contains 'worksheets' %} drawer-link--active{% endif %}">Worksheets</a></li>
-      <li><a href="/books/"                class="drawer-link{% if page.url == '/books/' %} drawer-link--active{% endif %}">Books</a></li>
-      <li><a href="/maths-sats-papers/"    class="drawer-link{% if page.url == '/maths-sats-papers/' %} drawer-link--active{% endif %}">SATs Papers</a></li>
-      <li><a href="/online-maths-tests/"   class="drawer-link{% if page.url == '/online-maths-tests/' %} drawer-link--active{% endif %}">Online Tests</a></li>
-      <li><a href="/about/"                class="drawer-link{% if page.url == '/about/' %} drawer-link--active{% endif %}">About</a></li>
-      <li><a href="/contact/"              class="drawer-link{% if page.url == '/contact/' %} drawer-link--active{% endif %}">Contact</a></li>
-      <!-- SATs Course: always blue filled button in drawer -->
-      <li><a href="/sats-course/" class="drawer-btn drawer-btn--filled">SATs Course</a></li>
-    </ul>
+    <div class="om-nav-links">
+      <div class="om-nav-dropdown">
+        <button class="om-dropdown-toggle">Worksheets ▾</button>
+        <div class="om-dropdown-menu">
+          <a href="/worksheets-number/">Number</a>
+          <a href="/worksheets-shape/">Shape</a>
+          <a href="/worksheets-algebra/">Algebra</a>
+          <a href="/worksheets-formulae/">Formulae</a>
+          <a href="/worksheets-times-tables/">Times tables</a>
+          <a href="/worksheets-support-sheets/">Support sheets</a>
+        </div>
+      </div>
+      <a href="/maths-sats-papers/">Maths SATs papers</a>
+      <a href="/books/">Books</a>
+      <div class="om-nav-dropdown">
+        <button class="om-dropdown-toggle">Online maths tests ▾</button>
+        <div class="om-dropdown-menu">
+          <a href="/online-maths-tests/#times-tables">Times tables</a>
+          <a href="/online-maths-tests/#number-bonds">Number bonds</a>
+          <a href="/online-maths-tests/#metric-conversions">Metric conversions</a>
+        </div>
+      </div>
+      <a href="/sats-course/" class="om-nav-cta">SATs course</a>
+    </div>
+    <div class="om-nav-hamburger" onclick="document.getElementById('nav-drawer').classList.toggle('open')" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </div>
   </nav>
-</div>
-<div class="drawer-overlay" id="drawer-overlay"></div>
+  <nav class="om-nav-drawer" id="nav-drawer" aria-label="Mobile navigation">
+    <div class="om-drawer-section">
+      <div class="om-drawer-section-title" onclick="document.getElementById('worksheets-sub').classList.toggle('open')">Worksheets <span>▾</span></div>
+      <div class="om-drawer-sub" id="worksheets-sub">
+        <a href="/worksheets-number/">Number</a>
+        <a href="/worksheets-shape/">Shape</a>
+        <a href="/worksheets-algebra/">Algebra</a>
+        <a href="/worksheets-formulae/">Formulae</a>
+        <a href="/worksheets-times-tables/">Times tables</a>
+        <a href="/worksheets-support-sheets/">Support sheets</a>
+      </div>
+    </div>
+    <a href="/maths-sats-papers/">Maths SATs papers</a>
+    <a href="/books/">Books</a>
+    <div class="om-drawer-section">
+      <div class="om-drawer-section-title" onclick="document.getElementById('tests-sub').classList.toggle('open')">Online maths tests <span>▾</span></div>
+      <div class="om-drawer-sub" id="tests-sub">
+        <a href="/online-maths-tests/#times-tables">Times tables</a>
+        <a href="/online-maths-tests/#number-bonds">Number bonds</a>
+        <a href="/online-maths-tests/#metric-conversions">Metric conversions</a>
+      </div>
+    </div>
+    <a href="/sats-course/">SATs course</a>
+  </nav>
+</header>
