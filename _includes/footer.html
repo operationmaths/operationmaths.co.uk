@@ -1,31 +1,21 @@
-<footer class="site-footer">
-  <div class="footer-inner">
-
-    <div class="footer-brand">
-      <a href="/" aria-label="{{ site.title }} home">
-        <img src="/assets/images/logo.png" alt="{{ site.title }}" width="140" height="auto" loading="lazy">
+<footer>
+  <div class="om-footer">
+    <span>© {% assign year = 'now' | date: "%Y" %}{{ year }} Operation Maths. All rights reserved.</span>
+    <div>
+      <a href="https://www.facebook.com/OperationMaths/" target="_blank" rel="noopener" class="om-footer-fb">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Facebook"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.268h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+        Facebook
       </a>
-      <p class="footer-tagline">Maths worksheets, books and tuition for primary and secondary students.</p>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
     </div>
-
-    <nav class="footer-nav" aria-label="Footer navigation">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/worksheets-overview/">Worksheets</a></li>
-        <li><a href="/books/">Books</a></li>
-        <li><a href="/maths-sats-papers/">SATs Papers</a></li>
-        <li><a href="/online-maths-tests/">Online Tests</a></li>
-        <li><a href="/sats-course/">SATs Course</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/contact/">Contact</a></li>
-      </ul>
-    </nav>
-
-    <div class="footer-legal">
-      <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
-    </div>
-
-  </div><!-- .footer-inner -->
+  </div>
 </footer>
 
-<script src="/assets/js/main.js"></script>
+<script>
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.om-nav-dropdown')) {
+      document.querySelectorAll('.om-dropdown-menu').forEach(m => m.classList.remove('open'));
+    }
+  });
+</script>
