@@ -2,21 +2,9 @@
 layout: default
 ---
 
-<!--
-  worksheet-topic.html
-  =====================
-  Used by all worksheets-*.md topic pages.
-  Reads page.topic_key to filter site.worksheets, then:
-    1. Collects unique section names (preserving first-seen order).
-    2. Renders hero jump-to pills from those section names.
-    3. Groups worksheets under section headings, sorted by `order`.
-  No template edits needed when new sections are added via CMS.
--->
-
 {% assign topic_key = page.topic_key %}
 {% assign all_worksheets = site.worksheets | where: "topic", topic_key | sort: "order" %}
 
-<!-- Collect ordered unique sections -->
 {% assign sections = "" | split: "" %}
 {% for ws in all_worksheets %}
   {% unless sections contains ws.section %}
@@ -24,56 +12,92 @@ layout: default
   {% endunless %}
 {% endfor %}
 
-<!-- Hero -->
-<section class="topic-hero">
-  <div class="container">
-    <h1 class="topic-hero__title">{{ page.title }}</h1>
-    {% if page.hero_intro %}<p class="topic-hero__intro">{{ page.hero_intro }}</p>{% endif %}
+<!-- HERO -->
+<section class="om-hero" style="min-height:0; padding: 3rem 2rem 2rem;">
+  <h1>{{ page.title | remove: " Worksheets" }} <em>worksheets</em></h1>
+  {% if page.hero_intro %}<p style="color:#9ca3af; font-size:16px; font-weight:300; max-width:560px; margin: 0.5rem 0 0;">{{ page.hero_intro }}</p>{% endif %}
 
-    {% if sections.size > 0 %}
-    <div class="pill-nav" aria-label="Jump to section">
+  {% if sections.size > 0 %}
+  <nav class="om-hero-nav" aria-label="Jump to section">
+    <div class="om-hero-nav-grid">
       {% for section in sections %}
         {% assign anchor = section | slugify %}
-        <a href="#{{ anchor }}" class="pill">{{ section }}</a>
+        <a href="#{{ anchor }}">{{ section }}</a>
       {% endfor %}
     </div>
-    {% endif %}
-  </div>
+  </nav>
+  {% endif %}
 </section>
 
-<!-- Worksheet sections -->
-<div class="worksheets-body container">
+<!-- BODY -->
+<main class="worksheet-page">
+  <div class="om-body">
 
-  {% if all_worksheets.size == 0 %}
-    <p class="no-worksheets">No worksheets added yet. Add some via the CMS admin panel.</p>
-  {% else %}
-    {% for section in sections %}
-      {% assign anchor = section | slugify %}
-      {% assign section_worksheets = all_worksheets | where: "section", section %}
+    {% if all_worksheets.size == 0 %}
+      <p style="color:#6b7280; font-size:15px;">No worksheets added yet. Add some via the CMS.</p>
+    {% else %}
+      {% for section in sections %}
+        {% assign anchor = section | slugify %}
+        {% assign section_worksheets = all_worksheets | where: "section", section %}
 
-      <section class="worksheet-section" id="{{ anchor }}">
-        <h2 class="worksheet-section__title">{{ section }}</h2>
+        <h2 class="section-heading" id="{{ anchor }}">{{ section }}</h2>
+        <div class="worksheet-list">
 
-        <div class="worksheet-grid">
           {% for ws in section_worksheets %}
-          <article class="worksheet-card">
-            <h3 class="worksheet-card__title">{{ ws.title }}</h3>
-            {% if ws.description %}<p class="worksheet-card__desc">{{ ws.description }}</p>{% endif %}
+          <div class="worksheet-card">
 
-            <div class="worksheet-card__actions">
-              {% if ws.free_pdf %}
-                <a href="{{ ws.free_pdf }}" class="btn btn--secondary">Free sample PDF</a>
-              {% endif %}
-              {% if ws.tes_url %}
-                <a href="{{ ws.tes_url }}" class="btn btn--primary" target="_blank" rel="noopener">Buy full pack on TES</a>
+            <div class="wc-image {% if ws.orientation == 'portrait' %}portrait{% else %}landscape{% endif %}">
+              {% if ws.thumbnail %}
+                <img src="{{ ws.thumbnail }}" alt="{{ ws.title }}">
+              {% else %}
+                <div class="wc-image-placeholder">
+                  {% if ws.orientation == 'portrait' %}
+                  <svg width="40" height="56" viewBox="0 0 40 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="38" height="54" rx="2" stroke="#d1d5db" stroke-width="1.5"/>
+                    <rect x="5" y="7" width="14" height="2" rx="1" fill="#d1d5db"/>
+                    <rect x="5" y="13" width="30" height="2" rx="1" fill="#d1d5db"/>
+                    <rect x="5" y="19" width="30" height="2" rx="1" fill="#d1d5db"/>
+                    <rect x="5" y="25" width="30" height="2" rx="1" fill="#d1d5db"/>
+                    <rect x="5" y="31" width="30" height="2" rx="1" fill="#d1d5db"/>
+                    <rect x="5" y="37" width="22" height="2" rx="1" fill="#d1d5db"/>
+                  </svg>
+                  {% else %}
+                  <svg width="56" height="40" viewBox="0 0 56 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="54" height="38" rx="2" stroke="#d1d5db" stroke-width="1.5"/>
+                    <rect x="6" y="7" width="20" height="2" rx="1" fill="#d1d5db"/>
+                    <rect x="6" y="13" width="44" height="2" rx="1" fill="#d1d5db"/>
+                    <rect x="6" y="19" width="44" height="2" rx="1" fill="#d1d5db"/>
+                    <rect x="6" y="25" width="44" height="2" rx="1" fill="#d1d5db"/>
+                    <rect x="6" y="31" width="30" height="2" rx="1" fill="#d1d5db"/>
+                  </svg>
+                  {% endif %}
+                </div>
               {% endif %}
             </div>
-          </article>
+
+            <div class="wc-content">
+              <h3 class="wc-title">{{ ws.title }}</h3>
+              {% if ws.description %}<div class="wc-desc">{{ ws.description }}</div>{% endif %}
+            </div>
+
+            <div class="wc-actions">
+              {% if ws.free_pdf %}
+                <a href="{{ ws.free_pdf }}" class="btn btn-blue" download>Worksheet (A)</a>
+              {% endif %}
+              {% if ws.answers_pdf %}
+                <a href="{{ ws.answers_pdf }}" class="btn btn-green" download>Answers (A)</a>
+              {% endif %}
+              {% if ws.tes_url %}
+                <a href="{{ ws.tes_url }}" class="btn btn-orange" target="_blank" rel="noopener noreferrer">Full pack on TES ↗</a>
+              {% endif %}
+            </div>
+
+          </div>
           {% endfor %}
-        </div><!-- .worksheet-grid -->
 
-      </section><!-- .worksheet-section -->
-    {% endfor %}
-  {% endif %}
+        </div><!-- /.worksheet-list -->
+      {% endfor %}
+    {% endif %}
 
-</div><!-- .worksheets-body -->
+  </div><!-- /.om-body -->
+</main>
