@@ -48,14 +48,14 @@ body_class: page-home
       <p>Worksheets, SATs resources and maths books for primary and secondary students. Every worksheet topic includes 7 sheets, so there's always another chance to build confidence and fluency. Worksheet A is always free.</p>
     </div>
     <div class="om-hero-btns">
-      <a href="/worksheets" class="om-btn-green">Browse free worksheets</a>
+      <a href="/worksheets/" class="om-btn-green">Browse free worksheets</a>
       <a href="/sats-course" class="om-btn-dark-outline">SATs course →</a>
     </div>
   </section>
 
   <section aria-label="What's on Operation Maths">
     <div class="om-strip">
-      <a class="om-strip-item" style="--sc:var(--blue)" href="/worksheets">
+      <a class="om-strip-item" style="--sc:var(--blue)" href="/worksheets/">
         <div class="om-strip-title">Worksheets</div>
         <div class="om-strip-sub">Free worksheet A with every set</div>
       </a>
@@ -83,7 +83,7 @@ body_class: page-home
     <section aria-labelledby="latest-worksheets-heading">
       <div class="om-section-hd">
         <h2 id="latest-worksheets-heading">Latest worksheets</h2>
-        <a href="/worksheets">Browse all worksheets</a>
+        <a href="/worksheets/">Browse all worksheets</a>
       </div>
       <div class="om-latest">
         <article class="om-latest-card">
