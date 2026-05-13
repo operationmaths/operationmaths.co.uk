@@ -7,7 +7,7 @@ permalink: /online-maths-tests/
 
 <section class="om-hero" style="min-height:0; padding: 4rem 2rem 3.5rem;">
   <h1>Online <em>maths tests</em></h1>
-  <p>Choose a test below, pick your settings and go.<br><span style="font-size:15px">One question at a time – results at the end.</span></p>
+  <p>Choose a test below, pick your settings and go.<br>One question at a time – results at the end.</p>
   <div class="test-tabs">
     <button class="test-tab active" data-target="times-tables">Times tables</button>
     <button class="test-tab" data-target="number-bonds">Number bonds</button>
