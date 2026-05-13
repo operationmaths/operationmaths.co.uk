@@ -29,14 +29,16 @@ body { font-family: 'DM Sans', sans-serif; background: #f5f6f8; color: #111827; 
 .om-nav-cta:hover { background: #155f99 !important; }
 
 /* DROPDOWN */
-.om-nav-dropdown { position: relative; }
-.om-dropdown-menu { display: none; position: absolute; top: calc(100% + 10px); left: 0; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.10); min-width: 180px; padding: 6px; z-index: 200; }
+.om-nav-dropdown { position: relative; display: flex; align-items: center; }
+.om-dropdown-label { color: #374151; font-size: 15px; font-weight: 700; text-decoration: none; padding: 7px 4px 7px 10px; border-radius: 6px 0 0 6px; transition: background 0.12s; white-space: nowrap; }
+.om-dropdown-arrow { color: #374151; font-size: 13px; font-weight: 700; padding: 7px 8px 7px 4px; border-radius: 0 6px 6px 0; transition: background 0.12s; white-space: nowrap; cursor: pointer; background: none; border: none; font-family: 'DM Sans', sans-serif; line-height: 1; }
+.om-dropdown-label:hover, .om-nav-dropdown:hover .om-dropdown-label { background: #f3f4f6; }
+.om-dropdown-arrow:hover, .om-nav-dropdown:hover .om-dropdown-arrow { background: #f3f4f6; }
+.om-dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.10); min-width: 180px; padding: 6px; padding-top: 16px; z-index: 200; }
 .om-nav-dropdown:hover .om-dropdown-menu { display: block; }
 .om-dropdown-menu a { display: block; font-size: 14px; font-weight: 700; color: #374151; text-decoration: none; padding: 5px 12px 5px 8px; border-radius: 5px; white-space: nowrap; background: none; transition: background 0.12s; border-left: 3px solid transparent; margin-bottom: 7px; }
 .om-dropdown-menu a:last-child { margin-bottom: 0; }
 .om-dropdown-menu a:hover { background: #f3f4f6; color: #111827; }
-.om-dropdown-toggle { color: #374151; font-size: 15px; font-weight: 700; text-decoration: none; padding: 7px 10px; border-radius: 6px; transition: background 0.12s; white-space: nowrap; cursor: pointer; background: none; border: none; font-family: 'DM Sans', sans-serif; display: block; }
-.om-dropdown-toggle:hover, .om-nav-dropdown:hover .om-dropdown-toggle { background: #f3f4f6; }
 
 /* HAMBURGER */
 .om-nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; flex-shrink: 0; }
