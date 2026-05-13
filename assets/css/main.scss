@@ -14,7 +14,8 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'DM Sans', sans-serif; background: #f5f6f8; color: #111827; font-size: 16px; }
+body { font-family: 'DM Sans', sans-serif; background: #f5f6f8; color: #111827; font-size: 16px; min-height: 100vh; display: flex; flex-direction: column; }
+main { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem 4rem; flex: 1; }
 
 /* NAV */
 .om-nav { background: #fff; border-bottom: 1px solid #e5e7eb; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 68px; position: sticky; top: 0; z-index: 100; }
