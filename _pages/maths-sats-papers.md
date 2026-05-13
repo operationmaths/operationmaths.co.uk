@@ -5,7 +5,7 @@ description: Free and paid KS2 maths SATs past papers and practice resources fro
 permalink: /maths-sats-papers/
 ---
 
-<main>
+<main class="sats-page">
 
   <!-- ── HERO ── -->
   <section class="om-hero" aria-label="Hero">
