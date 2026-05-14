@@ -57,94 +57,106 @@ permalink: /books/
     <section id="times-tables" style="margin-bottom:3rem; scroll-margin-top:80px;">
       <h2 class="section-label">Times table books</h2>
       <div class="books-grid times-tables">
+
         <div class="book-card">
           <div class="book-covers">
-            <div class="cover-placeholder portrait-a">2×<br>A</div>
-            <div class="cover-placeholder portrait-b">2×<br>B</div>
+            <img src="/assets/images/2-times-table-book-front.PNG" alt="2 times table book front cover">
+            <img src="/assets/images/2-times-table-book-inside.PNG" alt="2 times table book inside page">
           </div>
           <div class="book-title">2 times table</div>
           <a href="https://amzn.to/3DaaTfm" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon ↗</a>
         </div>
+
         <div class="book-card">
           <div class="book-covers">
-            <div class="cover-placeholder portrait-a">3×<br>A</div>
-            <div class="cover-placeholder portrait-b">3×<br>B</div>
+            <img src="/assets/images/3-times-table-book-front.PNG" alt="3 times table book front cover">
+            <img src="/assets/images/3-times-table-book-inside.PNG" alt="3 times table book inside page">
           </div>
           <div class="book-title">3 times table</div>
           <a href="https://amzn.to/3DapiIu" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon ↗</a>
         </div>
+
         <div class="book-card">
           <div class="book-covers">
-            <div class="cover-placeholder portrait-a">4×<br>A</div>
-            <div class="cover-placeholder portrait-b">4×<br>B</div>
+            <img src="/assets/images/4-times-table-book-front.PNG" alt="4 times table book front cover">
+            <img src="/assets/images/4-times-table-book-inside.PNG" alt="4 times table book inside page">
           </div>
           <div class="book-title">4 times table</div>
           <a href="https://amzn.to/3Ddmp9G" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon ↗</a>
         </div>
+
         <div class="book-card">
           <div class="book-covers">
-            <div class="cover-placeholder portrait-a">5×<br>A</div>
-            <div class="cover-placeholder portrait-b">5×<br>B</div>
+            <img src="/assets/images/5-times-table-book-front.PNG" alt="5 times table book front cover">
+            <img src="/assets/images/5-times-table-book-inside.PNG" alt="5 times table book inside page">
           </div>
           <div class="book-title">5 times table</div>
           <a href="https://amzn.to/4hbsyBq" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon ↗</a>
         </div>
+
         <div class="book-card">
           <div class="book-covers">
-            <div class="cover-placeholder portrait-a">6×<br>A</div>
-            <div class="cover-placeholder portrait-b">6×<br>B</div>
+            <img src="/assets/images/6-times-table-book-front.PNG" alt="6 times table book front cover">
+            <img src="/assets/images/6-times-table-book-inside.PNG" alt="6 times table book inside page">
           </div>
           <div class="book-title">6 times table</div>
           <a href="https://amzn.to/43iWs3k" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon ↗</a>
         </div>
+
         <div class="book-card">
           <div class="book-covers">
-            <div class="cover-placeholder portrait-a">7×<br>A</div>
-            <div class="cover-placeholder portrait-b">7×<br>B</div>
+            <img src="/assets/images/7-times-table-book-front.PNG" alt="7 times table book front cover">
+            <img src="/assets/images/7-times-table-book-inside.PNG" alt="7 times table book inside page">
           </div>
           <div class="book-title">7 times table</div>
           <a href="https://amzn.to/3EZTqqw" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon ↗</a>
         </div>
+
         <div class="book-card">
           <div class="book-covers">
-            <div class="cover-placeholder portrait-a">8×<br>A</div>
-            <div class="cover-placeholder portrait-b">8×<br>B</div>
+            <img src="/assets/images/8-times-table-book-front.PNG" alt="8 times table book front cover">
+            <img src="/assets/images/8-times-table-book-inside.PNG" alt="8 times table book inside page">
           </div>
           <div class="book-title">8 times table</div>
           <a href="https://amzn.to/3Fa4XU2" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon ↗</a>
         </div>
+
         <div class="book-card">
           <div class="book-covers">
-            <div class="cover-placeholder portrait-a">9×<br>A</div>
-            <div class="cover-placeholder portrait-b">9×<br>B</div>
+            <img src="/assets/images/9-times-table-book-front.PNG" alt="9 times table book front cover">
+            <img src="/assets/images/9-times-table-book-inside.PNG" alt="9 times table book inside page">
           </div>
           <div class="book-title">9 times table</div>
           <a href="https://amzn.to/4ikLyyk" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon ↗</a>
         </div>
+
         <div class="book-card">
           <div class="book-covers">
-            <div class="cover-placeholder portrait-a">10×<br>A</div>
-            <div class="cover-placeholder portrait-b">10×<br>B</div>
+            <img src="/assets/images/10-times-table-book-front.PNG" alt="10 times table book front cover">
+            <img src="/assets/images/10-times-table-book-inside.PNG" alt="10 times table book inside page">
           </div>
           <div class="book-title">10 times table</div>
           <a href="https://amzn.to/4ikLCy4" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon ↗</a>
         </div>
+
         <div class="book-card">
           <div class="book-covers">
-            <div class="cover-placeholder portrait-a">11×<br>A</div>
-            <div class="cover-placeholder portrait-b">11×<br>B</div>
+            <img src="/assets/images/11-times-table-book-front.PNG" alt="11 times table book front cover">
+            <img src="/assets/images/11-times-table-book-inside.PNG" alt="11 times table book inside page">
           </div>
           <div class="book-title">11 times table</div>
           <a href="https://amzn.to/3QHctIS" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon ↗</a>
         </div>
+
         <div class="book-card">
           <div class="book-covers">
-            <div class="cover-placeholder portrait-a">12×<br>A</div>
-            <div class="cover-placeholder portrait-b">12×<br>B</div>
+            <img src="/assets/images/12-times-table-book-front.PNG" alt="12 times table book front cover">
+            <img src="/assets/images/12-times-table-book-inside.PNG" alt="12 times table book inside page">
           </div>
           <div class="book-title">12 times table</div>
           <a href="https://amzn.to/3DcOQ7I" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon ↗</a>
         </div>
+
       </div>
     </section>
 
