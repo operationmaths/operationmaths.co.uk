@@ -455,7 +455,7 @@ main { flex: 1; }
 .book-subtitle { font-size: 13px; font-weight: 300; color: #6b7280; margin-top: -0.5rem; }
 .btn-amazon { display: block; width: 100%; text-align: center; background: var(--orange); color: #fff; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; padding: 0.65rem 1.6rem; border-radius: 8px; border: none; transition: background 0.15s; margin-top: auto; white-space: nowrap; }
 .btn-amazon:hover { background: var(--orange-dark); }
-.btn-amazon { font-variant-emoji: text; }
+.btn-amazon::after { content: ' \2197'; font-family: Arial, sans-serif; }
 
 /* ABOUT PAGE */
 .intro-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 2rem; display: grid; grid-template-columns: 120px 1fr; gap: 2rem; align-items: start; }
