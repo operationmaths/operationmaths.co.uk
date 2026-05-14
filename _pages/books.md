@@ -20,39 +20,39 @@ permalink: /books/
   <div class="om-body">
 
     <section id="ebook" style="margin-bottom:3rem; scroll-margin-top:80px;">
-      <h2 class="section-label">Ebook</h2>
-      <div class="books-grid single">
-        <div class="book-card">
-          <div class="book-covers">
-            <div class="cover-placeholder portrait-lg">2026<br>Maths<br>SATs</div>
-          </div>
-          <div class="book-title">2026 Maths SATs</div>
-          <a href="https://amzn.to/4a3XxiU" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon › </a>
-        </div>
+  <h2 class="section-label">Ebook</h2>
+  <div class="books-grid single">
+    <div class="book-card">
+      <div class="book-covers">
+        <img src="/assets/images/2026-Maths-SATs-front.jpg" alt="2026 Maths SATs ebook front cover">
       </div>
-    </section>
+      <div class="book-title">2026 Maths SATs</div>
+      <a href="https://amzn.to/4a3XxiU" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon ›</a>
+    </div>
+  </div>
+</section>
 
-    <section id="number-facts" style="margin-bottom:3rem; scroll-margin-top:80px;">
-      <h2 class="section-label">Number facts</h2>
-      <div class="books-grid">
-        <div class="book-card">
-          <div class="book-covers">
-            <div class="cover-placeholder portrait-a">Number<br>bonds<br>A</div>
-            <div class="cover-placeholder portrait-b">Number<br>bonds<br>B</div>
-          </div>
-          <div class="book-title">Number bonds</div>
-          <a href="https://amzn.to/41pSNho" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon › </a>
-        </div>
-        <div class="book-card">
-          <div class="book-covers">
-            <div class="cover-placeholder portrait-a">Double<br>&amp; halve<br>A</div>
-            <div class="cover-placeholder portrait-b">Double<br>&amp; halve<br>B</div>
-          </div>
-          <div class="book-title">Double and halve</div>
-          <a href="https://amzn.to/41BKujL" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon › </a>
-        </div>
+<section id="number-facts" style="margin-bottom:3rem; scroll-margin-top:80px;">
+  <h2 class="section-label">Number facts</h2>
+  <div class="books-grid">
+    <div class="book-card">
+      <div class="book-covers">
+        <img src="/assets/images/Number-bonds-to-10-front.PNG" alt="Number bonds to 10 book front cover">
+        <img src="/assets/images/Number-bonds-to-10-inside.PNG" alt="Number bonds to 10 book inside page">
       </div>
-    </section>
+      <div class="book-title">Number bonds</div>
+      <a href="https://amzn.to/41pSNho" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon ›</a>
+    </div>
+    <div class="book-card">
+      <div class="book-covers">
+        <img src="/assets/images/Double-and-halve-front.PNG" alt="Double and halve book front cover">
+        <img src="/assets/images/Double-and-halve-inside.PNG" alt="Double and halve book inside page">
+      </div>
+      <div class="book-title">Double and halve</div>
+      <a href="https://amzn.to/41BKujL" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon ›</a>
+    </div>
+  </div>
+</section>
 
     <section id="times-tables" style="margin-bottom:3rem; scroll-margin-top:80px;">
       <h2 class="section-label">Times table books</h2>
