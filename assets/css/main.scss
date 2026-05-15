@@ -532,7 +532,6 @@ main { flex: 1; }
   .worksheet-page .wc-image.portrait, .worksheet-page .wc-image.landscape { width: 100%; height: 120px; }
   .worksheet-page .wc-actions { padding: 0 16px 16px; flex-direction: column; gap: 6px; }
   .worksheet-page .wc-actions .btn { width: 100%; justify-content: center; }
-  .btn-arrow { font-size: 12px; }
 }
 
 @media (max-width: 400px) {
