@@ -3,12 +3,9 @@ layout: default
 title: Maths SATs Papers
 description: Free and paid KS2 maths SATs past papers and practice resources from Operation Maths.
 permalink: /maths-sats-papers/
----
-
 <main class="sats-page">
-
   <!-- ── HERO ── -->
-  <section class="om-hero" aria-label="Hero">
+<section class="om-hero" aria-label="Hero">
     <h1>Past Key Stage 2 maths <em>SATs papers</em></h1>
     <p>All Year 6 maths SATs papers from 2016 to 2025 – free to download, with mark schemes included.</p>
     <p class="om-hero-note">Contains material developed by the Standards and Testing Agency and licensed under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" target="_blank" rel="noopener noreferrer">Open Government Licence v3.0</a>.</p>
@@ -24,30 +21,21 @@ permalink: /maths-sats-papers/
       <a href="#sample" class="jump-link">Sample</a>
     </nav>
   </section>
-
   <!-- ── COVID NOTE ── -->
-  <div class="covid-strip">
+<div class="covid-strip">
     There were no SATs in 2020 or 2021 due to the Covid-19 pandemic.
   </div>
-
   <!-- ── BODY ── -->
-  <div class="om-body">
-
+<div class="om-body">
     <div class="promo-card">
       <div class="promo-thumb" aria-hidden="true">
-        <div class="paper-thumb-placeholder">
-          <div class="ptp-lines">
-            <div class="ptp-line"></div><div class="ptp-line"></div>
-            <div class="ptp-line"></div><div class="ptp-line"></div>
-            <div class="ptp-line"></div><div class="ptp-line"></div>
-          </div>
-        </div>
+        <img src="/assets/images/2026-Maths-SATs-front.jpg" alt="2026 Maths SATs ebook cover" style="width:100%; height:100%; object-fit:cover; border-radius:6px;">
       </div>
       <div class="promo-text">
         <strong>Preparing for the 2026 maths SATs?</strong>
         <span>Our eBook covers everything a parent needs to know – from what to expect on the day to how to help your child prepare.</span>
       </div>
-      <a href="/books" class="btn btn-orange">View eBook</a>
+      <a href="https://amzn.to/4a3XxiU" class="btn btn-orange" target="_blank" rel="noopener sponsored">View on Amazon ↗︎</a>
     </div>
 
     <!-- ── 2025 ── -->
@@ -62,13 +50,7 @@ permalink: /maths-sats-papers/
 
         <div class="paper-row">
           <div class="paper-thumb" aria-hidden="true">
-            <div class="paper-thumb-placeholder">
-              <div class="ptp-lines">
-                <div class="ptp-line"></div><div class="ptp-line"></div>
-                <div class="ptp-line"></div><div class="ptp-line"></div>
-                <div class="ptp-line"></div><div class="ptp-line"></div>
-              </div>
-            </div>
+            <img src="/assets/images/SATs-2025-Paper-1.PNG" alt="2025 SATs Paper 1">
           </div>
           <div class="paper-info">
             <div class="paper-tag tag-arith">Arithmetic</div>
@@ -76,19 +58,13 @@ permalink: /maths-sats-papers/
             <div class="paper-type">40 marks · 30 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/sats-2025-paper1-arithmetic.pdf" class="btn btn-blue" download>↓ Download</a>
+            <a href="/pdfs/SATs-2025-Paper-1.pdf" class="btn btn-blue" download>Download ↓</a>
           </div>
         </div>
 
         <div class="paper-row">
           <div class="paper-thumb" aria-hidden="true">
-            <div class="paper-thumb-placeholder">
-              <div class="ptp-lines">
-                <div class="ptp-line"></div><div class="ptp-line"></div>
-                <div class="ptp-line"></div><div class="ptp-line"></div>
-                <div class="ptp-line"></div><div class="ptp-line"></div>
-              </div>
-            </div>
+            <img src="/assets/images/SATs-2025-Paper-2.PNG" alt="2025 SATs Paper 2">
           </div>
           <div class="paper-info">
             <div class="paper-tag tag-reason">Reasoning</div>
@@ -96,19 +72,13 @@ permalink: /maths-sats-papers/
             <div class="paper-type">35 marks · 40 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/sats-2025-paper2-reasoning.pdf" class="btn btn-blue" download>↓ Download</a>
+            <a href="/pdfs/SATs-2025-Paper-2.pdf" class="btn btn-blue" download>Download ↓</a>
           </div>
         </div>
 
         <div class="paper-row">
           <div class="paper-thumb" aria-hidden="true">
-            <div class="paper-thumb-placeholder">
-              <div class="ptp-lines">
-                <div class="ptp-line"></div><div class="ptp-line"></div>
-                <div class="ptp-line"></div><div class="ptp-line"></div>
-                <div class="ptp-line"></div><div class="ptp-line"></div>
-              </div>
-            </div>
+            <img src="/assets/images/SATs-2025-Paper-3.PNG" alt="2025 SATs Paper 3">
           </div>
           <div class="paper-info">
             <div class="paper-tag tag-reason">Reasoning</div>
@@ -116,14 +86,14 @@ permalink: /maths-sats-papers/
             <div class="paper-type">35 marks · 40 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/sats-2025-paper3-reasoning.pdf" class="btn btn-blue" download>↓ Download</a>
+            <a href="/pdfs/SATs-2025-Paper-3.pdf" class="btn btn-blue" download>Download ↓</a>
           </div>
         </div>
 
       </div>
       <div class="answers-row">
         <span class="answers-label">Mark scheme</span>
-        <a href="/pdfs/sats-2025-mark-scheme.pdf" class="btn btn-orange" download>↓ Download mark scheme</a>
+        <a href="/pdfs/SATs-2025-Mark-scheme.pdf" class="btn btn-orange" download>Download mark scheme ↓</a>
       </div>
     </div>
     </section>
@@ -139,45 +109,51 @@ permalink: /maths-sats-papers/
       <div class="paper-list">
 
         <div class="paper-row">
-          <div class="paper-thumb" aria-hidden="true"><div class="paper-thumb-placeholder"><div class="ptp-lines"><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div></div></div></div>
+          <div class="paper-thumb" aria-hidden="true">
+            <img src="/assets/images/SATs-2024-Paper-1.PNG" alt="2024 SATs Paper 1">
+          </div>
           <div class="paper-info">
             <div class="paper-tag tag-arith">Arithmetic</div>
             <div class="paper-name">Paper 1: arithmetic</div>
             <div class="paper-type">40 marks · 30 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/sats-2024-paper1-arithmetic.pdf" class="btn btn-blue" download>↓ Download</a>
+            <a href="/pdfs/SATs-2024-Paper-1.pdf" class="btn btn-blue" download>Download ↓</a>
           </div>
         </div>
 
         <div class="paper-row">
-          <div class="paper-thumb" aria-hidden="true"><div class="paper-thumb-placeholder"><div class="ptp-lines"><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div></div></div></div>
+          <div class="paper-thumb" aria-hidden="true">
+            <img src="/assets/images/SATs-2024-Paper-2.PNG" alt="2024 SATs Paper 2">
+          </div>
           <div class="paper-info">
             <div class="paper-tag tag-reason">Reasoning</div>
             <div class="paper-name">Paper 2: reasoning</div>
             <div class="paper-type">35 marks · 40 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/sats-2024-paper2-reasoning.pdf" class="btn btn-blue" download>↓ Download</a>
+            <a href="/pdfs/SATs-2024-Paper-2.pdf" class="btn btn-blue" download>Download ↓</a>
           </div>
         </div>
 
         <div class="paper-row">
-          <div class="paper-thumb" aria-hidden="true"><div class="paper-thumb-placeholder"><div class="ptp-lines"><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div></div></div></div>
+          <div class="paper-thumb" aria-hidden="true">
+            <img src="/assets/images/SATs-2024-Paper-3.PNG" alt="2024 SATs Paper 3">
+          </div>
           <div class="paper-info">
             <div class="paper-tag tag-reason">Reasoning</div>
             <div class="paper-name">Paper 3: reasoning</div>
             <div class="paper-type">35 marks · 40 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/sats-2024-paper3-reasoning.pdf" class="btn btn-blue" download>↓ Download</a>
+            <a href="/pdfs/SATs-2024-Paper-3.pdf" class="btn btn-blue" download>Download ↓</a>
           </div>
         </div>
 
       </div>
       <div class="answers-row">
         <span class="answers-label">Mark scheme</span>
-        <a href="/pdfs/sats-2024-mark-scheme.pdf" class="btn btn-orange" download>↓ Download mark scheme</a>
+        <a href="/pdfs/SATs-2024-Mark-scheme.pdf" class="btn btn-orange" download>Download mark scheme ↓</a>
       </div>
     </div>
     </section>
@@ -193,45 +169,51 @@ permalink: /maths-sats-papers/
       <div class="paper-list">
 
         <div class="paper-row">
-          <div class="paper-thumb" aria-hidden="true"><div class="paper-thumb-placeholder"><div class="ptp-lines"><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div></div></div></div>
+          <div class="paper-thumb" aria-hidden="true">
+            <img src="/assets/images/SATs-2023-Paper-1.PNG" alt="2023 SATs Paper 1">
+          </div>
           <div class="paper-info">
             <div class="paper-tag tag-arith">Arithmetic</div>
             <div class="paper-name">Paper 1: arithmetic</div>
             <div class="paper-type">40 marks · 30 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/sats-2023-paper1-arithmetic.pdf" class="btn btn-blue" download>↓ Download</a>
+            <a href="/pdfs/SATs-2023-Paper-1.pdf" class="btn btn-blue" download>Download ↓</a>
           </div>
         </div>
 
         <div class="paper-row">
-          <div class="paper-thumb" aria-hidden="true"><div class="paper-thumb-placeholder"><div class="ptp-lines"><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div></div></div></div>
+          <div class="paper-thumb" aria-hidden="true">
+            <img src="/assets/images/SATs-2023-Paper-2.PNG" alt="2023 SATs Paper 2">
+          </div>
           <div class="paper-info">
             <div class="paper-tag tag-reason">Reasoning</div>
             <div class="paper-name">Paper 2: reasoning</div>
             <div class="paper-type">35 marks · 40 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/sats-2023-paper2-reasoning.pdf" class="btn btn-blue" download>↓ Download</a>
+            <a href="/pdfs/SATs-2023-Paper-2.pdf" class="btn btn-blue" download>Download ↓</a>
           </div>
         </div>
 
         <div class="paper-row">
-          <div class="paper-thumb" aria-hidden="true"><div class="paper-thumb-placeholder"><div class="ptp-lines"><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div></div></div></div>
+          <div class="paper-thumb" aria-hidden="true">
+            <img src="/assets/images/SATs-2023-Paper-3.PNG" alt="2023 SATs Paper 3">
+          </div>
           <div class="paper-info">
             <div class="paper-tag tag-reason">Reasoning</div>
             <div class="paper-name">Paper 3: reasoning</div>
             <div class="paper-type">35 marks · 40 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/sats-2023-paper3-reasoning.pdf" class="btn btn-blue" download>↓ Download</a>
+            <a href="/pdfs/SATs-2023-Paper-3.pdf" class="btn btn-blue" download>Download ↓</a>
           </div>
         </div>
 
       </div>
       <div class="answers-row">
         <span class="answers-label">Mark scheme</span>
-        <a href="/pdfs/sats-2023-mark-scheme.pdf" class="btn btn-orange" download>↓ Download mark scheme</a>
+        <a href="/pdfs/SATs-2023-Mark-scheme.pdf" class="btn btn-orange" download>Download mark scheme ↓</a>
       </div>
     </div>
     </section>
@@ -247,45 +229,51 @@ permalink: /maths-sats-papers/
       <div class="paper-list">
 
         <div class="paper-row">
-          <div class="paper-thumb" aria-hidden="true"><div class="paper-thumb-placeholder"><div class="ptp-lines"><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div></div></div></div>
+          <div class="paper-thumb" aria-hidden="true">
+            <img src="/assets/images/SATs-2022-Paper-1.PNG" alt="2022 SATs Paper 1">
+          </div>
           <div class="paper-info">
             <div class="paper-tag tag-arith">Arithmetic</div>
             <div class="paper-name">Paper 1: arithmetic</div>
             <div class="paper-type">40 marks · 30 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/sats-2022-paper1-arithmetic.pdf" class="btn btn-blue" download>↓ Download</a>
+            <a href="/pdfs/SATs-2022-Paper-1.pdf" class="btn btn-blue" download>Download ↓</a>
           </div>
         </div>
 
         <div class="paper-row">
-          <div class="paper-thumb" aria-hidden="true"><div class="paper-thumb-placeholder"><div class="ptp-lines"><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div></div></div></div>
+          <div class="paper-thumb" aria-hidden="true">
+            <img src="/assets/images/SATs-2022-Paper-2.PNG" alt="2022 SATs Paper 2">
+          </div>
           <div class="paper-info">
             <div class="paper-tag tag-reason">Reasoning</div>
             <div class="paper-name">Paper 2: reasoning</div>
             <div class="paper-type">35 marks · 40 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/sats-2022-paper2-reasoning.pdf" class="btn btn-blue" download>↓ Download</a>
+            <a href="/pdfs/SATs-2022-Paper-2.pdf" class="btn btn-blue" download>Download ↓</a>
           </div>
         </div>
 
         <div class="paper-row">
-          <div class="paper-thumb" aria-hidden="true"><div class="paper-thumb-placeholder"><div class="ptp-lines"><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div></div></div></div>
+          <div class="paper-thumb" aria-hidden="true">
+            <img src="/assets/images/SATs-2022-Paper-3.PNG" alt="2022 SATs Paper 3">
+          </div>
           <div class="paper-info">
             <div class="paper-tag tag-reason">Reasoning</div>
             <div class="paper-name">Paper 3: reasoning</div>
             <div class="paper-type">35 marks · 40 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/sats-2022-paper3-reasoning.pdf" class="btn btn-blue" download>↓ Download</a>
+            <a href="/pdfs/SATs-2022-Paper-3.pdf" class="btn btn-blue" download>Download ↓</a>
           </div>
         </div>
 
       </div>
       <div class="answers-row">
         <span class="answers-label">Mark scheme</span>
-        <a href="/pdfs/sats-2022-mark-scheme.pdf" class="btn btn-orange" download>↓ Download mark scheme</a>
+        <a href="/pdfs/SATs-2022-Mark-scheme.pdf" class="btn btn-orange" download>Download mark scheme ↓</a>
       </div>
     </div>
     </section>
@@ -301,45 +289,51 @@ permalink: /maths-sats-papers/
       <div class="paper-list">
 
         <div class="paper-row">
-          <div class="paper-thumb" aria-hidden="true"><div class="paper-thumb-placeholder"><div class="ptp-lines"><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div></div></div></div>
+          <div class="paper-thumb" aria-hidden="true">
+            <img src="/assets/images/SATs-2019-Paper-1.PNG" alt="2019 SATs Paper 1">
+          </div>
           <div class="paper-info">
             <div class="paper-tag tag-arith">Arithmetic</div>
             <div class="paper-name">Paper 1: arithmetic</div>
             <div class="paper-type">40 marks · 30 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/sats-2019-paper1-arithmetic.pdf" class="btn btn-blue" download>↓ Download</a>
+            <a href="/pdfs/SATs-2019-Paper-1.pdf" class="btn btn-blue" download>Download ↓</a>
           </div>
         </div>
 
         <div class="paper-row">
-          <div class="paper-thumb" aria-hidden="true"><div class="paper-thumb-placeholder"><div class="ptp-lines"><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div></div></div></div>
+          <div class="paper-thumb" aria-hidden="true">
+            <img src="/assets/images/SATs-2019-Paper-2.PNG" alt="2019 SATs Paper 2">
+          </div>
           <div class="paper-info">
             <div class="paper-tag tag-reason">Reasoning</div>
             <div class="paper-name">Paper 2: reasoning</div>
             <div class="paper-type">35 marks · 40 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/sats-2019-paper2-reasoning.pdf" class="btn btn-blue" download>↓ Download</a>
+            <a href="/pdfs/SATs-2019-Paper-2.pdf" class="btn btn-blue" download>Download ↓</a>
           </div>
         </div>
 
         <div class="paper-row">
-          <div class="paper-thumb" aria-hidden="true"><div class="paper-thumb-placeholder"><div class="ptp-lines"><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div></div></div></div>
+          <div class="paper-thumb" aria-hidden="true">
+            <img src="/assets/images/SATs-2019-Paper-3.PNG" alt="2019 SATs Paper 3">
+          </div>
           <div class="paper-info">
             <div class="paper-tag tag-reason">Reasoning</div>
             <div class="paper-name">Paper 3: reasoning</div>
             <div class="paper-type">35 marks · 40 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/sats-2019-paper3-reasoning.pdf" class="btn btn-blue" download>↓ Download</a>
+            <a href="/pdfs/SATs-2019-Paper-3.pdf" class="btn btn-blue" download>Download ↓</a>
           </div>
         </div>
 
       </div>
       <div class="answers-row">
         <span class="answers-label">Mark scheme</span>
-        <a href="/pdfs/sats-2019-mark-scheme.pdf" class="btn btn-orange" download>↓ Download mark scheme</a>
+        <a href="/pdfs/SATs-2019-Mark-scheme.pdf" class="btn btn-orange" download>Download mark scheme ↓</a>
       </div>
     </div>
     </section>
@@ -355,45 +349,51 @@ permalink: /maths-sats-papers/
       <div class="paper-list">
 
         <div class="paper-row">
-          <div class="paper-thumb" aria-hidden="true"><div class="paper-thumb-placeholder"><div class="ptp-lines"><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div></div></div></div>
+          <div class="paper-thumb" aria-hidden="true">
+            <img src="/assets/images/SATs-2018-Paper-1.PNG" alt="2018 SATs Paper 1">
+          </div>
           <div class="paper-info">
             <div class="paper-tag tag-arith">Arithmetic</div>
             <div class="paper-name">Paper 1: arithmetic</div>
             <div class="paper-type">40 marks · 30 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/sats-2018-paper1-arithmetic.pdf" class="btn btn-blue" download>↓ Download</a>
+            <a href="/pdfs/SATs-2018-Paper-1.pdf" class="btn btn-blue" download>Download ↓</a>
           </div>
         </div>
 
         <div class="paper-row">
-          <div class="paper-thumb" aria-hidden="true"><div class="paper-thumb-placeholder"><div class="ptp-lines"><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div></div></div></div>
+          <div class="paper-thumb" aria-hidden="true">
+            <img src="/assets/images/SATs-2018-Paper-2.PNG" alt="2018 SATs Paper 2">
+          </div>
           <div class="paper-info">
             <div class="paper-tag tag-reason">Reasoning</div>
             <div class="paper-name">Paper 2: reasoning</div>
             <div class="paper-type">35 marks · 40 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/sats-2018-paper2-reasoning.pdf" class="btn btn-blue" download>↓ Download</a>
+            <a href="/pdfs/SATs-2018-Paper-2.pdf" class="btn btn-blue" download>Download ↓</a>
           </div>
         </div>
 
         <div class="paper-row">
-          <div class="paper-thumb" aria-hidden="true"><div class="paper-thumb-placeholder"><div class="ptp-lines"><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div></div></div></div>
+          <div class="paper-thumb" aria-hidden="true">
+            <img src="/assets/images/SATs-2018-Paper-3.PNG" alt="2018 SATs Paper 3">
+          </div>
           <div class="paper-info">
             <div class="paper-tag tag-reason">Reasoning</div>
             <div class="paper-name">Paper 3: reasoning</div>
             <div class="paper-type">35 marks · 40 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/sats-2018-paper3-reasoning.pdf" class="btn btn-blue" download>↓ Download</a>
+            <a href="/pdfs/SATs-2018-Paper-3.pdf" class="btn btn-blue" download>Download ↓</a>
           </div>
         </div>
 
       </div>
       <div class="answers-row">
         <span class="answers-label">Mark scheme</span>
-        <a href="/pdfs/sats-2018-mark-scheme.pdf" class="btn btn-orange" download>↓ Download mark scheme</a>
+        <a href="/pdfs/SATs-2018-Mark-scheme.pdf" class="btn btn-orange" download>Download mark scheme ↓</a>
       </div>
     </div>
     </section>
@@ -409,45 +409,51 @@ permalink: /maths-sats-papers/
       <div class="paper-list">
 
         <div class="paper-row">
-          <div class="paper-thumb" aria-hidden="true"><div class="paper-thumb-placeholder"><div class="ptp-lines"><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div></div></div></div>
+          <div class="paper-thumb" aria-hidden="true">
+            <img src="/assets/images/SATs-2017-Paper-1.PNG" alt="2017 SATs Paper 1">
+          </div>
           <div class="paper-info">
             <div class="paper-tag tag-arith">Arithmetic</div>
             <div class="paper-name">Paper 1: arithmetic</div>
             <div class="paper-type">40 marks · 30 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/sats-2017-paper1-arithmetic.pdf" class="btn btn-blue" download>↓ Download</a>
+            <a href="/pdfs/SATs-2017-Paper-1.pdf" class="btn btn-blue" download>Download ↓</a>
           </div>
         </div>
 
         <div class="paper-row">
-          <div class="paper-thumb" aria-hidden="true"><div class="paper-thumb-placeholder"><div class="ptp-lines"><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div></div></div></div>
+          <div class="paper-thumb" aria-hidden="true">
+            <img src="/assets/images/SATs-2017-Paper-2.PNG" alt="2017 SATs Paper 2">
+          </div>
           <div class="paper-info">
             <div class="paper-tag tag-reason">Reasoning</div>
             <div class="paper-name">Paper 2: reasoning</div>
             <div class="paper-type">35 marks · 40 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/sats-2017-paper2-reasoning.pdf" class="btn btn-blue" download>↓ Download</a>
+            <a href="/pdfs/SATs-2017-Paper-2.pdf" class="btn btn-blue" download>Download ↓</a>
           </div>
         </div>
 
         <div class="paper-row">
-          <div class="paper-thumb" aria-hidden="true"><div class="paper-thumb-placeholder"><div class="ptp-lines"><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div></div></div></div>
+          <div class="paper-thumb" aria-hidden="true">
+            <img src="/assets/images/SATs-2017-Paper-3.PNG" alt="2017 SATs Paper 3">
+          </div>
           <div class="paper-info">
             <div class="paper-tag tag-reason">Reasoning</div>
             <div class="paper-name">Paper 3: reasoning</div>
             <div class="paper-type">35 marks · 40 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/sats-2017-paper3-reasoning.pdf" class="btn btn-blue" download>↓ Download</a>
+            <a href="/pdfs/SATs-2017-Paper-3.pdf" class="btn btn-blue" download>Download ↓</a>
           </div>
         </div>
 
       </div>
       <div class="answers-row">
         <span class="answers-label">Mark scheme</span>
-        <a href="/pdfs/sats-2017-mark-scheme.pdf" class="btn btn-orange" download>↓ Download mark scheme</a>
+        <a href="/pdfs/SATs-2017-Mark-scheme.pdf" class="btn btn-orange" download>Download mark scheme ↓</a>
       </div>
     </div>
     </section>
@@ -463,45 +469,51 @@ permalink: /maths-sats-papers/
       <div class="paper-list">
 
         <div class="paper-row">
-          <div class="paper-thumb" aria-hidden="true"><div class="paper-thumb-placeholder"><div class="ptp-lines"><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div></div></div></div>
+          <div class="paper-thumb" aria-hidden="true">
+            <img src="/assets/images/SATs-2016-Paper-1.PNG" alt="2016 SATs Paper 1">
+          </div>
           <div class="paper-info">
             <div class="paper-tag tag-arith">Arithmetic</div>
             <div class="paper-name">Paper 1: arithmetic</div>
             <div class="paper-type">40 marks · 30 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/sats-2016-paper1-arithmetic.pdf" class="btn btn-blue" download>↓ Download</a>
+            <a href="/pdfs/SATs-2016-Paper-1.pdf" class="btn btn-blue" download>Download ↓</a>
           </div>
         </div>
 
         <div class="paper-row">
-          <div class="paper-thumb" aria-hidden="true"><div class="paper-thumb-placeholder"><div class="ptp-lines"><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div></div></div></div>
+          <div class="paper-thumb" aria-hidden="true">
+            <img src="/assets/images/SATs-2016-Paper-2.PNG" alt="2016 SATs Paper 2">
+          </div>
           <div class="paper-info">
             <div class="paper-tag tag-reason">Reasoning</div>
             <div class="paper-name">Paper 2: reasoning</div>
             <div class="paper-type">35 marks · 40 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/sats-2016-paper2-reasoning.pdf" class="btn btn-blue" download>↓ Download</a>
+            <a href="/pdfs/SATs-2016-Paper-2.pdf" class="btn btn-blue" download>Download ↓</a>
           </div>
         </div>
 
         <div class="paper-row">
-          <div class="paper-thumb" aria-hidden="true"><div class="paper-thumb-placeholder"><div class="ptp-lines"><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div></div></div></div>
+          <div class="paper-thumb" aria-hidden="true">
+            <img src="/assets/images/SATs-2016-Paper-3.PNG" alt="2016 SATs Paper 3">
+          </div>
           <div class="paper-info">
             <div class="paper-tag tag-reason">Reasoning</div>
             <div class="paper-name">Paper 3: reasoning</div>
             <div class="paper-type">35 marks · 40 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/sats-2016-paper3-reasoning.pdf" class="btn btn-blue" download>↓ Download</a>
+            <a href="/pdfs/SATs-2016-Paper-3.pdf" class="btn btn-blue" download>Download ↓</a>
           </div>
         </div>
 
       </div>
       <div class="answers-row">
         <span class="answers-label">Mark scheme</span>
-        <a href="/pdfs/sats-2016-mark-scheme.pdf" class="btn btn-orange" download>↓ Download mark scheme</a>
+        <a href="/pdfs/SATs-2016-Mark-scheme.pdf" class="btn btn-orange" download>Download mark scheme ↓</a>
       </div>
     </div>
     </section>
@@ -517,48 +529,54 @@ permalink: /maths-sats-papers/
       <div class="paper-list">
 
         <div class="paper-row">
-          <div class="paper-thumb" aria-hidden="true"><div class="paper-thumb-placeholder"><div class="ptp-lines"><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div></div></div></div>
+          <div class="paper-thumb" aria-hidden="true">
+            <img src="/assets/images/SATs-Sample-Paper-1.PNG" alt="SATs Sample Paper 1">
+          </div>
           <div class="paper-info">
             <div class="paper-tag tag-arith">Arithmetic</div>
             <div class="paper-name">Paper 1: arithmetic</div>
             <div class="paper-type">Sample paper</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/sats-sample-paper1-arithmetic.pdf" class="btn btn-blue" download>↓ Download</a>
+            <a href="/pdfs/SATs-Sample-Paper-1.pdf" class="btn btn-blue" download>Download ↓</a>
           </div>
         </div>
 
         <div class="paper-row">
-          <div class="paper-thumb" aria-hidden="true"><div class="paper-thumb-placeholder"><div class="ptp-lines"><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div></div></div></div>
+          <div class="paper-thumb" aria-hidden="true">
+            <img src="/assets/images/SATs-Sample-Paper-2.PNG" alt="SATs Sample Paper 2">
+          </div>
           <div class="paper-info">
             <div class="paper-tag tag-reason">Reasoning</div>
             <div class="paper-name">Paper 2: reasoning</div>
             <div class="paper-type">Sample paper</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/sats-sample-paper2-reasoning.pdf" class="btn btn-blue" download>↓ Download</a>
+            <a href="/pdfs/SATs-Sample-Paper-2.pdf" class="btn btn-blue" download>Download ↓</a>
           </div>
         </div>
 
         <div class="paper-row">
-          <div class="paper-thumb" aria-hidden="true"><div class="paper-thumb-placeholder"><div class="ptp-lines"><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div><div class="ptp-line"></div></div></div></div>
+          <div class="paper-thumb" aria-hidden="true">
+            <img src="/assets/images/SATs-Sample-Paper-3.PNG" alt="SATs Sample Paper 3">
+          </div>
           <div class="paper-info">
             <div class="paper-tag tag-reason">Reasoning</div>
             <div class="paper-name">Paper 3: reasoning</div>
             <div class="paper-type">Sample paper</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/sats-sample-paper3-reasoning.pdf" class="btn btn-blue" download>↓ Download</a>
+            <a href="/pdfs/SATs-Sample-Paper-3.pdf" class="btn btn-blue" download>Download ↓</a>
           </div>
         </div>
 
       </div>
       <div class="answers-row">
         <span class="answers-label">Mark scheme</span>
-        <a href="/pdfs/sats-sample-mark-scheme.pdf" class="btn btn-orange" download>↓ Download mark scheme</a>
+        <a href="/pdfs/SATs-Sample-Mark-scheme.pdf" class="btn btn-orange" download>Download mark scheme ↓</a>
       </div>
     </div>
     </section>
 
-  </div><!-- /om-body -->
+</div><!-- /om-body -->
 </main>
