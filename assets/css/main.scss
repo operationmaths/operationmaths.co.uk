@@ -120,7 +120,7 @@ main { flex: 1; }
 .om-latest-btns { display: flex; flex-direction: column; gap: 6px; }
 
 /* BUTTONS */
-.om-cbtn { font-size: 12px; font-weight: 700; padding: 8px 11px; border-radius: 6px; border: 1.5px solid; cursor: pointer; text-decoration: none; white-space: nowrap; transition: background 0.12s, border-color 0.12s; font-family: 'DM Sans', sans-serif; color: #fff; display: block; text-align: center; width: 100%; }
+.om-cbtn { font-size: 13px; font-weight: 700; padding: 8px 11px; border-radius: 6px; border: 1.5px solid; cursor: pointer; text-decoration: none; white-space: nowrap; transition: background 0.12s, border-color 0.12s; font-family: 'DM Sans', sans-serif; color: #fff; display: block; text-align: center; width: 100%; }
 .om-cbtn-ws  { background: var(--blue);   border-color: var(--blue); }
 .om-cbtn-ws:hover  { background: var(--blue-dark);   border-color: var(--blue-dark); }
 .om-cbtn-ans { background: var(--green);  border-color: var(--green); }
@@ -453,7 +453,7 @@ main { flex: 1; }
 .cover-placeholder.portrait-b { width: 72px; height: 120px; }
 .book-title { font-size: 15px; font-weight: 700; color: #1a1a2e; }
 .book-subtitle { font-size: 13px; font-weight: 300; color: #6b7280; margin-top: -0.5rem; }
-.btn-amazon { display: block; width: 100%; text-align: center; background: var(--orange); color: #fff; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; padding: 0.65rem 1.6rem; border-radius: 8px; border: none; transition: background 0.15s; margin-top: auto; white-space: nowrap; }
+.btn-amazon { display: block; width: 100%; text-align: center; background: var(--orange); color: #fff; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 700; text-decoration: none; padding: 0.65rem 1.6rem; border-radius: 8px; border: none; transition: background 0.15s; margin-top: auto; white-space: nowrap; }
 .btn-amazon:hover { background: var(--orange-dark); }
 
 /* ABOUT PAGE */
@@ -510,6 +510,14 @@ main { flex: 1; }
   .tutor-card { flex-direction: column; }
   .tutor-img { width: 100%; aspect-ratio: 3/1; height: 120px; }
   .contact-card-full { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+
+@media (max-width: 640px) {
+  .om-strip { flex-direction: column; }
+  .om-strip-item { flex-direction: row; justify-content: space-between; align-items: center; text-align: left; border-right: none; border-bottom: 1px solid #e5e7eb; border-top: none; border-left: 3px solid var(--sc); padding: 1rem 1.25rem; }
+  .om-strip-item:last-child { border-bottom: none; }
+  .om-strip-title { font-size: 14px; }
+  .om-strip-sub { font-size: 12px; margin-top: 2px; }
 }
 
 @media (max-width: 600px) {
