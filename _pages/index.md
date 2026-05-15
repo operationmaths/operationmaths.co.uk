@@ -105,7 +105,7 @@ body_class: page-home
             <div class="om-latest-btns">
               <a class="om-cbtn om-cbtn-ws" href="/worksheets/number/fractions-of-amounts-set-1.pdf">Worksheet (A)</a>
               <a class="om-cbtn om-cbtn-ans" href="/worksheets/number/fractions-of-amounts-set-1-answers.pdf">Answers (A)</a>
-              <a class="om-cbtn om-cbtn-tes" href="#" target="_blank" rel="noopener">Full pack on TES ↗</a>
+              <a class="om-cbtn om-cbtn-tes" href="#" target="_blank" rel="noopener">Full pack on TES <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
             </div>
           </div>
         </article>
@@ -127,7 +127,7 @@ body_class: page-home
             <div class="om-latest-btns">
               <a class="om-cbtn om-cbtn-ws" href="/worksheets/algebra/solving-one-step-equations-set-1.pdf">Worksheet (A)</a>
               <a class="om-cbtn om-cbtn-ans" href="/worksheets/algebra/solving-one-step-equations-set-1-answers.pdf">Answers (A)</a>
-              <a class="om-cbtn om-cbtn-tes" href="#" target="_blank" rel="noopener">Full pack on TES ↗</a>
+              <a class="om-cbtn om-cbtn-tes" href="#" target="_blank" rel="noopener">Full pack on TES <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
             </div>
           </div>
         </article>
@@ -150,7 +150,7 @@ body_class: page-home
             <div class="om-latest-btns">
               <a class="om-cbtn om-cbtn-ws" href="/worksheets/shape/area-of-triangles-set-1.pdf">Worksheet (A)</a>
               <a class="om-cbtn om-cbtn-ans" href="/worksheets/shape/area-of-triangles-set-1-answers.pdf">Answers (A)</a>
-              <a class="om-cbtn om-cbtn-tes" href="#" target="_blank" rel="noopener">Full pack on TES ↗</a>
+              <a class="om-cbtn om-cbtn-tes" href="#" target="_blank" rel="noopener">Full pack on TES <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
             </div>
           </div>
         </article>
@@ -172,7 +172,7 @@ body_class: page-home
           <div class="om-book-body">
             <h3 class="om-book-title">6 Times Table: 26 Times Table Tests</h3>
             <p class="om-book-sub">Repeated practice to build times table fluency.</p>
-            <span class="om-book-btn">View on Amazon ↗︎ </span>
+            <span class="om-book-btn">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></span>
           </div>
         </a>
         <a class="om-book-card" href="https://www.amazon.co.uk/dp/B0C87F2ZJ8/" target="_blank" rel="noopener">
@@ -182,7 +182,7 @@ body_class: page-home
           <div class="om-book-body">
             <h3 class="om-book-title">Number Bonds to 10: 26 Number Bond Tests</h3>
             <p class="om-book-sub">Build number bond confidence through structured testing.</p>
-            <span class="om-book-btn">View on Amazon ↗︎ </span>
+            <span class="om-book-btn">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></span>
           </div>
         </a>
         <a class="om-book-card" href="https://www.amazon.co.uk/dp/B09DMTZGLH/" target="_blank" rel="noopener">
@@ -192,7 +192,7 @@ body_class: page-home
           <div class="om-book-body">
             <h3 class="om-book-title">8 Times Table: 26 Times Table Tests</h3>
             <p class="om-book-sub">Repeated practice to build times table fluency.</p>
-            <span class="om-book-btn">View on Amazon ↗︎ </span>
+            <span class="om-book-btn">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></span>
           </div>
         </a>
       </div>
