@@ -36,7 +36,7 @@ permalink: /maths-sats-papers/
         <strong>Preparing for the 2026 maths SATs?</strong>
         <span>Our eBook covers everything a parent needs to know – from what to expect on the day to how to help your child prepare.</span>
       </div>
-      <a href="https://amzn.to/4a3XxiU" class="btn btn-orange" target="_blank" rel="noopener sponsored">View on Amazon ↗︎</a>
+      <a href="https://amzn.to/4a3XxiU" class="btn btn-orange" target="_blank" rel="noopener sponsored">View on Amazon ⬈</a>
     </div>
 
     <!-- ── 2025 ── -->
