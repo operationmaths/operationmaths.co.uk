@@ -207,7 +207,7 @@ main { flex: 1; }
 .paper-type { font-size: 13px; font-weight: 300; color: #6b7280; }
 .paper-tag { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 6px; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.04em; }
 .tag-arith  { background: #eff6ff; color: var(--blue); }
-.tag-reason { background: #f0fdf4; color: var(--green); }
+.tag-reason { background: #f5f0ff; color: var(--purple); }
 .tag-mark   { background: #fff7ed; color: var(--orange); }
 .paper-btns { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; flex-shrink: 0; }
 .answers-row { background: #fafafa; border-top: 1px solid #e5e7eb; padding: 0.85rem 1.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
@@ -514,7 +514,7 @@ main { flex: 1; }
 
 @media (max-width: 640px) {
   .om-strip { flex-direction: column; }
-  .om-strip-item { flex-direction: row; justify-content: space-between; align-items: center; text-align: left; border-right: none; border-bottom: 1px solid #e5e7eb; border-top: none; border-left: 3px solid var(--sc); padding: 1rem 1.25rem; }
+  .om-strip-item { flex-direction: column; align-items: flex-start; text-align: left; border-right: none; border-bottom: 1px solid #e5e7eb; border-top: none; border-left: 3px solid var(--sc); padding: 1rem 1.25rem; gap: 2px; }
   .om-strip-item:last-child { border-bottom: none; }
   .om-strip-title { font-size: 14px; }
   .om-strip-sub { font-size: 12px; margin-top: 2px; }
