@@ -203,7 +203,7 @@ body_class: page-home
         <div>
           <h2 id="sats-course-heading">Preparing for SATs?</h2>
           <p>Structured revision course with practice papers and worked examples for Year 6 pupils.</p>
-          <a href="/sats-course" class="om-btn-green">View SATs course</a>
+          <a href="/sats-course" class="om-btn-green">View SATs course <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
         </div>
         <div class="om-sats-image" aria-hidden="true">
           <div class="om-sats-screen">
