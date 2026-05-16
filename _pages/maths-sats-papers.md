@@ -94,7 +94,7 @@ permalink: /maths-sats-papers/
       </div>
       <div class="answers-row">
         <span class="answers-label">Mark scheme</span>
-        <a href="/pdfs/SATs-2025-Mark-scheme.pdf" class="btn btn-orange">View mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+        <a href="/pdfs/SATs-2025-Mark-scheme.pdf" class="btn btn-green">View mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
       </div>
     </div>
     </section>
@@ -154,7 +154,7 @@ permalink: /maths-sats-papers/
       </div>
       <div class="answers-row">
         <span class="answers-label">Mark scheme</span>
-        <a href="/pdfs/SATs-2024-Mark-scheme.pdf" class="btn btn-orange">View mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+        <a href="/pdfs/SATs-2024-Mark-scheme.pdf" class="btn btn-green">View mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
       </div>
     </div>
     </section>
@@ -214,7 +214,7 @@ permalink: /maths-sats-papers/
       </div>
       <div class="answers-row">
         <span class="answers-label">Mark scheme</span>
-        <a href="/pdfs/SATs-2023-Mark-scheme.pdf" class="btn btn-orange">View mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+        <a href="/pdfs/SATs-2023-Mark-scheme.pdf" class="btn btn-green">View mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
       </div>
     </div>
     </section>
@@ -274,7 +274,7 @@ permalink: /maths-sats-papers/
       </div>
       <div class="answers-row">
         <span class="answers-label">Mark scheme</span>
-        <a href="/pdfs/SATs-2022-Mark-scheme.pdf" class="btn btn-orange">View mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+        <a href="/pdfs/SATs-2022-Mark-scheme.pdf" class="btn btn-green">View mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
       </div>
     </div>
     </section>
@@ -334,7 +334,7 @@ permalink: /maths-sats-papers/
       </div>
       <div class="answers-row">
         <span class="answers-label">Mark scheme</span>
-        <a href="/pdfs/SATs-2019-Mark-scheme.pdf" class="btn btn-orange">View mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+        <a href="/pdfs/SATs-2019-Mark-scheme.pdf" class="btn btn-green">View mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
       </div>
     </div>
     </section>
@@ -394,7 +394,7 @@ permalink: /maths-sats-papers/
       </div>
       <div class="answers-row">
         <span class="answers-label">Mark scheme</span>
-        <a href="/pdfs/SATs-2018-Mark-scheme.pdf" class="btn btn-orange">View mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+        <a href="/pdfs/SATs-2018-Mark-scheme.pdf" class="btn btn-green">View mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
       </div>
     </div>
     </section>
@@ -454,7 +454,7 @@ permalink: /maths-sats-papers/
       </div>
       <div class="answers-row">
         <span class="answers-label">Mark scheme</span>
-        <a href="/pdfs/SATs-2017-Mark-scheme.pdf" class="btn btn-orange">View mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+        <a href="/pdfs/SATs-2017-Mark-scheme.pdf" class="btn btn-green">View mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
       </div>
     </div>
     </section>
@@ -514,7 +514,7 @@ permalink: /maths-sats-papers/
       </div>
       <div class="answers-row">
         <span class="answers-label">Mark scheme</span>
-        <a href="/pdfs/SATs-2016-Mark-scheme.pdf" class="btn btn-orange">View mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+        <a href="/pdfs/SATs-2016-Mark-scheme.pdf" class="btn btn-green">View mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
       </div>
     </div>
     </section>
@@ -574,7 +574,7 @@ permalink: /maths-sats-papers/
       </div>
       <div class="answers-row">
         <span class="answers-label">Mark scheme</span>
-        <a href="/pdfs/SATs-Sample-Mark-scheme.pdf" class="btn btn-orange">View mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+        <a href="/pdfs/SATs-Sample-Mark-scheme.pdf" class="btn btn-green">View mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
       </div>
     </div>
     </section>
