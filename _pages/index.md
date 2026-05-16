@@ -49,7 +49,7 @@ body_class: page-home
     </div>
     <div class="om-hero-btns">
       <a href="/worksheets/" class="om-btn-green">Browse free worksheets</a>
-      <a href="/sats-course" class="om-btn-dark-outline">SATs course →</a>
+      <a href="/sats-course" class="om-btn-dark-outline">SATs course <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
     </div>
   </section>
 
