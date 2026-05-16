@@ -18,8 +18,8 @@ permalink: /about/
         <img src="/assets/images/Fay-photo.png" alt="Fay, qualified maths tutor and teacher" style="width:180px; border-radius:8px; display:block;">
         <div class="intro-body">
           <h2>Hi, I'm Fay</h2>
-          <p>I am a qualified teacher with many years of experience teaching in schools across the North East of England. Alongside my classroom career I have worked extensively in private tuition, supporting children of all abilities to build their confidence and attainment in maths.</p>
-          <p>I know from experience which topics Year 6 pupils find most difficult in the SATs, and I have spent years developing clear, straightforward ways of explaining them. Operation Maths is built on those methods - resources and approaches that I use every day with real children.</p>
+          <p>I am a qualified teacher with many years of experience teaching in schools across the North East of England and abroad. Alongside my classroom career I have worked extensively in private tuition, supporting children of all abilities from primary through to secondary level to build their confidence and attainment in maths.</p>
+          <p>I know from experience which topics Year 6 pupils find most difficult in the SATs, and I have spent years developing clear, straightforward ways of explaining them. Operation Maths is built on those methods – resources and approaches that I use every day with my students.</p>
         </div>
       </div>
     </section>
@@ -39,7 +39,7 @@ permalink: /about/
         <div class="qual-card" style="padding-top:0; overflow:hidden;">
           <div style="height:6px; background:var(--orange); margin: 0 -1.5rem 1.25rem; width:calc(100% + 3rem);"></div>
           <h3>Private tuition</h3>
-          <p>Extensive experience providing one-to-one maths tuition to primary and secondary students across a range of ages and abilities.</p>
+          <p>Extensive experience providing one-to-one maths tuition to primary and secondary students of all abilities.</p>
         </div>
       </div>
     </section>
@@ -47,9 +47,9 @@ permalink: /about/
     <section id="story" style="margin-bottom:2.5rem;">
       <div class="story-card">
         <h2 class="story-heading">The story behind Operation Maths</h2>
-        <p>Operation Maths grew out of my work as a private tutor. Session after session I found myself returning to the same topics — the areas where pupils consistently lose marks in the SATs — and developing resources to address them clearly and effectively.</p>
-        <p>Over time those resources built up into a substantial bank of worksheets, support sheets and teaching materials. It made sense to make them available more widely, so that pupils and parents could access the same quality of material whether or not they were having one-to-one tuition.</p>
-        <p>Everything on the site is designed with a real classroom and real children in mind. There are no shortcuts or gimmicks — just clear teaching, well-structured practice and the confidence that comes from understanding rather than just memorising.</p>
+        <p>Operation Maths grew out of my work as a private tutor. Session after session I found myself returning to the same topics – the areas where pupils consistently lose marks in the SATs – and developing resources to address them clearly and effectively.</p>
+        <p>Over time those resources built up into a substantial bank of worksheets, support sheets and teaching materials. It made sense to make them available more widely, so that pupils, teachers and parents could access the same quality of material whether or not they were having one-to-one tuition.</p>
+        <p>Everything on the site is designed with a real classroom and real children in mind. There are no shortcuts or gimmicks – just clear teaching, well-structured practice and the confidence that comes from understanding rather than just memorising.</p>
       </div>
     </section>
 
