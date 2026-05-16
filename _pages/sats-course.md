@@ -8,7 +8,7 @@ body_class: page-sats-course
 
 <section class="om-hero" style="min-height:0; padding: 3.5rem 2rem 2.5rem;">
   <h1>Year 6 maths <em>SATs course</em></h1>
-  <p>Help your child prepare for their Key Stage 2 SATs with weekly video lessons, a free resource pack posted to your door and expert teaching from a qualified teacher — all for just £99.</p>
+  <p>Help your child prepare for their Key Stage 2 SATs with weekly video lessons, a free resource pack posted to your door and expert teaching from a qualified teacher – all for just £99.</p>
   <nav class="jump-nav" role="navigation" aria-label="Jump to section" style="margin-top:1.75rem;">
     <a href="#whats-included" class="jump-link">What's included</a>
     <a href="#timetable" class="jump-link">Timetable</a>
@@ -25,7 +25,7 @@ body_class: page-sats-course
       <div style="background:#fff; border:1px solid #e5e7eb; border-radius:10px; overflow:hidden;">
         <img src="/assets/images/SATs-booklets.png" alt="SATs resource pack booklets" style="width:100%; display:block;">
         <div style="padding:1.5rem;">
-          <h2 style="font-size:1.5rem; font-weight:700; margin-bottom:0.6rem;">Maths SATs course — Year 6</h2>
+          <h2 style="font-size:1.5rem; font-weight:700; margin-bottom:0.6rem;">Maths SATs course – Year 6</h2>
           <p style="color:#444; margin-bottom:1rem;">This course is designed to help Year 6 students prepare for their Key Stage 2 maths SATs. Each week focuses on one of the key areas of arithmetic that pupils most commonly find difficult, with clear teaching videos and supporting materials to practise at home.</p>
           <p style="color:#444;">A resource pack is posted to you for free at the start of the course, so your child has everything they need to work alongside the videos.</p>
         </div>
@@ -33,7 +33,7 @@ body_class: page-sats-course
       <div class="pricing-panel">
         <p class="course-tag">Maths SATs course · Year 6</p>
         <p class="price">£99</p>
-        <p class="price-note">One-off payment · full 5-week course</p>
+        <p class="price-note">One-off payment · 5-week course</p>
         <ul>
           <li>Weekly teaching videos emailed to you</li>
           <li>Resource pack posted free of charge</li>
@@ -86,7 +86,8 @@ body_class: page-sats-course
         <div class="tutor-body">
           <h3>Fay — qualified teacher and maths specialist</h3>
           <p>I am a qualified teacher with many years of experience both in the classroom and in private tuition. I understand the areas of maths that Year 6 students find most challenging and I teach practical, clear methods for tackling each type of problem.</p>
-          <p>Operation Maths is built on the resources and approaches I use day to day in my tuition sessions — designed to be straightforward, effective and genuinely useful for SATs preparation.</p>
+          
+          <p>Operation Maths is built on the resources and approaches I use day to day in my tuition sessions – designed to be straightforward, effective and genuinely useful for SATs preparation.</p>
         </div>
       </div>
     </section>
