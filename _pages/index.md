@@ -59,17 +59,17 @@ body_class: page-home
         <div class="om-strip-title">Worksheets</div>
         <div class="om-strip-sub">Free worksheet A with every set</div>
       </a>
-      <a class="om-strip-item" style="--sc:var(--orange)" href="/books">
-        <div class="om-strip-title">Books</div>
-        <div class="om-strip-sub">Available on Amazon</div>
-      </a>
       <a class="om-strip-item" style="--sc:var(--green)" href="/maths-sats-papers">
         <div class="om-strip-title">Maths SATs papers</div>
         <div class="om-strip-sub">Key Stage 2 practice papers</div>
       </a>
       <a class="om-strip-item" style="--sc:var(--blue)" href="/online-maths-tests">
         <div class="om-strip-title">Online maths tests</div>
-        <div class="om-strip-sub">Times tables, number bonds and more</div>
+        <div class="om-strip-sub">Times tables and more</div>
+      </a>
+      <a class="om-strip-item" style="--sc:var(--orange)" href="/books">
+        <div class="om-strip-title">Books</div>
+        <div class="om-strip-sub">Available on Amazon</div>
       </a>
       <a class="om-strip-item" style="--sc:var(--purple)" href="/sats-course">
         <div class="om-strip-title">SATs course</div>
