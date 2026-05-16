@@ -21,7 +21,7 @@ body_class: page-sats-course
   <div class="om-body">
 
     <!-- Overview + pricing -->
-    <div style="display:grid; grid-template-columns: 2fr 1fr; gap:2rem; margin-bottom:2.5rem; align-items:start;">
+    <div style="display:grid; grid-template-columns: 3fr 1fr; gap:2rem; margin-bottom:2.5rem; align-items:stretch;">
       <div style="background:#fff; border:1px solid #e5e7eb; border-radius:10px; overflow:hidden;">
         <img src="/assets/images/SATs-booklets.png" alt="SATs resource pack booklets" style="width:100%; display:block;">
         <div style="padding:1.5rem;">
@@ -30,7 +30,7 @@ body_class: page-sats-course
           <p style="color:#444;">A resource pack is posted to you for free at the start of the course, so your child has everything they need to work alongside the videos.</p>
         </div>
       </div>
-      <div class="pricing-panel">
+      <div class="pricing-panel" style="height:100%; box-sizing:border-box;">
         <p class="course-tag">Maths SATs course · Year 6</p>
         <p class="price">£99</p>
         <p class="price-note">One-off payment · 5-week course</p>
