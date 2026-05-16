@@ -22,10 +22,7 @@ body_class: page-sats-course
 
     <!-- Overview + pricing -->
     <div class="overview-card" style="margin-bottom:2.5rem;">
-      <div class="booklet-placeholder">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-        <span>Booklet image<br>coming soon</span>
-      </div>
+      <img src="/assets/images/SATs-booklets.png" alt="SATs resource pack booklets" style="width:100%; border-radius:8px; object-fit:cover;">
       <div>
         <h2 class="card-heading">Maths SATs course — Year 6</h2>
         <p>This course is designed to help Year 6 students prepare for their Key Stage 2 maths SATs. Each week focuses on one of the key areas of arithmetic that pupils most commonly find difficult, with clear teaching videos and supporting materials to practise at home.</p>
@@ -84,7 +81,7 @@ body_class: page-sats-course
       <h2 class="section-label">About the tutor</h2>
       <div class="tutor-card">
         <div class="tutor-img">
-          Photo<br>placeholder
+          <img src="/assets/images/Fay-photo.png" alt="Fay, qualified maths tutor and teacher">
         </div>
         <div class="tutor-body">
           <h3>Fay — qualified teacher and maths specialist</h3>
