@@ -21,8 +21,8 @@ body_class: page-sats-course
   <div class="om-body">
 
     <!-- Overview + pricing -->
-    <div class="overview-card" style="margin-bottom:2.5rem;">
-      <img src="/assets/images/SATs-booklets.png" alt="SATs resource pack booklets" style="width:100%; border-radius:8px; object-fit:cover;">
+    <div class="overview-card" style="margin-bottom:2.5rem; grid-template-columns: 220px 1fr 1fr;">
+      <img src="/assets/images/SATs-booklets.png" alt="SATs resource pack booklets" style="width:100%; border-radius:8px; object-fit:cover; display:block;">
       <div>
         <h2 class="card-heading">Maths SATs course — Year 6</h2>
         <p>This course is designed to help Year 6 students prepare for their Key Stage 2 maths SATs. Each week focuses on one of the key areas of arithmetic that pupils most commonly find difficult, with clear teaching videos and supporting materials to practise at home.</p>
@@ -80,9 +80,7 @@ body_class: page-sats-course
     <section id="about-the-tutor" style="margin-bottom:3rem; scroll-margin-top:80px;">
       <h2 class="section-label">About the tutor</h2>
       <div class="tutor-card">
-        <div class="tutor-img">
-          <img src="/assets/images/Fay-photo.png" alt="Fay, qualified maths tutor and teacher">
-        </div>
+        <img src="/assets/images/Fay-photo.png" alt="Fay, qualified maths tutor and teacher" style="width:160px; flex-shrink:0; border-radius:8px; display:block; object-fit:cover;">
         <div class="tutor-body">
           <h3>Fay — qualified teacher and maths specialist</h3>
           <p>I am a qualified teacher with many years of experience both in the classroom and in private tuition. I understand the areas of maths that Year 6 students find most challenging and I teach practical, clear methods for tackling each type of problem.</p>
@@ -94,18 +92,18 @@ body_class: page-sats-course
     <!-- Contact -->
     <section id="contact" style="margin-bottom:1rem; scroll-margin-top:80px;">
       <h2 class="section-label">Get in touch</h2>
-      <div class="contact-card">
-        <div class="contact-intro">
-          <h3>Contact Fay to find out more or to book</h3>
-          <a href="mailto:operationmaths123@gmail.com">✉ operationmaths123@gmail.com</a>
+      <div class="contact-card-full">
+        <div class="contact-left">
+          <h2>Contact Fay to find out more or to book</h2>
+          <a href="mailto:operationmaths123@gmail.com" style="color:var(--blue); text-decoration:none; font-size:0.9rem;">✉ operationmaths123@gmail.com</a>
         </div>
         <form class="contact-form" onsubmit="handleSubmit(event)">
           <div class="contact-form-row">
             <input type="text" placeholder="Name" required>
             <input type="email" placeholder="Email" required>
           </div>
-          <textarea placeholder="Message"></textarea>
-          <button type="submit" class="btn btn-green">Send message</button>
+          <textarea placeholder="Message" style="resize:vertical; min-height:120px; width:100%; font-family:'DM Sans',sans-serif; font-size:0.9rem; padding:0.6rem 0.85rem; border:1px solid #e5e7eb; border-radius:6px; background:#f5f6f8; color:#111827; outline:none;"></textarea>
+          <button type="submit" class="btn-submit">Send message</button>
         </form>
       </div>
     </section>
