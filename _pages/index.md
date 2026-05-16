@@ -166,7 +166,7 @@ body_class: page-home
       </div>
       <div class="om-books">
         <a class="om-book-card" href="https://www.amazon.co.uk/dp/B09DJ7LQ3S/" target="_blank" rel="noopener">
-          <div class="om-book-cover" style="background:#e8f4ee; height:auto; padding:1.25rem 0;">
+          <div class="om-book-cover" style="background:#f5f6f8; height:auto; padding:1.25rem 0;">
             <img src="/assets/images/6-times-table-book-front.PNG" alt="6 Times Table: 26 Times Table Tests" style="width:auto; max-width:80%; max-height:200px; object-fit:contain; border-radius:4px; box-shadow:3px 3px 12px rgba(0,0,0,0.18); display:block; margin:0 auto;">
           </div>
           <div class="om-book-body">
@@ -176,7 +176,7 @@ body_class: page-home
           </div>
         </a>
         <a class="om-book-card" href="https://www.amazon.co.uk/dp/B0C87F2ZJ8/" target="_blank" rel="noopener">
-          <div class="om-book-cover" style="background:#eef3fa; height:auto; padding:1.25rem 0;">
+          <div class="om-book-cover" style="background:#f5f6f8; height:auto; padding:1.25rem 0;">
             <img src="/assets/images/Number-bonds-to-10-front.PNG" alt="Number Bonds to 10: 26 Number Bond Tests" style="width:auto; max-width:80%; max-height:200px; object-fit:contain; border-radius:4px; box-shadow:3px 3px 12px rgba(0,0,0,0.18); display:block; margin:0 auto;">
           </div>
           <div class="om-book-body">
@@ -186,7 +186,7 @@ body_class: page-home
           </div>
         </a>
         <a class="om-book-card" href="https://www.amazon.co.uk/dp/B09DMTZGLH/" target="_blank" rel="noopener">
-          <div class="om-book-cover" style="background:#f5eefa; height:auto; padding:1.25rem 0;">
+          <div class="om-book-cover" style="background:#f5f6f8; height:auto; padding:1.25rem 0;">
             <img src="/assets/images/8-times-table-book-front.PNG" alt="8 Times Table: 26 Times Table Tests" style="width:auto; max-width:80%; max-height:200px; object-fit:contain; border-radius:4px; box-shadow:3px 3px 12px rgba(0,0,0,0.18); display:block; margin:0 auto;">
           </div>
           <div class="om-book-body">
