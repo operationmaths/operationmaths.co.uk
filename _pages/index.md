@@ -167,7 +167,7 @@ body_class: page-home
       <div class="om-books">
         <a class="om-book-card" href="https://www.amazon.co.uk/dp/B09DJ7LQ3S/" target="_blank" rel="noopener">
           <div class="om-book-cover" style="background:#e8f4ee">
-            <div class="om-book-cover-inner" style="background:var(--green)">📖</div>
+            <img src="/assets/images/6-times-table-book-front.PNG" alt="6 times table book front cover">
           </div>
           <div class="om-book-body">
             <h3 class="om-book-title">6 Times Table: 26 Times Table Tests</h3>
@@ -177,7 +177,7 @@ body_class: page-home
         </a>
         <a class="om-book-card" href="https://www.amazon.co.uk/dp/B0C87F2ZJ8/" target="_blank" rel="noopener">
           <div class="om-book-cover" style="background:#eef3fa">
-            <div class="om-book-cover-inner" style="background:var(--blue)">📖</div>
+            <img src="/assets/images/Number-bonds-to-10-front.PNG" alt="Number bonds to 10 book front cover">
           </div>
           <div class="om-book-body">
             <h3 class="om-book-title">Number Bonds to 10: 26 Number Bond Tests</h3>
@@ -187,7 +187,7 @@ body_class: page-home
         </a>
         <a class="om-book-card" href="https://www.amazon.co.uk/dp/B09DMTZGLH/" target="_blank" rel="noopener">
           <div class="om-book-cover" style="background:#f5eefa">
-            <div class="om-book-cover-inner" style="background:var(--purple)">📖</div>
+            <img src="/assets/images/8-times-table-book-front.PNG" alt="8 times table book front cover">
           </div>
           <div class="om-book-body">
             <h3 class="om-book-title">8 Times Table: 26 Times Table Tests</h3>
