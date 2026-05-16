@@ -79,17 +79,17 @@ body_class: page-sats-course
     </section>
 
     <!-- About the tutor -->
-    <section id="about-the-tutor" style="margin-bottom:3rem; scroll-margin-top:80px;">
-      <h2 class="section-label">About the tutor</h2>
-      <div class="tutor-card">
-        <img src="/assets/images/Fay-photo.png" alt="Fay, qualified maths tutor and teacher" style="width:160px; flex-shrink:0; border-radius:8px; display:block; object-fit:cover;">
-        <div class="tutor-body">
-          <h3>Fay — qualified teacher and maths specialist</h3>
-          <p>I am a qualified teacher with many years of experience both in the classroom and in private tuition. I understand the areas of maths that Year 6 students find most challenging and I teach practical, clear methods for tackling each type of problem.</p>
-          <p>Operation Maths is built on the resources and approaches I use day to day in my tuition sessions – designed to be straightforward, effective and genuinely useful for SATs preparation.</p>
-        </div>
-      </div>
-    </section>
+<section id="about-the-tutor" style="margin-bottom:3rem; scroll-margin-top:80px;">
+  <h2 class="section-label">About the tutor</h2>
+  <div class="tutor-card" style="align-items:center;">
+    <img src="/assets/images/Fay-photo.png" alt="Fay, qualified maths tutor and teacher" style="width:160px; flex-shrink:0; border-radius:8px; display:block; object-fit:cover;">
+    <div class="tutor-body">
+      <h3>Fay — qualified teacher and maths specialist</h3>
+      <p style="margin-bottom:0.75rem;">I am a qualified teacher with many years of experience both in the classroom and in private tuition. I understand the areas of maths that Year 6 students find most challenging and I teach practical, clear methods for tackling each type of problem.</p>
+      <p>Operation Maths is built on the resources and approaches I use day to day in my tuition sessions — designed to be straightforward, effective and genuinely useful for SATs preparation.</p>
+    </div>
+  </div>
+</section>
 
     <!-- Contact -->
     <section id="contact" style="margin-bottom:1rem; scroll-margin-top:80px;">
