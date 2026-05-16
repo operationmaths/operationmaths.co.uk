@@ -198,28 +198,16 @@ body_class: page-home
       </div>
     </section>
 
-    <section aria-labelledby="sats-course-heading">
-      <div class="om-sats">
-        <div>
-          <h2 id="sats-course-heading">Preparing for SATs?</h2>
-          <p>Structured revision course with practice papers and worked examples for Year 6 pupils.</p>
-          <a href="/sats-course" class="om-btn-green">View SATs course <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-        </div>
-        <div class="om-sats-image" aria-hidden="true">
-          <div class="om-sats-screen">
-            <div class="om-sats-slide">
-              <div class="om-sats-slide-title"></div>
-              <div class="om-sats-slide-line m"></div>
-              <div class="om-sats-slide-line s"></div>
-              <div class="om-sats-slide-accent"></div>
-              <div class="om-sats-slide-line m"></div>
-            </div>
-          </div>
-          <div class="om-sats-stand"></div>
-          <div class="om-sats-base"></div>
-        </div>
-      </div>
-    </section>
+  <section aria-labelledby="sats-course-heading">
+  <div class="om-sats">
+    <div>
+      <h2 id="sats-course-heading">Preparing for SATs?</h2>
+      <p>Structured revision course with practice papers and worked examples for Year 6 pupils.</p>
+      <a href="/sats-course" class="om-btn-green">View SATs course <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+    </div>
+    <img src="/assets/images/SATs-booklets.png" alt="SATs resource pack booklets" style="width:100%; max-width:380px; border-radius:8px; display:block;">
+  </div>
+  </section>
 
   </div>
 </main>
