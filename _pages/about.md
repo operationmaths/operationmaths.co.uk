@@ -56,7 +56,7 @@ permalink: /about/
     <div class="cta-strip">
       <h2>Ready to get started?</h2>
       <p>Explore the worksheets, sign up for the maths SATs course or get in touch with any questions.</p>
-      <a class="btn btn-white" href="/sats-course/">View the maths SATs course</a>
+      <a class="btn btn-white" href="/sats-course/">View the maths SATs course<span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
     </div>
 
   </div>
