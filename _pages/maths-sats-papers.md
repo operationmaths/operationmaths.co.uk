@@ -8,7 +8,7 @@ permalink: /maths-sats-papers/
   <!-- ── HERO ── -->
 <section class="om-hero" aria-label="Hero">
     <h1>Past Key Stage 2 maths <em>SATs papers</em></h1>
-    <p>All Year 6 maths SATs papers from 2016 to 2025 – free to download, with mark schemes included.</p>
+    <p>All Year 6 maths SATs papers from 2016 to 2025 – free to view and download, with mark schemes included.</p>
     <p class="om-hero-note">Contains material developed by the Standards and Testing Agency and licensed under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" target="_blank" rel="noopener noreferrer">Open Government Licence v3.0</a>.</p>
     <nav class="jump-links" aria-label="Jump to year">
       <a href="#y2025" class="jump-link">2025</a>
@@ -59,7 +59,7 @@ permalink: /maths-sats-papers/
             <div class="paper-type">40 marks · 30 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/SATs-2025-Paper-1.pdf" class="btn btn-blue" download>Download ↓</a>
+            <a href="/pdfs/SATs-2025-Paper-1.pdf" class="btn btn-blue">View Paper 1 →</a>
           </div>
         </div>
 
@@ -73,7 +73,7 @@ permalink: /maths-sats-papers/
             <div class="paper-type">35 marks · 40 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/SATs-2025-Paper-2.pdf" class="btn btn-blue" download>Download ↓</a>
+            <a href="/pdfs/SATs-2025-Paper-2.pdf" class="btn btn-blue">View Paper 2 →</a>
           </div>
         </div>
 
@@ -87,14 +87,14 @@ permalink: /maths-sats-papers/
             <div class="paper-type">35 marks · 40 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/SATs-2025-Paper-3.pdf" class="btn btn-blue" download>Download ↓</a>
+            <a href="/pdfs/SATs-2025-Paper-3.pdf" class="btn btn-blue">View Paper 3 →</a>
           </div>
         </div>
 
       </div>
       <div class="answers-row">
         <span class="answers-label">Mark scheme</span>
-        <a href="/pdfs/SATs-2025-Mark-scheme.pdf" class="btn btn-orange" download>Download mark scheme ↓</a>
+        <a href="/pdfs/SATs-2025-Mark-scheme.pdf" class="btn btn-orange">View mark scheme →</a>
       </div>
     </div>
     </section>
@@ -119,7 +119,7 @@ permalink: /maths-sats-papers/
             <div class="paper-type">40 marks · 30 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/SATs-2024-Paper-1.pdf" class="btn btn-blue" download>Download ↓</a>
+            <a href="/pdfs/SATs-2024-Paper-1.pdf" class="btn btn-blue">View Paper 1 →</a>
           </div>
         </div>
 
@@ -133,7 +133,7 @@ permalink: /maths-sats-papers/
             <div class="paper-type">35 marks · 40 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/SATs-2024-Paper-2.pdf" class="btn btn-blue" download>Download ↓</a>
+            <a href="/pdfs/SATs-2024-Paper-2.pdf" class="btn btn-blue">View Paper 2 →</a>
           </div>
         </div>
 
@@ -147,14 +147,14 @@ permalink: /maths-sats-papers/
             <div class="paper-type">35 marks · 40 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/SATs-2024-Paper-3.pdf" class="btn btn-blue" download>Download ↓</a>
+            <a href="/pdfs/SATs-2024-Paper-3.pdf" class="btn btn-blue">View Paper 3 →</a>
           </div>
         </div>
 
       </div>
       <div class="answers-row">
         <span class="answers-label">Mark scheme</span>
-        <a href="/pdfs/SATs-2024-Mark-scheme.pdf" class="btn btn-orange" download>Download mark scheme ↓</a>
+        <a href="/pdfs/SATs-2024-Mark-scheme.pdf" class="btn btn-orange">View mark scheme →</a>
       </div>
     </div>
     </section>
@@ -179,7 +179,7 @@ permalink: /maths-sats-papers/
             <div class="paper-type">40 marks · 30 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/SATs-2023-Paper-1.pdf" class="btn btn-blue" download>Download ↓</a>
+            <a href="/pdfs/SATs-2023-Paper-1.pdf" class="btn btn-blue">View Paper 1 →</a>
           </div>
         </div>
 
@@ -193,7 +193,7 @@ permalink: /maths-sats-papers/
             <div class="paper-type">35 marks · 40 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/SATs-2023-Paper-2.pdf" class="btn btn-blue" download>Download ↓</a>
+            <a href="/pdfs/SATs-2023-Paper-2.pdf" class="btn btn-blue">View Paper 2 →</a>
           </div>
         </div>
 
@@ -207,14 +207,14 @@ permalink: /maths-sats-papers/
             <div class="paper-type">35 marks · 40 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/SATs-2023-Paper-3.pdf" class="btn btn-blue" download>Download ↓</a>
+            <a href="/pdfs/SATs-2023-Paper-3.pdf" class="btn btn-blue">View Paper 3 →</a>
           </div>
         </div>
 
       </div>
       <div class="answers-row">
         <span class="answers-label">Mark scheme</span>
-        <a href="/pdfs/SATs-2023-Mark-scheme.pdf" class="btn btn-orange" download>Download mark scheme ↓</a>
+        <a href="/pdfs/SATs-2023-Mark-scheme.pdf" class="btn btn-orange">View mark scheme →</a>
       </div>
     </div>
     </section>
@@ -239,7 +239,7 @@ permalink: /maths-sats-papers/
             <div class="paper-type">40 marks · 30 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/SATs-2022-Paper-1.pdf" class="btn btn-blue" download>Download ↓</a>
+            <a href="/pdfs/SATs-2022-Paper-1.pdf" class="btn btn-blue">View Paper 1 →</a>
           </div>
         </div>
 
@@ -253,7 +253,7 @@ permalink: /maths-sats-papers/
             <div class="paper-type">35 marks · 40 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/SATs-2022-Paper-2.pdf" class="btn btn-blue" download>Download ↓</a>
+            <a href="/pdfs/SATs-2022-Paper-2.pdf" class="btn btn-blue">View Paper 2 →</a>
           </div>
         </div>
 
@@ -267,14 +267,14 @@ permalink: /maths-sats-papers/
             <div class="paper-type">35 marks · 40 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/SATs-2022-Paper-3.pdf" class="btn btn-blue" download>Download ↓</a>
+            <a href="/pdfs/SATs-2022-Paper-3.pdf" class="btn btn-blue">View Paper 3 →</a>
           </div>
         </div>
 
       </div>
       <div class="answers-row">
         <span class="answers-label">Mark scheme</span>
-        <a href="/pdfs/SATs-2022-Mark-scheme.pdf" class="btn btn-orange" download>Download mark scheme ↓</a>
+        <a href="/pdfs/SATs-2022-Mark-scheme.pdf" class="btn btn-orange">View mark scheme →</a>
       </div>
     </div>
     </section>
@@ -299,7 +299,7 @@ permalink: /maths-sats-papers/
             <div class="paper-type">40 marks · 30 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/SATs-2019-Paper-1.pdf" class="btn btn-blue" download>Download ↓</a>
+            <a href="/pdfs/SATs-2019-Paper-1.pdf" class="btn btn-blue">View Paper 1 →</a>
           </div>
         </div>
 
@@ -313,7 +313,7 @@ permalink: /maths-sats-papers/
             <div class="paper-type">35 marks · 40 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/SATs-2019-Paper-2.pdf" class="btn btn-blue" download>Download ↓</a>
+            <a href="/pdfs/SATs-2019-Paper-2.pdf" class="btn btn-blue">View Paper 2 →</a>
           </div>
         </div>
 
@@ -327,14 +327,14 @@ permalink: /maths-sats-papers/
             <div class="paper-type">35 marks · 40 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/SATs-2019-Paper-3.pdf" class="btn btn-blue" download>Download ↓</a>
+            <a href="/pdfs/SATs-2019-Paper-3.pdf" class="btn btn-blue">View Paper 3 →</a>
           </div>
         </div>
 
       </div>
       <div class="answers-row">
         <span class="answers-label">Mark scheme</span>
-        <a href="/pdfs/SATs-2019-Mark-scheme.pdf" class="btn btn-orange" download>Download mark scheme ↓</a>
+        <a href="/pdfs/SATs-2019-Mark-scheme.pdf" class="btn btn-orange">View mark scheme →</a>
       </div>
     </div>
     </section>
@@ -359,7 +359,7 @@ permalink: /maths-sats-papers/
             <div class="paper-type">40 marks · 30 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/SATs-2018-Paper-1.pdf" class="btn btn-blue" download>Download ↓</a>
+            <a href="/pdfs/SATs-2018-Paper-1.pdf" class="btn btn-blue">View Paper 1 →</a>
           </div>
         </div>
 
@@ -373,7 +373,7 @@ permalink: /maths-sats-papers/
             <div class="paper-type">35 marks · 40 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/SATs-2018-Paper-2.pdf" class="btn btn-blue" download>Download ↓</a>
+            <a href="/pdfs/SATs-2018-Paper-2.pdf" class="btn btn-blue">View Paper 2 →</a>
           </div>
         </div>
 
@@ -387,14 +387,14 @@ permalink: /maths-sats-papers/
             <div class="paper-type">35 marks · 40 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/SATs-2018-Paper-3.pdf" class="btn btn-blue" download>Download ↓</a>
+            <a href="/pdfs/SATs-2018-Paper-3.pdf" class="btn btn-blue">View Paper 3 →</a>
           </div>
         </div>
 
       </div>
       <div class="answers-row">
         <span class="answers-label">Mark scheme</span>
-        <a href="/pdfs/SATs-2018-Mark-scheme.pdf" class="btn btn-orange" download>Download mark scheme ↓</a>
+        <a href="/pdfs/SATs-2018-Mark-scheme.pdf" class="btn btn-orange">View mark scheme →</a>
       </div>
     </div>
     </section>
@@ -419,7 +419,7 @@ permalink: /maths-sats-papers/
             <div class="paper-type">40 marks · 30 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/SATs-2017-Paper-1.pdf" class="btn btn-blue" download>Download ↓</a>
+            <a href="/pdfs/SATs-2017-Paper-1.pdf" class="btn btn-blue">View Paper 1 →</a>
           </div>
         </div>
 
@@ -433,7 +433,7 @@ permalink: /maths-sats-papers/
             <div class="paper-type">35 marks · 40 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/SATs-2017-Paper-2.pdf" class="btn btn-blue" download>Download ↓</a>
+            <a href="/pdfs/SATs-2017-Paper-2.pdf" class="btn btn-blue">View Paper 2 →</a>
           </div>
         </div>
 
@@ -447,14 +447,14 @@ permalink: /maths-sats-papers/
             <div class="paper-type">35 marks · 40 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/SATs-2017-Paper-3.pdf" class="btn btn-blue" download>Download ↓</a>
+            <a href="/pdfs/SATs-2017-Paper-3.pdf" class="btn btn-blue">View Paper 3 →</a>
           </div>
         </div>
 
       </div>
       <div class="answers-row">
         <span class="answers-label">Mark scheme</span>
-        <a href="/pdfs/SATs-2017-Mark-scheme.pdf" class="btn btn-orange" download>Download mark scheme ↓</a>
+        <a href="/pdfs/SATs-2017-Mark-scheme.pdf" class="btn btn-orange">View mark scheme →</a>
       </div>
     </div>
     </section>
@@ -479,7 +479,7 @@ permalink: /maths-sats-papers/
             <div class="paper-type">40 marks · 30 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/SATs-2016-Paper-1.pdf" class="btn btn-blue" download>Download ↓</a>
+            <a href="/pdfs/SATs-2016-Paper-1.pdf" class="btn btn-blue">View Paper 1 →</a>
           </div>
         </div>
 
@@ -493,7 +493,7 @@ permalink: /maths-sats-papers/
             <div class="paper-type">35 marks · 40 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/SATs-2016-Paper-2.pdf" class="btn btn-blue" download>Download ↓</a>
+            <a href="/pdfs/SATs-2016-Paper-2.pdf" class="btn btn-blue">View Paper 2 →</a>
           </div>
         </div>
 
@@ -507,14 +507,14 @@ permalink: /maths-sats-papers/
             <div class="paper-type">35 marks · 40 minutes</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/SATs-2016-Paper-3.pdf" class="btn btn-blue" download>Download ↓</a>
+            <a href="/pdfs/SATs-2016-Paper-3.pdf" class="btn btn-blue">View Paper 3 →</a>
           </div>
         </div>
 
       </div>
       <div class="answers-row">
         <span class="answers-label">Mark scheme</span>
-        <a href="/pdfs/SATs-2016-Mark-scheme.pdf" class="btn btn-orange" download>Download mark scheme ↓</a>
+        <a href="/pdfs/SATs-2016-Mark-scheme.pdf" class="btn btn-orange">View mark scheme →</a>
       </div>
     </div>
     </section>
@@ -539,7 +539,7 @@ permalink: /maths-sats-papers/
             <div class="paper-type">Sample paper</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/SATs-Sample-Paper-1.pdf" class="btn btn-blue" download>Download ↓</a>
+            <a href="/pdfs/SATs-Sample-Paper-1.pdf" class="btn btn-blue">View Paper 1 →</a>
           </div>
         </div>
 
@@ -553,7 +553,7 @@ permalink: /maths-sats-papers/
             <div class="paper-type">Sample paper</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/SATs-Sample-Paper-2.pdf" class="btn btn-blue" download>Download ↓</a>
+            <a href="/pdfs/SATs-Sample-Paper-2.pdf" class="btn btn-blue">View Paper 2 →</a>
           </div>
         </div>
 
@@ -567,14 +567,14 @@ permalink: /maths-sats-papers/
             <div class="paper-type">Sample paper</div>
           </div>
           <div class="paper-btns">
-            <a href="/pdfs/SATs-Sample-Paper-3.pdf" class="btn btn-blue" download>Download ↓</a>
+            <a href="/pdfs/SATs-Sample-Paper-3.pdf" class="btn btn-blue">View Paper 3 →</a>
           </div>
         </div>
 
       </div>
       <div class="answers-row">
         <span class="answers-label">Mark scheme</span>
-        <a href="/pdfs/SATs-Sample-Mark-scheme.pdf" class="btn btn-orange" download>Download mark scheme ↓</a>
+        <a href="/pdfs/SATs-Sample-Mark-scheme.pdf" class="btn btn-orange">View mark scheme →</a>
       </div>
     </div>
     </section>
