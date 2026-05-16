@@ -18,7 +18,7 @@ permalink: /worksheets/
         <div class="card-bar"></div>
         <div class="card-body">
           <h2 class="card-title">Number</h2>
-          <span class="card-cta">View worksheets →</span>
+          <span class="card-cta">View worksheets <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></span>
         </div>
       </a>
 
@@ -26,7 +26,7 @@ permalink: /worksheets/
         <div class="card-bar"></div>
         <div class="card-body">
           <h2 class="card-title">Shape</h2>
-          <span class="card-cta">View worksheets →</span>
+          <span class="card-cta">View worksheets <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></span>
         </div>
       </a>
 
@@ -34,7 +34,7 @@ permalink: /worksheets/
         <div class="card-bar"></div>
         <div class="card-body">
           <h2 class="card-title">Algebra</h2>
-          <span class="card-cta">View worksheets →</span>
+          <span class="card-cta">View worksheets <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></span>
         </div>
       </a>
 
@@ -42,7 +42,7 @@ permalink: /worksheets/
         <div class="card-bar"></div>
         <div class="card-body">
           <h2 class="card-title">Formulae</h2>
-          <span class="card-cta">View worksheets →</span>
+          <span class="card-cta">View worksheets <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></span>
         </div>
       </a>
 
@@ -50,7 +50,7 @@ permalink: /worksheets/
         <div class="card-bar"></div>
         <div class="card-body">
           <h2 class="card-title">Times tables</h2>
-          <span class="card-cta">View worksheets →</span>
+          <span class="card-cta">View worksheets <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></span>
         </div>
       </a>
 
@@ -58,7 +58,7 @@ permalink: /worksheets/
         <div class="card-bar"></div>
         <div class="card-body">
           <h2 class="card-title">Support sheets</h2>
-          <span class="card-cta">View worksheets →</span>
+          <span class="card-cta">View worksheets <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></span>
         </div>
       </a>
 
