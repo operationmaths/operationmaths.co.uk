@@ -21,12 +21,14 @@ body_class: page-sats-course
   <div class="om-body">
 
     <!-- Overview + pricing -->
-    <div class="overview-card" style="margin-bottom:2.5rem; grid-template-columns: 220px 1fr 1fr;">
-      <img src="/assets/images/SATs-booklets.png" alt="SATs resource pack booklets" style="width:100%; border-radius:8px; object-fit:cover; display:block;">
-      <div>
-        <h2 class="card-heading">Maths SATs course — Year 6</h2>
-        <p>This course is designed to help Year 6 students prepare for their Key Stage 2 maths SATs. Each week focuses on one of the key areas of arithmetic that pupils most commonly find difficult, with clear teaching videos and supporting materials to practise at home.</p>
-        <p>A resource pack is posted to you for free at the start of the course, so your child has everything they need to work alongside the videos.</p>
+    <div style="display:grid; grid-template-columns: 2fr 1fr; gap:2rem; margin-bottom:2.5rem; align-items:start;">
+      <div style="background:#fff; border:1px solid #e5e7eb; border-radius:10px; overflow:hidden;">
+        <img src="/assets/images/SATs-booklets.png" alt="SATs resource pack booklets" style="width:100%; display:block;">
+        <div style="padding:1.5rem;">
+          <h2 style="font-size:1.5rem; font-weight:700; margin-bottom:0.6rem;">Maths SATs course — Year 6</h2>
+          <p style="color:#444; margin-bottom:1rem;">This course is designed to help Year 6 students prepare for their Key Stage 2 maths SATs. Each week focuses on one of the key areas of arithmetic that pupils most commonly find difficult, with clear teaching videos and supporting materials to practise at home.</p>
+          <p style="color:#444;">A resource pack is posted to you for free at the start of the course, so your child has everything they need to work alongside the videos.</p>
+        </div>
       </div>
       <div class="pricing-panel">
         <p class="course-tag">Maths SATs course · Year 6</p>
@@ -46,18 +48,18 @@ body_class: page-sats-course
     <section id="whats-included" style="margin-bottom:3rem; scroll-margin-top:80px;">
       <h2 class="section-label">What's included</h2>
       <div class="included-grid">
-        <div class="included-card">
-          <span class="included-icon">🎥</span>
+        <div class="included-card" style="padding-top:0; overflow:hidden;">
+          <div style="height:6px; background:var(--green); margin: 0 -1.5rem 1.25rem; width:calc(100% + 3rem);"></div>
           <h3>Weekly video lessons</h3>
           <p>A new teaching video is emailed to you every week, covering one topic in detail with worked examples and clear explanations.</p>
         </div>
-        <div class="included-card">
-          <span class="included-icon">📦</span>
+        <div class="included-card" style="padding-top:0; overflow:hidden;">
+          <div style="height:6px; background:var(--blue); margin: 0 -1.5rem 1.25rem; width:calc(100% + 3rem);"></div>
           <h3>Free resource pack</h3>
           <p>A printed resource pack is posted to you at the start of the course, so your child can work alongside the videos at no extra cost.</p>
         </div>
-        <div class="included-card">
-          <span class="included-icon">🧮</span>
+        <div class="included-card" style="padding-top:0; overflow:hidden;">
+          <div style="height:6px; background:var(--orange); margin: 0 -1.5rem 1.25rem; width:calc(100% + 3rem);"></div>
           <h3>Focused arithmetic topics</h3>
           <p>The course targets the specific areas of arithmetic that Key Stage 2 pupils most frequently lose marks on in the SATs papers.</p>
         </div>
@@ -92,9 +94,9 @@ body_class: page-sats-course
     <!-- Contact -->
     <section id="contact" style="margin-bottom:1rem; scroll-margin-top:80px;">
       <h2 class="section-label">Get in touch</h2>
-      <div class="contact-card-full">
-        <div class="contact-left">
-          <h2>Contact Fay to find out more or to book</h2>
+      <div style="background:#fff; border:1px solid #e5e7eb; border-radius:10px; padding:2rem;">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:0.5rem; margin-bottom:1.25rem;">
+          <span style="font-size:1rem; font-weight:700;">Contact Fay to find out more or to book</span>
           <a href="mailto:operationmaths123@gmail.com" style="color:var(--blue); text-decoration:none; font-size:0.9rem;">✉ operationmaths123@gmail.com</a>
         </div>
         <form class="contact-form" onsubmit="handleSubmit(event)">
