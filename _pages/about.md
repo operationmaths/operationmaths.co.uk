@@ -19,7 +19,7 @@ permalink: /about/
         <div class="intro-body">
           <h2>Hi, I'm Fay</h2>
           <p>I am a qualified teacher with many years of experience teaching in schools across the North East of England. Alongside my classroom career I have worked extensively in private tuition, supporting children of all abilities to build their confidence and attainment in maths.</p>
-          <p>I know from experience which topics Year 6 pupils find most difficult in the SATs, and I have spent years developing clear, straightforward ways of explaining them. Operation Maths is built on those methods — resources and approaches that I use every day with real children.</p>
+          <p>I know from experience which topics Year 6 pupils find most difficult in the SATs, and I have spent years developing clear, straightforward ways of explaining them. Operation Maths is built on those methods - resources and approaches that I use every day with real children.</p>
         </div>
       </div>
     </section>
@@ -56,7 +56,7 @@ permalink: /about/
     <div class="cta-strip">
       <h2>Ready to get started?</h2>
       <p>Explore the worksheets, sign up for the maths SATs course or get in touch with any questions.</p>
-      <a class="btn btn-white" href="/sats-course/">View the maths SATs course<span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+      <a class="btn btn-white" href="/sats-course/">View the maths SATs course <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
     </div>
 
   </div>
