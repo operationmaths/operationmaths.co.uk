@@ -14,7 +14,7 @@ permalink: /about/
   <div class="om-body">
 
     <section id="about" style="margin-bottom:2.5rem;">
-      <div class="intro-card" style="grid-template-columns: 180px 1fr;">
+      <div class="intro-card" style="grid-template-columns: 180px 1fr; align-items:center;">
         <img src="/assets/images/Fay-photo.png" alt="Fay, qualified maths tutor and teacher" style="width:180px; border-radius:8px; display:block;">
         <div class="intro-body">
           <h2>Hi, I'm Fay</h2>
