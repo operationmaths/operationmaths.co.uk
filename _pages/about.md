@@ -14,8 +14,8 @@ permalink: /about/
   <div class="om-body">
 
     <section id="about" style="margin-bottom:2.5rem;">
-      <div class="intro-card">
-        <img src="/assets/images/Fay-photo.png" alt="Fay, qualified maths tutor and teacher" class="tutor-photo">
+      <div class="intro-card" style="grid-template-columns: 180px 1fr;">
+        <img src="/assets/images/Fay-photo.png" alt="Fay, qualified maths tutor and teacher" style="width:180px; border-radius:8px; display:block;">
         <div class="intro-body">
           <h2>Hi, I'm Fay</h2>
           <p>I am a qualified teacher with many years of experience teaching in schools across the North East of England. Alongside my classroom career I have worked extensively in private tuition, supporting children of all abilities to build their confidence and attainment in maths.</p>
@@ -26,18 +26,18 @@ permalink: /about/
 
     <section id="qualifications" style="margin-bottom:2.5rem;">
       <div class="qual-grid">
-        <div class="qual-card">
-          <div class="om-latest-card-top" style="background:var(--green)"></div>
+        <div class="qual-card" style="padding-top:0; overflow:hidden;">
+          <div style="height:6px; background:var(--green); margin: 0 -1.5rem 1.25rem; width:calc(100% + 3rem);"></div>
           <h3>Qualified teacher status</h3>
           <p>Fully qualified and experienced teacher with a strong specialism in maths.</p>
         </div>
-        <div class="qual-card">
-          <div class="om-latest-card-top" style="background:var(--blue)"></div>
+        <div class="qual-card" style="padding-top:0; overflow:hidden;">
+          <div style="height:6px; background:var(--blue); margin: 0 -1.5rem 1.25rem; width:calc(100% + 3rem);"></div>
           <h3>Primary teaching experience</h3>
           <p>Many years teaching across year groups in England, with a focus on Key Stage 2.</p>
         </div>
-        <div class="qual-card">
-          <div class="om-latest-card-top" style="background:var(--orange)"></div>
+        <div class="qual-card" style="padding-top:0; overflow:hidden;">
+          <div style="height:6px; background:var(--orange); margin: 0 -1.5rem 1.25rem; width:calc(100% + 3rem);"></div>
           <h3>Private tuition</h3>
           <p>Extensive experience providing one-to-one maths tuition to primary and secondary students across a range of ages and abilities.</p>
         </div>
