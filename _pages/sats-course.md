@@ -22,7 +22,7 @@ body_class: page-sats-course
 
     <!-- Overview + pricing -->
 <div style="background:#fff; border:1px solid #e5e7eb; border-radius:10px; padding:1.5rem; margin-bottom:2.5rem;">
-  <h2 style="font-size:1.5rem; font-weight:700; margin-bottom:0.6rem;">Maths SATs course — Year 6</h2>
+  <h2 style="font-size:1.5rem; font-weight:700; margin-bottom:0.6rem;">Maths SATs course – Year 6</h2>
   <p style="color:#444; margin-bottom:1rem;">This course is designed to help Year 6 students prepare for their Key Stage 2 maths SATs. Each week focuses on one of the key areas of arithmetic that pupils most commonly find difficult, with clear teaching videos and supporting materials to practise at home.</p>
   <p style="color:#444; margin-bottom:1.5rem;">A resource pack is posted to you for free at the start of the course, so your child has everything they need to work alongside the videos.</p>
  <div class="sats-overview-grid" style="display:grid; grid-template-columns: 2fr 1fr; gap:1.5rem; align-items:stretch;"> 
