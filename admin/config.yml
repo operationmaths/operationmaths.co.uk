@@ -57,6 +57,12 @@ collections:
         required: false
         hint: "Short description shown on the card (1–2 sentences)."
 
+      - label: "Worksheet thumbnail"
+        name: "thumbnail"
+        widget: "image"
+        required: false
+        hint: "Upload a preview image of the worksheet." 
+
       - label: "Free sample PDF link"
         name: "free_pdf"
         widget: "string"
