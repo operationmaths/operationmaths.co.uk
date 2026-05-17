@@ -43,7 +43,7 @@ body_class: page-sats-course
 </div>
 
     <!-- What's included -->
-    <section id="whats-included" style="margin-bottom:3rem; scroll-margin-top:80px;">
+    <section id="whats-included" style="margin-bottom:3rem;">
       <h2 class="section-label">What's included</h2>
       <div class="included-grid">
         <div class="included-card" style="padding-top:0; overflow:hidden;">
@@ -65,7 +65,7 @@ body_class: page-sats-course
     </section>
 
     <!-- Timetable -->
-    <section id="timetable" style="margin-bottom:3rem; scroll-margin-top:80px;">
+    <section id="timetable" style="margin-bottom:3rem;">
       <h2 class="section-label">Timetable</h2>
       <div class="timetable-list">
         <div class="timetable-row"><span class="week-badge">Week 1</span><span>Long multiplication and division</span></div>
@@ -77,7 +77,7 @@ body_class: page-sats-course
     </section>
 
     <!-- About the tutor -->
-<section id="about-the-tutor" style="margin-bottom:3rem; scroll-margin-top:80px;">
+<section id="about-the-tutor" style="margin-bottom:3rem;">
   <h2 class="section-label">About the tutor</h2>
   <div class="tutor-card" style="align-items:center;">
     <img src="/assets/images/Fay-photo.png" alt="Fay, qualified maths tutor and teacher" style="width:160px; flex-shrink:0; border-radius:8px; display:block; object-fit:cover;">
@@ -90,7 +90,7 @@ body_class: page-sats-course
 </section>
 
     <!-- Contact -->
-    <section id="contact" style="margin-bottom:1rem; scroll-margin-top:80px;">
+    <section id="contact" style="margin-bottom:1rem;">
       <h2 class="section-label">Get in touch</h2>
       <div style="background:#fff; border:1px solid #e5e7eb; border-radius:10px; padding:2rem;">
         <div style="display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:0.5rem; margin-bottom:1.25rem;">
