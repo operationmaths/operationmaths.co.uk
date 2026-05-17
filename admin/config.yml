@@ -70,7 +70,9 @@ collections:
         name: "thumbnail"
         widget: "image"
         required: false
-        hint: "Upload a preview image of the worksheet." 
+        media_folder: "/assets/images/worksheets"
+        public_folder: "/assets/images/worksheets"
+        hint: "Upload a preview image of the worksheet."
 
       - label: "Free sample PDF link"
         name: "free_pdf"
