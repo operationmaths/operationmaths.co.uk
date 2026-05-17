@@ -19,7 +19,7 @@ permalink: /books/
 <main>
   <div class="om-body">
 
-    <section id="ebook" style="margin-bottom:3rem; scroll-margin-top:80px;">
+    <section id="ebook" style="margin-bottom:3rem;">
   <h2 class="section-label">Ebook</h2>
   <div class="books-grid single">
     <div class="book-card">
@@ -32,7 +32,7 @@ permalink: /books/
   </div>
 </section>
 
-<section id="number-facts" style="margin-bottom:3rem; scroll-margin-top:80px;">
+<section id="number-facts" style="margin-bottom:3rem;">
   <h2 class="section-label">Number facts</h2>
   <div class="books-grid">
     <div class="book-card">
@@ -54,7 +54,7 @@ permalink: /books/
   </div>
 </section>
 
-    <section id="times-tables" style="margin-bottom:3rem; scroll-margin-top:80px;">
+    <section id="times-tables" style="margin-bottom:3rem;">
       <h2 class="section-label">Times table books</h2>
       <div class="books-grid times-tables">
 
