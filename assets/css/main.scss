@@ -300,6 +300,9 @@ main { flex: 1; }
   .intro-body {
     order: 1;
   }
+  .sats-overview-grid {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 /* ── WORKSHEET TOPIC PAGES (horizontal card layout) ── */
