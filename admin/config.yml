@@ -51,6 +51,15 @@ collections:
         value_type: "int"
         hint: "Lower numbers appear first. Worksheets in the same section are sorted by this value."
 
+      - label: "Orientation"
+        name: "orientation"
+        widget: "select"
+        options:
+          - { label: "Portrait", value: "portrait" }
+          - { label: "Landscape", value: "landscape" }
+        default: "portrait"
+        hint: "Controls the placeholder size if no thumbnail is uploaded."
+
       - label: "Description"
         name: "description"
         widget: "text"
@@ -68,6 +77,12 @@ collections:
         widget: "string"
         required: false
         hint: "Path to the PDF, e.g. /assets/pdfs/my-worksheet.pdf — opens in the same window."
+
+      - label: "Answers PDF link"
+        name: "answers_pdf"
+        widget: "string"
+        required: false
+        hint: "Path to the answers PDF, e.g. /assets/pdfs/number/my-worksheet-answers.pdf"
 
       - label: "Full pack TES URL"
         name: "tes_url"
