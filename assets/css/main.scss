@@ -516,16 +516,16 @@ main { flex: 1; }
 
 @media (max-width: 780px) {
   .overview-card { grid-template-columns: 1fr; }
-  .worksheet-page .worksheet-card { flex-wrap: wrap; }
-  .worksheet-page .wc-image.portrait  { width: 110px; }
-  .worksheet-page .wc-image.landscape { width: 100%; height: 80px; order: -1; }
-  .worksheet-page .wc-content { min-width: 0; flex: 1 1 calc(100% - 110px); }
-  .worksheet-page .wc-actions { flex-direction: row; flex-wrap: wrap; padding: 0 16px 16px 16px; gap: 8px; width: 100%; }
-  .worksheet-page .wc-actions .btn { flex: 1 1 auto; justify-content: center; }
   .contact-form-row { grid-template-columns: 1fr; }
   .tutor-card { flex-direction: column; }
   .tutor-img { width: 100%; aspect-ratio: 3/1; height: 120px; }
   .contact-card-full { grid-template-columns: 1fr; gap: 1.5rem; }
+  .worksheet-card { flex-direction: row; align-items: stretch; }
+  .wc-image { width: 160px; flex-shrink: 0; border-right: 1px solid #e5e7eb; border-bottom: none; }
+  .wc-image.portrait { height: auto; }
+  .wc-image.landscape { height: auto; }
+  .wc-content { flex: 1; }
+  .wc-actions { flex-direction: column; width: 100%; border-left: none; border-top: 1px solid #f3f4f6; }
 }
 
 @media (max-width: 640px) {
@@ -553,7 +553,9 @@ main { flex: 1; }
   .books-grid, .books-grid.times-tables { grid-template-columns: 1fr 1fr; }
   .books-grid.single { grid-template-columns: 1fr; }
   .worksheet-page .worksheet-card { flex-direction: column; }
-  .worksheet-page .wc-image.portrait, .worksheet-page .wc-image.landscape { width: 100%; height: 120px; }
+  .wc-image { width: 100%; border-right: none; border-bottom: 1px solid #e5e7eb; }
+  .wc-image.portrait { height: 200px; }
+  .wc-image.landscape { height: 140px; }
   .worksheet-page .wc-actions { padding: 0 16px 16px; flex-direction: column; gap: 6px; }
   .worksheet-page .wc-actions .btn { width: 100%; justify-content: center; }
 }
