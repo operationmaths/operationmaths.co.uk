@@ -77,15 +77,15 @@ layout: default
 
             <div class="wc-content">
               <h3 class="wc-title">{{ ws.title }}</h3>
-              {% if ws.description %}<div class="wc-desc">{{ ws.description }}</div>{% endif %}
+              {% if ws.description %}<div class="wc-desc">{{ ws.description | newline_to_br }}</div>{% endif %}
             </div>
 
             <div class="wc-actions">
               {% if ws.free_pdf %}
-                <a href="{{ ws.free_pdf }}" class="btn btn-blue" download>Worksheet (A)</a>
+                <a href="{{ ws.free_pdf }}" class="btn btn-blue">Worksheet (A)</a>
               {% endif %}
               {% if ws.answers_pdf %}
-                <a href="{{ ws.answers_pdf }}" class="btn btn-green" download>Answers (A)</a>
+                <a href="{{ ws.answers_pdf }}" class="btn btn-green">Answers (A)</a>
               {% endif %}
               {% if ws.tes_url %}
                 <a href="{{ ws.tes_url }}" class="btn btn-orange" target="_blank" rel="noopener noreferrer">Full pack on TES ↗</a>
