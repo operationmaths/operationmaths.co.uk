@@ -8,6 +8,6 @@ description: |-
   This formulae sheet will be provided for each of the GCSE Maths exams.
 
   It can be used in exams until at least 2030.
-thumbnail: /assets/images/worksheets/edexcel-foundation-formulae-sheet.jpg
+thumbnail: /assets/images/worksheets/formulae/edexcel-foundation-formulae-sheet.jpg
 free_pdf: pdfs/Edexcel-Foundation-formula-sheet.pdf
 ---
