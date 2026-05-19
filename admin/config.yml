@@ -14,45 +14,31 @@ public_folder: "/assets/images"
 
 collections:
 
-  # ── WORKSHEETS ──────────────────────────────
-  - name: "worksheets"
-    label: "Worksheets"
+  # ── TIMES TABLES ────────────────────────────
+  - name: "times-tables"
+    label: "Times Tables"
     label_singular: "Worksheet"
     folder: "_worksheets"
-    media_folder: "/assets/images/worksheets/{{fields.topic}}"
-    public_folder: "/assets/images/worksheets/{{fields.topic}}"
+    filter: { field: "topic", value: "times-tables" }
+    media_folder: "/assets/images/worksheets/times-tables"
+    public_folder: "/assets/images/worksheets/times-tables"
     create: true
-    slug: "{{topic}}-{{slug}}"
+    slug: "times-tables-{{slug}}"
     fields:
       - label: "Title"
         name: "title"
         widget: "string"
-        hint: "e.g. Place Value — Hundreds, Tens and Ones"
-
-      - label: "Topic"
-        name: "topic"
-        widget: "select"
-        options:
-          - { label: "Number",        value: "number" }
-          - { label: "Shape",         value: "shape" }
-          - { label: "Algebra",       value: "algebra" }
-          - { label: "Formulae",      value: "formulae" }
-          - { label: "Times Tables",  value: "times-tables" }
-          - { label: "Support Sheets", value: "support-sheets" }
-        hint: "Which topic page should this worksheet appear on?"
-
+      - { label: "Topic", name: "topic", widget: "hidden", default: "times-tables" }
       - label: "Section"
         name: "section"
         widget: "string"
-        hint: "Group heading, e.g. 'Place Value' or 'Fractions'. A new name creates a new section automatically."
-
+        hint: "Group heading, e.g. 'Times table tests'. A new name creates a new section automatically."
       - label: "Order within section"
         name: "order"
         widget: "number"
         default: 1
         value_type: "int"
-        hint: "Lower numbers appear first. Worksheets in the same section are sorted by this value."
-
+        hint: "Lower numbers appear first."
       - label: "Orientation"
         name: "orientation"
         widget: "select"
@@ -61,33 +47,321 @@ collections:
           - { label: "Landscape", value: "landscape" }
         default: "portrait"
         hint: "Controls the placeholder size if no thumbnail is uploaded."
-
       - label: "Description"
         name: "description"
         widget: "text"
         required: false
         hint: "Short description shown on the card (1–2 sentences)."
-
       - label: "Worksheet thumbnail"
         name: "thumbnail"
         widget: "image"
         required: false
-        media_folder: "/assets/images/worksheets"
-        public_folder: "/assets/images/worksheets"
         hint: "Upload a preview image of the worksheet."
-
       - label: "Free sample PDF link"
         name: "free_pdf"
         widget: "string"
         required: false
-        hint: "Path to the PDF, e.g. /pdfs/2-times-table.pdf — opens in the same window."
-
+        hint: "Path to the PDF, e.g. /pdfs/2-times-table.pdf"
       - label: "Answers PDF link"
         name: "answers_pdf"
         widget: "string"
         required: false
-        hint: "Path to the answers PDF, e.g. /pdfs/2-times-table-answers.pdf — opens in the same window."
+        hint: "Path to the answers PDF, e.g. /pdfs/2-times-table-ANSWERS.pdf"
+      - label: "Full pack TES URL"
+        name: "tes_url"
+        widget: "string"
+        required: false
+        hint: "Full URL of the TES listing for the paid pack."
 
+  # ── NUMBER ──────────────────────────────────
+  - name: "number"
+    label: "Number"
+    label_singular: "Worksheet"
+    folder: "_worksheets"
+    filter: { field: "topic", value: "number" }
+    media_folder: "/assets/images/worksheets/number"
+    public_folder: "/assets/images/worksheets/number"
+    create: true
+    slug: "number-{{slug}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - { label: "Topic", name: "topic", widget: "hidden", default: "number" }
+      - label: "Section"
+        name: "section"
+        widget: "string"
+        hint: "Group heading. A new name creates a new section automatically."
+      - label: "Order within section"
+        name: "order"
+        widget: "number"
+        default: 1
+        value_type: "int"
+        hint: "Lower numbers appear first."
+      - label: "Orientation"
+        name: "orientation"
+        widget: "select"
+        options:
+          - { label: "Portrait", value: "portrait" }
+          - { label: "Landscape", value: "landscape" }
+        default: "portrait"
+        hint: "Controls the placeholder size if no thumbnail is uploaded."
+      - label: "Description"
+        name: "description"
+        widget: "text"
+        required: false
+        hint: "Short description shown on the card (1–2 sentences)."
+      - label: "Worksheet thumbnail"
+        name: "thumbnail"
+        widget: "image"
+        required: false
+        hint: "Upload a preview image of the worksheet."
+      - label: "Free sample PDF link"
+        name: "free_pdf"
+        widget: "string"
+        required: false
+        hint: "Path to the PDF, e.g. /pdfs/place-value.pdf"
+      - label: "Answers PDF link"
+        name: "answers_pdf"
+        widget: "string"
+        required: false
+        hint: "Path to the answers PDF."
+      - label: "Full pack TES URL"
+        name: "tes_url"
+        widget: "string"
+        required: false
+        hint: "Full URL of the TES listing for the paid pack."
+
+  # ── SHAPE ───────────────────────────────────
+  - name: "shape"
+    label: "Shape"
+    label_singular: "Worksheet"
+    folder: "_worksheets"
+    filter: { field: "topic", value: "shape" }
+    media_folder: "/assets/images/worksheets/shape"
+    public_folder: "/assets/images/worksheets/shape"
+    create: true
+    slug: "shape-{{slug}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - { label: "Topic", name: "topic", widget: "hidden", default: "shape" }
+      - label: "Section"
+        name: "section"
+        widget: "string"
+        hint: "Group heading. A new name creates a new section automatically."
+      - label: "Order within section"
+        name: "order"
+        widget: "number"
+        default: 1
+        value_type: "int"
+        hint: "Lower numbers appear first."
+      - label: "Orientation"
+        name: "orientation"
+        widget: "select"
+        options:
+          - { label: "Portrait", value: "portrait" }
+          - { label: "Landscape", value: "landscape" }
+        default: "portrait"
+        hint: "Controls the placeholder size if no thumbnail is uploaded."
+      - label: "Description"
+        name: "description"
+        widget: "text"
+        required: false
+        hint: "Short description shown on the card (1–2 sentences)."
+      - label: "Worksheet thumbnail"
+        name: "thumbnail"
+        widget: "image"
+        required: false
+        hint: "Upload a preview image of the worksheet."
+      - label: "Free sample PDF link"
+        name: "free_pdf"
+        widget: "string"
+        required: false
+        hint: "Path to the PDF, e.g. /pdfs/2d-shapes.pdf"
+      - label: "Answers PDF link"
+        name: "answers_pdf"
+        widget: "string"
+        required: false
+        hint: "Path to the answers PDF."
+      - label: "Full pack TES URL"
+        name: "tes_url"
+        widget: "string"
+        required: false
+        hint: "Full URL of the TES listing for the paid pack."
+
+  # ── ALGEBRA ─────────────────────────────────
+  - name: "algebra"
+    label: "Algebra"
+    label_singular: "Worksheet"
+    folder: "_worksheets"
+    filter: { field: "topic", value: "algebra" }
+    media_folder: "/assets/images/worksheets/algebra"
+    public_folder: "/assets/images/worksheets/algebra"
+    create: true
+    slug: "algebra-{{slug}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - { label: "Topic", name: "topic", widget: "hidden", default: "algebra" }
+      - label: "Section"
+        name: "section"
+        widget: "string"
+        hint: "Group heading. A new name creates a new section automatically."
+      - label: "Order within section"
+        name: "order"
+        widget: "number"
+        default: 1
+        value_type: "int"
+        hint: "Lower numbers appear first."
+      - label: "Orientation"
+        name: "orientation"
+        widget: "select"
+        options:
+          - { label: "Portrait", value: "portrait" }
+          - { label: "Landscape", value: "landscape" }
+        default: "portrait"
+        hint: "Controls the placeholder size if no thumbnail is uploaded."
+      - label: "Description"
+        name: "description"
+        widget: "text"
+        required: false
+        hint: "Short description shown on the card (1–2 sentences)."
+      - label: "Worksheet thumbnail"
+        name: "thumbnail"
+        widget: "image"
+        required: false
+        hint: "Upload a preview image of the worksheet."
+      - label: "Free sample PDF link"
+        name: "free_pdf"
+        widget: "string"
+        required: false
+        hint: "Path to the PDF, e.g. /pdfs/expressions.pdf"
+      - label: "Answers PDF link"
+        name: "answers_pdf"
+        widget: "string"
+        required: false
+        hint: "Path to the answers PDF."
+      - label: "Full pack TES URL"
+        name: "tes_url"
+        widget: "string"
+        required: false
+        hint: "Full URL of the TES listing for the paid pack."
+
+  # ── FORMULAE ────────────────────────────────
+  - name: "formulae"
+    label: "Formulae"
+    label_singular: "Worksheet"
+    folder: "_worksheets"
+    filter: { field: "topic", value: "formulae" }
+    media_folder: "/assets/images/worksheets/formulae"
+    public_folder: "/assets/images/worksheets/formulae"
+    create: true
+    slug: "formulae-{{slug}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - { label: "Topic", name: "topic", widget: "hidden", default: "formulae" }
+      - label: "Section"
+        name: "section"
+        widget: "string"
+        hint: "Group heading. A new name creates a new section automatically."
+      - label: "Order within section"
+        name: "order"
+        widget: "number"
+        default: 1
+        value_type: "int"
+        hint: "Lower numbers appear first."
+      - label: "Orientation"
+        name: "orientation"
+        widget: "select"
+        options:
+          - { label: "Portrait", value: "portrait" }
+          - { label: "Landscape", value: "landscape" }
+        default: "portrait"
+        hint: "Controls the placeholder size if no thumbnail is uploaded."
+      - label: "Description"
+        name: "description"
+        widget: "text"
+        required: false
+        hint: "Short description shown on the card (1–2 sentences)."
+      - label: "Worksheet thumbnail"
+        name: "thumbnail"
+        widget: "image"
+        required: false
+        hint: "Upload a preview image of the worksheet."
+      - label: "Free sample PDF link"
+        name: "free_pdf"
+        widget: "string"
+        required: false
+        hint: "Path to the PDF, e.g. /pdfs/aqa-formulae-foundation.pdf"
+      - label: "Answers PDF link"
+        name: "answers_pdf"
+        widget: "string"
+        required: false
+        hint: "Path to the answers PDF."
+      - label: "Full pack TES URL"
+        name: "tes_url"
+        widget: "string"
+        required: false
+        hint: "Full URL of the TES listing for the paid pack."
+
+  # ── SUPPORT SHEETS ──────────────────────────
+  - name: "support-sheets"
+    label: "Support Sheets"
+    label_singular: "Worksheet"
+    folder: "_worksheets"
+    filter: { field: "topic", value: "support-sheets" }
+    media_folder: "/assets/images/worksheets/support-sheets"
+    public_folder: "/assets/images/worksheets/support-sheets"
+    create: true
+    slug: "support-sheets-{{slug}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - { label: "Topic", name: "topic", widget: "hidden", default: "support-sheets" }
+      - label: "Section"
+        name: "section"
+        widget: "string"
+        hint: "Group heading. A new name creates a new section automatically."
+      - label: "Order within section"
+        name: "order"
+        widget: "number"
+        default: 1
+        value_type: "int"
+        hint: "Lower numbers appear first."
+      - label: "Orientation"
+        name: "orientation"
+        widget: "select"
+        options:
+          - { label: "Portrait", value: "portrait" }
+          - { label: "Landscape", value: "landscape" }
+        default: "portrait"
+        hint: "Controls the placeholder size if no thumbnail is uploaded."
+      - label: "Description"
+        name: "description"
+        widget: "text"
+        required: false
+        hint: "Short description shown on the card (1–2 sentences)."
+      - label: "Worksheet thumbnail"
+        name: "thumbnail"
+        widget: "image"
+        required: false
+        hint: "Upload a preview image of the worksheet."
+      - label: "Free sample PDF link"
+        name: "free_pdf"
+        widget: "string"
+        required: false
+        hint: "Path to the PDF, e.g. /pdfs/support-sheet.pdf"
+      - label: "Answers PDF link"
+        name: "answers_pdf"
+        widget: "string"
+        required: false
+        hint: "Path to the answers PDF."
       - label: "Full pack TES URL"
         name: "tes_url"
         widget: "string"
