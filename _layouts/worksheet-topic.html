@@ -82,7 +82,11 @@ layout: default
 
             <div class="wc-actions">
               {% if ws.free_pdf %}
-                <a href="{{ ws.free_pdf }}" class="btn btn-blue">Worksheet (A)</a>
+                {% if ws.button_label %}
+                  <a href="{{ ws.free_pdf }}" class="btn btn-blue">{{ ws.button_label }}</a>
+                {% else %}
+                  <a href="{{ ws.free_pdf }}" class="btn btn-blue">Worksheet (A)</a>
+                {% endif %}
               {% endif %}
               {% if ws.answers_pdf %}
                 <a href="{{ ws.answers_pdf }}" class="btn btn-green">Answers (A)</a>
