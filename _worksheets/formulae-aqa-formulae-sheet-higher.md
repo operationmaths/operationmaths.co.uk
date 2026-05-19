@@ -9,5 +9,5 @@ description: |-
 
   It can be used in exams until at least 2030.
 thumbnail: /assets/images/worksheets/formulae/aqa-higher-formulae-sheet.jpg
-free_pdf: pdfs/AQA-Higher-formula-sheet.pdf
+free_pdf: /pdfs/AQA-Higher-formula-sheet.pdf
 ---
