@@ -10,7 +10,7 @@ description: >-
 
 
   Each sheet contains three times table tests and three division tests.
-thumbnail: /assets/images/worksheets/5-times-table.jpg
+thumbnail: /assets/images/worksheets/times-tables/5-times-table.jpg
 free_pdf: /pdfs/5-times-table.pdf
 answers_pdf: /pdfs/5-times-table-ANSWERS.pdf
 tes_url: https://www.tes.com/teaching-resource/5-times-table-13218300
