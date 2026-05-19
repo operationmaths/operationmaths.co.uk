@@ -2,7 +2,7 @@
 title: 8 times table
 topic: times-tables
 section: Times table tests
-order: 6
+order: 7
 orientation: portrait
 description: >-
   Use for daily times table practice or as a tool to check knowledge has been
