@@ -11,6 +11,8 @@ description: >-
 
   Each sheet contains three times table tests and three division tests.
 thumbnail: /assets/images/worksheets/times-tables/12-times-table.jpg
+show_a_worksheet: true
+show_a_answers: true
 free_pdf: /pdfs/12-times-table.pdf
 answers_pdf: /pdfs/12-times-table-ANSWERS.pdf
 tes_url: https://www.tes.com/teaching-resource/12-times-table-13218965
