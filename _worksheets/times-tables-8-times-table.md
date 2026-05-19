@@ -10,7 +10,7 @@ description: >-
 
 
   Each sheet contains three times table tests and three division tests.
-thumbnail: /assets/images/worksheets/8-times-table.jpg
+thumbnail: /assets/images/worksheets/times-tables/8-times-table.jpg
 free_pdf: /pdfs/8-times-table.pdf
 answers_pdf: /pdfs/8-times-table-ANSWERS.pdf
 tes_url: https://www.tes.com/teaching-resource/8-times-table-13218950
