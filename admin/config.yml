@@ -78,13 +78,13 @@ collections:
         name: "free_pdf"
         widget: "string"
         required: false
-        hint: "Path to the PDF, e.g. /assets/pdfs/my-worksheet.pdf — opens in the same window."
+        hint: "Path to the PDF, e.g. /pdfs/2-times-table.pdf — opens in the same window."
 
       - label: "Answers PDF link"
         name: "answers_pdf"
         widget: "string"
         required: false
-        hint: "Path to the answers PDF, e.g. /assets/pdfs/number/my-worksheet-answers.pdf"
+        hint: "Path to the answers PDF, e.g. /pdfs/2-times-table-answers.pdf — opens in the same window."
 
       - label: "Full pack TES URL"
         name: "tes_url"
