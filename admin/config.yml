@@ -19,6 +19,8 @@ collections:
     label: "Worksheets"
     label_singular: "Worksheet"
     folder: "_worksheets"
+    media_folder: "/assets/images/worksheets/{{fields.topic}}"
+    public_folder: "/assets/images/worksheets/{{fields.topic}}"
     create: true
     slug: "{{topic}}-{{slug}}"
     fields:
