@@ -259,6 +259,30 @@ permalink: /online-maths-tests/
     });
   });
 
+  // Draw `needed` questions from `pool`, capping each unique question at
+  // max(2, ceil(needed / poolSize)) appearances. Works for any pool size,
+  // whether that is 12 questions (one table) or 132 questions (all tables).
+  function drawCapped(pool, needed) {
+    const maxRepeats = Math.max(2, Math.ceil(needed / pool.length));
+    const counts = new Map();
+    const result = [];
+    let passes = 0;
+    while (result.length < needed) {
+      passes++;
+      const shuffled = [...pool].sort(() => Math.random() - 0.5);
+      for (const q of shuffled) {
+        const key = q.type + '_' + q.a + '_' + q.b;
+        const seen = counts.get(key) || 0;
+        if (seen < maxRepeats && result.length < needed) {
+          result.push(q);
+          counts.set(key, seen + 1);
+        }
+      }
+      if (passes > 20) break; // safety valve
+    }
+    return result;
+  }
+
   function generateQuestions(tables, op, count) {
     const tableList = tables.has('all') ? [2,3,4,5,6,7,8,9,10,11,12] : [...tables].sort((a,b) => a - b);
     const timesPool = [], divPool = [];
@@ -269,13 +293,17 @@ permalink: /online-maths-tests/
         divPool.push({ type: 'div', a: t * m, b: t, answer: m });
       }
     }
-    let pool;
-    if (op === 'times') pool = timesPool;
-    else if (op === 'division') pool = divPool;
-    else pool = [...timesPool, ...divPool];
-    const qs = [];
-    while (qs.length < count) { qs.push(...[...pool].sort(() => Math.random() - 0.5)); }
-    return qs.slice(0, count);
+
+    if (op === 'times') return drawCapped(timesPool, count);
+    if (op === 'division') return drawCapped(divPool, count);
+
+    // Mixed: draw exactly half from each pool, then shuffle together.
+    // If count is odd the extra question goes to times tables.
+    const divHalf = Math.floor(count / 2);
+    const timesHalf = count - divHalf;
+    const timesQs = drawCapped(timesPool, timesHalf);
+    const divQs   = drawCapped(divPool,   divHalf);
+    return [...timesQs, ...divQs].sort(() => Math.random() - 0.5);
   }
 
   function formatTime(secs) {
@@ -349,6 +377,48 @@ permalink: /online-maths-tests/
     if (!/^\d$/.test(e.key)) e.preventDefault();
   });
 
+  function launchConfetti() {
+    const canvas = document.createElement('canvas');
+    canvas.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999';
+    document.body.appendChild(canvas);
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    const colours = ['#f94144','#f3722c','#f8961e','#f9c74f','#90be6d','#43aa8b','#577590','#9b5de5','#f15bb5','#00bbf9'];
+    const pieces = Array.from({ length: 160 }, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * -canvas.height,
+      w: 8 + Math.random() * 8,
+      h: 4 + Math.random() * 6,
+      colour: colours[Math.floor(Math.random() * colours.length)],
+      vx: (Math.random() - 0.5) * 3,
+      vy: 2 + Math.random() * 4,
+      angle: Math.random() * Math.PI * 2,
+      spin: (Math.random() - 0.5) * 0.2
+    }));
+    let frame, start;
+    const duration = 4000;
+    function draw(ts) {
+      if (!start) start = ts;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const elapsed = ts - start;
+      const fade = Math.max(0, 1 - (elapsed - duration * 0.6) / (duration * 0.4));
+      ctx.globalAlpha = fade;
+      for (const p of pieces) {
+        p.x += p.vx; p.y += p.vy; p.angle += p.spin;
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.angle);
+        ctx.fillStyle = p.colour;
+        ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+        ctx.restore();
+      }
+      if (elapsed < duration) { frame = requestAnimationFrame(draw); }
+      else { cancelAnimationFrame(frame); canvas.remove(); }
+    }
+    frame = requestAnimationFrame(draw);
+  }
+
   function finishTest(timedOut) {
     clearInterval(state.timerInterval);
     if (timedOut) {
@@ -379,6 +449,7 @@ permalink: /online-maths-tests/
       perfectEl.style.display = 'block';
       wrongWrap.style.display = 'none';
       actionsEl.innerHTML = `<button class="results-btn secondary" onclick="resetSetup()">← Menu</button><button class="results-btn primary" onclick="retakeSame()">Try again</button>`;
+      launchConfetti();
     } else {
       perfectEl.style.display = 'none';
       wrongWrap.style.display = 'block';
