@@ -11,7 +11,7 @@ description: >-
 
   Each sheet contains three times table tests and three division tests.
 thumbnail: /assets/images/worksheets/4-times-table.jpg
-free_pdf: /assets/pdfs/times-tables/4-times-table.pdf
-answers_pdf: /assets/pdfs/times-tables/4-times-table-ANSWERS.pdf
+free_pdf: /pdfs/4-times-table.pdf
+answers_pdf: /pdfs/4-times-table-ANSWERS.pdf
 tes_url: https://www.tes.com/teaching-resource/4-times-table-13218284
 ---
