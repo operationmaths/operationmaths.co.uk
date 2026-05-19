@@ -57,6 +57,16 @@ collections:
         widget: "image"
         required: false
         hint: "Upload a preview image of the worksheet."
+      - label: "Show (A) on worksheet button"
+        name: "show_a_worksheet"
+        widget: "boolean"
+        default: true
+        hint: "Uncheck to show 'Worksheet' instead of 'Worksheet (A)'."
+      - label: "Show (A) on answers button"
+        name: "show_a_answers"
+        widget: "boolean"
+        default: true
+        hint: "Uncheck to show 'Answers' instead of 'Answers (A)'."
       - label: "Free sample PDF link"
         name: "free_pdf"
         widget: "string"
@@ -116,6 +126,16 @@ collections:
         widget: "image"
         required: false
         hint: "Upload a preview image of the worksheet."
+      - label: "Show (A) on worksheet button"
+        name: "show_a_worksheet"
+        widget: "boolean"
+        default: true
+        hint: "Uncheck to show 'Worksheet' instead of 'Worksheet (A)'."
+      - label: "Show (A) on answers button"
+        name: "show_a_answers"
+        widget: "boolean"
+        default: true
+        hint: "Uncheck to show 'Answers' instead of 'Answers (A)'."
       - label: "Free sample PDF link"
         name: "free_pdf"
         widget: "string"
@@ -175,6 +195,16 @@ collections:
         widget: "image"
         required: false
         hint: "Upload a preview image of the worksheet."
+      - label: "Show (A) on worksheet button"
+        name: "show_a_worksheet"
+        widget: "boolean"
+        default: true
+        hint: "Uncheck to show 'Worksheet' instead of 'Worksheet (A)'."
+      - label: "Show (A) on answers button"
+        name: "show_a_answers"
+        widget: "boolean"
+        default: true
+        hint: "Uncheck to show 'Answers' instead of 'Answers (A)'."
       - label: "Free sample PDF link"
         name: "free_pdf"
         widget: "string"
@@ -234,6 +264,16 @@ collections:
         widget: "image"
         required: false
         hint: "Upload a preview image of the worksheet."
+      - label: "Show (A) on worksheet button"
+        name: "show_a_worksheet"
+        widget: "boolean"
+        default: true
+        hint: "Uncheck to show 'Worksheet' instead of 'Worksheet (A)'."
+      - label: "Show (A) on answers button"
+        name: "show_a_answers"
+        widget: "boolean"
+        default: true
+        hint: "Uncheck to show 'Answers' instead of 'Answers (A)'."
       - label: "Free sample PDF link"
         name: "free_pdf"
         widget: "string"
@@ -293,6 +333,16 @@ collections:
         widget: "image"
         required: false
         hint: "Upload a preview image of the worksheet."
+      - label: "Show (A) on worksheet button"
+        name: "show_a_worksheet"
+        widget: "boolean"
+        default: true
+        hint: "Uncheck to show 'Worksheet' instead of 'Worksheet (A)'."
+      - label: "Show (A) on answers button"
+        name: "show_a_answers"
+        widget: "boolean"
+        default: true
+        hint: "Uncheck to show 'Answers' instead of 'Answers (A)'."
       - label: "Free sample PDF link"
         name: "free_pdf"
         widget: "string"
@@ -352,6 +402,16 @@ collections:
         widget: "image"
         required: false
         hint: "Upload a preview image of the worksheet."
+      - label: "Show (A) on worksheet button"
+        name: "show_a_worksheet"
+        widget: "boolean"
+        default: true
+        hint: "Uncheck to show 'Worksheet' instead of 'Worksheet (A)'."
+      - label: "Show (A) on answers button"
+        name: "show_a_answers"
+        widget: "boolean"
+        default: true
+        hint: "Uncheck to show 'Answers' instead of 'Answers (A)'."
       - label: "Free sample PDF link"
         name: "free_pdf"
         widget: "string"
