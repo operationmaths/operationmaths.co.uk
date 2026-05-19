@@ -7,5 +7,5 @@ orientation: portrait
 description: This document contains information about formulae which is provided
   within GCSE exam questions and formulae which is not provided and must be
   memorised.
-thumbnail: /assets/images/worksheets/gcse-maths-formulae-2026-exams.jpg
+thumbnail: /assets/images/worksheets/formulae/gcse-maths-formulae-2026-exams.jpg
 ---
