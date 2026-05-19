@@ -10,7 +10,7 @@ description: >-
 
 
   Each sheet contains three times table tests and three division tests.
-thumbnail: /assets/images/worksheets/6-times-table.jpg
+thumbnail: /assets/images/worksheets/times-tables/6-times-table.jpg
 free_pdf: /pdfs/6-times-table.pdf
 answers_pdf: /pdfs/6-times-table-ANSWERS.pdf
 tes_url: https://www.tes.com/teaching-resource/6-times-table-sample-13218938
