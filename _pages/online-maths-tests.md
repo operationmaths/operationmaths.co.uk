@@ -94,7 +94,7 @@ permalink: /online-maths-tests/
         <div class="results-score" id="tt-score">17/20</div>
         <div class="results-label">correct answers</div>
         <div class="results-time" id="tt-time-taken"></div>
-        <div class="results-perfect" id="tt-perfect" style="display:none">Full marks – excellent work!</div>
+        <div class="results-perfect" id="tt-perfect" style="display:none">Full marks — excellent work!</div>
         <div class="results-wrong" id="tt-wrong-wrap" style="display:none">
           <h3>Incorrect or unanswered questions</h3>
           <ul class="wrong-list" id="tt-wrong-list"></ul>
@@ -470,7 +470,7 @@ permalink: /online-maths-tests/
       perfectEl.style.display = 'block';
       wrongWrap.style.display = 'none';
       actionsEl.innerHTML = `<button class="results-btn secondary" onclick="resetSetup()">← Menu</button><button class="results-btn primary" onclick="retakeSame()">Try again</button>`;
-      launchConfetti();
+      if (!state.wrongOnly) launchConfetti();
     } else {
       perfectEl.style.display = 'none';
       wrongWrap.style.display = 'block';
@@ -485,6 +485,7 @@ permalink: /online-maths-tests/
 
   function retakeSame() {
     document.getElementById('tt-results').classList.remove('active');
+    state.wrongOnly = false;
     startTest(generateQuestions(state.tables, state.op, state.qcount));
   }
 
