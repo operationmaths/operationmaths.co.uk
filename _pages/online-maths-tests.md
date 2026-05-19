@@ -94,7 +94,7 @@ permalink: /online-maths-tests/
         <div class="results-score" id="tt-score">17/20</div>
         <div class="results-label">correct answers</div>
         <div class="results-time" id="tt-time-taken"></div>
-        <div class="results-perfect" id="tt-perfect" style="display:none">🎉 Full marks! Brilliant work!</div>
+        <div class="results-perfect" id="tt-perfect" style="display:none">Full marks – excellent work!</div>
         <div class="results-wrong" id="tt-wrong-wrap" style="display:none">
           <h3>Incorrect or unanswered questions</h3>
           <ul class="wrong-list" id="tt-wrong-list"></ul>
@@ -385,30 +385,51 @@ permalink: /online-maths-tests/
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     const colours = ['#f94144','#f3722c','#f8961e','#f9c74f','#90be6d','#43aa8b','#577590','#9b5de5','#f15bb5','#00bbf9'];
-    const pieces = Array.from({ length: 160 }, () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * -canvas.height,
-      w: 8 + Math.random() * 8,
-      h: 4 + Math.random() * 6,
-      colour: colours[Math.floor(Math.random() * colours.length)],
-      vx: (Math.random() - 0.5) * 3,
-      vy: 2 + Math.random() * 4,
-      angle: Math.random() * Math.PI * 2,
-      spin: (Math.random() - 0.5) * 0.2
-    }));
+
+    // Two launch points — bottom-left and bottom-right corners
+    function makePiece(fromX) {
+      const leftSide = fromX < canvas.width / 2;
+      // Angle range fans inward and upward from each corner
+      const angleMin = leftSide ? -Math.PI * 0.85 : -Math.PI * 0.95;
+      const angleMax = leftSide ? -Math.PI * 0.15 : -Math.PI * 0.05;
+      const angle = angleMin + Math.random() * (angleMax - angleMin);
+      const speed = 6 + Math.random() * 10;
+      return {
+        x: fromX,
+        y: canvas.height,
+        vx: Math.cos(angle) * speed,
+        vy: Math.sin(angle) * speed,
+        w: 7 + Math.random() * 7,
+        h: 4 + Math.random() * 5,
+        colour: colours[Math.floor(Math.random() * colours.length)],
+        rot: Math.random() * Math.PI * 2,
+        spin: (Math.random() - 0.5) * 0.25,
+        gravity: 0.18 + Math.random() * 0.12
+      };
+    }
+
+    const pieces = [
+      ...Array.from({ length: 80 }, () => makePiece(0)),
+      ...Array.from({ length: 80 }, () => makePiece(canvas.width))
+    ];
+
     let frame, start;
-    const duration = 4000;
+    const duration = 4500;
+
     function draw(ts) {
       if (!start) start = ts;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       const elapsed = ts - start;
-      const fade = Math.max(0, 1 - (elapsed - duration * 0.6) / (duration * 0.4));
+      const fade = Math.max(0, 1 - (elapsed - duration * 0.55) / (duration * 0.45));
       ctx.globalAlpha = fade;
       for (const p of pieces) {
-        p.x += p.vx; p.y += p.vy; p.angle += p.spin;
+        p.vy += p.gravity;
+        p.x += p.vx;
+        p.y += p.vy;
+        p.rot += p.spin;
         ctx.save();
         ctx.translate(p.x, p.y);
-        ctx.rotate(p.angle);
+        ctx.rotate(p.rot);
         ctx.fillStyle = p.colour;
         ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
         ctx.restore();
