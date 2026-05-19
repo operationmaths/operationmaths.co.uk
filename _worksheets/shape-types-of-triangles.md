@@ -2,7 +2,7 @@
 title: Types of triangles
 topic: shape
 section: Types of shapes
-order: 1
+order: 2
 orientation: portrait
 description: Draw and label the 4 types of triangles.
 thumbnail: /assets/images/worksheets/shape/types-of-triangles.jpg
