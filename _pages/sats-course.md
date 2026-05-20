@@ -90,23 +90,32 @@ body_class: page-sats-course
 </section>
 
     <!-- Contact -->
-    <section id="contact" style="margin-bottom:1rem;">
-      <h2 class="section-label">Get in touch</h2>
-      <div style="background:#fff; border:1px solid #e5e7eb; border-radius:10px; padding:2rem;">
-        <div style="display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:0.5rem; margin-bottom:1.25rem;">
-          <span style="font-size:1rem; font-weight:700;">Contact Fay to find out more or to book</span>
-          <a href="mailto:operationmaths123@gmail.com" style="color:var(--blue); text-decoration:none; font-size:0.9rem;">✉ operationmaths123@gmail.com</a>
+<section id="contact" style="margin-bottom:1rem; scroll-margin-top:80px;">
+  <h2 class="section-label">Get in touch</h2>
+  <div style="background:#fff; border:1px solid #e5e7eb; border-radius:10px; padding:2rem;">
+    <div style="display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:0.5rem; margin-bottom:1.25rem;">
+      <span style="font-size:1rem; font-weight:700;">Contact Fay to find out more or to book</span>
+      <a href="mailto:operationmaths123@gmail.com" style="color:var(--blue); text-decoration:none; font-size:0.9rem;">✉ operationmaths123@gmail.com</a>
+    </div>
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <div class="contact-form-row">
+        <div>
+          <label style="display:block; font-size:0.9rem; font-weight:700; margin-bottom:0.4rem;">Name</label>
+          <input type="text" placeholder="Your name" required style="background:#fff;">
         </div>
-        <form class="contact-form" onsubmit="handleSubmit(event)">
-          <div class="contact-form-row">
-            <input type="text" placeholder="Name" required>
-            <input type="email" placeholder="Email" required>
-          </div>
-          <textarea placeholder="Message" style="resize:vertical; min-height:120px; width:100%; font-family:'DM Sans',sans-serif; font-size:0.9rem; padding:0.6rem 0.85rem; border:1px solid #e5e7eb; border-radius:6px; background:#f5f6f8; color:#111827; outline:none;"></textarea>
-          <button type="submit" class="btn-submit">Send message</button>
-        </form>
+        <div>
+          <label style="display:block; font-size:0.9rem; font-weight:700; margin-bottom:0.4rem;">Email</label>
+          <input type="email" placeholder="your@email.com" required style="background:#fff;">
+        </div>
       </div>
-    </section>
+      <div>
+        <label style="display:block; font-size:0.9rem; font-weight:700; margin-bottom:0.4rem;">Message</label>
+        <textarea placeholder="Your message" style="resize:vertical; min-height:120px; width:100%; font-family:'DM Sans',sans-serif; font-size:0.9rem; padding:0.6rem 0.85rem; border:1px solid #e5e7eb; border-radius:6px; background:#fff; color:#111827; outline:none;"></textarea>
+      </div>
+      <button type="submit" class="btn-submit">Send message</button>
+    </form>
+  </div>
+</section>
 
   </div>
 </main>
