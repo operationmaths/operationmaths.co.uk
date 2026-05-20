@@ -2,7 +2,7 @@
 title: " Times table chart"
 topic: support-sheets
 section: Number
-order: 1
+order: 2
 orientation: portrait
 description: Includes times tables from 1 to 12.
 thumbnail: /assets/images/worksheets/support-sheets/times-table-chart.jpg
