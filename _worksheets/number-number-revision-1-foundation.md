@@ -9,4 +9,6 @@ description: Designed for daily practise of the number questions which appear on
 thumbnail: /assets/images/worksheets/number/number-revision-1-foundation-with-days.jpg
 show_a_worksheet: true
 show_a_answers: true
+free_pdf: /pdfs/Number-Revision-1-Foundation-with-days.pdf
+answers_pdf: /pdfs/Number-Revision-1-Foundation-with-days-ANSWERS.pdf
 ---
