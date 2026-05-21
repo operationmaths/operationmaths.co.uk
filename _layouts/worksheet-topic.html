@@ -16,8 +16,7 @@ layout: default
 {% comment %} Order sections using page.section_order if set, appending any unlisted sections at the end {% endcomment %}
 {% assign sections = "" | split: "" %}
 {% if page.section_order %}
-  {% for item in page.section_order %}
-    {% assign section_name = item.section_name %}
+  {% for section_name in page.section_order %}
     {% if all_sections contains section_name %}
       {% assign sections = sections | push: section_name %}
     {% endif %}
