@@ -26,7 +26,7 @@ body_class: page-sats-course
   <p style="color:#444; margin-bottom:1rem;">This course is designed to help Year 6 students prepare for their Key Stage 2 maths SATs. Each week focuses on one of the key areas of arithmetic that pupils most commonly find difficult, with clear teaching videos and supporting materials to practise at home.</p>
   <p style="color:#444; margin-bottom:1.5rem;">A resource pack is posted to you for free at the start of the course, so your child has everything they need to work alongside the videos.</p>
  <div class="sats-overview-grid" style="display:grid; grid-template-columns: 3fr 2fr; gap:1.5rem; align-items:stretch;">
-    <img src="/assets/images/SATs-booklets.png" alt="SATs resource pack booklets" style="width:100%; border-radius:8px; display:block; object-fit:cover; height:100%;">
+    <img src="{{ site.baseurl }}/assets/images/SATs-booklets.png" alt="SATs resource pack booklets" style="width:100%; border-radius:8px; display:block; object-fit:cover; height:100%;">
     <div class="pricing-panel" style="box-sizing:border-box; display:flex; flex-direction:column;">
       <p class="course-tag">Maths SATs course · Year 6</p>
       <p class="price">£99</p>
@@ -80,7 +80,7 @@ body_class: page-sats-course
 <section id="about-the-tutor" style="margin-bottom:3rem;">
   <h2 class="section-label">About the tutor</h2>
   <div class="tutor-card" style="align-items:center;">
-    <img src="/assets/images/Fay-photo.png" alt="Fay, qualified maths tutor and teacher" style="width:160px; flex-shrink:0; border-radius:8px; display:block; object-fit:cover;">
+    <img src="{{ site.baseurl }}/assets/images/Fay-photo.png" alt="Fay, qualified maths tutor and teacher" style="width:160px; flex-shrink:0; border-radius:8px; display:block; object-fit:cover;">
     <div class="tutor-body">
       <h3>Fay – qualified teacher and maths specialist</h3>
       <p style="margin-bottom:0.75rem;">I am a qualified teacher with many years of experience both in the classroom and in private tuition. I understand the areas of maths that Year 6 students find most challenging and I teach practical, clear methods for tackling each type of problem.</p>
