@@ -2,7 +2,6 @@ backend:
   name: github
   repo: operationmaths/operationmaths.co.uk
   branch: main
-  base_url: https://operationmaths-cms.operationmaths123.workers.dev
 
 media_folder: "assets/images"
 public_folder: "/assets/images"
