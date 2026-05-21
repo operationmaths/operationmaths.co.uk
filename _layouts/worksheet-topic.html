@@ -114,7 +114,7 @@ layout: default
     {% endif %}
   {% endif %}
   {% assign tes_url_clean = ws.tes_url | strip %}
-  {% if tes_url_clean %}
+  {% if tes_url_clean.size > 0 %}
     <a href="{{ tes_url_clean }}" class="btn btn-orange" target="_blank" rel="noopener noreferrer">Full pack on TES <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
   {% endif %}
 </div>    
