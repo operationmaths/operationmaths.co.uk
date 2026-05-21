@@ -159,7 +159,7 @@ main { flex: 1; }
 .section-heading { font-size: 22px; font-weight: 700; color: #111827; margin: 2rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #e5e7eb; }
 .worksheet-list { display: flex; flex-direction: column; gap: 14px; margin-bottom: 2rem; }
 .worksheet-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; overflow: hidden; display: flex; flex-direction: row; align-items: center; }
-.wc-image { background: #f3f4f6; border-right: 1px solid #e5e7eb; display: flex; align-items: center; justify-content: center; padding: 10px; width: 160px; flex-shrink: 0; }
+.wc-image { background: #fff; border-right: 1px solid #e5e7eb; display: flex; align-items: center; justify-content: center; padding: 10px; width: 160px; flex-shrink: 0; }
 .wc-image.portrait { height: 220px; }
 .wc-image.landscape { height: 160px; }
 .wc-image img { width: 100%; height: 100%; object-fit: contain; }
@@ -311,7 +311,7 @@ main { flex: 1; }
 /* Override the grid-based .worksheet-list for topic pages that use horizontal cards */
 .worksheet-page .worksheet-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 0; }
 .worksheet-page .worksheet-card { display: flex; align-items: stretch; flex-direction: row; }
-.worksheet-page .wc-image { flex-shrink: 0; background: #f0f2f5; border-bottom: none; padding: 0; }
+.worksheet-page .wc-image { flex-shrink: 0; background: #fff; border-bottom: none; padding: 0; }
 .worksheet-page .wc-image.portrait  { width: 120px; height: auto; }
 .worksheet-page .wc-image.landscape { width: 180px; height: auto; }
 .worksheet-page .wc-image img { width: 100%; height: 100%; object-fit: cover; }
