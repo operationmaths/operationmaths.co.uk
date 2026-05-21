@@ -106,7 +106,7 @@ layout: default
     {% endif %}
   {% endif %}
   {% assign answers_pdf_clean = ws.answers_pdf | strip %}
-  {% if answers_pdf_clean %}
+  {% if answers_pdf_clean.size > 0 %}
     {% if ws.show_a_answers == false %}
       <a href="{{ site.baseurl }}{{ answers_pdf_clean }}" class="btn btn-green">Answers</a>
     {% else %}
