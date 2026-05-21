@@ -524,6 +524,7 @@ main { flex: 1; }
   .wc-image { width: 160px; flex-shrink: 0; border-right: 1px solid #e5e7eb; border-bottom: none; }
   .wc-image.portrait { height: auto; }
   .wc-image.landscape { height: auto; }
+  .wc-image.landscape img { max-height: 160px; width: 100%; object-fit: contain; }
   .wc-content { flex: 1; min-width: 0; }
   .wc-actions { flex-direction: column; width: auto; min-width: 140px; }
 }
