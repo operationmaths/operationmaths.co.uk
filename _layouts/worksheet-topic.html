@@ -5,10 +5,27 @@ layout: default
 {% assign topic_key = page.topic_key %}
 {% assign all_worksheets = site.worksheets | where: "topic", topic_key | sort: "order" %}
 
-{% assign sections = "" | split: "" %}
+{% comment %} Build unique section names from worksheets {% endcomment %}
+{% assign all_sections = "" | split: "" %}
 {% for ws in all_worksheets %}
-  {% unless sections contains ws.section %}
-    {% assign sections = sections | push: ws.section %}
+  {% unless all_sections contains ws.section %}
+    {% assign all_sections = all_sections | push: ws.section %}
+  {% endunless %}
+{% endfor %}
+
+{% comment %} Order sections using page.section_order if set, appending any unlisted sections at the end {% endcomment %}
+{% assign sections = "" | split: "" %}
+{% if page.section_order %}
+  {% for item in page.section_order %}
+    {% assign section_name = item.section_name %}
+    {% if all_sections contains section_name %}
+      {% assign sections = sections | push: section_name %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+{% for s in all_sections %}
+  {% unless sections contains s %}
+    {% assign sections = sections | push: s %}
   {% endunless %}
 {% endfor %}
 
