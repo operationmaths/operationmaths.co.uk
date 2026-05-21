@@ -27,6 +27,9 @@ defaults:
       path: ""
       type: "worksheets"
     values:
+  - scope:
+      path: "admin"
+    values:
       layout: null
 
 # Plugins
