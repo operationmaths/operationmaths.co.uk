@@ -24,7 +24,7 @@ permalink: /books/
   <div class="books-grid single">
     <div class="book-card">
       <div class="book-covers">
-        <img src="/assets/images/2026-Maths-SATs-front.jpg" alt="2026 Maths SATs ebook front cover">
+        <img src="{{ site.baseurl }}/assets/images/2026-Maths-SATs-front.jpg" alt="2026 Maths SATs ebook front cover">
       </div>
       <div class="book-title">2026 Maths SATs</div>
       <a href="https://amzn.to/4a3XxiU" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
@@ -37,16 +37,16 @@ permalink: /books/
   <div class="books-grid">
     <div class="book-card">
       <div class="book-covers">
-        <img src="/assets/images/Number-bonds-to-10-front.PNG" alt="Number bonds to 10 book front cover">
-        <img src="/assets/images/Number-bonds-to-10-inside.PNG" alt="Number bonds to 10 book inside page">
+        <img src="{{ site.baseurl }}/assets/images/Number-bonds-to-10-front.PNG" alt="Number bonds to 10 book front cover">
+        <img src="{{ site.baseurl }}/assets/images/Number-bonds-to-10-inside.PNG" alt="Number bonds to 10 book inside page">
       </div>
       <div class="book-title">Number bonds</div>
       <a href="https://amzn.to/4a3XxiU" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
     </div>
     <div class="book-card">
       <div class="book-covers">
-        <img src="/assets/images/Double-and-halve-front.PNG" alt="Double and halve book front cover">
-        <img src="/assets/images/Double-and-halve-inside.PNG" alt="Double and halve book inside page">
+        <img src="{{ site.baseurl }}/assets/images/Double-and-halve-front.PNG" alt="Double and halve book front cover">
+        <img src="{{ site.baseurl }}/assets/images/Double-and-halve-inside.PNG" alt="Double and halve book inside page">
       </div>
       <div class="book-title">Double and halve</div>
       <a href="https://amzn.to/4a3XxiU" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
@@ -60,8 +60,8 @@ permalink: /books/
 
         <div class="book-card">
           <div class="book-covers">
-            <img src="/assets/images/2-times-table-book-front.PNG" alt="2 times table book front cover">
-            <img src="/assets/images/2-times-table-book-inside.PNG" alt="2 times table book inside page">
+            <img src="{{ site.baseurl }}/assets/images/2-times-table-book-front.PNG" alt="2 times table book front cover">
+            <img src="{{ site.baseurl }}/assets/images/2-times-table-book-inside.PNG" alt="2 times table book inside page">
           </div>
           <div class="book-title">2 times table</div>
           <a href="https://amzn.to/4a3XxiU" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
@@ -69,8 +69,8 @@ permalink: /books/
 
         <div class="book-card">
           <div class="book-covers">
-            <img src="/assets/images/3-times-table-book-front.PNG" alt="3 times table book front cover">
-            <img src="/assets/images/3-times-table-book-inside.PNG" alt="3 times table book inside page">
+            <img src="{{ site.baseurl }}/assets/images/3-times-table-book-front.PNG" alt="3 times table book front cover">
+            <img src="{{ site.baseurl }}/assets/images/3-times-table-book-inside.PNG" alt="3 times table book inside page">
           </div>
           <div class="book-title">3 times table</div>
           <a href="https://amzn.to/4a3XxiU" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
@@ -78,8 +78,8 @@ permalink: /books/
 
         <div class="book-card">
           <div class="book-covers">
-            <img src="/assets/images/4-times-table-book-front.PNG" alt="4 times table book front cover">
-            <img src="/assets/images/4-times-table-book-inside.PNG" alt="4 times table book inside page">
+            <img src="{{ site.baseurl }}/assets/images/4-times-table-book-front.PNG" alt="4 times table book front cover">
+            <img src="{{ site.baseurl }}/assets/images/4-times-table-book-inside.PNG" alt="4 times table book inside page">
           </div>
           <div class="book-title">4 times table</div>
           <a href="https://amzn.to/4a3XxiU" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
@@ -87,8 +87,8 @@ permalink: /books/
 
         <div class="book-card">
           <div class="book-covers">
-            <img src="/assets/images/5-times-table-book-front.PNG" alt="5 times table book front cover">
-            <img src="/assets/images/5-times-table-book-inside.PNG" alt="5 times table book inside page">
+            <img src="{{ site.baseurl }}/assets/images/5-times-table-book-front.PNG" alt="5 times table book front cover">
+            <img src="{{ site.baseurl }}/assets/images/5-times-table-book-inside.PNG" alt="5 times table book inside page">
           </div>
           <div class="book-title">5 times table</div>
           <a href="https://amzn.to/4a3XxiU" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
@@ -96,8 +96,8 @@ permalink: /books/
 
         <div class="book-card">
           <div class="book-covers">
-            <img src="/assets/images/6-times-table-book-front.PNG" alt="6 times table book front cover">
-            <img src="/assets/images/6-times-table-book-inside.PNG" alt="6 times table book inside page">
+            <img src="{{ site.baseurl }}/assets/images/6-times-table-book-front.PNG" alt="6 times table book front cover">
+            <img src="{{ site.baseurl }}/assets/images/6-times-table-book-inside.PNG" alt="6 times table book inside page">
           </div>
           <div class="book-title">6 times table</div>
           <a href="https://amzn.to/4a3XxiU" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
@@ -105,8 +105,8 @@ permalink: /books/
 
         <div class="book-card">
           <div class="book-covers">
-            <img src="/assets/images/7-times-table-book-front.PNG" alt="7 times table book front cover">
-            <img src="/assets/images/7-times-table-book-inside.PNG" alt="7 times table book inside page">
+            <img src="{{ site.baseurl }}/assets/images/7-times-table-book-front.PNG" alt="7 times table book front cover">
+            <img src="{{ site.baseurl }}/assets/images/7-times-table-book-inside.PNG" alt="7 times table book inside page">
           </div>
           <div class="book-title">7 times table</div>
           <a href="https://amzn.to/4a3XxiU" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
@@ -114,8 +114,8 @@ permalink: /books/
 
         <div class="book-card">
           <div class="book-covers">
-            <img src="/assets/images/8-times-table-book-front.PNG" alt="8 times table book front cover">
-            <img src="/assets/images/8-times-table-book-inside.PNG" alt="8 times table book inside page">
+            <img src="{{ site.baseurl }}/assets/images/8-times-table-book-front.PNG" alt="8 times table book front cover">
+            <img src="{{ site.baseurl }}/assets/images/8-times-table-book-inside.PNG" alt="8 times table book inside page">
           </div>
           <div class="book-title">8 times table</div>
           <a href="https://amzn.to/4a3XxiU" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
@@ -123,8 +123,8 @@ permalink: /books/
 
         <div class="book-card">
           <div class="book-covers">
-            <img src="/assets/images/9-times-table-book-front.PNG" alt="9 times table book front cover">
-            <img src="/assets/images/9-times-table-book-inside.PNG" alt="9 times table book inside page">
+            <img src="{{ site.baseurl }}/assets/images/9-times-table-book-front.PNG" alt="9 times table book front cover">
+            <img src="{{ site.baseurl }}/assets/images/9-times-table-book-inside.PNG" alt="9 times table book inside page">
           </div>
           <div class="book-title">9 times table</div>
           <a href="https://amzn.to/4a3XxiU" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
@@ -132,8 +132,8 @@ permalink: /books/
 
         <div class="book-card">
           <div class="book-covers">
-            <img src="/assets/images/10-times-table-book-front.PNG" alt="10 times table book front cover">
-            <img src="/assets/images/10-times-table-book-inside.PNG" alt="10 times table book inside page">
+            <img src="{{ site.baseurl }}/assets/images/10-times-table-book-front.PNG" alt="10 times table book front cover">
+            <img src="{{ site.baseurl }}/assets/images/10-times-table-book-inside.PNG" alt="10 times table book inside page">
           </div>
           <div class="book-title">10 times table</div>
           <a href="https://amzn.to/4a3XxiU" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
@@ -150,8 +150,8 @@ permalink: /books/
 
         <div class="book-card">
           <div class="book-covers">
-            <img src="/assets/images/12-times-table-book-front.PNG" alt="12 times table book front cover">
-            <img src="/assets/images/12-times-table-book-inside.PNG" alt="12 times table book inside page">
+            <img src="{{ site.baseurl }}/assets/images/12-times-table-book-front.PNG" alt="12 times table book front cover">
+            <img src="{{ site.baseurl }}/assets/images/12-times-table-book-inside.PNG" alt="12 times table book inside page">
           </div>
           <div class="book-title">12 times table</div>
           <a href="https://amzn.to/4a3XxiU" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
