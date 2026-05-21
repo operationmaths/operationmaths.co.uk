@@ -100,17 +100,17 @@ layout: default
               {% assign free_pdf_clean = ws.free_pdf | strip %}
               {% if free_pdf_clean and free_pdf_clean != "/" %}
                 {% if ws.show_a_worksheet == false %}
-                  <a href="{{ free_pdf_clean }}" class="btn btn-blue">Worksheet</a>
+                  <a href="{{ site.baseurl }}{{ free_pdf_clean }}" class="btn btn-blue">Worksheet</a>
                 {% else %}
-                  <a href="{{ free_pdf_clean }}" class="btn btn-blue">Worksheet (A)</a>
+                  <a href="{{ site.baseurl }}{{ free_pdf_clean }}" class="btn btn-blue">Worksheet (A)</a>
                 {% endif %}
               {% endif %}
               {% assign answers_pdf_clean = ws.answers_pdf | strip %}
               {% if answers_pdf_clean and answers_pdf_clean != "/" %}
                 {% if ws.show_a_answers == false %}
-                  <a href="{{ answers_pdf_clean }}" class="btn btn-green">Answers</a>
+                  <a href="{{ site.baseurl }}{{ answers_pdf_clean }}" class="btn btn-green">Answers</a>
                 {% else %}
-                  <a href="{{ answers_pdf_clean }}" class="btn btn-green">Answers (A)</a>
+                  <a href="{{ site.baseurl }}{{ answers_pdf_clean }}" class="btn btn-green">Answers (A)</a>
                 {% endif %}
               {% endif %}
               {% assign tes_url_clean = ws.tes_url | strip %}
