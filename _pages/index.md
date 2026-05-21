@@ -167,7 +167,7 @@ body_class: page-home
       <div class="om-books">
         <a class="om-book-card" href="https://www.amazon.co.uk/dp/B09DJ7LQ3S/" target="_blank" rel="noopener">
           <div class="om-book-cover" style="background:#f5f6f8; height:auto; padding:1.25rem 0;">
-            <img src="/assets/images/6-times-table-book-front.PNG" alt="6 Times Table: 26 Times Table Tests" style="width:auto; max-width:80%; max-height:200px; object-fit:contain; border-radius:4px; box-shadow:3px 3px 12px rgba(0,0,0,0.18); display:block; margin:0 auto;">
+            <img src="{{ site.baseurl }}/assets/images/6-times-table-book-front.PNG" alt="6 Times Table: 26 Times Table Tests" style="width:auto; max-width:80%; max-height:200px; object-fit:contain; border-radius:4px; box-shadow:3px 3px 12px rgba(0,0,0,0.18); display:block; margin:0 auto;">
           </div>
           <div class="om-book-body">
             <h3 class="om-book-title">6 Times Table: 26 Times Table Tests</h3>
@@ -177,7 +177,7 @@ body_class: page-home
         </a>
         <a class="om-book-card" href="https://www.amazon.co.uk/dp/B0C87F2ZJ8/" target="_blank" rel="noopener">
           <div class="om-book-cover" style="background:#f5f6f8; height:auto; padding:1.25rem 0;">
-            <img src="/assets/images/Number-bonds-to-10-front.PNG" alt="Number Bonds to 10: 26 Number Bond Tests" style="width:auto; max-width:80%; max-height:200px; object-fit:contain; border-radius:4px; box-shadow:3px 3px 12px rgba(0,0,0,0.18); display:block; margin:0 auto;">
+            <img src="{{ site.baseurl }}/assets/images/Number-bonds-to-10-front.PNG" alt="Number Bonds to 10: 26 Number Bond Tests" style="width:auto; max-width:80%; max-height:200px; object-fit:contain; border-radius:4px; box-shadow:3px 3px 12px rgba(0,0,0,0.18); display:block; margin:0 auto;">
           </div>
           <div class="om-book-body">
             <h3 class="om-book-title">Number Bonds to 10: 26 Number Bond Tests</h3>
@@ -187,7 +187,7 @@ body_class: page-home
         </a>
         <a class="om-book-card" href="https://www.amazon.co.uk/dp/B09DMTZGLH/" target="_blank" rel="noopener">
           <div class="om-book-cover" style="background:#f5f6f8; height:auto; padding:1.25rem 0;">
-            <img src="/assets/images/8-times-table-book-front.PNG" alt="8 Times Table: 26 Times Table Tests" style="width:auto; max-width:80%; max-height:200px; object-fit:contain; border-radius:4px; box-shadow:3px 3px 12px rgba(0,0,0,0.18); display:block; margin:0 auto;">
+            <img src="{{ site.baseurl }}/assets/images/8-times-table-book-front.PNG" alt="8 Times Table: 26 Times Table Tests" style="width:auto; max-width:80%; max-height:200px; object-fit:contain; border-radius:4px; box-shadow:3px 3px 12px rgba(0,0,0,0.18); display:block; margin:0 auto;">
           </div>
           <div class="om-book-body">
             <h3 class="om-book-title">8 Times Table: 26 Times Table Tests</h3>
@@ -205,7 +205,7 @@ body_class: page-home
       <p>Structured revision course with practice papers and worked examples for Year 6 pupils.</p>
       <a href="/sats-course" class="om-btn-green">View SATs course <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
     </div>
-    <img src="/assets/images/SATs-booklets.png" alt="SATs resource pack booklets" style="width:100%; max-width:380px; border-radius:8px; display:block;">
+    <img src="{{ site.baseurl }}/assets/images/SATs-booklets.png" alt="SATs resource pack booklets" style="width:100%; max-width:380px; border-radius:8px; display:block;">
   </div>
   </section>
 
