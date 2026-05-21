@@ -9,7 +9,7 @@ description: Designed for daily practice of metric conversions which appear in
 thumbnail: /assets/images/worksheets/number/metric-conversions-revision-foundation-with-days.jpg
 show_a_worksheet: true
 show_a_answers: true
-free_pdf: /pdfs/Metric-Conversions-Revision-Foundation-with-days-ANSWERS.pdf
-answers_pdf: /pdfs/Metric-Conversions-Revision-Foundation-with-days.pdf
+free_pdf: /pdfs/Metric-Conversions-Revision-Foundation-with-days.pdf
+answers_pdf: /pdfs/Metric-Conversions-Revision-Foundation-with-days-ANSWERS.pdf
 tes_url: ""
 ---
