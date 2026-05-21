@@ -1,9 +1,8 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: operationmaths/operationmaths.co.uk
   branch: main
-
-# Netlify Identity
-local_backend: false
+  base_url: https://decapcms.org
 
 media_folder: "assets/images"
 public_folder: "/assets/images"
