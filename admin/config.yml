@@ -449,7 +449,6 @@ collections:
             widget: "list"
             required: false
             hint: "Add section names in the order you want them to appear on the page. Drag to reorder."
-            field: { label: "Section name", name: "section_name", widget: "string" }
 
       - label: "Shape Worksheets"
         name: "worksheets-shape"
@@ -462,7 +461,6 @@ collections:
             widget: "list"
             required: false
             hint: "Add section names in the order you want them to appear on the page. Drag to reorder."
-            field: { label: "Section name", name: "section_name", widget: "string" }
 
       - label: "Algebra Worksheets"
         name: "worksheets-algebra"
@@ -475,7 +473,6 @@ collections:
             widget: "list"
             required: false
             hint: "Add section names in the order you want them to appear on the page. Drag to reorder."
-            field: { label: "Section name", name: "section_name", widget: "string" }
 
       - label: "Formulae Worksheets"
         name: "worksheets-formulae"
@@ -488,7 +485,6 @@ collections:
             widget: "list"
             required: false
             hint: "Add section names in the order you want them to appear on the page. Drag to reorder."
-            field: { label: "Section name", name: "section_name", widget: "string" }
 
       - label: "Times Tables Worksheets"
         name: "worksheets-times-tables"
@@ -501,7 +497,6 @@ collections:
             widget: "list"
             required: false
             hint: "Add section names in the order you want them to appear on the page. Drag to reorder."
-            field: { label: "Section name", name: "section_name", widget: "string" }
 
       - label: "Support Sheets Worksheets"
         name: "worksheets-support-sheets"
@@ -514,7 +509,6 @@ collections:
             widget: "list"
             required: false
             hint: "Add section names in the order you want them to appear on the page. Drag to reorder."
-            field: { label: "Section name", name: "section_name", widget: "string" }
 
   # ── PAGES (editable front matter) ───────────
   - name: "pages"
