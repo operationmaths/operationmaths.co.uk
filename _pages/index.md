@@ -48,30 +48,30 @@ body_class: page-home
       <p>Worksheets, SATs resources and maths books for primary and secondary students. Every worksheet topic includes 7 sheets, so there's always another chance to build confidence and fluency. Worksheet A is always free.</p>
     </div>
     <div class="om-hero-btns">
-      <a href="/worksheets/" class="om-btn-green">Browse free worksheets</a>
-      <a href="/sats-course" class="om-btn-dark-outline">SATs course <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+      <a href="{{ site.baseurl }}/worksheets/" class="om-btn-green">Browse free worksheets</a>
+      <a href="{{ site.baseurl }}/sats-course" class="om-btn-dark-outline">SATs course <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
     </div>
   </section>
 
   <section aria-label="What's on Operation Maths">
     <div class="om-strip">
-      <a class="om-strip-item" style="--sc:var(--blue)" href="/worksheets/">
+      <a class="om-strip-item" style="--sc:var(--blue)" href="{{ site.baseurl }}/worksheets/">
         <div class="om-strip-title">Worksheets</div>
         <div class="om-strip-sub">Free worksheet A with every set</div>
       </a>
-      <a class="om-strip-item" style="--sc:var(--green)" href="/maths-sats-papers">
+      <a class="om-strip-item" style="--sc:var(--green)" href="{{ site.baseurl }}/maths-sats-papers">
         <div class="om-strip-title">Maths SATs papers</div>
         <div class="om-strip-sub">Key Stage 2 practice papers</div>
       </a>
-      <a class="om-strip-item" style="--sc:var(--blue)" href="/online-maths-tests">
+      <a class="om-strip-item" style="--sc:var(--blue)" href="{{ site.baseurl }}/online-maths-tests">
         <div class="om-strip-title">Online maths tests</div>
         <div class="om-strip-sub">Times tables and more</div>
       </a>
-      <a class="om-strip-item" style="--sc:var(--orange)" href="/books">
+      <a class="om-strip-item" style="--sc:var(--orange)" href="{{ site.baseurl }}/books">
         <div class="om-strip-title">Books</div>
         <div class="om-strip-sub">Available on Amazon</div>
       </a>
-      <a class="om-strip-item" style="--sc:var(--purple)" href="/sats-course">
+      <a class="om-strip-item" style="--sc:var(--purple)" href="{{ site.baseurl }}/sats-course">
         <div class="om-strip-title">SATs course</div>
         <div class="om-strip-sub">Revision for Year 6</div>
       </a>
@@ -83,7 +83,7 @@ body_class: page-home
     <section aria-labelledby="latest-worksheets-heading">
       <div class="om-section-hd">
         <h2 id="latest-worksheets-heading">Latest worksheets</h2>
-        <a href="/worksheets/">Browse all worksheets</a>
+        <a href="{{ site.baseurl }}/worksheets/">Browse all worksheets</a>
       </div>
       <div class="om-latest">
         <article class="om-latest-card">
@@ -103,8 +103,8 @@ body_class: page-home
             <h3 class="om-latest-title">Fractions of amounts — Set 1</h3>
             <p class="om-latest-desc">Finding fractions of whole numbers, from unit fractions to non-unit fractions. Years 4–6.</p>
             <div class="om-latest-btns">
-              <a class="om-cbtn om-cbtn-ws" href="/worksheets/number/fractions-of-amounts-set-1.pdf">Worksheet (A)</a>
-              <a class="om-cbtn om-cbtn-ans" href="/worksheets/number/fractions-of-amounts-set-1-answers.pdf">Answers (A)</a>
+              <a class="om-cbtn om-cbtn-ws" href="{{ site.baseurl }}/worksheets/number/fractions-of-amounts-set-1.pdf">Worksheet (A)</a>
+              <a class="om-cbtn om-cbtn-ans" href="{{ site.baseurl }}/worksheets/number/fractions-of-amounts-set-1-answers.pdf">Answers (A)</a>
               <a class="om-cbtn om-cbtn-tes" href="#" target="_blank" rel="noopener">Full pack on TES <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
             </div>
           </div>
@@ -125,8 +125,8 @@ body_class: page-home
             <h3 class="om-latest-title">Solving one-step equations — Set 1</h3>
             <p class="om-latest-desc">Using inverse operations to solve equations with one unknown. Suitable for Years 6–8.</p>
             <div class="om-latest-btns">
-              <a class="om-cbtn om-cbtn-ws" href="/worksheets/algebra/solving-one-step-equations-set-1.pdf">Worksheet (A)</a>
-              <a class="om-cbtn om-cbtn-ans" href="/worksheets/algebra/solving-one-step-equations-set-1-answers.pdf">Answers (A)</a>
+              <a class="om-cbtn om-cbtn-ws" href="{{ site.baseurl }}/worksheets/algebra/solving-one-step-equations-set-1.pdf">Worksheet (A)</a>
+              <a class="om-cbtn om-cbtn-ans" href="{{ site.baseurl }}/worksheets/algebra/solving-one-step-equations-set-1-answers.pdf">Answers (A)</a>
               <a class="om-cbtn om-cbtn-tes" href="#" target="_blank" rel="noopener">Full pack on TES <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
             </div>
           </div>
@@ -148,8 +148,8 @@ body_class: page-home
             <h3 class="om-latest-title">Area of triangles — Set 1</h3>
             <p class="om-latest-desc">Calculating the area of triangles using the formula. Progresses from whole numbers to decimals. Years 5–7.</p>
             <div class="om-latest-btns">
-              <a class="om-cbtn om-cbtn-ws" href="/worksheets/shape/area-of-triangles-set-1.pdf">Worksheet (A)</a>
-              <a class="om-cbtn om-cbtn-ans" href="/worksheets/shape/area-of-triangles-set-1-answers.pdf">Answers (A)</a>
+              <a class="om-cbtn om-cbtn-ws" href="{{ site.baseurl }}/worksheets/shape/area-of-triangles-set-1.pdf">Worksheet (A)</a>
+              <a class="om-cbtn om-cbtn-ans" href="{{ site.baseurl }}/worksheets/shape/area-of-triangles-set-1-answers.pdf">Answers (A)</a>
               <a class="om-cbtn om-cbtn-tes" href="#" target="_blank" rel="noopener">Full pack on TES <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
             </div>
           </div>
@@ -162,7 +162,7 @@ body_class: page-home
     <section aria-labelledby="books-heading">
       <div class="om-section-hd">
         <h2 id="books-heading">Books by Operation Maths</h2>
-        <a href="/books">View all books</a>
+        <a href="{{ site.baseurl }}/books">View all books</a>
       </div>
       <div class="om-books">
         <a class="om-book-card" href="https://www.amazon.co.uk/dp/B09DJ7LQ3S/" target="_blank" rel="noopener">
@@ -198,16 +198,16 @@ body_class: page-home
       </div>
     </section>
 
-  <section aria-labelledby="sats-course-heading">
-  <div class="om-sats">
-    <div>
-      <h2 id="sats-course-heading">Preparing for SATs?</h2>
-      <p>Structured revision course with practice papers and worked examples for Year 6 pupils.</p>
-      <a href="/sats-course" class="om-btn-green">View SATs course <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-    </div>
-    <img src="{{ site.baseurl }}/assets/images/SATs-booklets.png" alt="SATs resource pack booklets" style="width:100%; max-width:380px; border-radius:8px; display:block;">
-  </div>
-  </section>
+    <section aria-labelledby="sats-course-heading">
+      <div class="om-sats">
+        <div>
+          <h2 id="sats-course-heading">Preparing for SATs?</h2>
+          <p>Structured revision course with practice papers and worked examples for Year 6 pupils.</p>
+          <a href="{{ site.baseurl }}/sats-course" class="om-btn-green">View SATs course <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+        </div>
+        <img src="{{ site.baseurl }}/assets/images/SATs-booklets.png" alt="SATs resource pack booklets" style="width:100%; max-width:380px; border-radius:8px; display:block;">
+      </div>
+    </section>
 
   </div>
 </main>
