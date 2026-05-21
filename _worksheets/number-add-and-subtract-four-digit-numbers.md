@@ -2,7 +2,7 @@
 title: Add and Subtract four-digit numbers
 topic: number
 section: Addition and Subtraction
-order: 1
+order: 3
 orientation: portrait
 description: >-
   Each worksheet contains 5 addition and 5 subtraction questions and squares
