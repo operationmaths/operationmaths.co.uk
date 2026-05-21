@@ -141,8 +141,8 @@ permalink: /books/
 
         <div class="book-card">
           <div class="book-covers">
-            <img src="/assets/images/11-times-table-book-front.PNG" alt="11 times table book front cover">
-            <img src="/assets/images/11-times-table-book-inside.PNG" alt="11 times table book inside page">
+            <img src="{{ site.baseurl }}/assets/images/11-times-table-book-front.PNG" alt="11 times table book front cover">
+            <img src="{{ site.baseurl }}/assets/images/11-times-table-book-inside.PNG" alt="11 times table book inside page">
           </div>
           <div class="book-title">11 times table</div>
           <a href="https://amzn.to/4a3XxiU" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
