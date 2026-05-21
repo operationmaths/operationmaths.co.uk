@@ -2,7 +2,7 @@
 title: Add and Subtract three-digit numbers
 topic: number
 section: Addition and Subtraction
-order: 1
+order: 2
 orientation: portrait
 description: >-
   Each worksheet contains 5 addition and 5 subtraction questions and squares
