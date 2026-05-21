@@ -64,7 +64,7 @@ layout: default
 
             <div class="wc-image {% if ws.orientation == 'portrait' %}portrait{% else %}landscape{% endif %}">
               {% if ws.thumbnail %}
-                <img src="{{ ws.thumbnail }}" alt="{{ ws.title }}">
+                <img src="{{ site.baseurl }}{{ ws.thumbnail }}" alt="{{ ws.title }}">
               {% else %}
                 <div class="wc-image-placeholder">
                   {% if ws.orientation == 'portrait' %}
