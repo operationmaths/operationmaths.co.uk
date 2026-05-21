@@ -434,6 +434,88 @@ collections:
         required: false
         hint: "Full URL of the TES listing for the paid pack."
 
+  # ── WORKSHEET TOPIC PAGES ───────────────────
+  - name: "worksheet-pages"
+    label: "Worksheet Pages"
+    files:
+      - label: "Number Worksheets"
+        name: "worksheets-number"
+        file: "_pages/worksheets-number.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Meta description", name: "description", widget: "text" }
+          - label: "Section order"
+            name: "section_order"
+            widget: "list"
+            required: false
+            hint: "Add section names in the order you want them to appear on the page. Drag to reorder."
+            field: { label: "Section name", name: "section_name", widget: "string" }
+
+      - label: "Shape Worksheets"
+        name: "worksheets-shape"
+        file: "_pages/worksheets-shape.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Meta description", name: "description", widget: "text" }
+          - label: "Section order"
+            name: "section_order"
+            widget: "list"
+            required: false
+            hint: "Add section names in the order you want them to appear on the page. Drag to reorder."
+            field: { label: "Section name", name: "section_name", widget: "string" }
+
+      - label: "Algebra Worksheets"
+        name: "worksheets-algebra"
+        file: "_pages/worksheets-algebra.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Meta description", name: "description", widget: "text" }
+          - label: "Section order"
+            name: "section_order"
+            widget: "list"
+            required: false
+            hint: "Add section names in the order you want them to appear on the page. Drag to reorder."
+            field: { label: "Section name", name: "section_name", widget: "string" }
+
+      - label: "Formulae Worksheets"
+        name: "worksheets-formulae"
+        file: "_pages/worksheets-formulae.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Meta description", name: "description", widget: "text" }
+          - label: "Section order"
+            name: "section_order"
+            widget: "list"
+            required: false
+            hint: "Add section names in the order you want them to appear on the page. Drag to reorder."
+            field: { label: "Section name", name: "section_name", widget: "string" }
+
+      - label: "Times Tables Worksheets"
+        name: "worksheets-times-tables"
+        file: "_pages/worksheets-times-tables.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Meta description", name: "description", widget: "text" }
+          - label: "Section order"
+            name: "section_order"
+            widget: "list"
+            required: false
+            hint: "Add section names in the order you want them to appear on the page. Drag to reorder."
+            field: { label: "Section name", name: "section_name", widget: "string" }
+
+      - label: "Support Sheets Worksheets"
+        name: "worksheets-support-sheets"
+        file: "_pages/worksheets-support-sheets.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Meta description", name: "description", widget: "text" }
+          - label: "Section order"
+            name: "section_order"
+            widget: "list"
+            required: false
+            hint: "Add section names in the order you want them to appear on the page. Drag to reorder."
+            field: { label: "Section name", name: "section_name", widget: "string" }
+
   # ── PAGES (editable front matter) ───────────
   - name: "pages"
     label: "Pages"
