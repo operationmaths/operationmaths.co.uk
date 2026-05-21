@@ -71,7 +71,6 @@ collections:
         name: "free_pdf"
         widget: "string"
         required: false
-        default: "/"
         hint: "Path to the PDF, e.g. /pdfs/2-times-table.pdf"
       - label: "Answers PDF link"
         name: "answers_pdf"
@@ -141,7 +140,6 @@ collections:
         name: "free_pdf"
         widget: "string"
         required: false
-        default: "/"
         hint: "Path to the PDF, e.g. /pdfs/place-value.pdf"
       - label: "Answers PDF link"
         name: "answers_pdf"
@@ -211,7 +209,6 @@ collections:
         name: "free_pdf"
         widget: "string"
         required: false
-        default: "/"
         hint: "Path to the PDF, e.g. /pdfs/2d-shapes.pdf"
       - label: "Answers PDF link"
         name: "answers_pdf"
@@ -281,7 +278,6 @@ collections:
         name: "free_pdf"
         widget: "string"
         required: false
-        default: "/"
         hint: "Path to the PDF, e.g. /pdfs/expressions.pdf"
       - label: "Answers PDF link"
         name: "answers_pdf"
@@ -351,7 +347,6 @@ collections:
         name: "free_pdf"
         widget: "string"
         required: false
-        default: "/"
         hint: "Path to the PDF, e.g. /pdfs/aqa-formulae-foundation.pdf"
       - label: "Answers PDF link"
         name: "answers_pdf"
@@ -421,7 +416,6 @@ collections:
         name: "free_pdf"
         widget: "string"
         required: false
-        default: "/"
         hint: "Path to the PDF, e.g. /pdfs/support-sheet.pdf"
       - label: "Answers PDF link"
         name: "answers_pdf"
