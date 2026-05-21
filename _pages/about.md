@@ -15,7 +15,7 @@ permalink: /about/
 
     <section id="about" style="margin-bottom:2.5rem;">
       <div class="intro-card" style="grid-template-columns: 180px 1fr; align-items:center;">
-        <img src="/assets/images/Fay-photo.png" alt="Fay, qualified maths tutor and teacher" style="width:180px; border-radius:8px; display:block;">
+        <img src="{{ site.baseurl }}/assets/images/Fay-photo.png" alt="Fay, qualified maths tutor and teacher" style="width:180px; border-radius:8px; display:block;">
         <div class="intro-body">
           <h2>Hi, I'm Fay</h2>
           <p>I am a qualified teacher with many years of experience teaching in schools across the North East of England and abroad. Alongside my classroom career I have worked extensively in private tuition, supporting children of all abilities from primary through to secondary level to build their confidence and attainment in maths.</p>
