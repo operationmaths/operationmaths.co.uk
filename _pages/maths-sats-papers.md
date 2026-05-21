@@ -30,7 +30,7 @@ permalink: /maths-sats-papers/
 <div class="om-body">
     <div class="promo-card">
       <div class="promo-thumb" aria-hidden="true">
-        <img src="/assets/images/2026-Maths-SATs-front.jpg" alt="2026 Maths SATs ebook cover" style="width:100%; height:100%; object-fit:cover; border-radius:6px;">
+        <img src="{{ site.baseurl }}/assets/images/2026-Maths-SATs-front.jpg" alt="2026 Maths SATs ebook cover" style="width:100%; height:100%; object-fit:cover; border-radius:6px;">
       </div>
       <div class="promo-text">
         <strong>Preparing for the 2026 maths SATs?</strong>
@@ -51,7 +51,7 @@ permalink: /maths-sats-papers/
 
         <div class="paper-row">
           <div class="paper-thumb" aria-hidden="true">
-            <img src="/assets/images/SATs-2025-Paper-1.PNG" alt="2025 SATs Paper 1">
+            <img src="{{ site.baseurl }}/assets/images/SATs-2025-Paper-1.PNG" alt="2025 SATs Paper 1">
           </div>
           <div class="paper-info">
             <div class="paper-tag tag-arith">Arithmetic</div>
@@ -65,7 +65,7 @@ permalink: /maths-sats-papers/
 
         <div class="paper-row">
           <div class="paper-thumb" aria-hidden="true">
-            <img src="/assets/images/SATs-2025-Paper-2.PNG" alt="2025 SATs Paper 2">
+            <img src="{{ site.baseurl }}/assets/images/SATs-2025-Paper-2.PNG" alt="2025 SATs Paper 2">
           </div>
           <div class="paper-info">
             <div class="paper-tag tag-reason">Reasoning</div>
@@ -79,7 +79,7 @@ permalink: /maths-sats-papers/
 
         <div class="paper-row">
           <div class="paper-thumb" aria-hidden="true">
-            <img src="/assets/images/SATs-2025-Paper-3.PNG" alt="2025 SATs Paper 3">
+            <img src="{{ site.baseurl }}/assets/images/SATs-2025-Paper-3.PNG" alt="2025 SATs Paper 3">
           </div>
           <div class="paper-info">
             <div class="paper-tag tag-reason">Reasoning</div>
@@ -111,7 +111,7 @@ permalink: /maths-sats-papers/
 
         <div class="paper-row">
           <div class="paper-thumb" aria-hidden="true">
-            <img src="/assets/images/SATs-2024-Paper-1.PNG" alt="2024 SATs Paper 1">
+            <img src="{{ site.baseurl }}/assets/images/SATs-2024-Paper-1.PNG" alt="2024 SATs Paper 1">
           </div>
           <div class="paper-info">
             <div class="paper-tag tag-arith">Arithmetic</div>
@@ -125,7 +125,7 @@ permalink: /maths-sats-papers/
 
         <div class="paper-row">
           <div class="paper-thumb" aria-hidden="true">
-            <img src="/assets/images/SATs-2024-Paper-2.PNG" alt="2024 SATs Paper 2">
+            <img src="{{ site.baseurl }}/assets/images/SATs-2024-Paper-2.PNG" alt="2024 SATs Paper 2">
           </div>
           <div class="paper-info">
             <div class="paper-tag tag-reason">Reasoning</div>
@@ -139,7 +139,7 @@ permalink: /maths-sats-papers/
 
         <div class="paper-row">
           <div class="paper-thumb" aria-hidden="true">
-            <img src="/assets/images/SATs-2024-Paper-3.PNG" alt="2024 SATs Paper 3">
+            <img src="{{ site.baseurl }}/assets/images/SATs-2024-Paper-3.PNG" alt="2024 SATs Paper 3">
           </div>
           <div class="paper-info">
             <div class="paper-tag tag-reason">Reasoning</div>
@@ -171,7 +171,7 @@ permalink: /maths-sats-papers/
 
         <div class="paper-row">
           <div class="paper-thumb" aria-hidden="true">
-            <img src="/assets/images/SATs-2023-Paper-1.PNG" alt="2023 SATs Paper 1">
+            <img src="{{ site.baseurl }}/assets/images/SATs-2023-Paper-1.PNG" alt="2023 SATs Paper 1">
           </div>
           <div class="paper-info">
             <div class="paper-tag tag-arith">Arithmetic</div>
@@ -185,7 +185,7 @@ permalink: /maths-sats-papers/
 
         <div class="paper-row">
           <div class="paper-thumb" aria-hidden="true">
-            <img src="/assets/images/SATs-2023-Paper-2.PNG" alt="2023 SATs Paper 2">
+            <img src="{{ site.baseurl }}/assets/images/SATs-2023-Paper-2.PNG" alt="2023 SATs Paper 2">
           </div>
           <div class="paper-info">
             <div class="paper-tag tag-reason">Reasoning</div>
@@ -199,7 +199,7 @@ permalink: /maths-sats-papers/
 
         <div class="paper-row">
           <div class="paper-thumb" aria-hidden="true">
-            <img src="/assets/images/SATs-2023-Paper-3.PNG" alt="2023 SATs Paper 3">
+            <img src="{{ site.baseurl }}/assets/images/SATs-2023-Paper-3.PNG" alt="2023 SATs Paper 3">
           </div>
           <div class="paper-info">
             <div class="paper-tag tag-reason">Reasoning</div>
@@ -231,7 +231,7 @@ permalink: /maths-sats-papers/
 
         <div class="paper-row">
           <div class="paper-thumb" aria-hidden="true">
-            <img src="/assets/images/SATs-2022-Paper-1.PNG" alt="2022 SATs Paper 1">
+            <img src="{{ site.baseurl }}/assets/images/SATs-2022-Paper-1.PNG" alt="2022 SATs Paper 1">
           </div>
           <div class="paper-info">
             <div class="paper-tag tag-arith">Arithmetic</div>
@@ -245,7 +245,7 @@ permalink: /maths-sats-papers/
 
         <div class="paper-row">
           <div class="paper-thumb" aria-hidden="true">
-            <img src="/assets/images/SATs-2022-Paper-2.PNG" alt="2022 SATs Paper 2">
+            <img src="{{ site.baseurl }}/assets/images/SATs-2022-Paper-2.PNG" alt="2022 SATs Paper 2">
           </div>
           <div class="paper-info">
             <div class="paper-tag tag-reason">Reasoning</div>
@@ -259,7 +259,7 @@ permalink: /maths-sats-papers/
 
         <div class="paper-row">
           <div class="paper-thumb" aria-hidden="true">
-            <img src="/assets/images/SATs-2022-Paper-3.PNG" alt="2022 SATs Paper 3">
+            <img src="{{ site.baseurl }}/assets/images/SATs-2022-Paper-3.PNG" alt="2022 SATs Paper 3">
           </div>
           <div class="paper-info">
             <div class="paper-tag tag-reason">Reasoning</div>
@@ -291,7 +291,7 @@ permalink: /maths-sats-papers/
 
         <div class="paper-row">
           <div class="paper-thumb" aria-hidden="true">
-            <img src="/assets/images/SATs-2019-Paper-1.PNG" alt="2019 SATs Paper 1">
+            <img src="{{ site.baseurl }}/assets/images/SATs-2019-Paper-1.PNG" alt="2019 SATs Paper 1">
           </div>
           <div class="paper-info">
             <div class="paper-tag tag-arith">Arithmetic</div>
@@ -305,7 +305,7 @@ permalink: /maths-sats-papers/
 
         <div class="paper-row">
           <div class="paper-thumb" aria-hidden="true">
-            <img src="/assets/images/SATs-2019-Paper-2.PNG" alt="2019 SATs Paper 2">
+            <img src="{{ site.baseurl }}/assets/images/SATs-2019-Paper-2.PNG" alt="2019 SATs Paper 2">
           </div>
           <div class="paper-info">
             <div class="paper-tag tag-reason">Reasoning</div>
@@ -319,7 +319,7 @@ permalink: /maths-sats-papers/
 
         <div class="paper-row">
           <div class="paper-thumb" aria-hidden="true">
-            <img src="/assets/images/SATs-2019-Paper-3.PNG" alt="2019 SATs Paper 3">
+            <img src="{{ site.baseurl }}/assets/images/SATs-2019-Paper-3.PNG" alt="2019 SATs Paper 3">
           </div>
           <div class="paper-info">
             <div class="paper-tag tag-reason">Reasoning</div>
@@ -351,7 +351,7 @@ permalink: /maths-sats-papers/
 
         <div class="paper-row">
           <div class="paper-thumb" aria-hidden="true">
-            <img src="/assets/images/SATs-2018-Paper-1.PNG" alt="2018 SATs Paper 1">
+            <img src="{{ site.baseurl }}/assets/images/SATs-2018-Paper-1.PNG" alt="2018 SATs Paper 1">
           </div>
           <div class="paper-info">
             <div class="paper-tag tag-arith">Arithmetic</div>
@@ -365,7 +365,7 @@ permalink: /maths-sats-papers/
 
         <div class="paper-row">
           <div class="paper-thumb" aria-hidden="true">
-            <img src="/assets/images/SATs-2018-Paper-2.PNG" alt="2018 SATs Paper 2">
+            <img src="{{ site.baseurl }}/assets/images/SATs-2018-Paper-2.PNG" alt="2018 SATs Paper 2">
           </div>
           <div class="paper-info">
             <div class="paper-tag tag-reason">Reasoning</div>
@@ -379,7 +379,7 @@ permalink: /maths-sats-papers/
 
         <div class="paper-row">
           <div class="paper-thumb" aria-hidden="true">
-            <img src="/assets/images/SATs-2018-Paper-3.PNG" alt="2018 SATs Paper 3">
+            <img src="{{ site.baseurl }}/assets/images/SATs-2018-Paper-3.PNG" alt="2018 SATs Paper 3">
           </div>
           <div class="paper-info">
             <div class="paper-tag tag-reason">Reasoning</div>
@@ -411,7 +411,7 @@ permalink: /maths-sats-papers/
 
         <div class="paper-row">
           <div class="paper-thumb" aria-hidden="true">
-            <img src="/assets/images/SATs-2017-Paper-1.PNG" alt="2017 SATs Paper 1">
+            <img src="{{ site.baseurl }}/assets/images/SATs-2017-Paper-1.PNG" alt="2017 SATs Paper 1">
           </div>
           <div class="paper-info">
             <div class="paper-tag tag-arith">Arithmetic</div>
@@ -425,7 +425,7 @@ permalink: /maths-sats-papers/
 
         <div class="paper-row">
           <div class="paper-thumb" aria-hidden="true">
-            <img src="/assets/images/SATs-2017-Paper-2.PNG" alt="2017 SATs Paper 2">
+            <img src="{{ site.baseurl }}/assets/images/SATs-2017-Paper-2.PNG" alt="2017 SATs Paper 2">
           </div>
           <div class="paper-info">
             <div class="paper-tag tag-reason">Reasoning</div>
@@ -439,7 +439,7 @@ permalink: /maths-sats-papers/
 
         <div class="paper-row">
           <div class="paper-thumb" aria-hidden="true">
-            <img src="/assets/images/SATs-2017-Paper-3.PNG" alt="2017 SATs Paper 3">
+            <img src="{{ site.baseurl }}/assets/images/SATs-2017-Paper-3.PNG" alt="2017 SATs Paper 3">
           </div>
           <div class="paper-info">
             <div class="paper-tag tag-reason">Reasoning</div>
@@ -471,7 +471,7 @@ permalink: /maths-sats-papers/
 
         <div class="paper-row">
           <div class="paper-thumb" aria-hidden="true">
-            <img src="/assets/images/SATs-2016-Paper-1.PNG" alt="2016 SATs Paper 1">
+            <img src="{{ site.baseurl }}/assets/images/SATs-2016-Paper-1.PNG" alt="2016 SATs Paper 1">
           </div>
           <div class="paper-info">
             <div class="paper-tag tag-arith">Arithmetic</div>
@@ -485,7 +485,7 @@ permalink: /maths-sats-papers/
 
         <div class="paper-row">
           <div class="paper-thumb" aria-hidden="true">
-            <img src="/assets/images/SATs-2016-Paper-2.PNG" alt="2016 SATs Paper 2">
+            <img src="{{ site.baseurl }}/assets/images/SATs-2016-Paper-2.PNG" alt="2016 SATs Paper 2">
           </div>
           <div class="paper-info">
             <div class="paper-tag tag-reason">Reasoning</div>
@@ -499,7 +499,7 @@ permalink: /maths-sats-papers/
 
         <div class="paper-row">
           <div class="paper-thumb" aria-hidden="true">
-            <img src="/assets/images/SATs-2016-Paper-3.PNG" alt="2016 SATs Paper 3">
+            <img src="{{ site.baseurl }}/assets/images/SATs-2016-Paper-3.PNG" alt="2016 SATs Paper 3">
           </div>
           <div class="paper-info">
             <div class="paper-tag tag-reason">Reasoning</div>
@@ -531,7 +531,7 @@ permalink: /maths-sats-papers/
 
         <div class="paper-row">
           <div class="paper-thumb" aria-hidden="true">
-            <img src="/assets/images/SATs-Sample-Paper-1.PNG" alt="SATs Sample Paper 1">
+            <img src="{{ site.baseurl }}/assets/images/SATs-Sample-Paper-1.PNG" alt="SATs Sample Paper 1">
           </div>
           <div class="paper-info">
             <div class="paper-tag tag-arith">Arithmetic</div>
@@ -545,7 +545,7 @@ permalink: /maths-sats-papers/
 
         <div class="paper-row">
           <div class="paper-thumb" aria-hidden="true">
-            <img src="/assets/images/SATs-Sample-Paper-2.PNG" alt="SATs Sample Paper 2">
+            <img src="{{ site.baseurl }}/assets/images/SATs-Sample-Paper-2.PNG" alt="SATs Sample Paper 2">
           </div>
           <div class="paper-info">
             <div class="paper-tag tag-reason">Reasoning</div>
@@ -559,7 +559,7 @@ permalink: /maths-sats-papers/
 
         <div class="paper-row">
           <div class="paper-thumb" aria-hidden="true">
-            <img src="/assets/images/SATs-Sample-Paper-3.PNG" alt="SATs Sample Paper 3">
+            <img src="{{ site.baseurl }}/assets/images/SATs-Sample-Paper-3.PNG" alt="SATs Sample Paper 3">
           </div>
           <div class="paper-info">
             <div class="paper-tag tag-reason">Reasoning</div>
