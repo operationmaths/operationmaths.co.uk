@@ -556,7 +556,7 @@ main { flex: 1; }
   .worksheet-page .worksheet-card { flex-direction: column; }
   .wc-image { width: 100%; border-right: none; border-bottom: 1px solid #e5e7eb; align-self: center; max-width: 260px; margin: 0 auto; }
   .wc-image.portrait { height: 200px; }
-  .wc-image.portrait img { object-fit: contain; }
+  .wc-image.portrait img { max-height: 200px; width: 100%; object-fit: contain; }
   .wc-image.landscape { height: 140px; }
   .worksheet-page .wc-actions { padding: 0 16px 16px; flex-direction: column; gap: 6px; }
   .worksheet-page .wc-actions .btn { width: 100%; justify-content: center; }
