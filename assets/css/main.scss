@@ -314,7 +314,7 @@ main { flex: 1; }
 .worksheet-page .wc-image { flex-shrink: 0; background: #fff; border-bottom: none; padding: 0; }
 .worksheet-page .wc-image.portrait  { width: 120px; height: auto; }
 .worksheet-page .wc-image.landscape { width: 180px; height: auto; }
-.worksheet-page .wc-image img { width: 100%; height: 100%; object-fit: cover; }
+.worksheet-page .wc-image img { width: 100%; height: 100%; object-fit: contain; }
 .wc-image-placeholder { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; }
 .wc-image-placeholder svg { opacity: 0.25; }
 .worksheet-page .wc-content { padding: 16px 20px; flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 4px; }
