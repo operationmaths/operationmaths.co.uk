@@ -310,7 +310,7 @@ main { flex: 1; }
 /* ── WORKSHEET TOPIC PAGES (horizontal card layout) ── */
 /* Override the grid-based .worksheet-list for topic pages that use horizontal cards */
 .worksheet-page .worksheet-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 0; }
-.worksheet-page .worksheet-card { display: flex; align-items: flex-start; flex-direction: row; }
+.worksheet-page .worksheet-card { display: flex; align-items: stretch; flex-direction: row; }
 .worksheet-page .wc-image { flex-shrink: 0; background: #fff; border-bottom: none; padding: 0; }
 .worksheet-page .wc-image.portrait { width: 120px; height: auto; max-height: 170px; align-self: center; }
 .worksheet-page .wc-image.landscape { width: 180px; height: auto; }
