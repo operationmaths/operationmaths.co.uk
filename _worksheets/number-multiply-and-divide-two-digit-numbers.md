@@ -11,7 +11,7 @@ description: |-
 thumbnail: /assets/images/worksheets/number/Multiply-and-Divide-two-digit-numbers.jpg
 show_a_worksheet: true
 show_a_answers: true
-free_pdf: pdfs/Multiply-and-Divide-two-digit-numbers.pdf
-answers_pdf: pdfs/Multiply-and-Divide-two-digit-numbers-ANSWERS.pdf
+free_pdf: /pdfs/Multiply-and-Divide-two-digit-numbers.pdf
+answers_pdf: /pdfs/Multiply-and-Divide-two-digit-numbers-ANSWERS.pdf
 tes_url: ''
 ---
