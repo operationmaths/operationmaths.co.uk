@@ -83,7 +83,6 @@ collections:
         name: "tes_url"
         widget: "string"
         required: false
-        default: "/"
         hint: "Full URL of the TES listing for the paid pack."
 
   # ── NUMBER ──────────────────────────────────
@@ -143,11 +142,13 @@ collections:
         name: "free_pdf"
         widget: "string"
         required: false
+        default: "/"
         hint: "Path to the PDF, e.g. /pdfs/place-value.pdf"
       - label: "Answers PDF link"
         name: "answers_pdf"
         widget: "string"
         required: false
+        default: "/"
         hint: "Path to the answers PDF."
       - label: "Full pack TES URL"
         name: "tes_url"
@@ -212,11 +213,13 @@ collections:
         name: "free_pdf"
         widget: "string"
         required: false
+        default: "/"
         hint: "Path to the PDF, e.g. /pdfs/2d-shapes.pdf"
       - label: "Answers PDF link"
         name: "answers_pdf"
         widget: "string"
         required: false
+        default: "/"
         hint: "Path to the answers PDF."
       - label: "Full pack TES URL"
         name: "tes_url"
@@ -281,11 +284,13 @@ collections:
         name: "free_pdf"
         widget: "string"
         required: false
+        default: "/"
         hint: "Path to the PDF, e.g. /pdfs/expressions.pdf"
       - label: "Answers PDF link"
         name: "answers_pdf"
         widget: "string"
         required: false
+        default: "/"
         hint: "Path to the answers PDF."
       - label: "Full pack TES URL"
         name: "tes_url"
@@ -350,11 +355,13 @@ collections:
         name: "free_pdf"
         widget: "string"
         required: false
+        default: "/"
         hint: "Path to the PDF, e.g. /pdfs/aqa-formulae-foundation.pdf"
       - label: "Answers PDF link"
         name: "answers_pdf"
         widget: "string"
         required: false
+        default: "/"
         hint: "Path to the answers PDF."
       - label: "Full pack TES URL"
         name: "tes_url"
@@ -419,11 +426,13 @@ collections:
         name: "free_pdf"
         widget: "string"
         required: false
+        default: "/"
         hint: "Path to the PDF, e.g. /pdfs/support-sheet.pdf"
       - label: "Answers PDF link"
         name: "answers_pdf"
         widget: "string"
         required: false
+        default: "/"
         hint: "Path to the answers PDF."
       - label: "Full pack TES URL"
         name: "tes_url"
