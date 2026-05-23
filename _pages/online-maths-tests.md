@@ -5,6 +5,12 @@ description: Online maths tests for KS2 and KS3 students from Operation Maths.
 permalink: /online-maths-tests/
 ---
 
+<style>
+.dark-btn { background: #fff; color: #1a1a2e; border: 2px solid #d0d0d0; }
+.dark-btn:hover { background: #f0f0f0; border-color: #999; }
+.dark-btn.selected { background: #1a1a2e; color: #fff; border-color: #1a1a2e; }
+</style>
+
 <section class="om-hero" style="min-height:0; padding: 4rem 2rem 3.5rem;">
   <h1>Online <em>maths tests</em></h1>
   <p>Choose a test below, pick your settings and go.<br>One question at a time – results at the end.</p>
@@ -25,9 +31,9 @@ permalink: /online-maths-tests/
         <div class="setup-section">
           <span class="setup-section-title">Operation</span>
           <div class="option-row">
-            <button class="option-btn blue-btn selected" data-op="times" onclick="ttSelectOp(this)">Times tables (×)</button>
-            <button class="option-btn blue-btn" data-op="division" onclick="ttSelectOp(this)">Division (÷)</button>
-            <button class="option-btn blue-btn" data-op="mixed" onclick="ttSelectOp(this)">Mixed (× and ÷)</button>
+            <button class="option-btn dark-btn selected" data-op="times" onclick="ttSelectOp(this)">Times tables (×)</button>
+            <button class="option-btn dark-btn" data-op="division" onclick="ttSelectOp(this)">Division (÷)</button>
+            <button class="option-btn dark-btn" data-op="mixed" onclick="ttSelectOp(this)">Mixed (× and ÷)</button>
           </div>
         </div>
         <div class="setup-section">
@@ -111,10 +117,9 @@ permalink: /online-maths-tests/
         <div class="setup-section">
           <span class="setup-section-title">Bonds to</span>
           <div class="option-row">
-            <button class="option-btn blue-btn" data-nb-target="10" onclick="nbSelectTarget(this)">10</button>
-            <button class="option-btn blue-btn" data-nb-target="20" onclick="nbSelectTarget(this)">20</button>
-            <button class="option-btn blue-btn" data-nb-target="100" onclick="nbSelectTarget(this)">100</button>
-            <button class="option-btn blue-btn" data-nb-target="1000" onclick="nbSelectTarget(this)">1000</button>
+            <button class="option-btn dark-btn selected" data-nb-target="10" onclick="nbSelectTarget(this)">10</button>
+            <button class="option-btn dark-btn" data-nb-target="20" onclick="nbSelectTarget(this)">20</button>
+            <button class="option-btn dark-btn" data-nb-target="100" onclick="nbSelectTarget(this)">100</button>
           </div>
         </div>
         <div class="setup-section">
@@ -190,9 +195,9 @@ permalink: /online-maths-tests/
         <div class="setup-section">
           <span class="setup-section-title">Difficulty</span>
           <div class="option-row">
-            <button class="option-btn blue-btn" data-mc-diff="basic" onclick="mcSelectDiff(this)">Basic</button>
-            <button class="option-btn blue-btn" data-mc-diff="easier" onclick="mcSelectDiff(this)">Easier</button>
-            <button class="option-btn blue-btn" data-mc-diff="harder" onclick="mcSelectDiff(this)">Harder</button>
+            <button class="option-btn dark-btn selected" data-mc-diff="basic" onclick="mcSelectDiff(this)">Basic</button>
+            <button class="option-btn dark-btn" data-mc-diff="easier" onclick="mcSelectDiff(this)">Easier</button>
+            <button class="option-btn dark-btn" data-mc-diff="harder" onclick="mcSelectDiff(this)">Harder</button>
           </div>
         </div>
         <div class="setup-section" id="mc-groups-section" style="display:none">
@@ -626,8 +631,10 @@ permalink: /online-maths-tests/
     document.getElementById('nb-quiz').classList.remove('active');
     document.getElementById('nb-results').classList.remove('active');
     document.getElementById('nb-setup').style.display = '';
-    nbSelTarget = null; nbSelOp = null; nbSelCount = null; nbSelTimed = null; nbSelTime = null;
+    nbSelOp = null; nbSelCount = null; nbSelTimed = null; nbSelTime = null;
     document.querySelectorAll('[data-nb-target]').forEach(b => b.classList.remove('selected'));
+    document.querySelector('[data-nb-target="10"]').classList.add('selected');
+    nbSelTarget = 10;
     document.querySelectorAll('[data-nb-op]').forEach(b => b.classList.remove('selected'));
     document.querySelectorAll('[data-nb-qcount]').forEach(b => b.classList.remove('selected'));
     document.querySelectorAll('[data-nb-timed]').forEach(b => b.classList.remove('selected'));
@@ -679,7 +686,7 @@ permalink: /online-maths-tests/
     let pairs = [];
     if (target === 10) { for (let a = 0; a <= 10; a++) pairs.push([a, 10 - a]); }
     else if (target === 20) { for (let a = 0; a <= 20; a++) pairs.push([a, 20 - a]); }
-    else if (target === 100) { for (let a = 0; a <= 100; a += 10) pairs.push([a, 100 - a]); }
+    else if (target === 100) { for (let a = 0; a <= 100; a++) pairs.push([a, 100 - a]); }
     else if (target === 1000) { for (let a = 0; a <= 1000; a += 100) pairs.push([a, 1000 - a]); }
     const addPool = [], subPool = [];
     for (const [a, b] of pairs) {
@@ -812,7 +819,7 @@ permalink: /online-maths-tests/
     { label: '1 cm = ? mm',  resultLabel: '1 cm = 10 mm',    answer: '10' },
     { label: '1 m = ? cm',   resultLabel: '1 m = 100 cm',    answer: '100' },
     { label: '1 km = ? m',   resultLabel: '1 km = 1000 m',   answer: '1000' },
-    { label: '1 l = ? ml',   resultLabel: '1 l = 1000 ml',   answer: '1000' },
+    { label: '1 ℓ = ? mℓ',   resultLabel: '1 ℓ = 1000 mℓ',   answer: '1000' },
     { label: '1 kg = ? g',   resultLabel: '1 kg = 1000 g',   answer: '1000' }
   ];
 
@@ -823,7 +830,7 @@ permalink: /online-maths-tests/
       { from: 'm',  to: 'km', factor: 0.001 }, { from: 'km', to: 'm', factor: 1000 }
     ],
     mass:     [ { from: 'g', to: 'kg', factor: 0.001 }, { from: 'kg', to: 'g', factor: 1000 } ],
-    capacity: [ { from: 'ml', to: 'l', factor: 0.001 }, { from: 'l', to: 'ml', factor: 1000 } ]
+    capacity: [ { from: 'mℓ', to: 'ℓ', factor: 0.001 }, { from: 'ℓ', to: 'mℓ', factor: 1000 } ]
   };
 
   const MC_EASIER_VALUES = {
@@ -831,7 +838,7 @@ permalink: /online-maths-tests/
     'cm-m':  [200,300,400,500,600,700,800,900,150,250],   'm-cm':  [2,3,4,5,6,7,8,9,10],
     'm-km':  [2000,3000,4000,5000,6000,7000,8000,9000],   'km-m':  [2,3,4,5,6,7,8,9,10],
     'g-kg':  [2000,3000,4000,5000,6000,7000,8000,9000],   'kg-g':  [2,3,4,5,6,7,8,9,10],
-    'ml-l':  [2000,3000,4000,5000,6000,7000,8000,9000],   'l-ml':  [2,3,4,5,6,7,8,9,10]
+    'mℓ-ℓ':  [2000,3000,4000,5000,6000,7000,8000,9000],   'ℓ-mℓ':  [2,3,4,5,6,7,8,9,10]
   };
 
   const MC_HARDER_VALUES = {
@@ -843,8 +850,8 @@ permalink: /online-maths-tests/
     'km-m':  [1.234,2.345,3.456,4.567,5.678,1.25,2.5,3.75],
     'g-kg':  [1234,2345,3456,4567,5678,1250,2500,3750],
     'kg-g':  [1.234,2.345,3.456,4.567,5.678,1.25,2.5,3.75],
-    'ml-l':  [1234,2345,3456,4567,5678,1250,2500,3750],
-    'l-ml':  [1.234,2.345,3.456,4.567,5.678,1.25,2.5,3.75]
+    'mℓ-ℓ':  [1234,2345,3456,4567,5678,1250,2500,3750],
+    'ℓ-mℓ':  [1.234,2.345,3.456,4.567,5.678,1.25,2.5,3.75]
   };
 
   function mcFormatNum(n) { return parseFloat(n.toPrecision(10)).toString(); }
@@ -861,8 +868,10 @@ permalink: /online-maths-tests/
     document.getElementById('mc-quiz').classList.remove('active');
     document.getElementById('mc-results').classList.remove('active');
     document.getElementById('mc-setup').style.display = '';
-    mcSelDiff = null; mcSelGroups = new Set(); mcSelCount = null; mcSelTimed = null; mcSelTime = null;
+    mcSelGroups = new Set(['all']); mcSelCount = null; mcSelTimed = null; mcSelTime = null;
     document.querySelectorAll('[data-mc-diff]').forEach(b => b.classList.remove('selected'));
+    document.querySelector('[data-mc-diff="basic"]').classList.add('selected');
+    mcSelDiff = 'basic';
     document.querySelectorAll('[data-mc-group]').forEach(b => b.classList.remove('selected'));
     document.querySelectorAll('[data-mc-qcount]').forEach(b => b.classList.remove('selected'));
     document.querySelectorAll('[data-mc-timed]').forEach(b => b.classList.remove('selected'));
