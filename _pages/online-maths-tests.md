@@ -649,8 +649,6 @@ permalink: /online-maths-tests/
   });
 
   function nbGenerateQuestions(target, op, count) {
-    // Build all pairs a + b = target where a is 0..target, b = target - a.
-    // For bonds to 100/1000 we use the "nice" pairs only (multiples of 10/100).
     let pairs = [];
     if (target === 10) {
       for (let a = 0; a <= 10; a++) pairs.push([a, 10 - a]);
@@ -664,15 +662,13 @@ permalink: /online-maths-tests/
 
     const addPool = [], subPool = [];
     for (const [a, b] of pairs) {
-      // Addition: a + ? = target  (answer b) and b + ? = target (answer a), but skip trivial 0 + target variants
-      addPool.push({ type: 'add', a, b, target, answer: b, label: a + ' + ? = ' + target, resultLabel: a + ' + ' + b + ' = ' + target });
+      addPool.push({ type: 'add', label: a + ' + ? = ' + target, resultLabel: a + ' + ' + b + ' = ' + target, answer: b });
       if (a !== b) {
-        addPool.push({ type: 'add', a: b, b: a, target, answer: a, label: b + ' + ? = ' + target, resultLabel: b + ' + ' + a + ' = ' + target });
+        addPool.push({ type: 'add', label: b + ' + ? = ' + target, resultLabel: b + ' + ' + a + ' = ' + target, answer: a });
       }
-      // Subtraction: target − a = ?  (answer b) and target − b = ? (answer a)
-      subPool.push({ type: 'sub', a: target, b: a, target, answer: b, label: target + ' − ' + a + ' = ?', resultLabel: target + ' − ' + a + ' = ' + b });
+      subPool.push({ type: 'sub', label: target + ' − ' + a + ' = ?', resultLabel: target + ' − ' + a + ' = ' + b, answer: b });
       if (a !== b) {
-        subPool.push({ type: 'sub', a: target, b, target, answer: a, label: target + ' − ' + b + ' = ?', resultLabel: target + ' − ' + b + ' = ' + a });
+        subPool.push({ type: 'sub', label: target + ' − ' + b + ' = ?', resultLabel: target + ' − ' + b + ' = ' + a, answer: a });
       }
     }
 
@@ -768,16 +764,16 @@ permalink: /online-maths-tests/
     if (perfect) {
       perfectEl.style.display = 'block';
       wrongWrap.style.display = 'none';
-      actionsEl.innerHTML = `<button class="results-btn secondary" onclick="nbResetSetup()">← Menu</button><button class="results-btn primary" onclick="nbRetakeSame()">Try again</button>`;
+      actionsEl.innerHTML = '<button class="results-btn secondary" onclick="nbResetSetup()">← Menu</button><button class="results-btn primary" onclick="nbRetakeSame()">Try again</button>';
       if (!nbState.wrongOnly) launchConfetti();
     } else {
       perfectEl.style.display = 'none';
       wrongWrap.style.display = 'block';
       wrongList.innerHTML = allWrong.map(a =>
-        `<li><span class="q">${a.q.resultLabel}</span>${a.unanswered ? `<span class="not-ans">Not answered</span>` : `<span class="your-ans">You answered: ${a.given}</span>`}</li>`
+        '<li><span class="q">' + a.q.resultLabel + '</span>' + (a.unanswered ? '<span class="not-ans">Not answered</span>' : '<span class="your-ans">You answered: ' + a.given + '</span>') + '</li>'
       ).join('');
-      const retryBtn = answeredWrong.length > 0 ? `<button class="results-btn green-btn" onclick="nbRetakeWrong()">Retry wrong answers</button>` : '';
-      actionsEl.innerHTML = `<button class="results-btn secondary" onclick="nbResetSetup()">← Menu</button><button class="results-btn primary" onclick="nbRetakeSame()">Try again</button>${retryBtn}`;
+      const retryBtn = answeredWrong.length > 0 ? '<button class="results-btn green-btn" onclick="nbRetakeWrong()">Retry wrong answers</button>' : '';
+      actionsEl.innerHTML = '<button class="results-btn secondary" onclick="nbResetSetup()">← Menu</button><button class="results-btn primary" onclick="nbRetakeSame()">Try again</button>' + retryBtn;
     }
     document.getElementById('nb-results').classList.add('active');
   }
