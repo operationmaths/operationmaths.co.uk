@@ -185,9 +185,81 @@ permalink: /online-maths-tests/
 
     <!-- METRIC CONVERSIONS PANEL -->
     <div class="test-panel" id="panel-metric-conversions">
-      <div class="coming-soon">
-        <p>Metric conversions test — coming soon!</p>
+
+      <div class="setup-card" id="mc-setup">
+        <div class="setup-section">
+          <span class="setup-section-title">Difficulty</span>
+          <div class="option-row">
+            <button class="option-btn blue-btn" data-mc-diff="basic">Basic</button>
+            <button class="option-btn blue-btn" data-mc-diff="easier">Easier</button>
+            <button class="option-btn blue-btn" data-mc-diff="harder">Harder</button>
+          </div>
+        </div>
+        <div class="setup-section" id="mc-groups-section" style="display:none">
+          <span class="setup-section-title">Groups</span>
+          <div class="option-row">
+            <button class="option-btn blue-btn mc-group-all-btn" data-mc-group="all">All</button>
+            <button class="option-btn blue-btn" data-mc-group="length">Length</button>
+            <button class="option-btn blue-btn" data-mc-group="mass">Mass</button>
+            <button class="option-btn blue-btn" data-mc-group="capacity">Capacity</button>
+          </div>
+        </div>
+        <div class="setup-section">
+          <span class="setup-section-title">Questions</span>
+          <div class="option-row">
+            <button class="option-btn green-btn" data-mc-qcount="20">Quick test (20 questions)</button>
+            <button class="option-btn green-btn" data-mc-qcount="60">Full test (60 questions)</button>
+          </div>
+        </div>
+        <div class="setup-section">
+          <span class="setup-section-title">Timing</span>
+          <div class="option-row">
+            <button class="option-btn purple-btn" data-mc-timed="false">Untimed</button>
+            <button class="option-btn purple-btn" data-mc-timed="true">Timed</button>
+          </div>
+          <div class="time-options" id="mc-time-options">
+            <span class="setup-section-title" style="margin-top:0.75rem;display:block">Time limit</span>
+            <div class="option-row">
+              <button class="option-btn purple-btn" data-mc-timelimit="120">2 minutes</button>
+              <button class="option-btn purple-btn" data-mc-timelimit="300">5 minutes</button>
+              <button class="option-btn purple-btn" data-mc-timelimit="600">10 minutes</button>
+            </div>
+          </div>
+        </div>
+        <div class="setup-section">
+          <button class="start-btn" id="mc-start-btn" disabled>Start test</button>
+        </div>
       </div>
+
+      <div class="quiz-card" id="mc-quiz">
+        <div class="quiz-meta">
+          <span class="quiz-progress" id="mc-progress">Question 1 of 20</span>
+          <span class="quiz-timer" id="mc-timer" style="display:none"></span>
+        </div>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="mc-progress-bar" style="width:0%"></div>
+        </div>
+        <div class="quiz-question" id="mc-question">1 km = ? m</div>
+        <div class="quiz-input-wrap">
+          <input class="quiz-input" id="mc-answer" type="text" inputmode="decimal" autocomplete="off" placeholder="?">
+        </div>
+        <p class="quiz-hint">Type your answer and press Enter to continue</p>
+        <button class="quiz-next-btn" id="mc-next-btn">Next question →</button>
+        <button class="quiz-menu-btn" id="mc-quiz-menu-btn">← Menu</button>
+      </div>
+
+      <div class="results-card" id="mc-results">
+        <div class="results-score" id="mc-score">17/20</div>
+        <div class="results-label">correct answers</div>
+        <div class="results-time" id="mc-time-taken"></div>
+        <div class="results-perfect" id="mc-perfect" style="display:none">Full marks — excellent work!</div>
+        <div class="results-wrong" id="mc-wrong-wrap" style="display:none">
+          <h3>Incorrect or unanswered questions</h3>
+          <ul class="wrong-list" id="mc-wrong-list"></ul>
+        </div>
+        <div class="results-actions" id="mc-actions"></div>
+      </div>
+
     </div>
 
   </div>
@@ -225,6 +297,8 @@ permalink: /online-maths-tests/
     if (tab) tab.classList.add('active');
     if (panel) panel.classList.add('active');
     resetSetup();
+    if (typeof nbResetSetup === 'function') nbResetSetup();
+    if (typeof mcResetSetup === 'function') mcResetSetup();
   }
 
   document.querySelectorAll('.test-tab').forEach(tab => {
@@ -574,6 +648,47 @@ permalink: /online-maths-tests/
 
   document.getElementById('tt-quiz-menu-btn').addEventListener('click', resetSetup);
 
+  // ── SHARED UTILITIES ──────────────────────────────────────────────────────
+
+  // Shuffle with no two consecutive identical labels
+  function shuffleNoConsec(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    for (let i = 0; i < arr.length - 1; i++) {
+      if (arr[i].label === arr[i + 1].label) {
+        for (let j = i + 2; j < arr.length; j++) {
+          if (arr[j].label !== arr[i].label) {
+            [arr[i + 1], arr[j]] = [arr[j], arr[i + 1]];
+            break;
+          }
+        }
+      }
+    }
+    return arr;
+  }
+
+  function genericDrawCapped(pool, needed) {
+    const maxRepeats = Math.max(2, Math.ceil(needed / pool.length));
+    const counts = new Map();
+    const result = [];
+    let passes = 0;
+    while (result.length < needed) {
+      passes++;
+      const shuffled = shuffleNoConsec([...pool]);
+      for (const q of shuffled) {
+        const seen = counts.get(q.label) || 0;
+        if (seen < maxRepeats && result.length < needed) {
+          result.push(q);
+          counts.set(q.label, seen + 1);
+        }
+      }
+      if (passes > 20) break;
+    }
+    return result;
+  }
+
   // ── NUMBER BONDS ──────────────────────────────────────────────────────────
 
   const nbState = { questions: [], current: 0, userAnswers: [], elapsed: 0, remaining: 0, timerInterval: null, timed: false, timelimit: null, target: null, op: null, qcount: null, wrongOnly: false };
@@ -647,50 +762,32 @@ permalink: /online-maths-tests/
     });
   });
 
-  function nbDrawCapped(pool, needed) {
-    const maxRepeats = Math.max(2, Math.ceil(needed / pool.length));
-    const counts = new Map();
-    const result = [];
-    let passes = 0;
-    while (result.length < needed) {
-      passes++;
-      const shuffled = [...pool].sort(() => Math.random() - 0.5);
-      for (const q of shuffled) {
-        const key = q.label;
-        const seen = counts.get(key) || 0;
-        if (seen < maxRepeats && result.length < needed) {
-          result.push(q);
-          counts.set(key, seen + 1);
-        }
-      }
-      if (passes > 20) break;
-    }
-    return result;
-  }
-
   function nbGenerateQuestions(target, op, count) {
     let pairs = [];
-    if (target === 10) {
-      for (let a = 0; a <= 10; a++) pairs.push([a, 10 - a]);
-    } else if (target === 20) {
-      for (let a = 0; a <= 20; a++) pairs.push([a, 20 - a]);
-    } else if (target === 100) {
-      for (let a = 0; a <= 100; a += 10) pairs.push([a, 100 - a]);
-    } else if (target === 1000) {
-      for (let a = 0; a <= 1000; a += 100) pairs.push([a, 1000 - a]);
-    }
+    if (target === 10) { for (let a = 0; a <= 10; a++) pairs.push([a, 10 - a]); }
+    else if (target === 20) { for (let a = 0; a <= 20; a++) pairs.push([a, 20 - a]); }
+    else if (target === 100) { for (let a = 0; a <= 100; a += 10) pairs.push([a, 100 - a]); }
+    else if (target === 1000) { for (let a = 0; a <= 1000; a += 100) pairs.push([a, 1000 - a]); }
+
     const addPool = [], subPool = [];
     for (const [a, b] of pairs) {
       addPool.push({ label: a + ' + ? = ' + target, resultLabel: a + ' + ' + b + ' = ' + target, answer: b });
-      if (a !== b) addPool.push({ label: b + ' + ? = ' + target, resultLabel: b + ' + ' + a + ' = ' + target, answer: a });
+      if (a !== b) {
+        addPool.push({ label: b + ' + ? = ' + target, resultLabel: b + ' + ' + a + ' = ' + target, answer: a });
+        addPool.push({ label: '? + ' + a + ' = ' + target, resultLabel: b + ' + ' + a + ' = ' + target, answer: b });
+        addPool.push({ label: '? + ' + b + ' = ' + target, resultLabel: a + ' + ' + b + ' = ' + target, answer: a });
+      } else {
+        addPool.push({ label: '? + ' + a + ' = ' + target, resultLabel: a + ' + ' + b + ' = ' + target, answer: b });
+      }
       subPool.push({ label: target + ' − ' + a + ' = ?', resultLabel: target + ' − ' + a + ' = ' + b, answer: b });
       if (a !== b) subPool.push({ label: target + ' − ' + b + ' = ?', resultLabel: target + ' − ' + b + ' = ' + a, answer: a });
     }
-    if (op === 'addition') return nbDrawCapped(addPool, count);
-    if (op === 'subtraction') return nbDrawCapped(subPool, count);
+
+    if (op === 'addition') return shuffleNoConsec(genericDrawCapped(addPool, count));
+    if (op === 'subtraction') return shuffleNoConsec(genericDrawCapped(subPool, count));
     const subHalf = Math.floor(count / 2);
     const addHalf = count - subHalf;
-    return [...nbDrawCapped(addPool, addHalf), ...nbDrawCapped(subPool, subHalf)].sort(() => Math.random() - 0.5);
+    return shuffleNoConsec([...genericDrawCapped(addPool, addHalf), ...genericDrawCapped(subPool, subHalf)]);
   }
 
   function nbStartTest(questions) {
@@ -701,9 +798,7 @@ permalink: /online-maths-tests/
     const timerEl = document.getElementById('nb-timer');
     if (nbState.timed) {
       nbState.remaining = nbState.timelimit;
-      timerEl.style.display = 'block';
-      timerEl.textContent = formatTime(nbState.remaining);
-      timerEl.className = 'quiz-timer';
+      timerEl.style.display = 'block'; timerEl.textContent = formatTime(nbState.remaining); timerEl.className = 'quiz-timer';
       nbState.timerInterval = setInterval(() => {
         nbState.remaining--;
         timerEl.textContent = formatTime(nbState.remaining);
@@ -725,8 +820,7 @@ permalink: /online-maths-tests/
     document.getElementById('nb-progress-bar').style.width = (nbState.current / total * 100) + '%';
     document.getElementById('nb-question').textContent = q.label;
     const input = document.getElementById('nb-answer');
-    input.value = '';
-    input.focus();
+    input.value = ''; input.focus();
   }
 
   function nbSubmitAnswer() {
@@ -768,21 +862,17 @@ permalink: /online-maths-tests/
     if (nbState.timed) {
       const used = nbState.timelimit - nbState.remaining;
       timeEl.textContent = timedOut ? 'Time ran out' : 'Time taken: ' + formatTime(used);
-    } else {
-      timeEl.textContent = 'Time taken: ' + formatTime(nbState.elapsed);
-    }
+    } else { timeEl.textContent = 'Time taken: ' + formatTime(nbState.elapsed); }
     const perfectEl = document.getElementById('nb-perfect');
     const wrongWrap = document.getElementById('nb-wrong-wrap');
     const wrongList = document.getElementById('nb-wrong-list');
     const actionsEl = document.getElementById('nb-actions');
     if (perfect) {
-      perfectEl.style.display = 'block';
-      wrongWrap.style.display = 'none';
+      perfectEl.style.display = 'block'; wrongWrap.style.display = 'none';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="nbResetSetup()">← Menu</button><button class="results-btn primary" onclick="nbRetakeSame()">Try again</button>';
       if (!nbState.wrongOnly) launchConfetti();
     } else {
-      perfectEl.style.display = 'none';
-      wrongWrap.style.display = 'block';
+      perfectEl.style.display = 'none'; wrongWrap.style.display = 'block';
       wrongList.innerHTML = allWrong.map(a =>
         '<li><span class="q">' + a.q.resultLabel + '</span>' + (a.unanswered ? '<span class="not-ans">Not answered</span>' : '<span class="your-ans">You answered: ' + a.given + '</span>') + '</li>'
       ).join('');
@@ -803,7 +893,7 @@ permalink: /online-maths-tests/
     const wrongQs = answeredWrong.map(a => a.q);
     const count = Math.min(wrongQs.length, nbState.qcount);
     const filled = [];
-    while (filled.length < count) { filled.push(...[...wrongQs].sort(() => Math.random() - 0.5)); }
+    while (filled.length < count) { filled.push(...shuffleNoConsec([...wrongQs])); }
     document.getElementById('nb-results').classList.remove('active');
     nbState.wrongOnly = true; nbState.timed = false;
     nbStartTest(filled.slice(0, count));
@@ -816,4 +906,321 @@ permalink: /online-maths-tests/
   });
 
   document.getElementById('nb-quiz-menu-btn').addEventListener('click', nbResetSetup);
+
+  // ── METRIC CONVERSIONS ────────────────────────────────────────────────────
+
+  const mcState = { questions: [], current: 0, userAnswers: [], elapsed: 0, remaining: 0, timerInterval: null, timed: false, timelimit: null, diff: null, groups: new Set(), qcount: null, wrongOnly: false };
+  let mcSelDiff = null, mcSelGroups = new Set(), mcSelCount = null, mcSelTimed = null, mcSelTime = null;
+
+  // Conversion pairs: [fromUnit, toUnit, factor] meaning fromValue * factor = toValue
+  // For "to smaller": factor > 1. For "to larger": factor < 1.
+  const MC_PAIRS = {
+    length: [
+      { from: 'mm', to: 'cm', factor: 0.1 },
+      { from: 'cm', to: 'mm', factor: 10 },
+      { from: 'cm', to: 'm', factor: 0.01 },
+      { from: 'm', to: 'cm', factor: 100 },
+      { from: 'm', to: 'km', factor: 0.001 },
+      { from: 'km', to: 'm', factor: 1000 }
+    ],
+    mass: [
+      { from: 'g', to: 'kg', factor: 0.001 },
+      { from: 'kg', to: 'g', factor: 1000 }
+    ],
+    capacity: [
+      { from: 'ml', to: 'l', factor: 0.001 },
+      { from: 'l', to: 'ml', factor: 1000 }
+    ]
+  };
+
+  // Basic: always all 5 core facts
+  const MC_BASIC_POOL = [
+    { label: '1 cm = ? mm',  resultLabel: '1 cm = 10 mm',    answer: '10' },
+    { label: '1 m = ? cm',   resultLabel: '1 m = 100 cm',    answer: '100' },
+    { label: '1 km = ? m',   resultLabel: '1 km = 1000 m',   answer: '1000' },
+    { label: '1 l = ? ml',   resultLabel: '1 l = 1000 ml',   answer: '1000' },
+    { label: '1 kg = ? g',   resultLabel: '1 kg = 1000 g',   answer: '1000' }
+  ];
+
+  // Easier: whole number values, both directions
+  // Values chosen so dividing always gives a whole number
+  const MC_EASIER_VALUES = {
+    'cm-mm': [2,3,4,5,6,7,8,9,10,15,20,25,50],
+    'mm-cm': [20,30,40,50,60,70,80,90,100,150,200,250,500],
+    'cm-m':  [200,300,400,500,600,700,800,900,150,250,350,450],
+    'm-cm':  [2,3,4,5,6,7,8,9,10,1.5,2.5,3.5,4.5],
+    'm-km':  [2000,3000,4000,5000,6000,7000,8000,9000,1500,2500,3500],
+    'km-m':  [2,3,4,5,6,7,8,9,10],
+    'g-kg':  [2000,3000,4000,5000,6000,7000,8000,9000,1500,2500,3500],
+    'kg-g':  [2,3,4,5,6,7,8,9,10],
+    'ml-l':  [2000,3000,4000,5000,6000,7000,8000,9000,1500,2500,3500],
+    'l-ml':  [2,3,4,5,6,7,8,9,10]
+  };
+
+  // Harder: decimal values to 1, 2 or 3 d.p.
+  const MC_HARDER_VALUES = {
+    'cm-mm': [1.2,1.5,2.3,3.7,4.8,5.6,1.25,2.75,3.45,4.65,1.234,2.567,3.891],
+    'mm-cm': [12,15,23,37,48,56,125,275,345,465,1234,2567,3891],
+    'cm-m':  [125,235,347,456,678,123,234,1234,2345,3456,12345],
+    'm-cm':  [1.25,2.35,3.47,4.56,6.78,1.23,2.34,12.34,23.45,34.56,123.45],
+    'm-km':  [1234,2345,3456,4567,5678,1250,2500,3750,12340,23450],
+    'km-m':  [1.234,2.345,3.456,4.567,5.678,1.25,2.5,3.75,12.34,23.45],
+    'g-kg':  [1234,2345,3456,4567,5678,1250,2500,3750,12340,23450],
+    'kg-g':  [1.234,2.345,3.456,4.567,5.678,1.25,2.5,3.75,12.34,23.45],
+    'ml-l':  [1234,2345,3456,4567,5678,1250,2500,3750,12340,23450],
+    'l-ml':  [1.234,2.345,3.456,4.567,5.678,1.25,2.5,3.75,12.34,23.45]
+  };
+
+  function mcFormatNum(n) {
+    // Remove unnecessary trailing zeros after decimal point
+    return parseFloat(n.toPrecision(10)).toString();
+  }
+
+  function mcBuildPool(diff, groups) {
+    if (diff === 'basic') return [...MC_BASIC_POOL];
+
+    const activeGroups = groups.has('all') ? ['length','mass','capacity'] : [...groups];
+    const pool = [];
+
+    for (const grp of activeGroups) {
+      const pairs = MC_PAIRS[grp];
+      for (const pair of pairs) {
+        const key = pair.from + '-' + pair.to;
+        const values = diff === 'easier' ? MC_EASIER_VALUES[key] : MC_HARDER_VALUES[key];
+        if (!values) continue;
+        for (const v of values) {
+          const raw = v * pair.factor;
+          const ans = mcFormatNum(raw);
+          const qLabel = mcFormatNum(v) + ' ' + pair.from + ' = ? ' + pair.to;
+          const rLabel = mcFormatNum(v) + ' ' + pair.from + ' = ' + ans + ' ' + pair.to;
+          pool.push({ label: qLabel, resultLabel: rLabel, answer: ans });
+        }
+      }
+    }
+    return pool;
+  }
+
+  function mcGenerateQuestions(diff, groups, count) {
+    const pool = mcBuildPool(diff, groups);
+    return shuffleNoConsec(genericDrawCapped(pool, count));
+  }
+
+  function mcUpdateStartBtn() {
+    const diffOk = mcSelDiff !== null;
+    const groupOk = mcSelDiff === 'basic' || mcSelGroups.size > 0;
+    const timedOk = mcSelTimed === false || (mcSelTimed === true && mcSelTime !== null);
+    document.getElementById('mc-start-btn').disabled = !(diffOk && groupOk && mcSelCount !== null && mcSelTimed !== null && timedOk);
+  }
+
+  function mcResetSetup() {
+    clearInterval(mcState.timerInterval);
+    document.getElementById('mc-quiz').classList.remove('active');
+    document.getElementById('mc-results').classList.remove('active');
+    document.getElementById('mc-setup').style.display = '';
+    mcSelDiff = null; mcSelGroups = new Set(); mcSelCount = null; mcSelTimed = null; mcSelTime = null;
+    document.querySelectorAll('[data-mc-diff]').forEach(b => b.classList.remove('selected'));
+    document.querySelectorAll('[data-mc-group]').forEach(b => b.classList.remove('selected'));
+    document.querySelectorAll('[data-mc-qcount]').forEach(b => b.classList.remove('selected'));
+    document.querySelectorAll('[data-mc-timed]').forEach(b => b.classList.remove('selected'));
+    document.querySelectorAll('[data-mc-timelimit]').forEach(b => b.classList.remove('selected'));
+    document.getElementById('mc-groups-section').style.display = 'none';
+    document.getElementById('mc-time-options').classList.remove('visible');
+    mcUpdateStartBtn();
+  }
+
+  document.querySelectorAll('[data-mc-diff]').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('[data-mc-diff]').forEach(b => b.classList.remove('selected'));
+      this.classList.add('selected');
+      mcSelDiff = this.dataset.mcDiff;
+      const grpSection = document.getElementById('mc-groups-section');
+      if (mcSelDiff === 'basic') {
+        grpSection.style.display = 'none';
+        mcSelGroups = new Set(['all']);
+      } else {
+        grpSection.style.display = '';
+        mcSelGroups = new Set();
+        document.querySelectorAll('[data-mc-group]').forEach(b => b.classList.remove('selected'));
+      }
+      mcUpdateStartBtn();
+    });
+  });
+
+  document.querySelectorAll('[data-mc-group]').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const val = this.dataset.mcGroup;
+      const allBtn = document.querySelector('.mc-group-all-btn');
+      if (val === 'all') {
+        if (this.classList.contains('selected')) {
+          this.classList.remove('selected'); mcSelGroups.clear();
+        } else {
+          document.querySelectorAll('[data-mc-group]').forEach(b => b.classList.remove('selected'));
+          this.classList.add('selected'); mcSelGroups.clear(); mcSelGroups.add('all');
+        }
+      } else {
+        if (mcSelGroups.has('all')) { allBtn.classList.remove('selected'); mcSelGroups.clear(); }
+        if (this.classList.contains('selected')) { this.classList.remove('selected'); mcSelGroups.delete(val); }
+        else { this.classList.add('selected'); mcSelGroups.add(val); }
+        if (mcSelGroups.size === 3) {
+          document.querySelectorAll('[data-mc-group]').forEach(b => b.classList.remove('selected'));
+          allBtn.classList.add('selected'); mcSelGroups.clear(); mcSelGroups.add('all');
+        }
+      }
+      mcUpdateStartBtn();
+    });
+  });
+
+  document.querySelectorAll('[data-mc-qcount]').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('[data-mc-qcount]').forEach(b => b.classList.remove('selected'));
+      this.classList.add('selected');
+      mcSelCount = parseInt(this.dataset.mcQcount);
+      mcUpdateStartBtn();
+    });
+  });
+
+  document.querySelectorAll('[data-mc-timed]').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('[data-mc-timed]').forEach(b => b.classList.remove('selected'));
+      this.classList.add('selected');
+      mcSelTimed = this.dataset.mcTimed === 'true';
+      const opts = document.getElementById('mc-time-options');
+      if (mcSelTimed) { opts.classList.add('visible'); }
+      else { opts.classList.remove('visible'); mcSelTime = null; document.querySelectorAll('[data-mc-timelimit]').forEach(b => b.classList.remove('selected')); }
+      mcUpdateStartBtn();
+    });
+  });
+
+  document.querySelectorAll('[data-mc-timelimit]').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('[data-mc-timelimit]').forEach(b => b.classList.remove('selected'));
+      this.classList.add('selected');
+      mcSelTime = parseInt(this.dataset.mcTimelimit);
+      mcUpdateStartBtn();
+    });
+  });
+
+  function mcStartTest(questions) {
+    mcState.questions = questions; mcState.current = 0; mcState.userAnswers = []; mcState.elapsed = 0;
+    document.getElementById('mc-setup').style.display = 'none';
+    document.getElementById('mc-results').classList.remove('active');
+    document.getElementById('mc-quiz').classList.add('active');
+    // Allow decimal point in answer for harder, digits only otherwise
+    const ansInput = document.getElementById('mc-answer');
+    ansInput.dataset.harder = mcState.diff === 'harder' ? '1' : '';
+    const timerEl = document.getElementById('mc-timer');
+    if (mcState.timed) {
+      mcState.remaining = mcState.timelimit;
+      timerEl.style.display = 'block'; timerEl.textContent = formatTime(mcState.remaining); timerEl.className = 'quiz-timer';
+      mcState.timerInterval = setInterval(() => {
+        mcState.remaining--;
+        timerEl.textContent = formatTime(mcState.remaining);
+        if (mcState.remaining <= 30) timerEl.className = 'quiz-timer warning';
+        if (mcState.remaining <= 10) timerEl.className = 'quiz-timer danger';
+        if (mcState.remaining <= 0) { clearInterval(mcState.timerInterval); mcFinishTest(true); }
+      }, 1000);
+    } else {
+      timerEl.style.display = 'none';
+      mcState.timerInterval = setInterval(() => { mcState.elapsed++; }, 1000);
+    }
+    mcShowQuestion();
+  }
+
+  function mcShowQuestion() {
+    const q = mcState.questions[mcState.current];
+    const total = mcState.questions.length;
+    document.getElementById('mc-progress').textContent = 'Question ' + (mcState.current + 1) + ' of ' + total;
+    document.getElementById('mc-progress-bar').style.width = (mcState.current / total * 100) + '%';
+    document.getElementById('mc-question').textContent = q.label;
+    const input = document.getElementById('mc-answer');
+    input.value = ''; input.focus();
+  }
+
+  function mcSubmitAnswer() {
+    const input = document.getElementById('mc-answer');
+    const raw = input.value.trim();
+    if (raw === '') return;
+    const q = mcState.questions[mcState.current];
+    // Compare as numbers to handle e.g. "3.50" === "3.5"
+    const givenNum = parseFloat(raw);
+    const correctNum = parseFloat(q.answer);
+    const isCorrect = !isNaN(givenNum) && Math.abs(givenNum - correctNum) < 1e-9;
+    mcState.userAnswers.push({ q: q, correct: q.answer, given: raw, isCorrect: isCorrect, unanswered: false });
+    mcState.current++;
+    if (mcState.current >= mcState.questions.length) { mcFinishTest(false); } else { mcShowQuestion(); }
+  }
+
+  document.getElementById('mc-next-btn').addEventListener('click', mcSubmitAnswer);
+  document.getElementById('mc-answer').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') { e.preventDefault(); mcSubmitAnswer(); return; }
+    const allowed = ['Backspace','Delete','Tab','ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home','End'];
+    if (allowed.includes(e.key)) return;
+    const harder = this.dataset.harder === '1';
+    if (harder && e.key === '.' && !this.value.includes('.')) return;
+    if (!/^\d$/.test(e.key)) e.preventDefault();
+  });
+
+  function mcFinishTest(timedOut) {
+    clearInterval(mcState.timerInterval);
+    if (timedOut) {
+      for (let i = mcState.current; i < mcState.questions.length; i++) {
+        const q = mcState.questions[i];
+        mcState.userAnswers.push({ q: q, correct: q.answer, given: null, isCorrect: false, unanswered: true });
+      }
+    }
+    document.getElementById('mc-quiz').classList.remove('active');
+    const correct = mcState.userAnswers.filter(a => a.isCorrect).length;
+    const total = mcState.userAnswers.length;
+    const answeredWrong = mcState.userAnswers.filter(a => !a.isCorrect && !a.unanswered);
+    const allWrong = mcState.userAnswers.filter(a => !a.isCorrect);
+    const perfect = correct === total;
+    document.getElementById('mc-score').textContent = correct + '/' + total;
+    const timeEl = document.getElementById('mc-time-taken');
+    if (mcState.timed) {
+      const used = mcState.timelimit - mcState.remaining;
+      timeEl.textContent = timedOut ? 'Time ran out' : 'Time taken: ' + formatTime(used);
+    } else { timeEl.textContent = 'Time taken: ' + formatTime(mcState.elapsed); }
+    const perfectEl = document.getElementById('mc-perfect');
+    const wrongWrap = document.getElementById('mc-wrong-wrap');
+    const wrongList = document.getElementById('mc-wrong-list');
+    const actionsEl = document.getElementById('mc-actions');
+    if (perfect) {
+      perfectEl.style.display = 'block'; wrongWrap.style.display = 'none';
+      actionsEl.innerHTML = '<button class="results-btn secondary" onclick="mcResetSetup()">← Menu</button><button class="results-btn primary" onclick="mcRetakeSame()">Try again</button>';
+      if (!mcState.wrongOnly) launchConfetti();
+    } else {
+      perfectEl.style.display = 'none'; wrongWrap.style.display = 'block';
+      wrongList.innerHTML = allWrong.map(a =>
+        '<li><span class="q">' + a.q.resultLabel + '</span>' + (a.unanswered ? '<span class="not-ans">Not answered</span>' : '<span class="your-ans">You answered: ' + a.given + '</span>') + '</li>'
+      ).join('');
+      const retryBtn = answeredWrong.length > 0 ? '<button class="results-btn green-btn" onclick="mcRetakeWrong()">Retry wrong answers</button>' : '';
+      actionsEl.innerHTML = '<button class="results-btn secondary" onclick="mcResetSetup()">← Menu</button><button class="results-btn primary" onclick="mcRetakeSame()">Try again</button>' + retryBtn;
+    }
+    document.getElementById('mc-results').classList.add('active');
+  }
+
+  function mcRetakeSame() {
+    document.getElementById('mc-results').classList.remove('active');
+    mcState.wrongOnly = false;
+    mcStartTest(mcGenerateQuestions(mcState.diff, mcState.groups, mcState.qcount));
+  }
+
+  function mcRetakeWrong() {
+    const answeredWrong = mcState.userAnswers.filter(a => !a.isCorrect && !a.unanswered);
+    const wrongQs = answeredWrong.map(a => a.q);
+    const count = Math.min(wrongQs.length, mcState.qcount);
+    const filled = [];
+    while (filled.length < count) { filled.push(...shuffleNoConsec([...wrongQs])); }
+    document.getElementById('mc-results').classList.remove('active');
+    mcState.wrongOnly = true; mcState.timed = false;
+    mcStartTest(filled.slice(0, count));
+  }
+
+  document.getElementById('mc-start-btn').addEventListener('click', function() {
+    mcState.diff = mcSelDiff; mcState.groups = new Set(mcSelGroups); mcState.qcount = mcSelCount;
+    mcState.timed = mcSelTimed; mcState.timelimit = mcSelTime; mcState.wrongOnly = false;
+    mcStartTest(mcGenerateQuestions(mcSelDiff, mcSelGroups, mcSelCount));
+  });
+
+  document.getElementById('mc-quiz-menu-btn').addEventListener('click', mcResetSetup);
 </script>
