@@ -4,12 +4,12 @@ topic: number
 section: Revision
 order: 3
 orientation: landscape
-description: Designed for daily practice of metric conversions which appear in
-  questions on the Foundation GCSE maths papers.
+description: Designed for daily practice of metric conversions which appear in questions on the Foundation GCSE maths papers.
 thumbnail: /assets/images/worksheets/number/metric-conversions-revision-foundation-with-days.jpg
 show_a_worksheet: true
 show_a_answers: true
 free_pdf: /pdfs/Metric-Conversions-Revision-Foundation-with-days.pdf
 answers_pdf: /pdfs/Metric-Conversions-Revision-Foundation-with-days-ANSWERS.pdf
-tes_url: ""
+tes_url: ''
+date_added: ''
 ---
