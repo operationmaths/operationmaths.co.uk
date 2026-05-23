@@ -9,6 +9,8 @@ permalink: /online-maths-tests/
 .dark-btn { background: #fff; color: #1a1a2e; border: 2px solid #d0d0d0; }
 .dark-btn:hover { background: #f0f0f0; border-color: #999; }
 .dark-btn.selected { background: #1a1a2e; color: #fff; border-color: #1a1a2e; }
+.table-btn.selected { background: #2563eb; color: #fff; border-color: #2563eb; }
+.script-l { font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif; font-style: italic; }
 </style>
 
 <section class="om-hero" style="min-height:0; padding: 4rem 2rem 3.5rem;">
@@ -815,11 +817,12 @@ permalink: /online-maths-tests/
   });
 
   // ── METRIC CONVERSIONS SETUP ──────────────────────────────────────────────
+  const scriptL = '<span class="script-l">l</span>';
   const MC_BASIC_POOL = [
     { label: '1 cm = ? mm',  resultLabel: '1 cm = 10 mm',    answer: '10' },
     { label: '1 m = ? cm',   resultLabel: '1 m = 100 cm',    answer: '100' },
     { label: '1 km = ? m',   resultLabel: '1 km = 1000 m',   answer: '1000' },
-    { label: '1 ℓ = ? mℓ',   resultLabel: '1 ℓ = 1000 mℓ',   answer: '1000' },
+    { label: '1 ' + scriptL + ' = ? m' + scriptL, resultLabel: '1 ' + scriptL + ' = 1000 m' + scriptL, answer: '1000' },
     { label: '1 kg = ? g',   resultLabel: '1 kg = 1000 g',   answer: '1000' }
   ];
 
@@ -830,7 +833,7 @@ permalink: /online-maths-tests/
       { from: 'm',  to: 'km', factor: 0.001 }, { from: 'km', to: 'm', factor: 1000 }
     ],
     mass:     [ { from: 'g', to: 'kg', factor: 0.001 }, { from: 'kg', to: 'g', factor: 1000 } ],
-    capacity: [ { from: 'mℓ', to: 'ℓ', factor: 0.001 }, { from: 'ℓ', to: 'mℓ', factor: 1000 } ]
+    capacity: [ { from: 'ml', to: 'l', factor: 0.001 }, { from: 'l', to: 'ml', factor: 1000 } ]
   };
 
   const MC_EASIER_VALUES = {
@@ -838,7 +841,7 @@ permalink: /online-maths-tests/
     'cm-m':  [200,300,400,500,600,700,800,900,150,250],   'm-cm':  [2,3,4,5,6,7,8,9,10],
     'm-km':  [2000,3000,4000,5000,6000,7000,8000,9000],   'km-m':  [2,3,4,5,6,7,8,9,10],
     'g-kg':  [2000,3000,4000,5000,6000,7000,8000,9000],   'kg-g':  [2,3,4,5,6,7,8,9,10],
-    'mℓ-ℓ':  [2000,3000,4000,5000,6000,7000,8000,9000],   'ℓ-mℓ':  [2,3,4,5,6,7,8,9,10]
+    'ml-l':  [2000,3000,4000,5000,6000,7000,8000,9000],   'l-ml':  [2,3,4,5,6,7,8,9,10]
   };
 
   const MC_HARDER_VALUES = {
@@ -850,8 +853,8 @@ permalink: /online-maths-tests/
     'km-m':  [1.234,2.345,3.456,4.567,5.678,1.25,2.5,3.75],
     'g-kg':  [1234,2345,3456,4567,5678,1250,2500,3750],
     'kg-g':  [1.234,2.345,3.456,4.567,5.678,1.25,2.5,3.75],
-    'mℓ-ℓ':  [1234,2345,3456,4567,5678,1250,2500,3750],
-    'ℓ-mℓ':  [1.234,2.345,3.456,4.567,5.678,1.25,2.5,3.75]
+    'ml-l':  [1234,2345,3456,4567,5678,1250,2500,3750],
+    'l-ml':  [1.234,2.345,3.456,4.567,5.678,1.25,2.5,3.75]
   };
 
   function mcFormatNum(n) { return parseFloat(n.toPrecision(10)).toString(); }
@@ -942,8 +945,10 @@ permalink: /online-maths-tests/
         if (!values) continue;
         for (const v of values) {
           const ans = mcFormatNum(v * pair.factor);
-          const qLabel = mcFormatNum(v) + ' ' + pair.from + ' = ? ' + pair.to;
-          const rLabel = mcFormatNum(v) + ' ' + pair.from + ' = ' + ans + ' ' + pair.to;
+          const from = pair.from.replace('ml', 'm' + scriptL).replace('l', scriptL);
+          const to = pair.to.replace('ml', 'm' + scriptL).replace('l', scriptL);
+          const qLabel = mcFormatNum(v) + ' ' + from + ' = ? ' + to;
+          const rLabel = mcFormatNum(v) + ' ' + from + ' = ' + ans + ' ' + to;
           pool.push({ label: qLabel, resultLabel: rLabel, answer: ans });
         }
       }
@@ -980,7 +985,7 @@ permalink: /online-maths-tests/
     const total = mcState.questions.length;
     document.getElementById('mc-progress').textContent = 'Question ' + (mcState.current + 1) + ' of ' + total;
     document.getElementById('mc-progress-bar').style.width = (mcState.current / total * 100) + '%';
-    document.getElementById('mc-question').textContent = q.label;
+    document.getElementById('mc-question').innerHTML = q.label;
     const input = document.getElementById('mc-answer');
     input.value = ''; input.focus();
   }
