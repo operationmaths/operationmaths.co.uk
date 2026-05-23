@@ -1,10 +1,6 @@
 ---
-layout: worksheet-topic
 title: Number Worksheets
-description: Printable KS2 and KS3 maths number worksheets — place value,
-  fractions, decimals, percentages and more.
-permalink: /worksheets-number/
-topic_key: number
+description: Printable KS2 and KS3 maths number worksheets — place value, fractions, decimals, percentages and more.
 section_order:
   - Revision
   - Number bonds
@@ -19,6 +15,10 @@ section_order:
   - Product of prime factors
   - Fractions
   - Metric conversions
+  - Mean, Median, Mode and Range
   - Ratio
   - Word problems
+layout: worksheet-topic
+permalink: /worksheets-number/
+topic_key: number
 ---
