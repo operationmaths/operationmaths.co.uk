@@ -225,7 +225,6 @@ permalink: /online-maths-tests/
     if (tab) tab.classList.add('active');
     if (panel) panel.classList.add('active');
     resetSetup();
-    if (typeof nbResetSetup === 'function') nbResetSetup();
   }
 
   document.querySelectorAll('.test-tab').forEach(tab => {
@@ -648,6 +647,27 @@ permalink: /online-maths-tests/
     });
   });
 
+  function nbDrawCapped(pool, needed) {
+    const maxRepeats = Math.max(2, Math.ceil(needed / pool.length));
+    const counts = new Map();
+    const result = [];
+    let passes = 0;
+    while (result.length < needed) {
+      passes++;
+      const shuffled = [...pool].sort(() => Math.random() - 0.5);
+      for (const q of shuffled) {
+        const key = q.label;
+        const seen = counts.get(key) || 0;
+        if (seen < maxRepeats && result.length < needed) {
+          result.push(q);
+          counts.set(key, seen + 1);
+        }
+      }
+      if (passes > 20) break;
+    }
+    return result;
+  }
+
   function nbGenerateQuestions(target, op, count) {
     let pairs = [];
     if (target === 10) {
@@ -659,24 +679,18 @@ permalink: /online-maths-tests/
     } else if (target === 1000) {
       for (let a = 0; a <= 1000; a += 100) pairs.push([a, 1000 - a]);
     }
-
     const addPool = [], subPool = [];
     for (const [a, b] of pairs) {
-      addPool.push({ type: 'add', label: a + ' + ? = ' + target, resultLabel: a + ' + ' + b + ' = ' + target, answer: b });
-      if (a !== b) {
-        addPool.push({ type: 'add', label: b + ' + ? = ' + target, resultLabel: b + ' + ' + a + ' = ' + target, answer: a });
-      }
-      subPool.push({ type: 'sub', label: target + ' − ' + a + ' = ?', resultLabel: target + ' − ' + a + ' = ' + b, answer: b });
-      if (a !== b) {
-        subPool.push({ type: 'sub', label: target + ' − ' + b + ' = ?', resultLabel: target + ' − ' + b + ' = ' + a, answer: a });
-      }
+      addPool.push({ label: a + ' + ? = ' + target, resultLabel: a + ' + ' + b + ' = ' + target, answer: b });
+      if (a !== b) addPool.push({ label: b + ' + ? = ' + target, resultLabel: b + ' + ' + a + ' = ' + target, answer: a });
+      subPool.push({ label: target + ' − ' + a + ' = ?', resultLabel: target + ' − ' + a + ' = ' + b, answer: b });
+      if (a !== b) subPool.push({ label: target + ' − ' + b + ' = ?', resultLabel: target + ' − ' + b + ' = ' + a, answer: a });
     }
-
-    if (op === 'addition') return drawCapped(addPool, count);
-    if (op === 'subtraction') return drawCapped(subPool, count);
+    if (op === 'addition') return nbDrawCapped(addPool, count);
+    if (op === 'subtraction') return nbDrawCapped(subPool, count);
     const subHalf = Math.floor(count / 2);
     const addHalf = count - subHalf;
-    return [...drawCapped(addPool, addHalf), ...drawCapped(subPool, subHalf)].sort(() => Math.random() - 0.5);
+    return [...nbDrawCapped(addPool, addHalf), ...nbDrawCapped(subPool, subHalf)].sort(() => Math.random() - 0.5);
   }
 
   function nbStartTest(questions) {
@@ -722,7 +736,7 @@ permalink: /online-maths-tests/
     const given = parseInt(raw, 10);
     if (isNaN(given)) return;
     const q = nbState.questions[nbState.current];
-    nbState.userAnswers.push({ q, correct: q.answer, given, isCorrect: given === q.answer, unanswered: false });
+    nbState.userAnswers.push({ q: q, correct: q.answer, given: given, isCorrect: given === q.answer, unanswered: false });
     nbState.current++;
     if (nbState.current >= nbState.questions.length) { nbFinishTest(false); } else { nbShowQuestion(); }
   }
@@ -740,7 +754,7 @@ permalink: /online-maths-tests/
     if (timedOut) {
       for (let i = nbState.current; i < nbState.questions.length; i++) {
         const q = nbState.questions[i];
-        nbState.userAnswers.push({ q, correct: q.answer, given: null, isCorrect: false, unanswered: true });
+        nbState.userAnswers.push({ q: q, correct: q.answer, given: null, isCorrect: false, unanswered: true });
       }
     }
     document.getElementById('nb-quiz').classList.remove('active');
