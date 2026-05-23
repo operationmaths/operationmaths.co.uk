@@ -6,7 +6,7 @@ permalink: /worksheets/
 ---
 <section class="om-hero" style="min-height:0; padding: 4rem 2rem 3.5rem;">
   <h1>Free maths <em>worksheets</em></h1>
-  <p>Printable worksheets and answer sheets for primary and secondary students. Download worksheet A free or get the full pack on TES.</p>
+  <p>Printable worksheets and answer sheets for primary and secondary students. Download worksheet A for free or get the full pack on TES.</p>
 </section>
 <main>
   <div class="om-body">
