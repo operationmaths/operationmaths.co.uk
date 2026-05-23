@@ -106,9 +106,81 @@ permalink: /online-maths-tests/
 
     <!-- NUMBER BONDS PANEL -->
     <div class="test-panel" id="panel-number-bonds">
-      <div class="coming-soon">
-        <p>Number bonds test — coming soon!</p>
+
+      <div class="setup-card" id="nb-setup">
+        <div class="setup-section">
+          <span class="setup-section-title">Bonds to</span>
+          <div class="option-row">
+            <button class="option-btn blue-btn" data-nb-target="10">10</button>
+            <button class="option-btn blue-btn" data-nb-target="20">20</button>
+            <button class="option-btn blue-btn" data-nb-target="100">100</button>
+            <button class="option-btn blue-btn" data-nb-target="1000">1000</button>
+          </div>
+        </div>
+        <div class="setup-section">
+          <span class="setup-section-title">Operation</span>
+          <div class="option-row">
+            <button class="option-btn blue-btn" data-nb-op="addition">Addition (+)</button>
+            <button class="option-btn blue-btn" data-nb-op="subtraction">Subtraction (−)</button>
+            <button class="option-btn blue-btn" data-nb-op="mixed">Mixed (+ and −)</button>
+          </div>
+        </div>
+        <div class="setup-section">
+          <span class="setup-section-title">Questions</span>
+          <div class="option-row">
+            <button class="option-btn green-btn" data-nb-qcount="20">Quick test (20 questions)</button>
+            <button class="option-btn green-btn" data-nb-qcount="60">Full test (60 questions)</button>
+          </div>
+        </div>
+        <div class="setup-section">
+          <span class="setup-section-title">Timing</span>
+          <div class="option-row">
+            <button class="option-btn purple-btn" data-nb-timed="false">Untimed</button>
+            <button class="option-btn purple-btn" data-nb-timed="true">Timed</button>
+          </div>
+          <div class="time-options" id="nb-time-options">
+            <span class="setup-section-title" style="margin-top:0.75rem;display:block">Time limit</span>
+            <div class="option-row">
+              <button class="option-btn purple-btn" data-nb-timelimit="120">2 minutes</button>
+              <button class="option-btn purple-btn" data-nb-timelimit="300">5 minutes</button>
+              <button class="option-btn purple-btn" data-nb-timelimit="600">10 minutes</button>
+            </div>
+          </div>
+        </div>
+        <div class="setup-section">
+          <button class="start-btn" id="nb-start-btn" disabled>Start test</button>
+        </div>
       </div>
+
+      <div class="quiz-card" id="nb-quiz">
+        <div class="quiz-meta">
+          <span class="quiz-progress" id="nb-progress">Question 1 of 20</span>
+          <span class="quiz-timer" id="nb-timer" style="display:none"></span>
+        </div>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="nb-progress-bar" style="width:0%"></div>
+        </div>
+        <div class="quiz-question" id="nb-question">3 + ? = 10</div>
+        <div class="quiz-input-wrap">
+          <input class="quiz-input" id="nb-answer" type="text" inputmode="numeric" autocomplete="off" placeholder="?" pattern="[0-9]*">
+        </div>
+        <p class="quiz-hint">Type your answer and press Enter to continue</p>
+        <button class="quiz-next-btn" id="nb-next-btn">Next question →</button>
+        <button class="quiz-menu-btn" id="nb-quiz-menu-btn">← Menu</button>
+      </div>
+
+      <div class="results-card" id="nb-results">
+        <div class="results-score" id="nb-score">17/20</div>
+        <div class="results-label">correct answers</div>
+        <div class="results-time" id="nb-time-taken"></div>
+        <div class="results-perfect" id="nb-perfect" style="display:none">Full marks — excellent work!</div>
+        <div class="results-wrong" id="nb-wrong-wrap" style="display:none">
+          <h3>Incorrect or unanswered questions</h3>
+          <ul class="wrong-list" id="nb-wrong-list"></ul>
+        </div>
+        <div class="results-actions" id="nb-actions"></div>
+      </div>
+
     </div>
 
     <!-- METRIC CONVERSIONS PANEL -->
@@ -153,6 +225,7 @@ permalink: /online-maths-tests/
     if (tab) tab.classList.add('active');
     if (panel) panel.classList.add('active');
     resetSetup();
+    if (typeof nbResetSetup === 'function') nbResetSetup();
   }
 
   document.querySelectorAll('.test-tab').forEach(tab => {
@@ -501,4 +574,236 @@ permalink: /online-maths-tests/
   }
 
   document.getElementById('tt-quiz-menu-btn').addEventListener('click', resetSetup);
+
+  // ── NUMBER BONDS ──────────────────────────────────────────────────────────
+
+  const nbState = { questions: [], current: 0, userAnswers: [], elapsed: 0, remaining: 0, timerInterval: null, timed: false, timelimit: null, target: null, op: null, qcount: null, wrongOnly: false };
+  let nbSelTarget = null, nbSelOp = null, nbSelCount = null, nbSelTimed = null, nbSelTime = null;
+
+  function nbUpdateStartBtn() {
+    const timedOk = nbSelTimed === false || (nbSelTimed === true && nbSelTime !== null);
+    document.getElementById('nb-start-btn').disabled = !(nbSelTarget !== null && nbSelOp !== null && nbSelCount !== null && nbSelTimed !== null && timedOk);
+  }
+
+  function nbResetSetup() {
+    clearInterval(nbState.timerInterval);
+    document.getElementById('nb-quiz').classList.remove('active');
+    document.getElementById('nb-results').classList.remove('active');
+    document.getElementById('nb-setup').style.display = '';
+    nbSelTarget = null; nbSelOp = null; nbSelCount = null; nbSelTimed = null; nbSelTime = null;
+    document.querySelectorAll('[data-nb-target]').forEach(b => b.classList.remove('selected'));
+    document.querySelectorAll('[data-nb-op]').forEach(b => b.classList.remove('selected'));
+    document.querySelectorAll('[data-nb-qcount]').forEach(b => b.classList.remove('selected'));
+    document.querySelectorAll('[data-nb-timed]').forEach(b => b.classList.remove('selected'));
+    document.querySelectorAll('[data-nb-timelimit]').forEach(b => b.classList.remove('selected'));
+    document.getElementById('nb-time-options').classList.remove('visible');
+    nbUpdateStartBtn();
+  }
+
+  document.querySelectorAll('[data-nb-target]').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('[data-nb-target]').forEach(b => b.classList.remove('selected'));
+      this.classList.add('selected');
+      nbSelTarget = parseInt(this.dataset.nbTarget);
+      nbUpdateStartBtn();
+    });
+  });
+
+  document.querySelectorAll('[data-nb-op]').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('[data-nb-op]').forEach(b => b.classList.remove('selected'));
+      this.classList.add('selected');
+      nbSelOp = this.dataset.nbOp;
+      nbUpdateStartBtn();
+    });
+  });
+
+  document.querySelectorAll('[data-nb-qcount]').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('[data-nb-qcount]').forEach(b => b.classList.remove('selected'));
+      this.classList.add('selected');
+      nbSelCount = parseInt(this.dataset.nbQcount);
+      nbUpdateStartBtn();
+    });
+  });
+
+  document.querySelectorAll('[data-nb-timed]').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('[data-nb-timed]').forEach(b => b.classList.remove('selected'));
+      this.classList.add('selected');
+      nbSelTimed = this.dataset.nbTimed === 'true';
+      const opts = document.getElementById('nb-time-options');
+      if (nbSelTimed) { opts.classList.add('visible'); }
+      else { opts.classList.remove('visible'); nbSelTime = null; document.querySelectorAll('[data-nb-timelimit]').forEach(b => b.classList.remove('selected')); }
+      nbUpdateStartBtn();
+    });
+  });
+
+  document.querySelectorAll('[data-nb-timelimit]').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('[data-nb-timelimit]').forEach(b => b.classList.remove('selected'));
+      this.classList.add('selected');
+      nbSelTime = parseInt(this.dataset.nbTimelimit);
+      nbUpdateStartBtn();
+    });
+  });
+
+  function nbGenerateQuestions(target, op, count) {
+    // Build all pairs a + b = target where a is 0..target, b = target - a.
+    // For bonds to 100/1000 we use the "nice" pairs only (multiples of 10/100).
+    let pairs = [];
+    if (target === 10) {
+      for (let a = 0; a <= 10; a++) pairs.push([a, 10 - a]);
+    } else if (target === 20) {
+      for (let a = 0; a <= 20; a++) pairs.push([a, 20 - a]);
+    } else if (target === 100) {
+      for (let a = 0; a <= 100; a += 10) pairs.push([a, 100 - a]);
+    } else if (target === 1000) {
+      for (let a = 0; a <= 1000; a += 100) pairs.push([a, 1000 - a]);
+    }
+
+    const addPool = [], subPool = [];
+    for (const [a, b] of pairs) {
+      // Addition: a + ? = target  (answer b) and b + ? = target (answer a), but skip trivial 0 + target variants
+      addPool.push({ type: 'add', a, b, target, answer: b, label: a + ' + ? = ' + target, resultLabel: a + ' + ' + b + ' = ' + target });
+      if (a !== b) {
+        addPool.push({ type: 'add', a: b, b: a, target, answer: a, label: b + ' + ? = ' + target, resultLabel: b + ' + ' + a + ' = ' + target });
+      }
+      // Subtraction: target − a = ?  (answer b) and target − b = ? (answer a)
+      subPool.push({ type: 'sub', a: target, b: a, target, answer: b, label: target + ' − ' + a + ' = ?', resultLabel: target + ' − ' + a + ' = ' + b });
+      if (a !== b) {
+        subPool.push({ type: 'sub', a: target, b, target, answer: a, label: target + ' − ' + b + ' = ?', resultLabel: target + ' − ' + b + ' = ' + a });
+      }
+    }
+
+    if (op === 'addition') return drawCapped(addPool, count);
+    if (op === 'subtraction') return drawCapped(subPool, count);
+    const subHalf = Math.floor(count / 2);
+    const addHalf = count - subHalf;
+    return [...drawCapped(addPool, addHalf), ...drawCapped(subPool, subHalf)].sort(() => Math.random() - 0.5);
+  }
+
+  function nbStartTest(questions) {
+    nbState.questions = questions; nbState.current = 0; nbState.userAnswers = []; nbState.elapsed = 0;
+    document.getElementById('nb-setup').style.display = 'none';
+    document.getElementById('nb-results').classList.remove('active');
+    document.getElementById('nb-quiz').classList.add('active');
+    const timerEl = document.getElementById('nb-timer');
+    if (nbState.timed) {
+      nbState.remaining = nbState.timelimit;
+      timerEl.style.display = 'block';
+      timerEl.textContent = formatTime(nbState.remaining);
+      timerEl.className = 'quiz-timer';
+      nbState.timerInterval = setInterval(() => {
+        nbState.remaining--;
+        timerEl.textContent = formatTime(nbState.remaining);
+        if (nbState.remaining <= 30) timerEl.className = 'quiz-timer warning';
+        if (nbState.remaining <= 10) timerEl.className = 'quiz-timer danger';
+        if (nbState.remaining <= 0) { clearInterval(nbState.timerInterval); nbFinishTest(true); }
+      }, 1000);
+    } else {
+      timerEl.style.display = 'none';
+      nbState.timerInterval = setInterval(() => { nbState.elapsed++; }, 1000);
+    }
+    nbShowQuestion();
+  }
+
+  function nbShowQuestion() {
+    const q = nbState.questions[nbState.current];
+    const total = nbState.questions.length;
+    document.getElementById('nb-progress').textContent = 'Question ' + (nbState.current + 1) + ' of ' + total;
+    document.getElementById('nb-progress-bar').style.width = (nbState.current / total * 100) + '%';
+    document.getElementById('nb-question').textContent = q.label;
+    const input = document.getElementById('nb-answer');
+    input.value = '';
+    input.focus();
+  }
+
+  function nbSubmitAnswer() {
+    const input = document.getElementById('nb-answer');
+    const raw = input.value.trim();
+    if (raw === '') return;
+    const given = parseInt(raw, 10);
+    if (isNaN(given)) return;
+    const q = nbState.questions[nbState.current];
+    nbState.userAnswers.push({ q, correct: q.answer, given, isCorrect: given === q.answer, unanswered: false });
+    nbState.current++;
+    if (nbState.current >= nbState.questions.length) { nbFinishTest(false); } else { nbShowQuestion(); }
+  }
+
+  document.getElementById('nb-next-btn').addEventListener('click', nbSubmitAnswer);
+  document.getElementById('nb-answer').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') { e.preventDefault(); nbSubmitAnswer(); return; }
+    const allowed = ['Backspace','Delete','Tab','ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home','End'];
+    if (allowed.includes(e.key)) return;
+    if (!/^\d$/.test(e.key)) e.preventDefault();
+  });
+
+  function nbFinishTest(timedOut) {
+    clearInterval(nbState.timerInterval);
+    if (timedOut) {
+      for (let i = nbState.current; i < nbState.questions.length; i++) {
+        const q = nbState.questions[i];
+        nbState.userAnswers.push({ q, correct: q.answer, given: null, isCorrect: false, unanswered: true });
+      }
+    }
+    document.getElementById('nb-quiz').classList.remove('active');
+    const correct = nbState.userAnswers.filter(a => a.isCorrect).length;
+    const total = nbState.userAnswers.length;
+    const answeredWrong = nbState.userAnswers.filter(a => !a.isCorrect && !a.unanswered);
+    const allWrong = nbState.userAnswers.filter(a => !a.isCorrect);
+    const perfect = correct === total;
+    document.getElementById('nb-score').textContent = correct + '/' + total;
+    const timeEl = document.getElementById('nb-time-taken');
+    if (nbState.timed) {
+      const used = nbState.timelimit - nbState.remaining;
+      timeEl.textContent = timedOut ? 'Time ran out' : 'Time taken: ' + formatTime(used);
+    } else {
+      timeEl.textContent = 'Time taken: ' + formatTime(nbState.elapsed);
+    }
+    const perfectEl = document.getElementById('nb-perfect');
+    const wrongWrap = document.getElementById('nb-wrong-wrap');
+    const wrongList = document.getElementById('nb-wrong-list');
+    const actionsEl = document.getElementById('nb-actions');
+    if (perfect) {
+      perfectEl.style.display = 'block';
+      wrongWrap.style.display = 'none';
+      actionsEl.innerHTML = `<button class="results-btn secondary" onclick="nbResetSetup()">← Menu</button><button class="results-btn primary" onclick="nbRetakeSame()">Try again</button>`;
+      if (!nbState.wrongOnly) launchConfetti();
+    } else {
+      perfectEl.style.display = 'none';
+      wrongWrap.style.display = 'block';
+      wrongList.innerHTML = allWrong.map(a =>
+        `<li><span class="q">${a.q.resultLabel}</span>${a.unanswered ? `<span class="not-ans">Not answered</span>` : `<span class="your-ans">You answered: ${a.given}</span>`}</li>`
+      ).join('');
+      const retryBtn = answeredWrong.length > 0 ? `<button class="results-btn green-btn" onclick="nbRetakeWrong()">Retry wrong answers</button>` : '';
+      actionsEl.innerHTML = `<button class="results-btn secondary" onclick="nbResetSetup()">← Menu</button><button class="results-btn primary" onclick="nbRetakeSame()">Try again</button>${retryBtn}`;
+    }
+    document.getElementById('nb-results').classList.add('active');
+  }
+
+  function nbRetakeSame() {
+    document.getElementById('nb-results').classList.remove('active');
+    nbState.wrongOnly = false;
+    nbStartTest(nbGenerateQuestions(nbState.target, nbState.op, nbState.qcount));
+  }
+
+  function nbRetakeWrong() {
+    const answeredWrong = nbState.userAnswers.filter(a => !a.isCorrect && !a.unanswered);
+    const wrongQs = answeredWrong.map(a => a.q);
+    const count = Math.min(wrongQs.length, nbState.qcount);
+    const filled = [];
+    while (filled.length < count) { filled.push(...[...wrongQs].sort(() => Math.random() - 0.5)); }
+    document.getElementById('nb-results').classList.remove('active');
+    nbState.wrongOnly = true; nbState.timed = false;
+    nbStartTest(filled.slice(0, count));
+  }
+
+  document.getElementById('nb-start-btn').addEventListener('click', function() {
+    nbState.target = nbSelTarget; nbState.op = nbSelOp; nbState.qcount = nbSelCount;
+    nbState.timed = nbSelTimed; nbState.timelimit = nbSelTime; nbState.wrongOnly = false;
+    nbStartTest(nbGenerateQuestions(nbSelTarget, nbSelOp, nbSelCount));
+  });
+
+  document.getElementById('nb-quiz-menu-btn').addEventListener('click', nbResetSetup);
 </script>
