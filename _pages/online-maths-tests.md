@@ -6,11 +6,12 @@ permalink: /online-maths-tests/
 ---
 
 <style>
-.dark-btn { background: #fff; color: #1a1a2e; border: 2px solid #d0d0d0; }
-.dark-btn:hover { background: #f0f0f0; border-color: #999; }
-.dark-btn.selected { background: #1a1a2e; color: #fff; border-color: #1a1a2e; }
-.table-btn.selected { background: #2563eb; color: #fff; border-color: #2563eb; }
-.script-l { font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif; font-style: italic; }
+:root { --blue: #1c75bc; --blue-dark: #155f99; --green: #009444; --green-dark: #007a38; --purple: #800080; --orange: #f7941e; --orange-dark: #d47c10; }
+.dark-btn { background: #fff; color: #374151; border: 2px solid #d0d0d0; }
+.dark-btn:hover { background: #f5f6f8; border-color: #9ca3af; }
+.dark-btn.selected { background: #111827; color: #fff; border-color: #111827; }
+.table-btn.selected { background: var(--blue); color: #fff; border-color: var(--blue); }
+.script-l { font-family: "Times New Roman", "Liberation Serif", serif; font-style: normal; }
 </style>
 
 <section class="om-hero" style="min-height:0; padding: 4rem 2rem 3.5rem;">
@@ -817,7 +818,7 @@ permalink: /online-maths-tests/
   });
 
   // ── METRIC CONVERSIONS SETUP ──────────────────────────────────────────────
-  const scriptL = '<span class="script-l">l</span>';
+  const scriptL = '<span class="script-l">ℓ</span>';
   const MC_BASIC_POOL = [
     { label: '1 cm = ? mm',  resultLabel: '1 cm = 10 mm',    answer: '10' },
     { label: '1 m = ? cm',   resultLabel: '1 m = 100 cm',    answer: '100' },
