@@ -86,74 +86,64 @@ body_class: page-home
         <a href="{{ site.baseurl }}/worksheets/">Browse all worksheets</a>
       </div>
       <div class="om-latest">
+        {% assign dated_worksheets = site.worksheets | where_exp: "ws", "ws.date_added != nil" | sort: "date_added" | reverse %}
+        {% assign latest_worksheets = dated_worksheets | limit: 3 %}
+        {% for ws in latest_worksheets %}
+          {% if ws.topic == "number" %}{% assign topic_color = "var(--green)" %}
+          {% elsif ws.topic == "shape" %}{% assign topic_color = "var(--blue)" %}
+          {% elsif ws.topic == "algebra" %}{% assign topic_color = "var(--purple)" %}
+          {% elsif ws.topic == "formulae" %}{% assign topic_color = "var(--orange)" %}
+          {% elsif ws.topic == "times-tables" %}{% assign topic_color = "var(--blue)" %}
+          {% elsif ws.topic == "support-sheets" %}{% assign topic_color = "var(--green)" %}
+          {% else %}{% assign topic_color = "var(--blue)" %}{% endif %}
+          {% assign topic_label = ws.topic | replace: "-", " " | capitalize %}
         <article class="om-latest-card">
-          <div class="om-latest-card-top" style="background:var(--green)"></div>
+          <div class="om-latest-card-top" style="background:{{ topic_color }}"></div>
           <div class="om-ws-img">
-            <div class="om-ws-img-inner portrait" role="img" aria-label="Fractions of amounts worksheet preview">
-              <div class="om-wsi-title" style="background:var(--green)"></div>
-              <div class="om-wsi-row"><div class="om-wsi-num">1</div><div class="om-wsi-line f"></div><div class="om-wsi-box"></div></div>
-              <div class="om-wsi-row"><div class="om-wsi-num">2</div><div class="om-wsi-line m"></div><div class="om-wsi-box"></div></div>
-              <div class="om-wsi-row"><div class="om-wsi-num">3</div><div class="om-wsi-line f"></div><div class="om-wsi-box"></div></div>
-              <div class="om-wsi-row"><div class="om-wsi-num">4</div><div class="om-wsi-line s"></div><div class="om-wsi-box"></div></div>
-              <div class="om-wsi-row"><div class="om-wsi-num">5</div><div class="om-wsi-line m"></div><div class="om-wsi-box"></div></div>
-            </div>
+            {% if ws.thumbnail %}
+              <img src="{{ site.baseurl }}{{ ws.thumbnail }}" alt="{{ ws.title }}" style="width:100%; height:100%; object-fit:contain;">
+            {% else %}
+              <div class="om-ws-img-inner {{ ws.orientation | default: 'portrait' }}" role="img" aria-label="{{ ws.title }} worksheet preview">
+                <div class="om-wsi-title" style="background:{{ topic_color }}"></div>
+                <div class="om-wsi-row"><div class="om-wsi-num">1</div><div class="om-wsi-line f"></div><div class="om-wsi-box"></div></div>
+                <div class="om-wsi-row"><div class="om-wsi-num">2</div><div class="om-wsi-line m"></div><div class="om-wsi-box"></div></div>
+                <div class="om-wsi-row"><div class="om-wsi-num">3</div><div class="om-wsi-line f"></div><div class="om-wsi-box"></div></div>
+                <div class="om-wsi-row"><div class="om-wsi-num">4</div><div class="om-wsi-line s"></div><div class="om-wsi-box"></div></div>
+                {% if ws.orientation != "landscape" %}
+                <div class="om-wsi-row"><div class="om-wsi-num">5</div><div class="om-wsi-line m"></div><div class="om-wsi-box"></div></div>
+                {% endif %}
+              </div>
+            {% endif %}
           </div>
           <div class="om-latest-card-body">
-            <div class="om-latest-tag">Number</div>
-            <h3 class="om-latest-title">Fractions of amounts — Set 1</h3>
-            <p class="om-latest-desc">Finding fractions of whole numbers, from unit fractions to non-unit fractions. Years 4–6.</p>
+            <div class="om-latest-tag">{{ topic_label }}</div>
+            <h3 class="om-latest-title">{{ ws.title }}</h3>
+            {% if ws.description %}<p class="om-latest-desc">{{ ws.description }}</p>{% endif %}
             <div class="om-latest-btns">
-              <a class="om-cbtn om-cbtn-ws" href="{{ site.baseurl }}/worksheets/number/fractions-of-amounts-set-1.pdf">Worksheet (A)</a>
-              <a class="om-cbtn om-cbtn-ans" href="{{ site.baseurl }}/worksheets/number/fractions-of-amounts-set-1-answers.pdf">Answers (A)</a>
-              <a class="om-cbtn om-cbtn-tes" href="#" target="_blank" rel="noopener">Full pack on TES <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
+              {% assign free_pdf_clean = ws.free_pdf | strip %}
+              {% if free_pdf_clean.size > 0 %}
+                {% if ws.show_a_worksheet == false %}
+                  <a class="om-cbtn om-cbtn-ws" href="{{ site.baseurl }}{{ free_pdf_clean }}">Worksheet</a>
+                {% else %}
+                  <a class="om-cbtn om-cbtn-ws" href="{{ site.baseurl }}{{ free_pdf_clean }}">Worksheet (A)</a>
+                {% endif %}
+              {% endif %}
+              {% assign answers_pdf_clean = ws.answers_pdf | strip %}
+              {% if answers_pdf_clean.size > 0 %}
+                {% if ws.show_a_answers == false %}
+                  <a class="om-cbtn om-cbtn-ans" href="{{ site.baseurl }}{{ answers_pdf_clean }}">Answers</a>
+                {% else %}
+                  <a class="om-cbtn om-cbtn-ans" href="{{ site.baseurl }}{{ answers_pdf_clean }}">Answers (A)</a>
+                {% endif %}
+              {% endif %}
+              {% assign tes_url_clean = ws.tes_url | strip %}
+              {% if tes_url_clean.size > 0 %}
+                <a class="om-cbtn om-cbtn-tes" href="{{ tes_url_clean }}" target="_blank" rel="noopener">Full pack on TES <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
+              {% endif %}
             </div>
           </div>
         </article>
-        <article class="om-latest-card">
-          <div class="om-latest-card-top" style="background:var(--blue)"></div>
-          <div class="om-ws-img">
-            <div class="om-ws-img-inner landscape" role="img" aria-label="Solving one-step equations worksheet preview">
-              <div class="om-wsi-title" style="background:var(--blue)"></div>
-              <div class="om-wsi-row"><div class="om-wsi-num">1</div><div class="om-wsi-line f"></div><div class="om-wsi-box"></div></div>
-              <div class="om-wsi-row"><div class="om-wsi-num">2</div><div class="om-wsi-line m"></div><div class="om-wsi-box"></div></div>
-              <div class="om-wsi-row"><div class="om-wsi-num">3</div><div class="om-wsi-line f"></div><div class="om-wsi-box"></div></div>
-              <div class="om-wsi-row"><div class="om-wsi-num">4</div><div class="om-wsi-line s"></div><div class="om-wsi-box"></div></div>
-            </div>
-          </div>
-          <div class="om-latest-card-body">
-            <div class="om-latest-tag">Algebra</div>
-            <h3 class="om-latest-title">Solving one-step equations — Set 1</h3>
-            <p class="om-latest-desc">Using inverse operations to solve equations with one unknown. Suitable for Years 6–8.</p>
-            <div class="om-latest-btns">
-              <a class="om-cbtn om-cbtn-ws" href="{{ site.baseurl }}/worksheets/algebra/solving-one-step-equations-set-1.pdf">Worksheet (A)</a>
-              <a class="om-cbtn om-cbtn-ans" href="{{ site.baseurl }}/worksheets/algebra/solving-one-step-equations-set-1-answers.pdf">Answers (A)</a>
-              <a class="om-cbtn om-cbtn-tes" href="#" target="_blank" rel="noopener">Full pack on TES <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
-            </div>
-          </div>
-        </article>
-        <article class="om-latest-card">
-          <div class="om-latest-card-top" style="background:var(--purple)"></div>
-          <div class="om-ws-img">
-            <div class="om-ws-img-inner portrait" role="img" aria-label="Area of triangles worksheet preview">
-              <div class="om-wsi-title" style="background:var(--purple)"></div>
-              <div class="om-wsi-row"><div class="om-wsi-num">1</div><div class="om-wsi-line f"></div><div class="om-wsi-box"></div></div>
-              <div class="om-wsi-row"><div class="om-wsi-num">2</div><div class="om-wsi-line s"></div><div class="om-wsi-box"></div></div>
-              <div class="om-wsi-row"><div class="om-wsi-num">3</div><div class="om-wsi-line m"></div><div class="om-wsi-box"></div></div>
-              <div class="om-wsi-row"><div class="om-wsi-num">4</div><div class="om-wsi-line f"></div><div class="om-wsi-box"></div></div>
-              <div class="om-wsi-row"><div class="om-wsi-num">5</div><div class="om-wsi-line s"></div><div class="om-wsi-box"></div></div>
-            </div>
-          </div>
-          <div class="om-latest-card-body">
-            <div class="om-latest-tag">Shape</div>
-            <h3 class="om-latest-title">Area of triangles — Set 1</h3>
-            <p class="om-latest-desc">Calculating the area of triangles using the formula. Progresses from whole numbers to decimals. Years 5–7.</p>
-            <div class="om-latest-btns">
-              <a class="om-cbtn om-cbtn-ws" href="{{ site.baseurl }}/worksheets/shape/area-of-triangles-set-1.pdf">Worksheet (A)</a>
-              <a class="om-cbtn om-cbtn-ans" href="{{ site.baseurl }}/worksheets/shape/area-of-triangles-set-1-answers.pdf">Answers (A)</a>
-              <a class="om-cbtn om-cbtn-tes" href="#" target="_blank" rel="noopener">Full pack on TES <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
-            </div>
-          </div>
-        </article>
+        {% endfor %}
       </div>
     </section>
 
