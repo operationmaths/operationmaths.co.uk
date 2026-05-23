@@ -270,6 +270,12 @@ permalink: /online-maths-tests/
   let selTables = new Set();
   let selOp = null, selCount = null, selTimed = null, selTime = null;
 
+  const nbState = { questions: [], current: 0, userAnswers: [], elapsed: 0, remaining: 0, timerInterval: null, timed: false, timelimit: null, target: null, op: null, qcount: null, wrongOnly: false };
+  let nbSelTarget = null, nbSelOp = null, nbSelCount = null, nbSelTimed = null, nbSelTime = null;
+
+  const mcState = { questions: [], current: 0, userAnswers: [], elapsed: 0, remaining: 0, timerInterval: null, timed: false, timelimit: null, diff: null, groups: new Set(), qcount: null, wrongOnly: false };
+  let mcSelDiff = null, mcSelGroups = new Set(), mcSelCount = null, mcSelTimed = null, mcSelTime = null;
+
   function resetSetup() {
     clearInterval(state.timerInterval);
     document.getElementById('tt-quiz').classList.remove('active');
@@ -691,9 +697,6 @@ permalink: /online-maths-tests/
 
   // ── NUMBER BONDS ──────────────────────────────────────────────────────────
 
-  const nbState = { questions: [], current: 0, userAnswers: [], elapsed: 0, remaining: 0, timerInterval: null, timed: false, timelimit: null, target: null, op: null, qcount: null, wrongOnly: false };
-  let nbSelTarget = null, nbSelOp = null, nbSelCount = null, nbSelTimed = null, nbSelTime = null;
-
   function nbUpdateStartBtn() {
     const timedOk = nbSelTimed === false || (nbSelTimed === true && nbSelTime !== null);
     document.getElementById('nb-start-btn').disabled = !(nbSelTarget !== null && nbSelOp !== null && nbSelCount !== null && nbSelTimed !== null && timedOk);
@@ -908,9 +911,6 @@ permalink: /online-maths-tests/
   document.getElementById('nb-quiz-menu-btn').addEventListener('click', nbResetSetup);
 
   // ── METRIC CONVERSIONS ────────────────────────────────────────────────────
-
-  const mcState = { questions: [], current: 0, userAnswers: [], elapsed: 0, remaining: 0, timerInterval: null, timed: false, timelimit: null, diff: null, groups: new Set(), qcount: null, wrongOnly: false };
-  let mcSelDiff = null, mcSelGroups = new Set(), mcSelCount = null, mcSelTimed = null, mcSelTime = null;
 
   // Conversion pairs: [fromUnit, toUnit, factor] meaning fromValue * factor = toValue
   // For "to smaller": factor > 1. For "to larger": factor < 1.
