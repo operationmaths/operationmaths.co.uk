@@ -12,11 +12,12 @@ permalink: /online-maths-tests/
 .dark-btn.selected { background: #111827; color: #fff; border-color: #111827; }
 .table-btn.selected { background: var(--blue); color: #fff; border-color: var(--blue); }
 .script-l { font-family: "Times New Roman", "Liberation Serif", serif; font-style: normal; }
-.frac { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; font-size: 0.9em; line-height: 1.1; margin: 0 2px; }
-.frac sup, .frac sub { font-size: 1em; line-height: 1; }
+.frac { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; font-size: 0.85em; line-height: 1.1; margin: 0 2px; }
+.frac sup, .frac sub { font-size: 1em; line-height: 1.2; }
 .frac .frac-bar { border-top: 1.5px solid currentColor; width: 100%; display: block; margin: 1px 0; }
-.fdp-options { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 1.25rem; justify-content: center; }
-.fdp-opt-btn { flex: 1; min-width: 80px; padding: 14px 10px; font-size: 1.1rem; font-weight: 700; border: 2px solid #d0d0d0; border-radius: 8px; background: #fff; cursor: pointer; transition: background 0.12s, border-color 0.12s; font-family: inherit; }
+#fdp-question { min-height: 4rem; display: flex; align-items: center; justify-content: center; text-align: center; }
+.fdp-options { display: flex; gap: 10px; flex-wrap: nowrap; margin-top: 1.25rem; justify-content: center; }
+.fdp-opt-btn { flex: 1; height: 72px; min-width: 0; padding: 6px 8px; font-size: 1.05rem; font-weight: 700; border: 2px solid #d0d0d0; border-radius: 8px; background: #fff; cursor: pointer; transition: background 0.12s, border-color 0.12s; font-family: inherit; display: flex; align-items: center; justify-content: center; text-align: center; box-sizing: border-box; }
 .fdp-opt-btn:hover { background: #f0f6ff; border-color: var(--blue); color: var(--blue); }
 .fdp-opt-btn.selected { background: var(--blue); border-color: var(--blue); color: #fff; }
 </style>
