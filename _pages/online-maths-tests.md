@@ -15,8 +15,9 @@ permalink: /online-maths-tests/
 .frac { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; font-size: 0.85em; line-height: 1.1; margin: 0 2px; }
 .frac sup, .frac sub { font-size: 1em; line-height: 1.2; }
 .frac .frac-bar { border-top: 1.5px solid currentColor; width: 100%; display: block; margin: 1px 0; }
-#fdp-question { min-height: 6rem; display: flex; align-items: center; justify-content: center; text-align: center; }
-.fdp-options { display: flex; gap: 10px; flex-wrap: nowrap; margin-top: 1.25rem; justify-content: center; }
+.fdp-q-wrap { display: flex; flex-direction: column; min-height: 12rem; }
+#fdp-question { height: 5rem; flex-shrink: 0; display: flex; align-items: center; justify-content: center; text-align: center; overflow: visible; }
+.fdp-options { display: flex; gap: 10px; flex-wrap: nowrap; margin-top: 1.25rem; justify-content: center; align-items: stretch; }
 .fdp-opt-btn { flex: 1; height: 72px; min-width: 0; padding: 6px 8px; font-size: 1.05rem; font-weight: 700; border: 2px solid #d0d0d0; border-radius: 8px; background: #fff; cursor: pointer; transition: background 0.12s, border-color 0.12s; font-family: inherit; display: flex; align-items: center; justify-content: center; text-align: center; box-sizing: border-box; }
 .fdp-opt-btn:hover { background: #f0f6ff; border-color: var(--blue); color: var(--blue); }
 .fdp-opt-btn.selected { background: var(--blue); border-color: var(--blue); color: #fff; }
@@ -247,8 +248,10 @@ permalink: /online-maths-tests/
         <div class="progress-bar-track">
           <div class="progress-bar-fill" id="fdp-progress-bar" style="width:0%"></div>
         </div>
-        <div class="quiz-question" id="fdp-question"></div>
-        <div class="fdp-options" id="fdp-options"></div>
+        <div class="fdp-q-wrap">
+          <div class="quiz-question" id="fdp-question"></div>
+          <div class="fdp-options" id="fdp-options"></div>
+        </div>
         <p class="quiz-hint">Choose an answer to continue</p>
         <button class="quiz-menu-btn" id="fdp-quiz-menu-btn" onclick="fdpResetSetup()">← Menu</button>
       </div>
@@ -1152,7 +1155,7 @@ permalink: /online-maths-tests/
   // ── FDP CONVERSIONS ───────────────────────────────────────────────────────
 
   function fracHTML(n, d) {
-    return ' <span class="frac"><sup>' + n + '</sup><span class="frac-bar"></span><sub>' + d + '</sub></span> ';
+    return '&nbsp;<span class="frac"><sup>' + n + '</sup><span class="frac-bar"></span><sub>' + d + '</sub></span>&nbsp;';
   }
 
   function fdpBuildFacts(level) {
