@@ -12,6 +12,13 @@ permalink: /online-maths-tests/
 .dark-btn.selected { background: #111827; color: #fff; border-color: #111827; }
 .table-btn.selected { background: var(--blue); color: #fff; border-color: var(--blue); }
 .script-l { font-family: "Times New Roman", "Liberation Serif", serif; font-style: normal; }
+.frac { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; font-size: 0.9em; line-height: 1.1; margin: 0 2px; }
+.frac sup, .frac sub { font-size: 1em; line-height: 1; }
+.frac .frac-bar { border-top: 1.5px solid currentColor; width: 100%; display: block; margin: 1px 0; }
+.fdp-options { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 1.25rem; justify-content: center; }
+.fdp-opt-btn { flex: 1; min-width: 80px; padding: 14px 10px; font-size: 1.1rem; font-weight: 700; border: 2px solid #d0d0d0; border-radius: 8px; background: #fff; cursor: pointer; transition: background 0.12s, border-color 0.12s; font-family: inherit; }
+.fdp-opt-btn:hover { background: #f0f6ff; border-color: var(--blue); color: var(--blue); }
+.fdp-opt-btn.selected { background: var(--blue); border-color: var(--blue); color: #fff; }
 </style>
 
 <section class="om-hero" style="min-height:0; padding: 4rem 2rem 3.5rem;">
@@ -21,6 +28,7 @@ permalink: /online-maths-tests/
     <button class="test-tab active" data-target="times-tables">Times tables</button>
     <button class="test-tab" data-target="number-bonds">Number bonds</button>
     <button class="test-tab" data-target="metric-conversions">Metric conversions</button>
+    <button class="test-tab" data-target="fdp-conversions">FDP conversions</button>
   </div>
 </section>
 
@@ -191,6 +199,73 @@ permalink: /online-maths-tests/
 
     </div>
 
+    <!-- FDP CONVERSIONS PANEL -->
+    <div class="test-panel" id="panel-fdp-conversions">
+
+      <div class="setup-card" id="fdp-setup">
+        <div class="setup-section">
+          <span class="setup-section-title">Level</span>
+          <div class="option-row">
+            <button class="option-btn dark-btn selected" data-fdp-level="basic" onclick="fdpSelectLevel(this)">Basic</button>
+            <button class="option-btn dark-btn" data-fdp-level="tenths-hundredths" onclick="fdpSelectLevel(this)">Tenths &amp; hundredths</button>
+            <button class="option-btn dark-btn" data-fdp-level="mixed" onclick="fdpSelectLevel(this)">Mixed</button>
+          </div>
+        </div>
+        <div class="setup-section">
+          <span class="setup-section-title">Questions</span>
+          <div class="option-row">
+            <button class="option-btn green-btn" data-fdp-qcount="20" onclick="fdpSelectCount(this)">Quick test (20 questions)</button>
+            <button class="option-btn green-btn" data-fdp-qcount="60" onclick="fdpSelectCount(this)">Full test (60 questions)</button>
+          </div>
+        </div>
+        <div class="setup-section">
+          <span class="setup-section-title">Timing</span>
+          <div class="option-row">
+            <button class="option-btn purple-btn" data-fdp-timed="false" onclick="fdpSelectTimed(this)">Untimed</button>
+            <button class="option-btn purple-btn" data-fdp-timed="true" onclick="fdpSelectTimed(this)">Timed</button>
+          </div>
+          <div class="time-options" id="fdp-time-options">
+            <span class="setup-section-title" style="margin-top:0.75rem;display:block">Time limit</span>
+            <div class="option-row">
+              <button class="option-btn purple-btn" data-fdp-timelimit="120" onclick="fdpSelectTime(this)">2 minutes</button>
+              <button class="option-btn purple-btn" data-fdp-timelimit="300" onclick="fdpSelectTime(this)">5 minutes</button>
+              <button class="option-btn purple-btn" data-fdp-timelimit="600" onclick="fdpSelectTime(this)">10 minutes</button>
+            </div>
+          </div>
+        </div>
+        <div class="setup-section">
+          <button class="start-btn" id="fdp-start-btn" disabled>Start test</button>
+        </div>
+      </div>
+
+      <div class="quiz-card" id="fdp-quiz">
+        <div class="quiz-meta">
+          <span class="quiz-progress" id="fdp-progress">Question 1 of 20</span>
+          <span class="quiz-timer" id="fdp-timer" style="display:none"></span>
+        </div>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="fdp-progress-bar" style="width:0%"></div>
+        </div>
+        <div class="quiz-question" id="fdp-question"></div>
+        <div class="fdp-options" id="fdp-options"></div>
+        <p class="quiz-hint">Choose an answer to continue</p>
+        <button class="quiz-menu-btn" id="fdp-quiz-menu-btn" onclick="fdpResetSetup()">← Menu</button>
+      </div>
+
+      <div class="results-card" id="fdp-results">
+        <div class="results-score" id="fdp-score">17/20</div>
+        <div class="results-label">correct answers</div>
+        <div class="results-time" id="fdp-time-taken"></div>
+        <div class="results-perfect" id="fdp-perfect" style="display:none">Full marks — excellent work!</div>
+        <div class="results-wrong" id="fdp-wrong-wrap" style="display:none">
+          <h3>Incorrect or unanswered questions</h3>
+          <ul class="wrong-list" id="fdp-wrong-list"></ul>
+        </div>
+        <div class="results-actions" id="fdp-actions"></div>
+      </div>
+
+    </div>
+
     <!-- METRIC CONVERSIONS PANEL -->
     <div class="test-panel" id="panel-metric-conversions">
 
@@ -285,6 +360,9 @@ permalink: /online-maths-tests/
   const mcState = { questions: [], current: 0, userAnswers: [], elapsed: 0, remaining: 0, timerInterval: null, timed: false, timelimit: null, diff: null, groups: new Set(), qcount: null, wrongOnly: false };
   let mcSelDiff = null, mcSelGroups = new Set(), mcSelCount = null, mcSelTimed = null, mcSelTime = null;
 
+  const fdpState = { questions: [], current: 0, userAnswers: [], elapsed: 0, remaining: 0, timerInterval: null, timed: false, timelimit: null, level: 'basic', qcount: null, wrongOnly: false };
+  let fdpSelLevel = 'basic', fdpSelCount = null, fdpSelTimed = null, fdpSelTime = null;
+
   // ── SHARED ────────────────────────────────────────────────────────────────
   function formatTime(secs) {
     const m = Math.floor(secs / 60).toString().padStart(2, '0');
@@ -365,6 +443,7 @@ permalink: /online-maths-tests/
     resetSetup();
     nbResetSetup();
     mcResetSetup();
+    if (typeof fdpResetSetup === 'function') fdpResetSetup();
   }
 
   document.querySelectorAll('.test-tab').forEach(tab => {
@@ -377,7 +456,7 @@ permalink: /online-maths-tests/
 
   (function() {
     const hash = window.location.hash.replace('#', '') || 'times-tables';
-    const valid = ['times-tables', 'number-bonds', 'metric-conversions'];
+    const valid = ['times-tables', 'number-bonds', 'metric-conversions', 'fdp-conversions'];
     activateTab(valid.includes(hash) ? hash : 'times-tables');
   })();
 
@@ -1068,4 +1147,239 @@ permalink: /online-maths-tests/
     mcState.timed = mcSelTimed; mcState.timelimit = mcSelTime; mcState.wrongOnly = false;
     mcStartTest(mcGenerateQuestions(mcSelDiff, mcSelGroups, mcSelCount));
   });
+
+  // ── FDP CONVERSIONS ───────────────────────────────────────────────────────
+
+  function fracHTML(n, d) {
+    return '<span class="frac"><sup>' + n + '</sup><span class="frac-bar"></span><sub>' + d + '</sub></span>';
+  }
+
+  function fdpBuildFacts(level) {
+    const facts = [];
+    if (level === 'basic') {
+      for (const b of [{n:1,d:2,dec:0.5,pct:50},{n:1,d:4,dec:0.25,pct:25},{n:1,d:5,dec:0.2,pct:20},{n:1,d:10,dec:0.1,pct:10},{n:1,d:100,dec:0.01,pct:1}])
+        facts.push({n:b.n,d:b.d,decimal:b.dec,percent:b.pct});
+    } else if (level === 'tenths-hundredths') {
+      for (let i=1;i<=9;i++) facts.push({n:i,d:10,decimal:i/10,percent:i*10});
+      for (let i=1;i<=99;i++) {
+        if (i%10===0 && i<=90) continue;
+        facts.push({n:i,d:100,decimal:i/100,percent:i});
+      }
+    } else {
+      facts.push({n:1,d:2,decimal:0.5,percent:50});
+      facts.push({n:1,d:4,decimal:0.25,percent:25});
+      facts.push({n:3,d:4,decimal:0.75,percent:75});
+      for (let i=1;i<=4;i++) facts.push({n:i,d:5,decimal:i/5,percent:i*20});
+      for (let i=1;i<=9;i++) facts.push({n:i,d:10,decimal:i/10,percent:i*10});
+      const skip=[50,25,75,20,40,60,80,10,30,70,90];
+      for (let i=1;i<=99;i++) {
+        if (skip.includes(i)) continue;
+        facts.push({n:i,d:100,decimal:i/100,percent:i});
+      }
+    }
+    return facts;
+  }
+
+  function fdpFmtDec(v) {
+    // Format decimal cleanly e.g. 0.1 not 0.10000000000000001
+    return parseFloat(v.toPrecision(4)).toString();
+  }
+
+  function fdpBuildPool(facts) {
+    const pool = [];
+    for (const f of facts) {
+      const fH = fracHTML(f.n,f.d);
+      const dS = fdpFmtDec(f.decimal);
+      const pS = f.percent + '%';
+      pool.push({qHTML:'What is '+fH+' as a decimal?',   answerDisplay:dS, answerKey:'dec:'+dS,         type:'F\u2192D', fact:f});
+      pool.push({qHTML:'What is '+fH+' as a percentage?',answerDisplay:pS, answerKey:'pct:'+f.percent,   type:'F\u2192%', fact:f});
+      pool.push({qHTML:'What is '+dS+' as a fraction?',  answerDisplay:fH, answerKey:'frac:'+f.n+'/'+f.d,type:'D\u2192F', fact:f});
+      pool.push({qHTML:'What is '+dS+' as a percentage?',answerDisplay:pS, answerKey:'pct:'+f.percent,   type:'D\u2192%', fact:f});
+      pool.push({qHTML:'What is '+pS+' as a fraction?',  answerDisplay:fH, answerKey:'frac:'+f.n+'/'+f.d,type:'%\u2192F', fact:f});
+      pool.push({qHTML:'What is '+pS+' as a decimal?',   answerDisplay:dS, answerKey:'dec:'+dS,          type:'%\u2192D', fact:f});
+    }
+    return pool;
+  }
+
+  function fdpDistractors(q, allFacts) {
+    const others = allFacts.filter(f => !(f.n===q.fact.n && f.d===q.fact.d));
+    for (let i=others.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[others[i],others[j]]=[others[j],others[i]];}
+    const result = [];
+    for (const f of others) {
+      if (result.length >= 2) break;
+      let display, key;
+      if (q.type==='F\u2192D'||q.type==='%\u2192D') { display=fdpFmtDec(f.decimal); key='dec:'+display; }
+      else if (q.type==='F\u2192%'||q.type==='D\u2192%') { display=f.percent+'%'; key='pct:'+f.percent; }
+      else { display=fracHTML(f.n,f.d); key='frac:'+f.n+'/'+f.d; }
+      if (result.every(r=>r.key!==key) && key!==q.answerKey) result.push({display,key});
+    }
+    return result;
+  }
+
+  function fdpGenerateQuestions(level, count) {
+    const facts = fdpBuildFacts(level);
+    const pool  = fdpBuildPool(facts);
+    const maxRepeats = Math.max(2, Math.ceil(count / pool.length));
+    const counts = new Map();
+    const result = [];
+    let passes = 0;
+    while (result.length < count) {
+      passes++;
+      const shuffled = shuffleNoConsec([...pool]);
+      for (const q of shuffled) {
+        const k = q.answerKey+'|'+q.type;
+        const seen = counts.get(k)||0;
+        if (seen < maxRepeats && result.length < count) {
+          const dist = fdpDistractors(q, facts);
+          const opts = [{display:q.answerDisplay,key:q.answerKey,correct:true},...dist.map(d=>({display:d.display,key:d.key,correct:false}))];
+          for (let i=opts.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[opts[i],opts[j]]=[opts[j],opts[i]];}
+          result.push({...q,opts});
+          counts.set(k,seen+1);
+        }
+      }
+      if (passes>20) break;
+    }
+    return result;
+  }
+
+  function fdpUpdateStartBtn() {
+    const timedOk = fdpSelTimed===false||(fdpSelTimed===true&&fdpSelTime!==null);
+    document.getElementById('fdp-start-btn').disabled = !(fdpSelCount!==null&&fdpSelTimed!==null&&timedOk);
+  }
+
+  function fdpResetSetup() {
+    clearInterval(fdpState.timerInterval);
+    document.getElementById('fdp-quiz').classList.remove('active');
+    document.getElementById('fdp-results').classList.remove('active');
+    document.getElementById('fdp-setup').style.display = '';
+    fdpSelLevel='basic'; fdpSelCount=null; fdpSelTimed=null; fdpSelTime=null;
+    document.querySelectorAll('[data-fdp-level]').forEach(b=>b.classList.remove('selected'));
+    document.querySelector('[data-fdp-level="basic"]').classList.add('selected');
+    document.querySelectorAll('[data-fdp-qcount]').forEach(b=>b.classList.remove('selected'));
+    document.querySelectorAll('[data-fdp-timed]').forEach(b=>b.classList.remove('selected'));
+    document.querySelectorAll('[data-fdp-timelimit]').forEach(b=>b.classList.remove('selected'));
+    document.getElementById('fdp-time-options').classList.remove('visible');
+    fdpUpdateStartBtn();
+  }
+
+  function fdpSelectLevel(btn) {
+    document.querySelectorAll('[data-fdp-level]').forEach(b=>b.classList.remove('selected'));
+    btn.classList.add('selected'); fdpSelLevel=btn.dataset.fdpLevel; fdpUpdateStartBtn();
+  }
+  function fdpSelectCount(btn) {
+    document.querySelectorAll('[data-fdp-qcount]').forEach(b=>b.classList.remove('selected'));
+    btn.classList.add('selected'); fdpSelCount=parseInt(btn.dataset.fdpQcount); fdpUpdateStartBtn();
+  }
+  function fdpSelectTimed(btn) {
+    document.querySelectorAll('[data-fdp-timed]').forEach(b=>b.classList.remove('selected'));
+    btn.classList.add('selected'); fdpSelTimed=btn.dataset.fdpTimed==='true';
+    const opts=document.getElementById('fdp-time-options');
+    if (fdpSelTimed){opts.classList.add('visible');}
+    else{opts.classList.remove('visible');fdpSelTime=null;document.querySelectorAll('[data-fdp-timelimit]').forEach(b=>b.classList.remove('selected'));}
+    fdpUpdateStartBtn();
+  }
+  function fdpSelectTime(btn) {
+    document.querySelectorAll('[data-fdp-timelimit]').forEach(b=>b.classList.remove('selected'));
+    btn.classList.add('selected'); fdpSelTime=parseInt(btn.dataset.fdpTimelimit); fdpUpdateStartBtn();
+  }
+
+  function fdpStartTest(questions) {
+    fdpState.questions=questions; fdpState.current=0; fdpState.userAnswers=[]; fdpState.elapsed=0;
+    document.getElementById('fdp-setup').style.display='none';
+    document.getElementById('fdp-results').classList.remove('active');
+    document.getElementById('fdp-quiz').classList.add('active');
+    const timerEl=document.getElementById('fdp-timer');
+    if (fdpState.timed) {
+      fdpState.remaining=fdpState.timelimit; timerEl.style.display='block'; timerEl.textContent=formatTime(fdpState.remaining); timerEl.className='quiz-timer';
+      fdpState.timerInterval=setInterval(()=>{
+        fdpState.remaining--; timerEl.textContent=formatTime(fdpState.remaining);
+        if(fdpState.remaining<=30)timerEl.className='quiz-timer warning';
+        if(fdpState.remaining<=10)timerEl.className='quiz-timer danger';
+        if(fdpState.remaining<=0){clearInterval(fdpState.timerInterval);fdpFinishTest(true);}
+      },1000);
+    } else {timerEl.style.display='none';fdpState.timerInterval=setInterval(()=>{fdpState.elapsed++;},1000);}
+    fdpShowQuestion();
+  }
+
+  function fdpShowQuestion() {
+    const q=fdpState.questions[fdpState.current];
+    const total=fdpState.questions.length;
+    document.getElementById('fdp-progress').textContent='Question '+(fdpState.current+1)+' of '+total;
+    document.getElementById('fdp-progress-bar').style.width=(fdpState.current/total*100)+'%';
+    document.getElementById('fdp-question').innerHTML=q.qHTML;
+    document.getElementById('fdp-options').innerHTML=q.opts.map((opt,i)=>
+      '<button class="fdp-opt-btn" onclick="fdpSelectAnswer('+i+')">'+opt.display+'</button>'
+    ).join('');
+  }
+
+  function fdpSelectAnswer(i) {
+    const q=fdpState.questions[fdpState.current];
+    const opt=q.opts[i];
+    const correctOpt=q.opts.find(o=>o.correct);
+    fdpState.userAnswers.push({q,correct:correctOpt.display,correctKey:q.answerKey,given:opt.display,givenKey:opt.key,isCorrect:opt.correct,unanswered:false});
+    fdpState.current++;
+    if(fdpState.current>=fdpState.questions.length){fdpFinishTest(false);}else{fdpShowQuestion();}
+  }
+
+  function fdpFinishTest(timedOut) {
+    clearInterval(fdpState.timerInterval);
+    if (timedOut) {
+      for(let i=fdpState.current;i<fdpState.questions.length;i++){
+        const q=fdpState.questions[i];
+        const cOpt=q.opts.find(o=>o.correct);
+        fdpState.userAnswers.push({q,correct:cOpt.display,correctKey:q.answerKey,given:null,givenKey:null,isCorrect:false,unanswered:true});
+      }
+    }
+    document.getElementById('fdp-quiz').classList.remove('active');
+    const correct=fdpState.userAnswers.filter(a=>a.isCorrect).length;
+    const total=fdpState.userAnswers.length;
+    const answeredWrong=fdpState.userAnswers.filter(a=>!a.isCorrect&&!a.unanswered);
+    const allWrong=fdpState.userAnswers.filter(a=>!a.isCorrect);
+    const perfect=correct===total;
+    document.getElementById('fdp-score').textContent=correct+'/'+total;
+    const timeEl=document.getElementById('fdp-time-taken');
+    if(fdpState.timed){const used=fdpState.timelimit-fdpState.remaining;timeEl.textContent=timedOut?'Time ran out':'Time taken: '+formatTime(used);}
+    else{timeEl.textContent='Time taken: '+formatTime(fdpState.elapsed);}
+    const perfectEl=document.getElementById('fdp-perfect');
+    const wrongWrap=document.getElementById('fdp-wrong-wrap');
+    const wrongList=document.getElementById('fdp-wrong-list');
+    const actionsEl=document.getElementById('fdp-actions');
+    if (perfect) {
+      perfectEl.style.display='block'; wrongWrap.style.display='none';
+      actionsEl.innerHTML='<button class="results-btn secondary" onclick="fdpResetSetup()">\u2190 Menu</button><button class="results-btn primary" onclick="fdpRetakeSame()">Try again</button>';
+      if(!fdpState.wrongOnly) launchConfetti();
+    } else {
+      perfectEl.style.display='none'; wrongWrap.style.display='block';
+      wrongList.innerHTML=allWrong.map(a=>
+        '<li><span class="q">'+a.q.qHTML+' = '+a.correct+'</span>'+(a.unanswered?'<span class="not-ans">Not answered</span>':'<span class="your-ans">You answered: '+a.given+'</span>')+'</li>'
+      ).join('');
+      const retryBtn=answeredWrong.length>0?'<button class="results-btn green-btn" onclick="fdpRetakeWrong()">Retry wrong answers</button>':'';
+      actionsEl.innerHTML='<button class="results-btn secondary" onclick="fdpResetSetup()">\u2190 Menu</button><button class="results-btn primary" onclick="fdpRetakeSame()">Try again</button>'+retryBtn;
+    }
+    document.getElementById('fdp-results').classList.add('active');
+  }
+
+  function fdpRetakeSame() {
+    document.getElementById('fdp-results').classList.remove('active');
+    fdpState.wrongOnly=false;
+    fdpStartTest(fdpGenerateQuestions(fdpState.level,fdpState.qcount));
+  }
+
+  function fdpRetakeWrong() {
+    const answeredWrong=fdpState.userAnswers.filter(a=>!a.isCorrect&&!a.unanswered);
+    const wrongQs=answeredWrong.map(a=>a.q);
+    const count=Math.min(wrongQs.length,fdpState.qcount);
+    const filled=[];
+    while(filled.length<count){filled.push(...[...wrongQs].sort(()=>Math.random()-0.5));}
+    document.getElementById('fdp-results').classList.remove('active');
+    fdpState.wrongOnly=true; fdpState.timed=false;
+    fdpStartTest(filled.slice(0,count));
+  }
+
+  document.getElementById('fdp-start-btn').addEventListener('click', function() {
+    fdpState.level=fdpSelLevel; fdpState.qcount=fdpSelCount;
+    fdpState.timed=fdpSelTimed; fdpState.timelimit=fdpSelTime; fdpState.wrongOnly=false;
+    fdpStartTest(fdpGenerateQuestions(fdpSelLevel,fdpSelCount));
+  });
+
 </script>
