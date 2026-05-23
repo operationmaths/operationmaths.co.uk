@@ -84,6 +84,15 @@ collections:
         widget: "string"
         required: false
         hint: "Full URL of the TES listing for the paid pack."
+      - label: "Date added"
+        name: "date_added"
+        widget: "datetime"
+        format: "YYYY-MM-DD HH:mm:ss"
+        date_format: "DD/MM/YYYY"
+        time_format: "HH:mm"
+        required: false
+        default: "now"
+        hint: "Set automatically — change only if needed."
 
   # ── NUMBER ──────────────────────────────────
   - name: "number"
@@ -155,6 +164,15 @@ collections:
         widget: "string"
         required: false
         hint: "Full URL of the TES listing for the paid pack."
+      - label: "Date added"
+        name: "date_added"
+        widget: "datetime"
+        format: "YYYY-MM-DD HH:mm:ss"
+        date_format: "DD/MM/YYYY"
+        time_format: "HH:mm"
+        required: false
+        default: "now"
+        hint: "Set automatically — change only if needed."
 
   # ── SHAPE ───────────────────────────────────
   - name: "shape"
@@ -226,6 +244,15 @@ collections:
         widget: "string"
         required: false
         hint: "Full URL of the TES listing for the paid pack."
+      - label: "Date added"
+        name: "date_added"
+        widget: "datetime"
+        format: "YYYY-MM-DD HH:mm:ss"
+        date_format: "DD/MM/YYYY"
+        time_format: "HH:mm"
+        required: false
+        default: "now"
+        hint: "Set automatically — change only if needed."
 
   # ── ALGEBRA ─────────────────────────────────
   - name: "algebra"
@@ -297,6 +324,15 @@ collections:
         widget: "string"
         required: false
         hint: "Full URL of the TES listing for the paid pack."
+      - label: "Date added"
+        name: "date_added"
+        widget: "datetime"
+        format: "YYYY-MM-DD HH:mm:ss"
+        date_format: "DD/MM/YYYY"
+        time_format: "HH:mm"
+        required: false
+        default: "now"
+        hint: "Set automatically — change only if needed."
 
   # ── FORMULAE ────────────────────────────────
   - name: "formulae"
@@ -368,6 +404,15 @@ collections:
         widget: "string"
         required: false
         hint: "Full URL of the TES listing for the paid pack."
+      - label: "Date added"
+        name: "date_added"
+        widget: "datetime"
+        format: "YYYY-MM-DD HH:mm:ss"
+        date_format: "DD/MM/YYYY"
+        time_format: "HH:mm"
+        required: false
+        default: "now"
+        hint: "Set automatically — change only if needed."
 
   # ── SUPPORT SHEETS ──────────────────────────
   - name: "support-sheets"
@@ -439,6 +484,15 @@ collections:
         widget: "string"
         required: false
         hint: "Full URL of the TES listing for the paid pack."
+      - label: "Date added"
+        name: "date_added"
+        widget: "datetime"
+        format: "YYYY-MM-DD HH:mm:ss"
+        date_format: "DD/MM/YYYY"
+        time_format: "HH:mm"
+        required: false
+        default: "now"
+        hint: "Set automatically — change only if needed."
 
   # ── WORKSHEET TOPIC PAGES ───────────────────
   - name: "worksheet-pages"
