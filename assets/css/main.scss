@@ -385,7 +385,7 @@ main { flex: 1; }
   .om-hero h1 { font-size: 30px; }
   .om-hero p { font-size: 15px; }
   .om-hero-btns { flex-direction: column; align-items: center; padding-top: 2rem; }
-  .om-btn-green, .om-btn-dark-outline { width: 100%; max-width: 300px; text-align: center; }
+  .om-btn-green, .om-btn-dark-outline, .om-btn-blue { width: 100%; max-width: 300px; text-align: center; }
   .om-strip { flex-direction: column; flex-wrap: nowrap; }
   .om-strip-item { flex: none; border-right: none; border-top: none !important; border-left: 3px solid var(--sc); border-bottom: 1px solid #e5e7eb; flex-direction: row; justify-content: flex-start; gap: 12px; padding: 1rem 1.5rem; text-align: left; }
   .om-strip-item:last-child { border-bottom: none; }
