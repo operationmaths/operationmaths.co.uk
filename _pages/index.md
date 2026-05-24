@@ -193,7 +193,7 @@ body_class: page-home
         <div>
           <h2 id="sats-course-heading">Preparing for SATs?</h2>
           <p>Structured revision course with practice papers and worked examples for Year 6 pupils.</p>
-          <a href="{{ site.baseurl }}/sats-course" class="om-btn-green">View SATs course <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+          <a href="{{ site.baseurl }}/sats-course" class="om-btn-blue">View SATs course <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
         </div>
         <img src="{{ site.baseurl }}/assets/images/SATs-booklets.png" alt="SATs resource pack booklets" style="width:100%; max-width:380px; border-radius:8px; display:block;">
       </div>
