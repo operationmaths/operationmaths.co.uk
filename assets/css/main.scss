@@ -613,7 +613,7 @@ main { flex: 1; }
 .btn-submit:hover { background: var(--green-dark); border-color: var(--green-dark); }
 
 /* SHARED: page hero (non-homepage) — compact, no min-height or bg decorations */
-.page-hero { background: #0f1120; padding: 4rem 2rem 4rem; text-align: center; }
+.page-hero { background: #0f1120; padding: 4rem 2rem 2rem; text-align: center; }
 .page-hero h1 { font-size: 46px; font-weight: 700; color: #fff; line-height: 1.15; margin-bottom: 1rem; }
 .page-hero h1 em { font-style: normal; color: var(--orange); }
 .page-hero p { font-size: 17px; font-weight: 300; color: #9ca3af; max-width: 580px; margin: 0 auto 0.6rem; line-height: 1.6; }
@@ -655,7 +655,7 @@ main { flex: 1; }
   .qual-grid { grid-template-columns: 1fr; }
   .intro-card { grid-template-columns: 1fr; }
   .photo-placeholder { width: 100%; height: 120px; aspect-ratio: unset; }
-  .page-hero { padding: 3rem 1.5rem 2.5rem; }
+  .page-hero { padding: 3rem 1.5rem 1.5rem; }
   .page-hero h1 { font-size: 28px; }
   .page-hero p { font-size: 15px; }
   .quiz-question { font-size: 28px; }
