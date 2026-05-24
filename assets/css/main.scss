@@ -126,6 +126,8 @@ main { flex: 1; }
 .om-btn-green:hover { background: var(--orange-dark); }
 .om-btn-dark-outline { background: transparent; color: #fff; padding: 13px 26px; border-radius: 8px; font-size: 15px; font-weight: 700; border: 1.5px solid rgba(255,255,255,0.25); cursor: pointer; font-family: 'DM Sans', sans-serif; transition: border-color 0.12s; text-decoration: none; display: inline-block; }
 .om-btn-dark-outline:hover { border-color: rgba(255,255,255,0.55); }
+.om-btn-blue { background: var(--blue); color: #fff; padding: 13px 26px; border-radius: 8px; font-size: 15px; font-weight: 700; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: background 0.12s; text-decoration: none; display: inline-block; }
+.om-btn-blue:hover { background: #155fa0; }
 
 .om-hero-ws-row {
   display: flex;
@@ -141,14 +143,14 @@ main { flex: 1; }
   box-shadow: 0 -6px 28px rgba(0,0,0,0.55);
   flex-shrink: 0;
   position: relative;
-  width: 190px;
-  height: 170px;
+  width: 155px;
+  height: 135px;
 }
 
 .om-hero-ws:nth-child(2),
-.om-hero-ws:nth-child(4) { height: 210px; }
+.om-hero-ws:nth-child(4) { height: 168px; }
 
-.om-hero-ws:nth-child(3) { width: 220px; height: 250px; }
+.om-hero-ws:nth-child(3) { width: 180px; height: 200px; }
 
 .om-hero-ws img {
   display: block;
