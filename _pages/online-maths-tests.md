@@ -12,6 +12,7 @@ permalink: /online-maths-tests/
 .dark-btn.selected { background: #111827; color: #fff; border-color: #111827; }
 .table-btn.selected { background: var(--blue); color: #fff; border-color: var(--blue); }
 .script-l { font-family: "Times New Roman", "Liberation Serif", serif; font-style: normal; }
+#rnd-question, #pr-question { font-size: clamp(1rem, 2.8vw, 1.4rem); }
 .frac { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; font-size: 0.85em; line-height: 1.1; margin: 0 2px; }
 .frac sup, .frac sub { font-size: 1em; line-height: 1.2; }
 .frac .frac-bar { border-top: 1.5px solid currentColor; width: 100%; display: block; margin: 1px 0; }
@@ -29,10 +30,10 @@ permalink: /online-maths-tests/
   <div class="test-tabs" style="margin-top:1.75rem;">
     <button class="test-tab active" data-target="times-tables">Times tables</button>
     <button class="test-tab" data-target="number-bonds">Number bonds</button>
-    <button class="test-tab" data-target="metric-conversions">Metric conversions</button>
+    <button class="test-tab" data-target="rounding">Rounding</button>
     <button class="test-tab" data-target="fdp-conversions">FDP conversions</button>
     <button class="test-tab" data-target="fon">Fractions of numbers</button>
-    <button class="test-tab" data-target="rounding">Rounding</button>
+    <button class="test-tab" data-target="metric-conversions">Metric conversions</button>
     <button class="test-tab" data-target="powers-roots">Powers and roots</button>
   </div>
 </section>
@@ -49,7 +50,7 @@ permalink: /online-maths-tests/
           <div class="option-row">
             <button class="option-btn dark-btn selected" data-op="times" onclick="ttSelectOp(this)">Times tables (×)</button>
             <button class="option-btn dark-btn" data-op="division" onclick="ttSelectOp(this)">Division (÷)</button>
-            <button class="option-btn dark-btn" data-op="mixed" onclick="ttSelectOp(this)">Mixed (× and ÷)</button>
+            <button class="option-btn dark-btn" data-op="mixed" onclick="ttSelectOp(this)">MIXED (× and ÷)</button>
           </div>
         </div>
         <div class="setup-section">
@@ -107,7 +108,6 @@ permalink: /online-maths-tests/
         <div class="quiz-input-wrap">
           <input class="quiz-input" id="tt-answer" type="text" inputmode="numeric" autocomplete="off" placeholder="?" pattern="[0-9]*">
         </div>
-        <p class="quiz-hint">Type your answer and press Enter to continue</p>
         <button class="quiz-next-btn" id="tt-next-btn">Next question →</button>
         <button class="quiz-menu-btn" id="tt-quiz-menu-btn">← Menu</button>
       </div>
@@ -143,7 +143,7 @@ permalink: /online-maths-tests/
           <div class="option-row">
             <button class="option-btn blue-btn" data-nb-op="addition" onclick="nbSelectOp(this)">Addition (+)</button>
             <button class="option-btn blue-btn" data-nb-op="subtraction" onclick="nbSelectOp(this)">Subtraction (−)</button>
-            <button class="option-btn blue-btn" data-nb-op="mixed" onclick="nbSelectOp(this)">Mixed (+ and −)</button>
+            <button class="option-btn blue-btn" data-nb-op="mixed" onclick="nbSelectOp(this)">MIXED (+ and −)</button>
           </div>
         </div>
         <div class="setup-section">
@@ -185,7 +185,6 @@ permalink: /online-maths-tests/
         <div class="quiz-input-wrap">
           <input class="quiz-input" id="nb-answer" type="text" inputmode="numeric" autocomplete="off" placeholder="?" pattern="[0-9]*">
         </div>
-        <p class="quiz-hint">Type your answer and press Enter to continue</p>
         <button class="quiz-next-btn" id="nb-next-btn" onclick="nbSubmitAnswer()">Next question →</button>
         <button class="quiz-menu-btn" id="nb-quiz-menu-btn" onclick="nbResetSetup()">← Menu</button>
       </div>
@@ -204,6 +203,84 @@ permalink: /online-maths-tests/
 
     </div>
 
+    <!-- ROUNDING PANEL -->
+    <div class="test-panel" id="panel-rounding">
+
+      <div class="setup-card" id="rnd-setup">
+        <div class="setup-section">
+          <span class="setup-section-title">Round to</span>
+          <div class="option-row">
+            <button class="option-btn dark-btn" data-rnd-type="10" onclick="rndSelectType(this)">Nearest 10</button>
+            <button class="option-btn dark-btn" data-rnd-type="100" onclick="rndSelectType(this)">Nearest 100</button>
+            <button class="option-btn dark-btn" data-rnd-type="1000" onclick="rndSelectType(this)">Nearest 1,000</button>
+            <button class="option-btn dark-btn" data-rnd-type="mixed-whole" onclick="rndSelectType(this)">MIXED</button>
+          </div>
+        </div>
+        <div class="setup-section">
+          <span class="setup-section-title">Round to</span>
+          <div class="option-row">
+            <button class="option-btn dark-btn" data-rnd-type="dp" onclick="rndSelectType(this)">Decimal places</button>
+            <button class="option-btn dark-btn" data-rnd-type="sf" onclick="rndSelectType(this)">Significant figures</button>
+            <button class="option-btn dark-btn" data-rnd-type="mixed-dpSf" onclick="rndSelectType(this)">MIXED</button>
+          </div>
+        </div>
+        <div class="setup-section">
+          <span class="setup-section-title">Questions</span>
+          <div class="option-row">
+            <button class="option-btn green-btn" data-rnd-qcount="20" onclick="rndSelectCount(this)">Quick test (20 questions)</button>
+            <button class="option-btn green-btn" data-rnd-qcount="60" onclick="rndSelectCount(this)">Full test (60 questions)</button>
+          </div>
+        </div>
+        <div class="setup-section">
+          <span class="setup-section-title">Timing</span>
+          <div class="option-row">
+            <button class="option-btn purple-btn" data-rnd-timed="false" onclick="rndSelectTimed(this)">Untimed</button>
+            <button class="option-btn purple-btn" data-rnd-timed="true" onclick="rndSelectTimed(this)">Timed</button>
+          </div>
+          <div class="time-options" id="rnd-time-options">
+            <span class="setup-section-title" style="margin-top:0.75rem;display:block">Time limit</span>
+            <div class="option-row">
+              <button class="option-btn purple-btn" data-rnd-timelimit="60" onclick="rndSelectTime(this)">1 minute</button>
+              <button class="option-btn purple-btn" data-rnd-timelimit="120" onclick="rndSelectTime(this)">2 minutes</button>
+              <button class="option-btn purple-btn" data-rnd-timelimit="300" onclick="rndSelectTime(this)">5 minutes</button>
+            </div>
+          </div>
+        </div>
+        <div class="setup-section">
+          <button class="start-btn" id="rnd-start-btn" disabled>Start test</button>
+        </div>
+      </div>
+
+      <div class="quiz-card" id="rnd-quiz">
+        <div class="quiz-meta">
+          <span class="quiz-progress" id="rnd-progress">Question 1 of 20</span>
+          <span class="quiz-timer" id="rnd-timer" style="display:none"></span>
+        </div>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="rnd-progress-bar" style="width:0%"></div>
+        </div>
+        <div class="quiz-question" id="rnd-question"></div>
+        <div class="quiz-input-wrap">
+          <input class="quiz-input" id="rnd-answer" type="text" inputmode="decimal" autocomplete="off" placeholder="?">
+        </div>
+        <button class="quiz-next-btn" id="rnd-next-btn" onclick="rndSubmitAnswer()">Next question &#8594;</button>
+        <button class="quiz-menu-btn" id="rnd-quiz-menu-btn" onclick="rndResetSetup()">&#8592; Menu</button>
+      </div>
+
+      <div class="results-card" id="rnd-results">
+        <div class="results-score" id="rnd-score">17/20</div>
+        <div class="results-label">correct answers</div>
+        <div class="results-time" id="rnd-time-taken"></div>
+        <div class="results-perfect" id="rnd-perfect" style="display:none">Full marks &#8212; excellent work!</div>
+        <div class="results-wrong" id="rnd-wrong-wrap" style="display:none">
+          <h3>Incorrect or unanswered questions</h3>
+          <ul class="wrong-list" id="rnd-wrong-list"></ul>
+        </div>
+        <div class="results-actions" id="rnd-actions"></div>
+      </div>
+
+    </div>
+
     <!-- FDP CONVERSIONS PANEL -->
     <div class="test-panel" id="panel-fdp-conversions">
 
@@ -213,7 +290,7 @@ permalink: /online-maths-tests/
           <div class="option-row">
             <button class="option-btn dark-btn selected" data-fdp-level="basic" onclick="fdpSelectLevel(this)">Basic</button>
             <button class="option-btn dark-btn" data-fdp-level="tenths-hundredths" onclick="fdpSelectLevel(this)">Tenths &amp; hundredths</button>
-            <button class="option-btn dark-btn" data-fdp-level="mixed" onclick="fdpSelectLevel(this)">Mixed</button>
+            <button class="option-btn dark-btn" data-fdp-level="mixed" onclick="fdpSelectLevel(this)">MIXED</button>
           </div>
         </div>
         <div class="setup-section">
@@ -255,7 +332,6 @@ permalink: /online-maths-tests/
           <div class="quiz-question" id="fdp-question"></div>
           <div class="fdp-options" id="fdp-options"></div>
         </div>
-        <p class="quiz-hint">Choose an answer to continue</p>
         <button class="quiz-menu-btn" id="fdp-quiz-menu-btn" onclick="fdpResetSetup()">← Menu</button>
       </div>
 
@@ -269,6 +345,75 @@ permalink: /online-maths-tests/
           <ul class="wrong-list" id="fdp-wrong-list"></ul>
         </div>
         <div class="results-actions" id="fdp-actions"></div>
+      </div>
+
+    </div>
+
+    <!-- FRACTIONS OF NUMBERS PANEL -->
+    <div class="test-panel" id="panel-fon">
+
+      <div class="setup-card" id="fon-setup">
+        <div class="setup-section">
+          <span class="setup-section-title">Level</span>
+          <div class="option-row">
+            <button class="option-btn dark-btn selected" data-fon-level="1" onclick="fonSelectLevel(this)">Unit fractions</button>
+            <button class="option-btn dark-btn" data-fon-level="2" onclick="fonSelectLevel(this)">Proper fractions</button>
+            <button class="option-btn dark-btn" data-fon-level="3" onclick="fonSelectLevel(this)">Larger numbers</button>
+          </div>
+        </div>
+        <div class="setup-section">
+          <span class="setup-section-title">Questions</span>
+          <div class="option-row">
+            <button class="option-btn green-btn" data-fon-qcount="20" onclick="fonSelectCount(this)">Quick test (20 questions)</button>
+            <button class="option-btn green-btn" data-fon-qcount="60" onclick="fonSelectCount(this)">Full test (60 questions)</button>
+          </div>
+        </div>
+        <div class="setup-section">
+          <span class="setup-section-title">Timing</span>
+          <div class="option-row">
+            <button class="option-btn purple-btn" data-fon-timed="false" onclick="fonSelectTimed(this)">Untimed</button>
+            <button class="option-btn purple-btn" data-fon-timed="true" onclick="fonSelectTimed(this)">Timed</button>
+          </div>
+          <div class="time-options" id="fon-time-options">
+            <span class="setup-section-title" style="margin-top:0.75rem;display:block">Time limit</span>
+            <div class="option-row">
+              <button class="option-btn purple-btn" data-fon-timelimit="60" onclick="fonSelectTime(this)">1 minute</button>
+              <button class="option-btn purple-btn" data-fon-timelimit="120" onclick="fonSelectTime(this)">2 minutes</button>
+              <button class="option-btn purple-btn" data-fon-timelimit="300" onclick="fonSelectTime(this)">5 minutes</button>
+            </div>
+          </div>
+        </div>
+        <div class="setup-section">
+          <button class="start-btn" id="fon-start-btn" disabled>Start test</button>
+        </div>
+      </div>
+
+      <div class="quiz-card" id="fon-quiz">
+        <div class="quiz-meta">
+          <span class="quiz-progress" id="fon-progress">Question 1 of 20</span>
+          <span class="quiz-timer" id="fon-timer" style="display:none"></span>
+        </div>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="fon-progress-bar" style="width:0%"></div>
+        </div>
+        <div class="quiz-question" id="fon-question"></div>
+        <div class="quiz-input-wrap">
+          <input class="quiz-input" id="fon-answer" type="text" inputmode="numeric" autocomplete="off" placeholder="?">
+        </div>
+        <button class="quiz-next-btn" id="fon-next-btn" onclick="fonSubmitAnswer()">Next question &#8594;</button>
+        <button class="quiz-menu-btn" id="fon-quiz-menu-btn" onclick="fonResetSetup()">&#8592; Menu</button>
+      </div>
+
+      <div class="results-card" id="fon-results">
+        <div class="results-score" id="fon-score">17/20</div>
+        <div class="results-label">correct answers</div>
+        <div class="results-time" id="fon-time-taken"></div>
+        <div class="results-perfect" id="fon-perfect" style="display:none">Full marks &#8212; excellent work!</div>
+        <div class="results-wrong" id="fon-wrong-wrap" style="display:none">
+          <h3>Incorrect or unanswered questions</h3>
+          <ul class="wrong-list" id="fon-wrong-list"></ul>
+        </div>
+        <div class="results-actions" id="fon-actions"></div>
       </div>
 
     </div>
@@ -333,7 +478,6 @@ permalink: /online-maths-tests/
         <div class="quiz-input-wrap">
           <input class="quiz-input" id="mc-answer" type="text" inputmode="decimal" autocomplete="off" placeholder="?">
         </div>
-        <p class="quiz-hint">Type your answer and press Enter to continue</p>
         <button class="quiz-next-btn" id="mc-next-btn" onclick="mcSubmitAnswer()">Next question →</button>
         <button class="quiz-menu-btn" id="mc-quiz-menu-btn" onclick="mcResetSetup()">← Menu</button>
       </div>
@@ -353,155 +497,6 @@ permalink: /online-maths-tests/
     </div>
 
 
-    <!-- FRACTIONS OF NUMBERS PANEL -->
-    <div class="test-panel" id="panel-fon">
-
-      <div class="setup-card" id="fon-setup">
-        <div class="setup-section">
-          <span class="setup-section-title">Level</span>
-          <div class="option-row">
-            <button class="option-btn dark-btn selected" data-fon-level="1" onclick="fonSelectLevel(this)">Unit fractions</button>
-            <button class="option-btn dark-btn" data-fon-level="2" onclick="fonSelectLevel(this)">Proper fractions</button>
-            <button class="option-btn dark-btn" data-fon-level="3" onclick="fonSelectLevel(this)">Larger numbers</button>
-          </div>
-        </div>
-        <div class="setup-section">
-          <span class="setup-section-title">Questions</span>
-          <div class="option-row">
-            <button class="option-btn green-btn" data-fon-qcount="20" onclick="fonSelectCount(this)">Quick test (20 questions)</button>
-            <button class="option-btn green-btn" data-fon-qcount="60" onclick="fonSelectCount(this)">Full test (60 questions)</button>
-          </div>
-        </div>
-        <div class="setup-section">
-          <span class="setup-section-title">Timing</span>
-          <div class="option-row">
-            <button class="option-btn purple-btn" data-fon-timed="false" onclick="fonSelectTimed(this)">Untimed</button>
-            <button class="option-btn purple-btn" data-fon-timed="true" onclick="fonSelectTimed(this)">Timed</button>
-          </div>
-          <div class="time-options" id="fon-time-options">
-            <span class="setup-section-title" style="margin-top:0.75rem;display:block">Time limit</span>
-            <div class="option-row">
-              <button class="option-btn purple-btn" data-fon-timelimit="60" onclick="fonSelectTime(this)">1 minute</button>
-              <button class="option-btn purple-btn" data-fon-timelimit="120" onclick="fonSelectTime(this)">2 minutes</button>
-              <button class="option-btn purple-btn" data-fon-timelimit="300" onclick="fonSelectTime(this)">5 minutes</button>
-            </div>
-          </div>
-        </div>
-        <div class="setup-section">
-          <button class="start-btn" id="fon-start-btn" disabled>Start test</button>
-        </div>
-      </div>
-
-      <div class="quiz-card" id="fon-quiz">
-        <div class="quiz-meta">
-          <span class="quiz-progress" id="fon-progress">Question 1 of 20</span>
-          <span class="quiz-timer" id="fon-timer" style="display:none"></span>
-        </div>
-        <div class="progress-bar-track">
-          <div class="progress-bar-fill" id="fon-progress-bar" style="width:0%"></div>
-        </div>
-        <div class="quiz-question" id="fon-question"></div>
-        <div class="quiz-input-wrap">
-          <input class="quiz-input" id="fon-answer" type="text" inputmode="numeric" autocomplete="off" placeholder="?">
-        </div>
-        <p class="quiz-hint">Type your answer and press Enter to continue</p>
-        <button class="quiz-next-btn" id="fon-next-btn" onclick="fonSubmitAnswer()">Next question &#8594;</button>
-        <button class="quiz-menu-btn" id="fon-quiz-menu-btn" onclick="fonResetSetup()">&#8592; Menu</button>
-      </div>
-
-      <div class="results-card" id="fon-results">
-        <div class="results-score" id="fon-score">17/20</div>
-        <div class="results-label">correct answers</div>
-        <div class="results-time" id="fon-time-taken"></div>
-        <div class="results-perfect" id="fon-perfect" style="display:none">Full marks &#8212; excellent work!</div>
-        <div class="results-wrong" id="fon-wrong-wrap" style="display:none">
-          <h3>Incorrect or unanswered questions</h3>
-          <ul class="wrong-list" id="fon-wrong-list"></ul>
-        </div>
-        <div class="results-actions" id="fon-actions"></div>
-      </div>
-
-    </div>
-
-    <!-- ROUNDING PANEL -->
-    <div class="test-panel" id="panel-rounding">
-
-      <div class="setup-card" id="rnd-setup">
-        <div class="setup-section">
-          <span class="setup-section-title">Round to nearest</span>
-          <div class="option-row">
-            <button class="option-btn dark-btn" data-rnd-type="10" onclick="rndSelectType(this)">Nearest 10</button>
-            <button class="option-btn dark-btn" data-rnd-type="100" onclick="rndSelectType(this)">Nearest 100</button>
-            <button class="option-btn dark-btn" data-rnd-type="1000" onclick="rndSelectType(this)">Nearest 1,000</button>
-            <button class="option-btn dark-btn" data-rnd-type="mixed-whole" onclick="rndSelectType(this)">Mixed</button>
-          </div>
-        </div>
-        <div class="setup-section">
-          <span class="setup-section-title">Round to</span>
-          <div class="option-row">
-            <button class="option-btn dark-btn" data-rnd-type="dp" onclick="rndSelectType(this)">Decimal places</button>
-            <button class="option-btn dark-btn" data-rnd-type="sf" onclick="rndSelectType(this)">Significant figures</button>
-            <button class="option-btn dark-btn" data-rnd-type="mixed-dpSf" onclick="rndSelectType(this)">Mixed</button>
-          </div>
-        </div>
-        <div class="setup-section">
-          <span class="setup-section-title">Questions</span>
-          <div class="option-row">
-            <button class="option-btn green-btn" data-rnd-qcount="20" onclick="rndSelectCount(this)">Quick test (20 questions)</button>
-            <button class="option-btn green-btn" data-rnd-qcount="60" onclick="rndSelectCount(this)">Full test (60 questions)</button>
-          </div>
-        </div>
-        <div class="setup-section">
-          <span class="setup-section-title">Timing</span>
-          <div class="option-row">
-            <button class="option-btn purple-btn" data-rnd-timed="false" onclick="rndSelectTimed(this)">Untimed</button>
-            <button class="option-btn purple-btn" data-rnd-timed="true" onclick="rndSelectTimed(this)">Timed</button>
-          </div>
-          <div class="time-options" id="rnd-time-options">
-            <span class="setup-section-title" style="margin-top:0.75rem;display:block">Time limit</span>
-            <div class="option-row">
-              <button class="option-btn purple-btn" data-rnd-timelimit="60" onclick="rndSelectTime(this)">1 minute</button>
-              <button class="option-btn purple-btn" data-rnd-timelimit="120" onclick="rndSelectTime(this)">2 minutes</button>
-              <button class="option-btn purple-btn" data-rnd-timelimit="300" onclick="rndSelectTime(this)">5 minutes</button>
-            </div>
-          </div>
-        </div>
-        <div class="setup-section">
-          <button class="start-btn" id="rnd-start-btn" disabled>Start test</button>
-        </div>
-      </div>
-
-      <div class="quiz-card" id="rnd-quiz">
-        <div class="quiz-meta">
-          <span class="quiz-progress" id="rnd-progress">Question 1 of 20</span>
-          <span class="quiz-timer" id="rnd-timer" style="display:none"></span>
-        </div>
-        <div class="progress-bar-track">
-          <div class="progress-bar-fill" id="rnd-progress-bar" style="width:0%"></div>
-        </div>
-        <div class="quiz-question" id="rnd-question"></div>
-        <div class="quiz-input-wrap">
-          <input class="quiz-input" id="rnd-answer" type="text" inputmode="decimal" autocomplete="off" placeholder="?">
-        </div>
-        <p class="quiz-hint">Type your answer and press Enter to continue</p>
-        <button class="quiz-next-btn" id="rnd-next-btn" onclick="rndSubmitAnswer()">Next question &#8594;</button>
-        <button class="quiz-menu-btn" id="rnd-quiz-menu-btn" onclick="rndResetSetup()">&#8592; Menu</button>
-      </div>
-
-      <div class="results-card" id="rnd-results">
-        <div class="results-score" id="rnd-score">17/20</div>
-        <div class="results-label">correct answers</div>
-        <div class="results-time" id="rnd-time-taken"></div>
-        <div class="results-perfect" id="rnd-perfect" style="display:none">Full marks &#8212; excellent work!</div>
-        <div class="results-wrong" id="rnd-wrong-wrap" style="display:none">
-          <h3>Incorrect or unanswered questions</h3>
-          <ul class="wrong-list" id="rnd-wrong-list"></ul>
-        </div>
-        <div class="results-actions" id="rnd-actions"></div>
-      </div>
-
-    </div>
-
     <!-- POWERS AND ROOTS PANEL -->
     <div class="test-panel" id="panel-powers-roots">
 
@@ -513,7 +508,7 @@ permalink: /online-maths-tests/
             <button class="option-btn dark-btn" data-pr-type="square-roots" onclick="prSelectType(this)">Square roots</button>
             <button class="option-btn dark-btn" data-pr-type="cubes" onclick="prSelectType(this)">Cubes</button>
             <button class="option-btn dark-btn" data-pr-type="cube-roots" onclick="prSelectType(this)">Cube roots</button>
-            <button class="option-btn dark-btn" data-pr-type="mixed" onclick="prSelectType(this)">Mixed</button>
+            <button class="option-btn dark-btn" data-pr-type="mixed" onclick="prSelectType(this)">MIXED</button>
           </div>
         </div>
         <div class="setup-section">
@@ -555,7 +550,6 @@ permalink: /online-maths-tests/
         <div class="quiz-input-wrap">
           <input class="quiz-input" id="pr-answer" type="text" inputmode="numeric" autocomplete="off" placeholder="?">
         </div>
-        <p class="quiz-hint">Type your answer and press Enter to continue</p>
         <button class="quiz-next-btn" id="pr-next-btn" onclick="prSubmitAnswer()">Next question &#8594;</button>
         <button class="quiz-menu-btn" id="pr-quiz-menu-btn" onclick="prResetSetup()">&#8592; Menu</button>
       </div>
@@ -1946,18 +1940,21 @@ permalink: /online-maths-tests/
     }
 
     if (type === 'dp' || type === 'mixed-dpSf') {
-      // Numbers up to 999 with up to 5 d.p.
+      // Even mix of 1, 2 and 3 digits before decimal; round to 1, 2 or 3 d.p.
+      const intRanges = [[1,9],[10,99],[100,999]]; // 1-digit, 2-digit, 3-digit integer parts
       for (let dp = 1; dp <= 3; dp++) {
-        for (let i = 0; i < 40; i++) {
-          const intPart = Math.floor(Math.random() * 999);
-          const decPlaces = dp + 1 + Math.floor(Math.random() * (4 - dp)); // always has more d.p. than target
-          const decPart = Math.floor(Math.random() * Math.pow(10, decPlaces));
-          const n = parseFloat((intPart + decPart / Math.pow(10, decPlaces)).toFixed(decPlaces));
-          // Skip if n already has <= dp decimal places
-          const nStr = n.toString();
-          const actualDp = nStr.includes('.') ? nStr.split('.')[1].length : 0;
-          if (actualDp <= dp) continue;
-          addDp(n, dp);
+        for (const [lo, hi] of intRanges) {
+          for (let i = 0; i < 15; i++) {
+            const intPart = lo + Math.floor(Math.random() * (hi - lo + 1));
+            const extraDp = dp + 1 + Math.floor(Math.random() * (3 - dp)); // 1-3 extra d.p. beyond target
+            const totalDp = Math.min(dp + extraDp, 5);
+            const decPart = Math.floor(Math.random() * Math.pow(10, totalDp));
+            const n = parseFloat((intPart + decPart / Math.pow(10, totalDp)).toFixed(totalDp));
+            const nStr = n.toString();
+            const actualDp = nStr.includes('.') ? nStr.split('.')[1].length : 0;
+            if (actualDp <= dp) continue;
+            addDp(n, dp);
+          }
         }
       }
     }
