@@ -31,6 +31,7 @@ permalink: /online-maths-tests/
     <button class="test-tab" data-target="number-bonds">Number bonds</button>
     <button class="test-tab" data-target="metric-conversions">Metric conversions</button>
     <button class="test-tab" data-target="fdp-conversions">FDP conversions</button>
+    <button class="test-tab" data-target="fon">Fractions of numbers</button>
   </div>
 </section>
 
@@ -81,9 +82,9 @@ permalink: /online-maths-tests/
           <div class="time-options" id="time-options">
             <span class="setup-section-title" style="margin-top:0.75rem;display:block">Time limit</span>
             <div class="option-row">
+              <button class="option-btn purple-btn" data-timelimit="60" onclick="ttSelectTime(this)">1 minute</button>
               <button class="option-btn purple-btn" data-timelimit="120" onclick="ttSelectTime(this)">2 minutes</button>
               <button class="option-btn purple-btn" data-timelimit="300" onclick="ttSelectTime(this)">5 minutes</button>
-              <button class="option-btn purple-btn" data-timelimit="600" onclick="ttSelectTime(this)">10 minutes</button>
             </div>
           </div>
         </div>
@@ -159,9 +160,9 @@ permalink: /online-maths-tests/
           <div class="time-options" id="nb-time-options">
             <span class="setup-section-title" style="margin-top:0.75rem;display:block">Time limit</span>
             <div class="option-row">
+              <button class="option-btn purple-btn" data-nb-timelimit="60" onclick="nbSelectTime(this)">1 minute</button>
               <button class="option-btn purple-btn" data-nb-timelimit="120" onclick="nbSelectTime(this)">2 minutes</button>
               <button class="option-btn purple-btn" data-nb-timelimit="300" onclick="nbSelectTime(this)">5 minutes</button>
-              <button class="option-btn purple-btn" data-nb-timelimit="600" onclick="nbSelectTime(this)">10 minutes</button>
             </div>
           </div>
         </div>
@@ -229,9 +230,9 @@ permalink: /online-maths-tests/
           <div class="time-options" id="fdp-time-options">
             <span class="setup-section-title" style="margin-top:0.75rem;display:block">Time limit</span>
             <div class="option-row">
+              <button class="option-btn purple-btn" data-fdp-timelimit="60" onclick="fdpSelectTime(this)">1 minute</button>
               <button class="option-btn purple-btn" data-fdp-timelimit="120" onclick="fdpSelectTime(this)">2 minutes</button>
               <button class="option-btn purple-btn" data-fdp-timelimit="300" onclick="fdpSelectTime(this)">5 minutes</button>
-              <button class="option-btn purple-btn" data-fdp-timelimit="600" onclick="fdpSelectTime(this)">10 minutes</button>
             </div>
           </div>
         </div>
@@ -307,9 +308,9 @@ permalink: /online-maths-tests/
           <div class="time-options" id="mc-time-options">
             <span class="setup-section-title" style="margin-top:0.75rem;display:block">Time limit</span>
             <div class="option-row">
+              <button class="option-btn purple-btn" data-mc-timelimit="60" onclick="mcSelectTime(this)">1 minute</button>
               <button class="option-btn purple-btn" data-mc-timelimit="120" onclick="mcSelectTime(this)">2 minutes</button>
               <button class="option-btn purple-btn" data-mc-timelimit="300" onclick="mcSelectTime(this)">5 minutes</button>
-              <button class="option-btn purple-btn" data-mc-timelimit="600" onclick="mcSelectTime(this)">10 minutes</button>
             </div>
           </div>
         </div>
@@ -349,6 +350,76 @@ permalink: /online-maths-tests/
 
     </div>
 
+
+    <!-- FRACTIONS OF NUMBERS PANEL -->
+    <div class="test-panel" id="panel-fon">
+
+      <div class="setup-card" id="fon-setup">
+        <div class="setup-section">
+          <span class="setup-section-title">Level</span>
+          <div class="option-row">
+            <button class="option-btn dark-btn selected" data-fon-level="1" onclick="fonSelectLevel(this)">Unit fractions</button>
+            <button class="option-btn dark-btn" data-fon-level="2" onclick="fonSelectLevel(this)">Proper fractions</button>
+            <button class="option-btn dark-btn" data-fon-level="3" onclick="fonSelectLevel(this)">Larger numbers</button>
+          </div>
+        </div>
+        <div class="setup-section">
+          <span class="setup-section-title">Questions</span>
+          <div class="option-row">
+            <button class="option-btn green-btn" data-fon-qcount="20" onclick="fonSelectCount(this)">Quick test (20 questions)</button>
+            <button class="option-btn green-btn" data-fon-qcount="60" onclick="fonSelectCount(this)">Full test (60 questions)</button>
+          </div>
+        </div>
+        <div class="setup-section">
+          <span class="setup-section-title">Timing</span>
+          <div class="option-row">
+            <button class="option-btn purple-btn" data-fon-timed="false" onclick="fonSelectTimed(this)">Untimed</button>
+            <button class="option-btn purple-btn" data-fon-timed="true" onclick="fonSelectTimed(this)">Timed</button>
+          </div>
+          <div class="time-options" id="fon-time-options">
+            <span class="setup-section-title" style="margin-top:0.75rem;display:block">Time limit</span>
+            <div class="option-row">
+              <button class="option-btn purple-btn" data-fon-timelimit="60" onclick="fonSelectTime(this)">1 minute</button>
+              <button class="option-btn purple-btn" data-fon-timelimit="120" onclick="fonSelectTime(this)">2 minutes</button>
+              <button class="option-btn purple-btn" data-fon-timelimit="300" onclick="fonSelectTime(this)">5 minutes</button>
+            </div>
+          </div>
+        </div>
+        <div class="setup-section">
+          <button class="start-btn" id="fon-start-btn" disabled>Start test</button>
+        </div>
+      </div>
+
+      <div class="quiz-card" id="fon-quiz">
+        <div class="quiz-meta">
+          <span class="quiz-progress" id="fon-progress">Question 1 of 20</span>
+          <span class="quiz-timer" id="fon-timer" style="display:none"></span>
+        </div>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="fon-progress-bar" style="width:0%"></div>
+        </div>
+        <div class="quiz-question" id="fon-question"></div>
+        <div class="quiz-input-wrap">
+          <input class="quiz-input" id="fon-answer" type="text" inputmode="numeric" autocomplete="off" placeholder="?">
+        </div>
+        <p class="quiz-hint">Type your answer and press Enter to continue</p>
+        <button class="quiz-next-btn" id="fon-next-btn" onclick="fonSubmitAnswer()">Next question &#8594;</button>
+        <button class="quiz-menu-btn" id="fon-quiz-menu-btn" onclick="fonResetSetup()">&#8592; Menu</button>
+      </div>
+
+      <div class="results-card" id="fon-results">
+        <div class="results-score" id="fon-score">17/20</div>
+        <div class="results-label">correct answers</div>
+        <div class="results-time" id="fon-time-taken"></div>
+        <div class="results-perfect" id="fon-perfect" style="display:none">Full marks &#8212; excellent work!</div>
+        <div class="results-wrong" id="fon-wrong-wrap" style="display:none">
+          <h3>Incorrect or unanswered questions</h3>
+          <ul class="wrong-list" id="fon-wrong-list"></ul>
+        </div>
+        <div class="results-actions" id="fon-actions"></div>
+      </div>
+
+    </div>
   </div>
 </main>
 
@@ -366,6 +437,9 @@ permalink: /online-maths-tests/
 
   const fdpState = { questions: [], current: 0, userAnswers: [], elapsed: 0, remaining: 0, timerInterval: null, timed: false, timelimit: null, level: 'basic', qcount: null, wrongOnly: false };
   let fdpSelLevel = 'basic', fdpSelCount = null, fdpSelTimed = null, fdpSelTime = null;
+
+  const fonState = { questions: [], current: 0, userAnswers: [], elapsed: 0, remaining: 0, timerInterval: null, timed: false, timelimit: null, level: '1', qcount: null, wrongOnly: false };
+  let fonSelLevel = '1', fonSelCount = null, fonSelTimed = null, fonSelTime = null;
 
   // ── SHARED ────────────────────────────────────────────────────────────────
   function formatTime(secs) {
@@ -448,6 +522,7 @@ permalink: /online-maths-tests/
     nbResetSetup();
     mcResetSetup();
     if (typeof fdpResetSetup === 'function') fdpResetSetup();
+    if (typeof fonResetSetup === 'function') fonResetSetup();
   }
 
   document.querySelectorAll('.test-tab').forEach(tab => {
@@ -460,7 +535,7 @@ permalink: /online-maths-tests/
 
   (function() {
     const hash = window.location.hash.replace('#', '') || 'times-tables';
-    const valid = ['times-tables', 'number-bonds', 'metric-conversions', 'fdp-conversions'];
+    const valid = ['times-tables', 'number-bonds', 'metric-conversions', 'fdp-conversions', 'fon'];
     activateTab(valid.includes(hash) ? hash : 'times-tables');
   })();
 
@@ -1384,6 +1459,265 @@ permalink: /online-maths-tests/
     fdpState.level=fdpSelLevel; fdpState.qcount=fdpSelCount;
     fdpState.timed=fdpSelTimed; fdpState.timelimit=fdpSelTime; fdpState.wrongOnly=false;
     fdpStartTest(fdpGenerateQuestions(fdpSelLevel,fdpSelCount));
+  });
+
+
+  // ── FRACTIONS OF NUMBERS ──────────────────────────────────────────────────
+
+  function fonBuildPool(level) {
+    const pool = [];
+    const denoms = [2,3,4,5,6,7,8,9,10,11,12];
+
+    if (level === '1') {
+      // Unit fractions of ×2 to ×12 multiples only (up to 144)
+      for (const d of denoms) {
+        for (let m = 2; m <= 12; m++) {
+          const whole = d * m;
+          if (whole > 144) continue;
+          const answer = m; // (1/d) of (d*m) = m
+          pool.push({ n: 1, d: d, whole: whole, answer: answer });
+        }
+      }
+    } else if (level === '2') {
+      // All proper fractions n/d where answer is whole, ×2 to ×12 multiples up to 144
+      for (const d of denoms) {
+        for (let m = 2; m <= 12; m++) {
+          const whole = d * m;
+          if (whole > 144) continue;
+          for (let n = 1; n < d; n++) {
+            const answer = n * m; // (n/d) of (d*m) = n*m
+            pool.push({ n: n, d: d, whole: whole, answer: answer });
+          }
+        }
+      }
+    } else {
+      // Level 3: 30% from levels 1+2 (small), 70% larger numbers
+      // Small: sample from level 1 and 2 pools
+      const smallPool = [];
+      for (const d of denoms) {
+        for (let m = 2; m <= 12; m++) {
+          const whole = d * m;
+          if (whole > 144) continue;
+          // Unit fraction
+          smallPool.push({ n: 1, d: d, whole: whole, answer: m });
+          // Non-unit fractions
+          for (let n = 2; n < d; n++) {
+            smallPool.push({ n: n, d: d, whole: whole, answer: n * m });
+          }
+        }
+      }
+      // Large: denominator × 10 through denominator × 120, all proper fractions
+      for (const d of denoms) {
+        for (let m = 10; m <= 120; m += 10) {
+          const whole = d * m;
+          for (let n = 1; n < d; n++) {
+            const answer = n * m;
+            pool.push({ n: n, d: d, whole: whole, answer: answer, large: true });
+          }
+        }
+      }
+      // Add 30% small questions - will be drawn proportionally in generate
+      for (const q of smallPool) pool.push({ ...q, large: false });
+    }
+    return pool;
+  }
+
+  function fonDraw(pool, needed) {
+    // Simple draw that doesn't require a label property
+    const maxRepeats = Math.max(2, Math.ceil(needed / pool.length));
+    const counts = new Map();
+    const result = [];
+    let passes = 0;
+    while (result.length < needed) {
+      passes++;
+      const shuffled = [...pool].sort(() => Math.random() - 0.5);
+      for (const q of shuffled) {
+        const key = q.n + '/' + q.d + ':' + q.whole;
+        const seen = counts.get(key) || 0;
+        if (seen < maxRepeats && result.length < needed) { result.push(q); counts.set(key, seen + 1); }
+      }
+      if (passes > 20) break;
+    }
+    return result;
+  }
+
+  function fonGenerateQuestions(level, count) {
+    if (level === '3') {
+      const allPool = fonBuildPool('3');
+      const large = allPool.filter(q => q.large);
+      const small = allPool.filter(q => !q.large);
+      const smallCount = Math.round(count * 0.3);
+      const largeCount = count - smallCount;
+      const drawn = [
+        ...fonDraw(large, largeCount),
+        ...fonDraw(small, smallCount)
+      ].map(q => fonMakeQ(q));
+      return shuffleNoConsec(drawn);
+    }
+    const pool = fonBuildPool(level);
+    const drawn = fonDraw(pool, count).map(q => fonMakeQ(q));
+    return shuffleNoConsec(drawn);
+  }
+
+  function fonMakeQ(q) {
+    // Randomly use 'of' or '×' (multiplication symbol)
+    const useOf = Math.random() < 0.5;
+    const fracH = fracHTML(q.n, q.d);
+    const qHTML = useOf
+      ? fracH + ' of ' + q.whole
+      : fracH + ' \u00d7 ' + q.whole;
+    const resultHTML = fracH + ' of ' + q.whole + ' = ' + q.answer;
+    const label = q.n + '/' + q.d + (useOf ? ' of ' : ' \u00d7 ') + q.whole;
+    return { qHTML, resultHTML, label, answer: q.answer };
+  }
+
+  // ── FON setup handlers ────────────────────────────────────────────────────
+  function fonUpdateStartBtn() {
+    const timedOk = fonSelTimed === false || (fonSelTimed === true && fonSelTime !== null);
+    document.getElementById('fon-start-btn').disabled = !(fonSelCount !== null && fonSelTimed !== null && timedOk);
+  }
+
+  function fonResetSetup() {
+    clearInterval(fonState.timerInterval);
+    document.getElementById('fon-quiz').classList.remove('active');
+    document.getElementById('fon-results').classList.remove('active');
+    document.getElementById('fon-setup').style.display = '';
+    fonSelLevel = '1'; fonSelCount = null; fonSelTimed = null; fonSelTime = null;
+    document.querySelectorAll('[data-fon-level]').forEach(b => b.classList.remove('selected'));
+    document.querySelector('[data-fon-level="1"]').classList.add('selected');
+    document.querySelectorAll('[data-fon-qcount]').forEach(b => b.classList.remove('selected'));
+    document.querySelectorAll('[data-fon-timed]').forEach(b => b.classList.remove('selected'));
+    document.querySelectorAll('[data-fon-timelimit]').forEach(b => b.classList.remove('selected'));
+    document.getElementById('fon-time-options').classList.remove('visible');
+    fonUpdateStartBtn();
+  }
+
+  function fonSelectLevel(btn) {
+    document.querySelectorAll('[data-fon-level]').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected'); fonSelLevel = btn.dataset.fonLevel; fonUpdateStartBtn();
+  }
+  function fonSelectCount(btn) {
+    document.querySelectorAll('[data-fon-qcount]').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected'); fonSelCount = parseInt(btn.dataset.fonQcount); fonUpdateStartBtn();
+  }
+  function fonSelectTimed(btn) {
+    document.querySelectorAll('[data-fon-timed]').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected'); fonSelTimed = btn.dataset.fonTimed === 'true';
+    const opts = document.getElementById('fon-time-options');
+    if (fonSelTimed) { opts.classList.add('visible'); }
+    else { opts.classList.remove('visible'); fonSelTime = null; document.querySelectorAll('[data-fon-timelimit]').forEach(b => b.classList.remove('selected')); }
+    fonUpdateStartBtn();
+  }
+  function fonSelectTime(btn) {
+    document.querySelectorAll('[data-fon-timelimit]').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected'); fonSelTime = parseInt(btn.dataset.fonTimelimit); fonUpdateStartBtn();
+  }
+
+  // ── FON test ──────────────────────────────────────────────────────────────
+  function fonStartTest(questions) {
+    fonState.questions = questions; fonState.current = 0; fonState.userAnswers = []; fonState.elapsed = 0;
+    document.getElementById('fon-setup').style.display = 'none';
+    document.getElementById('fon-results').classList.remove('active');
+    document.getElementById('fon-quiz').classList.add('active');
+    const timerEl = document.getElementById('fon-timer');
+    if (fonState.timed) {
+      fonState.remaining = fonState.timelimit; timerEl.style.display = 'block'; timerEl.textContent = formatTime(fonState.remaining); timerEl.className = 'quiz-timer';
+      fonState.timerInterval = setInterval(() => {
+        fonState.remaining--; timerEl.textContent = formatTime(fonState.remaining);
+        if (fonState.remaining <= 30) timerEl.className = 'quiz-timer warning';
+        if (fonState.remaining <= 10) timerEl.className = 'quiz-timer danger';
+        if (fonState.remaining <= 0) { clearInterval(fonState.timerInterval); fonFinishTest(true); }
+      }, 1000);
+    } else { timerEl.style.display = 'none'; fonState.timerInterval = setInterval(() => { fonState.elapsed++; }, 1000); }
+    fonShowQuestion();
+  }
+
+  function fonShowQuestion() {
+    const q = fonState.questions[fonState.current];
+    const total = fonState.questions.length;
+    document.getElementById('fon-progress').textContent = 'Question ' + (fonState.current + 1) + ' of ' + total;
+    document.getElementById('fon-progress-bar').style.width = (fonState.current / total * 100) + '%';
+    document.getElementById('fon-question').innerHTML = q.qHTML;
+    const input = document.getElementById('fon-answer');
+    input.value = ''; input.focus();
+  }
+
+  function fonSubmitAnswer() {
+    const input = document.getElementById('fon-answer');
+    const raw = input.value.trim();
+    if (raw === '') return;
+    const given = parseInt(raw, 10);
+    if (isNaN(given)) return;
+    const q = fonState.questions[fonState.current];
+    fonState.userAnswers.push({ q, correct: q.answer, given, isCorrect: given === q.answer, unanswered: false });
+    fonState.current++;
+    if (fonState.current >= fonState.questions.length) { fonFinishTest(false); } else { fonShowQuestion(); }
+  }
+
+  document.getElementById('fon-answer').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') { e.preventDefault(); fonSubmitAnswer(); return; }
+    const allowed = ['Backspace','Delete','Tab','ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home','End'];
+    if (allowed.includes(e.key)) return;
+    if (!/^\d$/.test(e.key)) e.preventDefault();
+  });
+
+  function fonFinishTest(timedOut) {
+    clearInterval(fonState.timerInterval);
+    if (timedOut) {
+      for (let i = fonState.current; i < fonState.questions.length; i++) {
+        fonState.userAnswers.push({ q: fonState.questions[i], correct: fonState.questions[i].answer, given: null, isCorrect: false, unanswered: true });
+      }
+    }
+    document.getElementById('fon-quiz').classList.remove('active');
+    const correct = fonState.userAnswers.filter(a => a.isCorrect).length;
+    const total = fonState.userAnswers.length;
+    const answeredWrong = fonState.userAnswers.filter(a => !a.isCorrect && !a.unanswered);
+    const allWrong = fonState.userAnswers.filter(a => !a.isCorrect);
+    const perfect = correct === total;
+    document.getElementById('fon-score').textContent = correct + '/' + total;
+    const timeEl = document.getElementById('fon-time-taken');
+    if (fonState.timed) { const used = fonState.timelimit - fonState.remaining; timeEl.textContent = timedOut ? 'Time ran out' : 'Time taken: ' + formatTime(used); }
+    else { timeEl.textContent = 'Time taken: ' + formatTime(fonState.elapsed); }
+    const perfectEl = document.getElementById('fon-perfect');
+    const wrongWrap = document.getElementById('fon-wrong-wrap');
+    const wrongList = document.getElementById('fon-wrong-list');
+    const actionsEl = document.getElementById('fon-actions');
+    if (perfect) {
+      perfectEl.style.display = 'block'; wrongWrap.style.display = 'none';
+      actionsEl.innerHTML = '<button class="results-btn secondary" onclick="fonResetSetup()">\u2190 Menu</button><button class="results-btn primary" onclick="fonRetakeSame()">Try again</button>';
+      if (!fonState.wrongOnly) launchConfetti();
+    } else {
+      perfectEl.style.display = 'none'; wrongWrap.style.display = 'block';
+      wrongList.innerHTML = allWrong.map(a =>
+        '<li><span class="q">' + a.q.resultHTML + '</span>' + (a.unanswered ? '<span class="not-ans">Not answered</span>' : '<span class="your-ans">You answered: ' + a.given + '</span>') + '</li>'
+      ).join('');
+      const retryBtn = answeredWrong.length > 0 ? '<button class="results-btn green-btn" onclick="fonRetakeWrong()">Retry wrong answers</button>' : '';
+      actionsEl.innerHTML = '<button class="results-btn secondary" onclick="fonResetSetup()">\u2190 Menu</button><button class="results-btn primary" onclick="fonRetakeSame()">Try again</button>' + retryBtn;
+    }
+    document.getElementById('fon-results').classList.add('active');
+  }
+
+  function fonRetakeSame() {
+    document.getElementById('fon-results').classList.remove('active');
+    fonState.wrongOnly = false;
+    fonStartTest(fonGenerateQuestions(fonState.level, fonState.qcount));
+  }
+
+  function fonRetakeWrong() {
+    const answeredWrong = fonState.userAnswers.filter(a => !a.isCorrect && !a.unanswered);
+    const wrongQs = answeredWrong.map(a => a.q);
+    const count = Math.min(wrongQs.length, fonState.qcount);
+    const filled = [];
+    while (filled.length < count) { filled.push(...shuffleNoConsec([...wrongQs])); }
+    document.getElementById('fon-results').classList.remove('active');
+    fonState.wrongOnly = true; fonState.timed = false;
+    fonStartTest(filled.slice(0, count));
+  }
+
+  document.getElementById('fon-start-btn').addEventListener('click', function() {
+    fonState.level = fonSelLevel; fonState.qcount = fonSelCount;
+    fonState.timed = fonSelTimed; fonState.timelimit = fonSelTime; fonState.wrongOnly = false;
+    fonStartTest(fonGenerateQuestions(fonSelLevel, fonSelCount));
   });
 
 </script>
