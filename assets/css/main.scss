@@ -89,6 +89,8 @@ main { flex: 1; }
 .om-hero-btns { position: relative; z-index: 1; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; padding-top: 3rem; width: 100%; }
 .om-btn-green { background: var(--green); color: #fff; padding: 13px 26px; border-radius: 8px; font-size: 15px; font-weight: 700; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: background 0.12s; text-decoration: none; display: inline-block; }
 .om-btn-green:hover { background: var(--green-dark); }
+.om-btn-blue { background: var(--blue); color: #fff; padding: 13px 26px; border-radius: 8px; font-size: 15px; font-weight: 700; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: background 0.12s; text-decoration: none; display: inline-block; }
+.om-btn-blue:hover { background: var(--blue-dark); }
 .om-btn-dark-outline { background: transparent; color: #fff; padding: 13px 26px; border-radius: 8px; font-size: 15px; font-weight: 700; border: 1.5px solid rgba(255,255,255,0.25); cursor: pointer; font-family: 'DM Sans', sans-serif; transition: border-color 0.12s; text-decoration: none; display: inline-block; }
 .om-btn-dark-outline:hover { border-color: rgba(255,255,255,0.55); }
 
