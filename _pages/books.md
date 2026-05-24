@@ -5,7 +5,7 @@ description: Maths revision books from Operation Maths to support KS2 and KS3 st
 permalink: /books/
 ---
 
-<section class="om-hero" style="min-height:0; padding: 4rem 2rem 3.5rem;">
+<section class="om-hero" style="min-height:0; padding: 4rem 2rem 1rem;">
   <h1>Maths <em>books</em></h1>
   <p>A selection of books available on Amazon to support learning the foundations of maths.</p>
   <p style="color:#6b7280;font-size:13px;font-weight:300;margin-top:0.5rem;">(As an Amazon Associate I earn from qualifying purchases.)</p>
