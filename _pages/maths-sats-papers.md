@@ -587,6 +587,6 @@ permalink: /maths-sats-papers/
 <script>
   var btn = document.getElementById('backToTop');
   window.addEventListener('scroll', function() {
-    btn.classList.toggle('visible', window.scrollY > 400);
+    btn.classList.toggle('visible', window.scrollY > (window.innerWidth <= 600 ? 600 : 800));
   });
 </script>
