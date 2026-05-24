@@ -89,12 +89,12 @@ body_class: page-home
         {% assign dated_worksheets = site.worksheets | where_exp: "ws", "ws.date_added != nil" | sort: "date_added" | reverse %}
         {% assign latest_worksheets = dated_worksheets | limit: 3 %}
         {% for ws in latest_worksheets %}
-          {% if ws.topic == "number" %}{% assign topic_color = "var(--green)" %}
-          {% elsif ws.topic == "shape" %}{% assign topic_color = "var(--blue)" %}
-          {% elsif ws.topic == "algebra" %}{% assign topic_color = "var(--purple)" %}
-          {% elsif ws.topic == "formulae" %}{% assign topic_color = "var(--orange)" %}
+          {% if ws.topic == "number" %}{% assign topic_color = "var(--blue)" %}
+          {% elsif ws.topic == "shape" %}{% assign topic_color = "var(--orange)" %}
+          {% elsif ws.topic == "algebra" %}{% assign topic_color = "var(--green)" %}
+          {% elsif ws.topic == "formulae" %}{% assign topic_color = "var(--purple)" %}
           {% elsif ws.topic == "times-tables" %}{% assign topic_color = "var(--blue)" %}
-          {% elsif ws.topic == "support-sheets" %}{% assign topic_color = "var(--green)" %}
+          {% elsif ws.topic == "support-sheets" %}{% assign topic_color = "var(--orange)" %}
           {% else %}{% assign topic_color = "var(--blue)" %}{% endif %}
           {% assign topic_label = ws.topic | replace: "-", " " | capitalize %}
         <article class="om-latest-card">
