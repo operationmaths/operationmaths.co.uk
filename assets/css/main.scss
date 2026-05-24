@@ -198,11 +198,15 @@ main { flex: 1; }
 }
 
 @media (max-width: 480px) {
+  /* hide sheets 4 and 5, show 3-sheet pyramid */
   .om-hero-ws:nth-child(4),
   .om-hero-ws:nth-child(5) { display: none; }
-  .om-hero-ws { width: 110px; height: 110px; }
-  .om-hero-ws:nth-child(2) { height: 135px; }
-  .om-hero-ws:nth-child(3) { width: 130px; height: 160px; }
+  /* reorder so remaining 3 form a pyramid: sheet 1=left/short, 2=centre/tall, 3=right/mid */
+  .om-hero-ws { width: 115px; height: 115px; }
+  .om-hero-ws:nth-child(2) { height: 170px; width: 130px; }
+  .om-hero-ws:nth-child(3) { height: 140px; width: 115px; }
+  /* increase fade on mobile so bottom never shows bright edge */
+  .om-hero-ws::after { height: 40%; }
 }
 
 /* STRIP */
