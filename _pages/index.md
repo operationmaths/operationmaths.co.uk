@@ -8,41 +8,6 @@ body_class: page-home
 
 <main>
   <section class="om-hero" aria-label="Hero">
-    <div class="om-hero-bg" aria-hidden="true">
-      <div class="om-ws-float" style="width:80px;height:110px;left:3%;top:8%;transform:rotate(-12deg)">
-        <div class="wf-title" style="background:var(--blue)"></div>
-        <div class="wf-line" style="width:90%"></div><div class="wf-line" style="width:70%"></div>
-        <div class="wf-box"></div><div class="wf-line" style="width:80%"></div><div class="wf-box"></div>
-      </div>
-      <div class="om-ws-float" style="width:100px;height:70px;left:8%;top:58%;transform:rotate(8deg)">
-        <div class="wf-title" style="background:var(--orange)"></div>
-        <div class="wf-line" style="width:90%"></div><div class="wf-line" style="width:70%"></div><div class="wf-line" style="width:80%"></div>
-      </div>
-      <div class="om-ws-float" style="width:70px;height:95px;left:1%;top:30%;transform:rotate(5deg)">
-        <div class="wf-title" style="background:var(--green)"></div>
-        <div class="wf-line" style="width:90%"></div><div class="wf-box"></div><div class="wf-line" style="width:70%"></div><div class="wf-box"></div>
-      </div>
-      <div class="om-ws-float" style="width:90px;height:55px;left:14%;top:74%;transform:rotate(-6deg)">
-        <div class="wf-title" style="background:var(--purple)"></div>
-        <div class="wf-line" style="width:90%"></div><div class="wf-line" style="width:60%"></div>
-      </div>
-      <div class="om-ws-float" style="width:80px;height:110px;right:3%;top:10%;transform:rotate(11deg)">
-        <div class="wf-title" style="background:var(--green)"></div>
-        <div class="wf-line" style="width:90%"></div><div class="wf-box"></div><div class="wf-line" style="width:70%"></div><div class="wf-box"></div><div class="wf-line" style="width:80%"></div>
-      </div>
-      <div class="om-ws-float" style="width:95px;height:68px;right:9%;top:60%;transform:rotate(-9deg)">
-        <div class="wf-title" style="background:var(--blue)"></div>
-        <div class="wf-line" style="width:90%"></div><div class="wf-line" style="width:75%"></div><div class="wf-box"></div>
-      </div>
-      <div class="om-ws-float" style="width:72px;height:90px;right:1%;top:32%;transform:rotate(-4deg)">
-        <div class="wf-title" style="background:var(--orange)"></div>
-        <div class="wf-line" style="width:90%"></div><div class="wf-box"></div><div class="wf-line" style="width:65%"></div><div class="wf-box"></div>
-      </div>
-      <div class="om-ws-float" style="width:88px;height:55px;right:15%;top:76%;transform:rotate(7deg)">
-        <div class="wf-title" style="background:var(--purple)"></div>
-        <div class="wf-line" style="width:90%"></div><div class="wf-line" style="width:55%"></div>
-      </div>
-    </div>
     <div class="om-hero-content">
       <h1>More practice, <em>better results</em></h1>
       <p>Worksheets, SATs resources and maths books for primary and secondary students. Every worksheet topic includes 7 sheets, so there's always another chance to build confidence and fluency. Worksheet A is always free.</p>
@@ -50,6 +15,13 @@ body_class: page-home
     <div class="om-hero-btns">
       <a href="{{ site.baseurl }}/worksheets/" class="om-btn-green">Browse free worksheets</a>
       <a href="{{ site.baseurl }}/sats-course" class="om-btn-dark-outline">SATs course <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+    </div>
+    <div class="om-hero-ws-row">
+      <div class="om-hero-ws"><img src="{{ site.baseurl }}/assets/images/hero-ws-1.jpg" alt="Expand and factorise worksheet"></div>
+      <div class="om-hero-ws"><img src="{{ site.baseurl }}/assets/images/hero-ws-2.jpg" alt="Metric conversions worksheet"></div>
+      <div class="om-hero-ws om-hero-ws-tall"><img src="{{ site.baseurl }}/assets/images/hero-ws-3.jpg" alt="All operations worksheet"></div>
+      <div class="om-hero-ws"><img src="{{ site.baseurl }}/assets/images/hero-ws-4.jpg" alt="Parts of a circle worksheet"></div>
+      <div class="om-hero-ws"><img src="{{ site.baseurl }}/assets/images/hero-ws-5.jpg" alt="9 times table worksheet"></div>
     </div>
   </section>
 
