@@ -6,7 +6,7 @@ permalink: /maths-sats-papers/
 ---
 <main class="sats-page">
   <!-- ── HERO ── -->
-<section class="om-hero" aria-label="Hero">
+<section class="om-hero" aria-label="Hero" style="min-height:0; padding: 4rem 2rem 1rem;">
     <h1>Past Key Stage 2 maths <em>SATs papers</em></h1>
     <p>All Year 6 maths SATs papers from 2016 to 2025 – free to view and download, with mark schemes included.</p>
     <p class="om-hero-note">Contains material developed by the Standards and Testing Agency and licensed under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" target="_blank" rel="noopener noreferrer">Open Government Licence v3.0</a>.</p>
