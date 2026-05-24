@@ -6,7 +6,7 @@ permalink: /sats-course/
 body_class: page-sats-course
 ---
 
-<section class="om-hero" style="min-height:0; padding: 3.5rem 2rem 2.5rem;">
+<section class="om-hero" style="min-height:0; padding: 3.5rem 2rem 1rem;">
   <h1>Year 6 maths <em>SATs course</em></h1>
   <p>Help your child prepare for their Key Stage 2 SATs with weekly video lessons, a free resource pack posted to your door and expert teaching from a qualified teacher – all for just £99.</p>
   <nav class="jump-nav" role="navigation" aria-label="Jump to section" style="margin-top:1.75rem;">
