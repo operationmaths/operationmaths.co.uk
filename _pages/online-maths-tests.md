@@ -24,7 +24,7 @@ permalink: /online-maths-tests/
 .fdp-opt-btn.selected { background: var(--blue); border-color: var(--blue); color: #fff; }
 </style>
 
-<section class="om-hero" style="min-height:0; padding: 4rem 2rem 3.5rem;">
+<section class="om-hero" style="min-height:0; padding: 4rem 2rem 1rem;">
   <h1>Online <em>maths tests</em></h1>
   <p>Choose a test below, pick your settings and go.<br>One question at a time – results at the end.</p>
   <div class="test-tabs" style="margin-top:1.75rem;">
