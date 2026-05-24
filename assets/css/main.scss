@@ -711,6 +711,14 @@ main { flex: 1; }
   pointer-events: auto;
 }
 .back-to-top:hover {
-  background: var(--green-dark, var(--green));
   filter: brightness(0.9);
+}
+@media (max-width: 600px) {
+  .back-to-top {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+    bottom: 1rem;
+    right: 1rem;
+  }
 }
