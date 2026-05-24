@@ -5,7 +5,7 @@ description: Get in touch with Operation Maths for tuition enquiries or workshee
 permalink: /contact/
 ---
 
-<section class="om-hero" style="min-height:0; padding: 4rem 2rem 3.5rem;">
+<section class="om-hero" style="min-height:0; padding: 4rem 2rem 1rem;">
   <h1>Get in <em>touch</em></h1>
 </section>
 
