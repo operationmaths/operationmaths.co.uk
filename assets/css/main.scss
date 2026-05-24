@@ -439,7 +439,7 @@ main { flex: 1; }
 .worksheet-page .wc-actions { display: flex; align-items: center; gap: 8px; padding: 16px 20px 16px 0; flex-shrink: 0; border-top: none; }
 
 /* HERO JUMP LINKS (worksheet topic pages) */
-.om-hero-nav { margin-top: 1.5rem; padding-bottom: 4rem; width: 100%; max-width: 820px; }
+.om-hero-nav { margin-top: 1.5rem; padding-bottom: 0.75rem; width: 100%; max-width: 820px; }
 .om-hero-nav-grid { display: flex; flex-wrap: wrap; gap: 7px; justify-content: center; }
 .om-hero-nav a { display: inline-block; font-size: 12px; font-weight: 700; color: #d1d5db; text-decoration: none; padding: 5px 11px; border: 1.5px solid #374151; border-radius: 6px; background: transparent; transition: background 0.12s, color 0.12s, border-color 0.12s; white-space: nowrap; }
 .om-hero-nav a:hover { background: #374151; color: #fff; border-color: #374151; }
