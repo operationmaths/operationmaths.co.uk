@@ -5,7 +5,7 @@ description: Learn about Operation Maths — maths tuition and worksheet resourc
 permalink: /about/
 ---
 
-<section class="om-hero" style="min-height:0; padding: 4rem 2rem 3.5rem;">
+<section class="om-hero" style="min-height:0; padding: 4rem 2rem 1rem;">
   <h1>About <em>Operation Maths</em></h1>
   <p>A qualified teacher with years of classroom and private tuition experience, creating resources that actually work.</p>
 </section>
