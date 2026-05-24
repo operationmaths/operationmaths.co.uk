@@ -32,6 +32,8 @@ permalink: /online-maths-tests/
     <button class="test-tab" data-target="metric-conversions">Metric conversions</button>
     <button class="test-tab" data-target="fdp-conversions">FDP conversions</button>
     <button class="test-tab" data-target="fon">Fractions of numbers</button>
+    <button class="test-tab" data-target="rounding">Rounding</button>
+    <button class="test-tab" data-target="powers-roots">Powers and roots</button>
   </div>
 </section>
 
@@ -420,6 +422,157 @@ permalink: /online-maths-tests/
       </div>
 
     </div>
+
+    <!-- ROUNDING PANEL -->
+    <div class="test-panel" id="panel-rounding">
+
+      <div class="setup-card" id="rnd-setup">
+        <div class="setup-section">
+          <span class="setup-section-title">Round to nearest</span>
+          <div class="option-row">
+            <button class="option-btn dark-btn" data-rnd-type="10" onclick="rndSelectType(this)">Nearest 10</button>
+            <button class="option-btn dark-btn" data-rnd-type="100" onclick="rndSelectType(this)">Nearest 100</button>
+            <button class="option-btn dark-btn" data-rnd-type="1000" onclick="rndSelectType(this)">Nearest 1,000</button>
+            <button class="option-btn dark-btn" data-rnd-type="mixed-whole" onclick="rndSelectType(this)">Mixed</button>
+          </div>
+        </div>
+        <div class="setup-section">
+          <span class="setup-section-title">Round to</span>
+          <div class="option-row">
+            <button class="option-btn dark-btn" data-rnd-type="dp" onclick="rndSelectType(this)">Decimal places</button>
+            <button class="option-btn dark-btn" data-rnd-type="sf" onclick="rndSelectType(this)">Significant figures</button>
+            <button class="option-btn dark-btn" data-rnd-type="mixed-dpSf" onclick="rndSelectType(this)">Mixed</button>
+          </div>
+        </div>
+        <div class="setup-section">
+          <span class="setup-section-title">Questions</span>
+          <div class="option-row">
+            <button class="option-btn green-btn" data-rnd-qcount="20" onclick="rndSelectCount(this)">Quick test (20 questions)</button>
+            <button class="option-btn green-btn" data-rnd-qcount="60" onclick="rndSelectCount(this)">Full test (60 questions)</button>
+          </div>
+        </div>
+        <div class="setup-section">
+          <span class="setup-section-title">Timing</span>
+          <div class="option-row">
+            <button class="option-btn purple-btn" data-rnd-timed="false" onclick="rndSelectTimed(this)">Untimed</button>
+            <button class="option-btn purple-btn" data-rnd-timed="true" onclick="rndSelectTimed(this)">Timed</button>
+          </div>
+          <div class="time-options" id="rnd-time-options">
+            <span class="setup-section-title" style="margin-top:0.75rem;display:block">Time limit</span>
+            <div class="option-row">
+              <button class="option-btn purple-btn" data-rnd-timelimit="60" onclick="rndSelectTime(this)">1 minute</button>
+              <button class="option-btn purple-btn" data-rnd-timelimit="120" onclick="rndSelectTime(this)">2 minutes</button>
+              <button class="option-btn purple-btn" data-rnd-timelimit="300" onclick="rndSelectTime(this)">5 minutes</button>
+            </div>
+          </div>
+        </div>
+        <div class="setup-section">
+          <button class="start-btn" id="rnd-start-btn" disabled>Start test</button>
+        </div>
+      </div>
+
+      <div class="quiz-card" id="rnd-quiz">
+        <div class="quiz-meta">
+          <span class="quiz-progress" id="rnd-progress">Question 1 of 20</span>
+          <span class="quiz-timer" id="rnd-timer" style="display:none"></span>
+        </div>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="rnd-progress-bar" style="width:0%"></div>
+        </div>
+        <div class="quiz-question" id="rnd-question"></div>
+        <div class="quiz-input-wrap">
+          <input class="quiz-input" id="rnd-answer" type="text" inputmode="decimal" autocomplete="off" placeholder="?">
+        </div>
+        <p class="quiz-hint">Type your answer and press Enter to continue</p>
+        <button class="quiz-next-btn" id="rnd-next-btn" onclick="rndSubmitAnswer()">Next question &#8594;</button>
+        <button class="quiz-menu-btn" id="rnd-quiz-menu-btn" onclick="rndResetSetup()">&#8592; Menu</button>
+      </div>
+
+      <div class="results-card" id="rnd-results">
+        <div class="results-score" id="rnd-score">17/20</div>
+        <div class="results-label">correct answers</div>
+        <div class="results-time" id="rnd-time-taken"></div>
+        <div class="results-perfect" id="rnd-perfect" style="display:none">Full marks &#8212; excellent work!</div>
+        <div class="results-wrong" id="rnd-wrong-wrap" style="display:none">
+          <h3>Incorrect or unanswered questions</h3>
+          <ul class="wrong-list" id="rnd-wrong-list"></ul>
+        </div>
+        <div class="results-actions" id="rnd-actions"></div>
+      </div>
+
+    </div>
+
+    <!-- POWERS AND ROOTS PANEL -->
+    <div class="test-panel" id="panel-powers-roots">
+
+      <div class="setup-card" id="pr-setup">
+        <div class="setup-section">
+          <span class="setup-section-title">Type</span>
+          <div class="option-row">
+            <button class="option-btn dark-btn" data-pr-type="squares" onclick="prSelectType(this)">Squares</button>
+            <button class="option-btn dark-btn" data-pr-type="square-roots" onclick="prSelectType(this)">Square roots</button>
+            <button class="option-btn dark-btn" data-pr-type="cubes" onclick="prSelectType(this)">Cubes</button>
+            <button class="option-btn dark-btn" data-pr-type="cube-roots" onclick="prSelectType(this)">Cube roots</button>
+            <button class="option-btn dark-btn" data-pr-type="mixed" onclick="prSelectType(this)">Mixed</button>
+          </div>
+        </div>
+        <div class="setup-section">
+          <span class="setup-section-title">Questions</span>
+          <div class="option-row">
+            <button class="option-btn green-btn" data-pr-qcount="20" onclick="prSelectCount(this)">Quick test (20 questions)</button>
+            <button class="option-btn green-btn" data-pr-qcount="60" onclick="prSelectCount(this)">Full test (60 questions)</button>
+          </div>
+        </div>
+        <div class="setup-section">
+          <span class="setup-section-title">Timing</span>
+          <div class="option-row">
+            <button class="option-btn purple-btn" data-pr-timed="false" onclick="prSelectTimed(this)">Untimed</button>
+            <button class="option-btn purple-btn" data-pr-timed="true" onclick="prSelectTimed(this)">Timed</button>
+          </div>
+          <div class="time-options" id="pr-time-options">
+            <span class="setup-section-title" style="margin-top:0.75rem;display:block">Time limit</span>
+            <div class="option-row">
+              <button class="option-btn purple-btn" data-pr-timelimit="60" onclick="prSelectTime(this)">1 minute</button>
+              <button class="option-btn purple-btn" data-pr-timelimit="120" onclick="prSelectTime(this)">2 minutes</button>
+              <button class="option-btn purple-btn" data-pr-timelimit="300" onclick="prSelectTime(this)">5 minutes</button>
+            </div>
+          </div>
+        </div>
+        <div class="setup-section">
+          <button class="start-btn" id="pr-start-btn" disabled>Start test</button>
+        </div>
+      </div>
+
+      <div class="quiz-card" id="pr-quiz">
+        <div class="quiz-meta">
+          <span class="quiz-progress" id="pr-progress">Question 1 of 20</span>
+          <span class="quiz-timer" id="pr-timer" style="display:none"></span>
+        </div>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="pr-progress-bar" style="width:0%"></div>
+        </div>
+        <div class="quiz-question" id="pr-question"></div>
+        <div class="quiz-input-wrap">
+          <input class="quiz-input" id="pr-answer" type="text" inputmode="numeric" autocomplete="off" placeholder="?">
+        </div>
+        <p class="quiz-hint">Type your answer and press Enter to continue</p>
+        <button class="quiz-next-btn" id="pr-next-btn" onclick="prSubmitAnswer()">Next question &#8594;</button>
+        <button class="quiz-menu-btn" id="pr-quiz-menu-btn" onclick="prResetSetup()">&#8592; Menu</button>
+      </div>
+
+      <div class="results-card" id="pr-results">
+        <div class="results-score" id="pr-score">17/20</div>
+        <div class="results-label">correct answers</div>
+        <div class="results-time" id="pr-time-taken"></div>
+        <div class="results-perfect" id="pr-perfect" style="display:none">Full marks &#8212; excellent work!</div>
+        <div class="results-wrong" id="pr-wrong-wrap" style="display:none">
+          <h3>Incorrect or unanswered questions</h3>
+          <ul class="wrong-list" id="pr-wrong-list"></ul>
+        </div>
+        <div class="results-actions" id="pr-actions"></div>
+      </div>
+
+    </div>
   </div>
 </main>
 
@@ -440,6 +593,12 @@ permalink: /online-maths-tests/
 
   const fonState = { questions: [], current: 0, userAnswers: [], elapsed: 0, remaining: 0, timerInterval: null, timed: false, timelimit: null, level: '1', qcount: null, wrongOnly: false };
   let fonSelLevel = '1', fonSelCount = null, fonSelTimed = null, fonSelTime = null;
+
+  const rndState = { questions: [], current: 0, userAnswers: [], elapsed: 0, remaining: 0, timerInterval: null, timed: false, timelimit: null, type: null, qcount: null, wrongOnly: false };
+  let rndSelType = null, rndSelCount = null, rndSelTimed = null, rndSelTime = null;
+
+  const prState = { questions: [], current: 0, userAnswers: [], elapsed: 0, remaining: 0, timerInterval: null, timed: false, timelimit: null, type: null, qcount: null, wrongOnly: false };
+  let prSelType = null, prSelCount = null, prSelTimed = null, prSelTime = null;
 
   // ── SHARED ────────────────────────────────────────────────────────────────
   function formatTime(secs) {
@@ -523,6 +682,8 @@ permalink: /online-maths-tests/
     mcResetSetup();
     if (typeof fdpResetSetup === 'function') fdpResetSetup();
     if (typeof fonResetSetup === 'function') fonResetSetup();
+    if (typeof rndResetSetup === 'function') rndResetSetup();
+    if (typeof prResetSetup === 'function') prResetSetup();
   }
 
   document.querySelectorAll('.test-tab').forEach(tab => {
@@ -535,7 +696,7 @@ permalink: /online-maths-tests/
 
   (function() {
     const hash = window.location.hash.replace('#', '') || 'times-tables';
-    const valid = ['times-tables', 'number-bonds', 'metric-conversions', 'fdp-conversions', 'fon'];
+    const valid = ['times-tables', 'number-bonds', 'metric-conversions', 'fdp-conversions', 'fon', 'rounding', 'powers-roots'];
     activateTab(valid.includes(hash) ? hash : 'times-tables');
   })();
 
@@ -1718,6 +1879,451 @@ permalink: /online-maths-tests/
     fonState.level = fonSelLevel; fonState.qcount = fonSelCount;
     fonState.timed = fonSelTimed; fonState.timelimit = fonSelTime; fonState.wrongOnly = false;
     fonStartTest(fonGenerateQuestions(fonSelLevel, fonSelCount));
+  });
+
+
+  // ── ROUNDING ──────────────────────────────────────────────────────────────
+
+  function rndFmt(n) { return parseFloat(n.toPrecision(15)).toString(); }
+
+  function rndBuildPool(type) {
+    const pool = [];
+
+    function addWhole(n, target) {
+      // target: 10, 100 or 1000
+      const ans = Math.round(n / target) * target;
+      const label = 'Round ' + n.toLocaleString() + ' to the nearest ' + target.toLocaleString();
+      pool.push({ label, question: label, answer: ans.toString(), resultLabel: label + ' = ' + ans.toLocaleString() });
+    }
+
+    function addDp(n, dp) {
+      const factor = Math.pow(10, dp);
+      const ans = Math.round(n * factor) / factor;
+      const ansStr = ans.toFixed(dp);
+      const label = 'Round ' + n + ' to ' + dp + ' decimal place' + (dp > 1 ? 's' : '');
+      pool.push({ label, question: label, answer: ansStr, resultLabel: label + ' = ' + ansStr });
+    }
+
+    function addSf(n, sf) {
+      // Round n to sf significant figures
+      if (n === 0) return;
+      const mag = Math.floor(Math.log10(Math.abs(n)));
+      const factor = Math.pow(10, sf - 1 - mag);
+      const ans = Math.round(n * factor) / factor;
+      const ansStr = rndFmt(ans);
+      const label = 'Round ' + n + ' to ' + sf + ' significant figure' + (sf > 1 ? 's' : '');
+      pool.push({ label, question: label, answer: ansStr, resultLabel: label + ' = ' + ansStr });
+    }
+
+    if (type === '10' || type === 'mixed-whole') {
+      // Numbers up to 9,999 for nearest 10
+      const nums10 = [];
+      for (let i = 0; i < 60; i++) {
+        const n = Math.floor(Math.random() * 9990) + 5;
+        // Ensure not already a multiple of 10
+        const adjusted = n % 10 === 0 ? n + 3 : n;
+        nums10.push(adjusted);
+      }
+      nums10.forEach(n => addWhole(n, 10));
+    }
+    if (type === '100' || type === 'mixed-whole') {
+      const nums100 = [];
+      for (let i = 0; i < 60; i++) {
+        const n = Math.floor(Math.random() * 99900) + 50;
+        const adjusted = n % 100 === 0 ? n + 37 : n;
+        nums100.push(adjusted);
+      }
+      nums100.forEach(n => addWhole(n, 100));
+    }
+    if (type === '1000' || type === 'mixed-whole') {
+      const nums1000 = [];
+      for (let i = 0; i < 60; i++) {
+        const n = Math.floor(Math.random() * 99000) + 500;
+        const adjusted = n % 1000 === 0 ? n + 371 : n;
+        nums1000.push(adjusted);
+      }
+      nums1000.forEach(n => addWhole(n, 1000));
+    }
+
+    if (type === 'dp' || type === 'mixed-dpSf') {
+      // Numbers up to 999 with up to 5 d.p.
+      for (let dp = 1; dp <= 3; dp++) {
+        for (let i = 0; i < 40; i++) {
+          const intPart = Math.floor(Math.random() * 999);
+          const decPlaces = dp + 1 + Math.floor(Math.random() * (4 - dp)); // always has more d.p. than target
+          const decPart = Math.floor(Math.random() * Math.pow(10, decPlaces));
+          const n = parseFloat((intPart + decPart / Math.pow(10, decPlaces)).toFixed(decPlaces));
+          // Skip if n already has <= dp decimal places
+          const nStr = n.toString();
+          const actualDp = nStr.includes('.') ? nStr.split('.')[1].length : 0;
+          if (actualDp <= dp) continue;
+          addDp(n, dp);
+        }
+      }
+    }
+
+    if (type === 'sf' || type === 'mixed-dpSf') {
+      // Whole numbers and decimals, up to 6 digits
+      for (let sf = 1; sf <= 3; sf++) {
+        // Straightforward: e.g. 3.471 → 2sf = 3.5
+        const straightNums = [
+          1.234, 2.567, 3.891, 4.123, 5.678, 6.234, 7.891, 8.456, 9.012,
+          12.34, 23.45, 34.56, 45.67, 56.78, 67.89, 78.91, 89.12, 91.23,
+          123.4, 234.5, 345.6, 456.7, 567.8, 678.9, 789.1, 891.2, 912.3,
+          1234, 2345, 3456, 4567, 5678, 6789, 7891, 8912, 9123,
+          12345, 23456, 34567, 45678, 56789, 67891
+        ];
+        straightNums.forEach(n => addSf(n, sf));
+        // Leading zeros: e.g. 0.003471 → 2sf = 0.0035
+        const leadingNums = [
+          0.001234, 0.002345, 0.003456, 0.004567, 0.005678, 0.006789,
+          0.01234, 0.02345, 0.03456, 0.04567, 0.05678, 0.06789,
+          0.1234, 0.2345, 0.3456, 0.4567, 0.5678, 0.6789
+        ];
+        leadingNums.forEach(n => addSf(n, sf));
+      }
+    }
+
+    return pool;
+  }
+
+  function rndUpdateStartBtn() {
+    const timedOk = rndSelTimed === false || (rndSelTimed === true && rndSelTime !== null);
+    document.getElementById('rnd-start-btn').disabled = !(rndSelType !== null && rndSelCount !== null && rndSelTimed !== null && timedOk);
+  }
+
+  function rndResetSetup() {
+    clearInterval(rndState.timerInterval);
+    document.getElementById('rnd-quiz').classList.remove('active');
+    document.getElementById('rnd-results').classList.remove('active');
+    document.getElementById('rnd-setup').style.display = '';
+    rndSelType = null; rndSelCount = null; rndSelTimed = null; rndSelTime = null;
+    document.querySelectorAll('[data-rnd-type]').forEach(b => b.classList.remove('selected'));
+    document.querySelectorAll('[data-rnd-qcount]').forEach(b => b.classList.remove('selected'));
+    document.querySelectorAll('[data-rnd-timed]').forEach(b => b.classList.remove('selected'));
+    document.querySelectorAll('[data-rnd-timelimit]').forEach(b => b.classList.remove('selected'));
+    document.getElementById('rnd-time-options').classList.remove('visible');
+    rndUpdateStartBtn();
+  }
+
+  function rndSelectType(btn) {
+    document.querySelectorAll('[data-rnd-type]').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected'); rndSelType = btn.dataset.rndType; rndUpdateStartBtn();
+  }
+  function rndSelectCount(btn) {
+    document.querySelectorAll('[data-rnd-qcount]').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected'); rndSelCount = parseInt(btn.dataset.rndQcount); rndUpdateStartBtn();
+  }
+  function rndSelectTimed(btn) {
+    document.querySelectorAll('[data-rnd-timed]').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected'); rndSelTimed = btn.dataset.rndTimed === 'true';
+    const opts = document.getElementById('rnd-time-options');
+    if (rndSelTimed) { opts.classList.add('visible'); }
+    else { opts.classList.remove('visible'); rndSelTime = null; document.querySelectorAll('[data-rnd-timelimit]').forEach(b => b.classList.remove('selected')); }
+    rndUpdateStartBtn();
+  }
+  function rndSelectTime(btn) {
+    document.querySelectorAll('[data-rnd-timelimit]').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected'); rndSelTime = parseInt(btn.dataset.rndTimelimit); rndUpdateStartBtn();
+  }
+
+  function rndGenerateQuestions(type, count) {
+    const pool = rndBuildPool(type);
+    return shuffleNoConsec(genericDrawCapped(pool, count));
+  }
+
+  function rndStartTest(questions) {
+    rndState.questions = questions; rndState.current = 0; rndState.userAnswers = []; rndState.elapsed = 0;
+    document.getElementById('rnd-setup').style.display = 'none';
+    document.getElementById('rnd-results').classList.remove('active');
+    document.getElementById('rnd-quiz').classList.add('active');
+    // Allow decimal input
+    const input = document.getElementById('rnd-answer');
+    input.dataset.decimal = '1';
+    const timerEl = document.getElementById('rnd-timer');
+    if (rndState.timed) {
+      rndState.remaining = rndState.timelimit; timerEl.style.display = 'block'; timerEl.textContent = formatTime(rndState.remaining); timerEl.className = 'quiz-timer';
+      rndState.timerInterval = setInterval(() => {
+        rndState.remaining--; timerEl.textContent = formatTime(rndState.remaining);
+        if (rndState.remaining <= 30) timerEl.className = 'quiz-timer warning';
+        if (rndState.remaining <= 10) timerEl.className = 'quiz-timer danger';
+        if (rndState.remaining <= 0) { clearInterval(rndState.timerInterval); rndFinishTest(true); }
+      }, 1000);
+    } else { timerEl.style.display = 'none'; rndState.timerInterval = setInterval(() => { rndState.elapsed++; }, 1000); }
+    rndShowQuestion();
+  }
+
+  function rndShowQuestion() {
+    const q = rndState.questions[rndState.current];
+    const total = rndState.questions.length;
+    document.getElementById('rnd-progress').textContent = 'Question ' + (rndState.current + 1) + ' of ' + total;
+    document.getElementById('rnd-progress-bar').style.width = (rndState.current / total * 100) + '%';
+    document.getElementById('rnd-question').textContent = q.question;
+    const input = document.getElementById('rnd-answer');
+    input.value = ''; input.focus();
+  }
+
+  function rndSubmitAnswer() {
+    const input = document.getElementById('rnd-answer');
+    const raw = input.value.trim();
+    if (raw === '') return;
+    const q = rndState.questions[rndState.current];
+    const isCorrect = parseFloat(raw) === parseFloat(q.answer);
+    rndState.userAnswers.push({ q, correct: q.answer, given: raw, isCorrect, unanswered: false });
+    rndState.current++;
+    if (rndState.current >= rndState.questions.length) { rndFinishTest(false); } else { rndShowQuestion(); }
+  }
+
+  document.getElementById('rnd-answer').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') { e.preventDefault(); rndSubmitAnswer(); return; }
+    const allowed = ['Backspace','Delete','Tab','ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home','End'];
+    if (allowed.includes(e.key)) return;
+    if (e.key === '.' && !this.value.includes('.')) return;
+    if (e.key === '-' && this.value === '') return;
+    if (!/^\d$/.test(e.key)) e.preventDefault();
+  });
+
+  function rndFinishTest(timedOut) {
+    clearInterval(rndState.timerInterval);
+    if (timedOut) {
+      for (let i = rndState.current; i < rndState.questions.length; i++) {
+        rndState.userAnswers.push({ q: rndState.questions[i], correct: rndState.questions[i].answer, given: null, isCorrect: false, unanswered: true });
+      }
+    }
+    document.getElementById('rnd-quiz').classList.remove('active');
+    const correct = rndState.userAnswers.filter(a => a.isCorrect).length;
+    const total = rndState.userAnswers.length;
+    const answeredWrong = rndState.userAnswers.filter(a => !a.isCorrect && !a.unanswered);
+    const allWrong = rndState.userAnswers.filter(a => !a.isCorrect);
+    const perfect = correct === total;
+    document.getElementById('rnd-score').textContent = correct + '/' + total;
+    const timeEl = document.getElementById('rnd-time-taken');
+    if (rndState.timed) { const used = rndState.timelimit - rndState.remaining; timeEl.textContent = timedOut ? 'Time ran out' : 'Time taken: ' + formatTime(used); }
+    else { timeEl.textContent = 'Time taken: ' + formatTime(rndState.elapsed); }
+    const perfectEl = document.getElementById('rnd-perfect');
+    const wrongWrap = document.getElementById('rnd-wrong-wrap');
+    const wrongList = document.getElementById('rnd-wrong-list');
+    const actionsEl = document.getElementById('rnd-actions');
+    if (perfect) {
+      perfectEl.style.display = 'block'; wrongWrap.style.display = 'none';
+      actionsEl.innerHTML = '<button class="results-btn secondary" onclick="rndResetSetup()">\u2190 Menu</button><button class="results-btn primary" onclick="rndRetakeSame()">Try again</button>';
+      if (!rndState.wrongOnly) launchConfetti();
+    } else {
+      perfectEl.style.display = 'none'; wrongWrap.style.display = 'block';
+      wrongList.innerHTML = allWrong.map(a =>
+        '<li><span class="q">' + a.q.resultLabel + '</span>' + (a.unanswered ? '<span class="not-ans">Not answered</span>' : '<span class="your-ans">You answered: ' + a.given + '</span>') + '</li>'
+      ).join('');
+      const retryBtn = answeredWrong.length > 0 ? '<button class="results-btn green-btn" onclick="rndRetakeWrong()">Retry wrong answers</button>' : '';
+      actionsEl.innerHTML = '<button class="results-btn secondary" onclick="rndResetSetup()">\u2190 Menu</button><button class="results-btn primary" onclick="rndRetakeSame()">Try again</button>' + retryBtn;
+    }
+    document.getElementById('rnd-results').classList.add('active');
+  }
+
+  function rndRetakeSame() {
+    document.getElementById('rnd-results').classList.remove('active');
+    rndState.wrongOnly = false;
+    rndStartTest(rndGenerateQuestions(rndState.type, rndState.qcount));
+  }
+
+  function rndRetakeWrong() {
+    const answeredWrong = rndState.userAnswers.filter(a => !a.isCorrect && !a.unanswered);
+    const wrongQs = answeredWrong.map(a => a.q);
+    const count = Math.min(wrongQs.length, rndState.qcount);
+    const filled = [];
+    while (filled.length < count) { filled.push(...shuffleNoConsec([...wrongQs])); }
+    document.getElementById('rnd-results').classList.remove('active');
+    rndState.wrongOnly = true; rndState.timed = false;
+    rndStartTest(filled.slice(0, count));
+  }
+
+  document.getElementById('rnd-start-btn').addEventListener('click', function() {
+    rndState.type = rndSelType; rndState.qcount = rndSelCount;
+    rndState.timed = rndSelTimed; rndState.timelimit = rndSelTime; rndState.wrongOnly = false;
+    rndStartTest(rndGenerateQuestions(rndSelType, rndSelCount));
+  });
+
+  // ── POWERS AND ROOTS ──────────────────────────────────────────────────────
+
+  function prBuildPool(type) {
+    const pool = [];
+    const squares = [1,2,3,4,5,6,7,8,9,10,11,12];
+    const cubes   = [1,2,3,4,5,10];
+
+    if (type === 'squares' || type === 'mixed') {
+      for (const n of squares) {
+        pool.push({ label: n + '\u00b2 = ?', question: n + '\u00b2 = ?', answer: (n*n).toString(), resultLabel: n + '\u00b2 = ' + (n*n) });
+      }
+    }
+    if (type === 'square-roots' || type === 'mixed') {
+      for (const n of squares) {
+        const sq = n * n;
+        pool.push({ label: '\u221a' + sq + ' = ?', question: '\u221a' + sq + ' = ?', answer: n.toString(), resultLabel: '\u221a' + sq + ' = ' + n });
+      }
+    }
+    if (type === 'cubes' || type === 'mixed') {
+      for (const n of cubes) {
+        const cb = n * n * n;
+        pool.push({ label: n + '\u00b3 = ?', question: n + '\u00b3 = ?', answer: cb.toString(), resultLabel: n + '\u00b3 = ' + cb });
+      }
+    }
+    if (type === 'cube-roots' || type === 'mixed') {
+      for (const n of cubes) {
+        const cb = n * n * n;
+        pool.push({ label: '\u221b' + cb + ' = ?', question: '\u221b' + cb + ' = ?', answer: n.toString(), resultLabel: '\u221b' + cb + ' = ' + n });
+      }
+    }
+    return pool;
+  }
+
+  function prUpdateStartBtn() {
+    const timedOk = prSelTimed === false || (prSelTimed === true && prSelTime !== null);
+    document.getElementById('pr-start-btn').disabled = !(prSelType !== null && prSelCount !== null && prSelTimed !== null && timedOk);
+  }
+
+  function prResetSetup() {
+    clearInterval(prState.timerInterval);
+    document.getElementById('pr-quiz').classList.remove('active');
+    document.getElementById('pr-results').classList.remove('active');
+    document.getElementById('pr-setup').style.display = '';
+    prSelType = null; prSelCount = null; prSelTimed = null; prSelTime = null;
+    document.querySelectorAll('[data-pr-type]').forEach(b => b.classList.remove('selected'));
+    document.querySelectorAll('[data-pr-qcount]').forEach(b => b.classList.remove('selected'));
+    document.querySelectorAll('[data-pr-timed]').forEach(b => b.classList.remove('selected'));
+    document.querySelectorAll('[data-pr-timelimit]').forEach(b => b.classList.remove('selected'));
+    document.getElementById('pr-time-options').classList.remove('visible');
+    prUpdateStartBtn();
+  }
+
+  function prSelectType(btn) {
+    document.querySelectorAll('[data-pr-type]').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected'); prSelType = btn.dataset.prType; prUpdateStartBtn();
+  }
+  function prSelectCount(btn) {
+    document.querySelectorAll('[data-pr-qcount]').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected'); prSelCount = parseInt(btn.dataset.prQcount); prUpdateStartBtn();
+  }
+  function prSelectTimed(btn) {
+    document.querySelectorAll('[data-pr-timed]').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected'); prSelTimed = btn.dataset.prTimed === 'true';
+    const opts = document.getElementById('pr-time-options');
+    if (prSelTimed) { opts.classList.add('visible'); }
+    else { opts.classList.remove('visible'); prSelTime = null; document.querySelectorAll('[data-pr-timelimit]').forEach(b => b.classList.remove('selected')); }
+    prUpdateStartBtn();
+  }
+  function prSelectTime(btn) {
+    document.querySelectorAll('[data-pr-timelimit]').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected'); prSelTime = parseInt(btn.dataset.prTimelimit); prUpdateStartBtn();
+  }
+
+  function prGenerateQuestions(type, count) {
+    const pool = prBuildPool(type);
+    return shuffleNoConsec(genericDrawCapped(pool, count));
+  }
+
+  function prStartTest(questions) {
+    prState.questions = questions; prState.current = 0; prState.userAnswers = []; prState.elapsed = 0;
+    document.getElementById('pr-setup').style.display = 'none';
+    document.getElementById('pr-results').classList.remove('active');
+    document.getElementById('pr-quiz').classList.add('active');
+    const timerEl = document.getElementById('pr-timer');
+    if (prState.timed) {
+      prState.remaining = prState.timelimit; timerEl.style.display = 'block'; timerEl.textContent = formatTime(prState.remaining); timerEl.className = 'quiz-timer';
+      prState.timerInterval = setInterval(() => {
+        prState.remaining--; timerEl.textContent = formatTime(prState.remaining);
+        if (prState.remaining <= 30) timerEl.className = 'quiz-timer warning';
+        if (prState.remaining <= 10) timerEl.className = 'quiz-timer danger';
+        if (prState.remaining <= 0) { clearInterval(prState.timerInterval); prFinishTest(true); }
+      }, 1000);
+    } else { timerEl.style.display = 'none'; prState.timerInterval = setInterval(() => { prState.elapsed++; }, 1000); }
+    prShowQuestion();
+  }
+
+  function prShowQuestion() {
+    const q = prState.questions[prState.current];
+    const total = prState.questions.length;
+    document.getElementById('pr-progress').textContent = 'Question ' + (prState.current + 1) + ' of ' + total;
+    document.getElementById('pr-progress-bar').style.width = (prState.current / total * 100) + '%';
+    document.getElementById('pr-question').innerHTML = q.question;
+    const input = document.getElementById('pr-answer');
+    input.value = ''; input.focus();
+  }
+
+  function prSubmitAnswer() {
+    const input = document.getElementById('pr-answer');
+    const raw = input.value.trim();
+    if (raw === '') return;
+    const given = parseInt(raw, 10);
+    if (isNaN(given)) return;
+    const q = prState.questions[prState.current];
+    prState.userAnswers.push({ q, correct: q.answer, given: given.toString(), isCorrect: given.toString() === q.answer, unanswered: false });
+    prState.current++;
+    if (prState.current >= prState.questions.length) { prFinishTest(false); } else { prShowQuestion(); }
+  }
+
+  document.getElementById('pr-answer').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') { e.preventDefault(); prSubmitAnswer(); return; }
+    const allowed = ['Backspace','Delete','Tab','ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home','End'];
+    if (allowed.includes(e.key)) return;
+    if (!/^\d$/.test(e.key)) e.preventDefault();
+  });
+
+  function prFinishTest(timedOut) {
+    clearInterval(prState.timerInterval);
+    if (timedOut) {
+      for (let i = prState.current; i < prState.questions.length; i++) {
+        prState.userAnswers.push({ q: prState.questions[i], correct: prState.questions[i].answer, given: null, isCorrect: false, unanswered: true });
+      }
+    }
+    document.getElementById('pr-quiz').classList.remove('active');
+    const correct = prState.userAnswers.filter(a => a.isCorrect).length;
+    const total = prState.userAnswers.length;
+    const answeredWrong = prState.userAnswers.filter(a => !a.isCorrect && !a.unanswered);
+    const allWrong = prState.userAnswers.filter(a => !a.isCorrect);
+    const perfect = correct === total;
+    document.getElementById('pr-score').textContent = correct + '/' + total;
+    const timeEl = document.getElementById('pr-time-taken');
+    if (prState.timed) { const used = prState.timelimit - prState.remaining; timeEl.textContent = timedOut ? 'Time ran out' : 'Time taken: ' + formatTime(used); }
+    else { timeEl.textContent = 'Time taken: ' + formatTime(prState.elapsed); }
+    const perfectEl = document.getElementById('pr-perfect');
+    const wrongWrap = document.getElementById('pr-wrong-wrap');
+    const wrongList = document.getElementById('pr-wrong-list');
+    const actionsEl = document.getElementById('pr-actions');
+    if (perfect) {
+      perfectEl.style.display = 'block'; wrongWrap.style.display = 'none';
+      actionsEl.innerHTML = '<button class="results-btn secondary" onclick="prResetSetup()">\u2190 Menu</button><button class="results-btn primary" onclick="prRetakeSame()">Try again</button>';
+      if (!prState.wrongOnly) launchConfetti();
+    } else {
+      perfectEl.style.display = 'none'; wrongWrap.style.display = 'block';
+      wrongList.innerHTML = allWrong.map(a =>
+        '<li><span class="q">' + a.q.resultLabel + '</span>' + (a.unanswered ? '<span class="not-ans">Not answered</span>' : '<span class="your-ans">You answered: ' + a.given + '</span>') + '</li>'
+      ).join('');
+      const retryBtn = answeredWrong.length > 0 ? '<button class="results-btn green-btn" onclick="prRetakeWrong()">Retry wrong answers</button>' : '';
+      actionsEl.innerHTML = '<button class="results-btn secondary" onclick="prResetSetup()">\u2190 Menu</button><button class="results-btn primary" onclick="prRetakeSame()">Try again</button>' + retryBtn;
+    }
+    document.getElementById('pr-results').classList.add('active');
+  }
+
+  function prRetakeSame() {
+    document.getElementById('pr-results').classList.remove('active');
+    prState.wrongOnly = false;
+    prStartTest(prGenerateQuestions(prState.type, prState.qcount));
+  }
+
+  function prRetakeWrong() {
+    const answeredWrong = prState.userAnswers.filter(a => !a.isCorrect && !a.unanswered);
+    const wrongQs = answeredWrong.map(a => a.q);
+    const count = Math.min(wrongQs.length, prState.qcount);
+    const filled = [];
+    while (filled.length < count) { filled.push(...shuffleNoConsec([...wrongQs])); }
+    document.getElementById('pr-results').classList.remove('active');
+    prState.wrongOnly = true; prState.timed = false;
+    prStartTest(filled.slice(0, count));
+  }
+
+  document.getElementById('pr-start-btn').addEventListener('click', function() {
+    prState.type = prSelType; prState.qcount = prSelCount;
+    prState.timed = prSelTimed; prState.timelimit = prSelTime; prState.wrongOnly = false;
+    prStartTest(prGenerateQuestions(prSelType, prSelCount));
   });
 
 </script>
