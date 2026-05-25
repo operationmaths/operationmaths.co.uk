@@ -211,7 +211,7 @@ permalink: /online-maths-tests/
         <div class="setup-section">
           <span class="setup-section-title">Round to</span>
           <div class="option-row">
-            <button class="option-btn dark-btn" data-rnd-type="10" onclick="rndSelectType(this)">Nearest 10</button>
+            <button class="option-btn dark-btn selected" data-rnd-type="10" onclick="rndSelectType(this)">Nearest 10</button>
             <button class="option-btn dark-btn" data-rnd-type="100" onclick="rndSelectType(this)">Nearest 100</button>
             <button class="option-btn dark-btn" data-rnd-type="1000" onclick="rndSelectType(this)">Nearest 1,000</button>
             <button class="option-btn dark-btn" data-rnd-type="mixed-whole" onclick="rndSelectType(this)">MIXED</button>
@@ -505,7 +505,7 @@ permalink: /online-maths-tests/
         <div class="setup-section">
           <span class="setup-section-title">Type</span>
           <div class="option-row">
-            <button class="option-btn dark-btn" data-pr-type="squares" onclick="prSelectType(this)">Squares</button>
+            <button class="option-btn dark-btn selected" data-pr-type="squares" onclick="prSelectType(this)">Squares</button>
             <button class="option-btn dark-btn" data-pr-type="square-roots" onclick="prSelectType(this)">Square roots</button>
             <button class="option-btn dark-btn" data-pr-type="cubes" onclick="prSelectType(this)">Cubes</button>
             <button class="option-btn dark-btn" data-pr-type="cube-roots" onclick="prSelectType(this)">Cube roots</button>
