@@ -18,7 +18,7 @@ permalink: /online-maths-tests/
 .frac sup, .frac sub { font-size: 1em; line-height: 1.2; }
 .frac .frac-bar { border-top: 1.5px solid currentColor; width: 100%; display: block; margin: 1px 0; }
 .fdp-q-wrap { display: flex; flex-direction: column; height: 14rem; }
-#fdp-question { height: 5rem; flex-shrink: 0; display: flex; align-items: center; justify-content: center; text-align: center; overflow: visible; }
+#fdp-question { font-size: clamp(1.1rem, 3.5vw, 2.25rem); flex-shrink: 0; display: flex; align-items: center; justify-content: center; text-align: center; overflow: visible; flex-wrap: wrap; gap: 0.3em; line-height: 1.6; }
 .fdp-options { display: flex; gap: 10px; flex-wrap: nowrap; margin-top: 1.25rem; justify-content: center; align-items: stretch; }
 .fdp-opt-btn { flex: 1; height: 72px; min-width: 0; padding: 6px 8px; font-size: 1.05rem; font-weight: 700; border: 2px solid #d0d0d0; border-radius: 8px; background: #fff; cursor: pointer; transition: background 0.12s, border-color 0.12s; font-family: inherit; display: flex; align-items: center; justify-content: center; text-align: center; box-sizing: border-box; }
 .fdp-opt-btn:hover { background: #f0f6ff; border-color: var(--blue); color: var(--blue); }
@@ -33,9 +33,9 @@ permalink: /online-maths-tests/
     <button class="test-tab" data-target="number-bonds">Number bonds</button>
     <button class="test-tab" data-target="rounding">Rounding</button>
     <button class="test-tab" data-target="fdp-conversions">FDP conversions</button>
-    <button class="test-tab" data-target="fractions-of-numbers">Fractions of numbers</button>
+    <button class="test-tab" data-target="fon">Fractions of numbers</button>
     <button class="test-tab" data-target="metric-conversions">Metric conversions</button>
-    <button class="test-tab" data-target="powers-and-roots">Powers and roots</button>
+    <button class="test-tab" data-target="powers-roots">Powers and roots</button>
   </div>
 </section>
 
@@ -351,7 +351,7 @@ permalink: /online-maths-tests/
     </div>
 
     <!-- FRACTIONS OF NUMBERS PANEL -->
-    <div class="test-panel" id="panel-fractions-of-numbers">
+    <div class="test-panel" id="panel-fon">
 
       <div class="setup-card" id="fon-setup">
         <div class="setup-section">
@@ -499,7 +499,7 @@ permalink: /online-maths-tests/
 
 
     <!-- POWERS AND ROOTS PANEL -->
-    <div class="test-panel" id="panel-powers-and-roots">
+    <div class="test-panel" id="panel-powers-roots">
 
       <div class="setup-card" id="pr-setup">
         <div class="setup-section">
@@ -691,7 +691,7 @@ permalink: /online-maths-tests/
 
   (function() {
     const hash = window.location.hash.replace('#', '') || 'times-tables';
-    const valid = ['times-tables', 'number-bonds', 'metric-conversions', 'fdp-conversions', 'fractions-of-numbers', 'rounding', 'powers-and-roots'];
+    const valid = ['times-tables', 'number-bonds', 'metric-conversions', 'fdp-conversions', 'fon', 'rounding', 'powers-roots'];
     activateTab(valid.includes(hash) ? hash : 'times-tables');
   })();
 
