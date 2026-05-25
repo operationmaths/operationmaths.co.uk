@@ -9,16 +9,15 @@ permalink: /online-maths-tests/
 :root { --blue: #1c75bc; --blue-dark: #155f99; --green: #009444; --green-dark: #007a38; --purple: #800080; --orange: #f7941e; --orange-dark: #d47c10; }
 .dark-btn { background: #fff; color: #374151; border: 2px solid #d0d0d0; }
 .dark-btn:hover { background: #f5f6f8; border-color: #9ca3af; }
-.option-btn.dark-btn:hover { background: #f0f0f0; border-color: #9ca3af; color: #111827; }
-.option-btn.dark-btn.selected { background: #111827; color: #fff; border-color: #111827; }
+.dark-btn.selected { background: #111827; color: #fff; border-color: #111827; }
 .table-btn.selected { background: var(--blue); color: #fff; border-color: var(--blue); }
 .script-l { font-family: "Times New Roman", "Liberation Serif", serif; font-style: normal; }
-
+#rnd-question, #pr-question { font-size: clamp(1rem, 2.8vw, 1.4rem); }
 .frac { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; font-size: 0.85em; line-height: 1.1; margin: 0 2px; }
 .frac sup, .frac sub { font-size: 1em; line-height: 1.2; }
 .frac .frac-bar { border-top: 1.5px solid currentColor; width: 100%; display: block; margin: 1px 0; }
-.fdp-q-wrap { display: flex; flex-direction: column; height: 14rem; }
-#fdp-question { font-size: clamp(1.1rem, 3.5vw, 2.25rem); flex-shrink: 0; display: flex; align-items: center; justify-content: center; text-align: center; overflow: visible; flex-wrap: wrap; gap: 0.3em; line-height: 1.6; }
+.fdp-q-wrap { display: flex; flex-direction: column; min-height: 12rem; }
+#fdp-question { height: 5rem; flex-shrink: 0; display: flex; align-items: center; justify-content: center; text-align: center; overflow: visible; }
 .fdp-options { display: flex; gap: 10px; flex-wrap: nowrap; margin-top: 1.25rem; justify-content: center; align-items: stretch; }
 .fdp-opt-btn { flex: 1; height: 72px; min-width: 0; padding: 6px 8px; font-size: 1.05rem; font-weight: 700; border: 2px solid #d0d0d0; border-radius: 8px; background: #fff; cursor: pointer; transition: background 0.12s, border-color 0.12s; font-family: inherit; display: flex; align-items: center; justify-content: center; text-align: center; box-sizing: border-box; }
 .fdp-opt-btn:hover { background: #f0f6ff; border-color: var(--blue); color: var(--blue); }
@@ -590,10 +589,10 @@ permalink: /online-maths-tests/
   let fonSelLevel = '1', fonSelCount = null, fonSelTimed = null, fonSelTime = null;
 
   const rndState = { questions: [], current: 0, userAnswers: [], elapsed: 0, remaining: 0, timerInterval: null, timed: false, timelimit: null, type: null, qcount: null, wrongOnly: false };
-  let rndSelType = null, rndSelCount = null, rndSelTimed = null, rndSelTime = null;
+  let rndSelType = "10", rndSelCount = null, rndSelTimed = null, rndSelTime = null;
 
   const prState = { questions: [], current: 0, userAnswers: [], elapsed: 0, remaining: 0, timerInterval: null, timed: false, timelimit: null, type: null, qcount: null, wrongOnly: false };
-  let prSelType = null, prSelCount = null, prSelTimed = null, prSelTime = null;
+  let prSelType = "squares", prSelCount = null, prSelTimed = null, prSelTime = null;
 
   // ── SHARED ────────────────────────────────────────────────────────────────
   function formatTime(secs) {
@@ -1995,8 +1994,9 @@ permalink: /online-maths-tests/
     document.getElementById('rnd-quiz').classList.remove('active');
     document.getElementById('rnd-results').classList.remove('active');
     document.getElementById('rnd-setup').style.display = '';
-    rndSelType = null; rndSelCount = null; rndSelTimed = null; rndSelTime = null;
+    rndSelType = '10'; rndSelCount = null; rndSelTimed = null; rndSelTime = null;
     document.querySelectorAll('[data-rnd-type]').forEach(b => b.classList.remove('selected'));
+    document.querySelector('[data-rnd-type="10"]').classList.add('selected');
     document.querySelectorAll('[data-rnd-qcount]').forEach(b => b.classList.remove('selected'));
     document.querySelectorAll('[data-rnd-timed]').forEach(b => b.classList.remove('selected'));
     document.querySelectorAll('[data-rnd-timelimit]').forEach(b => b.classList.remove('selected'));
@@ -2183,8 +2183,9 @@ permalink: /online-maths-tests/
     document.getElementById('pr-quiz').classList.remove('active');
     document.getElementById('pr-results').classList.remove('active');
     document.getElementById('pr-setup').style.display = '';
-    prSelType = null; prSelCount = null; prSelTimed = null; prSelTime = null;
+    prSelType = 'squares'; prSelCount = null; prSelTimed = null; prSelTime = null;
     document.querySelectorAll('[data-pr-type]').forEach(b => b.classList.remove('selected'));
+    document.querySelector('[data-pr-type="squares"]').classList.add('selected');
     document.querySelectorAll('[data-pr-qcount]').forEach(b => b.classList.remove('selected'));
     document.querySelectorAll('[data-pr-timed]').forEach(b => b.classList.remove('selected'));
     document.querySelectorAll('[data-pr-timelimit]').forEach(b => b.classList.remove('selected'));
