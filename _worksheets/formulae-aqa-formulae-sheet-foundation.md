@@ -13,5 +13,4 @@ show_a_worksheet: false
 free_pdf: /pdfs/AQA-Foundation-formula-sheet.pdf
 answers_pdf: ''
 tes_url: ''
-date_added: ''
 ---
