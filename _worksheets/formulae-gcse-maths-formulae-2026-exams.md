@@ -10,5 +10,4 @@ show_a_worksheet: false
 free_pdf: /pdfs/GCSE-Maths-Formulae-2026-exams.pdf
 answers_pdf: ''
 tes_url: ''
-date_added: ''
 ---
