@@ -9,7 +9,7 @@ description: |-
 
   It can be used in exams until at least 2030.
 thumbnail: /assets/images/worksheets/formulae/aqa-foundation-formulae-sheet.jpg
-show_a_worksheet: true
+show_a_worksheet: false
 free_pdf: /pdfs/AQA-Foundation-formula-sheet.pdf
 answers_pdf: ''
 tes_url: ''
