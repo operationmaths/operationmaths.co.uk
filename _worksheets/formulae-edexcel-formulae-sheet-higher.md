@@ -9,5 +9,7 @@ description: |-
 
   It can be used in exams until at least 2030.
 thumbnail: /assets/images/worksheets/formulae/edexcel-higher-formulae-sheet.jpg
+show_a_worksheet: false
 free_pdf: /pdfs/Edexcel-Higher-formula-sheet.pdf
+answers_pdf: ''
 ---
