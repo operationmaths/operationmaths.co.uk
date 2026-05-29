@@ -86,13 +86,10 @@ collections:
         hint: "Full URL of the TES listing for the paid pack."
       - label: "Date added"
         name: "date_added"
-        widget: "datetime"
-        format: "YYYY-MM-DD HH:mm:ss"
-        date_format: "DD/MM/YYYY"
-        time_format: "HH:mm"
+        widget: "string"
         required: false
-        default: "now"
-        hint: "Set automatically — change only if needed."
+        default: ""
+        hint: "Enter today's date and time, e.g. 2026-05-29 11:53:00"
 
   # ── NUMBER ──────────────────────────────────
   - name: "number"
