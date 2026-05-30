@@ -98,7 +98,7 @@ body_class: page-sats-course
       <a href="mailto:operationmaths123@gmail.com" style="color:var(--blue); text-decoration:none; font-size:0.9rem;">✉ operationmaths123@gmail.com</a>
     </div>
     <form action="https://formspree.io/f/mdajjqyq" method="POST" class="contact-form">
-      <input type="hidden" name="_replyto" value="">
+      <input type="hidden" name="_next" value="https://www.operationmaths.co.uk/sats-course/#contact">
       <input type="hidden" name="_subject" value="SATs course enquiry">
       <div class="contact-form-row">
         <div>
