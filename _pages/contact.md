@@ -17,9 +17,8 @@ permalink: /contact/
         <p>Feel free to get in touch if you have any questions about the Year 6 maths SATs course, if you have spotted a mistake on one of the worksheets, or if there is anything else I can help with.</p>
         <p>You can fill in the form or email me directly at <a class="email-plain" href="mailto:operationmaths123@gmail.com">operationmaths123@gmail.com</a> and I'll get back to you as soon as possible.</p>
       </div>
-      <form action="https://formspree.io/f/mdajjqyq" method="POST" class="contact-form">
-        <input type="hidden" name="_next" value="https://www.operationmaths.co.uk/contact/?submitted=true">
-        <p class="hidden"><label>Don't fill this in: <input name="bot-field"></label></p>
+      <form id="contact-form" class="contact-form">
+        <p class="hidden"><label>Don't fill this in: <input name="bot-field" id="bot-field"></label></p>
         <div class="form-row">
           <div>
             <label for="name">Name</label>
@@ -47,12 +46,35 @@ permalink: /contact/
         </div>
         <button type="submit" class="btn-submit">Send message</button>
       </form>
+      <div id="contact-success" style="display:none; padding: 2rem 0;">
+        <p style="color:var(--green); font-weight:700; font-size:1.1rem;">✓ Thank you — your message has been sent!</p>
+        <p>I'll get back to you as soon as possible.</p>
+      </div>
     </div>
   </div>
 </main>
 
 <script>
-  if (window.location.search.includes('submitted=true')) {
-    document.querySelectorAll('form').forEach(function(form) { form.reset(); });
-  }
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (document.getElementById('bot-field').value) return;
+    var form = this;
+    var data = new FormData(form);
+    fetch('https://formspree.io/f/mdajjqyq', {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function(response) {
+      if (response.ok) {
+        form.style.display = 'none';
+        document.getElementById('contact-success').style.display = 'block';
+      } else {
+        alert('Something went wrong — please try again or email us directly.');
+      }
+    })
+    .catch(function() {
+      alert('Something went wrong — please try again or email us directly.');
+    });
+  });
 </script>
