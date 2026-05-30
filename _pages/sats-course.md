@@ -97,20 +97,22 @@ body_class: page-sats-course
       <span style="font-size:1rem; font-weight:700;">Contact Fay to find out more or to book</span>
       <a href="mailto:operationmaths123@gmail.com" style="color:var(--blue); text-decoration:none; font-size:0.9rem;">✉ operationmaths123@gmail.com</a>
     </div>
-    <form class="contact-form" onsubmit="handleSubmit(event)">
+    <form action="https://formspree.io/f/mdajjqyq" method="POST" class="contact-form">
+      <input type="hidden" name="_replyto" value="">
+      <input type="hidden" name="_subject" value="SATs course enquiry">
       <div class="contact-form-row">
         <div>
           <label style="display:block; font-size:0.9rem; font-weight:700; margin-bottom:0.4rem;">Name</label>
-          <input type="text" placeholder="Your name" required style="background:#fff;">
+          <input type="text" name="name" placeholder="Your name" required style="background:#fff;">
         </div>
         <div>
           <label style="display:block; font-size:0.9rem; font-weight:700; margin-bottom:0.4rem;">Email</label>
-          <input type="email" placeholder="your@email.com" required style="background:#fff;">
+          <input type="email" name="email" placeholder="your@email.com" required style="background:#fff;">
         </div>
       </div>
       <div>
         <label style="display:block; font-size:0.9rem; font-weight:700; margin-bottom:0.4rem;">Message</label>
-        <textarea placeholder="Your message" style="resize:vertical; min-height:120px; width:100%; font-family:'DM Sans',sans-serif; font-size:0.9rem; padding:0.6rem 0.85rem; border:1px solid #e5e7eb; border-radius:6px; background:#fff; color:#111827; outline:none;"></textarea>
+        <textarea name="message" placeholder="Your message" style="resize:vertical; min-height:120px; width:100%; font-family:'DM Sans',sans-serif; font-size:0.9rem; padding:0.6rem 0.85rem; border:1px solid #e5e7eb; border-radius:6px; background:#fff; color:#111827; outline:none;"></textarea>
       </div>
       <button type="submit" class="btn-submit">Send message</button>
     </form>
@@ -119,10 +121,3 @@ body_class: page-sats-course
 
   </div>
 </main>
-
-<script>
-  function handleSubmit(e) {
-    e.preventDefault();
-    e.target.innerHTML = '<p style="color:var(--green);font-weight:700;padding:0.5rem 0;">✓ Message sent - thank you!</p>';
-  }
-</script>
