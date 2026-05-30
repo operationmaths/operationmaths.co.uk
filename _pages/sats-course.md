@@ -97,9 +97,9 @@ body_class: page-sats-course
       <span style="font-size:1rem; font-weight:700;">Contact Fay to find out more or to book</span>
       <a href="mailto:operationmaths123@gmail.com" style="color:var(--blue); text-decoration:none; font-size:0.9rem;">✉ operationmaths123@gmail.com</a>
     </div>
-    <form action="https://formspree.io/f/mdajjqyq" method="POST" class="contact-form">
-      <input type="hidden" name="_next" value="https://www.operationmaths.co.uk/sats-course/?submitted=true#contact">
+    <form id="sats-contact-form" class="contact-form">
       <input type="hidden" name="_subject" value="SATs course enquiry">
+      <p class="hidden"><label>Don't fill this in: <input name="bot-field" id="sats-bot-field"></label></p>
       <div class="contact-form-row">
         <div>
           <label style="display:block; font-size:0.9rem; font-weight:700; margin-bottom:0.4rem;">Name</label>
@@ -116,6 +116,10 @@ body_class: page-sats-course
       </div>
       <button type="submit" class="btn-submit">Send message</button>
     </form>
+    <div id="sats-contact-success" style="display:none; flex-direction:column; align-items:center; justify-content:center; text-align:center; min-height:120px;">
+      <p style="color:var(--green); font-weight:700; font-size:1.1rem;">✓ Thank you – your message has been sent!</p>
+      <p>I'll get back to you as soon as possible.</p>
+    </div>
   </div>
 </section>
 
@@ -123,7 +127,26 @@ body_class: page-sats-course
 </main>
 
 <script>
-  if (window.location.search.includes('submitted=true')) {
-    document.querySelectorAll('form').forEach(function(form) { form.reset(); });
-  }
+  document.getElementById('sats-contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (document.getElementById('sats-bot-field').value) return;
+    var form = this;
+    var data = new FormData(form);
+    fetch('https://formspree.io/f/mdajjqyq', {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function(response) {
+      if (response.ok) {
+        form.style.display = 'none';
+        document.getElementById('sats-contact-success').style.display = 'flex';
+      } else {
+        alert('Something went wrong — please try again or email us directly.');
+      }
+    })
+    .catch(function() {
+      alert('Something went wrong — please try again or email us directly.');
+    });
+  });
 </script>
