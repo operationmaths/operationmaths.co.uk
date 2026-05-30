@@ -17,8 +17,8 @@ permalink: /contact/
         <p>Feel free to get in touch if you have any questions about the Year 6 maths SATs course, if you have spotted a mistake on one of the worksheets, or if there is anything else I can help with.</p>
         <p>You can fill in the form or email me directly at <a class="email-plain" href="mailto:operationmaths123@gmail.com">operationmaths123@gmail.com</a> and I'll get back to you as soon as possible.</p>
       </div>
-      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
-        <input type="hidden" name="form-name" value="contact">
+      <form action="https://formspree.io/f/mdajjqyq" method="POST" class="contact-form">
+        <input type="hidden" name="_replyto" value="">
         <p class="hidden"><label>Don't fill this in: <input name="bot-field"></label></p>
         <div class="form-row">
           <div>
