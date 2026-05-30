@@ -18,7 +18,7 @@ permalink: /contact/
         <p>You can fill in the form or email me directly at <a class="email-plain" href="mailto:operationmaths123@gmail.com">operationmaths123@gmail.com</a> and I'll get back to you as soon as possible.</p>
       </div>
       <form action="https://formspree.io/f/mdajjqyq" method="POST" class="contact-form">
-        <input type="hidden" name="_replyto" value="">
+        <input type="hidden" name="_next" value="https://www.operationmaths.co.uk/contact/">
         <p class="hidden"><label>Don't fill this in: <input name="bot-field"></label></p>
         <div class="form-row">
           <div>
