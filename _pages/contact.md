@@ -47,7 +47,7 @@ permalink: /contact/
         <button type="submit" class="btn-submit">Send message</button>
       </form>
       <div id="contact-success" style="display:none; flex-direction:column; align-items:center; justify-content:center; text-align:center; height:100%;">
-        <p style="color:var(--green); font-weight:700; font-size:1.1rem;">✓ Thank you — your message has been sent!</p>
+        <p style="color:var(--green); font-weight:700; font-size:1.1rem;">✓ Thank you – your message has been sent!</p>
         <p>I'll get back to you as soon as possible.</p>
       </div>
     </div>
