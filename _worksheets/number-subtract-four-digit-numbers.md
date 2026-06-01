@@ -2,12 +2,10 @@
 title: Subtract four-digit numbers
 topic: number
 section: Subtraction
-order: -1
+order: 3
 orientation: portrait
-description: >-
-  Each worksheet contains 10 subtraction questions and squares below to show
-  working out.
-
+description: |-
+  Each worksheet contains 10 subtraction questions and squares below to show working out.
 
   Most questions are four-digit subtract four-digit.
 thumbnail: /assets/images/worksheets/number/subtract-four-digit-numbers.jpg
