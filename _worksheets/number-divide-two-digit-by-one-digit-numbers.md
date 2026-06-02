@@ -13,5 +13,6 @@ show_a_worksheet: true
 show_a_answers: true
 free_pdf: /pdfs/Divide-two-digit-by-one-digit-numbers.pdf
 answers_pdf: /pdfs/Divide-two-digit-by-one-digit-numbers-ANSWERS.pdf
-tes_url: ''
+tes_url: https://www.tes.com/teaching-resource/-13484356
+date_added: ''
 ---
