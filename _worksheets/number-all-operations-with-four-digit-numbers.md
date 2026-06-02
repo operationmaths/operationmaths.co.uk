@@ -13,5 +13,6 @@ show_a_worksheet: true
 show_a_answers: true
 free_pdf: /pdfs/All-Operations-with-four-digit-numbers.pdf
 answers_pdf: /pdfs/All-Operations-with-four-digit-numbers-ANSWERS.pdf
-tes_url: ''
+tes_url: https://www.tes.com/teaching-resource/-13484639
+date_added: ''
 ---
