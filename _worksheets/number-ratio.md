@@ -10,5 +10,6 @@ show_a_worksheet: true
 show_a_answers: true
 free_pdf: /pdfs/Ratio.pdf
 answers_pdf: /pdfs/Ratio-ANSWERS.pdf
-tes_url: ''
+tes_url: https://www.tes.com/teaching-resource/-13484997
+date_added: ''
 ---
