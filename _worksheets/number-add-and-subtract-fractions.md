@@ -8,7 +8,7 @@ description: Each worksheet contains 6 add and subtract fractions questions wher
 thumbnail: /assets/images/worksheets/number/Add-and-subtract-fractions.jpg
 show_a_worksheet: true
 show_a_answers: true
-free_pdf: /pdfs/Add-and-Subtract-fractions.pdf
+free_pdf: /pdfs/Add-and-subtract-fractions.pdf
 answers_pdf: /pdfs/Add-and-subtract-fractions-ANSWERS.pdf
 tes_url: https://www.tes.com/teaching-resource/-13484953
 date_added: ''
