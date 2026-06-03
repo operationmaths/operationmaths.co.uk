@@ -10,5 +10,6 @@ show_a_worksheet: true
 show_a_answers: true
 free_pdf: /pdfs/Expand-and-factorise-single-brackets.pdf
 answers_pdf: /pdfs/Expand-and-factorise-single-brackets-ANSWERS.pdf
-tes_url: ''
+tes_url: https://www.tes.com/teaching-resource/-13485021
+date_added: ''
 ---
