@@ -10,5 +10,6 @@ show_a_worksheet: true
 show_a_answers: true
 free_pdf: /pdfs/Add-and-Subtract-two-digit-numbers.pdf
 answers_pdf: /pdfs/Add-and-subtract-fractions-ANSWERS.pdf
-tes_url: ''
+tes_url: https://www.tes.com/teaching-resource/-13484953
+date_added: ''
 ---
