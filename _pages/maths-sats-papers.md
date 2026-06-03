@@ -8,9 +8,10 @@ permalink: /maths-sats-papers/
   <!-- ── HERO ── -->
 <section class="om-hero" aria-label="Hero" style="min-height:0; padding: 4rem 2rem 1rem;">
     <h1>Past Key Stage 2 maths <em>SATs papers</em></h1>
-    <p>All Year 6 maths SATs papers from 2016 to 2025 – free to view and download, with mark schemes included.</p>
+    <p>All Year 6 maths SATs papers from 2016 to 2026 – free to view and download, with mark schemes included.</p>
     <p class="om-hero-note">Contains material developed by the Standards and Testing Agency and licensed under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" target="_blank" rel="noopener noreferrer">Open Government Licence v3.0</a>.</p>
     <nav class="jump-links" aria-label="Jump to year">
+      <a href="#y2026" class="jump-link">2026</a>
       <a href="#y2025" class="jump-link">2025</a>
       <a href="#y2024" class="jump-link">2024</a>
       <a href="#y2023" class="jump-link">2023</a>
@@ -38,6 +39,66 @@ permalink: /maths-sats-papers/
       </div>
       <a href="https://amzn.to/4a3XxiU" class="btn btn-orange" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
     </div>
+
+    <!-- ── 2026 ── -->
+    <section id="y2026" class="year-section">
+    <h2 class="section-heading">2026</h2>
+    <div class="year-card">
+      <div class="year-card-header">
+        <span class="year-label">2026 KS2 maths SATs papers</span>
+        <span class="year-badge">3 papers + mark scheme</span>
+      </div>
+      <div class="paper-list">
+
+        <div class="paper-row">
+          <div class="paper-thumb" aria-hidden="true">
+            <img src="{{ site.baseurl }}/assets/images/SATs-2026-Paper-1.jpg" alt="2026 SATs Paper 1">
+          </div>
+          <div class="paper-info">
+            <div class="paper-tag tag-arith">Arithmetic</div>
+            <div class="paper-name">Paper 1: arithmetic</div>
+            <div class="paper-type">40 marks · 30 minutes</div>
+          </div>
+          <div class="paper-btns">
+            <a href="{{ site.baseurl }}/pdfs/SATs-2026-Paper-1.pdf" class="btn btn-blue">View Paper 1 <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+          </div>
+        </div>
+
+        <div class="paper-row">
+          <div class="paper-thumb" aria-hidden="true">
+            <img src="{{ site.baseurl }}/assets/images/SATs-2026-Paper-2.jpg" alt="2026 SATs Paper 2">
+          </div>
+          <div class="paper-info">
+            <div class="paper-tag tag-reason">Reasoning</div>
+            <div class="paper-name">Paper 2: reasoning</div>
+            <div class="paper-type">35 marks · 40 minutes</div>
+          </div>
+          <div class="paper-btns">
+            <a href="{{ site.baseurl }}/pdfs/SATs-2026-Paper-2.pdf" class="btn btn-blue">View Paper 2 <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+          </div>
+        </div>
+
+        <div class="paper-row">
+          <div class="paper-thumb" aria-hidden="true">
+            <img src="{{ site.baseurl }}/assets/images/SATs-2026-Paper-3.jpg" alt="2026 SATs Paper 3">
+          </div>
+          <div class="paper-info">
+            <div class="paper-tag tag-reason">Reasoning</div>
+            <div class="paper-name">Paper 3: reasoning</div>
+            <div class="paper-type">35 marks · 40 minutes</div>
+          </div>
+          <div class="paper-btns">
+            <a href="{{ site.baseurl }}/pdfs/SATs-2026-Paper-3.pdf" class="btn btn-blue">View Paper 3 <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+          </div>
+        </div>
+
+      </div>
+      <div class="answers-row">
+        <span class="answers-label">Mark scheme</span>
+        <a href="{{ site.baseurl }}/pdfs/SATs-2026-Mark-scheme.pdf" class="btn btn-green">View mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+      </div>
+    </div>
+    </section>
 
     <!-- ── 2025 ── -->
     <section id="y2025" class="year-section">
