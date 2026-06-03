@@ -13,6 +13,6 @@ show_a_worksheet: true
 show_a_answers: true
 free_pdf: /pdfs/Fraction-percentage-ratio-problems.pdf
 answers_pdf: /pdfs/Fraction-percentage-ratio-problems-ANSWERS.pdf
-tes_url: ''
+tes_url: https://www.tes.com/teaching-resource/-13484999
 date_added: 2026-05-29 19:38:00
 ---
