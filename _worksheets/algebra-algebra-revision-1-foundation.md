@@ -10,5 +10,6 @@ show_a_worksheet: true
 show_a_answers: true
 free_pdf: /pdfs/Algebra-Revision-1-Foundation-with-days.pdf
 answers_pdf: /pdfs/Algebra-Revision-1-Foundation-with-days-ANSWERS.pdf
-tes_url: ''
+tes_url: https://www.tes.com/teaching-resource/-13485004
+date_added: ''
 ---
