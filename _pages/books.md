@@ -41,7 +41,7 @@ permalink: /books/
         <img src="{{ site.baseurl }}/assets/images/Number-bonds-to-10-inside.PNG" alt="Number bonds to 10 book inside page">
       </div>
       <div class="book-title">Number bonds</div>
-      <a href="https://amzn.to/4a3XxiU" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
+      <a href="https://amzn.to/4eojmLv" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
     </div>
     <div class="book-card">
       <div class="book-covers">
@@ -49,7 +49,7 @@ permalink: /books/
         <img src="{{ site.baseurl }}/assets/images/Double-and-halve-inside.PNG" alt="Double and halve book inside page">
       </div>
       <div class="book-title">Double and halve</div>
-      <a href="https://amzn.to/4a3XxiU" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
+      <a href="https://amzn.to/4fZLKov" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
     </div>
   </div>
 </section>
@@ -64,7 +64,7 @@ permalink: /books/
             <img src="{{ site.baseurl }}/assets/images/2-times-table-book-inside.PNG" alt="2 times table book inside page">
           </div>
           <div class="book-title">2 times table</div>
-          <a href="https://amzn.to/4a3XxiU" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
+          <a href="https://amzn.to/49GVcJC" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
         </div>
 
         <div class="book-card">
@@ -73,7 +73,7 @@ permalink: /books/
             <img src="{{ site.baseurl }}/assets/images/3-times-table-book-inside.PNG" alt="3 times table book inside page">
           </div>
           <div class="book-title">3 times table</div>
-          <a href="https://amzn.to/4a3XxiU" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
+          <a href="https://amzn.to/3RGPIsi" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
         </div>
 
         <div class="book-card">
@@ -82,7 +82,7 @@ permalink: /books/
             <img src="{{ site.baseurl }}/assets/images/4-times-table-book-inside.PNG" alt="4 times table book inside page">
           </div>
           <div class="book-title">4 times table</div>
-          <a href="https://amzn.to/4a3XxiU" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
+          <a href="https://amzn.to/4g0gDsW" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
         </div>
 
         <div class="book-card">
@@ -91,7 +91,7 @@ permalink: /books/
             <img src="{{ site.baseurl }}/assets/images/5-times-table-book-inside.PNG" alt="5 times table book inside page">
           </div>
           <div class="book-title">5 times table</div>
-          <a href="https://amzn.to/4a3XxiU" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
+          <a href="https://amzn.to/4oaMXeU" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
         </div>
 
         <div class="book-card">
@@ -100,7 +100,7 @@ permalink: /books/
             <img src="{{ site.baseurl }}/assets/images/6-times-table-book-inside.PNG" alt="6 times table book inside page">
           </div>
           <div class="book-title">6 times table</div>
-          <a href="https://amzn.to/4a3XxiU" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
+          <a href="https://amzn.to/4e04jYB" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
         </div>
 
         <div class="book-card">
@@ -109,7 +109,7 @@ permalink: /books/
             <img src="{{ site.baseurl }}/assets/images/7-times-table-book-inside.PNG" alt="7 times table book inside page">
           </div>
           <div class="book-title">7 times table</div>
-          <a href="https://amzn.to/4a3XxiU" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
+          <a href="https://amzn.to/43h2Zua" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
         </div>
 
         <div class="book-card">
@@ -118,7 +118,7 @@ permalink: /books/
             <img src="{{ site.baseurl }}/assets/images/8-times-table-book-inside.PNG" alt="8 times table book inside page">
           </div>
           <div class="book-title">8 times table</div>
-          <a href="https://amzn.to/4a3XxiU" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
+          <a href="https://amzn.to/4xc0xmk" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
         </div>
 
         <div class="book-card">
@@ -127,7 +127,7 @@ permalink: /books/
             <img src="{{ site.baseurl }}/assets/images/9-times-table-book-inside.PNG" alt="9 times table book inside page">
           </div>
           <div class="book-title">9 times table</div>
-          <a href="https://amzn.to/4a3XxiU" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
+          <a href="https://amzn.to/4ahU7YX" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
         </div>
 
         <div class="book-card">
@@ -136,7 +136,7 @@ permalink: /books/
             <img src="{{ site.baseurl }}/assets/images/10-times-table-book-inside.PNG" alt="10 times table book inside page">
           </div>
           <div class="book-title">10 times table</div>
-          <a href="https://amzn.to/4a3XxiU" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
+          <a href="https://amzn.to/43ddzCn" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
         </div>
 
         <div class="book-card">
@@ -145,7 +145,7 @@ permalink: /books/
             <img src="{{ site.baseurl }}/assets/images/11-times-table-book-inside.PNG" alt="11 times table book inside page">
           </div>
           <div class="book-title">11 times table</div>
-          <a href="https://amzn.to/4a3XxiU" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
+          <a href="https://amzn.to/4uBtohz" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
         </div>
 
         <div class="book-card">
@@ -154,7 +154,7 @@ permalink: /books/
             <img src="{{ site.baseurl }}/assets/images/12-times-table-book-inside.PNG" alt="12 times table book inside page">
           </div>
           <div class="book-title">12 times table</div>
-          <a href="https://amzn.to/4a3XxiU" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
+          <a href="https://amzn.to/4e2RNpN" class="btn-amazon" target="_blank" rel="noopener sponsored">View on Amazon <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
         </div>
 
       </div>
