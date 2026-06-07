@@ -17,6 +17,11 @@ permalink: /online-maths-tests/
 .frac { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; font-size: 0.85em; line-height: 1.1; margin: 0 2px; }
 .frac sup, .frac sub { font-size: 1em; line-height: 1.2; }
 .frac .frac-bar { border-top: 1.5px solid currentColor; width: 100%; display: block; margin: 1px 0; }
+.wrong-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin-top: 0.5rem; }
+.wrong-table th { text-align: left; font-size: 0.78rem; font-weight: 600; color: #6b7280; padding: 5px 10px; border-bottom: 1px solid #e5e7eb; }
+.wrong-table td { padding: 6px 10px; border-bottom: 1px solid #f3f4f6; }
+.wrong-table tr:last-child td { border-bottom: none; }
+.wrong-table td.your-ans-cell { color: #c0392b; font-weight: 600; }
 .fdp-q-wrap { display: flex; flex-direction: column; height: 14rem; }
 #fdp-question { font-size: clamp(1.1rem, 3.5vw, 2.25rem); flex-shrink: 0; height: 6rem; display: flex; align-items: center; justify-content: center; text-align: center; overflow: visible; flex-wrap: wrap; gap: 0.3em; line-height: 1.6; }
 .fdp-options { display: flex; gap: 10px; flex-wrap: nowrap; margin-top: 1.25rem; justify-content: center; align-items: stretch; }
@@ -119,8 +124,8 @@ permalink: /online-maths-tests/
         <div class="results-time" id="tt-time-taken"></div>
         <div class="results-perfect" id="tt-perfect" style="display:none">Full marks — excellent work!</div>
         <div class="results-wrong" id="tt-wrong-wrap" style="display:none">
-          <h3>Incorrect or unanswered questions</h3>
-          <ul class="wrong-list" id="tt-wrong-list"></ul>
+          <h3>Wrong answers</h3>
+          <table class="wrong-table"><thead><tr><th>Question</th><th>Correct answer</th><th>Your answer</th></tr></thead><tbody id="tt-wrong-list"></tbody></table>
         </div>
         <div class="results-actions" id="tt-actions"></div>
       </div>
@@ -196,8 +201,8 @@ permalink: /online-maths-tests/
         <div class="results-time" id="nb-time-taken"></div>
         <div class="results-perfect" id="nb-perfect" style="display:none">Full marks — excellent work!</div>
         <div class="results-wrong" id="nb-wrong-wrap" style="display:none">
-          <h3>Incorrect or unanswered questions</h3>
-          <ul class="wrong-list" id="nb-wrong-list"></ul>
+          <h3>Wrong answers</h3>
+          <table class="wrong-table"><thead><tr><th>Question</th><th>Correct answer</th><th>Your answer</th></tr></thead><tbody id="nb-wrong-list"></tbody></table>
         </div>
         <div class="results-actions" id="nb-actions"></div>
       </div>
@@ -211,10 +216,10 @@ permalink: /online-maths-tests/
         <div class="setup-section">
           <span class="setup-section-title">Round to</span>
           <div class="option-row">
-            <button class="option-btn dark-btn selected" data-rnd-type="10" onclick="rndSelectType(this)">Nearest 10</button>
-            <button class="option-btn dark-btn" data-rnd-type="100" onclick="rndSelectType(this)">Nearest 100</button>
-            <button class="option-btn dark-btn" data-rnd-type="1000" onclick="rndSelectType(this)">Nearest 1,000</button>
-            <button class="option-btn dark-btn" data-rnd-type="mixed-whole" onclick="rndSelectType(this)">MIXED</button>
+            <button class="option-btn dark-btn" data-rnd-whole="10" onclick="rndSelectWhole(this)">Nearest 10</button>
+            <button class="option-btn dark-btn" data-rnd-whole="100" onclick="rndSelectWhole(this)">Nearest 100</button>
+            <button class="option-btn dark-btn" data-rnd-whole="1000" onclick="rndSelectWhole(this)">Nearest 1,000</button>
+            <button class="option-btn dark-btn" id="rnd-whole-mixed-btn" data-rnd-whole="mixed-whole" onclick="rndSelectWholeMixed(this)">MIXED</button>
           </div>
         </div>
         <div class="setup-section">
@@ -274,8 +279,8 @@ permalink: /online-maths-tests/
         <div class="results-time" id="rnd-time-taken"></div>
         <div class="results-perfect" id="rnd-perfect" style="display:none">Full marks &#8212; excellent work!</div>
         <div class="results-wrong" id="rnd-wrong-wrap" style="display:none">
-          <h3>Incorrect or unanswered questions</h3>
-          <ul class="wrong-list" id="rnd-wrong-list"></ul>
+          <h3>Wrong answers</h3>
+          <table class="wrong-table"><thead><tr><th>Question</th><th>Correct answer</th><th>Your answer</th></tr></thead><tbody id="rnd-wrong-list"></tbody></table>
         </div>
         <div class="results-actions" id="rnd-actions"></div>
       </div>
@@ -342,8 +347,8 @@ permalink: /online-maths-tests/
         <div class="results-time" id="fdp-time-taken"></div>
         <div class="results-perfect" id="fdp-perfect" style="display:none">Full marks — excellent work!</div>
         <div class="results-wrong" id="fdp-wrong-wrap" style="display:none">
-          <h3>Incorrect or unanswered questions</h3>
-          <ul class="wrong-list" id="fdp-wrong-list"></ul>
+          <h3>Wrong answers</h3>
+          <table class="wrong-table"><thead><tr><th>Question</th><th>Correct answer</th><th>Your answer</th></tr></thead><tbody id="fdp-wrong-list"></tbody></table>
         </div>
         <div class="results-actions" id="fdp-actions"></div>
       </div>
@@ -411,8 +416,8 @@ permalink: /online-maths-tests/
         <div class="results-time" id="fon-time-taken"></div>
         <div class="results-perfect" id="fon-perfect" style="display:none">Full marks &#8212; excellent work!</div>
         <div class="results-wrong" id="fon-wrong-wrap" style="display:none">
-          <h3>Incorrect or unanswered questions</h3>
-          <ul class="wrong-list" id="fon-wrong-list"></ul>
+          <h3>Wrong answers</h3>
+          <table class="wrong-table"><thead><tr><th>Question</th><th>Correct answer</th><th>Your answer</th></tr></thead><tbody id="fon-wrong-list"></tbody></table>
         </div>
         <div class="results-actions" id="fon-actions"></div>
       </div>
@@ -489,8 +494,8 @@ permalink: /online-maths-tests/
         <div class="results-time" id="mc-time-taken"></div>
         <div class="results-perfect" id="mc-perfect" style="display:none">Full marks — excellent work!</div>
         <div class="results-wrong" id="mc-wrong-wrap" style="display:none">
-          <h3>Incorrect or unanswered questions</h3>
-          <ul class="wrong-list" id="mc-wrong-list"></ul>
+          <h3>Wrong answers</h3>
+          <table class="wrong-table"><thead><tr><th>Question</th><th>Correct answer</th><th>Your answer</th></tr></thead><tbody id="mc-wrong-list"></tbody></table>
         </div>
         <div class="results-actions" id="mc-actions"></div>
       </div>
@@ -505,11 +510,11 @@ permalink: /online-maths-tests/
         <div class="setup-section">
           <span class="setup-section-title">Type</span>
           <div class="option-row">
-            <button class="option-btn dark-btn selected" data-pr-type="squares" onclick="prSelectType(this)">Squares</button>
+            <button class="option-btn dark-btn" data-pr-type="squares" onclick="prSelectType(this)">Squares</button>
             <button class="option-btn dark-btn" data-pr-type="square-roots" onclick="prSelectType(this)">Square roots</button>
             <button class="option-btn dark-btn" data-pr-type="cubes" onclick="prSelectType(this)">Cubes</button>
             <button class="option-btn dark-btn" data-pr-type="cube-roots" onclick="prSelectType(this)">Cube roots</button>
-            <button class="option-btn dark-btn" data-pr-type="mixed" onclick="prSelectType(this)">MIXED</button>
+            <button class="option-btn dark-btn" id="pr-mixed-btn" data-pr-type="mixed" onclick="prSelectMixed(this)">MIXED</button>
           </div>
         </div>
         <div class="setup-section">
@@ -561,8 +566,8 @@ permalink: /online-maths-tests/
         <div class="results-time" id="pr-time-taken"></div>
         <div class="results-perfect" id="pr-perfect" style="display:none">Full marks &#8212; excellent work!</div>
         <div class="results-wrong" id="pr-wrong-wrap" style="display:none">
-          <h3>Incorrect or unanswered questions</h3>
-          <ul class="wrong-list" id="pr-wrong-list"></ul>
+          <h3>Wrong answers</h3>
+          <table class="wrong-table"><thead><tr><th>Question</th><th>Correct answer</th><th>Your answer</th></tr></thead><tbody id="pr-wrong-list"></tbody></table>
         </div>
         <div class="results-actions" id="pr-actions"></div>
       </div>
@@ -590,10 +595,10 @@ permalink: /online-maths-tests/
   let fonSelLevel = '1', fonSelCount = null, fonSelTimed = null, fonSelTime = null;
 
   const rndState = { questions: [], current: 0, userAnswers: [], elapsed: 0, remaining: 0, timerInterval: null, timed: false, timelimit: null, type: null, qcount: null, wrongOnly: false };
-  let rndSelType = "10", rndSelCount = null, rndSelTimed = null, rndSelTime = null;
+  let rndSelType = null, rndSelWholeTypes = new Set(), rndSelCount = null, rndSelTimed = null, rndSelTime = null;
 
   const prState = { questions: [], current: 0, userAnswers: [], elapsed: 0, remaining: 0, timerInterval: null, timed: false, timelimit: null, type: null, qcount: null, wrongOnly: false };
-  let prSelType = "squares", prSelCount = null, prSelTimed = null, prSelTime = null;
+  let prSelTypes = new Set(), prSelCount = null, prSelTimed = null, prSelTime = null;
 
   // ── SHARED ────────────────────────────────────────────────────────────────
   function formatTime(secs) {
@@ -632,6 +637,12 @@ permalink: /online-maths-tests/
       if (passes > 20) break;
     }
     return result;
+  }
+
+  function wrongTableRows(answeredWrong, questionFn, correctFn) {
+    return answeredWrong.map(a =>
+      '<tr><td>' + questionFn(a) + '</td><td>' + correctFn(a) + '</td><td class="your-ans-cell">' + a.given + '</td></tr>'
+    ).join('');
   }
 
   function launchConfetti() {
@@ -903,10 +914,8 @@ permalink: /online-maths-tests/
       if (!state.wrongOnly) launchConfetti();
     } else {
       perfectEl.style.display = 'none'; wrongWrap.style.display = 'block';
-      wrongList.innerHTML = allWrong.map(a =>
-        '<li><span class="q">' + questionResultLabel(a.q) + '</span>' + (a.unanswered ? '<span class="not-ans">Not answered</span>' : '<span class="your-ans">You answered: ' + a.given + '</span>') + '</li>'
-      ).join('');
-      const retryBtn = answeredWrong.length > 0 ? '<button class="results-btn green-btn" onclick="retakeWrong()">Retry wrong answers</button>' : '';
+      wrongList.innerHTML = wrongTableRows(answeredWrong, a => questionLabel(a.q), a => a.correct);
+      const retryBtn = answeredWrong.length > 0 ? '<button class="results-btn green-btn" onclick="retakeWrong()">Retry incorrect</button>' : '';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="resetSetup()">← Menu</button><button class="results-btn primary" onclick="retakeSame()">Try again</button>' + retryBtn;
     }
     document.getElementById('tt-results').classList.add('active');
@@ -1099,10 +1108,8 @@ permalink: /online-maths-tests/
       if (!nbState.wrongOnly) launchConfetti();
     } else {
       perfectEl.style.display = 'none'; wrongWrap.style.display = 'block';
-      wrongList.innerHTML = allWrong.map(a =>
-        '<li><span class="q">' + a.q.resultLabel + '</span>' + (a.unanswered ? '<span class="not-ans">Not answered</span>' : '<span class="your-ans">You answered: ' + a.given + '</span>') + '</li>'
-      ).join('');
-      const retryBtn = answeredWrong.length > 0 ? '<button class="results-btn green-btn" onclick="nbRetakeWrong()">Retry wrong answers</button>' : '';
+      wrongList.innerHTML = wrongTableRows(answeredWrong, a => a.q.label + ' = ?', a => a.correct);
+      const retryBtn = answeredWrong.length > 0 ? '<button class="results-btn green-btn" onclick="nbRetakeWrong()">Retry incorrect</button>' : '';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="nbResetSetup()">← Menu</button><button class="results-btn primary" onclick="nbRetakeSame()">Try again</button>' + retryBtn;
     }
     document.getElementById('nb-results').classList.add('active');
@@ -1351,10 +1358,8 @@ permalink: /online-maths-tests/
       if (!mcState.wrongOnly) launchConfetti();
     } else {
       perfectEl.style.display = 'none'; wrongWrap.style.display = 'block';
-      wrongList.innerHTML = allWrong.map(a =>
-        '<li><span class="q">' + a.q.resultLabel + '</span>' + (a.unanswered ? '<span class="not-ans">Not answered</span>' : '<span class="your-ans">You answered: ' + a.given + '</span>') + '</li>'
-      ).join('');
-      const retryBtn = answeredWrong.length > 0 ? '<button class="results-btn green-btn" onclick="mcRetakeWrong()">Retry wrong answers</button>' : '';
+      wrongList.innerHTML = wrongTableRows(answeredWrong, a => a.q.label, a => a.correct);
+      const retryBtn = answeredWrong.length > 0 ? '<button class="results-btn green-btn" onclick="mcRetakeWrong()">Retry incorrect</button>' : '';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="mcResetSetup()">← Menu</button><button class="results-btn primary" onclick="mcRetakeSame()">Try again</button>' + retryBtn;
     }
     document.getElementById('mc-results').classList.add('active');
@@ -1585,10 +1590,8 @@ permalink: /online-maths-tests/
       if(!fdpState.wrongOnly) launchConfetti();
     } else {
       perfectEl.style.display='none'; wrongWrap.style.display='block';
-      wrongList.innerHTML=allWrong.map(a=>
-        '<li><span class="q">'+a.q.qHTML+' = '+a.correct+'</span>'+(a.unanswered?'<span class="not-ans">Not answered</span>':'<span class="your-ans">You answered: '+a.given+'</span>')+'</li>'
-      ).join('');
-      const retryBtn=answeredWrong.length>0?'<button class="results-btn green-btn" onclick="fdpRetakeWrong()">Retry wrong answers</button>':'';
+      wrongList.innerHTML=wrongTableRows(answeredWrong, a=>a.q.qHTML+' = ?', a=>a.correct);
+      const retryBtn=answeredWrong.length>0?'<button class="results-btn green-btn" onclick="fdpRetakeWrong()">Retry incorrect</button>':'';
       actionsEl.innerHTML='<button class="results-btn secondary" onclick="fdpResetSetup()">\u2190 Menu</button><button class="results-btn primary" onclick="fdpRetakeSame()">Try again</button>'+retryBtn;
     }
     document.getElementById('fdp-results').classList.add('active');
@@ -1844,10 +1847,8 @@ permalink: /online-maths-tests/
       if (!fonState.wrongOnly) launchConfetti();
     } else {
       perfectEl.style.display = 'none'; wrongWrap.style.display = 'block';
-      wrongList.innerHTML = allWrong.map(a =>
-        '<li><span class="q">' + a.q.resultHTML + '</span>' + (a.unanswered ? '<span class="not-ans">Not answered</span>' : '<span class="your-ans">You answered: ' + a.given + '</span>') + '</li>'
-      ).join('');
-      const retryBtn = answeredWrong.length > 0 ? '<button class="results-btn green-btn" onclick="fonRetakeWrong()">Retry wrong answers</button>' : '';
+      wrongList.innerHTML = wrongTableRows(answeredWrong, a => a.q.qHTML + ' = ?', a => a.correct);
+      const retryBtn = answeredWrong.length > 0 ? '<button class="results-btn green-btn" onclick="fonRetakeWrong()">Retry incorrect</button>' : '';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="fonResetSetup()">\u2190 Menu</button><button class="results-btn primary" onclick="fonRetakeSame()">Try again</button>' + retryBtn;
     }
     document.getElementById('fon-results').classList.add('active');
@@ -1883,6 +1884,8 @@ permalink: /online-maths-tests/
 
   function rndBuildPool(type) {
     const pool = [];
+    // Support comma-separated multi-select e.g. "10,100"
+    const types = type.includes(',') ? type.split(',') : [type];
 
     function addWhole(n, target) {
       // target: 10, 100 or 1000
@@ -1910,7 +1913,7 @@ permalink: /online-maths-tests/
       pool.push({ label, question: label, answer: ansStr, resultLabel: label + ' = ' + ansStr });
     }
 
-    if (type === '10' || type === 'mixed-whole') {
+    if (types.some(t => t === '10') || types.some(t => t === 'mixed-whole')) {
       // Numbers up to 9,999 for nearest 10
       const nums10 = [];
       for (let i = 0; i < 60; i++) {
@@ -1921,7 +1924,7 @@ permalink: /online-maths-tests/
       }
       nums10.forEach(n => addWhole(n, 10));
     }
-    if (type === '100' || type === 'mixed-whole') {
+    if (types.some(t => t === '100') || types.some(t => t === 'mixed-whole')) {
       const nums100 = [];
       for (let i = 0; i < 60; i++) {
         const n = Math.floor(Math.random() * 99900) + 50;
@@ -1930,7 +1933,7 @@ permalink: /online-maths-tests/
       }
       nums100.forEach(n => addWhole(n, 100));
     }
-    if (type === '1000' || type === 'mixed-whole') {
+    if (types.some(t => t === '1000') || types.some(t => t === 'mixed-whole')) {
       const nums1000 = [];
       for (let i = 0; i < 60; i++) {
         const n = Math.floor(Math.random() * 99000) + 500;
@@ -1940,7 +1943,7 @@ permalink: /online-maths-tests/
       nums1000.forEach(n => addWhole(n, 1000));
     }
 
-    if (type === 'dp' || type === 'mixed-dpSf') {
+    if (types.some(t => t === 'dp') || types.some(t => t === 'mixed-dpSf')) {
       // Even mix of 1, 2 and 3 digits before decimal; round to 1, 2 or 3 d.p.
       const intRanges = [[1,9],[10,99],[100,999]]; // 1-digit, 2-digit, 3-digit integer parts
       for (let dp = 1; dp <= 3; dp++) {
@@ -1960,7 +1963,7 @@ permalink: /online-maths-tests/
       }
     }
 
-    if (type === 'sf' || type === 'mixed-dpSf') {
+    if (types.some(t => t === 'sf') || types.some(t => t === 'mixed-dpSf')) {
       // Whole numbers and decimals, up to 6 digits
       for (let sf = 1; sf <= 3; sf++) {
         // Straightforward: e.g. 3.471 → 2sf = 3.5
@@ -1987,7 +1990,8 @@ permalink: /online-maths-tests/
 
   function rndUpdateStartBtn() {
     const timedOk = rndSelTimed === false || (rndSelTimed === true && rndSelTime !== null);
-    document.getElementById('rnd-start-btn').disabled = !(rndSelType !== null && rndSelCount !== null && rndSelTimed !== null && timedOk);
+    const typeOk = rndSelType !== null || rndSelWholeTypes.size > 0;
+    document.getElementById('rnd-start-btn').disabled = !(typeOk && rndSelCount !== null && rndSelTimed !== null && timedOk);
   }
 
   function rndResetSetup() {
@@ -1995,9 +1999,9 @@ permalink: /online-maths-tests/
     document.getElementById('rnd-quiz').classList.remove('active');
     document.getElementById('rnd-results').classList.remove('active');
     document.getElementById('rnd-setup').style.display = '';
-    rndSelType = '10'; rndSelCount = null; rndSelTimed = null; rndSelTime = null;
+    rndSelType = null; rndSelWholeTypes = new Set(); rndSelCount = null; rndSelTimed = null; rndSelTime = null;
+    document.querySelectorAll('[data-rnd-whole]').forEach(b => b.classList.remove('selected'));
     document.querySelectorAll('[data-rnd-type]').forEach(b => b.classList.remove('selected'));
-    document.querySelector('[data-rnd-type="10"]').classList.add('selected');
     document.querySelectorAll('[data-rnd-qcount]').forEach(b => b.classList.remove('selected'));
     document.querySelectorAll('[data-rnd-timed]').forEach(b => b.classList.remove('selected'));
     document.querySelectorAll('[data-rnd-timelimit]').forEach(b => b.classList.remove('selected'));
@@ -2005,7 +2009,32 @@ permalink: /online-maths-tests/
     rndUpdateStartBtn();
   }
 
+  function rndSelectWhole(btn) {
+    // Deselect dp/sf type if a whole button is clicked
+    rndSelType = null;
+    document.querySelectorAll('[data-rnd-type]').forEach(b => b.classList.remove('selected'));
+    const val = parseInt(btn.dataset.rndWhole);
+    if (btn.classList.contains('selected')) { btn.classList.remove('selected'); rndSelWholeTypes.delete(val); }
+    else { btn.classList.add('selected'); rndSelWholeTypes.add(val); document.getElementById('rnd-whole-mixed-btn').classList.remove('selected'); }
+    // Auto-select MIXED if all three chosen
+    if (rndSelWholeTypes.size === 3) {
+      document.querySelectorAll('[data-rnd-whole]').forEach(b => b.classList.remove('selected'));
+      document.getElementById('rnd-whole-mixed-btn').classList.add('selected');
+      rndSelWholeTypes.clear(); rndSelWholeTypes.add('mixed-whole');
+    }
+    rndUpdateStartBtn();
+  }
+  function rndSelectWholeMixed(btn) {
+    rndSelType = null;
+    document.querySelectorAll('[data-rnd-type]').forEach(b => b.classList.remove('selected'));
+    document.querySelectorAll('[data-rnd-whole]').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected'); rndSelWholeTypes.clear(); rndSelWholeTypes.add('mixed-whole');
+    rndUpdateStartBtn();
+  }
   function rndSelectType(btn) {
+    // Deselect whole number buttons
+    rndSelWholeTypes = new Set();
+    document.querySelectorAll('[data-rnd-whole]').forEach(b => b.classList.remove('selected'));
     document.querySelectorAll('[data-rnd-type]').forEach(b => b.classList.remove('selected'));
     btn.classList.add('selected'); rndSelType = btn.dataset.rndType; rndUpdateStartBtn();
   }
@@ -2026,7 +2055,12 @@ permalink: /online-maths-tests/
     btn.classList.add('selected'); rndSelTime = parseInt(btn.dataset.rndTimelimit); rndUpdateStartBtn();
   }
 
-  function rndGenerateQuestions(type, count) {
+  function rndGenerateQuestions(type, wholeTypes, count) {
+    if (wholeTypes && wholeTypes.size > 0) {
+      const typeStr = wholeTypes.has('mixed-whole') ? 'mixed-whole' : [...wholeTypes].join(',');
+      const pool = rndBuildPool(typeStr);
+      return shuffleNoConsec(genericDrawCapped(pool, count));
+    }
     const pool = rndBuildPool(type);
     return shuffleNoConsec(genericDrawCapped(pool, count));
   }
@@ -2109,10 +2143,8 @@ permalink: /online-maths-tests/
       if (!rndState.wrongOnly) launchConfetti();
     } else {
       perfectEl.style.display = 'none'; wrongWrap.style.display = 'block';
-      wrongList.innerHTML = allWrong.map(a =>
-        '<li><span class="q">' + a.q.resultLabel + '</span>' + (a.unanswered ? '<span class="not-ans">Not answered</span>' : '<span class="your-ans">You answered: ' + a.given + '</span>') + '</li>'
-      ).join('');
-      const retryBtn = answeredWrong.length > 0 ? '<button class="results-btn green-btn" onclick="rndRetakeWrong()">Retry wrong answers</button>' : '';
+      wrongList.innerHTML = wrongTableRows(answeredWrong, a => a.q.question, a => a.correct);
+      const retryBtn = answeredWrong.length > 0 ? '<button class="results-btn green-btn" onclick="rndRetakeWrong()">Retry incorrect</button>' : '';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="rndResetSetup()">\u2190 Menu</button><button class="results-btn primary" onclick="rndRetakeSame()">Try again</button>' + retryBtn;
     }
     document.getElementById('rnd-results').classList.add('active');
@@ -2121,7 +2153,7 @@ permalink: /online-maths-tests/
   function rndRetakeSame() {
     document.getElementById('rnd-results').classList.remove('active');
     rndState.wrongOnly = false;
-    rndStartTest(rndGenerateQuestions(rndState.type, rndState.qcount));
+    rndStartTest(rndGenerateQuestions(rndState.type, rndState.wholeTypes || new Set(), rndState.qcount));
   }
 
   function rndRetakeWrong() {
@@ -2136,36 +2168,37 @@ permalink: /online-maths-tests/
   }
 
   document.getElementById('rnd-start-btn').addEventListener('click', function() {
-    rndState.type = rndSelType; rndState.qcount = rndSelCount;
+    rndState.type = rndSelType; rndState.wholeTypes = new Set(rndSelWholeTypes); rndState.qcount = rndSelCount;
     rndState.timed = rndSelTimed; rndState.timelimit = rndSelTime; rndState.wrongOnly = false;
-    rndStartTest(rndGenerateQuestions(rndSelType, rndSelCount));
+    rndStartTest(rndGenerateQuestions(rndSelType, rndSelWholeTypes, rndSelCount));
   });
 
   // ── POWERS AND ROOTS ──────────────────────────────────────────────────────
 
-  function prBuildPool(type) {
+  function prBuildPool(types) {
     const pool = [];
     const squares = [1,2,3,4,5,6,7,8,9,10,11,12];
     const cubes   = [1,2,3,4,5,10];
+    const typeSet = types instanceof Set ? types : new Set([types]);
 
-    if (type === 'squares' || type === 'mixed') {
+    if (typeSet.has('squares') || typeSet.has('mixed')) {
       for (const n of squares) {
         pool.push({ label: n + '\u00b2 = ?', question: n + '\u00b2 = ?', answer: (n*n).toString(), resultLabel: n + '\u00b2 = ' + (n*n) });
       }
     }
-    if (type === 'square-roots' || type === 'mixed') {
+    if (typeSet.has('square-roots') || typeSet.has('mixed')) {
       for (const n of squares) {
         const sq = n * n;
         pool.push({ label: '\u221a' + sq + ' = ?', question: '\u221a' + sq + ' = ?', answer: n.toString(), resultLabel: '\u221a' + sq + ' = ' + n });
       }
     }
-    if (type === 'cubes' || type === 'mixed') {
+    if (typeSet.has('cubes') || typeSet.has('mixed')) {
       for (const n of cubes) {
         const cb = n * n * n;
         pool.push({ label: n + '\u00b3 = ?', question: n + '\u00b3 = ?', answer: cb.toString(), resultLabel: n + '\u00b3 = ' + cb });
       }
     }
-    if (type === 'cube-roots' || type === 'mixed') {
+    if (typeSet.has('cube-roots') || typeSet.has('mixed')) {
       for (const n of cubes) {
         const cb = n * n * n;
         pool.push({ label: '\u221b' + cb + ' = ?', question: '\u221b' + cb + ' = ?', answer: n.toString(), resultLabel: '\u221b' + cb + ' = ' + n });
@@ -2176,7 +2209,7 @@ permalink: /online-maths-tests/
 
   function prUpdateStartBtn() {
     const timedOk = prSelTimed === false || (prSelTimed === true && prSelTime !== null);
-    document.getElementById('pr-start-btn').disabled = !(prSelType !== null && prSelCount !== null && prSelTimed !== null && timedOk);
+    document.getElementById('pr-start-btn').disabled = !(prSelTypes.size > 0 && prSelCount !== null && prSelTimed !== null && timedOk);
   }
 
   function prResetSetup() {
@@ -2184,9 +2217,8 @@ permalink: /online-maths-tests/
     document.getElementById('pr-quiz').classList.remove('active');
     document.getElementById('pr-results').classList.remove('active');
     document.getElementById('pr-setup').style.display = '';
-    prSelType = 'squares'; prSelCount = null; prSelTimed = null; prSelTime = null;
+    prSelTypes = new Set(); prSelCount = null; prSelTimed = null; prSelTime = null;
     document.querySelectorAll('[data-pr-type]').forEach(b => b.classList.remove('selected'));
-    document.querySelector('[data-pr-type="squares"]').classList.add('selected');
     document.querySelectorAll('[data-pr-qcount]').forEach(b => b.classList.remove('selected'));
     document.querySelectorAll('[data-pr-timed]').forEach(b => b.classList.remove('selected'));
     document.querySelectorAll('[data-pr-timelimit]').forEach(b => b.classList.remove('selected'));
@@ -2195,8 +2227,21 @@ permalink: /online-maths-tests/
   }
 
   function prSelectType(btn) {
+    const val = btn.dataset.prType;
+    if (btn.classList.contains('selected')) { btn.classList.remove('selected'); prSelTypes.delete(val); }
+    else { btn.classList.add('selected'); prSelTypes.add(val); document.getElementById('pr-mixed-btn').classList.remove('selected'); prSelTypes.delete('mixed'); }
+    // Auto-select MIXED if all four individual types selected
+    if (['squares','square-roots','cubes','cube-roots'].every(t => prSelTypes.has(t))) {
+      document.querySelectorAll('[data-pr-type]').forEach(b => b.classList.remove('selected'));
+      document.getElementById('pr-mixed-btn').classList.add('selected');
+      prSelTypes.clear(); prSelTypes.add('mixed');
+    }
+    prUpdateStartBtn();
+  }
+  function prSelectMixed(btn) {
     document.querySelectorAll('[data-pr-type]').forEach(b => b.classList.remove('selected'));
-    btn.classList.add('selected'); prSelType = btn.dataset.prType; prUpdateStartBtn();
+    btn.classList.add('selected'); prSelTypes.clear(); prSelTypes.add('mixed');
+    prUpdateStartBtn();
   }
   function prSelectCount(btn) {
     document.querySelectorAll('[data-pr-qcount]').forEach(b => b.classList.remove('selected'));
@@ -2215,8 +2260,8 @@ permalink: /online-maths-tests/
     btn.classList.add('selected'); prSelTime = parseInt(btn.dataset.prTimelimit); prUpdateStartBtn();
   }
 
-  function prGenerateQuestions(type, count) {
-    const pool = prBuildPool(type);
+  function prGenerateQuestions(types, count) {
+    const pool = prBuildPool(types);
     return shuffleNoConsec(genericDrawCapped(pool, count));
   }
 
@@ -2294,10 +2339,8 @@ permalink: /online-maths-tests/
       if (!prState.wrongOnly) launchConfetti();
     } else {
       perfectEl.style.display = 'none'; wrongWrap.style.display = 'block';
-      wrongList.innerHTML = allWrong.map(a =>
-        '<li><span class="q">' + a.q.resultLabel + '</span>' + (a.unanswered ? '<span class="not-ans">Not answered</span>' : '<span class="your-ans">You answered: ' + a.given + '</span>') + '</li>'
-      ).join('');
-      const retryBtn = answeredWrong.length > 0 ? '<button class="results-btn green-btn" onclick="prRetakeWrong()">Retry wrong answers</button>' : '';
+      wrongList.innerHTML = wrongTableRows(answeredWrong, a => a.q.question, a => a.correct);
+      const retryBtn = answeredWrong.length > 0 ? '<button class="results-btn green-btn" onclick="prRetakeWrong()">Retry incorrect</button>' : '';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="prResetSetup()">\u2190 Menu</button><button class="results-btn primary" onclick="prRetakeSame()">Try again</button>' + retryBtn;
     }
     document.getElementById('pr-results').classList.add('active');
@@ -2306,7 +2349,7 @@ permalink: /online-maths-tests/
   function prRetakeSame() {
     document.getElementById('pr-results').classList.remove('active');
     prState.wrongOnly = false;
-    prStartTest(prGenerateQuestions(prState.type, prState.qcount));
+    prStartTest(prGenerateQuestions(prState.types, prState.qcount));
   }
 
   function prRetakeWrong() {
@@ -2321,9 +2364,9 @@ permalink: /online-maths-tests/
   }
 
   document.getElementById('pr-start-btn').addEventListener('click', function() {
-    prState.type = prSelType; prState.qcount = prSelCount;
+    prState.types = new Set(prSelTypes); prState.qcount = prSelCount;
     prState.timed = prSelTimed; prState.timelimit = prSelTime; prState.wrongOnly = false;
-    prStartTest(prGenerateQuestions(prSelType, prSelCount));
+    prStartTest(prGenerateQuestions(prSelTypes, prSelCount));
   });
 
 </script>
