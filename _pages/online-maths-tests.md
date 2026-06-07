@@ -1108,7 +1108,7 @@ permalink: /online-maths-tests/
       if (!nbState.wrongOnly) launchConfetti();
     } else {
       perfectEl.style.display = 'none'; wrongWrap.style.display = 'block';
-      wrongList.innerHTML = wrongTableRows(answeredWrong, a => a.q.label + ' = ?', a => a.correct);
+      wrongList.innerHTML = wrongTableRows(answeredWrong, a => a.q.label.includes('?') ? a.q.label : a.q.label + ' = ?', a => a.correct);
       const retryBtn = answeredWrong.length > 0 ? '<button class="results-btn green-btn" onclick="nbRetakeWrong()">Retry incorrect</button>' : '';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="nbResetSetup()">← Menu</button><button class="results-btn primary" onclick="nbRetakeSame()">Try again</button>' + retryBtn;
     }
@@ -2013,9 +2013,14 @@ permalink: /online-maths-tests/
     // Deselect dp/sf type if a whole button is clicked
     rndSelType = null;
     document.querySelectorAll('[data-rnd-type]').forEach(b => b.classList.remove('selected'));
+    // If MIXED was active, clear it first
+    if (rndSelWholeTypes.has('mixed-whole')) {
+      rndSelWholeTypes.clear();
+      document.getElementById('rnd-whole-mixed-btn').classList.remove('selected');
+    }
     const val = parseInt(btn.dataset.rndWhole);
     if (btn.classList.contains('selected')) { btn.classList.remove('selected'); rndSelWholeTypes.delete(val); }
-    else { btn.classList.add('selected'); rndSelWholeTypes.add(val); document.getElementById('rnd-whole-mixed-btn').classList.remove('selected'); }
+    else { btn.classList.add('selected'); rndSelWholeTypes.add(val); }
     // Auto-select MIXED if all three chosen
     if (rndSelWholeTypes.size === 3) {
       document.querySelectorAll('[data-rnd-whole]').forEach(b => b.classList.remove('selected'));
