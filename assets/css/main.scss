@@ -411,6 +411,7 @@ main { flex: 1; }
   .worksheet-list { grid-template-columns: 1fr; }
   .year-card-header { flex-direction: column; align-items: flex-start; gap: 6px; }
   .paper-thumb { width: 72px; height: auto; }
+  .paper-thumb img { width: 100%; height: auto; }
   .intro-card {
     grid-template-columns: 1fr !important;
   }
