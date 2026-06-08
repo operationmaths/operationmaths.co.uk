@@ -44,10 +44,6 @@ permalink: /maths-sats-papers/
     <section id="y2026" class="year-section">
     <h2 class="section-heading">2026</h2>
     <div class="year-card">
-      <div class="year-card-header">
-        <span class="year-label">2026 KS2 maths SATs papers</span>
-        <span class="year-badge">3 papers + mark scheme</span>
-      </div>
       <div class="paper-list">
 
         <div class="paper-row">
@@ -104,10 +100,6 @@ permalink: /maths-sats-papers/
     <section id="y2025" class="year-section">
     <h2 class="section-heading">2025</h2>
     <div class="year-card">
-      <div class="year-card-header">
-        <span class="year-label">2025 KS2 maths SATs papers</span>
-        <span class="year-badge">3 papers + mark scheme</span>
-      </div>
       <div class="paper-list">
 
         <div class="paper-row">
@@ -164,10 +156,6 @@ permalink: /maths-sats-papers/
     <section id="y2024" class="year-section">
     <h2 class="section-heading">2024</h2>
     <div class="year-card">
-      <div class="year-card-header">
-        <span class="year-label">2024 KS2 maths SATs papers</span>
-        <span class="year-badge">3 papers + mark scheme</span>
-      </div>
       <div class="paper-list">
 
         <div class="paper-row">
@@ -224,10 +212,6 @@ permalink: /maths-sats-papers/
     <section id="y2023" class="year-section">
     <h2 class="section-heading">2023</h2>
     <div class="year-card">
-      <div class="year-card-header">
-        <span class="year-label">2023 KS2 maths SATs papers</span>
-        <span class="year-badge">3 papers + mark scheme</span>
-      </div>
       <div class="paper-list">
 
         <div class="paper-row">
@@ -284,10 +268,6 @@ permalink: /maths-sats-papers/
     <section id="y2022" class="year-section">
     <h2 class="section-heading">2022</h2>
     <div class="year-card">
-      <div class="year-card-header">
-        <span class="year-label">2022 KS2 maths SATs papers</span>
-        <span class="year-badge">3 papers + mark scheme</span>
-      </div>
       <div class="paper-list">
 
         <div class="paper-row">
@@ -344,10 +324,6 @@ permalink: /maths-sats-papers/
     <section id="y2019" class="year-section">
     <h2 class="section-heading">2019</h2>
     <div class="year-card">
-      <div class="year-card-header">
-        <span class="year-label">2019 KS2 maths SATs papers</span>
-        <span class="year-badge">3 papers + mark scheme</span>
-      </div>
       <div class="paper-list">
 
         <div class="paper-row">
@@ -404,10 +380,6 @@ permalink: /maths-sats-papers/
     <section id="y2018" class="year-section">
     <h2 class="section-heading">2018</h2>
     <div class="year-card">
-      <div class="year-card-header">
-        <span class="year-label">2018 KS2 maths SATs papers</span>
-        <span class="year-badge">3 papers + mark scheme</span>
-      </div>
       <div class="paper-list">
 
         <div class="paper-row">
@@ -464,10 +436,6 @@ permalink: /maths-sats-papers/
     <section id="y2017" class="year-section">
     <h2 class="section-heading">2017</h2>
     <div class="year-card">
-      <div class="year-card-header">
-        <span class="year-label">2017 KS2 maths SATs papers</span>
-        <span class="year-badge">3 papers + mark scheme</span>
-      </div>
       <div class="paper-list">
 
         <div class="paper-row">
@@ -524,10 +492,6 @@ permalink: /maths-sats-papers/
     <section id="y2016" class="year-section">
     <h2 class="section-heading">2016</h2>
     <div class="year-card">
-      <div class="year-card-header">
-        <span class="year-label">2016 KS2 maths SATs papers</span>
-        <span class="year-badge">3 papers + mark scheme</span>
-      </div>
       <div class="paper-list">
 
         <div class="paper-row">
@@ -584,10 +548,6 @@ permalink: /maths-sats-papers/
     <section id="sample" class="year-section">
     <h2 class="section-heading">Sample papers</h2>
     <div class="year-card">
-      <div class="year-card-header">
-        <span class="year-label">KS2 maths SATs sample papers</span>
-        <span class="year-badge">3 papers + mark scheme</span>
-      </div>
       <div class="paper-list">
 
         <div class="paper-row">
