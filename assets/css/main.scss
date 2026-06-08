@@ -329,6 +329,8 @@ main { flex: 1; }
 .tag-arith  { background: #eff6ff; color: var(--blue); }
 .tag-reason { background: #f5f0ff; color: var(--purple); }
 .tag-mark   { background: #fff7ed; color: var(--orange); }
+.tag-foundation { background: #e6f4ec; color: var(--green); }
+.tag-higher     { background: #f0e6f4; color: var(--purple); }
 .paper-btns { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; flex-shrink: 0; }
 .answers-row { background: #fafafa; border-top: 1px solid #e5e7eb; padding: 0.85rem 1.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
 .answers-label { font-size: 13px; font-weight: 700; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em; }
