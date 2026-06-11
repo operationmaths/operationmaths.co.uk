@@ -46,8 +46,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2024-November-Foundation-Paper-1.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2024-November-Foundation-Paper-1-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2024-November-Foundation-Paper-1.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2024-November-Foundation-Paper-1-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -58,8 +58,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2024-November-Foundation-Paper-2.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2024-November-Foundation-Paper-2-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2024-November-Foundation-Paper-2.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2024-November-Foundation-Paper-2-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -70,8 +70,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2024-November-Foundation-Paper-3.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2024-November-Foundation-Paper-3-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2024-November-Foundation-Paper-3.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2024-November-Foundation-Paper-3-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
         </div>
@@ -91,8 +91,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2024-June-Foundation-Paper-1.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2024-June-Foundation-Paper-1-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2024-June-Foundation-Paper-1.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2024-June-Foundation-Paper-1-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -103,8 +103,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2024-June-Foundation-Paper-2.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2024-June-Foundation-Paper-2-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2024-June-Foundation-Paper-2.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2024-June-Foundation-Paper-2-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -115,8 +115,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2024-June-Foundation-Paper-3.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2024-June-Foundation-Paper-3-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2024-June-Foundation-Paper-3.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2024-June-Foundation-Paper-3-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
         </div>
@@ -136,8 +136,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2023-November-Foundation-Paper-1.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2023-November-Foundation-Paper-1-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2023-November-Foundation-Paper-1.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2023-November-Foundation-Paper-1-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -148,8 +148,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2023-November-Foundation-Paper-2.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2023-November-Foundation-Paper-2-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2023-November-Foundation-Paper-2.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2023-November-Foundation-Paper-2-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -160,8 +160,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2023-November-Foundation-Paper-3.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2023-November-Foundation-Paper-3-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2023-November-Foundation-Paper-3.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2023-November-Foundation-Paper-3-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
         </div>
@@ -181,8 +181,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2023-June-Foundation-Paper-1.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2023-June-Foundation-Paper-1-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2023-June-Foundation-Paper-1.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2023-June-Foundation-Paper-1-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -193,8 +193,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2023-June-Foundation-Paper-2.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2023-June-Foundation-Paper-2-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2023-June-Foundation-Paper-2.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2023-June-Foundation-Paper-2-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -205,8 +205,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2023-June-Foundation-Paper-3.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2023-June-Foundation-Paper-3-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2023-June-Foundation-Paper-3.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2023-June-Foundation-Paper-3-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
         </div>
@@ -226,8 +226,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2022-November-Foundation-Paper-1.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2022-November-Foundation-Paper-1-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2022-November-Foundation-Paper-1.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2022-November-Foundation-Paper-1-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -238,8 +238,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2022-November-Foundation-Paper-2.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2022-November-Foundation-Paper-2-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2022-November-Foundation-Paper-2.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2022-November-Foundation-Paper-2-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -250,8 +250,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2022-November-Foundation-Paper-3.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2022-November-Foundation-Paper-3-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2022-November-Foundation-Paper-3.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2022-November-Foundation-Paper-3-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
         </div>
@@ -271,8 +271,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2022-June-Foundation-Paper-1.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2022-June-Foundation-Paper-1-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2022-June-Foundation-Paper-1.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2022-June-Foundation-Paper-1-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -283,8 +283,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2022-June-Foundation-Paper-2.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2022-June-Foundation-Paper-2-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2022-June-Foundation-Paper-2.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2022-June-Foundation-Paper-2-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -295,8 +295,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2022-June-Foundation-Paper-3.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2022-June-Foundation-Paper-3-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2022-June-Foundation-Paper-3.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2022-June-Foundation-Paper-3-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
         </div>
@@ -316,8 +316,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2021-November-Foundation-Paper-1.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2021-November-Foundation-Paper-1-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2021-November-Foundation-Paper-1.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2021-November-Foundation-Paper-1-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -328,8 +328,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2021-November-Foundation-Paper-2.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2021-November-Foundation-Paper-2-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2021-November-Foundation-Paper-2.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2021-November-Foundation-Paper-2-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -340,8 +340,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2021-November-Foundation-Paper-3.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2021-November-Foundation-Paper-3-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2021-November-Foundation-Paper-3.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2021-November-Foundation-Paper-3-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
         </div>
@@ -361,8 +361,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2020-November-Foundation-Paper-1.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2020-November-Foundation-Paper-1-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2020-November-Foundation-Paper-1.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2020-November-Foundation-Paper-1-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -373,8 +373,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2020-November-Foundation-Paper-2.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2020-November-Foundation-Paper-2-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2020-November-Foundation-Paper-2.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2020-November-Foundation-Paper-2-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -385,8 +385,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2020-November-Foundation-Paper-3.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2020-November-Foundation-Paper-3-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2020-November-Foundation-Paper-3.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2020-November-Foundation-Paper-3-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
         </div>
@@ -406,8 +406,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2019-November-Foundation-Paper-1.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2019-November-Foundation-Paper-1-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2019-November-Foundation-Paper-1.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2019-November-Foundation-Paper-1-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -418,8 +418,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2019-November-Foundation-Paper-2.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2019-November-Foundation-Paper-2-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2019-November-Foundation-Paper-2.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2019-November-Foundation-Paper-2-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -430,8 +430,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2019-November-Foundation-Paper-3.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2019-November-Foundation-Paper-3-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2019-November-Foundation-Paper-3.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2019-November-Foundation-Paper-3-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
         </div>
@@ -451,8 +451,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2019-June-Foundation-Paper-1.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2019-June-Foundation-Paper-1-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2019-June-Foundation-Paper-1.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2019-June-Foundation-Paper-1-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -463,8 +463,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2019-June-Foundation-Paper-2.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2019-June-Foundation-Paper-2-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2019-June-Foundation-Paper-2.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2019-June-Foundation-Paper-2-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -475,8 +475,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2019-June-Foundation-Paper-3.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2019-June-Foundation-Paper-3-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2019-June-Foundation-Paper-3.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2019-June-Foundation-Paper-3-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
         </div>
@@ -496,8 +496,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2018-November-Foundation-Paper-1.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2018-November-Foundation-Paper-1-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2018-November-Foundation-Paper-1.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2018-November-Foundation-Paper-1-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -508,8 +508,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2018-November-Foundation-Paper-2.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2018-November-Foundation-Paper-2-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2018-November-Foundation-Paper-2.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2018-November-Foundation-Paper-2-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -520,8 +520,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2018-November-Foundation-Paper-3.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2018-November-Foundation-Paper-3-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2018-November-Foundation-Paper-3.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2018-November-Foundation-Paper-3-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
         </div>
@@ -541,8 +541,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2018-June-Foundation-Paper-1.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2018-June-Foundation-Paper-1-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2018-June-Foundation-Paper-1.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2018-June-Foundation-Paper-1-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -553,8 +553,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2018-June-Foundation-Paper-2.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2018-June-Foundation-Paper-2-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2018-June-Foundation-Paper-2.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2018-June-Foundation-Paper-2-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -565,8 +565,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2018-June-Foundation-Paper-3.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2018-June-Foundation-Paper-3-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2018-June-Foundation-Paper-3.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2018-June-Foundation-Paper-3-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
         </div>
@@ -586,8 +586,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2017-November-Foundation-Paper-1.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2017-November-Foundation-Paper-1-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2017-November-Foundation-Paper-1.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2017-November-Foundation-Paper-1-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -598,8 +598,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2017-November-Foundation-Paper-2.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2017-November-Foundation-Paper-2-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2017-November-Foundation-Paper-2.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2017-November-Foundation-Paper-2-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -610,8 +610,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2017-November-Foundation-Paper-3.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2017-November-Foundation-Paper-3-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2017-November-Foundation-Paper-3.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2017-November-Foundation-Paper-3-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
         </div>
@@ -631,8 +631,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2017-June-Foundation-Paper-1.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2017-June-Foundation-Paper-1-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2017-June-Foundation-Paper-1.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2017-June-Foundation-Paper-1-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -643,8 +643,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2017-June-Foundation-Paper-2.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2017-June-Foundation-Paper-2-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2017-June-Foundation-Paper-2.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2017-June-Foundation-Paper-2-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -655,8 +655,8 @@ permalink: /maths-gcse-papers/edexcel-foundation/
               <div class="paper-type">80 marks · 1 hour 30 minutes</div>
             </div>
             <div class="paper-btns">
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2017-June-Foundation-Paper-3.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/GCSE-Edexcel-2017-June-Foundation-Paper-3-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2017-June-Foundation-Paper-3.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-edexcel-foundation/GCSE-Edexcel-2017-June-Foundation-Paper-3-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
         </div>
