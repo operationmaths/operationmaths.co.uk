@@ -1055,6 +1055,7 @@ permalink: /online-maths-tests/
   }
 
   function nbSelectOp(btn) {
+    if (btn.classList.contains('selected')) { btn.classList.remove('selected'); nbSelOp = null; nbUpdateStartBtn(); return; }
     document.querySelectorAll('[data-nb-op]').forEach(b => b.classList.remove('selected'));
     btn.classList.add('selected');
     nbSelOp = btn.dataset.nbOp;
@@ -1280,7 +1281,7 @@ permalink: /online-maths-tests/
       doublesPool.push({ label: 'Double ' + n + ' = ?', answer: n * 2 });
     }
     for (let n = 2; n <= 20; n += 2) {
-      halvesPool.push({ label: 'Halve ' + n + ' = ?', answer: n / 2 });
+      halvesPool.push({ label: 'Half of ' + n + ' = ?', answer: n / 2 });
     }
     if (types.has('doubles')) return shuffleNoConsec(genericDrawCapped(doublesPool, count));
     if (types.has('halves')) return shuffleNoConsec(genericDrawCapped(halvesPool, count));
