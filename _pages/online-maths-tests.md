@@ -10,7 +10,9 @@ permalink: /online-maths-tests/
 .dark-btn { background: #fff; color: #374151; border: 2px solid #d0d0d0; }
 .dark-btn:hover { background: #f5f6f8; border-color: #9ca3af; }
 .option-btn.dark-btn:hover { background: #f0f0f0; border-color: #9ca3af; color: #111827; }
-.option-btn.dark-btn.selected { background: var(--blue); color: #fff; border-color: var(--blue); }
+.option-btn.dark-btn.selected { background: #111827; color: #fff; border-color: #111827; }
+.table-btn { background: #fff; color: #374151; border: 2px solid #d0d0d0; }
+.table-btn:hover { background: #f0f6ff; border-color: var(--blue); color: var(--blue); }
 .table-btn.selected { background: var(--blue); color: #fff; border-color: var(--blue); }
 .script-l { font-family: "Times New Roman", "Liberation Serif", serif; font-style: normal; }
 
