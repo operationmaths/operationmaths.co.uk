@@ -10,7 +10,7 @@ permalink: /online-maths-tests/
 .dark-btn { background: #fff; color: #374151; border: 2px solid #d0d0d0; }
 .dark-btn:hover { background: #f5f6f8; border-color: #9ca3af; }
 .option-btn.dark-btn:hover { background: #f0f0f0; border-color: #9ca3af; color: #111827; }
-.option-btn.dark-btn.selected { background: #111827; color: #fff; border-color: #111827; }
+.option-btn.dark-btn.selected { background: var(--blue); color: #fff; border-color: var(--blue); }
 .table-btn.selected { background: var(--blue); color: #fff; border-color: var(--blue); }
 .script-l { font-family: "Times New Roman", "Liberation Serif", serif; font-style: normal; }
 
@@ -757,6 +757,7 @@ permalink: /online-maths-tests/
     if (panel) panel.classList.add('active');
     resetSetup();
     nbResetSetup();
+    if (typeof dhResetSetup === 'function') dhResetSetup();
     mcResetSetup();
     if (typeof fdpResetSetup === 'function') fdpResetSetup();
     if (typeof fonResetSetup === 'function') fonResetSetup();
@@ -823,6 +824,7 @@ permalink: /online-maths-tests/
   }
 
   function ttSelectOp(btn) {
+    if (btn.classList.contains('selected')) { btn.classList.remove('selected'); selOp = null; updateTableLabels('times'); updateStartBtn(); return; }
     document.querySelectorAll('[data-op]').forEach(b => b.classList.remove('selected'));
     btn.classList.add('selected');
     selOp = btn.dataset.op;
@@ -1042,6 +1044,7 @@ permalink: /online-maths-tests/
   }
 
   function nbSelectTarget(btn) {
+    if (btn.classList.contains('selected')) { btn.classList.remove('selected'); nbSelTarget = null; nbUpdateStartBtn(); return; }
     document.querySelectorAll('[data-nb-target]').forEach(b => b.classList.remove('selected'));
     btn.classList.add('selected');
     nbSelTarget = parseInt(btn.dataset.nbTarget);
@@ -1455,6 +1458,7 @@ permalink: /online-maths-tests/
   }
 
   function mcSelectDiff(btn) {
+    if (btn.classList.contains('selected')) { btn.classList.remove('selected'); mcSelDiff = null; document.getElementById('mc-groups-section').style.display = 'none'; mcUpdateStartBtn(); return; }
     document.querySelectorAll('[data-mc-diff]').forEach(b => b.classList.remove('selected'));
     btn.classList.add('selected');
     mcSelDiff = btn.dataset.mcDiff;
@@ -1732,7 +1736,7 @@ permalink: /online-maths-tests/
 
   function fdpUpdateStartBtn() {
     const timedOk = fdpSelTimed===false||(fdpSelTimed===true&&fdpSelTime!==null);
-    document.getElementById('fdp-start-btn').disabled = !(fdpSelCount!==null&&fdpSelTimed!==null&&timedOk);
+    document.getElementById('fdp-start-btn').disabled = !(fdpSelLevel!==null&&fdpSelCount!==null&&fdpSelTimed!==null&&timedOk);
   }
 
   function fdpResetSetup() {
@@ -1740,9 +1744,8 @@ permalink: /online-maths-tests/
     document.getElementById('fdp-quiz').classList.remove('active');
     document.getElementById('fdp-results').classList.remove('active');
     document.getElementById('fdp-setup').style.display = '';
-    fdpSelLevel='basic'; fdpSelCount=null; fdpSelTimed=null; fdpSelTime=null;
+    fdpSelLevel=null; fdpSelCount=null; fdpSelTimed=null; fdpSelTime=null;
     document.querySelectorAll('[data-fdp-level]').forEach(b=>b.classList.remove('selected'));
-    document.querySelector('[data-fdp-level="basic"]').classList.add('selected');
     document.querySelectorAll('[data-fdp-qcount]').forEach(b=>b.classList.remove('selected'));
     document.querySelectorAll('[data-fdp-timed]').forEach(b=>b.classList.remove('selected'));
     document.querySelectorAll('[data-fdp-timelimit]').forEach(b=>b.classList.remove('selected'));
@@ -1751,6 +1754,7 @@ permalink: /online-maths-tests/
   }
 
   function fdpSelectLevel(btn) {
+    if (btn.classList.contains('selected')) { btn.classList.remove('selected'); fdpSelLevel = null; fdpUpdateStartBtn(); return; }
     document.querySelectorAll('[data-fdp-level]').forEach(b=>b.classList.remove('selected'));
     btn.classList.add('selected'); fdpSelLevel=btn.dataset.fdpLevel; fdpUpdateStartBtn();
   }
@@ -1981,7 +1985,7 @@ permalink: /online-maths-tests/
   // ── FON setup handlers ────────────────────────────────────────────────────
   function fonUpdateStartBtn() {
     const timedOk = fonSelTimed === false || (fonSelTimed === true && fonSelTime !== null);
-    document.getElementById('fon-start-btn').disabled = !(fonSelCount !== null && fonSelTimed !== null && timedOk);
+    document.getElementById('fon-start-btn').disabled = !(fonSelLevel !== null && fonSelCount !== null && fonSelTimed !== null && timedOk);
   }
 
   function fonResetSetup() {
@@ -1989,9 +1993,8 @@ permalink: /online-maths-tests/
     document.getElementById('fon-quiz').classList.remove('active');
     document.getElementById('fon-results').classList.remove('active');
     document.getElementById('fon-setup').style.display = '';
-    fonSelLevel = '1'; fonSelCount = null; fonSelTimed = null; fonSelTime = null;
+    fonSelLevel = null; fonSelCount = null; fonSelTimed = null; fonSelTime = null;
     document.querySelectorAll('[data-fon-level]').forEach(b => b.classList.remove('selected'));
-    document.querySelector('[data-fon-level="1"]').classList.add('selected');
     document.querySelectorAll('[data-fon-qcount]').forEach(b => b.classList.remove('selected'));
     document.querySelectorAll('[data-fon-timed]').forEach(b => b.classList.remove('selected'));
     document.querySelectorAll('[data-fon-timelimit]').forEach(b => b.classList.remove('selected'));
@@ -2000,6 +2003,7 @@ permalink: /online-maths-tests/
   }
 
   function fonSelectLevel(btn) {
+    if (btn.classList.contains('selected')) { btn.classList.remove('selected'); fonSelLevel = null; fonUpdateStartBtn(); return; }
     document.querySelectorAll('[data-fon-level]').forEach(b => b.classList.remove('selected'));
     btn.classList.add('selected'); fonSelLevel = btn.dataset.fonLevel; fonUpdateStartBtn();
   }
@@ -2288,6 +2292,7 @@ permalink: /online-maths-tests/
     // Deselect whole number buttons
     rndSelWholeTypes = new Set();
     document.querySelectorAll('[data-rnd-whole]').forEach(b => b.classList.remove('selected'));
+    if (btn.classList.contains('selected')) { btn.classList.remove('selected'); rndSelType = null; rndUpdateStartBtn(); return; }
     document.querySelectorAll('[data-rnd-type]').forEach(b => b.classList.remove('selected'));
     btn.classList.add('selected'); rndSelType = btn.dataset.rndType; rndUpdateStartBtn();
   }
