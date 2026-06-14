@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Maths Worksheets & Tuition
-description: Operation Maths provides worksheets, books and tuition to support primary and secondary students in England.
+title: Maths Worksheets & Resources
+description: Operation Maths provides worksheets, books and online tests to support primary and secondary students.
 permalink: /
 body_class: page-home
 ---
