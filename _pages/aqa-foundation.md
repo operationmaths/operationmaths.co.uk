@@ -47,7 +47,7 @@ permalink: /maths-gcse-papers/aqa-foundation/
             </div>
             <div class="paper-btns">
               <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2024-November-Foundation-Paper-1.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2024-November-Foundation-Paper-1-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2024-November-Foundation-Paper-1-Mark-Scheme.PDF" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -59,7 +59,7 @@ permalink: /maths-gcse-papers/aqa-foundation/
             </div>
             <div class="paper-btns">
               <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2024-November-Foundation-Paper-2.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2024-November-Foundation-Paper-2-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2024-November-Foundation-Paper-2-Mark-Scheme.PDF" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -71,7 +71,7 @@ permalink: /maths-gcse-papers/aqa-foundation/
             </div>
             <div class="paper-btns">
               <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2024-November-Foundation-Paper-3.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2024-November-Foundation-Paper-3-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2024-November-Foundation-Paper-3-Mark-Scheme.PDF" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
         </div>
@@ -92,7 +92,7 @@ permalink: /maths-gcse-papers/aqa-foundation/
             </div>
             <div class="paper-btns">
               <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2024-June-Foundation-Paper-1.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2024-June-Foundation-Paper-1-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2024-June-Foundation-Paper-1-Mark-Scheme.PDF" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -104,7 +104,7 @@ permalink: /maths-gcse-papers/aqa-foundation/
             </div>
             <div class="paper-btns">
               <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2024-June-Foundation-Paper-2.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2024-June-Foundation-Paper-2-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2024-June-Foundation-Paper-2-Mark-Scheme.PDF" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -116,7 +116,7 @@ permalink: /maths-gcse-papers/aqa-foundation/
             </div>
             <div class="paper-btns">
               <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2024-June-Foundation-Paper-3.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2024-June-Foundation-Paper-3-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2024-June-Foundation-Paper-3-Mark-Scheme.PDF" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
         </div>
@@ -137,7 +137,7 @@ permalink: /maths-gcse-papers/aqa-foundation/
             </div>
             <div class="paper-btns">
               <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2023-November-Foundation-Paper-1.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2023-November-Foundation-Paper-1-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2023-November-Foundation-Paper-1-Mark-Scheme.PDF" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -149,7 +149,7 @@ permalink: /maths-gcse-papers/aqa-foundation/
             </div>
             <div class="paper-btns">
               <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2023-November-Foundation-Paper-2.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2023-November-Foundation-Paper-2-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2023-November-Foundation-Paper-2-Mark-Scheme.PDF" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -161,7 +161,7 @@ permalink: /maths-gcse-papers/aqa-foundation/
             </div>
             <div class="paper-btns">
               <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2023-November-Foundation-Paper-3.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2023-November-Foundation-Paper-3-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2023-November-Foundation-Paper-3-Mark-Scheme.PDF" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
         </div>
@@ -182,7 +182,7 @@ permalink: /maths-gcse-papers/aqa-foundation/
             </div>
             <div class="paper-btns">
               <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2023-June-Foundation-Paper-1.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2023-June-Foundation-Paper-1-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2023-June-Foundation-Paper-1-Mark-Scheme.PDF" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -194,7 +194,7 @@ permalink: /maths-gcse-papers/aqa-foundation/
             </div>
             <div class="paper-btns">
               <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2023-June-Foundation-Paper-2.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2023-June-Foundation-Paper-2-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2023-June-Foundation-Paper-2-Mark-Scheme.PDF" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -206,7 +206,7 @@ permalink: /maths-gcse-papers/aqa-foundation/
             </div>
             <div class="paper-btns">
               <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2023-June-Foundation-Paper-3.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2023-June-Foundation-Paper-3-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2023-June-Foundation-Paper-3-Mark-Scheme.PDF" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
         </div>
@@ -227,7 +227,7 @@ permalink: /maths-gcse-papers/aqa-foundation/
             </div>
             <div class="paper-btns">
               <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2022-November-Foundation-Paper-1.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2022-November-Foundation-Paper-1-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2022-November-Foundation-Paper-1-Mark-Scheme.PDF" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -239,7 +239,7 @@ permalink: /maths-gcse-papers/aqa-foundation/
             </div>
             <div class="paper-btns">
               <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2022-November-Foundation-Paper-2.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2022-November-Foundation-Paper-2-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2022-November-Foundation-Paper-2-Mark-Scheme.PDF" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -251,7 +251,7 @@ permalink: /maths-gcse-papers/aqa-foundation/
             </div>
             <div class="paper-btns">
               <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2022-November-Foundation-Paper-3.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2022-November-Foundation-Paper-3-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2022-November-Foundation-Paper-3-Mark-Scheme.PDF" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
         </div>
@@ -272,7 +272,7 @@ permalink: /maths-gcse-papers/aqa-foundation/
             </div>
             <div class="paper-btns">
               <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2022-June-Foundation-Paper-1.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2022-June-Foundation-Paper-1-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2022-June-Foundation-Paper-1-Mark-Scheme.PDF" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -284,7 +284,7 @@ permalink: /maths-gcse-papers/aqa-foundation/
             </div>
             <div class="paper-btns">
               <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2022-June-Foundation-Paper-2.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2022-June-Foundation-Paper-2-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2022-June-Foundation-Paper-2-Mark-Scheme.PDF" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -296,7 +296,7 @@ permalink: /maths-gcse-papers/aqa-foundation/
             </div>
             <div class="paper-btns">
               <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2022-June-Foundation-Paper-3.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2022-June-Foundation-Paper-3-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2022-June-Foundation-Paper-3-Mark-Scheme.PDF" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
         </div>
@@ -317,7 +317,7 @@ permalink: /maths-gcse-papers/aqa-foundation/
             </div>
             <div class="paper-btns">
               <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2021-November-Foundation-Paper-1.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2021-November-Foundation-Paper-1-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2021-November-Foundation-Paper-1-Mark-Scheme.PDF" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -329,7 +329,7 @@ permalink: /maths-gcse-papers/aqa-foundation/
             </div>
             <div class="paper-btns">
               <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2021-November-Foundation-Paper-2.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2021-November-Foundation-Paper-2-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2021-November-Foundation-Paper-2-Mark-Scheme.PDF" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -341,7 +341,7 @@ permalink: /maths-gcse-papers/aqa-foundation/
             </div>
             <div class="paper-btns">
               <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2021-November-Foundation-Paper-3.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2021-November-Foundation-Paper-3-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2021-November-Foundation-Paper-3-Mark-Scheme.PDF" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
         </div>
@@ -362,7 +362,7 @@ permalink: /maths-gcse-papers/aqa-foundation/
             </div>
             <div class="paper-btns">
               <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2020-November-Foundation-Paper-1.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2020-November-Foundation-Paper-1-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2020-November-Foundation-Paper-1-Mark-Scheme.PDF" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -374,7 +374,7 @@ permalink: /maths-gcse-papers/aqa-foundation/
             </div>
             <div class="paper-btns">
               <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2020-November-Foundation-Paper-2.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2020-November-Foundation-Paper-2-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2020-November-Foundation-Paper-2-Mark-Scheme.PDF" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -386,7 +386,7 @@ permalink: /maths-gcse-papers/aqa-foundation/
             </div>
             <div class="paper-btns">
               <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2020-November-Foundation-Paper-3.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2020-November-Foundation-Paper-3-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2020-November-Foundation-Paper-3-Mark-Scheme.PDF" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
         </div>
@@ -407,7 +407,7 @@ permalink: /maths-gcse-papers/aqa-foundation/
             </div>
             <div class="paper-btns">
               <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2019-November-Foundation-Paper-1.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2019-November-Foundation-Paper-1-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2019-November-Foundation-Paper-1-Mark-Scheme.PDF" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -419,7 +419,7 @@ permalink: /maths-gcse-papers/aqa-foundation/
             </div>
             <div class="paper-btns">
               <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2019-November-Foundation-Paper-2.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2019-November-Foundation-Paper-2-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2019-November-Foundation-Paper-2-Mark-Scheme.PDF" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -431,7 +431,7 @@ permalink: /maths-gcse-papers/aqa-foundation/
             </div>
             <div class="paper-btns">
               <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2019-November-Foundation-Paper-3.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2019-November-Foundation-Paper-3-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2019-November-Foundation-Paper-3-Mark-Scheme.PDF" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
         </div>
@@ -452,7 +452,7 @@ permalink: /maths-gcse-papers/aqa-foundation/
             </div>
             <div class="paper-btns">
               <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2019-June-Foundation-Paper-1.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2019-June-Foundation-Paper-1-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2019-June-Foundation-Paper-1-Mark-Scheme.PDF" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -464,7 +464,7 @@ permalink: /maths-gcse-papers/aqa-foundation/
             </div>
             <div class="paper-btns">
               <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2019-June-Foundation-Paper-2.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2019-June-Foundation-Paper-2-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2019-June-Foundation-Paper-2-Mark-Scheme.PDF" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
           <div class="paper-row">
@@ -476,7 +476,7 @@ permalink: /maths-gcse-papers/aqa-foundation/
             </div>
             <div class="paper-btns">
               <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2019-June-Foundation-Paper-3.pdf" class="btn btn-blue">View paper <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2019-June-Foundation-Paper-3-Mark-Scheme.pdf" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
+              <a href="{{ site.baseurl }}/pdfs/gcse-aqa-foundation/GCSE-AQA-2019-June-Foundation-Paper-3-Mark-Scheme.PDF" class="btn btn-green">Mark scheme <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
             </div>
           </div>
         </div>
