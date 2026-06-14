@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Online Maths Tests
-description: Online maths tests for KS2 and KS3 students from Operation Maths.
+description: Online maths tests for KS2, KS3 & KS4 students from Operation Maths.
 permalink: /online-maths-tests/
 ---
 
@@ -36,7 +36,7 @@ permalink: /online-maths-tests/
   <div class="test-tabs" style="margin-top:1.75rem;">
     <button class="test-tab active" data-target="times-tables">Times tables</button>
     <button class="test-tab" data-target="number-bonds">Number bonds</button>
-    <button class="test-tab" data-target="rounding">Rounding</button>
+    <button class="test-tab" data-target="doubling-halving">Double and halve</button>
     <button class="test-tab" data-target="fdp-conversions">FDP conversions</button>
     <button class="test-tab" data-target="fractions-of-numbers">Fractions of numbers</button>
     <button class="test-tab" data-target="metric-conversions">Metric conversions</button>
@@ -205,6 +205,75 @@ permalink: /online-maths-tests/
           <table class="wrong-table"><thead><tr><th>Question</th><th>Correct answer</th><th>Your answer</th></tr></thead><tbody id="nb-wrong-list"></tbody></table>
         </div>
         <div class="results-actions" id="nb-actions"></div>
+      </div>
+
+    </div>
+
+    <!-- DOUBLING AND HALVING PANEL -->
+    <div class="test-panel" id="panel-doubling-halving">
+
+      <div class="setup-card" id="dh-setup">
+        <div class="setup-section">
+          <span class="setup-section-title">Type</span>
+          <div class="option-row">
+            <button class="option-btn dark-btn" data-dh-type="doubles" onclick="dhSelectType(this)">Doubles to 10</button>
+            <button class="option-btn dark-btn" data-dh-type="halves" onclick="dhSelectType(this)">Halves to 20</button>
+            <button class="option-btn dark-btn" id="dh-mixed-btn" data-dh-type="mixed" onclick="dhSelectMixed(this)">MIXED</button>
+          </div>
+        </div>
+        <div class="setup-section">
+          <span class="setup-section-title">Questions</span>
+          <div class="option-row">
+            <button class="option-btn green-btn" data-dh-qcount="20" onclick="dhSelectCount(this)">Quick test (20 questions)</button>
+            <button class="option-btn green-btn" data-dh-qcount="40" onclick="dhSelectCount(this)">Full test (40 questions)</button>
+          </div>
+        </div>
+        <div class="setup-section">
+          <span class="setup-section-title">Timing</span>
+          <div class="option-row">
+            <button class="option-btn purple-btn" data-dh-timed="false" onclick="dhSelectTimed(this)">Untimed</button>
+            <button class="option-btn purple-btn" data-dh-timed="true" onclick="dhSelectTimed(this)">Timed</button>
+          </div>
+          <div class="time-options" id="dh-time-options">
+            <span class="setup-section-title" style="margin-top:0.75rem;display:block">Time limit</span>
+            <div class="option-row">
+              <button class="option-btn purple-btn" data-dh-timelimit="60" onclick="dhSelectTime(this)">1 minute</button>
+              <button class="option-btn purple-btn" data-dh-timelimit="120" onclick="dhSelectTime(this)">2 minutes</button>
+              <button class="option-btn purple-btn" data-dh-timelimit="300" onclick="dhSelectTime(this)">5 minutes</button>
+            </div>
+          </div>
+        </div>
+        <div class="setup-section">
+          <button class="start-btn" id="dh-start-btn" disabled>Start test</button>
+        </div>
+      </div>
+
+      <div class="quiz-card" id="dh-quiz">
+        <div class="quiz-meta">
+          <span class="quiz-progress" id="dh-progress">Question 1 of 20</span>
+          <span class="quiz-timer" id="dh-timer" style="display:none"></span>
+        </div>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="dh-progress-bar" style="width:0%"></div>
+        </div>
+        <div class="quiz-question" id="dh-question">Double 4 = ?</div>
+        <div class="quiz-input-wrap">
+          <input class="quiz-input" id="dh-answer" type="text" inputmode="numeric" autocomplete="off" placeholder="?" pattern="[0-9]*">
+        </div>
+        <button class="quiz-next-btn" id="dh-next-btn" onclick="dhSubmitAnswer()">Next question →</button>
+        <button class="quiz-menu-btn" id="dh-quiz-menu-btn" onclick="dhResetSetup()">← Menu</button>
+      </div>
+
+      <div class="results-card" id="dh-results">
+        <div class="results-score" id="dh-score">20/20</div>
+        <div class="results-label">correct answers</div>
+        <div class="results-time" id="dh-time-taken"></div>
+        <div class="results-perfect" id="dh-perfect" style="display:none">Full marks — excellent work!</div>
+        <div class="results-wrong" id="dh-wrong-wrap" style="display:none">
+          <h3>Wrong answers</h3>
+          <table class="wrong-table"><thead><tr><th>Question</th><th>Correct answer</th><th>Your answer</th></tr></thead><tbody id="dh-wrong-list"></tbody></table>
+        </div>
+        <div class="results-actions" id="dh-actions"></div>
       </div>
 
     </div>
@@ -585,6 +654,9 @@ permalink: /online-maths-tests/
   const nbState = { questions: [], current: 0, userAnswers: [], elapsed: 0, remaining: 0, timerInterval: null, timed: false, timelimit: null, target: null, op: null, qcount: null, wrongOnly: false };
   let nbSelTarget = null, nbSelOp = null, nbSelCount = null, nbSelTimed = null, nbSelTime = null;
 
+  const dhState = { questions: [], current: 0, userAnswers: [], elapsed: 0, remaining: 0, timerInterval: null, timed: false, timelimit: null, type: null, qcount: null, wrongOnly: false };
+  let dhSelTypes = new Set(), dhSelCount = null, dhSelTimed = null, dhSelTime = null;
+
   const mcState = { questions: [], current: 0, userAnswers: [], elapsed: 0, remaining: 0, timerInterval: null, timed: false, timelimit: null, diff: null, groups: new Set(), qcount: null, wrongOnly: false };
   let mcSelDiff = null, mcSelGroups = new Set(), mcSelCount = null, mcSelTimed = null, mcSelTime = null;
 
@@ -702,7 +774,7 @@ permalink: /online-maths-tests/
 
   document.addEventListener('DOMContentLoaded', function() {
     const hash = window.location.hash.replace('#', '') || 'times-tables';
-    const valid = ['times-tables', 'number-bonds', 'metric-conversions', 'fdp-conversions', 'fractions-of-numbers', 'rounding', 'powers-and-roots'];
+    const valid = ['times-tables', 'number-bonds', 'doubling-halving', 'metric-conversions', 'fdp-conversions', 'fractions-of-numbers', 'rounding', 'powers-and-roots'];
     activateTab(valid.includes(hash) ? hash : 'times-tables');
   });
 
@@ -1136,6 +1208,182 @@ permalink: /online-maths-tests/
     nbState.target = nbSelTarget; nbState.op = nbSelOp; nbState.qcount = nbSelCount;
     nbState.timed = nbSelTimed; nbState.timelimit = nbSelTime; nbState.wrongOnly = false;
     nbStartTest(nbGenerateQuestions(nbSelTarget, nbSelOp, nbSelCount));
+  });
+
+  // ── DOUBLING AND HALVING SETUP ────────────────────────────────────────────
+  function dhUpdateStartBtn() {
+    const timedOk = dhSelTimed === false || (dhSelTimed === true && dhSelTime !== null);
+    document.getElementById('dh-start-btn').disabled = !(dhSelTypes.size > 0 && dhSelCount !== null && dhSelTimed !== null && timedOk);
+  }
+
+  function dhResetSetup() {
+    clearInterval(dhState.timerInterval);
+    document.getElementById('dh-quiz').classList.remove('active');
+    document.getElementById('dh-results').classList.remove('active');
+    document.getElementById('dh-setup').style.display = '';
+    dhSelTypes = new Set(); dhSelCount = null; dhSelTimed = null; dhSelTime = null;
+    document.querySelectorAll('[data-dh-type]').forEach(b => b.classList.remove('selected'));
+    document.querySelectorAll('[data-dh-qcount]').forEach(b => b.classList.remove('selected'));
+    document.querySelectorAll('[data-dh-timed]').forEach(b => b.classList.remove('selected'));
+    document.querySelectorAll('[data-dh-timelimit]').forEach(b => b.classList.remove('selected'));
+    document.getElementById('dh-time-options').classList.remove('visible');
+    dhUpdateStartBtn();
+  }
+
+  function dhSelectType(btn) {
+    const val = btn.dataset.dhType;
+    if (btn.classList.contains('selected')) { btn.classList.remove('selected'); dhSelTypes.delete(val); }
+    else { btn.classList.add('selected'); dhSelTypes.add(val); document.getElementById('dh-mixed-btn').classList.remove('selected'); dhSelTypes.delete('mixed'); }
+    if (dhSelTypes.has('doubles') && dhSelTypes.has('halves')) {
+      document.querySelectorAll('[data-dh-type]').forEach(b => b.classList.remove('selected'));
+      document.getElementById('dh-mixed-btn').classList.add('selected');
+      dhSelTypes.clear(); dhSelTypes.add('mixed');
+    }
+    dhUpdateStartBtn();
+  }
+
+  function dhSelectMixed(btn) {
+    document.querySelectorAll('[data-dh-type]').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected'); dhSelTypes.clear(); dhSelTypes.add('mixed');
+    dhUpdateStartBtn();
+  }
+
+  function dhSelectCount(btn) {
+    document.querySelectorAll('[data-dh-qcount]').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected'); dhSelCount = parseInt(btn.dataset.dhQcount); dhUpdateStartBtn();
+  }
+
+  function dhSelectTimed(btn) {
+    document.querySelectorAll('[data-dh-timed]').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected'); dhSelTimed = btn.dataset.dhTimed === 'true';
+    const opts = document.getElementById('dh-time-options');
+    if (dhSelTimed) { opts.classList.add('visible'); }
+    else { opts.classList.remove('visible'); dhSelTime = null; document.querySelectorAll('[data-dh-timelimit]').forEach(b => b.classList.remove('selected')); }
+    dhUpdateStartBtn();
+  }
+
+  function dhSelectTime(btn) {
+    document.querySelectorAll('[data-dh-timelimit]').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected'); dhSelTime = parseInt(btn.dataset.dhTimelimit); dhUpdateStartBtn();
+  }
+
+  // ── DOUBLING AND HALVING QUESTION GENERATION ──────────────────────────────
+  function dhGenerateQuestions(types, count) {
+    const doublesPool = [], halvesPool = [];
+    for (let n = 1; n <= 10; n++) {
+      doublesPool.push({ label: 'Double ' + n + ' = ?', answer: n * 2 });
+    }
+    for (let n = 2; n <= 20; n += 2) {
+      halvesPool.push({ label: 'Halve ' + n + ' = ?', answer: n / 2 });
+    }
+    if (types.has('doubles')) return shuffleNoConsec(genericDrawCapped(doublesPool, count));
+    if (types.has('halves')) return shuffleNoConsec(genericDrawCapped(halvesPool, count));
+    const half = Math.floor(count / 2);
+    return shuffleNoConsec([...genericDrawCapped(doublesPool, count - half), ...genericDrawCapped(halvesPool, half)]);
+  }
+
+  // ── DOUBLING AND HALVING TEST ─────────────────────────────────────────────
+  function dhStartTest(questions) {
+    dhState.questions = questions; dhState.current = 0; dhState.userAnswers = []; dhState.elapsed = 0;
+    document.getElementById('dh-setup').style.display = 'none';
+    document.getElementById('dh-results').classList.remove('active');
+    document.getElementById('dh-quiz').classList.add('active');
+    const timerEl = document.getElementById('dh-timer');
+    if (dhState.timed) {
+      dhState.remaining = dhState.timelimit; timerEl.style.display = 'block'; timerEl.textContent = formatTime(dhState.remaining); timerEl.className = 'quiz-timer';
+      dhState.timerInterval = setInterval(() => {
+        dhState.remaining--; timerEl.textContent = formatTime(dhState.remaining);
+        if (dhState.remaining <= 30) timerEl.className = 'quiz-timer warning';
+        if (dhState.remaining <= 10) timerEl.className = 'quiz-timer danger';
+        if (dhState.remaining <= 0) { clearInterval(dhState.timerInterval); dhFinishTest(true); }
+      }, 1000);
+    } else { timerEl.style.display = 'none'; dhState.timerInterval = setInterval(() => { dhState.elapsed++; }, 1000); }
+    dhShowQuestion();
+  }
+
+  function dhShowQuestion() {
+    const q = dhState.questions[dhState.current];
+    const total = dhState.questions.length;
+    document.getElementById('dh-progress').textContent = 'Question ' + (dhState.current + 1) + ' of ' + total;
+    document.getElementById('dh-progress-bar').style.width = (dhState.current / total * 100) + '%';
+    document.getElementById('dh-question').textContent = q.label;
+    const input = document.getElementById('dh-answer');
+    input.value = ''; input.focus();
+  }
+
+  function dhSubmitAnswer() {
+    const input = document.getElementById('dh-answer');
+    const raw = input.value.trim();
+    if (raw === '') return;
+    const given = parseInt(raw, 10);
+    if (isNaN(given)) return;
+    const q = dhState.questions[dhState.current];
+    dhState.userAnswers.push({ q: q, correct: q.answer, given: given, isCorrect: given === q.answer, unanswered: false });
+    dhState.current++;
+    if (dhState.current >= dhState.questions.length) { dhFinishTest(false); } else { dhShowQuestion(); }
+  }
+
+  document.getElementById('dh-answer').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') { e.preventDefault(); dhSubmitAnswer(); return; }
+    const allowed = ['Backspace','Delete','Tab','ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home','End'];
+    if (allowed.includes(e.key)) return;
+    if (!/^\d$/.test(e.key)) e.preventDefault();
+  });
+
+  function dhFinishTest(timedOut) {
+    clearInterval(dhState.timerInterval);
+    if (timedOut) {
+      for (let i = dhState.current; i < dhState.questions.length; i++) {
+        dhState.userAnswers.push({ q: dhState.questions[i], correct: dhState.questions[i].answer, given: null, isCorrect: false, unanswered: true });
+      }
+    }
+    document.getElementById('dh-quiz').classList.remove('active');
+    const correct = dhState.userAnswers.filter(a => a.isCorrect).length;
+    const total = dhState.userAnswers.length;
+    const answeredWrong = dhState.userAnswers.filter(a => !a.isCorrect && !a.unanswered);
+    const perfect = correct === total;
+    document.getElementById('dh-score').textContent = correct + '/' + total;
+    const timeEl = document.getElementById('dh-time-taken');
+    if (dhState.timed) { const used = dhState.timelimit - dhState.remaining; timeEl.textContent = timedOut ? 'Time ran out' : 'Time taken: ' + formatTime(used); }
+    else { timeEl.textContent = 'Time taken: ' + formatTime(dhState.elapsed); }
+    const perfectEl = document.getElementById('dh-perfect');
+    const wrongWrap = document.getElementById('dh-wrong-wrap');
+    const wrongList = document.getElementById('dh-wrong-list');
+    const actionsEl = document.getElementById('dh-actions');
+    if (perfect) {
+      perfectEl.style.display = 'block'; wrongWrap.style.display = 'none';
+      actionsEl.innerHTML = '<button class="results-btn secondary" onclick="dhResetSetup()">← Menu</button><button class="results-btn primary" onclick="dhRetakeSame()">Try again</button>';
+      if (!dhState.wrongOnly) launchConfetti();
+    } else {
+      perfectEl.style.display = 'none'; wrongWrap.style.display = 'block';
+      wrongList.innerHTML = wrongTableRows(answeredWrong, a => a.q.label, a => a.correct);
+      const retryBtn = answeredWrong.length > 0 ? '<button class="results-btn green-btn" onclick="dhRetakeWrong()">Retry incorrect</button>' : '';
+      actionsEl.innerHTML = '<button class="results-btn secondary" onclick="dhResetSetup()">← Menu</button><button class="results-btn primary" onclick="dhRetakeSame()">Try again</button>' + retryBtn;
+    }
+    document.getElementById('dh-results').classList.add('active');
+  }
+
+  function dhRetakeSame() {
+    document.getElementById('dh-results').classList.remove('active');
+    dhState.wrongOnly = false;
+    dhStartTest(dhGenerateQuestions(dhState.types, dhState.qcount));
+  }
+
+  function dhRetakeWrong() {
+    const answeredWrong = dhState.userAnswers.filter(a => !a.isCorrect && !a.unanswered);
+    const wrongQs = answeredWrong.map(a => a.q);
+    const count = Math.min(wrongQs.length, dhState.qcount);
+    const filled = [];
+    while (filled.length < count) { filled.push(...shuffleNoConsec([...wrongQs])); }
+    document.getElementById('dh-results').classList.remove('active');
+    dhState.wrongOnly = true; dhState.timed = false;
+    dhStartTest(filled.slice(0, count));
+  }
+
+  document.getElementById('dh-start-btn').addEventListener('click', function() {
+    dhState.types = new Set(dhSelTypes); dhState.qcount = dhSelCount;
+    dhState.timed = dhSelTimed; dhState.timelimit = dhSelTime; dhState.wrongOnly = false;
+    dhStartTest(dhGenerateQuestions(dhSelTypes, dhSelCount));
   });
 
   // ── METRIC CONVERSIONS SETUP ──────────────────────────────────────────────
