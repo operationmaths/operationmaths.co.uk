@@ -660,6 +660,7 @@ permalink: /online-maths-tests/
 </main>
 
 <script>
+(function() {
   // ── STATE ─────────────────────────────────────────────────────────────────
   const state = { questions: [], current: 0, userAnswers: [], elapsed: 0, remaining: 0, timerInterval: null, timed: false, timelimit: null, tables: new Set(), op: null, qcount: null, wrongOnly: false };
   let selTables = new Set();
@@ -2710,4 +2711,5 @@ permalink: /online-maths-tests/
     prStartTest(prGenerateQuestions(prSelTypes, prSelCount));
   });
 
+})();
 </script>
