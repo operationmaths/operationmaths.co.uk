@@ -21,10 +21,12 @@ permalink: /online-maths-tests/
 .frac sup, .frac sub { font-size: 1em; line-height: 1.2; }
 .frac .frac-bar { border-top: 1.5px solid currentColor; width: 100%; display: block; margin: 1px 0; }
 .wrong-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin-top: 0.5rem; }
+.timeout-pill { display: inline-block; background: #fff5e6; color: #b85c00; font-size: 0.8rem; font-weight: 500; padding: 3px 10px; border-radius: 20px; border: 1px solid #f7941e; margin: 4px 0 12px; }
 .wrong-table th { text-align: left; font-size: 0.78rem; font-weight: 600; color: #6b7280; padding: 5px 10px; border-bottom: 1px solid #e5e7eb; }
 .wrong-table td { padding: 6px 10px; border-bottom: 1px solid #f3f4f6; }
 .wrong-table tr:last-child td { border-bottom: none; }
 .wrong-table td.your-ans-cell { color: #c0392b; font-weight: 600; }
+.no-wrong-msg { font-size: 0.9rem; color: #6b7280; font-style: italic; margin: 0.5rem 0; }
 .fdp-q-wrap { display: flex; flex-direction: column; height: 14rem; }
 #fdp-question { font-size: clamp(1.1rem, 3.5vw, 2.25rem); flex-shrink: 0; height: 6rem; display: flex; align-items: center; justify-content: center; text-align: center; overflow: visible; flex-wrap: wrap; gap: 0.3em; line-height: 1.6; }
 .fdp-options { display: flex; gap: 10px; flex-wrap: nowrap; margin-top: 1.25rem; justify-content: center; align-items: stretch; }
@@ -40,6 +42,7 @@ permalink: /online-maths-tests/
     <button class="test-tab active" data-target="times-tables">Times tables</button>
     <button class="test-tab" data-target="number-bonds">Number bonds</button>
     <button class="test-tab" data-target="doubling-halving">Double and halve</button>
+    <button class="test-tab" data-target="rounding">Rounding</button>
     <button class="test-tab" data-target="fdp-conversions">FDP conversions</button>
     <button class="test-tab" data-target="fractions-of-numbers">Fractions of numbers</button>
     <button class="test-tab" data-target="metric-conversions">Metric conversions</button>
@@ -228,7 +231,7 @@ permalink: /online-maths-tests/
           <span class="setup-section-title">Questions</span>
           <div class="option-row">
             <button class="option-btn green-btn" data-dh-qcount="20" onclick="dhSelectCount(this)">Quick test (20 questions)</button>
-            <button class="option-btn green-btn" data-dh-qcount="40" onclick="dhSelectCount(this)">Full test (40 questions)</button>
+            <button class="option-btn green-btn" data-dh-qcount="60" onclick="dhSelectCount(this)">Full test (60 questions)</button>
           </div>
         </div>
         <div class="setup-section">
@@ -720,6 +723,11 @@ permalink: /online-maths-tests/
     ).join('');
   }
 
+  function timedOutPill(notReached) {
+    if (notReached <= 0) return '';
+    return '<div class="timeout-pill">Time ran out \u2014 ' + notReached + ' question' + (notReached === 1 ? '' : 's') + ' not reached</div>';
+  }
+
   function launchConfetti() {
     const canvas = document.createElement('canvas');
     canvas.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999';
@@ -965,6 +973,7 @@ permalink: /online-maths-tests/
 
   function finishTest(timedOut) {
     clearInterval(state.timerInterval);
+    const notReached = state.questions.length - state.current;
     if (timedOut) {
       for (let i = state.current; i < state.questions.length; i++) {
         const q = state.questions[i];
@@ -973,25 +982,29 @@ permalink: /online-maths-tests/
     }
     document.getElementById('tt-quiz').classList.remove('active');
     const correct = state.userAnswers.filter(a => a.isCorrect).length;
-    const total = state.userAnswers.length;
+    const total = timedOut ? state.userAnswers.filter(a => !a.unanswered).length : state.userAnswers.length;
     const answeredWrong = state.userAnswers.filter(a => !a.isCorrect && !a.unanswered);
-    const allWrong = state.userAnswers.filter(a => !a.isCorrect);
     const perfect = correct === total;
     document.getElementById('tt-score').textContent = correct + '/' + total;
     const timeEl = document.getElementById('tt-time-taken');
-    if (state.timed) { const used = state.timelimit - state.remaining; timeEl.textContent = timedOut ? 'Time ran out' : 'Time taken: ' + formatTime(used); }
+    if (state.timed) { const used = state.timelimit - state.remaining; timeEl.textContent = timedOut ? '' : 'Time taken: ' + formatTime(used); }
     else { timeEl.textContent = 'Time taken: ' + formatTime(state.elapsed); }
     const perfectEl = document.getElementById('tt-perfect');
     const wrongWrap = document.getElementById('tt-wrong-wrap');
     const wrongList = document.getElementById('tt-wrong-list');
     const actionsEl = document.getElementById('tt-actions');
-    if (perfect) {
+    const pill = timedOut ? timedOutPill(notReached) : '';
+    if (perfect && !timedOut) {
       perfectEl.style.display = 'block'; wrongWrap.style.display = 'none';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="resetSetup()">← Menu</button><button class="results-btn primary" onclick="retakeSame()">Try again</button>';
       if (!state.wrongOnly) launchConfetti();
     } else {
       perfectEl.style.display = 'none'; wrongWrap.style.display = 'block';
-      wrongList.innerHTML = wrongTableRows(answeredWrong, a => questionLabel(a.q), a => a.correct);
+      if (answeredWrong.length > 0) {
+        wrongList.innerHTML = pill + wrongTableRows(answeredWrong, a => questionLabel(a.q), a => a.correct);
+      } else {
+        wrongList.innerHTML = pill + '<p class="no-wrong-msg">No incorrect answers' + (timedOut ? ' \u2014 well done!' : '') + '</p>';
+      }
       const retryBtn = answeredWrong.length > 0 ? '<button class="results-btn green-btn" onclick="retakeWrong()">Retry incorrect</button>' : '';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="resetSetup()">← Menu</button><button class="results-btn primary" onclick="retakeSame()">Try again</button>' + retryBtn;
     }
@@ -1162,6 +1175,7 @@ permalink: /online-maths-tests/
 
   function nbFinishTest(timedOut) {
     clearInterval(nbState.timerInterval);
+    const notReached = nbState.questions.length - nbState.current;
     if (timedOut) {
       for (let i = nbState.current; i < nbState.questions.length; i++) {
         nbState.userAnswers.push({ q: nbState.questions[i], correct: nbState.questions[i].answer, given: null, isCorrect: false, unanswered: true });
@@ -1169,25 +1183,29 @@ permalink: /online-maths-tests/
     }
     document.getElementById('nb-quiz').classList.remove('active');
     const correct = nbState.userAnswers.filter(a => a.isCorrect).length;
-    const total = nbState.userAnswers.length;
+    const total = timedOut ? nbState.userAnswers.filter(a => !a.unanswered).length : nbState.userAnswers.length;
     const answeredWrong = nbState.userAnswers.filter(a => !a.isCorrect && !a.unanswered);
-    const allWrong = nbState.userAnswers.filter(a => !a.isCorrect);
     const perfect = correct === total;
     document.getElementById('nb-score').textContent = correct + '/' + total;
     const timeEl = document.getElementById('nb-time-taken');
-    if (nbState.timed) { const used = nbState.timelimit - nbState.remaining; timeEl.textContent = timedOut ? 'Time ran out' : 'Time taken: ' + formatTime(used); }
+    if (nbState.timed) { const used = nbState.timelimit - nbState.remaining; timeEl.textContent = timedOut ? '' : 'Time taken: ' + formatTime(used); }
     else { timeEl.textContent = 'Time taken: ' + formatTime(nbState.elapsed); }
     const perfectEl = document.getElementById('nb-perfect');
     const wrongWrap = document.getElementById('nb-wrong-wrap');
     const wrongList = document.getElementById('nb-wrong-list');
     const actionsEl = document.getElementById('nb-actions');
-    if (perfect) {
+    const pill = timedOut ? timedOutPill(notReached) : '';
+    if (perfect && !timedOut) {
       perfectEl.style.display = 'block'; wrongWrap.style.display = 'none';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="nbResetSetup()">← Menu</button><button class="results-btn primary" onclick="nbRetakeSame()">Try again</button>';
       if (!nbState.wrongOnly) launchConfetti();
     } else {
       perfectEl.style.display = 'none'; wrongWrap.style.display = 'block';
-      wrongList.innerHTML = wrongTableRows(answeredWrong, a => a.q.label.includes('?') ? a.q.label : a.q.label + ' = ?', a => a.correct);
+      if (answeredWrong.length > 0) {
+        wrongList.innerHTML = pill + wrongTableRows(answeredWrong, a => a.q.label.includes('?') ? a.q.label : a.q.label + ' = ?', a => a.correct);
+      } else {
+        wrongList.innerHTML = pill + '<p class="no-wrong-msg">No incorrect answers' + (timedOut ? ' \u2014 well done!' : '') + '</p>';
+      }
       const retryBtn = answeredWrong.length > 0 ? '<button class="results-btn green-btn" onclick="nbRetakeWrong()">Retry incorrect</button>' : '';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="nbResetSetup()">← Menu</button><button class="results-btn primary" onclick="nbRetakeSame()">Try again</button>' + retryBtn;
     }
@@ -1339,6 +1357,7 @@ permalink: /online-maths-tests/
 
   function dhFinishTest(timedOut) {
     clearInterval(dhState.timerInterval);
+    const notReached = dhState.questions.length - dhState.current;
     if (timedOut) {
       for (let i = dhState.current; i < dhState.questions.length; i++) {
         dhState.userAnswers.push({ q: dhState.questions[i], correct: dhState.questions[i].answer, given: null, isCorrect: false, unanswered: true });
@@ -1346,24 +1365,29 @@ permalink: /online-maths-tests/
     }
     document.getElementById('dh-quiz').classList.remove('active');
     const correct = dhState.userAnswers.filter(a => a.isCorrect).length;
-    const total = dhState.userAnswers.length;
+    const total = timedOut ? dhState.userAnswers.filter(a => !a.unanswered).length : dhState.userAnswers.length;
     const answeredWrong = dhState.userAnswers.filter(a => !a.isCorrect && !a.unanswered);
     const perfect = correct === total;
     document.getElementById('dh-score').textContent = correct + '/' + total;
     const timeEl = document.getElementById('dh-time-taken');
-    if (dhState.timed) { const used = dhState.timelimit - dhState.remaining; timeEl.textContent = timedOut ? 'Time ran out' : 'Time taken: ' + formatTime(used); }
+    if (dhState.timed) { const used = dhState.timelimit - dhState.remaining; timeEl.textContent = timedOut ? '' : 'Time taken: ' + formatTime(used); }
     else { timeEl.textContent = 'Time taken: ' + formatTime(dhState.elapsed); }
     const perfectEl = document.getElementById('dh-perfect');
     const wrongWrap = document.getElementById('dh-wrong-wrap');
     const wrongList = document.getElementById('dh-wrong-list');
     const actionsEl = document.getElementById('dh-actions');
-    if (perfect) {
+    const pill = timedOut ? timedOutPill(notReached) : '';
+    if (perfect && !timedOut) {
       perfectEl.style.display = 'block'; wrongWrap.style.display = 'none';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="dhResetSetup()">← Menu</button><button class="results-btn primary" onclick="dhRetakeSame()">Try again</button>';
       if (!dhState.wrongOnly) launchConfetti();
     } else {
       perfectEl.style.display = 'none'; wrongWrap.style.display = 'block';
-      wrongList.innerHTML = wrongTableRows(answeredWrong, a => a.q.label, a => a.correct);
+      if (answeredWrong.length > 0) {
+        wrongList.innerHTML = pill + wrongTableRows(answeredWrong, a => a.q.label, a => a.correct);
+      } else {
+        wrongList.innerHTML = pill + '<p class="no-wrong-msg">No incorrect answers' + (timedOut ? ' \u2014 well done!' : '') + '</p>';
+      }
       const retryBtn = answeredWrong.length > 0 ? '<button class="results-btn green-btn" onclick="dhRetakeWrong()">Retry incorrect</button>' : '';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="dhResetSetup()">← Menu</button><button class="results-btn primary" onclick="dhRetakeSame()">Try again</button>' + retryBtn;
     }
@@ -1589,6 +1613,7 @@ permalink: /online-maths-tests/
 
   function mcFinishTest(timedOut) {
     clearInterval(mcState.timerInterval);
+    const notReached = mcState.questions.length - mcState.current;
     if (timedOut) {
       for (let i = mcState.current; i < mcState.questions.length; i++) {
         mcState.userAnswers.push({ q: mcState.questions[i], correct: mcState.questions[i].answer, given: null, isCorrect: false, unanswered: true });
@@ -1596,25 +1621,29 @@ permalink: /online-maths-tests/
     }
     document.getElementById('mc-quiz').classList.remove('active');
     const correct = mcState.userAnswers.filter(a => a.isCorrect).length;
-    const total = mcState.userAnswers.length;
+    const total = timedOut ? mcState.userAnswers.filter(a => !a.unanswered).length : mcState.userAnswers.length;
     const answeredWrong = mcState.userAnswers.filter(a => !a.isCorrect && !a.unanswered);
-    const allWrong = mcState.userAnswers.filter(a => !a.isCorrect);
     const perfect = correct === total;
     document.getElementById('mc-score').textContent = correct + '/' + total;
     const timeEl = document.getElementById('mc-time-taken');
-    if (mcState.timed) { const used = mcState.timelimit - mcState.remaining; timeEl.textContent = timedOut ? 'Time ran out' : 'Time taken: ' + formatTime(used); }
+    if (mcState.timed) { const used = mcState.timelimit - mcState.remaining; timeEl.textContent = timedOut ? '' : 'Time taken: ' + formatTime(used); }
     else { timeEl.textContent = 'Time taken: ' + formatTime(mcState.elapsed); }
     const perfectEl = document.getElementById('mc-perfect');
     const wrongWrap = document.getElementById('mc-wrong-wrap');
     const wrongList = document.getElementById('mc-wrong-list');
     const actionsEl = document.getElementById('mc-actions');
-    if (perfect) {
+    const pill = timedOut ? timedOutPill(notReached) : '';
+    if (perfect && !timedOut) {
       perfectEl.style.display = 'block'; wrongWrap.style.display = 'none';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="mcResetSetup()">← Menu</button><button class="results-btn primary" onclick="mcRetakeSame()">Try again</button>';
       if (!mcState.wrongOnly) launchConfetti();
     } else {
       perfectEl.style.display = 'none'; wrongWrap.style.display = 'block';
-      wrongList.innerHTML = wrongTableRows(answeredWrong, a => a.q.label, a => a.correct);
+      if (answeredWrong.length > 0) {
+        wrongList.innerHTML = pill + wrongTableRows(answeredWrong, a => a.q.label, a => a.correct);
+      } else {
+        wrongList.innerHTML = pill + '<p class="no-wrong-msg">No incorrect answers' + (timedOut ? ' \u2014 well done!' : '') + '</p>';
+      }
       const retryBtn = answeredWrong.length > 0 ? '<button class="results-btn green-btn" onclick="mcRetakeWrong()">Retry incorrect</button>' : '';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="mcResetSetup()">← Menu</button><button class="results-btn primary" onclick="mcRetakeSame()">Try again</button>' + retryBtn;
     }
@@ -1819,6 +1848,7 @@ permalink: /online-maths-tests/
 
   function fdpFinishTest(timedOut) {
     clearInterval(fdpState.timerInterval);
+    const notReached=fdpState.questions.length-fdpState.current;
     if (timedOut) {
       for(let i=fdpState.current;i<fdpState.questions.length;i++){
         const q=fdpState.questions[i];
@@ -1828,25 +1858,29 @@ permalink: /online-maths-tests/
     }
     document.getElementById('fdp-quiz').classList.remove('active');
     const correct=fdpState.userAnswers.filter(a=>a.isCorrect).length;
-    const total=fdpState.userAnswers.length;
+    const total=timedOut?fdpState.userAnswers.filter(a=>!a.unanswered).length:fdpState.userAnswers.length;
     const answeredWrong=fdpState.userAnswers.filter(a=>!a.isCorrect&&!a.unanswered);
-    const allWrong=fdpState.userAnswers.filter(a=>!a.isCorrect);
     const perfect=correct===total;
     document.getElementById('fdp-score').textContent=correct+'/'+total;
     const timeEl=document.getElementById('fdp-time-taken');
-    if(fdpState.timed){const used=fdpState.timelimit-fdpState.remaining;timeEl.textContent=timedOut?'Time ran out':'Time taken: '+formatTime(used);}
+    if(fdpState.timed){const used=fdpState.timelimit-fdpState.remaining;timeEl.textContent=timedOut?'':'Time taken: '+formatTime(used);}
     else{timeEl.textContent='Time taken: '+formatTime(fdpState.elapsed);}
     const perfectEl=document.getElementById('fdp-perfect');
     const wrongWrap=document.getElementById('fdp-wrong-wrap');
     const wrongList=document.getElementById('fdp-wrong-list');
     const actionsEl=document.getElementById('fdp-actions');
-    if (perfect) {
+    const pill=timedOut?timedOutPill(notReached):'';
+    if (perfect && !timedOut) {
       perfectEl.style.display='block'; wrongWrap.style.display='none';
       actionsEl.innerHTML='<button class="results-btn secondary" onclick="fdpResetSetup()">\u2190 Menu</button><button class="results-btn primary" onclick="fdpRetakeSame()">Try again</button>';
       if(!fdpState.wrongOnly) launchConfetti();
     } else {
       perfectEl.style.display='none'; wrongWrap.style.display='block';
-      wrongList.innerHTML=wrongTableRows(answeredWrong, a=>a.q.qHTML+' = ?', a=>a.correct);
+      if(answeredWrong.length>0){
+        wrongList.innerHTML=pill+wrongTableRows(answeredWrong, a=>a.q.qHTML+' = ?', a=>a.correct);
+      } else {
+        wrongList.innerHTML=pill+'<p class="no-wrong-msg">No incorrect answers'+(timedOut?' \u2014 well done!':'')+'</p>';
+      }
       const retryBtn=answeredWrong.length>0?'<button class="results-btn green-btn" onclick="fdpRetakeWrong()">Retry incorrect</button>':'';
       actionsEl.innerHTML='<button class="results-btn secondary" onclick="fdpResetSetup()">\u2190 Menu</button><button class="results-btn primary" onclick="fdpRetakeSame()">Try again</button>'+retryBtn;
     }
@@ -2078,6 +2112,7 @@ permalink: /online-maths-tests/
 
   function fonFinishTest(timedOut) {
     clearInterval(fonState.timerInterval);
+    const notReached = fonState.questions.length - fonState.current;
     if (timedOut) {
       for (let i = fonState.current; i < fonState.questions.length; i++) {
         fonState.userAnswers.push({ q: fonState.questions[i], correct: fonState.questions[i].answer, given: null, isCorrect: false, unanswered: true });
@@ -2085,25 +2120,29 @@ permalink: /online-maths-tests/
     }
     document.getElementById('fon-quiz').classList.remove('active');
     const correct = fonState.userAnswers.filter(a => a.isCorrect).length;
-    const total = fonState.userAnswers.length;
+    const total = timedOut ? fonState.userAnswers.filter(a => !a.unanswered).length : fonState.userAnswers.length;
     const answeredWrong = fonState.userAnswers.filter(a => !a.isCorrect && !a.unanswered);
-    const allWrong = fonState.userAnswers.filter(a => !a.isCorrect);
     const perfect = correct === total;
     document.getElementById('fon-score').textContent = correct + '/' + total;
     const timeEl = document.getElementById('fon-time-taken');
-    if (fonState.timed) { const used = fonState.timelimit - fonState.remaining; timeEl.textContent = timedOut ? 'Time ran out' : 'Time taken: ' + formatTime(used); }
+    if (fonState.timed) { const used = fonState.timelimit - fonState.remaining; timeEl.textContent = timedOut ? '' : 'Time taken: ' + formatTime(used); }
     else { timeEl.textContent = 'Time taken: ' + formatTime(fonState.elapsed); }
     const perfectEl = document.getElementById('fon-perfect');
     const wrongWrap = document.getElementById('fon-wrong-wrap');
     const wrongList = document.getElementById('fon-wrong-list');
     const actionsEl = document.getElementById('fon-actions');
-    if (perfect) {
+    const pill = timedOut ? timedOutPill(notReached) : '';
+    if (perfect && !timedOut) {
       perfectEl.style.display = 'block'; wrongWrap.style.display = 'none';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="fonResetSetup()">\u2190 Menu</button><button class="results-btn primary" onclick="fonRetakeSame()">Try again</button>';
       if (!fonState.wrongOnly) launchConfetti();
     } else {
       perfectEl.style.display = 'none'; wrongWrap.style.display = 'block';
-      wrongList.innerHTML = wrongTableRows(answeredWrong, a => a.q.qHTML + ' = ?', a => a.correct);
+      if (answeredWrong.length > 0) {
+        wrongList.innerHTML = pill + wrongTableRows(answeredWrong, a => a.q.qHTML + ' = ?', a => a.correct);
+      } else {
+        wrongList.innerHTML = pill + '<p class="no-wrong-msg">No incorrect answers' + (timedOut ? ' \u2014 well done!' : '') + '</p>';
+      }
       const retryBtn = answeredWrong.length > 0 ? '<button class="results-btn green-btn" onclick="fonRetakeWrong()">Retry incorrect</button>' : '';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="fonResetSetup()">\u2190 Menu</button><button class="results-btn primary" onclick="fonRetakeSame()">Try again</button>' + retryBtn;
     }
@@ -2380,6 +2419,7 @@ permalink: /online-maths-tests/
 
   function rndFinishTest(timedOut) {
     clearInterval(rndState.timerInterval);
+    const notReached = rndState.questions.length - rndState.current;
     if (timedOut) {
       for (let i = rndState.current; i < rndState.questions.length; i++) {
         rndState.userAnswers.push({ q: rndState.questions[i], correct: rndState.questions[i].answer, given: null, isCorrect: false, unanswered: true });
@@ -2387,25 +2427,29 @@ permalink: /online-maths-tests/
     }
     document.getElementById('rnd-quiz').classList.remove('active');
     const correct = rndState.userAnswers.filter(a => a.isCorrect).length;
-    const total = rndState.userAnswers.length;
+    const total = timedOut ? rndState.userAnswers.filter(a => !a.unanswered).length : rndState.userAnswers.length;
     const answeredWrong = rndState.userAnswers.filter(a => !a.isCorrect && !a.unanswered);
-    const allWrong = rndState.userAnswers.filter(a => !a.isCorrect);
     const perfect = correct === total;
     document.getElementById('rnd-score').textContent = correct + '/' + total;
     const timeEl = document.getElementById('rnd-time-taken');
-    if (rndState.timed) { const used = rndState.timelimit - rndState.remaining; timeEl.textContent = timedOut ? 'Time ran out' : 'Time taken: ' + formatTime(used); }
+    if (rndState.timed) { const used = rndState.timelimit - rndState.remaining; timeEl.textContent = timedOut ? '' : 'Time taken: ' + formatTime(used); }
     else { timeEl.textContent = 'Time taken: ' + formatTime(rndState.elapsed); }
     const perfectEl = document.getElementById('rnd-perfect');
     const wrongWrap = document.getElementById('rnd-wrong-wrap');
     const wrongList = document.getElementById('rnd-wrong-list');
     const actionsEl = document.getElementById('rnd-actions');
-    if (perfect) {
+    const pill = timedOut ? timedOutPill(notReached) : '';
+    if (perfect && !timedOut) {
       perfectEl.style.display = 'block'; wrongWrap.style.display = 'none';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="rndResetSetup()">\u2190 Menu</button><button class="results-btn primary" onclick="rndRetakeSame()">Try again</button>';
       if (!rndState.wrongOnly) launchConfetti();
     } else {
       perfectEl.style.display = 'none'; wrongWrap.style.display = 'block';
-      wrongList.innerHTML = wrongTableRows(answeredWrong, a => a.q.question, a => a.correct);
+      if (answeredWrong.length > 0) {
+        wrongList.innerHTML = pill + wrongTableRows(answeredWrong, a => a.q.question, a => a.correct);
+      } else {
+        wrongList.innerHTML = pill + '<p class="no-wrong-msg">No incorrect answers' + (timedOut ? ' \u2014 well done!' : '') + '</p>';
+      }
       const retryBtn = answeredWrong.length > 0 ? '<button class="results-btn green-btn" onclick="rndRetakeWrong()">Retry incorrect</button>' : '';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="rndResetSetup()">\u2190 Menu</button><button class="results-btn primary" onclick="rndRetakeSame()">Try again</button>' + retryBtn;
     }
@@ -2576,6 +2620,7 @@ permalink: /online-maths-tests/
 
   function prFinishTest(timedOut) {
     clearInterval(prState.timerInterval);
+    const notReached = prState.questions.length - prState.current;
     if (timedOut) {
       for (let i = prState.current; i < prState.questions.length; i++) {
         prState.userAnswers.push({ q: prState.questions[i], correct: prState.questions[i].answer, given: null, isCorrect: false, unanswered: true });
@@ -2583,25 +2628,29 @@ permalink: /online-maths-tests/
     }
     document.getElementById('pr-quiz').classList.remove('active');
     const correct = prState.userAnswers.filter(a => a.isCorrect).length;
-    const total = prState.userAnswers.length;
+    const total = timedOut ? prState.userAnswers.filter(a => !a.unanswered).length : prState.userAnswers.length;
     const answeredWrong = prState.userAnswers.filter(a => !a.isCorrect && !a.unanswered);
-    const allWrong = prState.userAnswers.filter(a => !a.isCorrect);
     const perfect = correct === total;
     document.getElementById('pr-score').textContent = correct + '/' + total;
     const timeEl = document.getElementById('pr-time-taken');
-    if (prState.timed) { const used = prState.timelimit - prState.remaining; timeEl.textContent = timedOut ? 'Time ran out' : 'Time taken: ' + formatTime(used); }
+    if (prState.timed) { const used = prState.timelimit - prState.remaining; timeEl.textContent = timedOut ? '' : 'Time taken: ' + formatTime(used); }
     else { timeEl.textContent = 'Time taken: ' + formatTime(prState.elapsed); }
     const perfectEl = document.getElementById('pr-perfect');
     const wrongWrap = document.getElementById('pr-wrong-wrap');
     const wrongList = document.getElementById('pr-wrong-list');
     const actionsEl = document.getElementById('pr-actions');
-    if (perfect) {
+    const pill = timedOut ? timedOutPill(notReached) : '';
+    if (perfect && !timedOut) {
       perfectEl.style.display = 'block'; wrongWrap.style.display = 'none';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="prResetSetup()">\u2190 Menu</button><button class="results-btn primary" onclick="prRetakeSame()">Try again</button>';
       if (!prState.wrongOnly) launchConfetti();
     } else {
       perfectEl.style.display = 'none'; wrongWrap.style.display = 'block';
-      wrongList.innerHTML = wrongTableRows(answeredWrong, a => a.q.question, a => a.correct);
+      if (answeredWrong.length > 0) {
+        wrongList.innerHTML = pill + wrongTableRows(answeredWrong, a => a.q.question, a => a.correct);
+      } else {
+        wrongList.innerHTML = pill + '<p class="no-wrong-msg">No incorrect answers' + (timedOut ? ' \u2014 well done!' : '') + '</p>';
+      }
       const retryBtn = answeredWrong.length > 0 ? '<button class="results-btn green-btn" onclick="prRetakeWrong()">Retry incorrect</button>' : '';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="prResetSetup()">\u2190 Menu</button><button class="results-btn primary" onclick="prRetakeSame()">Try again</button>' + retryBtn;
     }
