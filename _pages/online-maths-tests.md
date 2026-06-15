@@ -27,12 +27,13 @@ permalink: /online-maths-tests/
 .table-btn.selected { background: var(--blue); color: #fff; border-color: var(--blue); }
 .timeout-pill { display: inline-block; background: #fff5e6; color: #b85c00; font-size: 0.8rem; font-weight: 500; padding: 3px 10px; border-radius: 20px; border: 1px solid #f7941e; margin: 4px 0 12px; }
 .no-wrong-msg { font-size: 0.9rem; color: #6b7280; font-style: italic; margin: 0.5rem 0 1.5rem; }
+.wrong-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin-top: 0.5rem; display: table; }
 .wrong-table th { text-align: left; font-size: 0.78rem; font-weight: 600; color: #6b7280; padding: 5px 10px; border-bottom: 1px solid #e5e7eb; }
 .wrong-table td { padding: 6px 10px; border-bottom: 1px solid #f3f4f6; }
 .wrong-table tr:last-child td { border-bottom: none; }
 .wrong-table td.your-ans-cell { color: #c0392b; font-weight: 600; }
 .wrong-table td:nth-child(2) { font-weight: 600; }
-.results-wrong { width: 100%; }
+.results-wrong { width: 100%; box-sizing: border-box; }
 .fdp-q-wrap { display: flex; flex-direction: column; height: 14rem; }
 #fdp-question { font-size: clamp(1.1rem, 3.5vw, 2.25rem); flex-shrink: 0; height: 6rem; display: flex; align-items: center; justify-content: center; text-align: center; overflow: visible; flex-wrap: wrap; gap: 0.3em; line-height: 1.6; }
 .fdp-options { display: flex; gap: 10px; flex-wrap: nowrap; margin-top: 1.25rem; justify-content: center; align-items: stretch; }
