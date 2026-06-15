@@ -26,11 +26,13 @@ permalink: /online-maths-tests/
 .table-btn:hover { background: #f0f6ff; border-color: var(--blue); color: var(--blue); }
 .table-btn.selected { background: var(--blue); color: #fff; border-color: var(--blue); }
 .timeout-pill { display: inline-block; background: #fff5e6; color: #b85c00; font-size: 0.8rem; font-weight: 500; padding: 3px 10px; border-radius: 20px; border: 1px solid #f7941e; margin: 4px 0 12px; }
-.no-wrong-msg { font-size: 0.9rem; color: #6b7280; font-style: italic; margin: 0.5rem 0; }
+.no-wrong-msg { font-size: 0.9rem; color: #6b7280; font-style: italic; margin: 0.5rem 0 1.5rem; }
 .wrong-table th { text-align: left; font-size: 0.78rem; font-weight: 600; color: #6b7280; padding: 5px 10px; border-bottom: 1px solid #e5e7eb; }
 .wrong-table td { padding: 6px 10px; border-bottom: 1px solid #f3f4f6; }
 .wrong-table tr:last-child td { border-bottom: none; }
 .wrong-table td.your-ans-cell { color: #c0392b; font-weight: 600; }
+.wrong-table td:nth-child(2) { font-weight: 600; }
+.results-wrong { width: 100%; }
 .fdp-q-wrap { display: flex; flex-direction: column; height: 14rem; }
 #fdp-question { font-size: clamp(1.1rem, 3.5vw, 2.25rem); flex-shrink: 0; height: 6rem; display: flex; align-items: center; justify-content: center; text-align: center; overflow: visible; flex-wrap: wrap; gap: 0.3em; line-height: 1.6; }
 .fdp-options { display: flex; gap: 10px; flex-wrap: nowrap; margin-top: 1.25rem; justify-content: center; align-items: stretch; }
@@ -1062,10 +1064,8 @@ permalink: /online-maths-tests/
     document.getElementById('nb-quiz').classList.remove('active');
     document.getElementById('nb-results').classList.remove('active');
     document.getElementById('nb-setup').style.display = '';
-    nbSelOp = null; nbSelCount = null; nbSelTimed = null; nbSelTime = null;
+    nbSelTarget = null; nbSelOp = null; nbSelCount = null; nbSelTimed = null; nbSelTime = null;
     document.querySelectorAll('[data-nb-target]').forEach(b => b.classList.remove('selected'));
-    document.querySelector('[data-nb-target="10"]').classList.add('selected');
-    nbSelTarget = 10;
     document.querySelectorAll('[data-nb-op]').forEach(b => b.classList.remove('selected'));
     document.querySelectorAll('[data-nb-qcount]').forEach(b => b.classList.remove('selected'));
     document.querySelectorAll('[data-nb-timed]').forEach(b => b.classList.remove('selected'));
@@ -1472,10 +1472,8 @@ permalink: /online-maths-tests/
     document.getElementById('mc-quiz').classList.remove('active');
     document.getElementById('mc-results').classList.remove('active');
     document.getElementById('mc-setup').style.display = '';
-    mcSelGroups = new Set(['all']); mcSelCount = null; mcSelTimed = null; mcSelTime = null;
+    mcSelDiff = null; mcSelGroups = new Set(); mcSelCount = null; mcSelTimed = null; mcSelTime = null;
     document.querySelectorAll('[data-mc-diff]').forEach(b => b.classList.remove('selected'));
-    document.querySelector('[data-mc-diff="basic"]').classList.add('selected');
-    mcSelDiff = 'basic';
     document.querySelectorAll('[data-mc-group]').forEach(b => b.classList.remove('selected'));
     document.querySelectorAll('[data-mc-qcount]').forEach(b => b.classList.remove('selected'));
     document.querySelectorAll('[data-mc-timed]').forEach(b => b.classList.remove('selected'));
