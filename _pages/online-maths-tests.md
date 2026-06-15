@@ -1664,6 +1664,8 @@ permalink: /online-maths-tests/
       } else {
         wrongWrap.style.display = 'none';
         document.getElementById('mc-timeout').innerHTML = pill + '<p class="no-wrong-msg">No incorrect answers \u2014 well done!</p>';
+      }
+      const retryBtn = answeredWrong.length > 0 ? '<button class="results-btn green-btn" onclick="mcRetakeWrong()">Retry incorrect</button>' : '';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="mcResetSetup()">← Menu</button><button class="results-btn primary" onclick="mcRetakeSame()">Try again</button>' + retryBtn;
     }
     document.getElementById('mc-results').classList.add('active');
