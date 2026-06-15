@@ -7,6 +7,16 @@ permalink: /online-maths-tests/
 
 <style>
 :root { --blue: #1c75bc; --blue-dark: #155f99; --green: #009444; --green-dark: #007a38; --purple: #800080; --orange: #f7941e; --orange-dark: #d47c10; }
+.dark-btn { background: #fff; color: #374151; border: 2px solid #d0d0d0; }
+.dark-btn:hover { background: #f5f6f8; border-color: #9ca3af; }
+.option-btn.dark-btn:hover { background: #f0f0f0; border-color: #9ca3af; color: #111827; }
+.option-btn.dark-btn.selected { background: #111827; color: #fff; border-color: #111827; }
+.table-btn.selected { background: var(--blue); color: #fff; border-color: var(--blue); }
+.script-l { font-family: "Times New Roman", "Liberation Serif", serif; font-style: normal; }
+
+.frac { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; font-size: 0.85em; line-height: 1.1; margin: 0 2px; }
+.frac sup, .frac sub { font-size: 1em; line-height: 1.2; }
+.frac .frac-bar { border-top: 1.5px solid currentColor; width: 100%; display: block; margin: 1px 0; }
 .dark-btn { background: #fff; color: #374151; border: 1.5px solid #e5e7eb; }
 .dark-btn:hover { background: #f5f6f8; border-color: #9ca3af; }
 .option-btn.dark-btn:hover { background: #f0f0f0; border-color: #9ca3af; color: #111827; }
@@ -15,18 +25,12 @@ permalink: /online-maths-tests/
 .table-btn { background: #fff; }
 .table-btn:hover { background: #f0f6ff; border-color: var(--blue); color: var(--blue); }
 .table-btn.selected { background: var(--blue); color: #fff; border-color: var(--blue); }
-.script-l { font-family: "Times New Roman", "Liberation Serif", serif; font-style: normal; }
-
-.frac { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; font-size: 0.85em; line-height: 1.1; margin: 0 2px; }
-.frac sup, .frac sub { font-size: 1em; line-height: 1.2; }
-.frac .frac-bar { border-top: 1.5px solid currentColor; width: 100%; display: block; margin: 1px 0; }
-.wrong-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin-top: 0.5rem; }
 .timeout-pill { display: inline-block; background: #fff5e6; color: #b85c00; font-size: 0.8rem; font-weight: 500; padding: 3px 10px; border-radius: 20px; border: 1px solid #f7941e; margin: 4px 0 12px; }
+.no-wrong-msg { font-size: 0.9rem; color: #6b7280; font-style: italic; margin: 0.5rem 0; }
 .wrong-table th { text-align: left; font-size: 0.78rem; font-weight: 600; color: #6b7280; padding: 5px 10px; border-bottom: 1px solid #e5e7eb; }
 .wrong-table td { padding: 6px 10px; border-bottom: 1px solid #f3f4f6; }
 .wrong-table tr:last-child td { border-bottom: none; }
 .wrong-table td.your-ans-cell { color: #c0392b; font-weight: 600; }
-.no-wrong-msg { font-size: 0.9rem; color: #6b7280; font-style: italic; margin: 0.5rem 0; }
 .fdp-q-wrap { display: flex; flex-direction: column; height: 14rem; }
 #fdp-question { font-size: clamp(1.1rem, 3.5vw, 2.25rem); flex-shrink: 0; height: 6rem; display: flex; align-items: center; justify-content: center; text-align: center; overflow: visible; flex-wrap: wrap; gap: 0.3em; line-height: 1.6; }
 .fdp-options { display: flex; gap: 10px; flex-wrap: nowrap; margin-top: 1.25rem; justify-content: center; align-items: stretch; }
@@ -660,7 +664,6 @@ permalink: /online-maths-tests/
 </main>
 
 <script>
-(function() {
   // ── STATE ─────────────────────────────────────────────────────────────────
   const state = { questions: [], current: 0, userAnswers: [], elapsed: 0, remaining: 0, timerInterval: null, timed: false, timelimit: null, tables: new Set(), op: null, qcount: null, wrongOnly: false };
   let selTables = new Set();
@@ -998,12 +1001,12 @@ permalink: /online-maths-tests/
     const timeEl = document.getElementById('tt-time-taken');
     if (state.timed) { const used = state.timelimit - state.remaining; timeEl.textContent = timedOut ? '' : 'Time taken: ' + formatTime(used); }
     else { timeEl.textContent = 'Time taken: ' + formatTime(state.elapsed); }
+    const pill = timedOut ? timedOutPill(notReached) : '';
+    document.getElementById('tt-timeout').innerHTML = pill;
     const perfectEl = document.getElementById('tt-perfect');
     const wrongWrap = document.getElementById('tt-wrong-wrap');
     const wrongList = document.getElementById('tt-wrong-list');
     const actionsEl = document.getElementById('tt-actions');
-    const pill = timedOut ? timedOutPill(notReached) : '';
-    document.getElementById('tt-timeout').innerHTML = pill;
     if (perfect && !timedOut) {
       perfectEl.style.display = 'block'; wrongWrap.style.display = 'none';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="resetSetup()">← Menu</button><button class="results-btn primary" onclick="retakeSame()">Try again</button>';
@@ -1015,7 +1018,7 @@ permalink: /online-maths-tests/
         wrongList.innerHTML = wrongTableRows(answeredWrong, a => questionLabel(a.q), a => a.correct);
       } else {
         wrongWrap.style.display = 'none';
-        document.getElementById('tt-timeout').innerHTML = pill + '<p class="no-wrong-msg">No incorrect answers \u2014 well done!</p>';
+        document.getElementById('tt-timeout').innerHTML = pill + '<p class="no-wrong-msg">No incorrect answers — well done!</p>';
       }
       const retryBtn = answeredWrong.length > 0 ? '<button class="results-btn green-btn" onclick="retakeWrong()">Retry incorrect</button>' : '';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="resetSetup()">← Menu</button><button class="results-btn primary" onclick="retakeSame()">Try again</button>' + retryBtn;
@@ -1202,12 +1205,12 @@ permalink: /online-maths-tests/
     const timeEl = document.getElementById('nb-time-taken');
     if (nbState.timed) { const used = nbState.timelimit - nbState.remaining; timeEl.textContent = timedOut ? '' : 'Time taken: ' + formatTime(used); }
     else { timeEl.textContent = 'Time taken: ' + formatTime(nbState.elapsed); }
+    const pill = timedOut ? timedOutPill(notReached) : '';
+    document.getElementById('nb-timeout').innerHTML = pill;
     const perfectEl = document.getElementById('nb-perfect');
     const wrongWrap = document.getElementById('nb-wrong-wrap');
     const wrongList = document.getElementById('nb-wrong-list');
     const actionsEl = document.getElementById('nb-actions');
-    const pill = timedOut ? timedOutPill(notReached) : '';
-    document.getElementById('nb-timeout').innerHTML = pill;
     if (perfect && !timedOut) {
       perfectEl.style.display = 'block'; wrongWrap.style.display = 'none';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="nbResetSetup()">← Menu</button><button class="results-btn primary" onclick="nbRetakeSame()">Try again</button>';
@@ -1255,7 +1258,6 @@ permalink: /online-maths-tests/
     const timedOk = dhSelTimed === false || (dhSelTimed === true && dhSelTime !== null);
     document.getElementById('dh-start-btn').disabled = !(dhSelTypes.size > 0 && dhSelCount !== null && dhSelTimed !== null && timedOk);
   }
-
   function dhResetSetup() {
     clearInterval(dhState.timerInterval);
     document.getElementById('dh-quiz').classList.remove('active');
@@ -1269,7 +1271,6 @@ permalink: /online-maths-tests/
     document.getElementById('dh-time-options').classList.remove('visible');
     dhUpdateStartBtn();
   }
-
   function dhSelectType(btn) {
     const val = btn.dataset.dhType;
     if (btn.classList.contains('selected')) { btn.classList.remove('selected'); dhSelTypes.delete(val); }
@@ -1281,18 +1282,15 @@ permalink: /online-maths-tests/
     }
     dhUpdateStartBtn();
   }
-
   function dhSelectMixed(btn) {
     document.querySelectorAll('[data-dh-type]').forEach(b => b.classList.remove('selected'));
     btn.classList.add('selected'); dhSelTypes.clear(); dhSelTypes.add('mixed');
     dhUpdateStartBtn();
   }
-
   function dhSelectCount(btn) {
     document.querySelectorAll('[data-dh-qcount]').forEach(b => b.classList.remove('selected'));
     btn.classList.add('selected'); dhSelCount = parseInt(btn.dataset.dhQcount); dhUpdateStartBtn();
   }
-
   function dhSelectTimed(btn) {
     document.querySelectorAll('[data-dh-timed]').forEach(b => b.classList.remove('selected'));
     btn.classList.add('selected'); dhSelTimed = btn.dataset.dhTimed === 'true';
@@ -1301,28 +1299,19 @@ permalink: /online-maths-tests/
     else { opts.classList.remove('visible'); dhSelTime = null; document.querySelectorAll('[data-dh-timelimit]').forEach(b => b.classList.remove('selected')); }
     dhUpdateStartBtn();
   }
-
   function dhSelectTime(btn) {
     document.querySelectorAll('[data-dh-timelimit]').forEach(b => b.classList.remove('selected'));
     btn.classList.add('selected'); dhSelTime = parseInt(btn.dataset.dhTimelimit); dhUpdateStartBtn();
   }
-
-  // ── DOUBLING AND HALVING QUESTION GENERATION ──────────────────────────────
   function dhGenerateQuestions(types, count) {
     const doublesPool = [], halvesPool = [];
-    for (let n = 1; n <= 10; n++) {
-      doublesPool.push({ label: 'Double ' + n + ' = ?', answer: n * 2 });
-    }
-    for (let n = 2; n <= 20; n += 2) {
-      halvesPool.push({ label: 'Half of ' + n + ' = ?', answer: n / 2 });
-    }
+    for (let n = 1; n <= 10; n++) doublesPool.push({ label: 'Double ' + n + ' = ?', answer: n * 2 });
+    for (let n = 2; n <= 20; n += 2) halvesPool.push({ label: 'Half of ' + n + ' = ?', answer: n / 2 });
     if (types.has('doubles')) return shuffleNoConsec(genericDrawCapped(doublesPool, count));
     if (types.has('halves')) return shuffleNoConsec(genericDrawCapped(halvesPool, count));
     const half = Math.floor(count / 2);
     return shuffleNoConsec([...genericDrawCapped(doublesPool, count - half), ...genericDrawCapped(halvesPool, half)]);
   }
-
-  // ── DOUBLING AND HALVING TEST ─────────────────────────────────────────────
   function dhStartTest(questions) {
     dhState.questions = questions; dhState.current = 0; dhState.userAnswers = []; dhState.elapsed = 0;
     document.getElementById('dh-setup').style.display = 'none';
@@ -1331,16 +1320,15 @@ permalink: /online-maths-tests/
     const timerEl = document.getElementById('dh-timer');
     if (dhState.timed) {
       dhState.remaining = dhState.timelimit; timerEl.style.display = 'block'; timerEl.textContent = formatTime(dhState.remaining); timerEl.className = 'quiz-timer';
-      dhState.timerInterval = setInterval(() => {
+      dhState.timerInterval = setInterval(function() {
         dhState.remaining--; timerEl.textContent = formatTime(dhState.remaining);
         if (dhState.remaining <= 30) timerEl.className = 'quiz-timer warning';
         if (dhState.remaining <= 10) timerEl.className = 'quiz-timer danger';
         if (dhState.remaining <= 0) { clearInterval(dhState.timerInterval); dhFinishTest(true); }
       }, 1000);
-    } else { timerEl.style.display = 'none'; dhState.timerInterval = setInterval(() => { dhState.elapsed++; }, 1000); }
+    } else { timerEl.style.display = 'none'; dhState.timerInterval = setInterval(function() { dhState.elapsed++; }, 1000); }
     dhShowQuestion();
   }
-
   function dhShowQuestion() {
     const q = dhState.questions[dhState.current];
     const total = dhState.questions.length;
@@ -1350,7 +1338,6 @@ permalink: /online-maths-tests/
     const input = document.getElementById('dh-answer');
     input.value = ''; input.focus();
   }
-
   function dhSubmitAnswer() {
     const input = document.getElementById('dh-answer');
     const raw = input.value.trim();
@@ -1362,37 +1349,35 @@ permalink: /online-maths-tests/
     dhState.current++;
     if (dhState.current >= dhState.questions.length) { dhFinishTest(false); } else { dhShowQuestion(); }
   }
-
   document.getElementById('dh-answer').addEventListener('keydown', function(e) {
     if (e.key === 'Enter') { e.preventDefault(); dhSubmitAnswer(); return; }
-    const allowed = ['Backspace','Delete','Tab','ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home','End'];
+    var allowed = ['Backspace','Delete','Tab','ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home','End'];
     if (allowed.includes(e.key)) return;
     if (!/^\d$/.test(e.key)) e.preventDefault();
   });
-
   function dhFinishTest(timedOut) {
     clearInterval(dhState.timerInterval);
-    const notReached = dhState.questions.length - dhState.current;
+    var notReached = dhState.questions.length - dhState.current;
     if (timedOut) {
-      for (let i = dhState.current; i < dhState.questions.length; i++) {
+      for (var i = dhState.current; i < dhState.questions.length; i++) {
         dhState.userAnswers.push({ q: dhState.questions[i], correct: dhState.questions[i].answer, given: null, isCorrect: false, unanswered: true });
       }
     }
     document.getElementById('dh-quiz').classList.remove('active');
-    const correct = dhState.userAnswers.filter(a => a.isCorrect).length;
-    const total = timedOut ? dhState.userAnswers.filter(a => !a.unanswered).length : dhState.userAnswers.length;
-    const answeredWrong = dhState.userAnswers.filter(a => !a.isCorrect && !a.unanswered);
-    const perfect = correct === total;
+    var correct = dhState.userAnswers.filter(function(a) { return a.isCorrect; }).length;
+    var total = timedOut ? dhState.userAnswers.filter(function(a) { return !a.unanswered; }).length : dhState.userAnswers.length;
+    var answeredWrong = dhState.userAnswers.filter(function(a) { return !a.isCorrect && !a.unanswered; });
+    var perfect = correct === total;
     document.getElementById('dh-score').textContent = correct + '/' + total;
-    const timeEl = document.getElementById('dh-time-taken');
-    if (dhState.timed) { const used = dhState.timelimit - dhState.remaining; timeEl.textContent = timedOut ? '' : 'Time taken: ' + formatTime(used); }
+    var timeEl = document.getElementById('dh-time-taken');
+    if (dhState.timed) { var used = dhState.timelimit - dhState.remaining; timeEl.textContent = timedOut ? '' : 'Time taken: ' + formatTime(used); }
     else { timeEl.textContent = 'Time taken: ' + formatTime(dhState.elapsed); }
-    const perfectEl = document.getElementById('dh-perfect');
-    const wrongWrap = document.getElementById('dh-wrong-wrap');
-    const wrongList = document.getElementById('dh-wrong-list');
-    const actionsEl = document.getElementById('dh-actions');
-    const pill = timedOut ? timedOutPill(notReached) : '';
+    var pill = timedOut ? timedOutPill(notReached) : '';
     document.getElementById('dh-timeout').innerHTML = pill;
+    var perfectEl = document.getElementById('dh-perfect');
+    var wrongWrap = document.getElementById('dh-wrong-wrap');
+    var wrongList = document.getElementById('dh-wrong-list');
+    var actionsEl = document.getElementById('dh-actions');
     if (perfect && !timedOut) {
       perfectEl.style.display = 'block'; wrongWrap.style.display = 'none';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="dhResetSetup()">← Menu</button><button class="results-btn primary" onclick="dhRetakeSame()">Try again</button>';
@@ -1401,34 +1386,31 @@ permalink: /online-maths-tests/
       perfectEl.style.display = 'none';
       if (answeredWrong.length > 0) {
         wrongWrap.style.display = 'block';
-        wrongList.innerHTML = wrongTableRows(answeredWrong, a => a.q.label, a => a.correct);
+        wrongList.innerHTML = wrongTableRows(answeredWrong, function(a) { return a.q.label; }, function(a) { return a.correct; });
       } else {
         wrongWrap.style.display = 'none';
         document.getElementById('dh-timeout').innerHTML = pill + '<p class="no-wrong-msg">No incorrect answers \u2014 well done!</p>';
       }
-      const retryBtn = answeredWrong.length > 0 ? '<button class="results-btn green-btn" onclick="dhRetakeWrong()">Retry incorrect</button>' : '';
+      var retryBtn = answeredWrong.length > 0 ? '<button class="results-btn green-btn" onclick="dhRetakeWrong()">Retry incorrect</button>' : '';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="dhResetSetup()">← Menu</button><button class="results-btn primary" onclick="dhRetakeSame()">Try again</button>' + retryBtn;
     }
     document.getElementById('dh-results').classList.add('active');
   }
-
   function dhRetakeSame() {
     document.getElementById('dh-results').classList.remove('active');
     dhState.wrongOnly = false;
     dhStartTest(dhGenerateQuestions(dhState.types, dhState.qcount));
   }
-
   function dhRetakeWrong() {
-    const answeredWrong = dhState.userAnswers.filter(a => !a.isCorrect && !a.unanswered);
-    const wrongQs = answeredWrong.map(a => a.q);
-    const count = Math.min(wrongQs.length, dhState.qcount);
-    const filled = [];
-    while (filled.length < count) { filled.push(...shuffleNoConsec([...wrongQs])); }
+    var answeredWrong = dhState.userAnswers.filter(function(a) { return !a.isCorrect && !a.unanswered; });
+    var wrongQs = answeredWrong.map(function(a) { return a.q; });
+    var count = Math.min(wrongQs.length, dhState.qcount);
+    var filled = [];
+    while (filled.length < count) { filled.push.apply(filled, shuffleNoConsec(wrongQs.slice())); }
     document.getElementById('dh-results').classList.remove('active');
     dhState.wrongOnly = true; dhState.timed = false;
     dhStartTest(filled.slice(0, count));
   }
-
   document.getElementById('dh-start-btn').addEventListener('click', function() {
     dhState.types = new Set(dhSelTypes); dhState.qcount = dhSelCount;
     dhState.timed = dhSelTimed; dhState.timelimit = dhSelTime; dhState.wrongOnly = false;
@@ -1646,12 +1628,12 @@ permalink: /online-maths-tests/
     const timeEl = document.getElementById('mc-time-taken');
     if (mcState.timed) { const used = mcState.timelimit - mcState.remaining; timeEl.textContent = timedOut ? '' : 'Time taken: ' + formatTime(used); }
     else { timeEl.textContent = 'Time taken: ' + formatTime(mcState.elapsed); }
+    const pill = timedOut ? timedOutPill(notReached) : '';
+    document.getElementById('mc-timeout').innerHTML = pill;
     const perfectEl = document.getElementById('mc-perfect');
     const wrongWrap = document.getElementById('mc-wrong-wrap');
     const wrongList = document.getElementById('mc-wrong-list');
     const actionsEl = document.getElementById('mc-actions');
-    const pill = timedOut ? timedOutPill(notReached) : '';
-    document.getElementById('mc-timeout').innerHTML = pill;
     if (perfect && !timedOut) {
       perfectEl.style.display = 'block'; wrongWrap.style.display = 'none';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="mcResetSetup()">← Menu</button><button class="results-btn primary" onclick="mcRetakeSame()">Try again</button>';
@@ -1886,12 +1868,12 @@ permalink: /online-maths-tests/
     const timeEl=document.getElementById('fdp-time-taken');
     if(fdpState.timed){const used=fdpState.timelimit-fdpState.remaining;timeEl.textContent=timedOut?'':'Time taken: '+formatTime(used);}
     else{timeEl.textContent='Time taken: '+formatTime(fdpState.elapsed);}
+    const pill=timedOut?timedOutPill(notReached):'';
+    document.getElementById('fdp-timeout').innerHTML=pill;
     const perfectEl=document.getElementById('fdp-perfect');
     const wrongWrap=document.getElementById('fdp-wrong-wrap');
     const wrongList=document.getElementById('fdp-wrong-list');
     const actionsEl=document.getElementById('fdp-actions');
-    const pill=timedOut?timedOutPill(notReached):'';
-    document.getElementById('fdp-timeout').innerHTML=pill;
     if (perfect && !timedOut) {
       perfectEl.style.display='block'; wrongWrap.style.display='none';
       actionsEl.innerHTML='<button class="results-btn secondary" onclick="fdpResetSetup()">\u2190 Menu</button><button class="results-btn primary" onclick="fdpRetakeSame()">Try again</button>';
@@ -2151,12 +2133,12 @@ permalink: /online-maths-tests/
     const timeEl = document.getElementById('fon-time-taken');
     if (fonState.timed) { const used = fonState.timelimit - fonState.remaining; timeEl.textContent = timedOut ? '' : 'Time taken: ' + formatTime(used); }
     else { timeEl.textContent = 'Time taken: ' + formatTime(fonState.elapsed); }
+    const pill = timedOut ? timedOutPill(notReached) : '';
+    document.getElementById('fon-timeout').innerHTML = pill;
     const perfectEl = document.getElementById('fon-perfect');
     const wrongWrap = document.getElementById('fon-wrong-wrap');
     const wrongList = document.getElementById('fon-wrong-list');
     const actionsEl = document.getElementById('fon-actions');
-    const pill = timedOut ? timedOutPill(notReached) : '';
-    document.getElementById('fon-timeout').innerHTML = pill;
     if (perfect && !timedOut) {
       perfectEl.style.display = 'block'; wrongWrap.style.display = 'none';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="fonResetSetup()">\u2190 Menu</button><button class="results-btn primary" onclick="fonRetakeSame()">Try again</button>';
@@ -2359,7 +2341,6 @@ permalink: /online-maths-tests/
     rndUpdateStartBtn();
   }
   function rndSelectType(btn) {
-    // Deselect whole number buttons
     rndSelWholeTypes = new Set();
     document.querySelectorAll('[data-rnd-whole]').forEach(b => b.classList.remove('selected'));
     if (btn.classList.contains('selected')) { btn.classList.remove('selected'); rndSelType = null; rndUpdateStartBtn(); return; }
@@ -2461,12 +2442,12 @@ permalink: /online-maths-tests/
     const timeEl = document.getElementById('rnd-time-taken');
     if (rndState.timed) { const used = rndState.timelimit - rndState.remaining; timeEl.textContent = timedOut ? '' : 'Time taken: ' + formatTime(used); }
     else { timeEl.textContent = 'Time taken: ' + formatTime(rndState.elapsed); }
+    const pill = timedOut ? timedOutPill(notReached) : '';
+    document.getElementById('rnd-timeout').innerHTML = pill;
     const perfectEl = document.getElementById('rnd-perfect');
     const wrongWrap = document.getElementById('rnd-wrong-wrap');
     const wrongList = document.getElementById('rnd-wrong-list');
     const actionsEl = document.getElementById('rnd-actions');
-    const pill = timedOut ? timedOutPill(notReached) : '';
-    document.getElementById('rnd-timeout').innerHTML = pill;
     if (perfect && !timedOut) {
       perfectEl.style.display = 'block'; wrongWrap.style.display = 'none';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="rndResetSetup()">\u2190 Menu</button><button class="results-btn primary" onclick="rndRetakeSame()">Try again</button>';
@@ -2665,12 +2646,12 @@ permalink: /online-maths-tests/
     const timeEl = document.getElementById('pr-time-taken');
     if (prState.timed) { const used = prState.timelimit - prState.remaining; timeEl.textContent = timedOut ? '' : 'Time taken: ' + formatTime(used); }
     else { timeEl.textContent = 'Time taken: ' + formatTime(prState.elapsed); }
+    const pill = timedOut ? timedOutPill(notReached) : '';
+    document.getElementById('pr-timeout').innerHTML = pill;
     const perfectEl = document.getElementById('pr-perfect');
     const wrongWrap = document.getElementById('pr-wrong-wrap');
     const wrongList = document.getElementById('pr-wrong-list');
     const actionsEl = document.getElementById('pr-actions');
-    const pill = timedOut ? timedOutPill(notReached) : '';
-    document.getElementById('pr-timeout').innerHTML = pill;
     if (perfect && !timedOut) {
       perfectEl.style.display = 'block'; wrongWrap.style.display = 'none';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="prResetSetup()">\u2190 Menu</button><button class="results-btn primary" onclick="prRetakeSame()">Try again</button>';
@@ -2713,5 +2694,4 @@ permalink: /online-maths-tests/
     prStartTest(prGenerateQuestions(prSelTypes, prSelCount));
   });
 
-})();
 </script>
