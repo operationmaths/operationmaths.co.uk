@@ -128,6 +128,7 @@ permalink: /online-maths-tests/
         <div class="results-score" id="tt-score">17/20</div>
         <div class="results-label">correct answers</div>
         <div class="results-time" id="tt-time-taken"></div>
+        <div class="results-timeout" id="tt-timeout"></div>
         <div class="results-perfect" id="tt-perfect" style="display:none">Full marks — excellent work!</div>
         <div class="results-wrong" id="tt-wrong-wrap" style="display:none">
           <h3>Wrong answers</h3>
@@ -205,6 +206,7 @@ permalink: /online-maths-tests/
         <div class="results-score" id="nb-score">17/20</div>
         <div class="results-label">correct answers</div>
         <div class="results-time" id="nb-time-taken"></div>
+        <div class="results-timeout" id="nb-timeout"></div>
         <div class="results-perfect" id="nb-perfect" style="display:none">Full marks — excellent work!</div>
         <div class="results-wrong" id="nb-wrong-wrap" style="display:none">
           <h3>Wrong answers</h3>
@@ -274,6 +276,7 @@ permalink: /online-maths-tests/
         <div class="results-score" id="dh-score">20/20</div>
         <div class="results-label">correct answers</div>
         <div class="results-time" id="dh-time-taken"></div>
+        <div class="results-timeout" id="dh-timeout"></div>
         <div class="results-perfect" id="dh-perfect" style="display:none">Full marks — excellent work!</div>
         <div class="results-wrong" id="dh-wrong-wrap" style="display:none">
           <h3>Wrong answers</h3>
@@ -352,6 +355,7 @@ permalink: /online-maths-tests/
         <div class="results-score" id="rnd-score">17/20</div>
         <div class="results-label">correct answers</div>
         <div class="results-time" id="rnd-time-taken"></div>
+        <div class="results-timeout" id="rnd-timeout"></div>
         <div class="results-perfect" id="rnd-perfect" style="display:none">Full marks &#8212; excellent work!</div>
         <div class="results-wrong" id="rnd-wrong-wrap" style="display:none">
           <h3>Wrong answers</h3>
@@ -420,6 +424,7 @@ permalink: /online-maths-tests/
         <div class="results-score" id="fdp-score">17/20</div>
         <div class="results-label">correct answers</div>
         <div class="results-time" id="fdp-time-taken"></div>
+        <div class="results-timeout" id="fdp-timeout"></div>
         <div class="results-perfect" id="fdp-perfect" style="display:none">Full marks — excellent work!</div>
         <div class="results-wrong" id="fdp-wrong-wrap" style="display:none">
           <h3>Wrong answers</h3>
@@ -489,6 +494,7 @@ permalink: /online-maths-tests/
         <div class="results-score" id="fon-score">17/20</div>
         <div class="results-label">correct answers</div>
         <div class="results-time" id="fon-time-taken"></div>
+        <div class="results-timeout" id="fon-timeout"></div>
         <div class="results-perfect" id="fon-perfect" style="display:none">Full marks &#8212; excellent work!</div>
         <div class="results-wrong" id="fon-wrong-wrap" style="display:none">
           <h3>Wrong answers</h3>
@@ -567,6 +573,7 @@ permalink: /online-maths-tests/
         <div class="results-score" id="mc-score">17/20</div>
         <div class="results-label">correct answers</div>
         <div class="results-time" id="mc-time-taken"></div>
+        <div class="results-timeout" id="mc-timeout"></div>
         <div class="results-perfect" id="mc-perfect" style="display:none">Full marks — excellent work!</div>
         <div class="results-wrong" id="mc-wrong-wrap" style="display:none">
           <h3>Wrong answers</h3>
@@ -639,6 +646,7 @@ permalink: /online-maths-tests/
         <div class="results-score" id="pr-score">17/20</div>
         <div class="results-label">correct answers</div>
         <div class="results-time" id="pr-time-taken"></div>
+        <div class="results-timeout" id="pr-timeout"></div>
         <div class="results-perfect" id="pr-perfect" style="display:none">Full marks &#8212; excellent work!</div>
         <div class="results-wrong" id="pr-wrong-wrap" style="display:none">
           <h3>Wrong answers</h3>
@@ -725,7 +733,7 @@ permalink: /online-maths-tests/
 
   function timedOutPill(notReached) {
     if (notReached <= 0) return '';
-    return '<div class="timeout-pill">Time ran out \u2014 ' + notReached + ' question' + (notReached === 1 ? '' : 's') + ' not reached</div>';
+    return '<span class="timeout-pill">Time ran out \u2014 ' + notReached + ' question' + (notReached === 1 ? '' : 's') + ' not answered</span>';
   }
 
   function launchConfetti() {
@@ -994,16 +1002,19 @@ permalink: /online-maths-tests/
     const wrongList = document.getElementById('tt-wrong-list');
     const actionsEl = document.getElementById('tt-actions');
     const pill = timedOut ? timedOutPill(notReached) : '';
+    document.getElementById('tt-timeout').innerHTML = pill;
     if (perfect && !timedOut) {
       perfectEl.style.display = 'block'; wrongWrap.style.display = 'none';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="resetSetup()">← Menu</button><button class="results-btn primary" onclick="retakeSame()">Try again</button>';
       if (!state.wrongOnly) launchConfetti();
     } else {
-      perfectEl.style.display = 'none'; wrongWrap.style.display = 'block';
+      perfectEl.style.display = 'none';
       if (answeredWrong.length > 0) {
-        wrongList.innerHTML = pill + wrongTableRows(answeredWrong, a => questionLabel(a.q), a => a.correct);
+        wrongWrap.style.display = 'block';
+        wrongList.innerHTML = wrongTableRows(answeredWrong, a => questionLabel(a.q), a => a.correct);
       } else {
-        wrongList.innerHTML = pill + '<p class="no-wrong-msg">No incorrect answers' + (timedOut ? ' \u2014 well done!' : '') + '</p>';
+        wrongWrap.style.display = 'none';
+        document.getElementById('tt-timeout').innerHTML = pill + '<p class="no-wrong-msg">No incorrect answers \u2014 well done!</p>';
       }
       const retryBtn = answeredWrong.length > 0 ? '<button class="results-btn green-btn" onclick="retakeWrong()">Retry incorrect</button>' : '';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="resetSetup()">← Menu</button><button class="results-btn primary" onclick="retakeSame()">Try again</button>' + retryBtn;
@@ -1195,16 +1206,19 @@ permalink: /online-maths-tests/
     const wrongList = document.getElementById('nb-wrong-list');
     const actionsEl = document.getElementById('nb-actions');
     const pill = timedOut ? timedOutPill(notReached) : '';
+    document.getElementById('nb-timeout').innerHTML = pill;
     if (perfect && !timedOut) {
       perfectEl.style.display = 'block'; wrongWrap.style.display = 'none';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="nbResetSetup()">← Menu</button><button class="results-btn primary" onclick="nbRetakeSame()">Try again</button>';
       if (!nbState.wrongOnly) launchConfetti();
     } else {
-      perfectEl.style.display = 'none'; wrongWrap.style.display = 'block';
+      perfectEl.style.display = 'none';
       if (answeredWrong.length > 0) {
-        wrongList.innerHTML = pill + wrongTableRows(answeredWrong, a => a.q.label.includes('?') ? a.q.label : a.q.label + ' = ?', a => a.correct);
+        wrongWrap.style.display = 'block';
+        wrongList.innerHTML = wrongTableRows(answeredWrong, a => a.q.label.includes('?') ? a.q.label : a.q.label + ' = ?', a => a.correct);
       } else {
-        wrongList.innerHTML = pill + '<p class="no-wrong-msg">No incorrect answers' + (timedOut ? ' \u2014 well done!' : '') + '</p>';
+        wrongWrap.style.display = 'none';
+        document.getElementById('nb-timeout').innerHTML = pill + '<p class="no-wrong-msg">No incorrect answers \u2014 well done!</p>';
       }
       const retryBtn = answeredWrong.length > 0 ? '<button class="results-btn green-btn" onclick="nbRetakeWrong()">Retry incorrect</button>' : '';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="nbResetSetup()">← Menu</button><button class="results-btn primary" onclick="nbRetakeSame()">Try again</button>' + retryBtn;
@@ -1377,16 +1391,19 @@ permalink: /online-maths-tests/
     const wrongList = document.getElementById('dh-wrong-list');
     const actionsEl = document.getElementById('dh-actions');
     const pill = timedOut ? timedOutPill(notReached) : '';
+    document.getElementById('dh-timeout').innerHTML = pill;
     if (perfect && !timedOut) {
       perfectEl.style.display = 'block'; wrongWrap.style.display = 'none';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="dhResetSetup()">← Menu</button><button class="results-btn primary" onclick="dhRetakeSame()">Try again</button>';
       if (!dhState.wrongOnly) launchConfetti();
     } else {
-      perfectEl.style.display = 'none'; wrongWrap.style.display = 'block';
+      perfectEl.style.display = 'none';
       if (answeredWrong.length > 0) {
-        wrongList.innerHTML = pill + wrongTableRows(answeredWrong, a => a.q.label, a => a.correct);
+        wrongWrap.style.display = 'block';
+        wrongList.innerHTML = wrongTableRows(answeredWrong, a => a.q.label, a => a.correct);
       } else {
-        wrongList.innerHTML = pill + '<p class="no-wrong-msg">No incorrect answers' + (timedOut ? ' \u2014 well done!' : '') + '</p>';
+        wrongWrap.style.display = 'none';
+        document.getElementById('dh-timeout').innerHTML = pill + '<p class="no-wrong-msg">No incorrect answers \u2014 well done!</p>';
       }
       const retryBtn = answeredWrong.length > 0 ? '<button class="results-btn green-btn" onclick="dhRetakeWrong()">Retry incorrect</button>' : '';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="dhResetSetup()">← Menu</button><button class="results-btn primary" onclick="dhRetakeSame()">Try again</button>' + retryBtn;
@@ -1633,18 +1650,19 @@ permalink: /online-maths-tests/
     const wrongList = document.getElementById('mc-wrong-list');
     const actionsEl = document.getElementById('mc-actions');
     const pill = timedOut ? timedOutPill(notReached) : '';
+    document.getElementById('mc-timeout').innerHTML = pill;
     if (perfect && !timedOut) {
       perfectEl.style.display = 'block'; wrongWrap.style.display = 'none';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="mcResetSetup()">← Menu</button><button class="results-btn primary" onclick="mcRetakeSame()">Try again</button>';
       if (!mcState.wrongOnly) launchConfetti();
     } else {
-      perfectEl.style.display = 'none'; wrongWrap.style.display = 'block';
+      perfectEl.style.display = 'none';
       if (answeredWrong.length > 0) {
-        wrongList.innerHTML = pill + wrongTableRows(answeredWrong, a => a.q.label, a => a.correct);
+        wrongWrap.style.display = 'block';
+        wrongList.innerHTML = wrongTableRows(answeredWrong, a => a.q.label, a => a.correct);
       } else {
-        wrongList.innerHTML = pill + '<p class="no-wrong-msg">No incorrect answers' + (timedOut ? ' \u2014 well done!' : '') + '</p>';
-      }
-      const retryBtn = answeredWrong.length > 0 ? '<button class="results-btn green-btn" onclick="mcRetakeWrong()">Retry incorrect</button>' : '';
+        wrongWrap.style.display = 'none';
+        document.getElementById('mc-timeout').innerHTML = pill + '<p class="no-wrong-msg">No incorrect answers \u2014 well done!</p>';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="mcResetSetup()">← Menu</button><button class="results-btn primary" onclick="mcRetakeSame()">Try again</button>' + retryBtn;
     }
     document.getElementById('mc-results').classList.add('active');
@@ -1870,16 +1888,19 @@ permalink: /online-maths-tests/
     const wrongList=document.getElementById('fdp-wrong-list');
     const actionsEl=document.getElementById('fdp-actions');
     const pill=timedOut?timedOutPill(notReached):'';
+    document.getElementById('fdp-timeout').innerHTML=pill;
     if (perfect && !timedOut) {
       perfectEl.style.display='block'; wrongWrap.style.display='none';
       actionsEl.innerHTML='<button class="results-btn secondary" onclick="fdpResetSetup()">\u2190 Menu</button><button class="results-btn primary" onclick="fdpRetakeSame()">Try again</button>';
       if(!fdpState.wrongOnly) launchConfetti();
     } else {
-      perfectEl.style.display='none'; wrongWrap.style.display='block';
+      perfectEl.style.display='none';
       if(answeredWrong.length>0){
-        wrongList.innerHTML=pill+wrongTableRows(answeredWrong, a=>a.q.qHTML+' = ?', a=>a.correct);
+        wrongWrap.style.display='block';
+        wrongList.innerHTML=wrongTableRows(answeredWrong, a=>a.q.qHTML+' = ?', a=>a.correct);
       } else {
-        wrongList.innerHTML=pill+'<p class="no-wrong-msg">No incorrect answers'+(timedOut?' \u2014 well done!':'')+'</p>';
+        wrongWrap.style.display='none';
+        document.getElementById('fdp-timeout').innerHTML=pill+'<p class="no-wrong-msg">No incorrect answers \u2014 well done!</p>';
       }
       const retryBtn=answeredWrong.length>0?'<button class="results-btn green-btn" onclick="fdpRetakeWrong()">Retry incorrect</button>':'';
       actionsEl.innerHTML='<button class="results-btn secondary" onclick="fdpResetSetup()">\u2190 Menu</button><button class="results-btn primary" onclick="fdpRetakeSame()">Try again</button>'+retryBtn;
@@ -2132,16 +2153,19 @@ permalink: /online-maths-tests/
     const wrongList = document.getElementById('fon-wrong-list');
     const actionsEl = document.getElementById('fon-actions');
     const pill = timedOut ? timedOutPill(notReached) : '';
+    document.getElementById('fon-timeout').innerHTML = pill;
     if (perfect && !timedOut) {
       perfectEl.style.display = 'block'; wrongWrap.style.display = 'none';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="fonResetSetup()">\u2190 Menu</button><button class="results-btn primary" onclick="fonRetakeSame()">Try again</button>';
       if (!fonState.wrongOnly) launchConfetti();
     } else {
-      perfectEl.style.display = 'none'; wrongWrap.style.display = 'block';
+      perfectEl.style.display = 'none';
       if (answeredWrong.length > 0) {
-        wrongList.innerHTML = pill + wrongTableRows(answeredWrong, a => a.q.qHTML + ' = ?', a => a.correct);
+        wrongWrap.style.display = 'block';
+        wrongList.innerHTML = wrongTableRows(answeredWrong, a => a.q.qHTML + ' = ?', a => a.correct);
       } else {
-        wrongList.innerHTML = pill + '<p class="no-wrong-msg">No incorrect answers' + (timedOut ? ' \u2014 well done!' : '') + '</p>';
+        wrongWrap.style.display = 'none';
+        document.getElementById('fon-timeout').innerHTML = pill + '<p class="no-wrong-msg">No incorrect answers \u2014 well done!</p>';
       }
       const retryBtn = answeredWrong.length > 0 ? '<button class="results-btn green-btn" onclick="fonRetakeWrong()">Retry incorrect</button>' : '';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="fonResetSetup()">\u2190 Menu</button><button class="results-btn primary" onclick="fonRetakeSame()">Try again</button>' + retryBtn;
@@ -2439,16 +2463,19 @@ permalink: /online-maths-tests/
     const wrongList = document.getElementById('rnd-wrong-list');
     const actionsEl = document.getElementById('rnd-actions');
     const pill = timedOut ? timedOutPill(notReached) : '';
+    document.getElementById('rnd-timeout').innerHTML = pill;
     if (perfect && !timedOut) {
       perfectEl.style.display = 'block'; wrongWrap.style.display = 'none';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="rndResetSetup()">\u2190 Menu</button><button class="results-btn primary" onclick="rndRetakeSame()">Try again</button>';
       if (!rndState.wrongOnly) launchConfetti();
     } else {
-      perfectEl.style.display = 'none'; wrongWrap.style.display = 'block';
+      perfectEl.style.display = 'none';
       if (answeredWrong.length > 0) {
-        wrongList.innerHTML = pill + wrongTableRows(answeredWrong, a => a.q.question, a => a.correct);
+        wrongWrap.style.display = 'block';
+        wrongList.innerHTML = wrongTableRows(answeredWrong, a => a.q.question, a => a.correct);
       } else {
-        wrongList.innerHTML = pill + '<p class="no-wrong-msg">No incorrect answers' + (timedOut ? ' \u2014 well done!' : '') + '</p>';
+        wrongWrap.style.display = 'none';
+        document.getElementById('rnd-timeout').innerHTML = pill + '<p class="no-wrong-msg">No incorrect answers \u2014 well done!</p>';
       }
       const retryBtn = answeredWrong.length > 0 ? '<button class="results-btn green-btn" onclick="rndRetakeWrong()">Retry incorrect</button>' : '';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="rndResetSetup()">\u2190 Menu</button><button class="results-btn primary" onclick="rndRetakeSame()">Try again</button>' + retryBtn;
@@ -2640,16 +2667,19 @@ permalink: /online-maths-tests/
     const wrongList = document.getElementById('pr-wrong-list');
     const actionsEl = document.getElementById('pr-actions');
     const pill = timedOut ? timedOutPill(notReached) : '';
+    document.getElementById('pr-timeout').innerHTML = pill;
     if (perfect && !timedOut) {
       perfectEl.style.display = 'block'; wrongWrap.style.display = 'none';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="prResetSetup()">\u2190 Menu</button><button class="results-btn primary" onclick="prRetakeSame()">Try again</button>';
       if (!prState.wrongOnly) launchConfetti();
     } else {
-      perfectEl.style.display = 'none'; wrongWrap.style.display = 'block';
+      perfectEl.style.display = 'none';
       if (answeredWrong.length > 0) {
-        wrongList.innerHTML = pill + wrongTableRows(answeredWrong, a => a.q.question, a => a.correct);
+        wrongWrap.style.display = 'block';
+        wrongList.innerHTML = wrongTableRows(answeredWrong, a => a.q.question, a => a.correct);
       } else {
-        wrongList.innerHTML = pill + '<p class="no-wrong-msg">No incorrect answers' + (timedOut ? ' \u2014 well done!' : '') + '</p>';
+        wrongWrap.style.display = 'none';
+        document.getElementById('pr-timeout').innerHTML = pill + '<p class="no-wrong-msg">No incorrect answers \u2014 well done!</p>';
       }
       const retryBtn = answeredWrong.length > 0 ? '<button class="results-btn green-btn" onclick="prRetakeWrong()">Retry incorrect</button>' : '';
       actionsEl.innerHTML = '<button class="results-btn secondary" onclick="prResetSetup()">\u2190 Menu</button><button class="results-btn primary" onclick="prRetakeSame()">Try again</button>' + retryBtn;
