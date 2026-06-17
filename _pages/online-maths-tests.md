@@ -1805,8 +1805,8 @@ permalink: /online-maths-tests/
         if (!values) continue;
         for (const v of values) {
           const ans = mcFormatNum(v * pair.factor);
-          const from = pair.from.replace('ml', 'm' + scriptL).replace('l', scriptL);
-          const to = pair.to.replace('ml', 'm' + scriptL).replace('l', scriptL);
+          const from = pair.from === 'ml' ? 'm' + scriptL : (pair.from === 'l' ? scriptL : pair.from);
+          const to = pair.to === 'ml' ? 'm' + scriptL : (pair.to === 'l' ? scriptL : pair.to);
           const qLabel = mcFormatNum(v) + ' ' + from + ' = ? ' + to;
           const rLabel = mcFormatNum(v) + ' ' + from + ' = ' + ans + ' ' + to;
           pool.push({ label: qLabel, resultLabel: rLabel, answer: ans });
