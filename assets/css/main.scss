@@ -725,3 +725,7 @@ main { flex: 1; }
     right: 1rem;
   }
 }
+
+@media print {
+  .back-to-top { display: none !important; }
+}
