@@ -157,7 +157,6 @@ main { flex: 1; }
   .qg-q-right { flex-direction: row; align-items: center; min-width: unset; width: 100%; justify-content: flex-start; }
 }
 </style>
-{% include header.html %}
 
 <section class="page-hero">
   <h1>Question <em>generator</em></h1>
@@ -191,7 +190,6 @@ main { flex: 1; }
   <div id="qg-output"></div>
 </div>
 
-{% include footer.html %}
 
 <script>
 {% raw %}
@@ -3575,5 +3573,3 @@ function qgSyncToggleAllLabel(forceState) {
 qgBuildStrands();
 {% endraw %}
 </script>
-
-
