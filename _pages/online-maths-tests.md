@@ -49,6 +49,7 @@ permalink: /online-maths-tests/
     <button class="test-tab active" data-target="times-tables">Times tables</button>
     <button class="test-tab" data-target="number-bonds">Number bonds</button>
     <button class="test-tab" data-target="doubling-halving">Double and halve</button>
+    <button class="test-tab" data-target="multiply-divide-10-100-1000">&times; and &divide; by 10, 100, 1000</button>
     <button class="test-tab" data-target="rounding">Rounding</button>
     <button class="test-tab" data-target="fdp-conversions">FDP conversions</button>
     <button class="test-tab" data-target="fractions-of-numbers">Fractions of numbers</button>
@@ -290,6 +291,76 @@ permalink: /online-maths-tests/
           <table class="wrong-table"><thead><tr><th>Question</th><th>Correct answer</th><th>Your answer</th></tr></thead><tbody id="dh-wrong-list"></tbody></table>
         </div>
         <div class="results-actions" id="dh-actions"></div>
+      </div>
+
+    </div>
+
+    <!-- MULTIPLY AND DIVIDE BY 10, 100, 1000 PANEL -->
+    <div class="test-panel" id="panel-multiply-divide-10-100-1000">
+
+      <div class="setup-card" id="md-setup">
+        <div class="setup-section">
+          <span class="setup-section-title">Type</span>
+          <div class="option-row">
+            <button class="option-btn dark-btn" data-md-type="multiply" onclick="mdSelectType(this)">Multiply</button>
+            <button class="option-btn dark-btn" data-md-type="divide" onclick="mdSelectType(this)">Divide</button>
+            <button class="option-btn dark-btn" id="md-mixed-btn" data-md-type="mixed" onclick="mdSelectMixed(this)">MIXED</button>
+          </div>
+        </div>
+        <div class="setup-section">
+          <span class="setup-section-title">Questions</span>
+          <div class="option-row">
+            <button class="option-btn green-btn" data-md-qcount="20" onclick="mdSelectCount(this)">Quick test (20 questions)</button>
+            <button class="option-btn green-btn" data-md-qcount="60" onclick="mdSelectCount(this)">Full test (60 questions)</button>
+          </div>
+        </div>
+        <div class="setup-section">
+          <span class="setup-section-title">Timing</span>
+          <div class="option-row">
+            <button class="option-btn purple-btn" data-md-timed="false" onclick="mdSelectTimed(this)">Untimed</button>
+            <button class="option-btn purple-btn" data-md-timed="true" onclick="mdSelectTimed(this)">Timed</button>
+          </div>
+          <div class="time-options" id="md-time-options">
+            <span class="setup-section-title" style="margin-top:0.75rem;display:block">Time limit</span>
+            <div class="option-row">
+              <button class="option-btn purple-btn" data-md-timelimit="60" onclick="mdSelectTime(this)">1 minute</button>
+              <button class="option-btn purple-btn" data-md-timelimit="120" onclick="mdSelectTime(this)">2 minutes</button>
+              <button class="option-btn purple-btn" data-md-timelimit="300" onclick="mdSelectTime(this)">5 minutes</button>
+            </div>
+          </div>
+        </div>
+        <div class="setup-section">
+          <button class="start-btn" id="md-start-btn" disabled>Start test</button>
+        </div>
+      </div>
+
+      <div class="quiz-card" id="md-quiz">
+        <div class="quiz-meta">
+          <span class="quiz-progress" id="md-progress">Question 1 of 20</span>
+          <span class="quiz-timer" id="md-timer" style="display:none"></span>
+        </div>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="md-progress-bar" style="width:0%"></div>
+        </div>
+        <div class="quiz-question" id="md-question">3.6 &times; 10 = ?</div>
+        <div class="quiz-input-wrap">
+          <input class="quiz-input" id="md-answer" type="text" inputmode="decimal" autocomplete="off" placeholder="?">
+        </div>
+        <button class="quiz-next-btn" id="md-next-btn" onclick="mdSubmitAnswer()">Next question →</button>
+        <button class="quiz-menu-btn" id="md-quiz-menu-btn" onclick="mdResetSetup()">← Menu</button>
+      </div>
+
+      <div class="results-card" id="md-results">
+        <div class="results-score" id="md-score">20/20</div>
+        <div class="results-label">correct answers</div>
+        <div class="results-time" id="md-time-taken"></div>
+        <div class="results-timeout" id="md-timeout"></div>
+        <div class="results-perfect" id="md-perfect" style="display:none">Full marks — excellent work!</div>
+        <div class="results-wrong" id="md-wrong-wrap" style="display:none">
+          <h3>Wrong answers</h3>
+          <table class="wrong-table"><thead><tr><th>Question</th><th>Correct answer</th><th>Your answer</th></tr></thead><tbody id="md-wrong-list"></tbody></table>
+        </div>
+        <div class="results-actions" id="md-actions"></div>
       </div>
 
     </div>
@@ -678,6 +749,9 @@ permalink: /online-maths-tests/
   const dhState = { questions: [], current: 0, userAnswers: [], elapsed: 0, remaining: 0, timerInterval: null, timed: false, timelimit: null, type: null, qcount: null, wrongOnly: false };
   let dhSelTypes = new Set(), dhSelCount = null, dhSelTimed = null, dhSelTime = null;
 
+  const mdState = { questions: [], current: 0, userAnswers: [], elapsed: 0, remaining: 0, timerInterval: null, timed: false, timelimit: null, type: null, qcount: null, wrongOnly: false };
+  let mdSelType = null, mdSelCount = null, mdSelTimed = null, mdSelTime = null;
+
   const mcState = { questions: [], current: 0, userAnswers: [], elapsed: 0, remaining: 0, timerInterval: null, timed: false, timelimit: null, diff: null, groups: new Set(), qcount: null, wrongOnly: false };
   let mcSelDiff = null, mcSelGroups = new Set(), mcSelCount = null, mcSelTimed = null, mcSelTime = null;
 
@@ -784,6 +858,7 @@ permalink: /online-maths-tests/
     resetSetup();
     nbResetSetup();
     if (typeof dhResetSetup === 'function') dhResetSetup();
+    if (typeof mdResetSetup === 'function') mdResetSetup();
     mcResetSetup();
     if (typeof fdpResetSetup === 'function') fdpResetSetup();
     if (typeof fonResetSetup === 'function') fonResetSetup();
@@ -801,7 +876,7 @@ permalink: /online-maths-tests/
 
   document.addEventListener('DOMContentLoaded', function() {
     const hash = window.location.hash.replace('#', '') || 'times-tables';
-    const valid = ['times-tables', 'number-bonds', 'doubling-halving', 'metric-conversions', 'fdp-conversions', 'fractions-of-numbers', 'rounding', 'powers-and-roots'];
+    const valid = ['times-tables', 'number-bonds', 'doubling-halving', 'multiply-divide-10-100-1000', 'metric-conversions', 'fdp-conversions', 'fractions-of-numbers', 'rounding', 'powers-and-roots'];
     activateTab(valid.includes(hash) ? hash : 'times-tables');
   });
 
@@ -1418,6 +1493,190 @@ permalink: /online-maths-tests/
     dhStartTest(dhGenerateQuestions(dhSelTypes, dhSelCount));
   });
 
+  // ── MULTIPLY AND DIVIDE BY 10, 100, 1000 SETUP ────────────────────────────
+  function mdUpdateStartBtn() {
+    const timedOk = mdSelTimed === false || (mdSelTimed === true && mdSelTime !== null);
+    document.getElementById('md-start-btn').disabled = !(mdSelType !== null && mdSelCount !== null && mdSelTimed !== null && timedOk);
+  }
+  function mdResetSetup() {
+    clearInterval(mdState.timerInterval);
+    document.getElementById('md-quiz').classList.remove('active');
+    document.getElementById('md-results').classList.remove('active');
+    document.getElementById('md-setup').style.display = '';
+    mdSelType = null; mdSelCount = null; mdSelTimed = null; mdSelTime = null;
+    document.querySelectorAll('[data-md-type]').forEach(b => b.classList.remove('selected'));
+    document.querySelectorAll('[data-md-qcount]').forEach(b => b.classList.remove('selected'));
+    document.querySelectorAll('[data-md-timed]').forEach(b => b.classList.remove('selected'));
+    document.querySelectorAll('[data-md-timelimit]').forEach(b => b.classList.remove('selected'));
+    document.getElementById('md-time-options').classList.remove('visible');
+    mdUpdateStartBtn();
+  }
+  function mdSelectType(btn) {
+    if (btn.classList.contains('selected')) { btn.classList.remove('selected'); mdSelType = null; mdUpdateStartBtn(); return; }
+    document.querySelectorAll('[data-md-type]').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected'); mdSelType = btn.dataset.mdType; mdUpdateStartBtn();
+  }
+  function mdSelectMixed(btn) {
+    document.querySelectorAll('[data-md-type]').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected'); mdSelType = 'mixed'; mdUpdateStartBtn();
+  }
+  function mdSelectCount(btn) {
+    document.querySelectorAll('[data-md-qcount]').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected'); mdSelCount = parseInt(btn.dataset.mdQcount); mdUpdateStartBtn();
+  }
+  function mdSelectTimed(btn) {
+    document.querySelectorAll('[data-md-timed]').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected'); mdSelTimed = btn.dataset.mdTimed === 'true';
+    const opts = document.getElementById('md-time-options');
+    if (mdSelTimed) { opts.classList.add('visible'); }
+    else { opts.classList.remove('visible'); mdSelTime = null; document.querySelectorAll('[data-md-timelimit]').forEach(b => b.classList.remove('selected')); }
+    mdUpdateStartBtn();
+  }
+  function mdSelectTime(btn) {
+    document.querySelectorAll('[data-md-timelimit]').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected'); mdSelTime = parseInt(btn.dataset.mdTimelimit); mdUpdateStartBtn();
+  }
+
+  // ── MULTIPLY AND DIVIDE QUESTION GENERATION ───────────────────────────────
+  function mdFormatNum(n) {
+    return Number(n.toFixed(6)).toLocaleString('en-GB', { maximumFractionDigits: 6 });
+  }
+  function mdBuildPool(type) {
+    const pool = [];
+    const powers = [10, 100, 1000];
+    const integers = [3, 7, 8, 12, 15, 24, 36, 45, 60, 75, 90, 120, 250, 400, 6, 9, 18, 27, 33, 48, 56, 64, 81, 99];
+    const decimals = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.2, 1.5, 2.4, 3.6, 4.8, 0.25, 0.75, 2.5, 3.5, 6.5, 7.2, 0.05, 0.15, 0.35];
+    const numbers = [...integers, ...decimals];
+
+    if (type === 'multiply' || type === 'mixed') {
+      for (const n of numbers) {
+        for (const p of powers) {
+          const ans = n * p;
+          pool.push({ label: mdFormatNum(n) + ' \u00d7 ' + p + ' = ?', question: mdFormatNum(n) + ' \u00d7 ' + p + ' = ?', answer: mdFormatNum(ans) });
+        }
+      }
+    }
+    if (type === 'divide' || type === 'mixed') {
+      for (const n of numbers) {
+        for (const p of powers) {
+          const dividend = n * p;
+          pool.push({ label: mdFormatNum(dividend) + ' \u00f7 ' + p + ' = ?', question: mdFormatNum(dividend) + ' \u00f7 ' + p + ' = ?', answer: mdFormatNum(n) });
+        }
+      }
+    }
+    return pool;
+  }
+  function mdGenerateQuestions(type, count) {
+    const pool = mdBuildPool(type);
+    return shuffleNoConsec(genericDrawCapped(pool, count));
+  }
+
+  // ── MULTIPLY AND DIVIDE TEST ───────────────────────────────────────────────
+  function mdStartTest(questions) {
+    mdState.questions = questions; mdState.current = 0; mdState.userAnswers = []; mdState.elapsed = 0;
+    document.getElementById('md-setup').style.display = 'none';
+    document.getElementById('md-results').classList.remove('active');
+    document.getElementById('md-quiz').classList.add('active');
+    const timerEl = document.getElementById('md-timer');
+    if (mdState.timed) {
+      mdState.remaining = mdState.timelimit; timerEl.style.display = 'block'; timerEl.textContent = formatTime(mdState.remaining); timerEl.className = 'quiz-timer';
+      mdState.timerInterval = setInterval(function() {
+        mdState.remaining--; timerEl.textContent = formatTime(mdState.remaining);
+        if (mdState.remaining <= 30) timerEl.className = 'quiz-timer warning';
+        if (mdState.remaining <= 10) timerEl.className = 'quiz-timer danger';
+        if (mdState.remaining <= 0) { clearInterval(mdState.timerInterval); mdFinishTest(true); }
+      }, 1000);
+    } else { timerEl.style.display = 'none'; mdState.timerInterval = setInterval(function() { mdState.elapsed++; }, 1000); }
+    mdShowQuestion();
+  }
+  function mdShowQuestion() {
+    const q = mdState.questions[mdState.current];
+    const total = mdState.questions.length;
+    document.getElementById('md-progress').textContent = 'Question ' + (mdState.current + 1) + ' of ' + total;
+    document.getElementById('md-progress-bar').style.width = (mdState.current / total * 100) + '%';
+    document.getElementById('md-question').innerHTML = q.label;
+    const input = document.getElementById('md-answer');
+    input.value = ''; input.focus();
+  }
+  function mdSubmitAnswer() {
+    const input = document.getElementById('md-answer');
+    const raw = input.value.trim();
+    if (raw === '') return;
+    const q = mdState.questions[mdState.current];
+    const normalisedGiven = raw.replace(/,/g, '');
+    const isCorrect = parseFloat(normalisedGiven) === parseFloat(q.answer.replace(/,/g, ''));
+    mdState.userAnswers.push({ q: q, correct: q.answer, given: raw, isCorrect: isCorrect, unanswered: false });
+    mdState.current++;
+    if (mdState.current >= mdState.questions.length) { mdFinishTest(false); } else { mdShowQuestion(); }
+  }
+  document.getElementById('md-answer').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') { e.preventDefault(); mdSubmitAnswer(); return; }
+    var allowed = ['Backspace','Delete','Tab','ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home','End'];
+    if (allowed.includes(e.key)) return;
+    if (!/^[\d.]$/.test(e.key)) e.preventDefault();
+  });
+  function mdFinishTest(timedOut) {
+    clearInterval(mdState.timerInterval);
+    var notReached = mdState.questions.length - mdState.current;
+    if (timedOut) {
+      for (var i = mdState.current; i < mdState.questions.length; i++) {
+        mdState.userAnswers.push({ q: mdState.questions[i], correct: mdState.questions[i].answer, given: null, isCorrect: false, unanswered: true });
+      }
+    }
+    document.getElementById('md-quiz').classList.remove('active');
+    var correct = mdState.userAnswers.filter(function(a) { return a.isCorrect; }).length;
+    var total = timedOut ? mdState.userAnswers.filter(function(a) { return !a.unanswered; }).length : mdState.userAnswers.length;
+    var answeredWrong = mdState.userAnswers.filter(function(a) { return !a.isCorrect && !a.unanswered; });
+    var perfect = correct === total;
+    document.getElementById('md-score').textContent = correct + '/' + total;
+    var timeEl = document.getElementById('md-time-taken');
+    if (mdState.timed) { var used = mdState.timelimit - mdState.remaining; timeEl.textContent = timedOut ? '' : 'Time taken: ' + formatTime(used); }
+    else { timeEl.textContent = 'Time taken: ' + formatTime(mdState.elapsed); }
+    var pill = timedOut ? timedOutPill(notReached) : '';
+    document.getElementById('md-timeout').innerHTML = pill;
+    var perfectEl = document.getElementById('md-perfect');
+    var wrongWrap = document.getElementById('md-wrong-wrap');
+    var wrongList = document.getElementById('md-wrong-list');
+    var actionsEl = document.getElementById('md-actions');
+    if (perfect && !timedOut) {
+      perfectEl.style.display = 'block'; wrongWrap.style.display = 'none';
+      actionsEl.innerHTML = '<button class="results-btn secondary" onclick="mdResetSetup()">← Menu</button><button class="results-btn primary" onclick="mdRetakeSame()">Try again</button>';
+      if (!mdState.wrongOnly) launchConfetti();
+    } else {
+      perfectEl.style.display = 'none';
+      if (answeredWrong.length > 0) {
+        wrongWrap.style.display = 'block';
+        wrongList.innerHTML = wrongTableRows(answeredWrong, function(a) { return a.q.label; }, function(a) { return a.correct; });
+      } else {
+        wrongWrap.style.display = 'none';
+        document.getElementById('md-timeout').innerHTML = pill + '<p class="no-wrong-msg">No incorrect answers \u2014 well done!</p>';
+      }
+      var retryBtn = answeredWrong.length > 0 ? '<button class="results-btn green-btn" onclick="mdRetakeWrong()">Retry incorrect</button>' : '';
+      actionsEl.innerHTML = '<button class="results-btn secondary" onclick="mdResetSetup()">← Menu</button><button class="results-btn primary" onclick="mdRetakeSame()">Try again</button>' + retryBtn;
+    }
+    document.getElementById('md-results').classList.add('active');
+  }
+  function mdRetakeSame() {
+    document.getElementById('md-results').classList.remove('active');
+    mdState.wrongOnly = false;
+    mdStartTest(mdGenerateQuestions(mdState.type, mdState.qcount));
+  }
+  function mdRetakeWrong() {
+    var answeredWrong = mdState.userAnswers.filter(function(a) { return !a.isCorrect && !a.unanswered; });
+    var wrongQs = answeredWrong.map(function(a) { return a.q; });
+    var count = Math.min(wrongQs.length, mdState.qcount);
+    var filled = [];
+    while (filled.length < count) { filled.push.apply(filled, shuffleNoConsec(wrongQs.slice())); }
+    document.getElementById('md-results').classList.remove('active');
+    mdState.wrongOnly = true; mdState.timed = false;
+    mdStartTest(filled.slice(0, count));
+  }
+  document.getElementById('md-start-btn').addEventListener('click', function() {
+    mdState.type = mdSelType; mdState.qcount = mdSelCount;
+    mdState.timed = mdSelTimed; mdState.timelimit = mdSelTime; mdState.wrongOnly = false;
+    mdStartTest(mdGenerateQuestions(mdSelType, mdSelCount));
+  });
+
   // ── METRIC CONVERSIONS SETUP ──────────────────────────────────────────────
   const scriptL = '<span class="script-l">ℓ</span>';
   const MC_BASIC_POOL = [
@@ -1881,7 +2140,7 @@ permalink: /online-maths-tests/
       perfectEl.style.display='none';
       if(answeredWrong.length>0){
         wrongWrap.style.display='block';
-        wrongList.innerHTML=wrongTableRows(answeredWrong, a=>a.q.qHTML+' = ?', a=>a.correct);
+        wrongList.innerHTML=wrongTableRows(answeredWrong, a=>a.q.qHTML.includes('?') ? a.q.qHTML : a.q.qHTML+' = ?', a=>a.correct);
       } else {
         wrongWrap.style.display='none';
         document.getElementById('fdp-timeout').innerHTML=pill+'<p class="no-wrong-msg">No incorrect answers \u2014 well done!</p>';
