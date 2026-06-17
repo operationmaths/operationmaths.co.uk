@@ -22,6 +22,14 @@ body { font-family: 'DM Sans', sans-serif; background: #f5f6f8; color: #111827; 
 main { flex: 1; }
 [id] { scroll-margin-top: 20px; }
 
+/* ── BODY / PAGE HERO (matches main.scss conventions) ── */
+.om-body { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem 4rem; }
+.page-hero { background: #0f1120; padding: 4rem 2rem 0; text-align: center; }
+.page-hero h1 { font-size: 46px; font-weight: 700; color: #fff; line-height: 1.15; margin-bottom: 1rem; }
+.page-hero h1 em { font-style: normal; color: var(--orange); }
+.page-hero p { font-size: 17px; font-weight: 300; color: #9ca3af; max-width: 580px; margin: 0 auto 0.6rem; line-height: 1.6; }
+.page-hero::after { content: ""; display: block; height: 3rem; width: 100%; }
+
 /* ── QUESTION GENERATOR — page-specific styles ── */
 
 .qg-controls { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 1.5rem; margin-bottom: 2rem; }
