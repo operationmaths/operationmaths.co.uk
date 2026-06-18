@@ -106,7 +106,7 @@ main { flex: 1; }
 .qg-ans-page-num { font-weight: 700; color: #6b7280; min-width: 22px; }
 
 @page {
-  margin: 15mm;
+  margin: 17mm;
   @bottom-right {
     content: "\00a9  Operation Maths";
     font-family: 'DM Sans', sans-serif;
