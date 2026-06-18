@@ -32,7 +32,7 @@ permalink: /online-maths-tests/
 .wrong-table td { padding: 6px 10px; border-bottom: 1px solid #f3f4f6; }
 .wrong-table tr:last-child td { border-bottom: none; }
 .wrong-table td.your-ans-cell { color: #c0392b; font-weight: 600; }
-.wrong-table td:nth-child(2) { font-weight: 600; }
+.wrong-table td:nth-child(2) { font-weight: 600; color: var(--green); }
 .results-wrong { width: 100%; box-sizing: border-box; }
 .fdp-q-wrap { display: flex; flex-direction: column; height: 14rem; }
 #fdp-question { font-size: clamp(1.1rem, 3.5vw, 2.25rem); flex-shrink: 0; height: 6rem; display: flex; align-items: center; justify-content: center; text-align: center; overflow: visible; flex-wrap: wrap; gap: 0.3em; line-height: 1.6; }
