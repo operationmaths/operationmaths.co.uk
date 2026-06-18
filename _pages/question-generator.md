@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Question Generator
+description: Generate free primary, secondary and GCSE maths practice questions with answers, covering number, algebra, statistics and more. View on screen or print.
 permalink: /question-generator/
 ---
 <style>
@@ -27,7 +28,7 @@ main { flex: 1; }
 .page-hero { background: #0f1120; padding: 4rem 2rem 0; text-align: center; }
 .page-hero h1 { font-size: 46px; font-weight: 700; color: #fff; line-height: 1.15; margin-bottom: 1rem; }
 .page-hero h1 em { font-style: normal; color: var(--orange); }
-.page-hero p { font-size: 17px; font-weight: 300; color: #9ca3af; max-width: 580px; margin: 0 auto 0.6rem; line-height: 1.6; }
+.page-hero p { font-size: 17px; font-weight: 300; color: #9ca3af; max-width: 580px; margin: 0 auto 0.2rem; line-height: 1.6; }
 .page-hero::after { content: ""; display: block; height: 3rem; width: 100%; }
 
 /* ── QUESTION GENERATOR — page-specific styles ── */
@@ -3333,23 +3334,24 @@ const QG_BANK = {
 /* ── STRAND / TOPIC STRUCTURE ── */
 const QG_STRANDS = [
   { id: 'number', name: 'Number', dotColor: '#1c75bc', subsections: [
-      { label: 'Ratio', topics: ['Simplify a ratio', 'Split into a ratio', 'Direct proportion', 'Inverse proportion'] },
-      { label: 'Percentages', topics: ['Percentage of a number', 'Simple interest', 'Compound interest'] },
+      { label: 'Factors, multiples and prime numbers', topics: ['Factors', 'Multiples', 'Prime numbers', 'Product of prime factors', 'Lowest common multiple', 'Highest common factor'] },
       { label: 'Fractions', topics: ['Simplify fractions', 'Fraction of a number', 'Add and subtract fractions', 'Multiply fractions', 'Divide fractions', 'Mixed numbers and all operations', 'Recurring decimals to fractions'] },
-      { label: 'Operations', topics: ['Multiply by 10, 100 and 1000', 'Divide by 10, 100 and 1000', 'Long multiplication', 'Long division', 'Add and subtract negatives', 'Multiply and divide negatives', 'BIDMAS'] },
       { label: 'Indices', topics: ['Basic laws of indices', 'Harder laws of indices', 'Fractional and negative indices'] },
-      { label: 'Standard form', topics: ['Ordinary number to standard form', 'Standard form to ordinary number'] },
-      { label: 'Factors, multiples and prime numbers', topics: ['Factors', 'Multiples', 'Prime numbers', 'Product of prime factors', 'Lowest common multiple', 'Highest common factor'] }
+      { label: 'Negatives', topics: ['Add and subtract negatives', 'Multiply and divide negatives'] },
+      { label: 'Operations', topics: ['Multiply by 10, 100 and 1000', 'Divide by 10, 100 and 1000', 'Long multiplication', 'Long division', 'BIDMAS'] },
+      { label: 'Percentages', topics: ['Percentage of a number', 'Simple interest', 'Compound interest'] },
+      { label: 'Ratio', topics: ['Simplify a ratio', 'Split into a ratio', 'Direct proportion', 'Inverse proportion'] },
+      { label: 'Standard form', topics: ['Ordinary number to standard form', 'Standard form to ordinary number'] }
   ]},
   { id: 'algebra', name: 'Algebra', dotColor: '#009444', subsections: [
-      { label: 'Simplifying', topics: ['Collecting like terms'] },
       { label: 'Expanding', topics: ['Expand single brackets', 'Expand double brackets', 'Expand triple brackets'] },
       { label: 'Factorising', topics: ['Factorise into single brackets', 'Factorise quadratics'] },
-      { label: 'Quadratics', topics: ['Complete the square', 'Factorise harder quadratics', 'Solve quadratics', 'Quadratic formula'] },
-      { label: 'Substitution', topics: ['Basic substitution', 'Harder substitution'] },
-      { label: 'Solving equations', topics: ['Solve one-step equations', 'Solve two-step equations', 'Solve equations with brackets', 'Solve equations with unknown on both sides', 'Simultaneous equations'] },
       { label: 'Inequalities', topics: ['Integer solutions to an inequality', 'Solve one-step inequalities', 'Solve multistep inequalities'] },
-      { label: 'Sequences', topics: ['nth term', 'Finding terms', 'Numbers in sequences', 'Quadratic nth term'] }
+      { label: 'Quadratics', topics: ['Complete the square', 'Factorise harder quadratics', 'Solve quadratics', 'Quadratic formula'] },
+      { label: 'Sequences', topics: ['nth term', 'Finding terms', 'Numbers in sequences', 'Quadratic nth term'] },
+      { label: 'Simplifying', topics: ['Collecting like terms'] },
+      { label: 'Solving equations', topics: ['Solve one-step equations', 'Solve two-step equations', 'Solve equations with brackets', 'Solve equations with unknown on both sides', 'Simultaneous equations'] },
+      { label: 'Substitution', topics: ['Basic substitution', 'Harder substitution'] }
   ]},
   { id: 'statistics', name: 'Statistics', dotColor: '#800080', subsections: [
       { label: 'Averages', topics: ['Mean', 'Median', 'Mode', 'Range'] }
