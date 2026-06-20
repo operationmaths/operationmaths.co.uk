@@ -86,6 +86,8 @@ main { flex: 1; }
 .qg-frac-num { padding: 0 3px 1px; border-bottom: 1.4px solid currentColor; }
 .qg-frac-den { padding: 1px 3px 0; }
 .qg-q-text sup, .qg-answer sup { font-size: 0.7em; position: relative; top: -0.5em; }
+.qg-frac-num sup { font-size: 0.7em; position: relative; top: -0.4em; }
+.qg-frac-den sup { font-size: 0.7em; position: relative; top: 0.1em; }
 .qg-dot { position: relative; display: inline-block; padding-top: 0.28em; }
 .qg-dot::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 3px; height: 3px; border-radius: 50%; background: currentColor; }
 
@@ -1266,18 +1268,18 @@ const QG_BANK = {
     { q: "Work out: 11 - 3 x 6", a: "-7" },
     { q: "Work out: 5 - 9 x 3", a: "-22" },
     { q: "Work out: 4 + 6 x 9", a: "58" },
-    { q: "Work out: 6 - 10 x 9", a: "-84" },
+    { q: "Work out: {3^2 + 6/5}", a: "3" },
     { q: "Work out: √9 + 5 x 8", a: "43" },
     { q: "Work out: (9 + 4) x 4", a: "52" },
     { q: "Work out: (36 - 6) ÷ 3 + 3", a: "13" },
     { q: "Work out: (2^2 + 3) ÷ 7 x 8", a: "8" },
     { q: "Work out: 12 + 2^2 x 5", a: "32" },
-    { q: "Work out: 6 - 12 x 10", a: "-114" },
+    { q: "Work out: {4^2 - 7/3}", a: "3" },
     { q: "Work out: (62 - 8) ÷ 6 + 4", a: "13" },
     { q: "Work out: (30 - 6) ÷ 2 + 7", a: "19" },
-    { q: "Work out: 5 - 8 x 6", a: "-43" },
+    { q: "Work out: {2^3 + 4/6}", a: "2" },
     { q: "Work out: (49 - 5) ÷ 4 + 4", a: "15" },
-    { q: "Work out: 10 - 4 x 11", a: "-34" },
+    { q: "Work out: {5^2 - 5/2 + 3}", a: "4" },
     { q: "Work out: (10 - 3) x 9", a: "63" },
     { q: "Work out: 11 - 4 x 3", a: "-1" },
     { q: "Work out: (4^2 + 5) ÷ 3 x 3", a: "21" },
@@ -1299,7 +1301,7 @@ const QG_BANK = {
     { q: "Work out: (77 - 5) ÷ 6 + 2", a: "14" },
     { q: "Work out: (36 - 6) ÷ 3 + 6", a: "16" },
     { q: "Work out: (11 - 3) ÷ 2 + 3", a: "7" },
-    { q: "Work out: 5 - 5 x 11", a: "-50" },
+    { q: "Work out: {3^2 + 4^2/5 x 5}", a: "1" },
     { q: "Work out: (7 + 4) x 3", a: "33" }
   ],
   "Basic laws of indices": [
