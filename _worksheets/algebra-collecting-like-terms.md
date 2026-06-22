@@ -10,6 +10,6 @@ show_a_worksheet: true
 show_a_answers: true
 free_pdf: /pdfs/Collecting-like-terms.pdf
 answers_pdf: /pdfs/Collecting-like-terms-ANSWERS.pdf
-tes_url: ''
-date_added: ''
+tes_url: https://www.tes.com/teaching-resource/-13499026
+date_added: 2026-06-22 14:17:00
 ---
