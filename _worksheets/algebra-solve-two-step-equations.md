@@ -11,5 +11,5 @@ show_a_answers: true
 free_pdf: /pdfs/Solve-two-step-equations.pdf
 answers_pdf: /pdfs/Solve-two-step-equations-ANSWERS.pdf
 tes_url: https://www.tes.com/teaching-resource/-13499004
-date_added: ''
+date_added: 2026-06-22 14:05:00
 ---
