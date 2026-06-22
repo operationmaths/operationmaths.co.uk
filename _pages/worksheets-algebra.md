@@ -3,6 +3,7 @@ title: Algebra Worksheets
 description: Printable KS3 algebra worksheets — expressions, equations, sequences and more.
 section_order:
   - Revision
+  - Simplifying
   - Solving equations
   - Expand and factorise
 layout: worksheet-topic
