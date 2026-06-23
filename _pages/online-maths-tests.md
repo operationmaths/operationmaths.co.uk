@@ -372,6 +372,7 @@ permalink: /online-maths-tests/
         <div class="setup-section">
           <span class="setup-section-title">Round to</span>
           <div class="option-row">
+            <button class="option-btn dark-btn" data-rnd-whole="whole" onclick="rndSelectWhole(this)">Nearest whole number</button>
             <button class="option-btn dark-btn" data-rnd-whole="10" onclick="rndSelectWhole(this)">Nearest 10</button>
             <button class="option-btn dark-btn" data-rnd-whole="100" onclick="rndSelectWhole(this)">Nearest 100</button>
             <button class="option-btn dark-btn" data-rnd-whole="1000" onclick="rndSelectWhole(this)">Nearest 1,000</button>
@@ -2475,6 +2476,27 @@ permalink: /online-maths-tests/
       pool.push({ label, question: label, answer: ansStr, resultLabel: label + ' = ' + ansStr });
     }
 
+    if (types.some(t => t === 'whole') || types.some(t => t === 'mixed-whole')) {
+      // Decimals with up to 4 digits before decimal and up to 3 after
+      // Must not already be a whole number
+      const numsWhole = [];
+      const intRanges = [[1,9],[10,99],[100,999],[1000,9999]];
+      for (const [lo, hi] of intRanges) {
+        for (let i = 0; i < 15; i++) {
+          const intPart = lo + Math.floor(Math.random() * (hi - lo + 1));
+          const dp = 1 + Math.floor(Math.random() * 3); // 1, 2 or 3 decimal places
+          const decPart = Math.floor(Math.random() * Math.pow(10, dp));
+          const decStr = decPart.toString().padStart(dp, '0');
+          // Ensure it doesn't end in all zeros (would already be a whole number or fewer dp)
+          if (decPart === 0) { i--; continue; }
+          const n = parseFloat(intPart + '.' + decStr);
+          const label = 'Round ' + n.toLocaleString() + ' to the nearest whole number';
+          const ans = Math.round(n).toString();
+          pool.push({ label, question: label, answer: ans, resultLabel: label + ' = ' + ans });
+        }
+      }
+    }
+
     if (types.some(t => t === '10') || types.some(t => t === 'mixed-whole')) {
       // Numbers up to 9,999 for nearest 10
       const nums10 = [];
@@ -2572,19 +2594,18 @@ permalink: /online-maths-tests/
   }
 
   function rndSelectWhole(btn) {
-    // Deselect dp/sf type if a whole button is clicked
     rndSelType = null;
     document.querySelectorAll('[data-rnd-type]').forEach(b => b.classList.remove('selected'));
-    // If MIXED was active, clear it first
     if (rndSelWholeTypes.has('mixed-whole')) {
       rndSelWholeTypes.clear();
       document.getElementById('rnd-whole-mixed-btn').classList.remove('selected');
     }
-    const val = parseInt(btn.dataset.rndWhole);
+    const raw = btn.dataset.rndWhole;
+    const val = raw === 'whole' ? 'whole' : parseInt(raw);
     if (btn.classList.contains('selected')) { btn.classList.remove('selected'); rndSelWholeTypes.delete(val); }
     else { btn.classList.add('selected'); rndSelWholeTypes.add(val); }
-    // Auto-select MIXED if all three chosen
-    if (rndSelWholeTypes.size === 3) {
+    // Auto-select MIXED if all four chosen
+    if (rndSelWholeTypes.size === 4) {
       document.querySelectorAll('[data-rnd-whole]').forEach(b => b.classList.remove('selected'));
       document.getElementById('rnd-whole-mixed-btn').classList.add('selected');
       rndSelWholeTypes.clear(); rndSelWholeTypes.add('mixed-whole');
