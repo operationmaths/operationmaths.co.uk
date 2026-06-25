@@ -42,10 +42,10 @@ main { flex: 1; }
 
 .qg-strands { display: flex; flex-direction: column; gap: 1rem; }
 .qg-strand { border-radius: 10px; overflow: hidden; background: #fff; }
-#qg-strand-number { border: 3px solid var(--blue); }
-#qg-strand-algebra { border: 3px solid var(--green); }
-#qg-strand-statistics { border: 3px solid var(--purple); }
-#qg-strand-geometry { border: 3px solid var(--orange); }
+#qg-strand-number { border: 2px solid var(--blue); }
+#qg-strand-algebra { border: 2px solid var(--green); }
+#qg-strand-statistics { border: 2px solid var(--purple); }
+#qg-strand-geometry { border: 2px solid var(--orange); }
 .qg-strand-header { display: flex; align-items: center; padding: 0.7rem 1.1rem; border-bottom: 1px solid #e5e7eb; background: #fafafa; }
 .qg-strand-name { font-weight: 700; font-size: 15px; color: #111827; display: flex; align-items: center; gap: 0.55rem; }
 .qg-strand-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
