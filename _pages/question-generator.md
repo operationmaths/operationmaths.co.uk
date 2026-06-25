@@ -42,7 +42,7 @@ main { flex: 1; }
 
 .qg-strands { display: flex; flex-direction: column; gap: 1rem; }
 .qg-strand { border-radius: 10px; overflow: hidden; background: #fff; }
-#qg-strand-number { border: 2px solid var(--blue); }
+#qg-strand-number { border: 3px solid var(--blue); }
 #qg-strand-algebra { border: 2px solid var(--green); }
 #qg-strand-statistics { border: 2px solid var(--purple); }
 #qg-strand-geometry { border: 2px solid var(--orange); }
