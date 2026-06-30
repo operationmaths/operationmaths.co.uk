@@ -2454,7 +2454,8 @@ permalink: /online-maths-tests/
       // target: 10, 100 or 1000
       const ans = Math.round(n / target) * target;
       const label = 'Round ' + n.toLocaleString() + ' to the nearest ' + target.toLocaleString();
-      pool.push({ label, question: label, answer: ans.toString(), resultLabel: label + ' = ' + ans.toLocaleString() });
+      const question = 'Round ' + n.toLocaleString() + '||to the nearest ' + target.toLocaleString();
+      pool.push({ label, question, answer: ans.toString(), resultLabel: label + ' = ' + ans.toLocaleString() });
     }
 
     function addDp(n, dp) {
@@ -2462,7 +2463,8 @@ permalink: /online-maths-tests/
       const ans = Math.round(n * factor) / factor;
       const ansStr = ans.toFixed(dp);
       const label = 'Round ' + n + ' to ' + dp + ' decimal place' + (dp > 1 ? 's' : '');
-      pool.push({ label, question: label, answer: ansStr, resultLabel: label + ' = ' + ansStr });
+      const question = 'Round ' + n + '||to ' + dp + ' decimal place' + (dp > 1 ? 's' : '');
+      pool.push({ label, question, answer: ansStr, resultLabel: label + ' = ' + ansStr });
     }
 
     function addSf(n, sf) {
@@ -2473,7 +2475,8 @@ permalink: /online-maths-tests/
       const ans = Math.round(n * factor) / factor;
       const ansStr = rndFmt(ans);
       const label = 'Round ' + n + ' to ' + sf + ' significant figure' + (sf > 1 ? 's' : '');
-      pool.push({ label, question: label, answer: ansStr, resultLabel: label + ' = ' + ansStr });
+      const question = 'Round ' + n + '||to ' + sf + ' significant figure' + (sf > 1 ? 's' : '');
+      pool.push({ label, question, answer: ansStr, resultLabel: label + ' = ' + ansStr });
     }
 
     if (types.some(t => t === 'whole') || types.some(t => t === 'mixed-whole')) {
@@ -2491,8 +2494,9 @@ permalink: /online-maths-tests/
           if (decPart === 0) { i--; continue; }
           const n = parseFloat(intPart + '.' + decStr);
           const label = 'Round ' + n.toLocaleString() + ' to the nearest whole number';
+          const question = 'Round ' + n.toLocaleString() + '||to the nearest whole number';
           const ans = Math.round(n).toString();
-          pool.push({ label, question: label, answer: ans, resultLabel: label + ' = ' + ans });
+          pool.push({ label, question, answer: ans, resultLabel: label + ' = ' + ans });
         }
       }
     }
@@ -2679,7 +2683,7 @@ permalink: /online-maths-tests/
     const total = rndState.questions.length;
     document.getElementById('rnd-progress').textContent = 'Question ' + (rndState.current + 1) + ' of ' + total;
     document.getElementById('rnd-progress-bar').style.width = (rndState.current / total * 100) + '%';
-    document.getElementById('rnd-question').textContent = q.question;
+    document.getElementById('rnd-question').innerHTML = q.question.split('||').join('<br>');
     const input = document.getElementById('rnd-answer');
     input.value = ''; input.focus();
   }
@@ -2735,7 +2739,7 @@ permalink: /online-maths-tests/
       perfectEl.style.display = 'none';
       if (answeredWrong.length > 0) {
         wrongWrap.style.display = 'block';
-        wrongList.innerHTML = wrongTableRows(answeredWrong, a => a.q.question, a => a.correct);
+        wrongList.innerHTML = wrongTableRows(answeredWrong, a => a.q.label, a => a.correct);
       } else {
         wrongWrap.style.display = 'none';
         document.getElementById('rnd-timeout').innerHTML = pill + '<p class="no-wrong-msg">No incorrect answers \u2014 well done!</p>';
