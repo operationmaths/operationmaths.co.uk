@@ -4,7 +4,7 @@ topic: number
 section: Percentages
 order: 2
 orientation: portrait
-description: ''
+description: The second worksheet to use when finding percentages of numbers. The first column is finding multiples of 10%, the second column finding multiples of 1% and the third column finding a mixture.
 thumbnail: ''
 show_a_worksheet: true
 show_a_answers: true
