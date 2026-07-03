@@ -14,6 +14,7 @@ section_order:
   - All Operations
   - Product of prime factors
   - Fractions
+  - Percentages
   - Metric conversions
   - Mean, Median, Mode and Range
   - Ratio
