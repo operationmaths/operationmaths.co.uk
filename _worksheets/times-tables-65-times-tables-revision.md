@@ -1,5 +1,5 @@
 ---
-title: 65 Times Tables Revision
+title: 6 Times Tables Revision
 topic: times-tables
 section: Revision
 order: 5
