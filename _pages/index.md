@@ -59,7 +59,8 @@ body_class: page-home
       </div>
       <div class="om-latest">
         {% assign dated_worksheets = site.worksheets | where_exp: "ws", "ws.date_added" %}
-        {% for ws in dated_worksheets limit: 3 %}
+        {% assign sorted_worksheets = dated_worksheets | sort: "date_added" | reverse %}
+        {% for ws in sorted_worksheets limit: 3 %}
           {% if ws.topic == "number" %}{% assign topic_color = "var(--blue)" %}
           {% elsif ws.topic == "shape" %}{% assign topic_color = "var(--orange)" %}
           {% elsif ws.topic == "algebra" %}{% assign topic_color = "var(--green)" %}
