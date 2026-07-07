@@ -10,6 +10,6 @@ show_a_worksheet: true
 show_a_answers: true
 free_pdf: /pdfs/Finding-multiples-of-10percent-and-1percent.pdf
 answers_pdf: /pdfs/Finding-multiples-of-10percent-and-1percent-ANSWERS.pdf
-tes_url: ''
-date_added: ''
+tes_url: https://www.tes.com/teaching-resource/-13509456
+date_added: 2026-07-07 14:25:00
 ---
