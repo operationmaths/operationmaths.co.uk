@@ -10,6 +10,6 @@ show_a_worksheet: true
 show_a_answers: true
 free_pdf: /pdfs/Percentages-of-numbers.pdf
 answers_pdf: /pdfs/Percentages-of-numbers-ANSWERS.pdf
-tes_url: ''
-date_added: 2026-07-03 23:01:00
+tes_url: https://www.tes.com/teaching-resource/-13509460
+date_added: 2026-07-07 14:31:00
 ---
