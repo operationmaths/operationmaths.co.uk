@@ -58,7 +58,7 @@ body_class: page-home
         <a href="{{ site.baseurl }}/worksheets/">Browse all worksheets</a>
       </div>
       <div class="om-latest">
-        {% assign dated_worksheets = site.worksheets | where_exp: "ws", "ws.date_added" %}
+        {% assign dated_worksheets = site.worksheets | where_exp: "ws", "ws.date_added != ''" %}
         {% assign sorted_worksheets = dated_worksheets | sort: "date_added" | reverse %}
         {% for ws in sorted_worksheets limit: 3 %}
           {% if ws.topic == "number" %}{% assign topic_color = "var(--blue)" %}
