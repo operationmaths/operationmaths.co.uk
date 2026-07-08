@@ -43,7 +43,7 @@ permalink: /online-maths-tests/
 .radical-wrap { display: inline-flex; align-items: flex-end; white-space: nowrap; }
 .radical-index { font-size: 0.5em; line-height: 1; font-weight: 700; position: relative; top: -0.55em; margin-right: -0.32em; }
 .radical-sign { font-size: 1.05em; line-height: 1; transform: scaleY(1.2); transform-origin: bottom; display: inline-block; margin-right: 0; }
-.radical-num { border-top: 2px solid currentColor; padding: 0 0.14em 0 0.08em; position: relative; top: 0.12em; }
+.radical-num { border-top: 2px solid currentColor; padding: 0 0.14em 0 0.08em; position: relative; top: -0.05em; }
 </style>
 
 <section class="om-hero" style="min-height:0; padding: 4rem 2rem 1rem;">
