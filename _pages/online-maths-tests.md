@@ -41,9 +41,9 @@ permalink: /online-maths-tests/
 .fdp-opt-btn:hover { background: #f0f6ff; border-color: var(--blue); color: var(--blue); }
 .fdp-opt-btn.selected { background: var(--blue); border-color: var(--blue); color: #fff; }
 .radical-wrap { display: inline-flex; align-items: flex-end; white-space: nowrap; }
-.radical-sign { font-size: 1.05em; line-height: 1; transform: scaleY(1.2); display: inline-block; margin-right: -1px; }
-.radical-sign.radical-cube { font-size: 0.95em; margin-right: -2px; }
-.radical-num { border-top: 2px solid currentColor; padding: 0 0.14em 0 0.1em; }
+.radical-index { font-size: 0.5em; line-height: 1; font-weight: 700; position: relative; top: -0.55em; margin-right: -0.32em; }
+.radical-sign { font-size: 1.05em; line-height: 1; transform: scaleY(1.2); display: inline-block; margin-right: -3px; position: relative; top: 0.03em; }
+.radical-num { border-top: 2px solid currentColor; padding: 0 0.1em 0 0.04em; }
 </style>
 
 <section class="om-hero" style="min-height:0; padding: 4rem 2rem 1rem;">
@@ -2827,7 +2827,7 @@ permalink: /online-maths-tests/
     if (typeSet.has('cube-roots') || typeSet.has('mixed')) {
       for (const n of cubes) {
         const cb = n * n * n;
-        const q = '<span class="radical-wrap"><span class="radical-sign radical-cube">\u221b</span><span class="radical-num">' + cb + '</span></span> = ?';
+        const q = '<span class="radical-wrap"><span class="radical-index">3</span><span class="radical-sign">\u221a</span><span class="radical-num">' + cb + '</span></span> = ?';
         pool.push({ label: '\u221b' + cb + ' = ?', question: q, answer: n.toString(), resultLabel: '\u221b' + cb + ' = ' + n });
       }
     }
