@@ -13,6 +13,6 @@ show_a_worksheet: true
 show_a_answers: true
 free_pdf: /pdfs/4-Times-Tables-Revision-with-days.pdf
 answers_pdf: /pdfs/4-Times-Tables-Revision-with-days-ANSWERS.pdf
-tes_url: ''
+tes_url: https://www.tes.com/teaching-resource/-13510303
 date_added: ''
 ---
