@@ -40,6 +40,10 @@ permalink: /online-maths-tests/
 .fdp-opt-btn { flex: 1; height: 72px; min-width: 0; padding: 6px 8px; font-size: 1.05rem; font-weight: 700; border: 2px solid #d0d0d0; border-radius: 8px; background: #fff; cursor: pointer; transition: background 0.12s, border-color 0.12s; font-family: inherit; display: flex; align-items: center; justify-content: center; text-align: center; box-sizing: border-box; }
 .fdp-opt-btn:hover { background: #f0f6ff; border-color: var(--blue); color: var(--blue); }
 .fdp-opt-btn.selected { background: var(--blue); border-color: var(--blue); color: #fff; }
+.radical-wrap { display: inline-flex; align-items: flex-end; white-space: nowrap; }
+.radical-sign { font-size: 1.05em; line-height: 1; transform: scaleY(1.2); display: inline-block; margin-right: -1px; }
+.radical-sign.radical-cube { font-size: 0.95em; margin-right: -2px; }
+.radical-num { border-top: 2px solid currentColor; padding: 0 0.14em 0 0.1em; }
 </style>
 
 <section class="om-hero" style="min-height:0; padding: 4rem 2rem 1rem;">
@@ -763,7 +767,7 @@ permalink: /online-maths-tests/
   let fonSelLevel = '1', fonSelCount = null, fonSelTimed = null, fonSelTime = null;
 
   const rndState = { questions: [], current: 0, userAnswers: [], elapsed: 0, remaining: 0, timerInterval: null, timed: false, timelimit: null, type: null, qcount: null, wrongOnly: false };
-  let rndSelType = null, rndSelWholeTypes = new Set(), rndSelCount = null, rndSelTimed = null, rndSelTime = null;
+  let rndSelType = null, rndSelTypeSet = new Set(), rndSelWholeTypes = new Set(), rndSelCount = null, rndSelTimed = null, rndSelTime = null;
 
   const prState = { questions: [], current: 0, userAnswers: [], elapsed: 0, remaining: 0, timerInterval: null, timed: false, timelimit: null, type: null, qcount: null, wrongOnly: false };
   let prSelTypes = new Set(), prSelCount = null, prSelTimed = null, prSelTime = null;
@@ -1707,16 +1711,16 @@ permalink: /online-maths-tests/
   };
 
   const MC_HARDER_VALUES = {
-    'cm-mm': [1.2,1.5,2.3,3.7,4.8,5.6,1.25,2.75,3.45,4.65,1.234,2.567,3.891],
-    'mm-cm': [12,15,23,37,48,56,125,275,345,465,1234,2567,3891],
-    'cm-m':  [125,235,347,456,678,1234,2345,3456,12345],
-    'm-cm':  [1.25,2.35,3.47,4.56,6.78,12.34,23.45,34.56,123.45],
-    'm-km':  [1234,2345,3456,4567,5678,1250,2500,3750],
-    'km-m':  [1.234,2.345,3.456,4.567,5.678,1.25,2.5,3.75],
-    'g-kg':  [1234,2345,3456,4567,5678,1250,2500,3750],
-    'kg-g':  [1.234,2.345,3.456,4.567,5.678,1.25,2.5,3.75],
-    'ml-l':  [1234,2345,3456,4567,5678,1250,2500,3750],
-    'l-ml':  [1.234,2.345,3.456,4.567,5.678,1.25,2.5,3.75]
+    'cm-mm': [5.3,4.2,2.8,2.9,1.1,4.3,1.71,4.91,9.53,4.57,5.828,3.714,7.348],
+    'mm-cm': [45,29,37,53,23,21,489,199,467,967,6635,5333,1711],
+    'cm-m':  [847,570,649,227,487,2291,5803,6925,35203],
+    'm-cm':  [2.05,4.98,4.12,7.35,8.81,57.45,36.85,44.89,799.82],
+    'm-km':  [2169,3803,9751,5010,3677,3650,3150,2650],
+    'km-m':  [9.224,6.863,1.824,5.067,4.935,6.27,8.18,5.17],
+    'g-kg':  [5040,9830,5304,8019,6930,2750,2350,4850],
+    'kg-g':  [2.773,1.881,2.156,3.811,2.394,7.76,8.67,1.87],
+    'ml-l':  [9797,5371,6573,2827,5808,4175,2175,4675],
+    'l-ml':  [1.976,5.995,3.519,2.891,5.861,4.19,6.97,3.69]
   };
 
   function mcFormatNum(n) { return parseFloat(n.toPrecision(10)).toString(); }
@@ -2554,20 +2558,22 @@ permalink: /online-maths-tests/
     if (types.some(t => t === 'sf') || types.some(t => t === 'mixed-dpSf')) {
       // Whole numbers and decimals, up to 6 digits
       for (let sf = 1; sf <= 3; sf++) {
-        // Straightforward: e.g. 3.471 → 2sf = 3.5
+        // Straightforward: e.g. 3.404 → 2sf = 3.4
         const straightNums = [
-          1.234, 2.567, 3.891, 4.123, 5.678, 6.234, 7.891, 8.456, 9.012,
-          12.34, 23.45, 34.56, 45.67, 56.78, 67.89, 78.91, 89.12, 91.23,
-          123.4, 234.5, 345.6, 456.7, 567.8, 678.9, 789.1, 891.2, 912.3,
-          1234, 2345, 3456, 4567, 5678, 6789, 7891, 8912, 9123,
-          12345, 23456, 34567, 45678, 56789, 67891
+          3.404, 1.074, 9.096, 6.596, 1.931, 9.219, 1.088,
+          65.53, 64.07, 82.15, 90.74, 17.73, 16.28, 15.71,
+          979.2, 396.6, 247.8, 220.9, 415.8, 935.2, 205.9,
+          4078, 7101, 2596, 9974, 2028, 1976, 4374,
+          75066, 99181, 79693, 66045, 51175,
+          3.456, 67891
         ];
         straightNums.forEach(n => addSf(n, sf));
         // Leading zeros: e.g. 0.003471 → 2sf = 0.0035
         const leadingNums = [
-          0.001234, 0.002345, 0.003456, 0.004567, 0.005678, 0.006789,
-          0.01234, 0.02345, 0.03456, 0.04567, 0.05678, 0.06789,
-          0.1234, 0.2345, 0.3456, 0.4567, 0.5678, 0.6789
+          0.588218, 0.714006, 0.575198, 0.479146, 0.360494,
+          0.33562, 0.41994, 0.20728, 0.49354, 0.78838,
+          0.9111, 0.6627, 0.8353, 0.5717, 0.2199,
+          0.004567
         ];
         leadingNums.forEach(n => addSf(n, sf));
       }
@@ -2587,7 +2593,7 @@ permalink: /online-maths-tests/
     document.getElementById('rnd-quiz').classList.remove('active');
     document.getElementById('rnd-results').classList.remove('active');
     document.getElementById('rnd-setup').style.display = '';
-    rndSelType = null; rndSelWholeTypes = new Set(); rndSelCount = null; rndSelTimed = null; rndSelTime = null;
+    rndSelType = null; rndSelTypeSet = new Set(); rndSelWholeTypes = new Set(); rndSelCount = null; rndSelTimed = null; rndSelTime = null;
     document.querySelectorAll('[data-rnd-whole]').forEach(b => b.classList.remove('selected'));
     document.querySelectorAll('[data-rnd-type]').forEach(b => b.classList.remove('selected'));
     document.querySelectorAll('[data-rnd-qcount]').forEach(b => b.classList.remove('selected'));
@@ -2598,7 +2604,7 @@ permalink: /online-maths-tests/
   }
 
   function rndSelectWhole(btn) {
-    rndSelType = null;
+    rndSelType = null; rndSelTypeSet = new Set();
     document.querySelectorAll('[data-rnd-type]').forEach(b => b.classList.remove('selected'));
     if (rndSelWholeTypes.has('mixed-whole')) {
       rndSelWholeTypes.clear();
@@ -2617,7 +2623,7 @@ permalink: /online-maths-tests/
     rndUpdateStartBtn();
   }
   function rndSelectWholeMixed(btn) {
-    rndSelType = null;
+    rndSelType = null; rndSelTypeSet = new Set();
     document.querySelectorAll('[data-rnd-type]').forEach(b => b.classList.remove('selected'));
     document.querySelectorAll('[data-rnd-whole]').forEach(b => b.classList.remove('selected'));
     btn.classList.add('selected'); rndSelWholeTypes.clear(); rndSelWholeTypes.add('mixed-whole');
@@ -2626,9 +2632,28 @@ permalink: /online-maths-tests/
   function rndSelectType(btn) {
     rndSelWholeTypes = new Set();
     document.querySelectorAll('[data-rnd-whole]').forEach(b => b.classList.remove('selected'));
-    if (btn.classList.contains('selected')) { btn.classList.remove('selected'); rndSelType = null; rndUpdateStartBtn(); return; }
-    document.querySelectorAll('[data-rnd-type]').forEach(b => b.classList.remove('selected'));
-    btn.classList.add('selected'); rndSelType = btn.dataset.rndType; rndUpdateStartBtn();
+    const val = btn.dataset.rndType;
+    if (val === 'mixed-dpSf') {
+      const wasSelected = btn.classList.contains('selected');
+      document.querySelectorAll('[data-rnd-type]').forEach(b => b.classList.remove('selected'));
+      rndSelTypeSet.clear();
+      if (!wasSelected) { btn.classList.add('selected'); rndSelTypeSet.add('mixed-dpSf'); }
+    } else {
+      if (rndSelTypeSet.has('mixed-dpSf')) {
+        rndSelTypeSet.clear();
+        document.querySelectorAll('[data-rnd-type]').forEach(b => b.classList.remove('selected'));
+      }
+      if (btn.classList.contains('selected')) { btn.classList.remove('selected'); rndSelTypeSet.delete(val); }
+      else { btn.classList.add('selected'); rndSelTypeSet.add(val); }
+      // Auto-select MIXED if both dp and sf are chosen
+      if (rndSelTypeSet.has('dp') && rndSelTypeSet.has('sf')) {
+        document.querySelectorAll('[data-rnd-type]').forEach(b => b.classList.remove('selected'));
+        document.querySelector('[data-rnd-type="mixed-dpSf"]').classList.add('selected');
+        rndSelTypeSet.clear(); rndSelTypeSet.add('mixed-dpSf');
+      }
+    }
+    rndSelType = rndSelTypeSet.size > 0 ? (rndSelTypeSet.has('mixed-dpSf') ? 'mixed-dpSf' : [...rndSelTypeSet].join(',')) : null;
+    rndUpdateStartBtn();
   }
   function rndSelectCount(btn) {
     document.querySelectorAll('[data-rnd-qcount]').forEach(b => b.classList.remove('selected'));
@@ -2789,7 +2814,8 @@ permalink: /online-maths-tests/
     if (typeSet.has('square-roots') || typeSet.has('mixed')) {
       for (const n of squares) {
         const sq = n * n;
-        pool.push({ label: '\u221a' + sq + ' = ?', question: '\u221a' + sq + ' = ?', answer: n.toString(), resultLabel: '\u221a' + sq + ' = ' + n });
+        const q = '<span class="radical-wrap"><span class="radical-sign">\u221a</span><span class="radical-num">' + sq + '</span></span> = ?';
+        pool.push({ label: '\u221a' + sq + ' = ?', question: q, answer: n.toString(), resultLabel: '\u221a' + sq + ' = ' + n });
       }
     }
     if (typeSet.has('cubes') || typeSet.has('mixed')) {
@@ -2801,7 +2827,8 @@ permalink: /online-maths-tests/
     if (typeSet.has('cube-roots') || typeSet.has('mixed')) {
       for (const n of cubes) {
         const cb = n * n * n;
-        pool.push({ label: '\u221b' + cb + ' = ?', question: '\u221b' + cb + ' = ?', answer: n.toString(), resultLabel: '\u221b' + cb + ' = ' + n });
+        const q = '<span class="radical-wrap"><span class="radical-sign radical-cube">\u221b</span><span class="radical-num">' + cb + '</span></span> = ?';
+        pool.push({ label: '\u221b' + cb + ' = ?', question: q, answer: n.toString(), resultLabel: '\u221b' + cb + ' = ' + n });
       }
     }
     return pool;
