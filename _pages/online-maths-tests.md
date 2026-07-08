@@ -42,8 +42,8 @@ permalink: /online-maths-tests/
 .fdp-opt-btn.selected { background: var(--blue); border-color: var(--blue); color: #fff; }
 .radical-wrap { display: inline-flex; align-items: flex-end; white-space: nowrap; }
 .radical-index { font-size: 0.5em; line-height: 1; font-weight: 700; position: relative; top: -0.55em; margin-right: -0.32em; }
-.radical-sign { font-size: 1.05em; line-height: 1; transform: scaleY(1.2); display: inline-block; margin-right: -7px; }
-.radical-num { border-top: 2px solid currentColor; padding: 0 0.1em 0 0.04em; }
+.radical-sign { font-size: 1.05em; line-height: 1; transform: scaleY(1.2); transform-origin: bottom; display: inline-block; margin-right: 0; }
+.radical-num { border-top: 2px solid currentColor; padding: 0 0.14em 0 0.08em; position: relative; top: 0.12em; }
 </style>
 
 <section class="om-hero" style="min-height:0; padding: 4rem 2rem 1rem;">
