@@ -44,6 +44,7 @@ permalink: /online-maths-tests/
 .radical-index { font-size: 0.5em; line-height: 1; font-weight: 700; position: relative; top: -0.55em; margin-right: -0.32em; }
 .radical-sign { font-size: 1.05em; line-height: 1; transform: scaleY(1.2); transform-origin: bottom; display: inline-block; margin-right: 0; }
 .radical-num { border-top: 2px solid currentColor; padding: 0 0.14em 0 0.08em; position: relative; top: -0.05em; }
+#pr-question { min-height: 2.6em; display: flex; align-items: center; justify-content: center; }
 </style>
 
 <section class="om-hero" style="min-height:0; padding: 4rem 2rem 1rem;">
@@ -130,7 +131,7 @@ permalink: /online-maths-tests/
         </div>
         <div class="quiz-question" id="tt-question">6 × 7 = ?</div>
         <div class="quiz-input-wrap">
-          <input class="quiz-input" id="tt-answer" type="text" inputmode="numeric" autocomplete="off" placeholder="?" pattern="[0-9]*">
+          <input class="quiz-input" id="tt-answer" type="text" inputmode="numeric" autocomplete="off" placeholder="?" pattern="[0-9]*" maxlength="5">
         </div>
         <button class="quiz-next-btn" id="tt-next-btn">Next question →</button>
         <button class="quiz-menu-btn" id="tt-quiz-menu-btn">← Menu</button>
@@ -208,7 +209,7 @@ permalink: /online-maths-tests/
         </div>
         <div class="quiz-question" id="nb-question">3 + ? = 10</div>
         <div class="quiz-input-wrap">
-          <input class="quiz-input" id="nb-answer" type="text" inputmode="numeric" autocomplete="off" placeholder="?" pattern="[0-9]*">
+          <input class="quiz-input" id="nb-answer" type="text" inputmode="numeric" autocomplete="off" placeholder="?" pattern="[0-9]*" maxlength="6">
         </div>
         <button class="quiz-next-btn" id="nb-next-btn" onclick="nbSubmitAnswer()">Next question →</button>
         <button class="quiz-menu-btn" id="nb-quiz-menu-btn" onclick="nbResetSetup()">← Menu</button>
@@ -278,7 +279,7 @@ permalink: /online-maths-tests/
         </div>
         <div class="quiz-question" id="dh-question">Double 4 = ?</div>
         <div class="quiz-input-wrap">
-          <input class="quiz-input" id="dh-answer" type="text" inputmode="numeric" autocomplete="off" placeholder="?" pattern="[0-9]*">
+          <input class="quiz-input" id="dh-answer" type="text" inputmode="numeric" autocomplete="off" placeholder="?" pattern="[0-9]*" maxlength="4">
         </div>
         <button class="quiz-next-btn" id="dh-next-btn" onclick="dhSubmitAnswer()">Next question →</button>
         <button class="quiz-menu-btn" id="dh-quiz-menu-btn" onclick="dhResetSetup()">← Menu</button>
@@ -348,7 +349,7 @@ permalink: /online-maths-tests/
         </div>
         <div class="quiz-question" id="md-question">3.6 &times; 10 = ?</div>
         <div class="quiz-input-wrap">
-          <input class="quiz-input" id="md-answer" type="text" inputmode="decimal" autocomplete="off" placeholder="?">
+          <input class="quiz-input" id="md-answer" type="text" inputmode="decimal" autocomplete="off" placeholder="?" maxlength="8">
         </div>
         <button class="quiz-next-btn" id="md-next-btn" onclick="mdSubmitAnswer()">Next question →</button>
         <button class="quiz-menu-btn" id="md-quiz-menu-btn" onclick="mdResetSetup()">← Menu</button>
@@ -428,7 +429,7 @@ permalink: /online-maths-tests/
         </div>
         <div class="quiz-question" id="rnd-question"></div>
         <div class="quiz-input-wrap">
-          <input class="quiz-input" id="rnd-answer" type="text" inputmode="decimal" autocomplete="off" placeholder="?">
+          <input class="quiz-input" id="rnd-answer" type="text" inputmode="decimal" autocomplete="off" placeholder="?" maxlength="9">
         </div>
         <button class="quiz-next-btn" id="rnd-next-btn" onclick="rndSubmitAnswer()">Next question &#8594;</button>
         <button class="quiz-menu-btn" id="rnd-quiz-menu-btn" onclick="rndResetSetup()">&#8592; Menu</button>
@@ -567,7 +568,7 @@ permalink: /online-maths-tests/
         </div>
         <div class="quiz-question" id="fon-question"></div>
         <div class="quiz-input-wrap">
-          <input class="quiz-input" id="fon-answer" type="text" inputmode="numeric" autocomplete="off" placeholder="?">
+          <input class="quiz-input" id="fon-answer" type="text" inputmode="numeric" autocomplete="off" placeholder="?" maxlength="6">
         </div>
         <button class="quiz-next-btn" id="fon-next-btn" onclick="fonSubmitAnswer()">Next question &#8594;</button>
         <button class="quiz-menu-btn" id="fon-quiz-menu-btn" onclick="fonResetSetup()">&#8592; Menu</button>
@@ -646,7 +647,7 @@ permalink: /online-maths-tests/
         </div>
         <div class="quiz-question" id="mc-question">1 km = ? m</div>
         <div class="quiz-input-wrap">
-          <input class="quiz-input" id="mc-answer" type="text" inputmode="decimal" autocomplete="off" placeholder="?">
+          <input class="quiz-input" id="mc-answer" type="text" inputmode="decimal" autocomplete="off" placeholder="?" maxlength="8">
         </div>
         <button class="quiz-next-btn" id="mc-next-btn" onclick="mcSubmitAnswer()">Next question →</button>
         <button class="quiz-menu-btn" id="mc-quiz-menu-btn" onclick="mcResetSetup()">← Menu</button>
@@ -719,7 +720,7 @@ permalink: /online-maths-tests/
         </div>
         <div class="quiz-question" id="pr-question"></div>
         <div class="quiz-input-wrap">
-          <input class="quiz-input" id="pr-answer" type="text" inputmode="numeric" autocomplete="off" placeholder="?">
+          <input class="quiz-input" id="pr-answer" type="text" inputmode="numeric" autocomplete="off" placeholder="?" maxlength="6">
         </div>
         <button class="quiz-next-btn" id="pr-next-btn" onclick="prSubmitAnswer()">Next question &#8594;</button>
         <button class="quiz-menu-btn" id="pr-quiz-menu-btn" onclick="prResetSetup()">&#8592; Menu</button>
@@ -2007,7 +2008,44 @@ permalink: /online-maths-tests/
     return result;
   }
 
-  function fdpGenerateQuestions(level, count) {
+  function fdpSmartDistractors(q, facts) {
+    // Builds "plausible mistake" distractors for tenths/hundredths percent-based
+    // conversions, e.g. 40% -> decimal: offers 0.04 (decimal-shift error) and
+    // 0.44 (digit-repeat error) alongside the correct 0.4.
+    if (q.type === 'D\u2192F' || q.type === '%\u2192F') return fdpDistractors(q, facts);
+    const f = q.fact;
+    const p = f.percent;
+    const tens = Math.floor(p/10), ones = p%10;
+    let shiftP = p >= 10 ? tens : p*10;
+    const sigDigit = tens !== 0 ? tens : ones;
+    let repeatP = sigDigit*11;
+    if (shiftP === p || shiftP < 1 || shiftP > 99) shiftP = null;
+    if (repeatP === p) {
+      const alt = (ones !== 0 ? ones*11 : (sigDigit+1)*11);
+      repeatP = (alt === p || alt < 1 || alt > 99) ? null : alt;
+    } else if (repeatP < 1 || repeatP > 99) {
+      repeatP = null;
+    }
+    const candidates = [];
+    if (shiftP !== null) candidates.push(shiftP);
+    if (repeatP !== null && repeatP !== shiftP) candidates.push(repeatP);
+
+    const results = [];
+    for (const cp of candidates) {
+      if (results.length >= 2) break;
+      let display, key;
+      if (q.type === 'F\u2192%' || q.type === 'D\u2192%') { display = cp + '%'; key = 'pct:' + cp; }
+      else { const dec = fdpFmtDec(cp/100); display = dec; key = 'dec:' + dec; }
+      if (key !== q.answerKey && results.every(r => r.key !== key)) results.push({display, key});
+    }
+    if (results.length < 2) {
+      const extra = fdpDistractors(q, facts).filter(d => d.key !== q.answerKey && results.every(r => r.key !== d.key));
+      for (const e of extra) { if (results.length >= 2) break; results.push(e); }
+    }
+    return results.slice(0,2);
+  }
+
+  function fdpGenerateFromLevel(level, count) {
     const facts = fdpBuildFacts(level);
     const pool  = fdpBuildPool(facts);
     const maxRepeats = Math.max(2, Math.ceil(count / pool.length));
@@ -2021,7 +2059,7 @@ permalink: /online-maths-tests/
         const k = q.answerKey+'|'+q.type;
         const seen = counts.get(k)||0;
         if (seen < maxRepeats && result.length < count) {
-          const dist = fdpDistractors(q, facts);
+          const dist = level === 'tenths-hundredths' ? fdpSmartDistractors(q, facts) : fdpDistractors(q, facts);
           const opts = [{display:q.answerDisplay,key:q.answerKey,correct:true},...dist.map(d=>({display:d.display,key:d.key,correct:false}))];
           for (let i=opts.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[opts[i],opts[j]]=[opts[j],opts[i]];}
           result.push({...q,opts});
@@ -2031,6 +2069,18 @@ permalink: /online-maths-tests/
       if (passes>20) break;
     }
     return result;
+  }
+
+  function fdpGenerateQuestions(level, count) {
+    if (level === 'mixed') {
+      // 60/40 split: 60% tenths & hundredths (harder), 40% basic
+      const harderCount = Math.round(count * 0.6);
+      const basicCount = count - harderCount;
+      const harder = fdpGenerateFromLevel('tenths-hundredths', harderCount);
+      const basic  = fdpGenerateFromLevel('basic', basicCount);
+      return shuffleNoConsec([...harder, ...basic]);
+    }
+    return fdpGenerateFromLevel(level, count);
   }
 
   function fdpUpdateStartBtn() {
