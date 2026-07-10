@@ -2,7 +2,7 @@
 title: 12 Times Tables Revision
 topic: times-tables
 section: Revision
-order: 11
+order: 12
 orientation: landscape
 description: |-
   Use for daily times table practice of the 12 times table.
