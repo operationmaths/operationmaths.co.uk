@@ -2,7 +2,7 @@
 title: 5 Times Tables Revision
 topic: times-tables
 section: Revision
-order: 4
+order: 5
 orientation: landscape
 description: |-
   Use for daily times table practice of the 5 times table.
