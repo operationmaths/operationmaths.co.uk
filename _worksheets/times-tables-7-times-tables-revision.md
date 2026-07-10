@@ -2,7 +2,7 @@
 title: 8 Times Tables Revision
 topic: times-tables
 section: Revision
-order: 7
+order: 8
 orientation: landscape
 description: |-
   Use for daily times table practice of the 8 times table.
