@@ -2,7 +2,7 @@
 title: 7 Times Tables Revision
 topic: times-tables
 section: Revision
-order: 6
+order: 7
 orientation: landscape
 description: |-
   Use for daily times table practice of the 7 times table.
