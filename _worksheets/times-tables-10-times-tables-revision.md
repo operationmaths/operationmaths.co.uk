@@ -2,7 +2,7 @@
 title: 10 Times Tables Revision
 topic: times-tables
 section: Revision
-order: 9
+order: 10
 orientation: landscape
 description: |-
   Use for daily times table practice of the 10 times table.
