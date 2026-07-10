@@ -8,7 +8,7 @@ description: |-
   Use for daily times table practice of all times tables.
 
   Each sheet contains 9 questions for each day of the week.
-thumbnail: /assets/images/worksheets/times-tables/Times-Tables-Revision-with-days.jpg
+thumbnail: /assets/images/worksheets/times-tables/Times Tables Revision with days.jpg
 show_a_worksheet: true
 show_a_answers: true
 free_pdf: /pdfs/Times-Tables-Revision-with-days.pdf
