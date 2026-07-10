@@ -2,7 +2,7 @@
 title: 9 Times Tables Revision
 topic: times-tables
 section: Revision
-order: 8
+order: 9
 orientation: landscape
 description: |-
   Use for daily times table practice of the 9 times table.
