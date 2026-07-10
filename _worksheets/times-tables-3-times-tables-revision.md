@@ -2,7 +2,7 @@
 title: 3 Times Tables Revision
 topic: times-tables
 section: Revision
-order: 2
+order: 3
 orientation: landscape
 description: |-
   Use for daily times table practice of the 3 times table.
