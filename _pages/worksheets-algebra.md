@@ -5,6 +5,7 @@ section_order:
   - Revision
   - Simplifying
   - Solving equations
+  - Expand
   - Expand and factorise
 layout: worksheet-topic
 permalink: /worksheets-algebra/
