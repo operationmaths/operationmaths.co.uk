@@ -812,9 +812,10 @@ permalink: /online-maths-tests/
     return result;
   }
 
-  function wrongTableRows(answeredWrong, questionFn, correctFn) {
+  function wrongTableRows(answeredWrong, questionFn, correctFn, givenFn) {
+    const gFn = givenFn || (a => a.given);
     return answeredWrong.map(a =>
-      '<tr><td>' + questionFn(a) + '</td><td>' + correctFn(a) + '</td><td class="your-ans-cell">' + a.given + '</td></tr>'
+      '<tr><td>' + questionFn(a) + '</td><td>' + correctFn(a) + '</td><td class="your-ans-cell">' + gFn(a) + '</td></tr>'
     ).join('');
   }
 
@@ -2499,6 +2500,17 @@ permalink: /online-maths-tests/
 
   function rndFmt(n) { return parseFloat(n.toPrecision(15)).toString(); }
 
+  // Adds thousand-separator commas to the integer part of a numeric string,
+  // leaving any decimal part untouched (avoids toLocaleString's fraction-digit rounding)
+  function fmtComma(numLike) {
+    const s = numLike.toString();
+    const neg = s.startsWith('-');
+    const body = neg ? s.slice(1) : s;
+    const [intPart, decPart] = body.split('.');
+    const withCommas = intPart.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    return (neg ? '-' : '') + withCommas + (decPart !== undefined ? '.' + decPart : '');
+  }
+
   function rndBuildPool(type) {
     const pool = [];
     // Support comma-separated multi-select e.g. "10,100"
@@ -2516,9 +2528,10 @@ permalink: /online-maths-tests/
       const factor = Math.pow(10, dp);
       const ans = Math.round(n * factor) / factor;
       const ansStr = ans.toFixed(dp);
-      const label = 'Round ' + n + ' to ' + dp + ' decimal place' + (dp > 1 ? 's' : '');
-      const question = 'Round ' + n + '||to ' + dp + ' decimal place' + (dp > 1 ? 's' : '');
-      pool.push({ label, question, answer: ansStr, resultLabel: label + ' = ' + ansStr });
+      const nFmt = fmtComma(n);
+      const label = 'Round ' + nFmt + ' to ' + dp + ' decimal place' + (dp > 1 ? 's' : '');
+      const question = 'Round ' + nFmt + '||to ' + dp + ' decimal place' + (dp > 1 ? 's' : '');
+      pool.push({ label, question, answer: ansStr, resultLabel: label + ' = ' + fmtComma(ansStr) });
     }
 
     function addSf(n, sf) {
@@ -2528,9 +2541,10 @@ permalink: /online-maths-tests/
       const factor = Math.pow(10, sf - 1 - mag);
       const ans = Math.round(n * factor) / factor;
       const ansStr = rndFmt(ans);
-      const label = 'Round ' + n + ' to ' + sf + ' significant figure' + (sf > 1 ? 's' : '');
-      const question = 'Round ' + n + '||to ' + sf + ' significant figure' + (sf > 1 ? 's' : '');
-      pool.push({ label, question, answer: ansStr, resultLabel: label + ' = ' + ansStr });
+      const nFmt = fmtComma(n);
+      const label = 'Round ' + nFmt + ' to ' + sf + ' significant figure' + (sf > 1 ? 's' : '');
+      const question = 'Round ' + nFmt + '||to ' + sf + ' significant figure' + (sf > 1 ? 's' : '');
+      pool.push({ label, question, answer: ansStr, resultLabel: label + ' = ' + fmtComma(ansStr) });
     }
 
     if (types.some(t => t === 'whole') || types.some(t => t === 'mixed-whole')) {
@@ -2814,7 +2828,7 @@ permalink: /online-maths-tests/
       perfectEl.style.display = 'none';
       if (answeredWrong.length > 0) {
         wrongWrap.style.display = 'block';
-        wrongList.innerHTML = wrongTableRows(answeredWrong, a => a.q.label, a => a.correct);
+        wrongList.innerHTML = wrongTableRows(answeredWrong, a => a.q.label, a => fmtComma(a.correct), a => fmtComma(a.given));
       } else {
         wrongWrap.style.display = 'none';
         document.getElementById('rnd-timeout').innerHTML = pill + '<p class="no-wrong-msg">No incorrect answers \u2014 well done!</p>';
