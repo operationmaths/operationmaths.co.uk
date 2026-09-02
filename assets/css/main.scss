@@ -296,7 +296,7 @@ main { flex: 1; }
 .btn-outline-orange:hover { background: var(--orange); color: #fff; }
 
 /* SATS PAPERS PAGE */
-.om-hero-note { font-size: 13px; color: #6b7280; margin: 0 auto 2rem; max-width: 620px; }
+.om-hero p.om-hero-note { font-size: 13px; color: #6b7280; margin: 0 auto 2rem; max-width: 620px; }
 .om-hero-note a { color: #9ca3af; text-decoration: underline; }
 .jump-links { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 1.75rem; }
 .jump-link { display: inline-block; background: transparent; border: 1.5px solid #4b5563; color: #9ca3af; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 700; padding: 7px 16px; border-radius: 6px; cursor: pointer; transition: background 0.15s, color 0.15s, border-color 0.15s; text-decoration: none; }
