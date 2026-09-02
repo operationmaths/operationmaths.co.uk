@@ -1112,19 +1112,20 @@ function render(){
     lastFilterSignature = sig;
   }
   let list=QUESTIONS.filter(matches);
-  // Group by paper number, then Foundation/Crossover before Higher within
-  // that paper (this mirrors the bank's natural paper-by-paper structure
-  // and keeps Foundation and Higher numbering from interleaving), then
-  // question number, with most recent sitting first within that number -
-  // so within Paper 1F you get Nov Q1, Summer Q1, Nov Q2, Summer Q2, etc.
+  // Group by question number first (so every paper's Q1s sit together,
+  // then every Q2, and so on), with paper number as the tiebreaker within
+  // that (Paper 1 before Paper 2 before Paper 3), Foundation/Crossover
+  // before Higher within that, and most recent sitting first within that -
+  // so you get P1 Nov Q1, P1 Sum Q1, P2 Nov Q1, P2 Sum Q1, P3 Nov Q1,
+  // P3 Sum Q1, then P1 Nov Q2, P1 Sum Q2, P2 Nov Q2, ... and so on.
   list = list.slice().sort((a,b)=>{
+    const [an,araw]=sortKey(a), [bn,braw]=sortKey(b);
+    if(an !== bn) return an - bn;
     const paperA = parseInt(a.paperNum || (a.paper && a.paper.match(/Paper (\d)/) ? a.paper.match(/Paper (\d)/)[1] : '1'), 10);
     const paperB = parseInt(b.paperNum || (b.paper && b.paper.match(/Paper (\d)/) ? b.paper.match(/Paper (\d)/)[1] : '1'), 10);
     if(paperA !== paperB) return paperA - paperB;
     const groupA = paperTierGroup(a), groupB = paperTierGroup(b);
     if(groupA !== groupB) return groupA - groupB;
-    const [an,araw]=sortKey(a), [bn,braw]=sortKey(b);
-    if(an !== bn) return an - bn;
     const sitA = sittingRank(a.sitting), sitB = sittingRank(b.sitting);
     if(sitA !== sitB) return sitB - sitA;
     return araw.localeCompare(braw);
