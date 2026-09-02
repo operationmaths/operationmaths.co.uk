@@ -810,11 +810,22 @@ QUESTIONS.forEach((q,i)=>q.id="q"+i);
 // Paper 1: each question may carry its own paperNum/sitting; when absent
 // (the original Paper 1 questions), we fall back to the number embedded in
 // the paper field and "Summer 2017" so existing behaviour is unchanged.
+// Crossover questions get three variants rather than one fixed string,
+// since which one belongs on screen depends on which tier is currently
+// selected: viewing under Foundation should read like any other
+// Foundation question (just its own paper/number), viewing under Higher
+// the same but for the Higher side, and only the dedicated Crossover tier
+// (or the unfiltered "All" view, where no single paper's perspective is
+// the obviously right default) shows both numbers paired together.
 QUESTIONS.forEach(q=>{
   const paperNumMatch = q.paper && q.paper.match(/Paper (\d)/);
   const pnum = q.paperNum || (paperNumMatch ? paperNumMatch[1] : '1');
   const sitting = q.sitting || 'Summer 2017';
-  if(q.tier==="Crossover") q.series=`${sitting} · Paper ${pnum}F Q${q.n} & ${pnum}H Q${q.higherN}`;
+  if(q.tier==="Crossover"){
+    q.seriesFoundation = `${sitting} · Paper ${pnum}F`;
+    q.seriesHigher = `${sitting} · Paper ${pnum}H`;
+    q.series = `${sitting} · Paper ${pnum}F Q${q.n} & ${pnum}H Q${q.higherN}`;
+  }
   else if(q.tier==="Higher") q.series=`${sitting} · Paper ${pnum}H`;
   else q.series=`${sitting} · Paper ${pnum}F`;
 });
@@ -1066,7 +1077,12 @@ function stackFraction(text){
 }
 
 function sourceTag(q){
-  return q.tier==="Crossover" ? q.series : `${q.series} · Q${q.n.replace('H','')}`;
+  if(q.tier==="Crossover"){
+    if(state.tier==="Foundation") return `${q.seriesFoundation} · Q${q.n}`;
+    if(state.tier==="Higher") return `${q.seriesHigher} · Q${q.higherN}`;
+    return q.series; // Crossover tier, or unfiltered "All" - show both
+  }
+  return `${q.series} · Q${q.n.replace('H','')}`;
 }
 
 // When viewing the Higher paper on its own, crossover questions must show
