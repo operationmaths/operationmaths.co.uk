@@ -6,6 +6,7 @@ permalink: /gcse-question-bank/
 body_class: page-gcse-question-bank
 ---
 
+<div id="gqb-page">
 <style>
   :root{
     --blue:#1c75bc;      /* Number */
@@ -304,6 +305,12 @@ body_class: page-gcse-question-bank
   }
 
   @media print{
+    /* Hide everything the shared layout adds around this page (header,
+       footer, back-to-top button, whatever else lives directly in <body>)
+       by only allowing our own wrapper through - more reliable than
+       naming the layout's header/footer classes, which aren't visible
+       from this file since they live in separate _includes partials. */
+    body > *:not(#gqb-page){display:none !important;}
     .om-hero,.filters,.builder-bar,.card-actions,.results-meta,.load-more-wrap{display:none !important;}
     /* Printing must always show exactly what printSelected()/printOne()
        build from the grid cards - never the modal's own rendering (which
@@ -1391,3 +1398,4 @@ buildStrandChips();
 buildSubtopicOptions();
 render();
 </script>
+</div>
