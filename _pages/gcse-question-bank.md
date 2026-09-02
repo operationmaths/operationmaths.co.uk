@@ -1281,9 +1281,18 @@ function qBodyHTML(q, modal){
       // question number in its own right at that bigger size. Both are
       // nudged up slightly from directly-top-aligned to sit closer to
       // where the image's own first line of text visually starts.
+      // Under Crossover tier specifically, this numeral is deliberately
+      // left blank rather than showing baseQuestionNumber(q) - the whole
+      // point of the Crossover view is that neither paper's number is
+      // the "right" one to show, and that applies just as much to this
+      // externally-drawn heading as it does to a number baked into the
+      // image itself. The row/column structure is kept (an empty span,
+      // not a removed one) so the image doesn't shift sideways from
+      // losing its number gutter.
       const fontSize = modal ? 18 : 12;
       const topNudge = modal ? 4 : 2;
-      return `<div class="q-part-row"><span class="q-part-number" style="font-size:${fontSize}px;margin-top:${topNudge}px;">${baseQuestionNumber(q)}</span><div class="${cls}">${wrapOpen}${img}${overlayHTML}${wrapClose}</div></div>`;
+      const numberText = state.tier==="Crossover" ? '' : baseQuestionNumber(q);
+      return `<div class="q-part-row"><span class="q-part-number" style="font-size:${fontSize}px;margin-top:${topNudge}px;">${numberText}</span><div class="${cls}">${wrapOpen}${img}${overlayHTML}${wrapClose}</div></div>`;
     }
     return `<div class="${cls}">${wrapOpen}${img}${overlayHTML}${wrapClose}</div>`;
   }
