@@ -168,8 +168,8 @@ body_class: page-gcse-question-bank
   /* Cropped-from-PDF questions: shown left-aligned at a fixed 0.5x of their
      native pixel size (never stretched to fill the card), with no
      "Question N" heading since the number is already baked into the crop. */
-  .q-diagram.q-crop{justify-content:flex-start;padding:2px 0 14px;}
-  .q-diagram.q-crop img{display:block;margin:0;height:auto;}
+  .q-diagram.q-crop{justify-content:flex-start;align-items:center;padding:2px 0 14px;height:150px;overflow:hidden;}
+  .q-diagram.q-crop img{display:block;margin:0;width:auto !important;height:100%;max-width:100%;object-fit:contain;}
   /* Modal has far more horizontal room than a grid card, so its crop uses a
      larger fixed scale (not the grid's 0.5x) - but still a FIXED multiple
      of native size, not stretched to the container. Stretching to width:100%
@@ -1061,9 +1061,9 @@ const QUESTIONS = [
 
 // ===== Foundation-only =====
 
-{qimg:{src:"Sum2017-3F-Q1a",w:728,h:384,needsHeading:false},svg:tblRivers,n:"1(a)",tier:"Foundation",strand:"Number",subtopic:"Ordering numbers",marks:1,paperNum:"3",sitting:"Summer 2017",intro:"The table shows the lengths of five rivers.\nTrent: 297 km, Don: 112 km, Severn: 354 km, Thames: 346 km, Mersey: 113 km",text:"(a) Write down the rivers in order of length.\nStart with the shortest river.",paper:"Papers 2 & 3 (calculator)",answer:"Don, Mersey, Trent, Thames, Severn",markscheme:"B1 accept 112, 113, 297, 346, 354."},
+{qimg:{src:"Sum2017-3F-Q1a",w:2072,h:1396,needsHeading:false},svg:tblRivers,n:"1(a)",tier:"Foundation",strand:"Number",subtopic:"Ordering numbers",marks:1,paperNum:"3",sitting:"Summer 2017",intro:"The table shows the lengths of five rivers.\nTrent: 297 km, Don: 112 km, Severn: 354 km, Thames: 346 km, Mersey: 113 km",text:"(a) Write down the rivers in order of length.\nStart with the shortest river.",paper:"Papers 2 & 3 (calculator)",answer:"Don, Mersey, Trent, Thames, Severn",markscheme:"B1 accept 112, 113, 297, 346, 354."},
 
-{qimg:{src:"Sum2017-3F-Q1b",w:881,h:424,needsHeading:false},n:"1(b)",tier:"Foundation",strand:"Number",subtopic:"Multiplicative reasoning",marks:1,paperNum:"3",sitting:"Summer 2017",text:"Ami says, 'The River Thames is more than three times as long as the River Don.'\n(b) Show that Ami is correct.",paper:"Papers 2 & 3 (calculator)",answer:"Shown",markscheme:"C1 shown with correct values eg (112 × 3 =) 336 (and 346), or 112 + 112 + 112 + 10 = 346, or 346 ÷ 3 = 115(.3..) (and 112), or 346 ÷ 112 = 3.089.. oe."},
+{qimg:{src:"Sum2017-3F-Q1b",w:2072,h:2036,needsHeading:false},n:"1(b)",tier:"Foundation",strand:"Number",subtopic:"Multiplicative reasoning",marks:1,paperNum:"3",sitting:"Summer 2017",text:"Ami says, 'The River Thames is more than three times as long as the River Don.'\n(b) Show that Ami is correct.",paper:"Papers 2 & 3 (calculator)",answer:"Shown",markscheme:"C1 shown with correct values eg (112 × 3 =) 336 (and 346), or 112 + 112 + 112 + 10 = 346, or 346 ÷ 3 = 115(.3..) (and 112), or 346 ÷ 112 = 3.089.. oe."},
 
 {qimg:{src:"Sum2017-3F-Q2",w:920,h:161,needsHeading:false},n:"2",tier:"Foundation",strand:"Algebra",subtopic:"Forming expressions",marks:2,paperNum:"3",sitting:"Summer 2017",text:"Cups are sold in packs and in boxes.\nThere are 12 cups in each pack.\nThere are 18 cups in each box.\nAlison buys p packs of cups and b boxes of cups.\nWrite down an expression, in terms of p and b, for the total number of cups Alison buys.",paper:"Papers 2 & 3 (calculator)",answer:"12p + 18b",markscheme:"M1 12p or 18b or p + b.\nA1 12p + 18b."},
 
