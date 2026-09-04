@@ -168,8 +168,8 @@ body_class: page-gcse-question-bank
   /* Cropped-from-PDF questions: shown left-aligned at a fixed 0.5x of their
      native pixel size (never stretched to fill the card), with no
      "Question N" heading since the number is already baked into the crop. */
-  .q-diagram.q-crop{justify-content:flex-start;align-items:center;padding:2px 0 14px;height:150px;overflow:hidden;}
-  .q-diagram.q-crop img{display:block;margin:0;width:auto !important;height:100%;max-width:100%;object-fit:contain;}
+  .q-diagram.q-crop{justify-content:flex-start;padding:2px 0 14px;}
+  .q-diagram.q-crop img{display:block;margin:0;height:auto;}
   /* Modal has far more horizontal room than a grid card, so its crop uses a
      larger fixed scale (not the grid's 0.5x) - but still a FIXED multiple
      of native size, not stretched to the container. Stretching to width:100%
