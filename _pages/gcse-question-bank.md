@@ -67,6 +67,13 @@ body_class: page-gcse-question-bank
   @media (max-width:480px){
     .filters-grid{grid-template-columns:1fr;justify-content:stretch;}
     .filters-grid > .filter-group{grid-column:1/-1;}
+    #marksToggle button{padding:8px 5px;font-size:.72rem;}
+  }
+  /* Very small/old phone screens (~320px): even tightened padding isn't
+     enough room for "4+ marks" etc. alongside the other four buttons, so
+     drop to bare numbers as a last resort. */
+  @media (max-width:360px){
+    .marks-suffix{display:none;}
   }
 
   .tier-toggle button{
@@ -448,10 +455,10 @@ body_class: page-gcse-question-bank
         <span class="filter-label">Marks</span>
         <div class="tier-toggle" id="marksToggle">
           <button data-marks="all" class="active">All</button>
-          <button data-marks="1">1 mark</button>
-          <button data-marks="2">2 marks</button>
-          <button data-marks="3">3 marks</button>
-          <button data-marks="4+">4+ marks</button>
+          <button data-marks="1">1<span class="marks-suffix"> mark</span></button>
+          <button data-marks="2">2<span class="marks-suffix"> marks</span></button>
+          <button data-marks="3">3<span class="marks-suffix"> marks</span></button>
+          <button data-marks="4+">4+<span class="marks-suffix"> marks</span></button>
         </div>
       </div>
     </div>
@@ -1637,10 +1644,11 @@ document.getElementById("paperToggle").addEventListener('click',e=>{
 });
 
 document.getElementById("marksToggle").addEventListener('click',e=>{
-  if(e.target.tagName!=="BUTTON")return;
-  state.marks=e.target.dataset.marks;
+  const btn=e.target.closest('button');
+  if(!btn)return;
+  state.marks=btn.dataset.marks;
   [...e.currentTarget.children].forEach(b=>b.classList.remove('active'));
-  e.target.classList.add('active');
+  btn.classList.add('active');
   render();
 });
 
