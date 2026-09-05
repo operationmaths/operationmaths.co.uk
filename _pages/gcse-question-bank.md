@@ -67,7 +67,7 @@ body_class: page-gcse-question-bank
   @media (max-width:480px){
     .filters-grid{grid-template-columns:1fr;justify-content:stretch;}
     .filters-grid > .filter-group{grid-column:1/-1;}
-    #marksToggle button{padding:8px 5px;font-size:.72rem;}
+    #marksToggle button:not(:first-child){padding:8px 5px;font-size:.72rem;}
   }
   /* Very small/old phone screens (~320px): even tightened padding isn't
      enough room for "4+ marks" etc. alongside the other four buttons, so
