@@ -308,10 +308,11 @@ table.boundaries-table .pct { display: block; font-size: 11px; font-weight: 400;
   .ggb-print-header {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     margin-bottom: 1.5rem;
   }
   .ggb-print-header img {
-    height: 34px;
+    height: 46px;
     width: auto;
   }
 }
