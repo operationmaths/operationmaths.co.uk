@@ -25,12 +25,12 @@ permalink: /gcse-grade-boundaries/
     <p class="ggb-full-note">Boundaries shown are the total marks needed across all three papers to gain each grade. Figures are published by <a href="https://qualifications.pearson.com/en/support/support-topics/results-certification/grade-boundaries.html" target="_blank" rel="noopener noreferrer">Pearson</a> and <a href="https://www.aqa.org.uk/exams-administration/results-days/grade-boundaries" target="_blank" rel="noopener noreferrer">AQA</a> and are reproduced here for convenience.</p>
 
     <section id="edexcel-foundation" class="ggb-section green">
+      <div class="ggb-print-header">
+        <img src="{{ site.baseurl }}/assets/images/logo.png" alt="Operation Maths">
+      </div>
       <div class="section-heading-row">
         <h2 class="section-heading">Edexcel Foundation</h2>
         <button class="card-cta" onclick="ggbPrint('edexcel-foundation')">Print this table</button>
-      </div>
-      <div class="ggb-print-header">
-        <img src="{{ site.baseurl }}/assets/images/logo.png" alt="Operation Maths">
       </div>
       <table class="boundaries-table">
         <thead>
@@ -60,12 +60,12 @@ permalink: /gcse-grade-boundaries/
     </section>
 
     <section id="edexcel-higher" class="ggb-section purple">
+      <div class="ggb-print-header">
+        <img src="{{ site.baseurl }}/assets/images/logo.png" alt="Operation Maths">
+      </div>
       <div class="section-heading-row">
         <h2 class="section-heading">Edexcel Higher</h2>
         <button class="card-cta" onclick="ggbPrint('edexcel-higher')">Print this table</button>
-      </div>
-      <div class="ggb-print-header">
-        <img src="{{ site.baseurl }}/assets/images/logo.png" alt="Operation Maths">
       </div>
       <table class="boundaries-table">
         <thead>
@@ -95,12 +95,12 @@ permalink: /gcse-grade-boundaries/
     </section>
 
     <section id="aqa-foundation" class="ggb-section green">
+      <div class="ggb-print-header">
+        <img src="{{ site.baseurl }}/assets/images/logo.png" alt="Operation Maths">
+      </div>
       <div class="section-heading-row">
         <h2 class="section-heading">AQA Foundation</h2>
         <button class="card-cta" onclick="ggbPrint('aqa-foundation')">Print this table</button>
-      </div>
-      <div class="ggb-print-header">
-        <img src="{{ site.baseurl }}/assets/images/logo.png" alt="Operation Maths">
       </div>
       <table class="boundaries-table">
         <thead>
@@ -130,12 +130,12 @@ permalink: /gcse-grade-boundaries/
     </section>
 
     <section id="aqa-higher" class="ggb-section purple">
+      <div class="ggb-print-header">
+        <img src="{{ site.baseurl }}/assets/images/logo.png" alt="Operation Maths">
+      </div>
       <div class="section-heading-row">
         <h2 class="section-heading">AQA Higher</h2>
         <button class="card-cta" onclick="ggbPrint('aqa-higher')">Print this table</button>
-      </div>
-      <div class="ggb-print-header">
-        <img src="{{ site.baseurl }}/assets/images/logo.png" alt="Operation Maths">
       </div>
       <table class="boundaries-table">
         <thead>
