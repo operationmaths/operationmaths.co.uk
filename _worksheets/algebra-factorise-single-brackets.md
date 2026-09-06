@@ -10,6 +10,6 @@ show_a_worksheet: true
 show_a_answers: true
 free_pdf: /assets/images/Factorise-single-brackets.pdf
 answers_pdf: /assets/images/Factorise-single-brackets-ANSWERS.pdf
-tes_url: ''
-date_added: ''
+tes_url: https://www.tes.com/teaching-resource/-13567040
+date_added: 2026-09-06 22:24:00
 ---
