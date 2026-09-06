@@ -29,28 +29,32 @@ permalink: /gcse-grade-boundaries/
         <h2 class="section-heading">Edexcel Foundation</h2>
         <button class="card-cta" onclick="ggbPrint('edexcel-foundation')">Print this table</button>
       </div>
+      <div class="ggb-print-header">
+        <div class="om-logo-icon"><span>O</span><span>M</span><span>M</span><span>O</span></div>
+        <span class="om-logo-text">Operation Maths</span>
+      </div>
       <table class="boundaries-table">
         <thead>
           <tr><th>Series</th><th>Max mark</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
         </thead>
         <tbody>
-          <tr><td>Summer 2017</td><td>240</td><td>26<span class="pct">11%</span></td><td>58<span class="pct">24%</span></td><td>90<span class="pct">38%</span></td><td>122<span class="pct">51%</span></td><td>158<span class="pct">66%</span></td></tr>
-          <tr><td>November 2017</td><td>240</td><td>23<span class="pct">10%</span></td><td>53<span class="pct">22%</span></td><td>83<span class="pct">35%</span></td><td>113<span class="pct">47%</span></td><td>145<span class="pct">60%</span></td></tr>
-          <tr><td>Summer 2018</td><td>240</td><td>31<span class="pct">13%</span></td><td>66<span class="pct">28%</span></td><td>101<span class="pct">42%</span></td><td>136<span class="pct">57%</span></td><td>169<span class="pct">70%</span></td></tr>
-          <tr><td>November 2018</td><td>240</td><td>26<span class="pct">11%</span></td><td>61<span class="pct">25%</span></td><td>96<span class="pct">40%</span></td><td>132<span class="pct">55%</span></td><td>167<span class="pct">70%</span></td></tr>
-          <tr><td>Summer 2019</td><td>240</td><td>36<span class="pct">15%</span></td><td>73<span class="pct">30%</span></td><td>111<span class="pct">46%</span></td><td>149<span class="pct">62%</span></td><td>184<span class="pct">77%</span></td></tr>
-          <tr><td>November 2019</td><td>240</td><td>30<span class="pct">13%</span></td><td>67<span class="pct">28%</span></td><td>104<span class="pct">43%</span></td><td>142<span class="pct">59%</span></td><td>166<span class="pct">69%</span></td></tr>
-          <tr><td>November 2020</td><td>240</td><td>27<span class="pct">11%</span></td><td>63<span class="pct">26%</span></td><td>99<span class="pct">41%</span></td><td>136<span class="pct">57%</span></td><td>165<span class="pct">69%</span></td></tr>
-          <tr><td>November 2021</td><td>240</td><td>32<span class="pct">13%</span></td><td>66<span class="pct">28%</span></td><td>100<span class="pct">42%</span></td><td>134<span class="pct">56%</span></td><td>166<span class="pct">69%</span></td></tr>
-          <tr><td>Summer 2022</td><td>240</td><td>32<span class="pct">13%</span></td><td>66<span class="pct">28%</span></td><td>100<span class="pct">42%</span></td><td>135<span class="pct">56%</span></td><td>173<span class="pct">72%</span></td></tr>
-          <tr><td>November 2022</td><td>240</td><td>32<span class="pct">13%</span></td><td>66<span class="pct">28%</span></td><td>100<span class="pct">42%</span></td><td>135<span class="pct">56%</span></td><td>173<span class="pct">72%</span></td></tr>
-          <tr><td>Summer 2023</td><td>240</td><td>33<span class="pct">14%</span></td><td>71<span class="pct">30%</span></td><td>109<span class="pct">45%</span></td><td>147<span class="pct">61%</span></td><td>182<span class="pct">76%</span></td></tr>
-          <tr><td>November 2023</td><td>240</td><td>33<span class="pct">14%</span></td><td>68<span class="pct">28%</span></td><td>104<span class="pct">43%</span></td><td>140<span class="pct">58%</span></td><td>175<span class="pct">73%</span></td></tr>
-          <tr><td>Summer 2024</td><td>240</td><td>27<span class="pct">11%</span></td><td>65<span class="pct">27%</span></td><td>103<span class="pct">43%</span></td><td>142<span class="pct">59%</span></td><td>175<span class="pct">73%</span></td></tr>
-          <tr><td>November 2024</td><td>240</td><td>29<span class="pct">12%</span></td><td>66<span class="pct">28%</span></td><td>103<span class="pct">43%</span></td><td>141<span class="pct">59%</span></td><td>174<span class="pct">73%</span></td></tr>
-          <tr><td>Summer 2025</td><td>240</td><td>29<span class="pct">12%</span></td><td>67<span class="pct">28%</span></td><td>105<span class="pct">44%</span></td><td>144<span class="pct">60%</span></td><td>175<span class="pct">73%</span></td></tr>
-          <tr><td>November 2025</td><td>240</td><td>29<span class="pct">12%</span></td><td>67<span class="pct">28%</span></td><td>105<span class="pct">44%</span></td><td>143<span class="pct">60%</span></td><td>174<span class="pct">73%</span></td></tr>
           <tr><td>Summer 2026</td><td>240</td><td>29<span class="pct">12%</span></td><td>69<span class="pct">29%</span></td><td>110<span class="pct">46%</span></td><td>151<span class="pct">63%</span></td><td>181<span class="pct">75%</span></td></tr>
+          <tr><td>November 2025</td><td>240</td><td>29<span class="pct">12%</span></td><td>67<span class="pct">28%</span></td><td>105<span class="pct">44%</span></td><td>143<span class="pct">60%</span></td><td>174<span class="pct">73%</span></td></tr>
+          <tr><td>Summer 2025</td><td>240</td><td>29<span class="pct">12%</span></td><td>67<span class="pct">28%</span></td><td>105<span class="pct">44%</span></td><td>144<span class="pct">60%</span></td><td>175<span class="pct">73%</span></td></tr>
+          <tr><td>November 2024</td><td>240</td><td>29<span class="pct">12%</span></td><td>66<span class="pct">28%</span></td><td>103<span class="pct">43%</span></td><td>141<span class="pct">59%</span></td><td>174<span class="pct">73%</span></td></tr>
+          <tr><td>Summer 2024</td><td>240</td><td>27<span class="pct">11%</span></td><td>65<span class="pct">27%</span></td><td>103<span class="pct">43%</span></td><td>142<span class="pct">59%</span></td><td>175<span class="pct">73%</span></td></tr>
+          <tr><td>November 2023</td><td>240</td><td>33<span class="pct">14%</span></td><td>68<span class="pct">28%</span></td><td>104<span class="pct">43%</span></td><td>140<span class="pct">58%</span></td><td>175<span class="pct">73%</span></td></tr>
+          <tr><td>Summer 2023</td><td>240</td><td>33<span class="pct">14%</span></td><td>71<span class="pct">30%</span></td><td>109<span class="pct">45%</span></td><td>147<span class="pct">61%</span></td><td>182<span class="pct">76%</span></td></tr>
+          <tr><td>November 2022</td><td>240</td><td>32<span class="pct">13%</span></td><td>66<span class="pct">28%</span></td><td>100<span class="pct">42%</span></td><td>135<span class="pct">56%</span></td><td>173<span class="pct">72%</span></td></tr>
+          <tr><td>Summer 2022</td><td>240</td><td>32<span class="pct">13%</span></td><td>66<span class="pct">28%</span></td><td>100<span class="pct">42%</span></td><td>135<span class="pct">56%</span></td><td>173<span class="pct">72%</span></td></tr>
+          <tr><td>November 2021</td><td>240</td><td>32<span class="pct">13%</span></td><td>66<span class="pct">28%</span></td><td>100<span class="pct">42%</span></td><td>134<span class="pct">56%</span></td><td>166<span class="pct">69%</span></td></tr>
+          <tr><td>November 2020</td><td>240</td><td>27<span class="pct">11%</span></td><td>63<span class="pct">26%</span></td><td>99<span class="pct">41%</span></td><td>136<span class="pct">57%</span></td><td>165<span class="pct">69%</span></td></tr>
+          <tr><td>November 2019</td><td>240</td><td>30<span class="pct">13%</span></td><td>67<span class="pct">28%</span></td><td>104<span class="pct">43%</span></td><td>142<span class="pct">59%</span></td><td>166<span class="pct">69%</span></td></tr>
+          <tr><td>Summer 2019</td><td>240</td><td>36<span class="pct">15%</span></td><td>73<span class="pct">30%</span></td><td>111<span class="pct">46%</span></td><td>149<span class="pct">62%</span></td><td>184<span class="pct">77%</span></td></tr>
+          <tr><td>November 2018</td><td>240</td><td>26<span class="pct">11%</span></td><td>61<span class="pct">25%</span></td><td>96<span class="pct">40%</span></td><td>132<span class="pct">55%</span></td><td>167<span class="pct">70%</span></td></tr>
+          <tr><td>Summer 2018</td><td>240</td><td>31<span class="pct">13%</span></td><td>66<span class="pct">28%</span></td><td>101<span class="pct">42%</span></td><td>136<span class="pct">57%</span></td><td>169<span class="pct">70%</span></td></tr>
+          <tr><td>November 2017</td><td>240</td><td>23<span class="pct">10%</span></td><td>53<span class="pct">22%</span></td><td>83<span class="pct">35%</span></td><td>113<span class="pct">47%</span></td><td>145<span class="pct">60%</span></td></tr>
+          <tr><td>Summer 2017</td><td>240</td><td>26<span class="pct">11%</span></td><td>58<span class="pct">24%</span></td><td>90<span class="pct">38%</span></td><td>122<span class="pct">51%</span></td><td>158<span class="pct">66%</span></td></tr>
         </tbody>
       </table>
       <p class="back-to-top-inline"><a href="#top">Back to top</a></p>
@@ -61,28 +65,32 @@ permalink: /gcse-grade-boundaries/
         <h2 class="section-heading">Edexcel Higher</h2>
         <button class="card-cta" onclick="ggbPrint('edexcel-higher')">Print this table</button>
       </div>
+      <div class="ggb-print-header">
+        <div class="om-logo-icon"><span>O</span><span>M</span><span>M</span><span>O</span></div>
+        <span class="om-logo-text">Operation Maths</span>
+      </div>
       <table class="boundaries-table">
         <thead>
           <tr><th>Series</th><th>Max mark</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th></tr>
         </thead>
         <tbody>
-          <tr><td>Summer 2017</td><td>240</td><td>27<span class="pct">11%</span></td><td>41<span class="pct">17%</span></td><td>68<span class="pct">28%</span></td><td>96<span class="pct">40%</span></td><td>124<span class="pct">52%</span></td><td>157<span class="pct">65%</span></td><td>190<span class="pct">79%</span></td></tr>
-          <tr><td>November 2017</td><td>240</td><td>19<span class="pct">8%</span></td><td>32<span class="pct">13%</span></td><td>58<span class="pct">24%</span></td><td>85<span class="pct">35%</span></td><td>112<span class="pct">47%</span></td><td>150<span class="pct">63%</span></td><td>189<span class="pct">79%</span></td></tr>
-          <tr><td>Summer 2018</td><td>240</td><td>35<span class="pct">15%</span></td><td>50<span class="pct">21%</span></td><td>79<span class="pct">33%</span></td><td>109<span class="pct">45%</span></td><td>139<span class="pct">58%</span></td><td>170<span class="pct">71%</span></td><td>202<span class="pct">84%</span></td></tr>
-          <tr><td>November 2018</td><td>240</td><td>22<span class="pct">9%</span></td><td>37<span class="pct">15%</span></td><td>66<span class="pct">28%</span></td><td>95<span class="pct">40%</span></td><td>125<span class="pct">52%</span></td><td>159<span class="pct">66%</span></td><td>194<span class="pct">81%</span></td></tr>
-          <tr><td>Summer 2019</td><td>240</td><td>38<span class="pct">16%</span></td><td>52<span class="pct">22%</span></td><td>80<span class="pct">33%</span></td><td>108<span class="pct">45%</span></td><td>137<span class="pct">57%</span></td><td>167<span class="pct">70%</span></td><td>198<span class="pct">83%</span></td></tr>
-          <tr><td>November 2019</td><td>240</td><td>28<span class="pct">12%</span></td><td>43<span class="pct">18%</span></td><td>73<span class="pct">30%</span></td><td>103<span class="pct">43%</span></td><td>133<span class="pct">55%</span></td><td>165<span class="pct">69%</span></td><td>197<span class="pct">82%</span></td></tr>
-          <tr><td>November 2020</td><td>240</td><td>22<span class="pct">9%</span></td><td>37<span class="pct">15%</span></td><td>66<span class="pct">28%</span></td><td>96<span class="pct">40%</span></td><td>126<span class="pct">53%</span></td><td>157<span class="pct">65%</span></td><td>189<span class="pct">79%</span></td></tr>
-          <tr><td>November 2021</td><td>240</td><td>23<span class="pct">10%</span></td><td>37<span class="pct">15%</span></td><td>65<span class="pct">27%</span></td><td>93<span class="pct">39%</span></td><td>122<span class="pct">51%</span></td><td>154<span class="pct">64%</span></td><td>187<span class="pct">78%</span></td></tr>
-          <tr><td>Summer 2022</td><td>240</td><td>21<span class="pct">9%</span></td><td>38<span class="pct">16%</span></td><td>71<span class="pct">30%</span></td><td>104<span class="pct">43%</span></td><td>137<span class="pct">57%</span></td><td>165<span class="pct">69%</span></td><td>194<span class="pct">81%</span></td></tr>
-          <tr><td>November 2022</td><td>240</td><td>21<span class="pct">9%</span></td><td>38<span class="pct">16%</span></td><td>71<span class="pct">30%</span></td><td>104<span class="pct">43%</span></td><td>137<span class="pct">57%</span></td><td>165<span class="pct">69%</span></td><td>194<span class="pct">81%</span></td></tr>
-          <tr><td>Summer 2023</td><td>240</td><td>31<span class="pct">13%</span></td><td>47<span class="pct">20%</span></td><td>79<span class="pct">33%</span></td><td>112<span class="pct">47%</span></td><td>145<span class="pct">60%</span></td><td>174<span class="pct">73%</span></td><td>203<span class="pct">85%</span></td></tr>
-          <tr><td>November 2023</td><td>240</td><td>31<span class="pct">13%</span></td><td>47<span class="pct">20%</span></td><td>79<span class="pct">33%</span></td><td>112<span class="pct">47%</span></td><td>145<span class="pct">60%</span></td><td>174<span class="pct">73%</span></td><td>203<span class="pct">85%</span></td></tr>
-          <tr><td>Summer 2024</td><td>240</td><td>26<span class="pct">11%</span></td><td>42<span class="pct">18%</span></td><td>73<span class="pct">30%</span></td><td>105<span class="pct">44%</span></td><td>137<span class="pct">57%</span></td><td>167<span class="pct">70%</span></td><td>197<span class="pct">82%</span></td></tr>
-          <tr><td>November 2024</td><td>240</td><td>27<span class="pct">11%</span></td><td>43<span class="pct">18%</span></td><td>75<span class="pct">31%</span></td><td>107<span class="pct">45%</span></td><td>140<span class="pct">58%</span></td><td>170<span class="pct">71%</span></td><td>200<span class="pct">83%</span></td></tr>
-          <tr><td>Summer 2025</td><td>240</td><td>36<span class="pct">15%</span></td><td>53<span class="pct">22%</span></td><td>87<span class="pct">36%</span></td><td>121<span class="pct">50%</span></td><td>156<span class="pct">65%</span></td><td>186<span class="pct">78%</span></td><td>217<span class="pct">90%</span></td></tr>
-          <tr><td>November 2025</td><td>240</td><td>34<span class="pct">14%</span></td><td>51<span class="pct">21%</span></td><td>85<span class="pct">35%</span></td><td>119<span class="pct">50%</span></td><td>153<span class="pct">64%</span></td><td>182<span class="pct">76%</span></td><td>211<span class="pct">88%</span></td></tr>
           <tr><td>Summer 2026</td><td>240</td><td>34<span class="pct">14%</span></td><td>50<span class="pct">21%</span></td><td>82<span class="pct">34%</span></td><td>114<span class="pct">48%</span></td><td>146<span class="pct">61%</span></td><td>177<span class="pct">74%</span></td><td>208<span class="pct">87%</span></td></tr>
+          <tr><td>November 2025</td><td>240</td><td>34<span class="pct">14%</span></td><td>51<span class="pct">21%</span></td><td>85<span class="pct">35%</span></td><td>119<span class="pct">50%</span></td><td>153<span class="pct">64%</span></td><td>182<span class="pct">76%</span></td><td>211<span class="pct">88%</span></td></tr>
+          <tr><td>Summer 2025</td><td>240</td><td>36<span class="pct">15%</span></td><td>53<span class="pct">22%</span></td><td>87<span class="pct">36%</span></td><td>121<span class="pct">50%</span></td><td>156<span class="pct">65%</span></td><td>186<span class="pct">78%</span></td><td>217<span class="pct">90%</span></td></tr>
+          <tr><td>November 2024</td><td>240</td><td>27<span class="pct">11%</span></td><td>43<span class="pct">18%</span></td><td>75<span class="pct">31%</span></td><td>107<span class="pct">45%</span></td><td>140<span class="pct">58%</span></td><td>170<span class="pct">71%</span></td><td>200<span class="pct">83%</span></td></tr>
+          <tr><td>Summer 2024</td><td>240</td><td>26<span class="pct">11%</span></td><td>42<span class="pct">18%</span></td><td>73<span class="pct">30%</span></td><td>105<span class="pct">44%</span></td><td>137<span class="pct">57%</span></td><td>167<span class="pct">70%</span></td><td>197<span class="pct">82%</span></td></tr>
+          <tr><td>November 2023</td><td>240</td><td>31<span class="pct">13%</span></td><td>47<span class="pct">20%</span></td><td>79<span class="pct">33%</span></td><td>112<span class="pct">47%</span></td><td>145<span class="pct">60%</span></td><td>174<span class="pct">73%</span></td><td>203<span class="pct">85%</span></td></tr>
+          <tr><td>Summer 2023</td><td>240</td><td>31<span class="pct">13%</span></td><td>47<span class="pct">20%</span></td><td>79<span class="pct">33%</span></td><td>112<span class="pct">47%</span></td><td>145<span class="pct">60%</span></td><td>174<span class="pct">73%</span></td><td>203<span class="pct">85%</span></td></tr>
+          <tr><td>November 2022</td><td>240</td><td>21<span class="pct">9%</span></td><td>38<span class="pct">16%</span></td><td>71<span class="pct">30%</span></td><td>104<span class="pct">43%</span></td><td>137<span class="pct">57%</span></td><td>165<span class="pct">69%</span></td><td>194<span class="pct">81%</span></td></tr>
+          <tr><td>Summer 2022</td><td>240</td><td>21<span class="pct">9%</span></td><td>38<span class="pct">16%</span></td><td>71<span class="pct">30%</span></td><td>104<span class="pct">43%</span></td><td>137<span class="pct">57%</span></td><td>165<span class="pct">69%</span></td><td>194<span class="pct">81%</span></td></tr>
+          <tr><td>November 2021</td><td>240</td><td>23<span class="pct">10%</span></td><td>37<span class="pct">15%</span></td><td>65<span class="pct">27%</span></td><td>93<span class="pct">39%</span></td><td>122<span class="pct">51%</span></td><td>154<span class="pct">64%</span></td><td>187<span class="pct">78%</span></td></tr>
+          <tr><td>November 2020</td><td>240</td><td>22<span class="pct">9%</span></td><td>37<span class="pct">15%</span></td><td>66<span class="pct">28%</span></td><td>96<span class="pct">40%</span></td><td>126<span class="pct">53%</span></td><td>157<span class="pct">65%</span></td><td>189<span class="pct">79%</span></td></tr>
+          <tr><td>November 2019</td><td>240</td><td>28<span class="pct">12%</span></td><td>43<span class="pct">18%</span></td><td>73<span class="pct">30%</span></td><td>103<span class="pct">43%</span></td><td>133<span class="pct">55%</span></td><td>165<span class="pct">69%</span></td><td>197<span class="pct">82%</span></td></tr>
+          <tr><td>Summer 2019</td><td>240</td><td>38<span class="pct">16%</span></td><td>52<span class="pct">22%</span></td><td>80<span class="pct">33%</span></td><td>108<span class="pct">45%</span></td><td>137<span class="pct">57%</span></td><td>167<span class="pct">70%</span></td><td>198<span class="pct">83%</span></td></tr>
+          <tr><td>November 2018</td><td>240</td><td>22<span class="pct">9%</span></td><td>37<span class="pct">15%</span></td><td>66<span class="pct">28%</span></td><td>95<span class="pct">40%</span></td><td>125<span class="pct">52%</span></td><td>159<span class="pct">66%</span></td><td>194<span class="pct">81%</span></td></tr>
+          <tr><td>Summer 2018</td><td>240</td><td>35<span class="pct">15%</span></td><td>50<span class="pct">21%</span></td><td>79<span class="pct">33%</span></td><td>109<span class="pct">45%</span></td><td>139<span class="pct">58%</span></td><td>170<span class="pct">71%</span></td><td>202<span class="pct">84%</span></td></tr>
+          <tr><td>November 2017</td><td>240</td><td>19<span class="pct">8%</span></td><td>32<span class="pct">13%</span></td><td>58<span class="pct">24%</span></td><td>85<span class="pct">35%</span></td><td>112<span class="pct">47%</span></td><td>150<span class="pct">63%</span></td><td>189<span class="pct">79%</span></td></tr>
+          <tr><td>Summer 2017</td><td>240</td><td>27<span class="pct">11%</span></td><td>41<span class="pct">17%</span></td><td>68<span class="pct">28%</span></td><td>96<span class="pct">40%</span></td><td>124<span class="pct">52%</span></td><td>157<span class="pct">65%</span></td><td>190<span class="pct">79%</span></td></tr>
         </tbody>
       </table>
       <p class="back-to-top-inline"><a href="#top">Back to top</a></p>
@@ -93,28 +101,32 @@ permalink: /gcse-grade-boundaries/
         <h2 class="section-heading">AQA Foundation</h2>
         <button class="card-cta" onclick="ggbPrint('aqa-foundation')">Print this table</button>
       </div>
+      <div class="ggb-print-header">
+        <div class="om-logo-icon"><span>O</span><span>M</span><span>M</span><span>O</span></div>
+        <span class="om-logo-text">Operation Maths</span>
+      </div>
       <table class="boundaries-table">
         <thead>
           <tr><th>Series</th><th>Max mark</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
         </thead>
         <tbody>
-          <tr><td>Summer 2017</td><td>240</td><td>27<span class="pct">11%</span></td><td>59<span class="pct">25%</span></td><td>91<span class="pct">38%</span></td><td>124<span class="pct">52%</span></td><td>156<span class="pct">65%</span></td></tr>
-          <tr><td>November 2017</td><td>240</td><td>25<span class="pct">10%</span></td><td>59<span class="pct">25%</span></td><td>93<span class="pct">39%</span></td><td>127<span class="pct">53%</span></td><td>157<span class="pct">65%</span></td></tr>
-          <tr><td>Summer 2018</td><td>240</td><td>27<span class="pct">11%</span></td><td>59<span class="pct">25%</span></td><td>92<span class="pct">38%</span></td><td>125<span class="pct">52%</span></td><td>161<span class="pct">67%</span></td></tr>
-          <tr><td>November 2018</td><td>240</td><td>24<span class="pct">10%</span></td><td>56<span class="pct">23%</span></td><td>88<span class="pct">37%</span></td><td>121<span class="pct">50%</span></td><td>153<span class="pct">64%</span></td></tr>
-          <tr><td>Summer 2019</td><td>240</td><td>25<span class="pct">10%</span></td><td>57<span class="pct">24%</span></td><td>89<span class="pct">37%</span></td><td>122<span class="pct">51%</span></td><td>157<span class="pct">65%</span></td></tr>
-          <tr><td>November 2019</td><td>240</td><td>27<span class="pct">11%</span></td><td>62<span class="pct">26%</span></td><td>98<span class="pct">41%</span></td><td>134<span class="pct">56%</span></td><td>162<span class="pct">68%</span></td></tr>
-          <tr><td>November 2020</td><td>240</td><td>26<span class="pct">11%</span></td><td>56<span class="pct">23%</span></td><td>86<span class="pct">36%</span></td><td>116<span class="pct">48%</span></td><td>146<span class="pct">61%</span></td></tr>
-          <tr><td>November 2021</td><td>240</td><td>23<span class="pct">10%</span></td><td>51<span class="pct">21%</span></td><td>79<span class="pct">33%</span></td><td>108<span class="pct">45%</span></td><td>145<span class="pct">60%</span></td></tr>
-          <tr><td>Summer 2022</td><td>240</td><td>33<span class="pct">14%</span></td><td>67<span class="pct">28%</span></td><td>101<span class="pct">42%</span></td><td>135<span class="pct">56%</span></td><td>172<span class="pct">72%</span></td></tr>
-          <tr><td>November 2022</td><td>240</td><td>31<span class="pct">13%</span></td><td>64<span class="pct">27%</span></td><td>97<span class="pct">40%</span></td><td>130<span class="pct">54%</span></td><td>167<span class="pct">70%</span></td></tr>
-          <tr><td>Summer 2023</td><td>240</td><td>35<span class="pct">15%</span></td><td>76<span class="pct">32%</span></td><td>117<span class="pct">49%</span></td><td>158<span class="pct">66%</span></td><td>189<span class="pct">79%</span></td></tr>
-          <tr><td>November 2023</td><td>240</td><td>33<span class="pct">14%</span></td><td>67<span class="pct">28%</span></td><td>101<span class="pct">42%</span></td><td>135<span class="pct">56%</span></td><td>166<span class="pct">69%</span></td></tr>
-          <tr><td>Summer 2024</td><td>240</td><td>37<span class="pct">15%</span></td><td>77<span class="pct">32%</span></td><td>117<span class="pct">49%</span></td><td>157<span class="pct">65%</span></td><td>186<span class="pct">78%</span></td></tr>
-          <tr><td>November 2024</td><td>240</td><td>37<span class="pct">15%</span></td><td>77<span class="pct">32%</span></td><td>117<span class="pct">49%</span></td><td>157<span class="pct">65%</span></td><td>186<span class="pct">78%</span></td></tr>
-          <tr><td>Summer 2025</td><td>240</td><td>39<span class="pct">16%</span></td><td>79<span class="pct">33%</span></td><td>119<span class="pct">50%</span></td><td>160<span class="pct">67%</span></td><td>188<span class="pct">78%</span></td></tr>
-          <tr><td>November 2025</td><td>240</td><td>39<span class="pct">16%</span></td><td>78<span class="pct">33%</span></td><td>118<span class="pct">49%</span></td><td>158<span class="pct">66%</span></td><td>186<span class="pct">78%</span></td></tr>
           <tr><td>Summer 2026</td><td>240</td><td>38<span class="pct">16%</span></td><td>76<span class="pct">32%</span></td><td>115<span class="pct">48%</span></td><td>154<span class="pct">64%</span></td><td>187<span class="pct">78%</span></td></tr>
+          <tr><td>November 2025</td><td>240</td><td>39<span class="pct">16%</span></td><td>78<span class="pct">33%</span></td><td>118<span class="pct">49%</span></td><td>158<span class="pct">66%</span></td><td>186<span class="pct">78%</span></td></tr>
+          <tr><td>Summer 2025</td><td>240</td><td>39<span class="pct">16%</span></td><td>79<span class="pct">33%</span></td><td>119<span class="pct">50%</span></td><td>160<span class="pct">67%</span></td><td>188<span class="pct">78%</span></td></tr>
+          <tr><td>November 2024</td><td>240</td><td>37<span class="pct">15%</span></td><td>77<span class="pct">32%</span></td><td>117<span class="pct">49%</span></td><td>157<span class="pct">65%</span></td><td>186<span class="pct">78%</span></td></tr>
+          <tr><td>Summer 2024</td><td>240</td><td>37<span class="pct">15%</span></td><td>77<span class="pct">32%</span></td><td>117<span class="pct">49%</span></td><td>157<span class="pct">65%</span></td><td>186<span class="pct">78%</span></td></tr>
+          <tr><td>November 2023</td><td>240</td><td>33<span class="pct">14%</span></td><td>67<span class="pct">28%</span></td><td>101<span class="pct">42%</span></td><td>135<span class="pct">56%</span></td><td>166<span class="pct">69%</span></td></tr>
+          <tr><td>Summer 2023</td><td>240</td><td>35<span class="pct">15%</span></td><td>76<span class="pct">32%</span></td><td>117<span class="pct">49%</span></td><td>158<span class="pct">66%</span></td><td>189<span class="pct">79%</span></td></tr>
+          <tr><td>November 2022</td><td>240</td><td>31<span class="pct">13%</span></td><td>64<span class="pct">27%</span></td><td>97<span class="pct">40%</span></td><td>130<span class="pct">54%</span></td><td>167<span class="pct">70%</span></td></tr>
+          <tr><td>Summer 2022</td><td>240</td><td>33<span class="pct">14%</span></td><td>67<span class="pct">28%</span></td><td>101<span class="pct">42%</span></td><td>135<span class="pct">56%</span></td><td>172<span class="pct">72%</span></td></tr>
+          <tr><td>November 2021</td><td>240</td><td>23<span class="pct">10%</span></td><td>51<span class="pct">21%</span></td><td>79<span class="pct">33%</span></td><td>108<span class="pct">45%</span></td><td>145<span class="pct">60%</span></td></tr>
+          <tr><td>November 2020</td><td>240</td><td>26<span class="pct">11%</span></td><td>56<span class="pct">23%</span></td><td>86<span class="pct">36%</span></td><td>116<span class="pct">48%</span></td><td>146<span class="pct">61%</span></td></tr>
+          <tr><td>November 2019</td><td>240</td><td>27<span class="pct">11%</span></td><td>62<span class="pct">26%</span></td><td>98<span class="pct">41%</span></td><td>134<span class="pct">56%</span></td><td>162<span class="pct">68%</span></td></tr>
+          <tr><td>Summer 2019</td><td>240</td><td>25<span class="pct">10%</span></td><td>57<span class="pct">24%</span></td><td>89<span class="pct">37%</span></td><td>122<span class="pct">51%</span></td><td>157<span class="pct">65%</span></td></tr>
+          <tr><td>November 2018</td><td>240</td><td>24<span class="pct">10%</span></td><td>56<span class="pct">23%</span></td><td>88<span class="pct">37%</span></td><td>121<span class="pct">50%</span></td><td>153<span class="pct">64%</span></td></tr>
+          <tr><td>Summer 2018</td><td>240</td><td>27<span class="pct">11%</span></td><td>59<span class="pct">25%</span></td><td>92<span class="pct">38%</span></td><td>125<span class="pct">52%</span></td><td>161<span class="pct">67%</span></td></tr>
+          <tr><td>November 2017</td><td>240</td><td>25<span class="pct">10%</span></td><td>59<span class="pct">25%</span></td><td>93<span class="pct">39%</span></td><td>127<span class="pct">53%</span></td><td>157<span class="pct">65%</span></td></tr>
+          <tr><td>Summer 2017</td><td>240</td><td>27<span class="pct">11%</span></td><td>59<span class="pct">25%</span></td><td>91<span class="pct">38%</span></td><td>124<span class="pct">52%</span></td><td>156<span class="pct">65%</span></td></tr>
         </tbody>
       </table>
       <p class="back-to-top-inline"><a href="#top">Back to top</a></p>
@@ -125,28 +137,32 @@ permalink: /gcse-grade-boundaries/
         <h2 class="section-heading">AQA Higher</h2>
         <button class="card-cta" onclick="ggbPrint('aqa-higher')">Print this table</button>
       </div>
+      <div class="ggb-print-header">
+        <div class="om-logo-icon"><span>O</span><span>M</span><span>M</span><span>O</span></div>
+        <span class="om-logo-text">Operation Maths</span>
+      </div>
       <table class="boundaries-table">
         <thead>
           <tr><th>Series</th><th>Max mark</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th></tr>
         </thead>
         <tbody>
-          <tr><td>Summer 2017</td><td>240</td><td>33<span class="pct">14%</span></td><td>46<span class="pct">19%</span></td><td>72<span class="pct">30%</span></td><td>98<span class="pct">41%</span></td><td>125<span class="pct">52%</span></td><td>157<span class="pct">65%</span></td><td>189<span class="pct">79%</span></td></tr>
-          <tr><td>November 2017</td><td>240</td><td>26<span class="pct">11%</span></td><td>40<span class="pct">17%</span></td><td>68<span class="pct">28%</span></td><td>96<span class="pct">40%</span></td><td>124<span class="pct">52%</span></td><td>159<span class="pct">66%</span></td><td>194<span class="pct">81%</span></td></tr>
-          <tr><td>Summer 2018</td><td>240</td><td>32<span class="pct">13%</span></td><td>47<span class="pct">20%</span></td><td>77<span class="pct">32%</span></td><td>107<span class="pct">45%</span></td><td>138<span class="pct">58%</span></td><td>169<span class="pct">70%</span></td><td>201<span class="pct">84%</span></td></tr>
-          <tr><td>November 2018</td><td>240</td><td>22<span class="pct">9%</span></td><td>37<span class="pct">15%</span></td><td>66<span class="pct">28%</span></td><td>96<span class="pct">40%</span></td><td>126<span class="pct">53%</span></td><td>160<span class="pct">67%</span></td><td>194<span class="pct">81%</span></td></tr>
-          <tr><td>Summer 2019</td><td>240</td><td>27<span class="pct">11%</span></td><td>43<span class="pct">18%</span></td><td>74<span class="pct">31%</span></td><td>105<span class="pct">44%</span></td><td>136<span class="pct">57%</span></td><td>171<span class="pct">71%</span></td><td>206<span class="pct">86%</span></td></tr>
-          <tr><td>November 2019</td><td>240</td><td>34<span class="pct">14%</span></td><td>49<span class="pct">20%</span></td><td>78<span class="pct">33%</span></td><td>107<span class="pct">45%</span></td><td>137<span class="pct">57%</span></td><td>168<span class="pct">70%</span></td><td>199<span class="pct">83%</span></td></tr>
-          <tr><td>November 2020</td><td>240</td><td>25<span class="pct">10%</span></td><td>39<span class="pct">16%</span></td><td>67<span class="pct">28%</span></td><td>95<span class="pct">40%</span></td><td>124<span class="pct">52%</span></td><td>159<span class="pct">66%</span></td><td>194<span class="pct">81%</span></td></tr>
-          <tr><td>November 2021</td><td>240</td><td>20<span class="pct">8%</span></td><td>34<span class="pct">14%</span></td><td>62<span class="pct">26%</span></td><td>90<span class="pct">38%</span></td><td>119<span class="pct">50%</span></td><td>155<span class="pct">65%</span></td><td>192<span class="pct">80%</span></td></tr>
-          <tr><td>Summer 2022</td><td>240</td><td>33<span class="pct">14%</span></td><td>51<span class="pct">21%</span></td><td>86<span class="pct">36%</span></td><td>121<span class="pct">50%</span></td><td>156<span class="pct">65%</span></td><td>185<span class="pct">77%</span></td><td>214<span class="pct">89%</span></td></tr>
-          <tr><td>November 2022</td><td>240</td><td>32<span class="pct">13%</span></td><td>48<span class="pct">20%</span></td><td>79<span class="pct">33%</span></td><td>111<span class="pct">46%</span></td><td>143<span class="pct">60%</span></td><td>172<span class="pct">72%</span></td><td>201<span class="pct">84%</span></td></tr>
-          <tr><td>Summer 2023</td><td>240</td><td>42<span class="pct">18%</span></td><td>59<span class="pct">25%</span></td><td>92<span class="pct">38%</span></td><td>125<span class="pct">52%</span></td><td>158<span class="pct">66%</span></td><td>186<span class="pct">78%</span></td><td>214<span class="pct">89%</span></td></tr>
-          <tr><td>November 2023</td><td>240</td><td>26<span class="pct">11%</span></td><td>44<span class="pct">18%</span></td><td>79<span class="pct">33%</span></td><td>114<span class="pct">48%</span></td><td>150<span class="pct">63%</span></td><td>178<span class="pct">74%</span></td><td>206<span class="pct">86%</span></td></tr>
-          <tr><td>Summer 2024</td><td>240</td><td>44<span class="pct">18%</span></td><td>61<span class="pct">25%</span></td><td>95<span class="pct">40%</span></td><td>129<span class="pct">54%</span></td><td>163<span class="pct">68%</span></td><td>191<span class="pct">80%</span></td><td>219<span class="pct">91%</span></td></tr>
-          <tr><td>November 2024</td><td>240</td><td>45<span class="pct">19%</span></td><td>61<span class="pct">25%</span></td><td>93<span class="pct">39%</span></td><td>125<span class="pct">52%</span></td><td>157<span class="pct">65%</span></td><td>184<span class="pct">77%</span></td><td>212<span class="pct">88%</span></td></tr>
-          <tr><td>Summer 2025</td><td>240</td><td>46<span class="pct">19%</span></td><td>63<span class="pct">26%</span></td><td>96<span class="pct">40%</span></td><td>130<span class="pct">54%</span></td><td>164<span class="pct">68%</span></td><td>191<span class="pct">80%</span></td><td>219<span class="pct">91%</span></td></tr>
-          <tr><td>November 2025</td><td>240</td><td>47<span class="pct">20%</span></td><td>63<span class="pct">26%</span></td><td>94<span class="pct">39%</span></td><td>126<span class="pct">53%</span></td><td>158<span class="pct">66%</span></td><td>185<span class="pct">77%</span></td><td>212<span class="pct">88%</span></td></tr>
           <tr><td>Summer 2026</td><td>240</td><td>46<span class="pct">19%</span></td><td>63<span class="pct">26%</span></td><td>97<span class="pct">40%</span></td><td>131<span class="pct">55%</span></td><td>166<span class="pct">69%</span></td><td>192<span class="pct">80%</span></td><td>219<span class="pct">91%</span></td></tr>
+          <tr><td>November 2025</td><td>240</td><td>47<span class="pct">20%</span></td><td>63<span class="pct">26%</span></td><td>94<span class="pct">39%</span></td><td>126<span class="pct">53%</span></td><td>158<span class="pct">66%</span></td><td>185<span class="pct">77%</span></td><td>212<span class="pct">88%</span></td></tr>
+          <tr><td>Summer 2025</td><td>240</td><td>46<span class="pct">19%</span></td><td>63<span class="pct">26%</span></td><td>96<span class="pct">40%</span></td><td>130<span class="pct">54%</span></td><td>164<span class="pct">68%</span></td><td>191<span class="pct">80%</span></td><td>219<span class="pct">91%</span></td></tr>
+          <tr><td>November 2024</td><td>240</td><td>45<span class="pct">19%</span></td><td>61<span class="pct">25%</span></td><td>93<span class="pct">39%</span></td><td>125<span class="pct">52%</span></td><td>157<span class="pct">65%</span></td><td>184<span class="pct">77%</span></td><td>212<span class="pct">88%</span></td></tr>
+          <tr><td>Summer 2024</td><td>240</td><td>44<span class="pct">18%</span></td><td>61<span class="pct">25%</span></td><td>95<span class="pct">40%</span></td><td>129<span class="pct">54%</span></td><td>163<span class="pct">68%</span></td><td>191<span class="pct">80%</span></td><td>219<span class="pct">91%</span></td></tr>
+          <tr><td>November 2023</td><td>240</td><td>26<span class="pct">11%</span></td><td>44<span class="pct">18%</span></td><td>79<span class="pct">33%</span></td><td>114<span class="pct">48%</span></td><td>150<span class="pct">63%</span></td><td>178<span class="pct">74%</span></td><td>206<span class="pct">86%</span></td></tr>
+          <tr><td>Summer 2023</td><td>240</td><td>42<span class="pct">18%</span></td><td>59<span class="pct">25%</span></td><td>92<span class="pct">38%</span></td><td>125<span class="pct">52%</span></td><td>158<span class="pct">66%</span></td><td>186<span class="pct">78%</span></td><td>214<span class="pct">89%</span></td></tr>
+          <tr><td>November 2022</td><td>240</td><td>32<span class="pct">13%</span></td><td>48<span class="pct">20%</span></td><td>79<span class="pct">33%</span></td><td>111<span class="pct">46%</span></td><td>143<span class="pct">60%</span></td><td>172<span class="pct">72%</span></td><td>201<span class="pct">84%</span></td></tr>
+          <tr><td>Summer 2022</td><td>240</td><td>33<span class="pct">14%</span></td><td>51<span class="pct">21%</span></td><td>86<span class="pct">36%</span></td><td>121<span class="pct">50%</span></td><td>156<span class="pct">65%</span></td><td>185<span class="pct">77%</span></td><td>214<span class="pct">89%</span></td></tr>
+          <tr><td>November 2021</td><td>240</td><td>20<span class="pct">8%</span></td><td>34<span class="pct">14%</span></td><td>62<span class="pct">26%</span></td><td>90<span class="pct">38%</span></td><td>119<span class="pct">50%</span></td><td>155<span class="pct">65%</span></td><td>192<span class="pct">80%</span></td></tr>
+          <tr><td>November 2020</td><td>240</td><td>25<span class="pct">10%</span></td><td>39<span class="pct">16%</span></td><td>67<span class="pct">28%</span></td><td>95<span class="pct">40%</span></td><td>124<span class="pct">52%</span></td><td>159<span class="pct">66%</span></td><td>194<span class="pct">81%</span></td></tr>
+          <tr><td>November 2019</td><td>240</td><td>34<span class="pct">14%</span></td><td>49<span class="pct">20%</span></td><td>78<span class="pct">33%</span></td><td>107<span class="pct">45%</span></td><td>137<span class="pct">57%</span></td><td>168<span class="pct">70%</span></td><td>199<span class="pct">83%</span></td></tr>
+          <tr><td>Summer 2019</td><td>240</td><td>27<span class="pct">11%</span></td><td>43<span class="pct">18%</span></td><td>74<span class="pct">31%</span></td><td>105<span class="pct">44%</span></td><td>136<span class="pct">57%</span></td><td>171<span class="pct">71%</span></td><td>206<span class="pct">86%</span></td></tr>
+          <tr><td>November 2018</td><td>240</td><td>22<span class="pct">9%</span></td><td>37<span class="pct">15%</span></td><td>66<span class="pct">28%</span></td><td>96<span class="pct">40%</span></td><td>126<span class="pct">53%</span></td><td>160<span class="pct">67%</span></td><td>194<span class="pct">81%</span></td></tr>
+          <tr><td>Summer 2018</td><td>240</td><td>32<span class="pct">13%</span></td><td>47<span class="pct">20%</span></td><td>77<span class="pct">32%</span></td><td>107<span class="pct">45%</span></td><td>138<span class="pct">58%</span></td><td>169<span class="pct">70%</span></td><td>201<span class="pct">84%</span></td></tr>
+          <tr><td>November 2017</td><td>240</td><td>26<span class="pct">11%</span></td><td>40<span class="pct">17%</span></td><td>68<span class="pct">28%</span></td><td>96<span class="pct">40%</span></td><td>124<span class="pct">52%</span></td><td>159<span class="pct">66%</span></td><td>194<span class="pct">81%</span></td></tr>
+          <tr><td>Summer 2017</td><td>240</td><td>33<span class="pct">14%</span></td><td>46<span class="pct">19%</span></td><td>72<span class="pct">30%</span></td><td>98<span class="pct">41%</span></td><td>125<span class="pct">52%</span></td><td>157<span class="pct">65%</span></td><td>189<span class="pct">79%</span></td></tr>
         </tbody>
       </table>
       <p class="back-to-top-inline"><a href="#top">Back to top</a></p>
@@ -279,11 +295,29 @@ table.boundaries-table .pct { display: block; font-size: 11px; font-weight: 400;
 .ggb-section.green .back-to-top-inline a { color: var(--green); text-decoration: none; font-weight: 700; }
 .ggb-section.purple .back-to-top-inline a { color: var(--purple); text-decoration: none; font-weight: 700; }
 
+.ggb-print-header {
+  display: none;
+}
+
 @media print {
+  .om-nav, .om-nav-drawer, .om-footer,
+  .om-hero, .covid-strip, .ggb-full-note,
+  .back-to-top { display: none !important; }
+
   .ggb-section { display: none; }
   .ggb-section.ggb-printing { display: block; }
   .ggb-section.ggb-printing .card-cta,
   .ggb-section.ggb-printing .back-to-top-inline { display: none; }
+
+  .ggb-print-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+  }
+  .ggb-print-header .om-logo-icon { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; width: 30px; height: 30px; background: #fff; border: 2px solid #111827; border-radius: 6px; padding: 3px; }
+  .ggb-print-header .om-logo-icon span { display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 900; line-height: 1; }
+  .ggb-print-header .om-logo-text { font-size: 17px; font-weight: 700; color: #111827; letter-spacing: -0.3px; }
 }
 </style>
 
