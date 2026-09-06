@@ -12,6 +12,10 @@ permalink: /maths-gcse-papers/
 <main>
   <div class="om-body">
 
+    <div class="om-section-hd" style="justify-content: flex-end;">
+      <a href="{{ site.baseurl }}/gcse-grade-boundaries/">View grade boundaries</a>
+    </div>
+
     <div class="board-section">
       <h2 class="section-heading">Edexcel</h2>
       <div class="topic-grid">
