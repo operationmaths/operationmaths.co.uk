@@ -30,8 +30,7 @@ permalink: /gcse-grade-boundaries/
         <button class="card-cta" onclick="ggbPrint('edexcel-foundation')">Print this table</button>
       </div>
       <div class="ggb-print-header">
-        <div class="om-logo-icon"><span>O</span><span>M</span><span>M</span><span>O</span></div>
-        <span class="om-logo-text">Operation Maths</span>
+        <img src="{{ site.baseurl }}/assets/images/logo.png" alt="Operation Maths">
       </div>
       <table class="boundaries-table">
         <thead>
@@ -66,8 +65,7 @@ permalink: /gcse-grade-boundaries/
         <button class="card-cta" onclick="ggbPrint('edexcel-higher')">Print this table</button>
       </div>
       <div class="ggb-print-header">
-        <div class="om-logo-icon"><span>O</span><span>M</span><span>M</span><span>O</span></div>
-        <span class="om-logo-text">Operation Maths</span>
+        <img src="{{ site.baseurl }}/assets/images/logo.png" alt="Operation Maths">
       </div>
       <table class="boundaries-table">
         <thead>
@@ -102,8 +100,7 @@ permalink: /gcse-grade-boundaries/
         <button class="card-cta" onclick="ggbPrint('aqa-foundation')">Print this table</button>
       </div>
       <div class="ggb-print-header">
-        <div class="om-logo-icon"><span>O</span><span>M</span><span>M</span><span>O</span></div>
-        <span class="om-logo-text">Operation Maths</span>
+        <img src="{{ site.baseurl }}/assets/images/logo.png" alt="Operation Maths">
       </div>
       <table class="boundaries-table">
         <thead>
@@ -138,8 +135,7 @@ permalink: /gcse-grade-boundaries/
         <button class="card-cta" onclick="ggbPrint('aqa-higher')">Print this table</button>
       </div>
       <div class="ggb-print-header">
-        <div class="om-logo-icon"><span>O</span><span>M</span><span>M</span><span>O</span></div>
-        <span class="om-logo-text">Operation Maths</span>
+        <img src="{{ site.baseurl }}/assets/images/logo.png" alt="Operation Maths">
       </div>
       <table class="boundaries-table">
         <thead>
@@ -312,12 +308,12 @@ table.boundaries-table .pct { display: block; font-size: 11px; font-weight: 400;
   .ggb-print-header {
     display: flex;
     align-items: center;
-    gap: 10px;
     margin-bottom: 1.5rem;
   }
-  .ggb-print-header .om-logo-icon { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; width: 30px; height: 30px; background: #fff; border: 2px solid #111827; border-radius: 6px; padding: 3px; }
-  .ggb-print-header .om-logo-icon span { display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 900; line-height: 1; }
-  .ggb-print-header .om-logo-text { font-size: 17px; font-weight: 700; color: #111827; letter-spacing: -0.3px; }
+  .ggb-print-header img {
+    height: 34px;
+    width: auto;
+  }
 }
 </style>
 
