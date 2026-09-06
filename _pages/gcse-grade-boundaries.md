@@ -56,7 +56,6 @@ permalink: /gcse-grade-boundaries/
           <tr><td>Summer 2017</td><td>240</td><td>26<span class="pct">11%</span></td><td>58<span class="pct">24%</span></td><td>90<span class="pct">38%</span></td><td>122<span class="pct">51%</span></td><td>158<span class="pct">66%</span></td></tr>
         </tbody>
       </table>
-      <p class="back-to-top-inline"><a href="#top">Back to top</a></p>
     </section>
 
     <section id="edexcel-higher" class="ggb-section purple">
@@ -91,7 +90,6 @@ permalink: /gcse-grade-boundaries/
           <tr><td>Summer 2017</td><td>240</td><td>27<span class="pct">11%</span></td><td>41<span class="pct">17%</span></td><td>68<span class="pct">28%</span></td><td>96<span class="pct">40%</span></td><td>124<span class="pct">52%</span></td><td>157<span class="pct">65%</span></td><td>190<span class="pct">79%</span></td></tr>
         </tbody>
       </table>
-      <p class="back-to-top-inline"><a href="#top">Back to top</a></p>
     </section>
 
     <section id="aqa-foundation" class="ggb-section green">
@@ -126,7 +124,6 @@ permalink: /gcse-grade-boundaries/
           <tr><td>Summer 2017</td><td>240</td><td>27<span class="pct">11%</span></td><td>59<span class="pct">25%</span></td><td>91<span class="pct">38%</span></td><td>124<span class="pct">52%</span></td><td>156<span class="pct">65%</span></td></tr>
         </tbody>
       </table>
-      <p class="back-to-top-inline"><a href="#top">Back to top</a></p>
     </section>
 
     <section id="aqa-higher" class="ggb-section purple">
@@ -161,7 +158,6 @@ permalink: /gcse-grade-boundaries/
           <tr><td>Summer 2017</td><td>240</td><td>33<span class="pct">14%</span></td><td>46<span class="pct">19%</span></td><td>72<span class="pct">30%</span></td><td>98<span class="pct">41%</span></td><td>125<span class="pct">52%</span></td><td>157<span class="pct">65%</span></td><td>189<span class="pct">79%</span></td></tr>
         </tbody>
       </table>
-      <p class="back-to-top-inline"><a href="#top">Back to top</a></p>
     </section>
 
   </div>
@@ -287,10 +283,6 @@ table.boundaries-table tbody tr:nth-child(even) { background: #fafbfc; }
 table.boundaries-table td:first-child { text-align: left; font-weight: 700; color: #111827; white-space: nowrap; }
 table.boundaries-table .pct { display: block; font-size: 11px; font-weight: 400; color: #9ca3af; margin-top: 1px; }
 
-.back-to-top-inline { text-align: right; font-size: 13px; margin-top: 8px; }
-.ggb-section.green .back-to-top-inline a { color: var(--green); text-decoration: none; font-weight: 700; }
-.ggb-section.purple .back-to-top-inline a { color: var(--purple); text-decoration: none; font-weight: 700; }
-
 .ggb-print-header {
   display: none;
 }
@@ -304,8 +296,7 @@ table.boundaries-table .pct { display: block; font-size: 11px; font-weight: 400;
 
   .ggb-section { display: none; }
   .ggb-section.ggb-printing { display: block; margin-top: 0 !important; }
-  .ggb-section.ggb-printing .card-cta,
-  .ggb-section.ggb-printing .back-to-top-inline { display: none; }
+  .ggb-section.ggb-printing .card-cta { display: none; }
 
   .ggb-print-header {
     display: flex;
