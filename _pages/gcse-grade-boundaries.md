@@ -300,8 +300,10 @@ table.boundaries-table .pct { display: block; font-size: 11px; font-weight: 400;
   .om-hero, .covid-strip, .ggb-full-note,
   .back-to-top { display: none !important; }
 
+  .om-body { padding-top: 0 !important; }
+
   .ggb-section { display: none; }
-  .ggb-section.ggb-printing { display: block; }
+  .ggb-section.ggb-printing { display: block; margin-top: 0 !important; }
   .ggb-section.ggb-printing .card-cta,
   .ggb-section.ggb-printing .back-to-top-inline { display: none; }
 
