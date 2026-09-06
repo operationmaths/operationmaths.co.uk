@@ -6,6 +6,7 @@ section_order:
   - Simplifying
   - Solving equations
   - Expand
+  - Factorise
   - Expand and factorise
 layout: worksheet-topic
 permalink: /worksheets-algebra/
