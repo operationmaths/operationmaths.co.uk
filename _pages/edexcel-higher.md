@@ -32,7 +32,9 @@ permalink: /maths-gcse-papers/edexcel-higher/
   </div>
 
   <div class="om-body">
-
+     <div class="om-section-hd" style="justify-content: flex-end;">
+  <a href="{{ site.baseurl }}/gcse-grade-boundaries/#edexcel-higher">View grade boundaries</a>
+</div>
     <!-- ── NOVEMBER 2024 ── -->
     <section id="y2024nov" class="year-section">
       <h2 class="section-heading">November 2024</h2>
