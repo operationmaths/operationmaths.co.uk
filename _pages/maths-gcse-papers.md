@@ -33,6 +33,13 @@ permalink: /maths-gcse-papers/
             <span class="card-cta">View papers <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></span>
           </div>
         </a>
+        <a href="{{ site.baseurl }}/gcse-question-bank/" class="topic-card blue">
+          <div class="card-bar"></div>
+          <div class="card-body">
+            <h3 class="card-title">Question bank</h3>
+            <span class="card-cta">View questions <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></span>
+          </div>
+        </a>
       </div>
     </div>
 
