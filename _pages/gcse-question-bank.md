@@ -170,7 +170,7 @@ body_class: page-gcse-question-bank
      questions show no icon at all, matching how the real exam papers only
      print a calculator symbol on the calculator paper's own cover. */
   .calc-icon{color:var(--muted);flex:0 0 auto;display:flex;align-items:center;}
-  .calc-icon svg{display:block;width:15px;height:15px;}
+  .calc-icon svg{display:block;width:20px;height:20px;}
   .subtopic-pill{
     align-self:flex-start;font-size:.72rem;font-weight:700;color:#fff;
     background:var(--strand,#999);border-radius:6px;padding:3px 9px;
@@ -2234,12 +2234,16 @@ function updateBuilderBar(){
 document.getElementById("clearBtn").addEventListener('click',()=>{state.selected.clear();render();updateBuilderBar();});
 
 // Builds the "Answers" section that gets appended after the printed
-// questions when the "Include answers" toggle is checked. Left empty
-// (and hidden via the .has-content class) otherwise.
-function buildPrintAnswers(ids){
+// questions. For a worksheet (printSelected), this respects the "Include
+// answers" toggle (unchecked by default) - it's aimed at handing blank
+// copies to students, so answers must be an active choice. For a single
+// question (printOne), force=true always includes the mark scheme
+// regardless of the toggle, since printing one question is normally for
+// the tutor's own reference rather than a student worksheet.
+function buildPrintAnswers(ids, force){
   const box = document.getElementById('printAnswers');
   const toggle = document.getElementById('includeAnswersToggle');
-  if(!toggle.checked || ids.length===0){
+  if((!force && !toggle.checked) || ids.length===0){
     box.classList.remove('has-content');
     box.innerHTML='';
     return;
@@ -2275,7 +2279,7 @@ function printOne(id){
     const cb=c.querySelector('input[type=checkbox]');
     c.classList.toggle('print-hide', cb.dataset.id!==id);
   });
-  buildPrintAnswers([id]);
+  buildPrintAnswers([id], true);
   window.print();
   setTimeout(()=>{document.querySelectorAll('.card').forEach(c=>c.classList.remove('print-hide'));resetPrintAnswers();},500);
 }
