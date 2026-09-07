@@ -159,11 +159,18 @@ body_class: page-gcse-question-bank
     pointer-events:none;
   }
   .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;}
+  .card-top-right{display:flex;align-items:center;gap:6px;flex:0 0 auto;}
   .source-tag{font-size:.72rem;color:var(--muted);}
   .marks-badge{
     font-size:.72rem;font-weight:700;background:var(--bg);border:1px solid var(--card-border);
     border-radius:20px;padding:3px 9px;white-space:nowrap;
   }
+  /* Bare icon, no pill - kept deliberately quiet since it only needs to
+     flag the minority "calculator allowed" case (Papers 2 & 3); Paper 1
+     questions show no icon at all, matching how the real exam papers only
+     print a calculator symbol on the calculator paper's own cover. */
+  .calc-icon{color:var(--muted);flex:0 0 auto;display:flex;align-items:center;}
+  .calc-icon svg{display:block;width:15px;height:15px;}
   .subtopic-pill{
     align-self:flex-start;font-size:.72rem;font-weight:700;color:#fff;
     background:var(--strand,#999);border-radius:6px;padding:3px 9px;
@@ -376,7 +383,9 @@ body_class: page-gcse-question-bank
     .card-top > div{display:inline;}
     .card-top .subtopic-pill{display:inline-block;margin-right:8px;}
     .card-top .source-tag{display:inline;}
-    .card-top .marks-badge{display:inline-block;float:right;}
+    .card-top .card-top-right{display:inline-block;float:right;}
+    .card-top .card-top-right .calc-icon{display:inline-block;vertical-align:middle;margin-right:5px;}
+    .card-top .card-top-right .marks-badge{display:inline-block;}
     .card-body{display:block !important;overflow:visible !important;height:auto !important;}
     .card-body::after{display:none !important;}
     .q-heading{display:block;margin-bottom:8px;}
@@ -1887,6 +1896,21 @@ function stackFraction(text){
   }).join('\n');
 }
 
+// Only Papers 2 & 3 allow a calculator - Paper 1 is always non-calculator,
+// and its paper string ("Paper 1 (non-calculator)") also contains the
+// substring "calculator", so checking for the absence of "non-calculator"
+// is the reliable test rather than checking for the presence of "calculator".
+function isCalculatorPaper(q){
+  return !!q.paper && q.paper.indexOf('non-calculator')===-1;
+}
+const CALC_SVG='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"></rect><rect x="7" y="5" width="10" height="4" rx="0.5"></rect><rect x="7" y="12" width="2.5" height="2.5"></rect><rect x="10.75" y="12" width="2.5" height="2.5"></rect><rect x="14.5" y="12" width="2.5" height="2.5"></rect><rect x="7" y="16" width="2.5" height="2.5"></rect><rect x="10.75" y="16" width="2.5" height="2.5"></rect><rect x="14.5" y="16" width="2.5" height="2.5"></rect></svg>';
+// Deliberately returns nothing for non-calculator questions - see the
+// .calc-icon comment in <style> for why the absence of an icon is the
+// intended "no calculator" signal, rather than a crossed-out icon.
+function calcIconHTML(q){
+  return isCalculatorPaper(q) ? `<span class="calc-icon" title="Calculator allowed" aria-label="Calculator allowed">${CALC_SVG}</span>` : '';
+}
+
 function sourceTag(q){
   if(q.tier==="Crossover"){
     if(state.tier==="Foundation") return `${q.seriesFoundation} · Q${q.n}`;
@@ -1979,7 +2003,10 @@ function render(){
           <span class="subtopic-pill">${q.subtopic}</span>
           <span class="source-tag">${sourceTag(q)}</span>
         </div>
-        <span class="marks-badge">${q.marks} mark${q.marks>1?'s':''}</span>
+        <div class="card-top-right">
+          ${calcIconHTML(q)}
+          <span class="marks-badge">${q.marks} mark${q.marks>1?'s':''}</span>
+        </div>
       </div>
       ${qHeadingHTML(q)}
       <div class="card-body">
@@ -2033,7 +2060,10 @@ function questionHeaderHTML(q){
         <span class="subtopic-pill">${q.subtopic}</span>
         <span class="source-tag">${sourceTag(q)}</span>
       </div>
-      <span class="marks-badge">${q.marks} mark${q.marks>1?'s':''}</span>
+      <div class="card-top-right">
+        ${calcIconHTML(q)}
+        <span class="marks-badge">${q.marks} mark${q.marks>1?'s':''}</span>
+      </div>
     </div>
   `;
 }
