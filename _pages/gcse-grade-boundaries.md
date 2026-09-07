@@ -22,7 +22,37 @@ permalink: /gcse-grade-boundaries/
 
   <div class="om-body">
 
-    <p class="ggb-full-note">Boundaries shown are the total marks needed across all three papers to gain each grade. Figures are published by <a href="https://qualifications.pearson.com/en/support/support-topics/results-certification/grade-boundaries.html" target="_blank" rel="noopener noreferrer">Pearson</a> and <a href="https://www.aqa.org.uk/exams-administration/results-days/grade-boundaries" target="_blank" rel="noopener noreferrer">AQA</a> and are reproduced here for convenience.</p>
+    <p class="ggb-full-note">Boundaries shown are the total marks needed across all three papers to gain each grade. These change every exam series depending on how difficult that year's papers were, so there isn't a fixed percentage needed for each grade. Always check the boundary for the specific series you're comparing against. Figures are published by <a href="https://qualifications.pearson.com/en/support/support-topics/results-certification/grade-boundaries.html" target="_blank" rel="noopener noreferrer">Pearson</a> and <a href="https://www.aqa.org.uk/exams-administration/results-days/grade-boundaries" target="_blank" rel="noopener noreferrer">AQA</a> and are reproduced here for convenience.</p>
+
+    <div class="calc-card">
+      <h3>Grade calculator - what grade is this mark?</h3>
+      <div class="calc-row">
+        <div class="calc-field">
+          <label for="ggb-board">Board</label>
+          <select id="ggb-board">
+            <option value="edexcel">Edexcel</option>
+            <option value="aqa">AQA</option>
+          </select>
+        </div>
+        <div class="calc-field">
+          <label for="ggb-tier">Tier</label>
+          <select id="ggb-tier">
+            <option value="foundation">Foundation</option>
+            <option value="higher">Higher</option>
+          </select>
+        </div>
+        <div class="calc-field">
+          <label for="ggb-series">Series</label>
+          <select id="ggb-series"></select>
+        </div>
+        <div class="calc-field">
+          <label for="ggb-mark">Total mark (out of 240)</label>
+          <input type="number" id="ggb-mark" placeholder="e.g. 145" style="width:110px;">
+        </div>
+        <button class="calc-btn" onclick="ggbCalculate()">Check grade</button>
+      </div>
+      <div class="calc-result" id="ggb-result"></div>
+    </div>
 
     <section id="edexcel-foundation" class="ggb-section green">
       <div class="ggb-print-header">
@@ -223,6 +253,42 @@ permalink: /gcse-grade-boundaries/
 }
 .ggb-full-note a { color: #374151; }
 
+.calc-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 2.5rem;
+}
+.calc-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 14px; color: #111827; }
+.calc-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end; }
+.calc-field { display: flex; flex-direction: column; gap: 4px; }
+.calc-field label { font-size: 12px; font-weight: 700; color: #6b7280; }
+.calc-field select, .calc-field input {
+  font-family: 'DM Sans', sans-serif; font-size: 14px; padding: 8px 10px;
+  border: 1.5px solid #e5e7eb; border-radius: 6px; background: #fff; color: #111827;
+}
+.calc-btn {
+  background: var(--blue); color: #fff; border: none; padding: 9px 18px;
+  border-radius: 6px; font-size: 14px; font-weight: 700; cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+}
+.calc-result {
+  margin-top: 16px; background: #eef6ff; border: 1px solid #cfe4fb;
+  border-radius: 8px; padding: 14px 16px; font-size: 14px; color: #0f4c81; display: none;
+}
+.calc-result.show { display: block; }
+.calc-result .headline strong { font-size: 18px; }
+.calc-result .next-grade {
+  margin-top: 8px; font-size: 13.5px; color: #374151;
+  background: #fff; border: 1px dashed #b6d7f5; border-radius: 6px; padding: 8px 10px;
+}
+.calc-result .next-grade strong { color: var(--blue); }
+
+@media print {
+  .calc-card { display: none !important; }
+}
+
 .ggb-section { margin-top: 3rem; }
 .ggb-section:first-of-type { margin-top: 0; }
 .section-heading-row {
@@ -316,5 +382,136 @@ function ggbPrint(id) {
   document.querySelectorAll('.ggb-section').forEach(function (el) { el.classList.remove('ggb-printing'); });
   document.getElementById(id).classList.add('ggb-printing');
   window.print();
+}
+</script>
+
+<script>
+// Real grade boundary data, grade -> mark, for all four board/tier combinations
+const GGB_DATA = {
+  "edexcel-foundation": {
+    "Summer 2026": {5:181,4:151,3:110,2:69,1:29},
+    "November 2025": {5:174,4:143,3:105,2:67,1:29},
+    "Summer 2025": {5:175,4:144,3:105,2:67,1:29},
+    "November 2024": {5:174,4:141,3:103,2:66,1:29},
+    "Summer 2024": {5:175,4:142,3:103,2:65,1:27},
+    "November 2023": {5:175,4:140,3:104,2:68,1:33},
+    "Summer 2023": {5:182,4:147,3:109,2:71,1:33},
+    "November 2022": {5:173,4:135,3:100,2:66,1:32},
+    "Summer 2022": {5:173,4:135,3:100,2:66,1:32},
+    "November 2021": {5:166,4:134,3:100,2:66,1:32},
+    "November 2020": {5:165,4:136,3:99,2:63,1:27},
+    "November 2019": {5:166,4:142,3:104,2:67,1:30},
+    "Summer 2019": {5:184,4:149,3:111,2:73,1:36},
+    "November 2018": {5:167,4:132,3:96,2:61,1:26},
+    "Summer 2018": {5:169,4:136,3:101,2:66,1:31},
+    "November 2017": {5:145,4:113,3:83,2:53,1:23},
+    "Summer 2017": {5:158,4:122,3:90,2:58,1:26}
+  },
+  "edexcel-higher": {
+    "Summer 2026": {9:208,8:177,7:146,6:114,5:82,4:50,3:34},
+    "November 2025": {9:211,8:182,7:153,6:119,5:85,4:51,3:34},
+    "Summer 2025": {9:217,8:186,7:156,6:121,5:87,4:53,3:36},
+    "November 2024": {9:200,8:170,7:140,6:107,5:75,4:43,3:27},
+    "Summer 2024": {9:197,8:167,7:137,6:105,5:73,4:42,3:26},
+    "November 2023": {9:203,8:174,7:145,6:112,5:79,4:47,3:31},
+    "Summer 2023": {9:203,8:174,7:145,6:112,5:79,4:47,3:31},
+    "November 2022": {9:194,8:165,7:137,6:104,5:71,4:38,3:21},
+    "Summer 2022": {9:194,8:165,7:137,6:104,5:71,4:38,3:21},
+    "November 2021": {9:187,8:154,7:122,6:93,5:65,4:37,3:23},
+    "November 2020": {9:189,8:157,7:126,6:96,5:66,4:37,3:22},
+    "November 2019": {9:197,8:165,7:133,6:103,5:73,4:43,3:28},
+    "Summer 2019": {9:198,8:167,7:137,6:108,5:80,4:52,3:38},
+    "November 2018": {9:194,8:159,7:125,6:95,5:66,4:37,3:22},
+    "Summer 2018": {9:202,8:170,7:139,6:109,5:79,4:50,3:35},
+    "November 2017": {9:189,8:150,7:112,6:85,5:58,4:32,3:19},
+    "Summer 2017": {9:190,8:157,7:124,6:96,5:68,4:41,3:27}
+  },
+  "aqa-foundation": {
+    "Summer 2026": {5:187,4:154,3:115,2:76,1:38},
+    "November 2025": {5:186,4:158,3:118,2:78,1:39},
+    "Summer 2025": {5:188,4:160,3:119,2:79,1:39},
+    "November 2024": {5:186,4:157,3:117,2:77,1:37},
+    "Summer 2024": {5:186,4:157,3:117,2:77,1:37},
+    "November 2023": {5:166,4:135,3:101,2:67,1:33},
+    "Summer 2023": {5:189,4:158,3:117,2:76,1:35},
+    "November 2022": {5:167,4:130,3:97,2:64,1:31},
+    "Summer 2022": {5:172,4:135,3:101,2:67,1:33},
+    "November 2021": {5:145,4:108,3:79,2:51,1:23},
+    "November 2020": {5:146,4:116,3:86,2:56,1:26},
+    "November 2019": {5:162,4:134,3:98,2:62,1:27},
+    "Summer 2019": {5:157,4:122,3:89,2:57,1:25},
+    "November 2018": {5:153,4:121,3:88,2:56,1:24},
+    "Summer 2018": {5:161,4:125,3:92,2:59,1:27},
+    "November 2017": {5:157,4:127,3:93,2:59,1:25},
+    "Summer 2017": {5:156,4:124,3:91,2:59,1:27}
+  },
+  "aqa-higher": {
+    "Summer 2026": {9:219,8:192,7:166,6:131,5:97,4:63,3:46},
+    "November 2025": {9:212,8:185,7:158,6:126,5:94,4:63,3:47},
+    "Summer 2025": {9:219,8:191,7:164,6:130,5:96,4:63,3:46},
+    "November 2024": {9:212,8:184,7:157,6:125,5:93,4:61,3:45},
+    "Summer 2024": {9:219,8:191,7:163,6:129,5:95,4:61,3:44},
+    "November 2023": {9:206,8:178,7:150,6:114,5:79,4:44,3:26},
+    "Summer 2023": {9:214,8:186,7:158,6:125,5:92,4:59,3:42},
+    "November 2022": {9:201,8:172,7:143,6:111,5:79,4:48,3:32},
+    "Summer 2022": {9:214,8:185,7:156,6:121,5:86,4:51,3:33},
+    "November 2021": {9:192,8:155,7:119,6:90,5:62,4:34,3:20},
+    "November 2020": {9:194,8:159,7:124,6:95,5:67,4:39,3:25},
+    "November 2019": {9:199,8:168,7:137,6:107,5:78,4:49,3:34},
+    "Summer 2019": {9:206,8:171,7:136,6:105,5:74,4:43,3:27},
+    "November 2018": {9:194,8:160,7:126,6:96,5:66,4:37,3:22},
+    "Summer 2018": {9:201,8:169,7:138,6:107,5:77,4:47,3:32},
+    "November 2017": {9:194,8:159,7:124,6:96,5:68,4:40,3:26},
+    "Summer 2017": {9:189,8:157,7:125,6:98,5:72,4:46,3:33}
+  }
+};
+
+function ggbPopulateSeries() {
+  const board = document.getElementById('ggb-board').value;
+  const tier = document.getElementById('ggb-tier').value;
+  const seriesSelect = document.getElementById('ggb-series');
+  const seriesList = Object.keys(GGB_DATA[board + '-' + tier]);
+  seriesSelect.innerHTML = seriesList.map(function (s) { return '<option value="' + s + '">' + s + '</option>'; }).join('');
+}
+document.getElementById('ggb-board').addEventListener('change', ggbPopulateSeries);
+document.getElementById('ggb-tier').addEventListener('change', ggbPopulateSeries);
+ggbPopulateSeries();
+
+function ggbCalculate() {
+  const board = document.getElementById('ggb-board').value;
+  const tier = document.getElementById('ggb-tier').value;
+  const series = document.getElementById('ggb-series').value;
+  const markInput = document.getElementById('ggb-mark').value;
+  if (markInput === '') { return; }
+  const mark = parseInt(markInput, 10);
+  const boundaries = GGB_DATA[board + '-' + tier][series];
+  const grades = Object.keys(boundaries).map(Number).sort(function (a, b) { return b - a; });
+
+  let achieved = null;
+  for (let i = 0; i < grades.length; i++) {
+    if (mark >= boundaries[grades[i]]) { achieved = grades[i]; break; }
+  }
+
+  const boardLabel = board === 'edexcel' ? 'Edexcel' : 'AQA';
+  const tierLabel = tier === 'foundation' ? 'Foundation' : 'Higher';
+  const resultBox = document.getElementById('ggb-result');
+  resultBox.classList.add('show');
+
+  if (achieved === null) {
+    resultBox.innerHTML = '<div class="headline">' + mark + '/240 on ' + boardLabel + ' ' + tierLabel + ', ' + series + ' = <strong>U</strong></div>';
+    return;
+  }
+
+  const idx = grades.indexOf(achieved);
+  let html = '<div class="headline">' + mark + '/240 on ' + boardLabel + ' ' + tierLabel + ', ' + series + ' = <strong>Grade ' + achieved + '</strong></div>';
+
+  if (idx === 0) {
+    html += '<div class="next-grade">This is the top grade shown for this tier.</div>';
+  } else {
+    const nextGrade = grades[idx - 1];
+    const gap = boundaries[nextGrade] - mark;
+    html += '<div class="next-grade"><strong>' + gap + ' more mark' + (gap === 1 ? '' : 's') + '</strong> needed to reach Grade ' + nextGrade + '.</div>';
+  }
+  resultBox.innerHTML = html;
 }
 </script>
