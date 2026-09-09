@@ -24,6 +24,11 @@ permalink: /gcse-grade-boundaries/
 
     <p class="ggb-full-note">Boundaries shown are the total marks needed across all three papers to gain each grade. These change every exam series depending on how difficult that year's papers were, so there isn't a fixed percentage needed for each grade. Always check the boundary for the specific series you're comparing against. Figures are published by <a href="https://qualifications.pearson.com/en/support/support-topics/results-certification/grade-boundaries.html" target="_blank" rel="noopener noreferrer">Pearson</a> and <a href="https://www.aqa.org.uk/exams-administration/results-days/grade-boundaries" target="_blank" rel="noopener noreferrer">AQA</a> and are reproduced here for convenience.</p>
 
+    <div class="info-box">
+      <div class="info-icon">i</div>
+      <div class="info-text">A Grade 4 is generally considered a standard pass in GCSE Maths.</div>
+    </div>
+
     <div class="calc-card">
       <h3>Grade calculator - what grade is this mark?</h3>
       <div class="calc-row">
@@ -67,7 +72,7 @@ permalink: /gcse-grade-boundaries/
           <tr><th>Series</th><th>Max mark</th><th>1</th><th>2</th><th>3</th><th class="g4-col">4</th><th>5</th></tr>
         </thead>
         <tbody>
-          <tr class="avg-row"><td>Average per paper (2017–2026)</td><td>80</td><td>10</td><td>22</td><td>34</td><td class="g4-col">46</td><td>57</td></tr>
+          <tr class="avg-row"><td>Average marks per paper (2017–2026)</td><td>80</td><td>10</td><td>22</td><td>34</td><td class="g4-col">46</td><td>57</td></tr>
           <tr><td>Summer 2026</td><td>240</td><td>29<span class="pct">12%</span></td><td>69<span class="pct">29%</span></td><td>110<span class="pct">46%</span></td><td class="g4-col">151<span class="pct">63%</span></td><td>181<span class="pct">75%</span></td></tr>
           <tr><td>November 2025</td><td>240</td><td>29<span class="pct">12%</span></td><td>67<span class="pct">28%</span></td><td>105<span class="pct">44%</span></td><td class="g4-col">143<span class="pct">60%</span></td><td>174<span class="pct">73%</span></td></tr>
           <tr><td>Summer 2025</td><td>240</td><td>29<span class="pct">12%</span></td><td>67<span class="pct">28%</span></td><td>105<span class="pct">44%</span></td><td class="g4-col">144<span class="pct">60%</span></td><td>175<span class="pct">73%</span></td></tr>
@@ -102,7 +107,7 @@ permalink: /gcse-grade-boundaries/
           <tr><th>Series</th><th>Max mark</th><th>3</th><th class="g4-col">4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th></tr>
         </thead>
         <tbody>
-          <tr class="avg-row"><td>Average per paper (2017–2026)</td><td>80</td><td>9</td><td class="g4-col">14</td><td>25</td><td>35</td><td>45</td><td>56</td><td>66</td></tr>
+          <tr class="avg-row"><td>Average marks per paper (2017–2026)</td><td>80</td><td>9</td><td class="g4-col">14</td><td>25</td><td>35</td><td>45</td><td>56</td><td>66</td></tr>
           <tr><td>Summer 2026</td><td>240</td><td>34<span class="pct">14%</span></td><td class="g4-col">50<span class="pct">21%</span></td><td>82<span class="pct">34%</span></td><td>114<span class="pct">48%</span></td><td>146<span class="pct">61%</span></td><td>177<span class="pct">74%</span></td><td>208<span class="pct">87%</span></td></tr>
           <tr><td>November 2025</td><td>240</td><td>34<span class="pct">14%</span></td><td class="g4-col">51<span class="pct">21%</span></td><td>85<span class="pct">35%</span></td><td>119<span class="pct">50%</span></td><td>153<span class="pct">64%</span></td><td>182<span class="pct">76%</span></td><td>211<span class="pct">88%</span></td></tr>
           <tr><td>Summer 2025</td><td>240</td><td>36<span class="pct">15%</span></td><td class="g4-col">53<span class="pct">22%</span></td><td>87<span class="pct">36%</span></td><td>121<span class="pct">50%</span></td><td>156<span class="pct">65%</span></td><td>186<span class="pct">78%</span></td><td>217<span class="pct">90%</span></td></tr>
@@ -137,7 +142,7 @@ permalink: /gcse-grade-boundaries/
           <tr><th>Series</th><th>Max mark</th><th>1</th><th>2</th><th>3</th><th class="g4-col">4</th><th>5</th></tr>
         </thead>
         <tbody>
-          <tr class="avg-row"><td>Average per paper (2017–2026)</td><td>80</td><td>10</td><td>22</td><td>34</td><td class="g4-col">46</td><td>56</td></tr>
+          <tr class="avg-row"><td>Average marks per paper (2017–2026)</td><td>80</td><td>10</td><td>22</td><td>34</td><td class="g4-col">46</td><td>56</td></tr>
           <tr><td>Summer 2026</td><td>240</td><td>38<span class="pct">16%</span></td><td>76<span class="pct">32%</span></td><td>115<span class="pct">48%</span></td><td class="g4-col">154<span class="pct">64%</span></td><td>187<span class="pct">78%</span></td></tr>
           <tr><td>November 2025</td><td>240</td><td>39<span class="pct">16%</span></td><td>78<span class="pct">33%</span></td><td>118<span class="pct">49%</span></td><td class="g4-col">158<span class="pct">66%</span></td><td>186<span class="pct">78%</span></td></tr>
           <tr><td>Summer 2025</td><td>240</td><td>39<span class="pct">16%</span></td><td>79<span class="pct">33%</span></td><td>119<span class="pct">50%</span></td><td class="g4-col">160<span class="pct">67%</span></td><td>188<span class="pct">78%</span></td></tr>
@@ -172,7 +177,7 @@ permalink: /gcse-grade-boundaries/
           <tr><th>Series</th><th>Max mark</th><th>3</th><th class="g4-col">4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th></tr>
         </thead>
         <tbody>
-          <tr class="avg-row"><td>Average per paper (2017–2026)</td><td>80</td><td>11</td><td class="g4-col">17</td><td>27</td><td>37</td><td>48</td><td>58</td><td>68</td></tr>
+          <tr class="avg-row"><td>Average marks per paper (2017–2026)</td><td>80</td><td>11</td><td class="g4-col">17</td><td>27</td><td>37</td><td>48</td><td>58</td><td>68</td></tr>
           <tr><td>Summer 2026</td><td>240</td><td>46<span class="pct">19%</span></td><td class="g4-col">63<span class="pct">26%</span></td><td>97<span class="pct">40%</span></td><td>131<span class="pct">55%</span></td><td>166<span class="pct">69%</span></td><td>192<span class="pct">80%</span></td><td>219<span class="pct">91%</span></td></tr>
           <tr><td>November 2025</td><td>240</td><td>47<span class="pct">20%</span></td><td class="g4-col">63<span class="pct">26%</span></td><td>94<span class="pct">39%</span></td><td>126<span class="pct">53%</span></td><td>158<span class="pct">66%</span></td><td>185<span class="pct">77%</span></td><td>212<span class="pct">88%</span></td></tr>
           <tr><td>Summer 2025</td><td>240</td><td>46<span class="pct">19%</span></td><td class="g4-col">63<span class="pct">26%</span></td><td>96<span class="pct">40%</span></td><td>130<span class="pct">54%</span></td><td>164<span class="pct">68%</span></td><td>191<span class="pct">80%</span></td><td>219<span class="pct">91%</span></td></tr>
@@ -256,6 +261,41 @@ permalink: /gcse-grade-boundaries/
   margin: 0 0 2.5rem;
 }
 .ggb-full-note a { color: #374151; }
+
+.info-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #eef6ff;
+  border: 1px solid #cfe4fb;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 2rem;
+}
+.info-icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Georgia, serif;
+}
+.info-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #0f4c81;
+}
+
+@media print {
+  .info-box { display: none !important; }
+}
 
 .calc-card {
   background: #fff;
