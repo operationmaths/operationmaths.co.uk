@@ -499,7 +499,11 @@ function ggbCalculate() {
   resultBox.classList.add('show');
 
   if (achieved === null) {
-    resultBox.innerHTML = '<div class="headline">' + mark + '/240 on ' + boardLabel + ' ' + tierLabel + ', ' + series + ' = <strong>U</strong></div>';
+    const lowest = grades[grades.length - 1];
+    const gap = boundaries[lowest] - mark;
+    let html = '<div class="headline">' + mark + '/240 on ' + boardLabel + ' ' + tierLabel + ', ' + series + ' = <strong>U</strong></div>';
+    html += '<div class="next-grade"><strong>' + gap + ' more mark' + (gap === 1 ? '' : 's') + '</strong> needed to reach Grade ' + lowest + '.</div>';
+    resultBox.innerHTML = html;
     return;
   }
 
