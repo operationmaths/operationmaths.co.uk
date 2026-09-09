@@ -355,7 +355,7 @@ table.boundaries-table td:first-child { text-align: left; font-weight: 700; colo
 table.boundaries-table .pct { display: block; font-size: 11px; font-weight: 400; color: #9ca3af; margin-top: 1px; }
 
 /* Average row (per paper) */
-.avg-row td { background-color: #fff8ec !important; font-style: italic; color: #8a5a00; }
+.avg-row td { background-color: #fdecd3 !important; font-style: italic; color: #a15c07; }
 .avg-row td:first-child { font-weight: 700; font-style: normal; }
 
 /* Grade 4 column highlight — grey overlay, layered on top of whatever colour is already there */
