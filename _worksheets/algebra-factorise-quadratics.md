@@ -10,6 +10,6 @@ show_a_worksheet: true
 show_a_answers: true
 free_pdf: /pdfs/Factorise-quadratics.pdf
 answers_pdf: /pdfs/Factorise-quadratics-ANSWERS.pdf
-tes_url: ''
-date_added: ''
+tes_url: https://www.tes.com/teaching-resource/-13570229
+date_added: 2026-09-10 10:51:00
 ---
