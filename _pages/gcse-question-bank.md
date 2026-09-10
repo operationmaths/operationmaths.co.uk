@@ -207,8 +207,8 @@ body_class: page-gcse-question-bank
   .q-text em, .answer-box em, .print-answers em{
     font-family:'Times New Roman',Times,'Liberation Serif',serif;font-style:italic;
   }
-  .frac{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;font-size:.92em;line-height:1.15;text-align:center;margin:0 2px;position:relative;top:.1em;font-family:'Times New Roman',Times,'Liberation Serif',serif;}
-  .frac-sm{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;font-size:.72em;line-height:.95;text-align:center;margin:0 1px;font-family:'Times New Roman',Times,'Liberation Serif',serif;}
+  .frac{display:inline-flex;flex-direction:column;align-items:stretch;vertical-align:middle;font-size:.92em;line-height:1.15;text-align:center;margin:0 2px;position:relative;top:.1em;font-family:'Times New Roman',Times,'Liberation Serif',serif;}
+  .frac-sm{display:inline-flex;flex-direction:column;align-items:stretch;vertical-align:middle;font-size:.72em;line-height:.95;text-align:center;margin:0 1px;font-family:'Times New Roman',Times,'Liberation Serif',serif;}
   /* Every previous attempt at raising the exponent relied on vertical-align
      or baseline-alignment behaviour (native <sup>, position:relative on an
      inline-flex box, vertical-align on an inline-block) - all of which
