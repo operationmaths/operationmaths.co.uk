@@ -1878,6 +1878,28 @@ function stackFraction(text){
       const [n,d] = VULGAR_FRACTIONS[frac];
       return (whole||'') + `<span class="${cls}"><span class="num">${n}</span><span class="den">${d}</span></span>`;
     });
+    // Compound fractions where at least one side is a parenthesised
+    // expression, e.g. a rearranged-formula answer like "(T - 3)/4" or
+    // "15t/(w + 30)". Tolerates one level of nested brackets inside the
+    // outer pair (eg a denominator like "x(x+1)(x-2)") - anything nested
+    // deeper than that (eg a quadratic-formula surd) just won't match here
+    // and is left as plain text, same as before this fix existed. Must run
+    // before the plain-token pattern below, since that pattern's character
+    // class doesn't include "(" or ")" or spaces and so never matches these
+    // on its own. Same digit-somewhere guard as the plain-token pattern,
+    // since this also runs on ordinary question text that can contain
+    // "and/or"-style slashes.
+    {
+      const BAL = '\\((?:[^()]|\\([^()]*\\))+\\)';
+      const re = new RegExp('(' + BAL + '|[a-zA-Z0-9¹²³⁰]+)\\s*\\/\\s*(' + BAL + '|[a-zA-Z0-9¹²³⁰]+)', 'g');
+      str = str.replace(re, (m, num, den) => {
+        if (num[0] !== '(' && den[0] !== '(') return m; // plain token/token - leave for the next pass
+        if (!/\d/.test(num) && !/\d/.test(den)) return m;
+        const stripNum = num[0]==='(' ? num.slice(1,-1).trim() : num;
+        const stripDen = den[0]==='(' ? den.slice(1,-1).trim() : den;
+        return `<span class="${cls}"><span class="num">${stripNum}</span><span class="den">${stripDen}</span></span>`;
+      });
+    }
     // Require at least one side to contain a digit, so word/word patterns
     // that just happen to use "/" to mean "or" (e.g. "rolls/ketchup",
     // "and/or") aren't mistaken for a mathematical fraction like "9/x²".
