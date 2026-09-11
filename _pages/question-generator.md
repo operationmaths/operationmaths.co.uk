@@ -4670,7 +4670,7 @@ const QG_BANK = {
     { q: "Work out: 0.96 ÷ 8", a: "0.12" }
   ],
 
-  "Harder divide decimals": [
+"Harder divide decimals": [
     { q: "Work out: 151.2 ÷ 2.1", a: "72" },
     { q: "Work out: 59.5 ÷ 3.5", a: "17" },
     { q: "Work out: 7.8 ÷ 1.3", a: "6" },
@@ -4711,17 +4711,18 @@ const QG_BANK = {
     { q: "Work out: 0.022 ÷ 0.2", a: "0.11" },
     { q: "Work out: 0.378 ÷ 0.6", a: "0.63" },
     { q: "Work out: 0.704 ÷ 0.8", a: "0.88" },
-    { q: "Work out: 42.57 ÷ 1.29", a: "33" },
-    { q: "Work out: 14.49 ÷ 2.07", a: "7" },
-    { q: "Work out: 251.94 ÷ 4.94", a: "51" },
-    { q: "Work out: 181.22 ÷ 4.42", a: "41" },
-    { q: "Work out: 126.36 ÷ 2.34", a: "54" },
-    { q: "Work out: 61.95 ÷ 2.95", a: "21" },
-    { q: "Work out: 83.16 ÷ 2.97", a: "28" },
-    { q: "Work out: 99.56 ÷ 2.62", a: "38" },
-    { q: "Work out: 139.19 ÷ 4.49", a: "31" },
-    { q: "Work out: 25.27 ÷ 1.33", a: "19" }
+    { q: "Work out: 86.4 ÷ 2.4", a: "36" },
+    { q: "Work out: 92.4 ÷ 3.3", a: "28" },
+    { q: "Work out: 78.4 ÷ 2.8", a: "28" },
+    { q: "Work out: 96.6 ÷ 4.2", a: "23" },
+    { q: "Work out: 64.8 ÷ 2.7", a: "24" },
+    { q: "Work out: 73.5 ÷ 4.9", a: "15" },
+    { q: "Work out: 117.6 ÷ 3.2", a: "36.75" },
+    { q: "Work out: 45.9 ÷ 2.7", a: "17" },
+    { q: "Work out: 132.3 ÷ 4.9", a: "27" },
+    { q: "Work out: 68.4 ÷ 3.8", a: "18" }
   ],
+  
   "Identify gradient and y-intercept": [
     { q: "Identify the gradient and y-intercept: y = −2x + 4", a: "Gradient = −2, y-intercept = 4" },
     { q: "Identify the gradient and y-intercept: y = -{1/5}x + 4", a: "Gradient = -{1/5}, y-intercept = 4" },
