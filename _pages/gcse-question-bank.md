@@ -13,8 +13,8 @@ body_class: page-gcse-question-bank
     --green:#009444;     /* Algebra */
     --purple:#800080;    /* Statistics */
     --orange:#f7941e;    /* Geometry and measures */
-    --amber:#a15c1f;      /* NEW: Ratio, proportion and rates of change - needs sign-off */
-    --rose:#c43d6b;      /* NEW: Probability - needs sign-off */
+    --amber:#a15c1f;      /* Ratio, proportion and rates of change */
+    --rose:#c43d6b;      /* Probability */
     --navy:#0f1120;
     --bg:#f5f6f8;
     --card-border:#e5e7eb;
@@ -1083,9 +1083,9 @@ const QUESTIONS = [
 
 // ===== Foundation-only =====
 
-{qimg:{src:"Sum2017-3F-Q1a",w:2072,h:1060,needsHeading:false},svg:tblRivers,n:"1(a)",tier:"Foundation",strand:"Number",subtopic:"Ordering numbers",marks:1,paperNum:"3",sitting:"Summer 2017",intro:"The table shows the lengths of five rivers.\nTrent: 297 km, Don: 112 km, Severn: 354 km, Thames: 346 km, Mersey: 113 km",text:"(a) Write down the rivers in order of length.\nStart with the shortest river.",paper:"Papers 2 & 3 (calculator)",answer:"Don, Mersey, Trent, Thames, Severn",markscheme:"B1 accept 112, 113, 297, 346, 354"},
+{qimg:{src:"Sum2017-3F-Q1a",w:792,h:370,needsHeading:false},svg:tblRivers,n:"1(a)",tier:"Foundation",strand:"Number",subtopic:"Ordering numbers",marks:1,paperNum:"3",sitting:"Summer 2017",intro:"The table shows the lengths of five rivers.\nTrent: 297 km, Don: 112 km, Severn: 354 km, Thames: 346 km, Mersey: 113 km",text:"(a) Write down the rivers in order of length.\nStart with the shortest river.",paper:"Papers 2 & 3 (calculator)",answer:"Don, Mersey, Trent, Thames, Severn",markscheme:"B1 accept 112, 113, 297, 346, 354"},
 
-{qimg:{src:"Sum2017-3F-Q1b",w:2072,h:1188,needsHeading:false},n:"1(b)",tier:"Foundation",strand:"Number",subtopic:"Multiplicative reasoning",marks:1,paperNum:"3",sitting:"Summer 2017",text:"Ami says, 'The River Thames is more than three times as long as the River Don.'\n(b) Show that Ami is correct.",paper:"Papers 2 & 3 (calculator)",answer:"Shown",markscheme:"C1 shown with correct values eg (112 × 3 =) 336 (and 346), or 112 + 112 + 112 + 10 = 346, or 346 ÷ 3 = 115(.3..) (and 112), or 346 ÷ 112 = 3.089.. oe"},
+{qimg:{src:"Sum2017-3F-Q1b",w:792,h:110,needsHeading:false},n:"1(b)",tier:"Foundation",strand:"Number",subtopic:"Multiplicative reasoning",marks:1,paperNum:"3",sitting:"Summer 2017",text:"Ami says, 'The River Thames is more than three times as long as the River Don.'\n(b) Show that Ami is correct.",paper:"Papers 2 & 3 (calculator)",answer:"Shown",markscheme:"C1 shown with correct values eg (112 × 3 =) 336 (and 346), or 112 + 112 + 112 + 10 = 346, or 346 ÷ 3 = 115(.3..) (and 112), or 346 ÷ 112 = 3.089.. oe"},
 
 {qimg:{src:"Sum2017-3F-Q2",w:920,h:161,needsHeading:false},n:"2",tier:"Foundation",strand:"Algebra",subtopic:"Forming expressions",marks:2,paperNum:"3",sitting:"Summer 2017",text:"Cups are sold in packs and in boxes.\nThere are 12 cups in each pack.\nThere are 18 cups in each box.\nAlison buys p packs of cups and b boxes of cups.\nWrite down an expression, in terms of p and b, for the total number of cups Alison buys.",paper:"Papers 2 & 3 (calculator)",answer:"12p + 18b",markscheme:"M1 12p or 18b or p + b\nA1 12p + 18b"},
 
@@ -1587,7 +1587,7 @@ const QUESTIONS = [
 
 // ===== Foundation-only =====
 
-{qimg:{src:"Nov2018-3F-Q1",w:642,h:173,needsHeading:false},n:"1",tier:"Foundation",strand:"Number",subtopic:"Number bonds (decimals and fractions)",marks:2,text:"Write a number in each box to make the calculation correct.\n(i) 56.3 + ....... = 100\n(ii) 2/7 + ....... = 1",paper:"Papers 2 & 3 (calculator)",paperNum:"3",sitting:"November 2018",answer:"(i) 43.7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(ii) 5/7",markscheme:"(i) B1 cao\n(ii) B1 for 5/7 oe (Accept any other equivalent fraction to 5/7)"},
+{qimg:{src:"Nov2018-3F-Q1",w:542,h:230,needsHeading:false},n:"1",tier:"Foundation",strand:"Number",subtopic:"Number bonds (decimals and fractions)",marks:2,text:"Write a number in each box to make the calculation correct.\n(i) 56.3 + ....... = 100\n(ii) 2/7 + ....... = 1",paper:"Papers 2 & 3 (calculator)",paperNum:"3",sitting:"November 2018",answer:"(i) 43.7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(ii) 5/7",markscheme:"(i) B1 cao\n(ii) B1 for 5/7 oe (Accept any other equivalent fraction to 5/7)"},
 
 {qimg:{src:"Nov2018-3F-Q2",w:285,h:24,needsHeading:false},n:"2",tier:"Foundation",strand:"Number",subtopic:"FDP conversions",marks:1,text:"Write 3% as a fraction.",paper:"Papers 2 & 3 (calculator)",paperNum:"3",sitting:"November 2018",answer:"3/100",markscheme:"B1 cao"},
 
