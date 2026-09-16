@@ -5251,7 +5251,6 @@ const QG_STRANDS = [
       { label: 'Factors, multiples and prime numbers', topics: ['Factors', 'Multiples', 'Prime numbers', 'Product of prime factors', 'Lowest common multiple', 'Highest common factor'] },
       { label: 'Fractions', topics: ['Simplify fractions', 'Fraction of a number', 'Add and subtract fractions', 'Multiply fractions', 'Divide fractions', 'Mixed numbers and all operations', 'Recurring decimals to fractions'] },
       { label: 'Indices', topics: ['Powers', 'Roots', 'Basic laws of indices', 'Harder laws of indices', 'Fractional and negative indices'] },
-      { label: 'Powers and roots', topics: ['Powers', 'Roots'] },
       { label: 'Negatives', topics: ['Add and subtract negatives', 'Multiply and divide negatives'] },
       { label: 'Operations', topics: ['Multiply by 10, 100 and 1000', 'Divide by 10, 100 and 1000', 'Short multiplication', 'Short division', 'Long multiplication', 'Long division', 'BIDMAS'] },
       { label: 'Percentages', topics: ['Common percentages of numbers', 'Percentages of numbers', 'Increase/decrease by a percentage', 'Percentage change', 'Simple interest', 'Compound interest'] },
