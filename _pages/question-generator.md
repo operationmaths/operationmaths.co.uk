@@ -121,6 +121,10 @@ main { flex: 1; }
 .qg-dot::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 3px; height: 3px; border-radius: 50%; background: currentColor; }
 .qg-x { font-style: italic; font-family: Georgia, 'Times New Roman', serif; }
 .qg-l { font-family: "Times New Roman", "Liberation Serif", serif; font-style: normal; }
+.qg-root { display: inline-flex; align-items: flex-start; vertical-align: middle; margin: 0 2px; line-height: 1; }
+.qg-root-symbol { font-family: "Times New Roman", "Liberation Serif", serif; font-size: 1.15em; line-height: 1; margin-right: 1px; }
+.qg-root-index { font-family: "Times New Roman", "Liberation Serif", serif; font-size: 0.55em; line-height: 1; position: relative; top: -0.05em; margin-right: 0.5px; }
+.qg-root-radicand { display: inline-block; border-top: 1.4px solid currentColor; padding: 0 2px 0 1px; line-height: 1.15; }
 
 /* Working space (printed worksheet mode) — all layout rules scoped to @media print below, so screen view never changes */
 .qg-working-space { display: none; }
@@ -5119,24 +5123,24 @@ const QG_BANK = {
     { q: "10^3 =", a: "1000" },
   ],
   "Roots": [
-    { q: "√1 =", a: "1" },
-    { q: "√4 =", a: "2" },
-    { q: "√9 =", a: "3" },
-    { q: "√16 =", a: "4" },
-    { q: "√25 =", a: "5" },
-    { q: "√36 =", a: "6" },
-    { q: "√49 =", a: "7" },
-    { q: "√64 =", a: "8" },
-    { q: "√81 =", a: "9" },
-    { q: "√100 =", a: "10" },
-    { q: "√121 =", a: "11" },
-    { q: "√144 =", a: "12" },
-    { q: "∛1 =", a: "1" },
-    { q: "∛8 =", a: "2" },
-    { q: "∛27 =", a: "3" },
-    { q: "∛64 =", a: "4" },
-    { q: "∛125 =", a: "5" },
-    { q: "∛1000 =", a: "10" },
+    { q: "√(1) =", a: "1" },
+    { q: "√(4) =", a: "2" },
+    { q: "√(9) =", a: "3" },
+    { q: "√(16) =", a: "4" },
+    { q: "√(25) =", a: "5" },
+    { q: "√(36) =", a: "6" },
+    { q: "√(49) =", a: "7" },
+    { q: "√(64) =", a: "8" },
+    { q: "√(81) =", a: "9" },
+    { q: "√(100) =", a: "10" },
+    { q: "√(121) =", a: "11" },
+    { q: "√(144) =", a: "12" },
+    { q: "∛(1) =", a: "1" },
+    { q: "∛(8) =", a: "2" },
+    { q: "∛(27) =", a: "3" },
+    { q: "∛(64) =", a: "4" },
+    { q: "∛(125) =", a: "5" },
+    { q: "∛(1000) =", a: "10" },
   ],
   "Round to decimal places": [
     { q: "Round 0.423 to 1 decimal place.", a: "0.4" },
@@ -5392,6 +5396,10 @@ function qgFormatInline(str) {
 
   // Thousands separator: any whole-number run of 4+ digits (not a decimal's fractional part) gets commas
   s = s.replace(/(?<!\.)\b\d{4,}\b/g, m => Number(m).toLocaleString('en-GB'));
+
+  // Square and cube roots: √(number) / ∛(number) -> radical with a horizontal vinculum over the entire radicand
+  s = s.replace(/√\(([^()]+)\)/g, '<span class="qg-root"><span class="qg-root-symbol">√</span><span class="qg-root-radicand">$1</span></span>');
+  s = s.replace(/∛\(([^()]+)\)/g, '<span class="qg-root"><span class="qg-root-index">3</span><span class="qg-root-symbol">√</span><span class="qg-root-radicand">$1</span></span>');
 
   return s;
 }
