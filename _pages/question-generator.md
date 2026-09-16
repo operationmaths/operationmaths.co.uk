@@ -124,8 +124,22 @@ main { flex: 1; }
 .qg-root { display: inline-flex; align-items: flex-start; vertical-align: middle; margin: 0 2px; line-height: 1; }
 .qg-root-symbol { font-family: "Times New Roman", "Liberation Serif", serif; font-size: 1.15em; line-height: 1; margin-right: 1px; }
 .qg-root-index { font-family: "Times New Roman", "Liberation Serif", serif; font-size: 0.55em; line-height: 1; position: relative; top: -0.05em; margin-right: 0.5px; }
-.qg-root-radicand { display: inline-block; position: relative; border-top: none; padding: 0 2px 0 1px; line-height: 1.15; }
-.qg-root-radicand::before { content: ""; position: absolute; left: 1px; right: 2px; top: -0.12em; border-top: 1.4px solid currentColor; }
+
+.qg-root-radicand {
+  display: inline-block;
+  position: relative;
+  padding: 0 2px 0 1px;
+  line-height: 1.15;
+}
+
+.qg-root-radicand::before {
+  content: "";
+  position: absolute;
+  left: 1px;
+  right: 2px;
+  top: -0.12em;
+  border-top: 1.4px solid currentColor;
+}
 
 /* Working space (printed worksheet mode) — all layout rules scoped to @media print below, so screen view never changes */
 .qg-working-space { display: none; }
