@@ -2504,7 +2504,7 @@ function qBodyHTML(q, modal){
     const K = modal ? MODAL_CROP_SCALE : 0.5;
     const cls = modal ? 'q-diagram q-crop q-crop-modal' : 'q-diagram q-crop';
     const w = Math.round(qimg.w * K);
-    const img = `<img src="${QIMG_BASE_PATH}${qimg.src}.png" alt="Question ${displayN(q)}, cropped directly from the original exam paper" style="width:${w}px;max-width:100%;">`;
+    const img = `<img src="${QIMG_BASE_PATH}${qimg.src}.png" alt="Question ${displayN(q)}, cropped directly from the original exam paper" style="width:${w}px;max-width:100%;" loading="lazy" decoding="async">`;
     // A tiny number of crops have a hairline rule (e.g. a square root's
     // overline) that's proven unreliable as baked-in image pixels in some
     // environments even though the underlying file is correct - as a
