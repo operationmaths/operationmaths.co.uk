@@ -137,7 +137,7 @@ main { flex: 1; }
   position: absolute;
   left: -1.5px;
   right: 2px;
-  top: -0.12em;
+  top: -0.15em;
   border-top: 1.4px solid currentColor;
 }
 
