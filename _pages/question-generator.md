@@ -20,6 +20,7 @@ permalink: /question-generator/
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'DM Sans', sans-serif; background: #f5f6f8; color: #111827; font-size: 16px; min-height: 100vh; display: flex; flex-direction: column; }
+html, body { overflow-x: hidden; }  
 main { flex: 1; }
 [id] { scroll-margin-top: 20px; }
 
