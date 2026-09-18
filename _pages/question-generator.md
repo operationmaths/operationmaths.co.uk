@@ -71,7 +71,7 @@ main { flex: 1; }
 .qg-subsection-label { font-size: 12px; font-weight: 700; color: #6b7280; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.5rem; }
 .qg-chip-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.5rem; }
 
-.qg-chip { padding: 6px 14px; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 700; border: 1.5px solid transparent; cursor: pointer; transition: background 0.12s, color 0.12s; background: #f3f4f6; color: #374151; }
+.qg-chip { padding: 6px 14px; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 700; border: 1.5px solid transparent; cursor: pointer; transition: background 0.12s, color 0.12s; background: #f3f4f6; color: #374151; min-height: 48px; display: flex; align-items: center; justify-content: center; text-align: center; }
 .qg-chip.selected { color: #fff; }
 .qg-chip.selected.number  { background: var(--blue); }
 .qg-chip.selected.algebra { background: var(--green); }
@@ -217,7 +217,7 @@ main { flex: 1; }
   .page-hero p { font-size: 15px; }
   .qg-q-item { flex-wrap: wrap; }
   .qg-q-right { flex-direction: row; align-items: center; min-width: unset; width: 100%; justify-content: flex-start; }
-  .qg-chip-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .qg-chip { min-height: 104px; font-size: 12px; }
   .qg-subsection-label { font-size: 10px; }
 }
 </style>
