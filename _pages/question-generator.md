@@ -216,6 +216,8 @@ main { flex: 1; }
   .page-hero p { font-size: 15px; }
   .qg-q-item { flex-wrap: wrap; }
   .qg-q-right { flex-direction: row; align-items: center; min-width: unset; width: 100%; justify-content: flex-start; }
+  .qg-chip-row { grid-template-columns: repeat(2, 1fr); }
+  .qg-subsection-label { font-size: 10px; }
 }
 </style>
 
