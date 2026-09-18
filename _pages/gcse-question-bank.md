@@ -160,7 +160,7 @@ body_class: page-gcse-question-bank
   }
   .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;}
   .card-top-right{display:flex;align-items:center;gap:6px;flex:0 0 auto;}
-  .source-tag{font-size:.72rem;color:var(--muted);}
+  .source-tag{font-size:.72rem;color:var(--muted);font-weight:400;}
   .marks-badge{
     font-size:.72rem;font-weight:700;background:var(--bg);border:1px solid var(--card-border);
     border-radius:20px;padding:3px 9px;white-space:nowrap;
