@@ -1988,7 +1988,7 @@ const QUESTIONS = [
 // ===== November 2019 - Paper 1 (Foundation, Higher, Crossover) =====
 
 // --- 1F non-crossover (Q1-19, Q28-29) ---
-{qimg:{src:"Nov2019-1F-Q1",w:1045,h:23,needsHeading:false},n:"1",tier:"Foundation",strand:"Number",subtopic:"Place value",marks:1,text:"Write down the value of the 7 in the number 1074",paper:"Paper 1 (non-calculator)",paperNum:"1",sitting:"November 2019",answer:"70 or 7 tens",markscheme:"B1 for 70 (or seventy) or 7 tens (or seven tens)"},
+{qimg:{src:"Nov2019-1F-Q1",w:526,h:23,needsHeading:false},n:"1",tier:"Foundation",strand:"Number",subtopic:"Place value",marks:1,text:"Write down the value of the 7 in the number 1074",paper:"Paper 1 (non-calculator)",paperNum:"1",sitting:"November 2019",answer:"70 or 7 tens",markscheme:"B1 for 70 (or seventy) or 7 tens (or seven tens)"},
 {qimg:{src:"Nov2019-1F-Q2",w:426,h:28,needsHeading:false},n:"2",tier:"Foundation",strand:"Number",subtopic:"Rounding to decimal places",marks:1,text:"Write 4.58 correct to 1 decimal place.",paper:"Paper 1 (non-calculator)",paperNum:"1",sitting:"November 2019",answer:"4.6",markscheme:"B1 cao"},
 {qimg:{src:"Nov2019-1F-Q3",w:274,h:23,needsHeading:false},n:"3",tier:"Foundation",strand:"Number",subtopic:"Multiplying by powers of 10",marks:1,text:"Work out 31.7 × 100",paper:"Paper 1 (non-calculator)",paperNum:"1",sitting:"November 2019",answer:"3170",markscheme:"B1 cao"},
 {qimg:{src:"Nov2019-1F-Q4",w:486,h:56,needsHeading:false},n:"4",tier:"Foundation",strand:"Number",subtopic:"Simplifying fractions",marks:1,text:"Write the fraction 28/70 in its simplest form",paper:"Paper 1 (non-calculator)",paperNum:"1",sitting:"November 2019",answer:"2/5",markscheme:"B1 cao"},
