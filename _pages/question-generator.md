@@ -136,9 +136,9 @@ main { flex: 1; }
 .qg-root-radicand::before {
   content: "";
   position: absolute;
-  left: 1px;
+  left: -1.5px;
   right: 2px;
-  top: -0.12em;
+  top: -0.15em;
   border-top: 1.4px solid currentColor;
 }
 
