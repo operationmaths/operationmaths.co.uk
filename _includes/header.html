@@ -15,7 +15,13 @@
           <a href="{{ site.baseurl }}/worksheets-support-sheets/" style="border-left-color:#f7941e">Support sheets</a>
         </div>
       </div>
-      <a href="{{ site.baseurl }}/maths-sats-papers/">Maths SATs papers</a>
+      <div class="om-nav-dropdown">
+        <a href="{{ site.baseurl }}/maths-sats-papers/" class="om-dropdown-label">Maths SATs papers</a><button class="om-dropdown-arrow" aria-label="Open maths SATs papers menu">▾</button>
+        <div class="om-dropdown-menu">
+          <a href="{{ site.baseurl }}/maths-sats-papers/" style="border-left-color:#1c75bc">Past papers</a>
+          <a href="{{ site.baseurl }}/sats-question-bank/" style="border-left-color:#f7941e">Question bank</a>
+        </div>
+      </div>
       <div class="om-nav-dropdown">
         <a href="{{ site.baseurl }}/maths-gcse-papers/" class="om-dropdown-label">GCSE maths papers</a><button class="om-dropdown-arrow" aria-label="Open maths GCSE papers menu">▾</button>
         <div class="om-dropdown-menu">
@@ -64,7 +70,16 @@
         <a href="{{ site.baseurl }}/worksheets-support-sheets/" style="border-left-color:#f7941e">Support sheets</a>
       </div>
     </div>
-    <a href="{{ site.baseurl }}/maths-sats-papers/">Maths SATs papers</a>
+    <div class="om-drawer-section">
+      <div class="om-drawer-section-title">
+        <a href="{{ site.baseurl }}/maths-sats-papers/" style="color:#374151; text-decoration:none; flex:1;">Maths SATs papers</a>
+        <span onclick="document.getElementById('mobile-sats-sub').classList.toggle('open')" style="cursor:pointer; padding-left:12px;">▾</span>
+      </div>
+      <div class="om-drawer-sub" id="mobile-sats-sub">
+        <a href="{{ site.baseurl }}/maths-sats-papers/" style="border-left-color:#1c75bc">Past papers</a>
+        <a href="{{ site.baseurl }}/sats-question-bank/" style="border-left-color:#f7941e">Question bank</a>
+      </div>
+    </div>
     <div class="om-drawer-section">
       <div class="om-drawer-section-title">
         <a href="{{ site.baseurl }}/maths-gcse-papers/" style="color:#374151; text-decoration:none; flex:1;">GCSE maths papers</a>
