@@ -336,6 +336,8 @@ body_class: page-sats-question-bank
     .card-top .subtopic-pill{display:inline-block;margin-right:8px;}
     .card-top .source-tag{display:inline;}
     .card-top .card-top-right{display:none !important;}
+    .printing-selection .grid{display:none !important;}
+    .printing-selection #printCards{display:block;}
     .card .q-diagram.q-crop{width:100%;}
     .card .q-diagram.q-crop img{width:100% !important;max-width:100% !important;height:auto;}
     .card-top .card-top-right .marks-badge{display:inline-block;}
@@ -369,6 +371,7 @@ body_class: page-sats-question-bank
     /* .markscheme-text rule removed - mark scheme now lives inside
        .answer-box alongside "Answer:", matching the modal exactly. */
   }
+  #printCards{display:none;}
   .ms-bullet{display:flex;gap:.5em;margin-left:.4em;white-space:normal;}
   .ms-dot{flex:none;}
   .ms-bullet-img .ms-dot{margin-top:.5em;}
@@ -458,6 +461,8 @@ body_class: page-sats-question-bank
     </div>
   </div>
 </div>
+
+<div id="printCards"></div>
 
 <div id="printAnswers" class="print-answers"></div>
 
@@ -565,7 +570,7 @@ const QUESTIONS = [
 {"qimg":{"src":"2016-P2-Q6","w":1070,"h":868},"n":"6","paperNum":"2","paper":"Papers 2 & 3 (reasoning)","sitting":"2016","strand":"Properties of shapes","subtopic":"Reflection","marks":1,"ref":"4G2c","intro":"This diagram shows a shaded shape inside a border of squares.","text":"Draw the reflection of the shape in the mirror line.\nUse a ruler.","answer":"Diagram completed correctly as shown:","markscheme":"Accept inaccurate drawing, provided the intention is clear.\nDiagram need not be shaded.\nDiagram need not include edges drawn along the gridlines, e.g.\n[[img:2016-P2-Q6-guidance:436]]","ansImg":{"src":"2016-P2-Q6-answer","w":456,"h":444}},
 {"qimg":{"src":"2016-P2-Q7","w":1069,"h":301},"n":"7","paperNum":"2","paper":"Papers 2 & 3 (reasoning)","sitting":"2016","strand":"Fractions, decimals and percentages","subtopic":"Equivalent fractions","marks":2,"ref":"6F2","text":"Write the two missing values to make these equivalent fractions correct.\n☐/3 = 8/12 = 4/☐","answer":"","markscheme":"","ansImg":{"src":"2016-P2-Q7-frac","w":310,"h":98}},
 {"qimg":{"src":"2016-P2-Q8","w":1069,"h":196},"n":"8","paperNum":"2","paper":"Papers 2 & 3 (reasoning)","sitting":"2016","strand":"Fractions, decimals and percentages","subtopic":"Fraction and decimal equivalents","marks":1,"ref":"5F10","text":"Circle two numbers that add together to equal 0.25\n0.05   0.23   0.2   0.5","answer":"Numbers circled as shown:","markscheme":"Accept alternative unambiguous positive indications, e.g. numbers ticked or underlined.","ansImg":{"src":"2016-P2-Q8-circled","w":344,"h":56}},
-{"qimg":{"src":"2016-P2-Q9","w":1074,"h":1020},"n":"9","paperNum":"2","paper":"Papers 2 & 3 (reasoning)","sitting":"2016","strand":"Measurement","subtopic":"Money problems","marks":2,"ref":"3M9a","intro":"6 pencils cost £1.68\n3 pencils and 1 rubber cost £1.09","text":"What is the cost of 1 rubber?","answer":"Award TWO marks for the correct answer of 25p","markscheme":"If the answer is incorrect, award ONE mark for evidence of an appropriate method, e.g.\n• 168 ÷ 2 = 84\n109 − 84\nOR\n• 168 ÷ 6 = 28\n3 × 28 = 84\n109 − 84\nAdditional guidance:\nAccept for TWO marks, an answer given in the acceptable notation (see page 10 for guidance).\nAnswer need not be obtained for the award of ONE mark.\nAccept for ONE mark an answer of 0.25p OR £25p OR £25 as evidence of an appropriate method."},
+{"qimg":{"src":"2016-P2-Q9","w":1074,"h":1020},"n":"9","paperNum":"2","paper":"Papers 2 & 3 (reasoning)","sitting":"2016","strand":"Measurement","subtopic":"Money problems","marks":2,"ref":"3M9a","intro":"6 pencils cost £1.68\n3 pencils and 1 rubber cost £1.09","text":"What is the cost of 1 rubber?","answer":"Award TWO marks for the correct answer of 25p","markscheme":"If the answer is incorrect, award ONE mark for evidence of an appropriate method, e.g.\n• 168 ÷ 2 = 84\n109 − 84\nOR\n• 168 ÷ 6 = 28\n3 × 28 = 84\n109 − 84\nAdditional guidance:\nAccept for TWO marks, an answer given in the acceptable notation.\nAnswer need not be obtained for the award of ONE mark.\nAccept for ONE mark an answer of 0.25p OR £25p OR £25 as evidence of an appropriate method."},
 {"qimg":{"src":"2016-P2-Q10","w":1074,"h":435},"n":"10","paperNum":"2","paper":"Papers 2 & 3 (reasoning)","sitting":"2016","strand":"Fractions, decimals and percentages","subtopic":"Fractions of shapes","marks":2,"ref":"3F2","intro":"Each diagram below is divided into equal sections.\n(The diagrams are a square split into 4 triangles, a stepped shape made from 12 triangles and a circle split into 8 sectors.)","text":"Shade three-quarters of each diagram.","answer":"Award TWO marks for all three diagrams completed to show three-quarters shaded, e.g.","markscheme":"If the answer is incorrect, award ONE mark for two diagrams correct.\nAdditional guidance:\nAccept alternative unambiguous indications of parts shaded.","ansImg":{"src":"2016-P2-Q10-answer","w":464,"h":152}},
 {"qimg":{"src":"2016-P2-Q11","w":1074,"h":815},"n":"11","paperNum":"2","paper":"Papers 2 & 3 (reasoning)","sitting":"2016","strand":"Measurement","subtopic":"Converting units","marks":2,"ref":"5M9c","intro":"A packet contains 1.5 kg of oats.\nEvery day Maria uses 50 g of oats to make porridge.","text":"How many days does the packet of oats last?","answer":"Award TWO marks for the correct answer of 30","markscheme":"If the answer is incorrect, award ONE mark for evidence of an appropriate method, e.g.\n• 1.5 kg = 1,500 g\n1,500 ÷ 50\nAdditional guidance:\nAnswer need not be obtained for the award of ONE mark.\nUnits must be converted correctly for the award of ONE mark."},
 {"qimg":{"src":"2016-P2-Q12","w":1069,"h":682},"n":"12","paperNum":"2","paper":"Papers 2 & 3 (reasoning)","sitting":"2016","strand":"Algebra","subtopic":"Substitution and simple equations","marks":2,"ref":"6A2","intro":"<em>n</em> = 22","text":"(a) What is 2<em>n</em> + 9?\n2<em>q</em> + 4 = 100\n(b) Work out the value of <em>q</em>.","answer":"(a) 53&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(b) <em>q</em> = 48","markscheme":""},
@@ -573,19 +578,19 @@ const QUESTIONS = [
 {"qimg":{"src":"2016-P2-Q14","w":1069,"h":191},"n":"14","paperNum":"2","paper":"Papers 2 & 3 (reasoning)","sitting":"2016","strand":"Calculation","subtopic":"Multiples","marks":1,"ref":"6C5","text":"Write all the common multiples of 3 and 8 that are less than 50","answer":"24 and 48","markscheme":"Numbers may be given in either order."},
 {"qimg":{"src":"2016-P2-Q15","w":1074,"h":1180},"n":"15","paperNum":"2","paper":"Papers 2 & 3 (reasoning)","sitting":"2016","strand":"Measurement","subtopic":"Reading scales","marks":2,"ref":"5M5","intro":"This thermometer shows temperatures in both °C and °F.\n(Marked points: 40 °C = 104 °F, 30 °C = 86 °F, 20 °C = 68 °F, 10 °C = 50 °F, 0 °C = 32 °F and −10 °C = 14 °F.)","text":"Work out what 25 °C is in °F.","answer":"Award TWO marks for the correct answer of 77 °F","markscheme":"If the answer is incorrect, award ONE mark for evidence of an appropriate method, e.g.\n• 86 − 68 = 18\n18 ÷ 2 = 9\n9 + 68\nOR\n• 86 − 68 = 18\n18 ÷ 2 = 9\n86 − 9\nOR\n• 86 + 68 = 154\n154 ÷ 2\nAdditional guidance:\nAnswer need not be obtained for the award of ONE mark."},
 {"qimg":{"src":"2016-P2-Q16","w":1069,"h":450},"n":"16","paperNum":"2","paper":"Papers 2 & 3 (reasoning)","sitting":"2016","strand":"Number and place value","subtopic":"Place value","marks":2,"ref":"6N2","text":"(a) Write the number that is five less than ten million.\n(b) Write the number that is one hundred thousand less than six million.","answer":"(a) 9,999,995&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(b) 5,900,000","markscheme":""},
-{"qimg":{"src":"2016-P2-Q17","w":1070,"h":763},"n":"17","paperNum":"2","paper":"Papers 2 & 3 (reasoning)","sitting":"2016","strand":"Properties of shapes","subtopic":"Angles","marks":2,"ref":"6G4b, 6G4a","intro":"(Diagram, not to scale: two straight lines cross. The angle on the left of the crossing point is 160°. Angle <em>a</em> is on the right of the crossing point, inside a shape with two right angles. Angle <em>b</em> is at the far vertex of that shape.)","text":"Calculate the size of angles <em>a</em> and <em>b</em> in this diagram.","answer":"(a) <em>a</em> = 160°&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(b) <em>b</em> = 20°","markscheme":"If the answers to a and b are incorrect, award ONE mark if a + b = 180° unless b is between 33° and 37° inclusive, or 90°"},
+{"qimg":{"src":"2016-P2-Q17","w":1070,"h":763},"n":"17","paperNum":"2","paper":"Papers 2 & 3 (reasoning)","sitting":"2016","strand":"Properties of shapes","subtopic":"Angles","marks":2,"ref":"6G4b, 6G4a","intro":"(Diagram, not to scale: two straight lines cross. The angle on the left of the crossing point is 160°. Angle <em>a</em> is on the right of the crossing point, inside a shape with two right angles. Angle <em>b</em> is at the far vertex of that shape.)","text":"Calculate the size of angles <em>a</em> and <em>b</em> in this diagram.","answer":"(a) <em>a</em> = 160°&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(b) <em>b</em> = 20°","markscheme":"17b: If the answers to a and b are incorrect, award ONE mark if a + b = 180° unless b is between 33° and 37° inclusive, or 90°"},
 {"qimg":{"src":"2016-P2-Q18","w":1070,"h":208},"n":"18","paperNum":"2","paper":"Papers 2 & 3 (reasoning)","sitting":"2016","strand":"Calculation","subtopic":"Missing number problems","marks":1,"ref":"6C8","text":"Write the missing number.\n70 ÷ ☐ = 3.5","answer":"20","markscheme":""},
 {"qimg":{"src":"2016-P2-Q19","w":1074,"h":996},"n":"19","paperNum":"2","paper":"Papers 2 & 3 (reasoning)","sitting":"2016","strand":"Calculation","subtopic":"Money problems","marks":3,"ref":"6C8","intro":"Miss Mills is making jam to sell at the school fair.\nStrawberries cost £7.50 per kg.\nSugar costs 79p per kg.\n10 glass jars cost £6.90\nShe uses 12 kg of strawberries and 10 kg of sugar to make 20 jars full of jam.","text":"Calculate the total cost to make 20 jars full of jam.","answer":"Award THREE marks for the correct answer of £111.70","markscheme":"If the answer is incorrect, award TWO marks for:\n• sight of £90 AND £7.90 AND £13.80 as all multiplication steps completed correctly\nOR\n• evidence of an appropriate complete method with no more than one arithmetic error, e.g.\n[[img:2016-P2-Q19-example:372]]\nAward ONE mark for evidence of an appropriate complete method.\nAdditional guidance:\nAccept for TWO marks, sight of 9,000p AND 790p AND 1,380p as all multiplication steps completed correctly.\nAnswer need not be obtained for the award of ONE mark.\nA misread of a number may affect the award of marks. No marks are awarded if there is more than one misread or if the mathematics is simplified.\nTWO marks will be awarded if an appropriate complete method with the misread number is followed through correctly.\nONE mark will be awarded for:\n• all multiplication steps completed correctly with the misread number\nOR\n• evidence of an appropriate complete method with the misread number followed through correctly with no more than one arithmetic error."},
 {"qimg":{"src":"2016-P2-Q20","w":1070,"h":1129},"n":"20","paperNum":"2","paper":"Papers 2 & 3 (reasoning)","sitting":"2016","strand":"Position and direction","subtopic":"Reflection","marks":1,"ref":"6P2","intro":"Here are two triangles drawn on coordinate axes.\nTriangle A has vertices (−10, 40), (20, 30) and (10, 10).\nTriangle B is a reflection of triangle A in the <em>x</em>-axis.\nTwo of the new vertices of triangle B are (10, −10) and (20, −30).","text":"What are the coordinates of the third vertex of triangle B?","answer":"(−10, −40)","markscheme":""},
 {"qimg":{"src":"2016-P3-Q1","w":1074,"h":302},"n":"1","paperNum":"3","paper":"Papers 2 & 3 (reasoning)","sitting":"2016","strand":"Calculation","subtopic":"Number sequences","marks":2,"ref":"3C1","intro":"The numbers in this sequence increase by 14 each time.","text":"Write the missing numbers.\n☐   82   96   ☐   124   138   ☐","answer":"Award TWO marks for numbers in order as shown:\n<strong>68</strong>&nbsp;&nbsp;&nbsp;<span style=\"color:#9a9a9a\">82</span>&nbsp;&nbsp;&nbsp;<span style=\"color:#9a9a9a\">96</span>&nbsp;&nbsp;&nbsp;<strong>110</strong>&nbsp;&nbsp;&nbsp;<span style=\"color:#9a9a9a\">124</span>&nbsp;&nbsp;&nbsp;<span style=\"color:#9a9a9a\">138</span>&nbsp;&nbsp;&nbsp;<strong>152</strong>","markscheme":"If the answer is incorrect, award ONE mark for two numbers correct."},
 {"qimg":{"src":"2016-P3-Q2","w":1070,"h":866},"n":"2","paperNum":"3","paper":"Papers 2 & 3 (reasoning)","sitting":"2016","strand":"Number and place value","subtopic":"Negative numbers","marks":2,"ref":"6N5","intro":"This table shows the temperature at 9am on three days in January.\n1st January: +5 °C\n8th January: −4 °C\n15th January: +1 °C","text":"(a) What is the difference between the temperature on 1st January and the temperature on 8th January?\nOn 22nd January the temperature was 7 degrees lower than on 15th January.\n(b) What was the temperature on 22nd January?","answer":"(a) 9 °C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(b) −6 °C","markscheme":"2a: Do not accept −9 or 9−\n2b: Do not accept 6−"},
 {"qimg":{"src":"2016-P3-Q3","w":1069,"h":811},"n":"3","paperNum":"3","paper":"Papers 2 & 3 (reasoning)","sitting":"2016","strand":"Measurement","subtopic":"Telling the time","marks":1,"ref":"4M4b","intro":"A clock shows this time twice a day.\n(An analogue clock shows quarter to three: the hour hand is just before the 3 and the minute hand points to the 9.)","text":"Tick the two digital clocks that show this time.\n03:45   02:45   09:45\n21:45   14:45","answer":"Both clocks ticked, as shown:","markscheme":"Accept alternative unambiguous positive indications, e.g. clocks circled or underlined.","ansImg":{"src":"2016-P3-Q3-clocks","w":416,"h":244}},
-{"qimg":{"src":"2016-P3-Q4","w":1070,"h":902},"n":"4","paperNum":"3","paper":"Papers 2 & 3 (reasoning)","sitting":"2016","strand":"Algebra","subtopic":"Finding unknown values","marks":2,"ref":"6A2","intro":"Each shape stands for a number.\n(Diagram: a column of three triangles has a total of 96. A row made of a triangle, a circle, a circle and a triangle has a total of 100. One triangle is in both the column and the row.)","text":"Work out the value of each shape.\n(a) triangle = ☐\n(b) circle = ☐","answer":"","markscheme":"4b: If the answers to ● and ▲ are incorrect, award ONE mark if ▲ + ● = 50 unless ● = 25","ansImg":{"src":"2016-P3-Q4-shapes","w":200,"h":92}},
+{"qimg":{"src":"2016-P3-Q4","w":1070,"h":902},"n":"4","paperNum":"3","paper":"Papers 2 & 3 (reasoning)","sitting":"2016","strand":"Algebra","subtopic":"Finding unknown values","marks":2,"ref":"6A2","intro":"Each shape stands for a number.\n(Diagram: a column of three triangles has a total of 96. A row made of a triangle, a circle, a circle and a triangle has a total of 100. One triangle is in both the column and the row.)","text":"Work out the value of each shape.\n(a) triangle = ☐\n(b) circle = ☐","answer":"","markscheme":"If the answers to ● and ▲ are incorrect, award ONE mark if ▲ + ● = 50 unless ● = 25","ansImg":{"src":"2016-P3-Q4-shapes","w":200,"h":92}},
 {"qimg":{"src":"2016-P3-Q5","w":1069,"h":353},"n":"5","paperNum":"3","paper":"Papers 2 & 3 (reasoning)","sitting":"2016","strand":"Fractions, decimals and percentages","subtopic":"Ordering decimals","marks":1,"ref":"5F8","text":"Write these numbers in order, starting with the smallest.\n0.78   0.607   5.6   0.098   4.003","answer":"Numbers in order, as shown:","markscheme":"","ansImg":{"src":"2016-P3-Q5-boxes","w":460,"h":60}},
 {"qimg":{"src":"2016-P3-Q6","w":1074,"h":642},"n":"6","paperNum":"3","paper":"Papers 2 & 3 (reasoning)","sitting":"2016","strand":"Fractions, decimals and percentages","subtopic":"Fraction and decimal problems","marks":2,"ref":"4F10b","intro":"Jacob cuts 4 metres of ribbon into three pieces.\nThe length of the first piece is 1.28 metres.\nThe length of the second piece is 1.65 metres.","text":"Work out the length of the third piece.","answer":"Award TWO marks for the correct answer of 1.07","markscheme":"If the answer is incorrect, award ONE mark for evidence of an appropriate method, e.g.\n• 1.28 + 1.65 = 2.93\n4 − 2.93\nOR\n• 4 − 1.28 = 2.72\n2.72 − 1.65\nOR\n• 4 − 1.65 = 2.35\n2.35 − 1.28\nAdditional guidance:\nAccept for ONE mark an answer of 107 metres as evidence of an appropriate method.\nAnswer need not be obtained for the award of ONE mark."},
 {"qimg":{"src":"2016-P3-Q7","w":1069,"h":1003},"n":"7","paperNum":"3","paper":"Papers 2 & 3 (reasoning)","sitting":"2016","strand":"Properties of shapes","subtopic":"Angles","marks":2,"ref":"4G4","intro":"Here are five angles, labelled <em>a</em>, <em>b</em>, <em>c</em>, <em>d</em> and <em>e</em>, marked on a grid of squares.","text":"(a) Write the letters of the angles that are obtuse.\n(b) Write the letters of the angles that are acute.","answer":"(a) <em>c</em> and <em>e</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(b) <em>a</em> and <em>d</em>","markscheme":"7a: Letters may be given in either order.\n7b: Letters may be given in either order."},
 {"qimg":{"src":"2016-P3-Q8","w":1074,"h":1008},"n":"8","paperNum":"3","paper":"Papers 2 & 3 (reasoning)","sitting":"2016","strand":"Calculation","subtopic":"Money problems","marks":2,"ref":"6C8","intro":"Olivia buys three packets of nuts.\nShe pays with a £2 coin.\nThis is her change: 50p, 20p, 10p, 10p and 5p.","text":"What is the cost of one packet of nuts?","answer":"Award TWO marks for the correct answer of 35p OR £0.35","markscheme":"If the answer is incorrect, award ONE mark for evidence of an appropriate method, e.g.\n• 50p + 20p + 10p + 10p + 5p = 95p\n£2.00 − 95p = £1.05\n£1.05 ÷ 3\nAdditional guidance:\nAccept for ONE mark an answer of £35 OR £35p OR 0.35p as evidence of an appropriate method.\nAnswer need not be obtained for the award of ONE mark."},
-{"qimg":{"src":"2016-P3-Q9","w":1069,"h":903},"n":"9","paperNum":"3","paper":"Papers 2 & 3 (reasoning)","sitting":"2016","strand":"Statistics","subtopic":"Timetables","marks":2,"ref":"5S1","intro":"Here is part of the bus timetable from Riverdale to Mott Haven.\nRiverdale: 10:02, 10:12, 10:31, 10:48\nKingsbridge: 10:11, 10:21, 10:38, 10:55\nFordham: 10:28, 10:38, 10:54, 11:11\nTremont: 10:36, 10:44, 11:00, 11:17\nMott Haven: 10:53, 11:01, 11:17, 11:34","text":"(a) How many minutes does it take the 10:31 bus from Riverdale to reach Mott Haven?\nMr Evans is at Fordham at 10:30\n(b) What is the earliest time he can reach Tremont on the bus?","answer":"(a) 46 minutes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(b) 10:44","markscheme":"9a: The answer is a time interval (see page 10 for guidance).\n9b: The answer is a specific time (see page 11 for guidance)."},
+{"qimg":{"src":"2016-P3-Q9","w":1069,"h":903},"n":"9","paperNum":"3","paper":"Papers 2 & 3 (reasoning)","sitting":"2016","strand":"Statistics","subtopic":"Timetables","marks":2,"ref":"5S1","intro":"Here is part of the bus timetable from Riverdale to Mott Haven.\nRiverdale: 10:02, 10:12, 10:31, 10:48\nKingsbridge: 10:11, 10:21, 10:38, 10:55\nFordham: 10:28, 10:38, 10:54, 11:11\nTremont: 10:36, 10:44, 11:00, 11:17\nMott Haven: 10:53, 11:01, 11:17, 11:34","text":"(a) How many minutes does it take the 10:31 bus from Riverdale to reach Mott Haven?\nMr Evans is at Fordham at 10:30\n(b) What is the earliest time he can reach Tremont on the bus?","answer":"(a) 46 minutes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(b) 10:44","markscheme":"9a: The answer is a time interval.\n9b: The answer is a specific time."},
 {"qimg":{"src":"2016-P3-Q10","w":1070,"h":1251},"n":"10","paperNum":"3","paper":"Papers 2 & 3 (reasoning)","sitting":"2016","strand":"Measurement","subtopic":"Volume","marks":1,"ref":"5M8","intro":"Emma makes a cuboid using 12 cubes.\n(Five cuboids, A to E, are also shown.)","text":"Write the letter of the cuboid that has a different volume from Emma's cuboid.","answer":"C","markscheme":"Accept 18"},
 {"qimg":{"src":"2016-P3-Q11","w":1074,"h":808},"n":"11","paperNum":"3","paper":"Papers 2 & 3 (reasoning)","sitting":"2016","strand":"Calculation","subtopic":"Written multiplication","marks":2,"ref":"6C7a","intro":"A toy shop orders 11 boxes of marbles.\nEach box contains 6 bags of marbles.\nEach bag contains 45 marbles.","text":"How many marbles does the shop order in total?","answer":"Award TWO marks for the correct answer of 2,970","markscheme":"If the answer is incorrect, award ONE mark for evidence of an appropriate method with no more than one arithmetic error, e.g.\n• 11 × 6 = 66\n66 × 45\nAdditional guidance:\nDo not accept sight of a correct multiplication only, e.g. 11 × 6 × 45, for ONE mark.\nMisreads are not allowed."},
 {"qimg":{"src":"2016-P3-Q12","w":1070,"h":1146},"n":"12","paperNum":"3","paper":"Papers 2 & 3 (reasoning)","sitting":"2016","strand":"Position and direction","subtopic":"Translation","marks":1,"ref":"4P2","intro":"A triangle is translated from position A to position B.","text":"Complete the sentence.\nThe triangle has moved ☐ squares to the right and ☐ squares down.","answer":"","markscheme":"","ansImg":{"src":"2016-P3-Q12-moved","w":468,"h":80}},
@@ -832,8 +837,50 @@ function sittingRank(sitting){
   return m ? parseInt(m[1],10) : 0;
 }
 
+// Arithmetic (Paper 1) comes first, then the reasoning papers. Within each
+// group, questions run in number order (all the reasoning Q1s together, then
+// every Q2, and so on), with the most recent sitting first within that.
+function sortQuestions(list){
+  return list.slice().sort((a,b)=>{
+    const ga = paperRank(a) === 1 ? 0 : 1, gb = paperRank(b) === 1 ? 0 : 1;
+    if(ga !== gb) return ga - gb;
+    const an = questionNumber(a), bn = questionNumber(b);
+    if(an !== bn) return an - bn;
+    const sa = sittingRank(a.sitting), sb = sittingRank(b.sitting);
+    if(sa !== sb) return sb - sa;
+    return paperRank(a) - paperRank(b);
+  });
+}
+
 function filterSignature(){
   return JSON.stringify([state.year, state.paper, [...state.strands].sort(), state.subtopic]);
+}
+
+// One question card. The printed worksheet uses the same markup (without the
+// tick box and buttons) so a printed card looks exactly like the on-screen one.
+function cardHTML(q, idx, forPrint){
+  return `
+    <div class="card" style="--strand:${STRANDS[q.strand]}"${forPrint ? '' : ` onclick="openModal(${idx})"`}>
+      <div class="card-top">
+        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-width:0;">
+          ${q.subtopics.map(t=>`<span class="subtopic-pill">${t}</span>`).join('')}
+          <span class="source-tag">${sourceTag(q)}</span>
+        </div>
+        <div class="card-top-right">
+          <span class="marks-badge">${q.marks} mark${q.marks>1?'s':''}</span>
+        </div>
+      </div>
+      <div class="card-body">
+        ${qBodyHTML(q)}
+      </div>
+      ${forPrint ? '' : `<div class="card-actions">
+        <label class="add-label" onclick="event.stopPropagation()">
+          <input type="checkbox" data-id="${q.id}" ${state.selected.has(q.id)?'checked':''} onchange="toggleSelect('${q.id}')">
+          Add to worksheet
+        </label>
+        <button class="print-one" onclick="event.stopPropagation();printOne('${q.id}')">Print this question →</button>
+      </div>`}
+    </div>`;
 }
 
 function render(){
@@ -843,18 +890,7 @@ function render(){
     lastFilterSignature = sig;
   }
   let list = QUESTIONS.filter(matches);
-  // Arithmetic (Paper 1) comes first, then the reasoning papers. Within each
-  // group, questions run in number order (all the reasoning Q1s together, then
-  // every Q2, and so on), with the most recent sitting first within that.
-  list = list.slice().sort((a,b)=>{
-    const ga = paperRank(a) === 1 ? 0 : 1, gb = paperRank(b) === 1 ? 0 : 1;
-    if(ga !== gb) return ga - gb;
-    const an = questionNumber(a), bn = questionNumber(b);
-    if(an !== bn) return an - bn;
-    const sa = sittingRank(a.sitting), sb = sittingRank(b.sitting);
-    if(sa !== sb) return sb - sa;
-    return paperRank(a) - paperRank(b);
-  });
+  list = sortQuestions(list);
   currentList = list;
   const shown = Math.min(state.visibleCount, list.length);
   document.getElementById("resultsMeta").textContent = list.length === 0
@@ -870,29 +906,7 @@ function render(){
     return;
   }
   const visible = list.slice(0, shown);
-  grid.innerHTML = visible.map((q,idx)=>`
-    <div class="card" style="--strand:${STRANDS[q.strand]}" onclick="openModal(${idx})">
-      <div class="card-top">
-        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-width:0;">
-          ${q.subtopics.map(t=>`<span class="subtopic-pill">${t}</span>`).join('')}
-          <span class="source-tag">${sourceTag(q)}</span>
-        </div>
-        <div class="card-top-right">
-          <span class="marks-badge">${q.marks} mark${q.marks>1?'s':''}</span>
-        </div>
-      </div>
-      <div class="card-body">
-        ${qBodyHTML(q)}
-      </div>
-      <div class="card-actions">
-        <label class="add-label" onclick="event.stopPropagation()">
-          <input type="checkbox" data-id="${q.id}" ${state.selected.has(q.id)?'checked':''} onchange="toggleSelect('${q.id}')">
-          Add to worksheet
-        </label>
-        <button class="print-one" onclick="event.stopPropagation();printOne('${q.id}')">Print this question →</button>
-      </div>
-    </div>
-  `).join('');
+  grid.innerHTML = visible.map((q,idx)=>cardHTML(q, idx, false)).join('');
   loadMoreWrap.innerHTML = shown < list.length
     ? `<button class="btn btn-loadmore" id="loadMoreBtn">Show more questions (${list.length - shown} remaining)</button>`
     : '';
@@ -1076,27 +1090,38 @@ function resetPrintAnswers(){
   document.getElementById('printAnswers').innerHTML = '';
 }
 
-document.getElementById("printSelected").addEventListener('click',()=>{
-  const ids = [];
-  document.querySelectorAll('.card').forEach(c=>{
-    const cb = c.querySelector('input[type=checkbox]');
-    const show = cb.checked;
-    c.classList.toggle('print-hide', !show);
-    if(show) ids.push(cb.dataset.id);
-  });
-  buildPrintAnswers(ids);
-  window.print();
-  setTimeout(()=>{document.querySelectorAll('.card').forEach(c=>c.classList.remove('print-hide'));resetPrintAnswers();},500);
-});
-function printOne(id){
-  document.querySelectorAll('.card').forEach(c=>{
-    const cb = c.querySelector('input[type=checkbox]');
-    c.classList.toggle('print-hide', cb.dataset.id !== id);
-  });
-  buildPrintAnswers([id], true);
-  window.print();
-  setTimeout(()=>{document.querySelectorAll('.card').forEach(c=>c.classList.remove('print-hide'));resetPrintAnswers();},500);
+// Printing builds its own list of cards from the ticked questions, so a
+// worksheet always includes everything that was ticked, whatever filters are
+// set and however many cards the page is currently showing. Every image is
+// forced to load first, so nothing prints as a blank card.
+function waitForImages(root){
+  const imgs = [...root.querySelectorAll('img')];
+  imgs.forEach(i=>{ i.loading = 'eager'; });
+  const loaded = Promise.all(imgs.map(i=>new Promise(res=>{
+    if(i.complete) return res();
+    i.addEventListener('load', res, {once:true});
+    i.addEventListener('error', res, {once:true});
+  })));
+  return Promise.race([loaded, new Promise(res=>setTimeout(res, 8000))]);
 }
+async function printQuestions(ids, forceAnswers){
+  const list = sortQuestions(ids.map(id=>QUESTIONS.find(q=>q.id === id)).filter(Boolean));
+  if(list.length === 0) return;
+  const area = document.getElementById('printCards');
+  area.innerHTML = list.map(q=>cardHTML(q, 0, true)).join('');
+  buildPrintAnswers(list.map(q=>q.id), forceAnswers);
+  document.body.classList.add('printing-selection');
+  await waitForImages(document.getElementById('sqb-page'));
+  const cleanup = ()=>{
+    document.body.classList.remove('printing-selection');
+    area.innerHTML = '';
+    resetPrintAnswers();
+  };
+  window.addEventListener('afterprint', cleanup, {once:true});
+  window.print();
+}
+document.getElementById("printSelected").addEventListener('click',()=>{ printQuestions([...state.selected], false); });
+function printOne(id){ printQuestions([id], true); }
 
 buildStrandChips();
 buildSubtopicOptions();
