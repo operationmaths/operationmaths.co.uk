@@ -31,8 +31,10 @@ permalink: /online-maths-tests/
 .wrong-table th { text-align: left; font-size: 0.78rem; font-weight: 600; color: #6b7280; padding: 5px 10px; border-bottom: 1px solid #e5e7eb; }
 .wrong-table td { padding: 6px 10px; border-bottom: 1px solid #f3f4f6; }
 .wrong-table tr:last-child td { border-bottom: none; }
+.wrong-table th:nth-child(2), .wrong-table th:nth-child(3),
+.wrong-table td:nth-child(2), .wrong-table td:nth-child(3) { width: 25%; }
 .wrong-table td.your-ans-cell { color: #c0392b; font-weight: 600; }
-.wrong-table td:nth-child(2) { font-weight: 600; color: var(--green); }
+.wrong-table td.correct-ans-cell { color: var(--green); font-weight: 600; }
 .results-wrong { width: 100%; box-sizing: border-box; }
 .fdp-q-wrap { display: flex; flex-direction: column; height: 14rem; }
 #fdp-question { font-size: clamp(1.1rem, 3.5vw, 2.25rem); flex-shrink: 0; height: 6rem; display: flex; align-items: center; justify-content: center; text-align: center; overflow: visible; flex-wrap: wrap; gap: 0.3em; line-height: 1.6; }
@@ -144,8 +146,7 @@ permalink: /online-maths-tests/
         <div class="results-timeout" id="tt-timeout"></div>
         <div class="results-perfect" id="tt-perfect" style="display:none">Full marks — excellent work!</div>
         <div class="results-wrong" id="tt-wrong-wrap" style="display:none">
-          <h3>Wrong answers</h3>
-          <table class="wrong-table"><thead><tr><th>Question</th><th>Correct answer</th><th>Your answer</th></tr></thead><tbody id="tt-wrong-list"></tbody></table>
+          <table class="wrong-table"><thead><tr><th>Question</th><th>Your answer</th><th>Correct answer</th></tr></thead><tbody id="tt-wrong-list"></tbody></table>
         </div>
         <div class="results-actions" id="tt-actions"></div>
       </div>
@@ -222,8 +223,7 @@ permalink: /online-maths-tests/
         <div class="results-timeout" id="nb-timeout"></div>
         <div class="results-perfect" id="nb-perfect" style="display:none">Full marks — excellent work!</div>
         <div class="results-wrong" id="nb-wrong-wrap" style="display:none">
-          <h3>Wrong answers</h3>
-          <table class="wrong-table"><thead><tr><th>Question</th><th>Correct answer</th><th>Your answer</th></tr></thead><tbody id="nb-wrong-list"></tbody></table>
+          <table class="wrong-table"><thead><tr><th>Question</th><th>Your answer</th><th>Correct answer</th></tr></thead><tbody id="nb-wrong-list"></tbody></table>
         </div>
         <div class="results-actions" id="nb-actions"></div>
       </div>
@@ -292,8 +292,7 @@ permalink: /online-maths-tests/
         <div class="results-timeout" id="dh-timeout"></div>
         <div class="results-perfect" id="dh-perfect" style="display:none">Full marks — excellent work!</div>
         <div class="results-wrong" id="dh-wrong-wrap" style="display:none">
-          <h3>Wrong answers</h3>
-          <table class="wrong-table"><thead><tr><th>Question</th><th>Correct answer</th><th>Your answer</th></tr></thead><tbody id="dh-wrong-list"></tbody></table>
+          <table class="wrong-table"><thead><tr><th>Question</th><th>Your answer</th><th>Correct answer</th></tr></thead><tbody id="dh-wrong-list"></tbody></table>
         </div>
         <div class="results-actions" id="dh-actions"></div>
       </div>
@@ -362,8 +361,7 @@ permalink: /online-maths-tests/
         <div class="results-timeout" id="md-timeout"></div>
         <div class="results-perfect" id="md-perfect" style="display:none">Full marks — excellent work!</div>
         <div class="results-wrong" id="md-wrong-wrap" style="display:none">
-          <h3>Wrong answers</h3>
-          <table class="wrong-table"><thead><tr><th>Question</th><th>Correct answer</th><th>Your answer</th></tr></thead><tbody id="md-wrong-list"></tbody></table>
+          <table class="wrong-table"><thead><tr><th>Question</th><th>Your answer</th><th>Correct answer</th></tr></thead><tbody id="md-wrong-list"></tbody></table>
         </div>
         <div class="results-actions" id="md-actions"></div>
       </div>
@@ -442,8 +440,7 @@ permalink: /online-maths-tests/
         <div class="results-timeout" id="rnd-timeout"></div>
         <div class="results-perfect" id="rnd-perfect" style="display:none">Full marks &#8212; excellent work!</div>
         <div class="results-wrong" id="rnd-wrong-wrap" style="display:none">
-          <h3>Wrong answers</h3>
-          <table class="wrong-table"><thead><tr><th>Question</th><th>Correct answer</th><th>Your answer</th></tr></thead><tbody id="rnd-wrong-list"></tbody></table>
+          <table class="wrong-table"><thead><tr><th>Question</th><th>Your answer</th><th>Correct answer</th></tr></thead><tbody id="rnd-wrong-list"></tbody></table>
         </div>
         <div class="results-actions" id="rnd-actions"></div>
       </div>
@@ -511,8 +508,7 @@ permalink: /online-maths-tests/
         <div class="results-timeout" id="fdp-timeout"></div>
         <div class="results-perfect" id="fdp-perfect" style="display:none">Full marks — excellent work!</div>
         <div class="results-wrong" id="fdp-wrong-wrap" style="display:none">
-          <h3>Wrong answers</h3>
-          <table class="wrong-table"><thead><tr><th>Question</th><th>Correct answer</th><th>Your answer</th></tr></thead><tbody id="fdp-wrong-list"></tbody></table>
+          <table class="wrong-table"><thead><tr><th>Question</th><th>Your answer</th><th>Correct answer</th></tr></thead><tbody id="fdp-wrong-list"></tbody></table>
         </div>
         <div class="results-actions" id="fdp-actions"></div>
       </div>
@@ -581,8 +577,7 @@ permalink: /online-maths-tests/
         <div class="results-timeout" id="fon-timeout"></div>
         <div class="results-perfect" id="fon-perfect" style="display:none">Full marks &#8212; excellent work!</div>
         <div class="results-wrong" id="fon-wrong-wrap" style="display:none">
-          <h3>Wrong answers</h3>
-          <table class="wrong-table"><thead><tr><th>Question</th><th>Correct answer</th><th>Your answer</th></tr></thead><tbody id="fon-wrong-list"></tbody></table>
+          <table class="wrong-table"><thead><tr><th>Question</th><th>Your answer</th><th>Correct answer</th></tr></thead><tbody id="fon-wrong-list"></tbody></table>
         </div>
         <div class="results-actions" id="fon-actions"></div>
       </div>
@@ -660,8 +655,7 @@ permalink: /online-maths-tests/
         <div class="results-timeout" id="mc-timeout"></div>
         <div class="results-perfect" id="mc-perfect" style="display:none">Full marks — excellent work!</div>
         <div class="results-wrong" id="mc-wrong-wrap" style="display:none">
-          <h3>Wrong answers</h3>
-          <table class="wrong-table"><thead><tr><th>Question</th><th>Correct answer</th><th>Your answer</th></tr></thead><tbody id="mc-wrong-list"></tbody></table>
+          <table class="wrong-table"><thead><tr><th>Question</th><th>Your answer</th><th>Correct answer</th></tr></thead><tbody id="mc-wrong-list"></tbody></table>
         </div>
         <div class="results-actions" id="mc-actions"></div>
       </div>
@@ -733,8 +727,7 @@ permalink: /online-maths-tests/
         <div class="results-timeout" id="pr-timeout"></div>
         <div class="results-perfect" id="pr-perfect" style="display:none">Full marks &#8212; excellent work!</div>
         <div class="results-wrong" id="pr-wrong-wrap" style="display:none">
-          <h3>Wrong answers</h3>
-          <table class="wrong-table"><thead><tr><th>Question</th><th>Correct answer</th><th>Your answer</th></tr></thead><tbody id="pr-wrong-list"></tbody></table>
+          <table class="wrong-table"><thead><tr><th>Question</th><th>Your answer</th><th>Correct answer</th></tr></thead><tbody id="pr-wrong-list"></tbody></table>
         </div>
         <div class="results-actions" id="pr-actions"></div>
       </div>
@@ -815,7 +808,7 @@ permalink: /online-maths-tests/
   function wrongTableRows(answeredWrong, questionFn, correctFn, givenFn) {
     const gFn = givenFn || (a => a.given);
     return answeredWrong.map(a =>
-      '<tr><td>' + questionFn(a) + '</td><td>' + correctFn(a) + '</td><td class="your-ans-cell">' + gFn(a) + '</td></tr>'
+      '<tr><td>' + questionFn(a) + '</td><td class="your-ans-cell">' + gFn(a) + '</td><td class="correct-ans-cell">' + correctFn(a) + '</td></tr>'
     ).join('');
   }
 
