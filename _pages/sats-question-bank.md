@@ -335,7 +335,9 @@ body_class: page-sats-question-bank
     .card-top > div{display:inline;}
     .card-top .subtopic-pill{display:inline-block;margin-right:8px;}
     .card-top .source-tag{display:inline;}
-    .card-top .card-top-right{display:inline-block;float:right;}
+    .card-top .card-top-right{display:none !important;}
+    .card .q-diagram.q-crop{width:100%;}
+    .card .q-diagram.q-crop img{width:100% !important;max-width:100% !important;height:auto;}
     .card-top .card-top-right .marks-badge{display:inline-block;}
     .card-body{display:block !important;overflow:visible !important;height:auto !important;}
     .card-body::after{display:none !important;}
