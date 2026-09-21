@@ -5885,9 +5885,13 @@ function qgFormatInline(str) {
   // Thousands separator: any whole-number run of 4+ digits (not a decimal's fractional part) gets commas
   s = s.replace(/(?<!\.)\b\d{4,}\b/g, m => Number(m).toLocaleString('en-GB'));
 
-  // Square and cube roots: √(number) / ∛(number) -> radical with a horizontal vinculum over the entire radicand
-  s = s.replace(/√\(([^()]+)\)/g, '<span class="qg-root"><span class="qg-root-symbol">√</span><span class="qg-root-radicand">$1</span></span>');
-  s = s.replace(/∛\(([^()]+)\)/g, '<span class="qg-root"><span class="qg-root-index">3</span><span class="qg-root-symbol">√</span><span class="qg-root-radicand">$1</span></span>');
+  // Square and cube roots: √(number) / ∛(number) and √number / ∛number
+// -> radical with a horizontal vinculum over the entire radicand
+s = s.replace(/√\(([^()]+)\)/g, '<span class="qg-root"><span class="qg-root-symbol">√</span><span class="qg-root-radicand">$1</span></span>');
+s = s.replace(/∛\(([^()]+)\)/g, '<span class="qg-root"><span class="qg-root-index">3</span><span class="qg-root-symbol">√</span><span class="qg-root-radicand">$1</span></span>');
+
+s = s.replace(/√(\d+(?:\.\d+)?)/g, '<span class="qg-root"><span class="qg-root-symbol">√</span><span class="qg-root-radicand">$1</span></span>');
+s = s.replace(/∛(\d+(?:\.\d+)?)/g, '<span class="qg-root"><span class="qg-root-index">3</span><span class="qg-root-symbol">√</span><span class="qg-root-radicand">$1</span></span>');
 
   return s;
 }
