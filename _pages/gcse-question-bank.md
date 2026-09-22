@@ -2680,11 +2680,13 @@ const QIMG_BASE_PATH = "/assets/images/gcse-question-bank/";
 // tier is the same behaviour the site already had, not a regression.
 function selectQimg(q){
   if(state.tier==="Higher" && q.higherQimg) return q.higherQimg;
-  // Crossover tier and the unfiltered "All" view both show the
-  // number-masked crop: under "All" the viewer could be a Foundation or
+  // Crossover tier and the unfiltered "all" view both show the
+  // number-masked crop: under "all" the viewer could be a Foundation or
   // a Higher student, so neither paper's number is the "right" one to
-  // show any more than it is under Crossover tier itself.
-  if((state.tier==="Crossover" || state.tier==="All") && q.crossoverQimg) return q.crossoverQimg;
+  // show any more than it is under Crossover tier itself. The "all"
+  // button's data-tier value is lowercase (unlike "Foundation",
+  // "Higher" and "Crossover"), so this must match that case exactly.
+  if((state.tier==="Crossover" || state.tier==="all") && q.crossoverQimg) return q.crossoverQimg;
   return q.qimg;
 }
 function qBodyHTML(q, modal){
@@ -2725,7 +2727,7 @@ function qBodyHTML(q, modal){
       // question number in its own right at that bigger size. Both are
       // nudged up slightly from directly-top-aligned to sit closer to
       // where the image's own first line of text visually starts.
-      // Under Crossover tier, and under the unfiltered "All" view, this
+      // Under Crossover tier, and under the unfiltered "all" view, this
       // numeral is deliberately left blank rather than showing
       // baseQuestionNumber(q) - neither paper's number is the "right"
       // one to show when the viewer could be on either tier, and that
@@ -2733,10 +2735,11 @@ function qBodyHTML(q, modal){
       // to a number baked into the image itself (see selectQimg above).
       // The row/column structure is kept (an empty span, not a removed
       // one) so the image doesn't shift sideways from losing its number
-      // gutter.
+      // gutter. Matches state.tier's actual lowercase "all" value - see
+      // the comment in selectQimg.
       const fontSize = modal ? 18 : 12;
       const topNudge = modal ? 4 : 2;
-      const numberText = (state.tier==="Crossover" || state.tier==="All") ? '' : baseQuestionNumber(q);
+      const numberText = (state.tier==="Crossover" || state.tier==="all") ? '' : baseQuestionNumber(q);
       return `<div class="q-part-row"><span class="q-part-number" style="font-size:${fontSize}px;margin-top:${topNudge}px;">${numberText}</span><div class="${cls}">${wrapOpen}${img}${overlayHTML}${wrapClose}</div></div>`;
     }
     return `<div class="${cls}">${wrapOpen}${img}${overlayHTML}${wrapClose}</div>`;
