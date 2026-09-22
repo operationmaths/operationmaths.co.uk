@@ -2727,19 +2727,22 @@ function qBodyHTML(q, modal){
       // question number in its own right at that bigger size. Both are
       // nudged up slightly from directly-top-aligned to sit closer to
       // where the image's own first line of text visually starts.
-      // Under Crossover tier, and under the unfiltered "all" view, this
-      // numeral is deliberately left blank rather than showing
-      // baseQuestionNumber(q) - neither paper's number is the "right"
-      // one to show when the viewer could be on either tier, and that
-      // applies just as much to this externally-drawn heading as it does
-      // to a number baked into the image itself (see selectQimg above).
+      // Left blank whenever the image actually being shown for this
+      // question is the crossover-masked crop (qimg, from selectQimg
+      // above, IS q.crossoverQimg) - neither paper's number is the
+      // "right" one to show in that case, and that applies just as much
+      // to this externally-drawn heading as it does to a number baked
+      // into the image itself. Deliberately NOT keyed off state.tier
+      // directly: an ordinary (non-crossover) later part also has
+      // needsHeading true, and under the unfiltered "all" view that
+      // question's own number must still show - only an actual
+      // crossover question's number gets blanked.
       // The row/column structure is kept (an empty span, not a removed
       // one) so the image doesn't shift sideways from losing its number
-      // gutter. Matches state.tier's actual lowercase "all" value - see
-      // the comment in selectQimg.
+      // gutter.
       const fontSize = modal ? 18 : 12;
       const topNudge = modal ? 4 : 2;
-      const numberText = (state.tier==="Crossover" || state.tier==="all") ? '' : baseQuestionNumber(q);
+      const numberText = (qimg === q.crossoverQimg) ? '' : baseQuestionNumber(q);
       return `<div class="q-part-row"><span class="q-part-number" style="font-size:${fontSize}px;margin-top:${topNudge}px;">${numberText}</span><div class="${cls}">${wrapOpen}${img}${overlayHTML}${wrapClose}</div></div>`;
     }
     return `<div class="${cls}">${wrapOpen}${img}${overlayHTML}${wrapClose}</div>`;
