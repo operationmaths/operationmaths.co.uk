@@ -1040,7 +1040,7 @@ function qBodyHTML(q, modal){
   const K = modal ? MODAL_CROP_SCALE : GRID_CROP_SCALE;
   const cls = modal ? 'q-diagram q-crop q-crop-modal' : 'q-diagram q-crop';
   const w = Math.round(q.qimg.w * K);
-  const img = `<img src="${imgUrl(q.qimg.src)}" alt="Question ${q.n}, cropped directly from the ${q.sitting} key stage 2 mathematics test paper ${q.paperNum}" style="width:${w}px;max-width:100%;" loading="lazy" decoding="async" onerror="imgFallback(this,'${q.id}')">`;
+  const img = `<img src="${imgUrl(q.qimg.src)}" alt="Question ${q.n}, cropped directly from the ${q.sitting} key stage 2 mathematics test paper ${q.paperNum}" style="width:${w}px;max-width:100%;" decoding="async" onerror="imgFallback(this,'${q.id}')">`;
   return `<div class="${cls}">${img}</div>`;
 }
 
@@ -1048,7 +1048,7 @@ function imgUrl(name){ return QIMG_BASE_PATH + name + '.png'; }
 // Mark scheme text can hold [[img:name:width]] markers for example diagrams taken from the mark scheme.
 function msInline(text){
   return mathText(text).replace(/\[\[img:([^:\]]+):(\d+)\]\]/g, (m, name, w)=>
-    `<div class="answer-img"><img src="${imgUrl(name)}" alt="Example diagram from the mark scheme" style="width:${Math.round(Number(w)*ANSWER_IMG_SCALE)}px;max-width:100%;" loading="lazy" decoding="async"></div>`);
+    `<div class="answer-img"><img src="${imgUrl(name)}" alt="Example diagram from the mark scheme" style="width:${Math.round(Number(w)*ANSWER_IMG_SCALE)}px;max-width:100%;" decoding="async"></div>`);
 }
 // A bullet keeps everything that belongs to it (working lines, example images)
 // indented in line with the bullet's own text, as on the printed mark scheme.
@@ -1076,7 +1076,7 @@ function markschemeHTML(text){
 // is something in it beyond the answer itself.
 function answerHTML(q){
   const ansImg = q.ansImg
-    ? `<div class="answer-img"><img src="${imgUrl(q.ansImg.src)}" alt="Correct answer to question ${q.n}, taken from the mark scheme" style="width:${Math.round(q.ansImg.w*ANSWER_IMG_SCALE)}px;max-width:100%;" loading="lazy" decoding="async"></div>`
+    ? `<div class="answer-img"><img src="${imgUrl(q.ansImg.src)}" alt="Correct answer to question ${q.n}, taken from the mark scheme" style="width:${Math.round(q.ansImg.w*ANSWER_IMG_SCALE)}px;max-width:100%;" decoding="async"></div>`
     : '';
   const hasMS = q.markscheme && q.markscheme.trim();
   const ms = hasMS
