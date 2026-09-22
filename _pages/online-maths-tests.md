@@ -779,20 +779,29 @@ permalink: /online-maths-tests/
     if (btn) btn.textContent = current === total - 1 ? 'See your results →' : 'Next question →';
   }
 
-  function shuffleNoConsec(arr) {
-    for (let i = arr.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [arr[i], arr[j]] = [arr[j], arr[i]];
-    }
-    for (let i = 0; i < arr.length - 1; i++) {
-      if (arr[i].label === arr[i + 1].label) {
-        for (let j = i + 2; j < arr.length; j++) {
-          if (arr[j].label !== arr[i].label) { [arr[i + 1], arr[j]] = [arr[j], arr[i + 1]]; break; }
+  ffunction shuffleNoConsec(arr) {
+  const getKey = q => q.label !== undefined
+    ? q.label
+    : q.type + '_' + q.a + '_' + q.b;
+
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (getKey(arr[i]) === getKey(arr[i + 1])) {
+      for (let j = i + 2; j < arr.length; j++) {
+        if (getKey(arr[j]) !== getKey(arr[i])) {
+          [arr[i + 1], arr[j]] = [arr[j], arr[i + 1]];
+          break;
         }
       }
     }
-    return arr;
   }
+
+  return arr;
+}
 
   function genericDrawCapped(pool, needed) {
     const maxRepeats = Math.max(2, Math.ceil(needed / pool.length));
