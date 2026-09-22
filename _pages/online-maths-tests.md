@@ -779,7 +779,7 @@ permalink: /online-maths-tests/
     if (btn) btn.textContent = current === total - 1 ? 'See your results →' : 'Next question →';
   }
 
-  ffunction shuffleNoConsec(arr) {
+  function shuffleNoConsec(arr) {
   const getKey = q => q.label !== undefined
     ? q.label
     : q.type + '_' + q.a + '_' + q.b;
