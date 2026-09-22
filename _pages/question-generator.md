@@ -90,8 +90,8 @@ main { flex: 1; }
 }
 
 .qg-generate-row { display: flex; align-items: center; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap; }
-#qg-gen-btn { padding: 10px 28px; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 700; border: 1.5px solid var(--blue); border-radius: 7px; cursor: pointer; background: var(--blue); color: #fff; transition: background 0.12s, border-color 0.12s; }
-#qg-gen-btn:hover { background: var(--blue-dark); border-color: var(--blue-dark); }
+#qg-gen-btn { padding: 10px 28px; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 700; border: 1.5px solid #000000; border-radius: 7px; cursor: pointer; background: #000000; color: #fff; transition: background 0.12s, border-color 0.12s; }
+#qg-gen-btn:hover { background: #222222; border-color: #222222; }
 .qg-summary { font-size: 13px; color: #6b7280; font-weight: 300; }
 
 #qg-output { display: none; }
