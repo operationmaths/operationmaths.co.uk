@@ -773,6 +773,12 @@ permalink: /online-maths-tests/
     return m + ':' + s;
   }
 
+
+  function updateNextButton(id, current, total) {
+    const btn = document.getElementById(id);
+    if (btn) btn.textContent = current === total - 1 ? 'See your results →' : 'Next question →';
+  }
+
   function shuffleNoConsec(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -1036,6 +1042,7 @@ permalink: /online-maths-tests/
     const total = state.questions.length;
     document.getElementById('tt-progress').textContent = 'Question ' + (state.current + 1) + ' of ' + total;
     document.getElementById('tt-progress-bar').style.width = (state.current / total * 100) + '%';
+    updateNextButton('tt-next-btn', state.current, total);
     document.getElementById('tt-question').textContent = questionLabel(q);
     const input = document.getElementById('tt-answer');
     input.value = ''; input.focus();
@@ -1240,6 +1247,7 @@ permalink: /online-maths-tests/
     const total = nbState.questions.length;
     document.getElementById('nb-progress').textContent = 'Question ' + (nbState.current + 1) + ' of ' + total;
     document.getElementById('nb-progress-bar').style.width = (nbState.current / total * 100) + '%';
+    updateNextButton('nb-next-btn', nbState.current, total);
     document.getElementById('nb-question').textContent = q.label;
     const input = document.getElementById('nb-answer');
     input.value = ''; input.focus();
@@ -1410,6 +1418,7 @@ permalink: /online-maths-tests/
     const total = dhState.questions.length;
     document.getElementById('dh-progress').textContent = 'Question ' + (dhState.current + 1) + ' of ' + total;
     document.getElementById('dh-progress-bar').style.width = (dhState.current / total * 100) + '%';
+    updateNextButton('dh-next-btn', dhState.current, total);
     document.getElementById('dh-question').textContent = q.label;
     const input = document.getElementById('dh-answer');
     input.value = ''; input.focus();
@@ -1594,6 +1603,7 @@ permalink: /online-maths-tests/
     const total = mdState.questions.length;
     document.getElementById('md-progress').textContent = 'Question ' + (mdState.current + 1) + ' of ' + total;
     document.getElementById('md-progress-bar').style.width = (mdState.current / total * 100) + '%';
+    updateNextButton('md-next-btn', mdState.current, total);
     document.getElementById('md-question').innerHTML = q.label;
     const input = document.getElementById('md-answer');
     input.value = ''; input.focus();
@@ -1845,6 +1855,7 @@ permalink: /online-maths-tests/
     const total = mcState.questions.length;
     document.getElementById('mc-progress').textContent = 'Question ' + (mcState.current + 1) + ' of ' + total;
     document.getElementById('mc-progress-bar').style.width = (mcState.current / total * 100) + '%';
+    updateNextButton('mc-next-btn', mcState.current, total);
     document.getElementById('mc-question').innerHTML = q.label;
     const input = document.getElementById('mc-answer');
     input.value = ''; input.focus();
@@ -2399,6 +2410,7 @@ permalink: /online-maths-tests/
     const total = fonState.questions.length;
     document.getElementById('fon-progress').textContent = 'Question ' + (fonState.current + 1) + ' of ' + total;
     document.getElementById('fon-progress-bar').style.width = (fonState.current / total * 100) + '%';
+    updateNextButton('fon-next-btn', fonState.current, total);
     document.getElementById('fon-question').innerHTML = q.qHTML;
     const input = document.getElementById('fon-answer');
     input.value = ''; input.focus();
@@ -2765,6 +2777,7 @@ permalink: /online-maths-tests/
     const total = rndState.questions.length;
     document.getElementById('rnd-progress').textContent = 'Question ' + (rndState.current + 1) + ' of ' + total;
     document.getElementById('rnd-progress-bar').style.width = (rndState.current / total * 100) + '%';
+    updateNextButton('rnd-next-btn', rndState.current, total);
     document.getElementById('rnd-question').innerHTML = q.question.split('||').join('<br>');
     const input = document.getElementById('rnd-answer');
     input.value = ''; input.focus();
@@ -2972,6 +2985,7 @@ permalink: /online-maths-tests/
     const total = prState.questions.length;
     document.getElementById('pr-progress').textContent = 'Question ' + (prState.current + 1) + ' of ' + total;
     document.getElementById('pr-progress-bar').style.width = (prState.current / total * 100) + '%';
+    updateNextButton('pr-next-btn', prState.current, total);
     document.getElementById('pr-question').innerHTML = q.question;
     const input = document.getElementById('pr-answer');
     input.value = ''; input.focus();
