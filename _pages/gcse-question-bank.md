@@ -2680,7 +2680,11 @@ const QIMG_BASE_PATH = "/assets/images/gcse-question-bank/";
 // tier is the same behaviour the site already had, not a regression.
 function selectQimg(q){
   if(state.tier==="Higher" && q.higherQimg) return q.higherQimg;
-  if(state.tier==="Crossover" && q.crossoverQimg) return q.crossoverQimg;
+  // Crossover tier and the unfiltered "All" view both show the
+  // number-masked crop: under "All" the viewer could be a Foundation or
+  // a Higher student, so neither paper's number is the "right" one to
+  // show any more than it is under Crossover tier itself.
+  if((state.tier==="Crossover" || state.tier==="All") && q.crossoverQimg) return q.crossoverQimg;
   return q.qimg;
 }
 function qBodyHTML(q, modal){
@@ -2689,7 +2693,7 @@ function qBodyHTML(q, modal){
     const K = modal ? MODAL_CROP_SCALE : 0.5;
     const cls = modal ? 'q-diagram q-crop q-crop-modal' : 'q-diagram q-crop';
     const w = Math.round(qimg.w * K);
-    const img = `<img src="${QIMG_BASE_PATH}${qimg.src}.png" alt="Question ${displayN(q)}, cropped directly from the original exam paper" style="width:${w}px;max-width:100%;" loading="lazy" decoding="async">`;
+    const img = `<img src="${QIMG_BASE_PATH}${qimg.src}.png" alt="Question ${displayN(q)}, cropped directly from the original exam paper" style="width:${w}px;max-width:100%;">`;
     // A tiny number of crops have a hairline rule (e.g. a square root's
     // overline) that's proven unreliable as baked-in image pixels in some
     // environments even though the underlying file is correct - as a
@@ -2721,17 +2725,18 @@ function qBodyHTML(q, modal){
       // question number in its own right at that bigger size. Both are
       // nudged up slightly from directly-top-aligned to sit closer to
       // where the image's own first line of text visually starts.
-      // Under Crossover tier specifically, this numeral is deliberately
-      // left blank rather than showing baseQuestionNumber(q) - the whole
-      // point of the Crossover view is that neither paper's number is
-      // the "right" one to show, and that applies just as much to this
-      // externally-drawn heading as it does to a number baked into the
-      // image itself. The row/column structure is kept (an empty span,
-      // not a removed one) so the image doesn't shift sideways from
-      // losing its number gutter.
+      // Under Crossover tier, and under the unfiltered "All" view, this
+      // numeral is deliberately left blank rather than showing
+      // baseQuestionNumber(q) - neither paper's number is the "right"
+      // one to show when the viewer could be on either tier, and that
+      // applies just as much to this externally-drawn heading as it does
+      // to a number baked into the image itself (see selectQimg above).
+      // The row/column structure is kept (an empty span, not a removed
+      // one) so the image doesn't shift sideways from losing its number
+      // gutter.
       const fontSize = modal ? 18 : 12;
       const topNudge = modal ? 4 : 2;
-      const numberText = state.tier==="Crossover" ? '' : baseQuestionNumber(q);
+      const numberText = (state.tier==="Crossover" || state.tier==="All") ? '' : baseQuestionNumber(q);
       return `<div class="q-part-row"><span class="q-part-number" style="font-size:${fontSize}px;margin-top:${topNudge}px;">${numberText}</span><div class="${cls}">${wrapOpen}${img}${overlayHTML}${wrapClose}</div></div>`;
     }
     return `<div class="${cls}">${wrapOpen}${img}${overlayHTML}${wrapClose}</div>`;
