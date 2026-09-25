@@ -511,24 +511,24 @@ const STRANDS = {
 const QIMG_BASE_PATH = "/assets/images/sats-question-bank/";
 const GRID_CROP_SCALE = 0.5;
 const MODAL_CROP_SCALE = 0.75;
-const ANSWER_IMG_SCALE = 0.5;
+const ANSWER_IMG_SCALE = 0.66;
 // Mark scheme diagrams (ansImg and [[img:...]] markers) are cropped at wildly
 // different native sizes - a tiny worked calculation vs a full symmetry grid -
-// so scaling every one by the same factor leaves some too small to read
-// comfortably. This is a floor, not a fixed size: anything that would display
-// narrower than this is scaled up to it (aspect ratio preserved); anything
-// already wider is untouched. Keeps the numbers/text in a bus-stop division
-// or a small tick-box diagram roughly the same on-screen size as everything
-// else on the page, rather than shrinking with however small the source crop
-// happened to be.
-const MIN_ANSWER_IMG_WIDTH = 170;
+// but all of them come from the same PDF-to-image pipeline (render at a fixed
+// point-to-pixel ratio), so the *font size* in every crop's native pixels is
+// already consistent; what varies is how much content is in the crop (a
+// three-row bus-stop division vs the same division with extra "10 × 47"
+// working annotated beside it). Scaling every image by this one fixed factor
+// keeps that font size consistent across every diagram on the page - a
+// narrower crop simply renders as a narrower image, not a smaller font.
+// (Scaling each image up to a shared *width* instead of a shared *factor* was
+// tried first and rejected: two crops with different amounts of content then
+// needed different scale-up amounts to reach the same width, so the one with
+// less content ended up with visibly larger text than the one with more -
+// exactly the "these two don't match" bug this fixed value avoids.)
 function answerImgSize(nativeW, nativeH){
-  let w = Math.round(nativeW*ANSWER_IMG_SCALE);
-  let h = nativeH != null ? Math.round(nativeH*ANSWER_IMG_SCALE) : null;
-  if(w < MIN_ANSWER_IMG_WIDTH){
-    if(h) h = Math.round(h * MIN_ANSWER_IMG_WIDTH / w);
-    w = MIN_ANSWER_IMG_WIDTH;
-  }
+  const w = Math.round(nativeW*ANSWER_IMG_SCALE);
+  const h = nativeH != null ? Math.round(nativeH*ANSWER_IMG_SCALE) : null;
   return {w, h};
 }
 
