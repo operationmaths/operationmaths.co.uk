@@ -6068,11 +6068,12 @@ const QG_STRANDS = [
       { label: 'Negatives', topics: ['Add and subtract negatives', 'Multiply and divide negatives'] },
       { label: 'Operations', topics: ['Multiply by 10, 100 and 1000', 'Divide by 10, 100 and 1000', 'Addition', 'Subtraction', 'Short multiplication', 'Short division', 'Long multiplication', 'Long division', 'BIDMAS'] },
       { label: 'Percentages', topics: ['Common percentages of numbers', 'Percentages of numbers', 'Increase/decrease by a percentage', 'Percentage change', 'Simple interest', 'Compound interest', 'Reverse percentage'] },
-      { label: 'Rounding', topics: ['Round to nearest 10', 'Round to nearest 100', 'Round to nearest 1,000', 'Round to nearest whole number', 'Round to decimal places', 'Round to significant figures'] },
       { label: 'Ratio', topics: ['Simplify a ratio', 'Split into a ratio', 'Direct proportion', 'Inverse proportion'] },
+      { label: 'Rounding', topics: ['Round to nearest 10', 'Round to nearest 100', 'Round to nearest 1,000', 'Round to nearest whole number', 'Round to decimal places', 'Round to significant figures'] },
       { label: 'Standard form', topics: ['Ordinary number to standard form', 'Standard form to ordinary number'] }
   ]},
   { id: 'algebra', name: 'Algebra', dotColor: '#009444', subsections: [
+      { label: 'Equation of a straight line', topics: ['Identify gradient and y-intercept', 'Identify perpendicular gradient'] },
       { label: 'Expanding', topics: ['Expand single brackets', 'Expand double brackets', 'Expand triple brackets'] },
       { label: 'Factorising', topics: ['Factorise into single brackets', 'Factorise quadratics'] },
       { label: 'Inequalities', topics: ['Integer solutions to an inequality', 'Solve one-step inequalities', 'Solve multistep inequalities'] },
@@ -6081,7 +6082,6 @@ const QG_STRANDS = [
       { label: 'Simplifying', topics: ['Collecting like terms', 'Multiplying terms'] },
       { label: 'Rearranging formulae', topics: ['Rearranging formulae - Basic', 'Rearranging formulae - Harder'] },
       { label: 'Solving equations', topics: ['Solve one-step equations', 'Solve two-step equations', 'Solve equations with brackets', 'Solve equations with unknown on both sides', 'Simultaneous equations'] },
-      { label: 'Equation of a straight line', topics: ['Identify gradient and y-intercept', 'Identify perpendicular gradient'] },
       { label: 'Substitution', topics: ['Basic substitution', 'Harder substitution'] }
   ]},
   { id: 'statistics', name: 'Statistics', dotColor: '#800080', subsections: [
