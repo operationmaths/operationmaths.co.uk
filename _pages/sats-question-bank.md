@@ -521,7 +521,7 @@ const ANSWER_IMG_SCALE = 0.5;
 // or a small tick-box diagram roughly the same on-screen size as everything
 // else on the page, rather than shrinking with however small the source crop
 // happened to be.
-const MIN_ANSWER_IMG_WIDTH = 220;
+const MIN_ANSWER_IMG_WIDTH = 170;
 function answerImgSize(nativeW, nativeH){
   let w = Math.round(nativeW*ANSWER_IMG_SCALE);
   let h = nativeH != null ? Math.round(nativeH*ANSWER_IMG_SCALE) : null;
@@ -1462,6 +1462,32 @@ function questionCardHTML(q, showAnswer){
   `;
 }
 
+// Answer images (ansImg + every [[img:...]] marker in answer/markscheme) only
+// ever enter the DOM once "Show answer" is clicked, so without this the
+// browser doesn't even start fetching them until that click - a visible
+// delay before each one pops in. Preloading them as soon as the modal opens
+// (while the person is still reading the question) means they're already in
+// the browser's cache by the time the answer is actually revealed.
+const preloadedAnswerImages = new Set();
+function answerImageNames(q){
+  const names = q.ansImg ? [q.ansImg.src] : [];
+  const re = /\[\[img:([^:\]]+):/g;
+  [q.answer, q.markscheme].forEach(field=>{
+    if(!field) return;
+    let m;
+    while((m = re.exec(field))) names.push(m[1]);
+  });
+  return names;
+}
+function preloadAnswerImages(q){
+  answerImageNames(q).forEach(name=>{
+    if(preloadedAnswerImages.has(name)) return;
+    preloadedAnswerImages.add(name);
+    const img = new Image();
+    img.src = imgUrl(name);
+  });
+}
+
 let answerVisible = false;
 
 function openModal(idx){
@@ -1473,6 +1499,7 @@ function openModal(idx){
 function renderModal(){
   const q = currentList[modalIndex];
   if(!q) return;
+  preloadAnswerImages(q);
   document.getElementById("modalBox").style.setProperty('--strand', STRANDS[q.strand]);
   document.getElementById("modalHeader").innerHTML = questionHeaderHTML(q);
   document.getElementById("modalContent").innerHTML = questionCardHTML(q, answerVisible);
