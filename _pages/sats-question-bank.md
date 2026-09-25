@@ -512,6 +512,25 @@ const QIMG_BASE_PATH = "/assets/images/sats-question-bank/";
 const GRID_CROP_SCALE = 0.5;
 const MODAL_CROP_SCALE = 0.75;
 const ANSWER_IMG_SCALE = 0.5;
+// Mark scheme diagrams (ansImg and [[img:...]] markers) are cropped at wildly
+// different native sizes - a tiny worked calculation vs a full symmetry grid -
+// so scaling every one by the same factor leaves some too small to read
+// comfortably. This is a floor, not a fixed size: anything that would display
+// narrower than this is scaled up to it (aspect ratio preserved); anything
+// already wider is untouched. Keeps the numbers/text in a bus-stop division
+// or a small tick-box diagram roughly the same on-screen size as everything
+// else on the page, rather than shrinking with however small the source crop
+// happened to be.
+const MIN_ANSWER_IMG_WIDTH = 220;
+function answerImgSize(nativeW, nativeH){
+  let w = Math.round(nativeW*ANSWER_IMG_SCALE);
+  let h = nativeH != null ? Math.round(nativeH*ANSWER_IMG_SCALE) : null;
+  if(w < MIN_ANSWER_IMG_WIDTH){
+    if(h) h = Math.round(h * MIN_ANSWER_IMG_WIDTH / w);
+    w = MIN_ANSWER_IMG_WIDTH;
+  }
+  return {w, h};
+}
 
 // Each record:
 //   qimg      image of the question (src is the file name without .png, w/h are its native pixel size)
@@ -1010,7 +1029,7 @@ const QUESTIONS = [{"qimg":{"src":"2016-P1-Q1","w":1043,"h":441},"n":"1","paperN
 {"qimg":{"src":"2023-P3-Q17","w":1154,"h":845},"n":"17","paperNum":"3","paper":"Papers 2 & 3 (reasoning)","sitting":"2023","strand":"Fractions, decimals and percentages","subtopic":"Fractions of shapes","marks":1,"ref":"6F4/6F11","text":"This rectangle is divided into three parts, A, B and C (not to scale). Part A is 1/2 of the area of the rectangle. Part B is 1/3 of the area of the rectangle. What fraction of the area of the rectangle is shaded?","answer":"5/6","markscheme":"Accept equivalent fractions, e.g. 10/12"},
 {"qimg":{"src":"2023-P3-Q18","w":1154,"h":1839},"n":"18","paperNum":"3","paper":"Papers 2 & 3 (reasoning)","sitting":"2023","strand":"Statistics","subtopic":["Bar charts","Mean"],"marks":3,"ref":"5S1/4S1","text":"This table shows the total rainfall and sunshine each year at Heathrow Airport from 2010 to 2015. Use this table to complete the graph (draw the missing 2012 bar). Use a ruler.\n\nUse the table to calculate the mean hours of sunshine for Heathrow Airport from 2013 to 2015. (show your method)","answer":"18a: Award ONE mark for drawing the bar in the range of 650 mm to 750 mm, e.g.\n\n18b: Award TWO marks for the correct answer of 1,543","markscheme":"18a: Ignore the width of the bar.\n\n18b: If the answer is incorrect, award ONE mark for evidence of an appropriate method, e.g.\n• 1,452 + 1,669 + 1,508 = 4,629\n  4,629 ÷ 3\n\nOR\n• 1,452 + 1,669 + 1,508 = 4619 (error)\n  4619 ÷ 3\n\nOR\nAward ONE mark for sight of 4629 (as evidence of the sum of sunshine hours)\n\nAdditional guidance:\n\nAnswer need not be obtained or rounded for the award of ONE mark.\n\nAny acceptable rounding or truncating does not negate an appropriate method. Any value which does not result from correct rounding or truncating implies an additional step not shown.","ansImg":{"src":"2023-P3-Q18a-answer","w":492,"h":356}},
 {"qimg":{"src":"2023-P3-Q19","w":1110,"h":982},"n":"19","paperNum":"3","paper":"Papers 2 & 3 (reasoning)","sitting":"2023","strand":"Measurement","subtopic":"Money problems","marks":2,"ref":"5M9c/5M9a","text":"These are the prices of some vegetables in a shop: mushrooms £3.20 for 1 kg, carrots 60p for 1 kg. Layla buys 500 grams of mushrooms and 1 1/4 kg of carrots. She pays with a £5 note. How much change does Layla get? (show your method)","answer":"Award TWO marks for the correct answer of (£)2.65","markscheme":"If the answer is incorrect, award ONE mark for evidence of a complete method which contains no more than one arithmetic error, e.g.\n• £3.20 ÷ 2 = £1.60\n  1/4 of 60p = 15p\n  60p + 15p = 75p\n  £1.60 + 75p = £2.25 (error)\n  £5 − £2.25 = £2.75\n\nOR\n• sight of (£)2.35 OR 235(p) (as evidence of the total cost of mushrooms and carrots).\n\nAdditional guidance:\n\nMisreads are not allowed.\n\nAccept for ONE mark an answer of £265, £265p or £2,65 as evidence of an appropriate method."},
-{"qimg":{"src":"2023-P3-Q20","w":1154,"h":956},"n":"20","paperNum":"3","paper":"Papers 2 & 3 (reasoning)","sitting":"2023","strand":"Measurement","subtopic":"Perimeter","marks":2,"ref":"6A1/4M7a","text":"The length of this rectangle is 6 cm. The width is w cm (not actual size). Circle all the methods below that can be used to work out the perimeter of the rectangle: w × 6, w × 2 + 12, 2 × (w + 6), 6 + w + 6 + w","answer":"Award TWO marks for the three correct expressions circled, as shown:","markscheme":"Accept alternative unambiguous positive indication of the correct answers.\n\nAward ONE mark for two correct expressions circled and no incorrect expressions circled.","ansImg":{"src":"2023-P3-Q20-answer","w":492,"h":256}},
+{"qimg":{"src":"2023-P3-Q20","w":1154,"h":956},"n":"20","paperNum":"3","paper":"Papers 2 & 3 (reasoning)","sitting":"2023","strand":"Algebra","subtopic":"Expressions and formulae","marks":2,"ref":"6A1/4M7a","text":"The length of this rectangle is 6 cm. The width is w cm (not actual size). Circle all the methods below that can be used to work out the perimeter of the rectangle: w × 6, w × 2 + 12, 2 × (w + 6), 6 + w + 6 + w","answer":"Award TWO marks for the three correct expressions circled, as shown:","markscheme":"Accept alternative unambiguous positive indication of the correct answers.\n\nAward ONE mark for two correct expressions circled and no incorrect expressions circled.","ansImg":{"src":"2023-P3-Q20-answer","w":492,"h":256}},
 {"qimg":{"src":"2023-P3-Q21","w":1110,"h":892},"n":"21","paperNum":"3","paper":"Papers 2 & 3 (reasoning)","sitting":"2023","strand":"Ratio and proportion","subtopic":"Percentages of amounts","marks":3,"ref":"6R2","text":"There are 25 classes in a school. Each class has 34 pupils. 62% of all the pupils play a sport after school. What number of pupils do not play a sport? (show your method)","answer":"Award THREE marks for the correct answer of 323","markscheme":"Award TWO marks for:\n• An incorrect answer with evidence of an appropriate complete method with no more than one arithmetic error, e.g.\n  25\n  × 34\n  100\n  750\n  950 (error)\n  62% of 950 = 589\n  950 − 589 = 361\n\nOR\n• 34 × 25 = 950 (error)\n  95 × 3 = 285\n  9.5 × 8 = 76\n  285 + 76 = 361\n\nOR\n• sight of 527 (as evidence of calculating 62% of 850)\n\nA misread of a number may affect the award of marks. No marks are awarded if there is more than one misread or if the mathematics is simplified.\n\nTWO marks will be awarded if an appropriate method with the misread number is followed through correctly. ONE mark will be awarded for evidence of an appropriate method with the misread number followed through correctly with no more than one error.\n\nWithin an appropriate method, if the pupil has rounded appropriately with no more than one arithmetic error, the pupil may be awarded TWO marks.\n\nAward ONE mark for:\n• evidence of an appropriate method with more than one error.\n\nOR\n• sight of 850 (as evidence of the multiplication step completed correctly)\n\nAdditional guidance:\n\nAnswer need not be obtained for the award of ONE mark."},
 {"qimg":{"src":"2023-P3-Q22","w":1154,"h":786},"n":"22","paperNum":"3","paper":"Papers 2 & 3 (reasoning)","sitting":"2023","strand":"Algebra","subtopic":"Function machines","marks":1,"ref":"6A3/6G2a","text":"Megan uses number machines to calculate how many diagonals different shapes have (triangle: 3 → ×0 → ÷2 → 0; quadrilateral: 4 → ×1 → ÷2 → 2; pentagon: 5 → ×2 → ÷2 → 5). Complete the number machine for the octagon.","answer":"octagon: 8 → ×5 → ÷2 → 20","markscheme":""},
 {"qimg":{"src":"2023-P3-Q23","w":1110,"h":480},"n":"23","paperNum":"3","paper":"Papers 2 & 3 (reasoning)","sitting":"2023","strand":"Fractions, decimals and percentages","subtopic":"Fraction and decimal equivalents","marks":2,"ref":"6F6/6F11","text":"Write the missing decimals in the table (a, b, a/b): row 1 given as 1, 4, 0.25. Complete rows for a=3,b=20 and a=5,b=8.","answer":"3/20 = 0.15\n\n5/8 = 0.625","markscheme":"Award ONE mark for one correct answer."}];
@@ -1250,8 +1269,20 @@ function sittingRank(sitting){
 // Arithmetic (Paper 1) comes first, then the reasoning papers. Within each
 // group, questions run in number order (all the reasoning Q1s together, then
 // every Q2, and so on), with the most recent sitting first within that.
-function sortQuestions(list){
+// This "grouped by exam question number" order is right for browsing a full,
+// unfiltered paper-shaped list, but wrong once a search/filter narrows the
+// list to a topic: matching questions from different years usually sit at
+// different question numbers (eg 2022's long multiplication questions are
+// Q19/Q33, 2023's are Q20/Q29), so grouping by number first scrambles the
+// years instead of showing the newest first. yearFirst=true (passed whenever
+// any filter/search is active - see isFiltered()) swaps the priority so
+// sitting year is the primary sort key instead of a tiebreaker.
+function sortQuestions(list, yearFirst){
   return list.slice().sort((a,b)=>{
+    if(yearFirst){
+      const sy = sittingRank(b.sitting) - sittingRank(a.sitting);
+      if(sy !== 0) return sy;
+    }
     const ga = paperRank(a) === 1 ? 0 : 1, gb = paperRank(b) === 1 ? 0 : 1;
     if(ga !== gb) return ga - gb;
     const an = questionNumber(a), bn = questionNumber(b);
@@ -1260,6 +1291,11 @@ function sortQuestions(list){
     if(sa !== sb) return sb - sa;
     return paperRank(a) - paperRank(b);
   });
+}
+// True whenever any filter or search narrows the list away from "everything".
+function isFiltered(){
+  return state.year !== "all" || state.paper !== "all" || state.marks !== "all" ||
+    state.strands.size > 0 || state.subtopic !== "all";
 }
 
 function filterSignature(){
@@ -1300,7 +1336,7 @@ function render(){
     lastFilterSignature = sig;
   }
   let list = QUESTIONS.filter(matches);
-  list = sortQuestions(list);
+  list = sortQuestions(list, isFiltered());
   currentList = list;
   const shown = Math.min(state.visibleCount, list.length);
   document.getElementById("resultsMeta").textContent = list.length === 0
@@ -1378,8 +1414,7 @@ function imgUrl(name){ return QIMG_BASE_PATH + name + '.png'; }
 // right box before the image loads; without it the layout can jump as each image comes in.
 function msInline(text){
   return mathText(text).replace(/\[\[img:([^:\]]+):(\d+)(?::(\d+))?\]\]/g, (m, name, w, h)=>{
-    const dw = Math.round(Number(w)*ANSWER_IMG_SCALE);
-    const dh = h ? Math.round(Number(h)*ANSWER_IMG_SCALE) : null;
+    const {w:dw, h:dh} = answerImgSize(Number(w), h ? Number(h) : null);
     const dims = dh ? ` width="${dw}" height="${dh}"` : '';
     return `<div class="answer-img"><img src="${imgUrl(name)}" alt="Example diagram from the mark scheme"${dims} style="width:${dw}px;height:auto;max-width:100%;" decoding="async"></div>`;
   });
@@ -1410,7 +1445,7 @@ function markschemeHTML(text){
 // is something in it beyond the answer itself.
 function answerHTML(q){
   const ansImg = q.ansImg
-    ? (()=>{ const w=Math.round(q.ansImg.w*ANSWER_IMG_SCALE), h=Math.round(q.ansImg.h*ANSWER_IMG_SCALE);
+    ? (()=>{ const {w,h} = answerImgSize(q.ansImg.w, q.ansImg.h);
         return `<div class="answer-img"><img src="${imgUrl(q.ansImg.src)}" alt="Correct answer to question ${q.n}, taken from the mark scheme" width="${w}" height="${h}" style="width:${w}px;height:auto;max-width:100%;" decoding="async"></div>`; })()
     : '';
   const hasMS = q.markscheme && q.markscheme.trim();
