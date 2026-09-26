@@ -6,7 +6,7 @@ permalink: /operation-10/
 ---
 
 <section class="om-hero" id="op10-hero">
-  <h1>Operation 10</h1>
+  <h1>Operation <em>10</em></h1>
   <p>10 questions each day for daily maths practice. Different questions every day of the year.</p>
 </section>
 
