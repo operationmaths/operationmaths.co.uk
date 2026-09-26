@@ -1,16 +1,18 @@
 ---
-layout: page
+layout: default
 title: Operation 10
 description: 10 questions each day for daily maths practice. Different questions every day of the year.
 permalink: /operation-10/
 ---
 
-<section class="om-hero op10-hero" id="op10-hero">
+<section class="om-hero" id="op10-hero">
   <h1>Operation 10</h1>
-  <p class="om-hero-note">10 questions each day for daily maths practice. Different questions every day of the year.</p>
+  <p>10 questions each day for daily maths practice. Different questions every day of the year.</p>
 </section>
 
-<section class="op10-wrap">
+<main>
+  <div class="om-body">
+  <div class="op10-tool-area">
 
   <div id="op10-levels" class="op10-level-groups">
     <div class="op10-level-row">
@@ -43,7 +45,7 @@ permalink: /operation-10/
 
     <div class="op10-print-header-block">
       <h2 class="op10-print-title">Operation 10</h2>
-      <img class="op10-print-logo" src="/assets/images/logo.png" alt="Operation Maths logo">
+      <img class="op10-print-logo" src="{{ site.baseurl }}/assets/images/logo.png" alt="Operation Maths logo">
     </div>
     <hr class="op10-print-rule">
 
@@ -52,7 +54,7 @@ permalink: /operation-10/
     <div id="op10-answer-key" class="op10-answer-key">
       <div class="op10-print-header-block">
         <h2 class="op10-print-title">Operation 10</h2>
-        <img class="op10-print-logo" src="/assets/images/logo.png" alt="Operation Maths logo">
+        <img class="op10-print-logo" src="{{ site.baseurl }}/assets/images/logo.png" alt="Operation Maths logo">
       </div>
       <hr class="op10-print-rule">
       <h3 class="op10-answer-key-title">Answers</h3>
@@ -65,13 +67,13 @@ permalink: /operation-10/
 
   </div>
 
-</section>
+  </div>
+  </div>
+</main>
 
 <style>
-  .op10-wrap {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 16px 20px 24px;
+  .op10-tool-area {
+    padding: 16px 0 24px;
     background: #f5f6f8;
   }
 
@@ -125,7 +127,7 @@ permalink: /operation-10/
     font-size: 1.4rem;
     margin: 0;
   }
-  .op10-print-logo { height: 55px; }
+  .op10-print-logo { height: 60px; }
   .op10-print-rule { display: none; }
 
   .op10-btn {
@@ -176,6 +178,7 @@ permalink: /operation-10/
     height: 128px;
     display: flex;
     flex-direction: column;
+    border-left: 5px solid #ccc;
   }
   .op10-q-number {
     font-weight: 700;
@@ -202,10 +205,7 @@ permalink: /operation-10/
     margin: 0;
     min-height: 1.3em;
     flex: 1;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: left;
   }
   .op10-q-answer.op10-visible { visibility: visible; }
 
@@ -262,19 +262,25 @@ permalink: /operation-10/
   }
   .op10-answer-key-item {
     margin: 0;
-    padding: 6px 0;
+    padding: 8px 0 8px 10px;
     border-bottom: 1px solid #eee;
-    font-size: 0.95rem;
+    border-left: 4px solid #ccc;
+    font-size: 0.9rem;
+  }
+  .op10-answer-key-answer {
+    font-weight: 700;
+    color: #009444;
   }
 
   /* Print styles */
   @media print {
-    .op10-hero, .op10-level-groups, .op10-toolbar { display: none !important; }
+    header, footer, .back-to-top { display: none !important; }
+    #op10-hero, .op10-level-groups, .op10-toolbar { display: none !important; }
     .op10-print-header-block {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 8px;
+      align-items: flex-end;
+      margin-bottom: 4px;
     }
     .op10-print-rule {
       display: block;
@@ -282,11 +288,10 @@ permalink: /operation-10/
       border-top: 2px solid #1c75bc;
       margin: 0 0 16px 0;
     }
-    .op10-wrap { background: #fff; }
+    .op10-tool-area { background: #fff; }
     .op10-q-card { box-shadow: none; border: 1px solid #ddd; height: auto; }
     .op10-q-text { overflow: visible; }
-    .op10-q-answer { visibility: hidden !important; }
-    .op10-q-answer.op10-visible { visibility: visible !important; }
+    .op10-q-answer, .op10-q-answer.op10-visible { visibility: hidden !important; }
     .op10-columns { gap: 12px 24px; }
     .op10-q-card { break-inside: avoid; }
     .op10-answer-key {
@@ -367,6 +372,7 @@ permalink: /operation-10/
       categories: [
         {
           name: 'Place value',
+          color: '#1c75bc',
           questions: [
             { q: 'Write the number four hundred and thirty-seven in digits.', a: '437' },
             { q: 'What is the value of the 6 in 462?', a: '60 (six tens)' },
@@ -384,6 +390,7 @@ permalink: /operation-10/
         },
         {
           name: 'Addition',
+          color: '#0e8a8a',
           questions: [
             { q: '245 + 132', a: '377' },
             { q: '372 + 458', a: '830' },
@@ -399,6 +406,7 @@ permalink: /operation-10/
         },
         {
           name: 'Subtraction',
+          color: '#0e8a8a',
           questions: [
             { q: '568 − 231', a: '337' },
             { q: '604 − 178', a: '426' },
@@ -414,6 +422,7 @@ permalink: /operation-10/
         },
         {
           name: 'Multiplication',
+          color: '#0e8a8a',
           questions: [
             { q: '4 × 6', a: '24' },
             { q: '8 × 3', a: '24' },
@@ -429,6 +438,7 @@ permalink: /operation-10/
         },
         {
           name: 'Division',
+          color: '#0e8a8a',
           questions: [
             { q: '24 ÷ 4', a: '6' },
             { q: '32 ÷ 8', a: '4' },
@@ -444,6 +454,7 @@ permalink: /operation-10/
         },
         {
           name: 'Fractions',
+          color: '#c43d6b',
           questions: [
             { q: 'What fraction is 1 part out of 4 equal parts called?', a: '1/4' },
             { q: 'Find 1/3 of 12.', a: '4' },
@@ -461,6 +472,7 @@ permalink: /operation-10/
         },
         {
           name: 'Geometry',
+          color: '#e0592b',
           questions: [
             { q: 'How many faces does a cube have?', a: '6' },
             { q: 'How many vertices (corners) does a cuboid have?', a: '8' },
@@ -476,6 +488,7 @@ permalink: /operation-10/
         },
         {
           name: 'Statistics',
+          color: '#800080',
           questions: [
             { q: 'A pictogram shows 3 whole symbols and each symbol represents 2 books. How many books is that?', a: '6 books' },
             { q: 'A bar chart shows 4 children like football and 6 like swimming, with no other answers. How many children were asked in total?', a: '10 children' },
@@ -491,6 +504,7 @@ permalink: /operation-10/
         },
         {
           name: 'Money',
+          color: '#c49012',
           questions: [
             { q: 'I have £5 and spend £2.35. How much do I have left?', a: '£2.65' },
             { q: 'What is £1.50 + £2.75?', a: '£4.25' },
@@ -506,6 +520,7 @@ permalink: /operation-10/
         },
         {
           name: 'Measures',
+          color: '#c49012',
           questions: [
             { q: 'What is the perimeter of a rectangle with sides 5 cm and 3 cm?', a: '16 cm' },
             { q: 'A square has sides of 7 cm. What is its perimeter?', a: '28 cm' },
@@ -557,7 +572,8 @@ permalink: /operation-10/
     /* One question from each category, chosen deterministically from the date */
     return levelData.categories.map(function (cat, i) {
       var shuffled = seededShuffle(cat.questions, seed + i * 997);
-      return shuffled[0];
+      var picked = shuffled[0];
+      return { q: picked.q, a: picked.a, color: cat.color };
     });
   }
 
@@ -607,11 +623,22 @@ permalink: /operation-10/
     questions.forEach(function (item, i) {
       var p = document.createElement('p');
       p.className = 'op10-answer-key-item';
+      if (item.color) {
+        p.style.borderLeftColor = item.color;
+      }
       var num = document.createElement('span');
       num.className = 'op10-q-number';
       num.textContent = (startNumber + i) + '. ';
       p.appendChild(num);
-      appendTextWithFractions(p, item.a);
+      appendTextWithFractions(p, item.q);
+      var sep = document.createElement('span');
+      sep.className = 'op10-answer-key-sep';
+      sep.textContent = ' \u2014 ';
+      p.appendChild(sep);
+      var ansSpan = document.createElement('span');
+      ansSpan.className = 'op10-answer-key-answer';
+      appendTextWithFractions(ansSpan, item.a);
+      p.appendChild(ansSpan);
       col.appendChild(p);
     });
     return col;
@@ -629,6 +656,9 @@ permalink: /operation-10/
   function buildQuestionCard(item, number) {
     var card = document.createElement('div');
     card.className = 'op10-q-card';
+    if (item.color) {
+      card.style.borderLeftColor = item.color;
+    }
 
     var qText = document.createElement('p');
     qText.className = 'op10-q-text';
@@ -680,7 +710,8 @@ permalink: /operation-10/
     var randomSeed = Math.floor(Math.random() * 1000000);
     var questions = currentLevelData.categories.map(function (cat, i) {
       var shuffled = seededShuffle(cat.questions, randomSeed + i * 997);
-      return shuffled[0];
+      var picked = shuffled[0];
+      return { q: picked.q, a: picked.a, color: cat.color };
     });
     allAnswersShown = false;
     showAllBtn.textContent = 'Show all answers';
