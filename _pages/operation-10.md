@@ -271,6 +271,7 @@ permalink: /operation-10/
       margin: 0 0 16px 0;
     }
     .op10-tool-area { background: #fff; margin-top: 0; }
+    main, .om-body { padding-top: 0 !important; margin-top: 0 !important; } 
     .op10-show-answer-btn { display: none !important; }
     .op10-q-card {
       box-shadow: none;
