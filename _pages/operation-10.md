@@ -57,8 +57,7 @@ permalink: /operation-10/
         <img class="op10-print-logo" src="{{ site.baseurl }}/assets/images/logo.png" alt="Operation Maths logo">
       </div>
       <hr class="op10-print-rule">
-      <h3 class="op10-answer-key-title">Answers</h3>
-      <div id="op10-answer-key-grid" class="op10-answer-key-grid"></div>
+      <div id="op10-answer-key-grid" class="op10-columns"></div>
     </div>
 
     <p id="op10-coming-soon" class="op10-coming-soon" style="display:none;">
@@ -75,6 +74,7 @@ permalink: /operation-10/
   .op10-tool-area {
     padding: 16px 0 24px;
     background: #f5f6f8;
+    margin-top: -40px;
   }
 
   /* Level picker, grouped by key stage */
@@ -249,28 +249,10 @@ permalink: /operation-10/
     padding: 40px 0;
   }
 
-  /* Answer key page - screen-hidden, shown only on the second printed page */
+  /* Answer key page - screen-hidden, shown only on the second printed page.
+     Reuses the same .op10-columns / .op10-q-card layout as the questions page
+     so both pages match exactly. */
   .op10-answer-key { display: none; }
-  .op10-answer-key-title {
-    text-align: center;
-    margin: 0 0 16px 0;
-  }
-  .op10-answer-key-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px 32px;
-  }
-  .op10-answer-key-item {
-    margin: 0;
-    padding: 8px 0 8px 10px;
-    border-bottom: 1px solid #eee;
-    border-left: 4px solid #ccc;
-    font-size: 0.9rem;
-  }
-  .op10-answer-key-answer {
-    font-weight: 700;
-    color: #009444;
-  }
 
   /* Print styles */
   @media print {
@@ -288,10 +270,16 @@ permalink: /operation-10/
       border-top: 2px solid #1c75bc;
       margin: 0 0 16px 0;
     }
-    .op10-tool-area { background: #fff; }
-    .op10-q-card { box-shadow: none; border: 1px solid #ddd; height: auto; }
+    .op10-tool-area { background: #fff; margin-top: 0; }
+    .op10-show-answer-btn { display: none !important; }
+    .op10-q-card {
+      box-shadow: none;
+      border: 1px solid #ddd;
+      height: 170px !important;
+    }
     .op10-q-text { overflow: visible; }
-    .op10-q-answer, .op10-q-answer.op10-visible { visibility: hidden !important; }
+    #op10-columns .op10-q-answer { visibility: hidden !important; }
+    #op10-answer-key .op10-q-answer { visibility: visible !important; }
     .op10-columns { gap: 12px 24px; }
     .op10-q-card { break-inside: avoid; }
     .op10-answer-key {
@@ -610,50 +598,24 @@ permalink: /operation-10/
     var colRight = questions.slice(half);
 
     columnsEl.innerHTML = '';
-    columnsEl.appendChild(buildColumn(colLeft, 1));
-    columnsEl.appendChild(buildColumn(colRight, half + 1));
+    columnsEl.appendChild(buildColumn(colLeft, 1, false));
+    columnsEl.appendChild(buildColumn(colRight, half + 1, false));
 
     answerKeyGridEl.innerHTML = '';
-    answerKeyGridEl.appendChild(buildAnswerKeyColumn(colLeft, 1));
-    answerKeyGridEl.appendChild(buildAnswerKeyColumn(colRight, half + 1));
+    answerKeyGridEl.appendChild(buildColumn(colLeft, 1, true));
+    answerKeyGridEl.appendChild(buildColumn(colRight, half + 1, true));
   }
 
-  function buildAnswerKeyColumn(questions, startNumber) {
-    var col = document.createElement('div');
-    questions.forEach(function (item, i) {
-      var p = document.createElement('p');
-      p.className = 'op10-answer-key-item';
-      if (item.color) {
-        p.style.borderLeftColor = item.color;
-      }
-      var num = document.createElement('span');
-      num.className = 'op10-q-number';
-      num.textContent = (startNumber + i) + '. ';
-      p.appendChild(num);
-      appendTextWithFractions(p, item.q);
-      var sep = document.createElement('span');
-      sep.className = 'op10-answer-key-sep';
-      sep.textContent = ' \u2014 ';
-      p.appendChild(sep);
-      var ansSpan = document.createElement('span');
-      ansSpan.className = 'op10-answer-key-answer';
-      appendTextWithFractions(ansSpan, item.a);
-      p.appendChild(ansSpan);
-      col.appendChild(p);
-    });
-    return col;
-  }
-
-  function buildColumn(questions, startNumber) {
+  function buildColumn(questions, startNumber, isAnswerKey) {
     var col = document.createElement('div');
     col.className = 'op10-column';
     questions.forEach(function (item, i) {
-      col.appendChild(buildQuestionCard(item, startNumber + i));
+      col.appendChild(buildQuestionCard(item, startNumber + i, isAnswerKey));
     });
     return col;
   }
 
-  function buildQuestionCard(item, number) {
+  function buildQuestionCard(item, number, isAnswerKey) {
     var card = document.createElement('div');
     card.className = 'op10-q-card';
     if (item.color) {
@@ -675,17 +637,18 @@ permalink: /operation-10/
     var answer = document.createElement('p');
     answer.className = 'op10-q-answer';
     appendTextWithFractions(answer, item.a);
-
-    var btn = document.createElement('button');
-    btn.className = 'op10-show-answer-btn';
-    btn.textContent = 'Show answer';
-    btn.addEventListener('click', function () {
-      var isVisible = answer.classList.toggle('op10-visible');
-      btn.textContent = isVisible ? 'Hide answer' : 'Show answer';
-    });
-
     bottomRow.appendChild(answer);
-    bottomRow.appendChild(btn);
+
+    if (!isAnswerKey) {
+      var btn = document.createElement('button');
+      btn.className = 'op10-show-answer-btn';
+      btn.textContent = 'Show answer';
+      btn.addEventListener('click', function () {
+        var isVisible = answer.classList.toggle('op10-visible');
+        btn.textContent = isVisible ? 'Hide answer' : 'Show answer';
+      });
+      bottomRow.appendChild(btn);
+    }
 
     card.appendChild(qText);
     card.appendChild(bottomRow);
