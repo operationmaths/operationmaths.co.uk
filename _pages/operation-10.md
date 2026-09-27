@@ -37,7 +37,6 @@ permalink: /operation-10/
     <div class="op10-toolbar">
       <button id="op10-back" class="op10-btn op10-btn-ghost">&larr; Back to year group</button>
       <div class="op10-toolbar-right">
-        <button id="op10-new-set" class="op10-btn op10-btn-outline-blue">New set</button>
         <button id="op10-show-all" class="op10-btn op10-btn-green">Show all answers</button>
         <button id="op10-print" class="op10-btn op10-btn-secondary">Print</button>
       </div>
@@ -102,11 +101,11 @@ permalink: /operation-10/
     min-width: 140px;
     box-sizing: border-box;
   }
-  .op10-ks2 { color: #009444; border: 2px solid #009444; }
+  .op10-ks2 { color: var(--green); border: 2px solid var(--green); }
   .op10-ks2:hover { background: #e6f5ec; }
-  .op10-ks3 { color: #1c75bc; border: 2px solid #1c75bc; }
+  .op10-ks3 { color: var(--blue); border: 2px solid var(--blue); }
   .op10-ks3:hover { background: #eaf3fb; }
-  .op10-ks4 { color: #800080; border: 2px solid #800080; }
+  .op10-ks4 { color: var(--purple); border: 2px solid var(--purple); }
   .op10-ks4:hover { background: #f5e6f5; }
 
   /* Toolbar */
@@ -131,14 +130,17 @@ permalink: /operation-10/
   .op10-print-rule { display: none; }
 
   .op10-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     font-family: 'DM Sans', sans-serif;
     font-weight: 700;
-    font-size: 0.95rem;
-    padding: 8px 12px;
-    border-radius: 8px;
-    border: none;
+    font-size: 13px;
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: 1.5px solid transparent;
     cursor: pointer;
-    transition: background 0.15s ease;
+    transition: background 0.12s, border-color 0.12s;
     white-space: nowrap;
     text-align: center;
   }
@@ -146,13 +148,11 @@ permalink: /operation-10/
     opacity: 0.4;
     cursor: not-allowed;
   }
-  .op10-btn-secondary { background: #1c75bc; color: #fff; }
-  .op10-btn-secondary:hover { background: #155a91; }
-  .op10-btn-green { background: #009444; color: #fff; width: 148px; }
-  .op10-btn-green:hover { background: #00753a; }
-  .op10-btn-outline-blue { background: #fff; color: #1c75bc; border: 2px solid #1c75bc; }
-  .op10-btn-outline-blue:hover { background: #eaf3fb; }
-  .op10-btn-ghost { background: #fff; color: #000; border: 2px solid #000; min-width: auto; }
+  .op10-btn-secondary { background: var(--blue); border-color: var(--blue); color: #fff; }
+  .op10-btn-secondary:hover { background: var(--blue-dark); border-color: var(--blue-dark); }
+  .op10-btn-green { background: var(--green); border-color: var(--green); color: #fff; width: 148px; }
+  .op10-btn-green:hover { background: var(--green-dark); border-color: var(--green-dark); }
+  .op10-btn-ghost { background: #fff; color: #000; border-color: #000; min-width: auto; }
   .op10-btn-ghost:hover { background: #f0f0f0; }
 
   /* Two-column question layout: 5 rows fit on one screen, no scrolling */
@@ -271,7 +271,7 @@ permalink: /operation-10/
       margin: 0 0 16px 0;
     }
     .op10-tool-area { background: #fff; margin-top: 0; }
-    main, .om-body { padding-top: 0 !important; margin-top: 0 !important; } 
+    main, .om-body { padding-top: 0 !important; margin-top: 0 !important; }
     .op10-show-answer-btn { display: none !important; }
     .op10-q-card {
       box-shadow: none;
@@ -547,12 +547,10 @@ permalink: /operation-10/
   var answerKeyGridEl = document.getElementById('op10-answer-key-grid');
   var comingSoonEl = document.getElementById('op10-coming-soon');
   var backBtn = document.getElementById('op10-back');
-  var newSetBtn = document.getElementById('op10-new-set');
   var showAllBtn = document.getElementById('op10-show-all');
   var printBtn = document.getElementById('op10-print');
 
   var allAnswersShown = false;
-  var currentLevelData = null;
 
   function getTodaysQuestions(levelData) {
     var target = getTargetDate();
@@ -568,7 +566,6 @@ permalink: /operation-10/
 
   function renderLevel(levelKey) {
     var levelData = OP10_BANK[levelKey];
-    currentLevelData = levelData;
     allAnswersShown = false;
     showAllBtn.textContent = 'Show all answers';
 
@@ -580,13 +577,11 @@ permalink: /operation-10/
       columnsEl.innerHTML = '';
       answerKeyGridEl.innerHTML = '';
       comingSoonEl.style.display = 'block';
-      newSetBtn.disabled = true;
       showAllBtn.disabled = true;
       printBtn.disabled = true;
       return;
     }
     comingSoonEl.style.display = 'none';
-    newSetBtn.disabled = false;
     showAllBtn.disabled = false;
     printBtn.disabled = false;
 
@@ -667,19 +662,6 @@ permalink: /operation-10/
     viewEl.style.display = 'none';
     levelsEl.style.display = 'flex';
     heroEl.style.display = '';
-  });
-
-  newSetBtn.addEventListener('click', function () {
-    if (!currentLevelData || !currentLevelData.categories) return;
-    var randomSeed = Math.floor(Math.random() * 1000000);
-    var questions = currentLevelData.categories.map(function (cat, i) {
-      var shuffled = seededShuffle(cat.questions, randomSeed + i * 997);
-      var picked = shuffled[0];
-      return { q: picked.q, a: picked.a, color: cat.color };
-    });
-    allAnswersShown = false;
-    showAllBtn.textContent = 'Show all answers';
-    renderQuestions(questions);
   });
 
   showAllBtn.addEventListener('click', function () {
