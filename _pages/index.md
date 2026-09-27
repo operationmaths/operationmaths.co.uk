@@ -14,7 +14,6 @@ body_class: page-home
     </div>
     <div class="om-hero-btns">
       <a href="{{ site.baseurl }}/worksheets/" class="om-btn-green">Browse free worksheets</a>
-      <a href="{{ site.baseurl }}/sats-course" class="om-btn-dark-outline">SATs course <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
     </div>
     <div class="om-hero-ws-row">
       <div class="om-hero-ws"><img src="{{ site.baseurl }}/assets/images/hero-ws-1.jpg" alt="Expand and factorise worksheet"></div>
@@ -159,17 +158,6 @@ body_class: page-home
         </a>
       </div>
     </section>
-
-    <section aria-labelledby="sats-course-heading">
-      <div class="om-sats">
-        <div>
-          <h2 id="sats-course-heading">Preparing for SATs?</h2>
-          <p>Structured revision course with practice papers and worked examples for Year 6 pupils.</p>
-          <a href="{{ site.baseurl }}/sats-course" class="om-btn-blue">View SATs course <span class="btn-arrow" style="display:inline-block; transform:rotate(-90deg);">↓</span></a>
-        </div>
-        <img src="{{ site.baseurl }}/assets/images/SATs-booklets.png" alt="SATs resource pack booklets" style="width:100%; max-width:380px; border-radius:8px; display:block;">
-      </div>
-    </section>
-
+   
   </div>
 </main>
