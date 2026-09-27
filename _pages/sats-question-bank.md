@@ -1522,9 +1522,9 @@ function sittingRank(sitting){
 // list to a topic: matching questions from different years usually sit at
 // different question numbers (eg 2022's long multiplication questions are
 // Q19/Q33, 2023's are Q20/Q29), so grouping by number first scrambles the
-// years instead of showing the newest first. yearFirst=true (passed whenever
-// any filter/search is active - see isFiltered()) swaps the priority so
-// sitting year is the primary sort key instead of a tiebreaker.
+// years instead of showing the newest first. yearFirst=true (passed only when
+// a strand/sub-strand search is active - see needsYearFirstSort()) swaps the
+// priority so sitting year is the primary sort key instead of a tiebreaker.
 function sortQuestions(list, yearFirst){
   return list.slice().sort((a,b)=>{
     if(yearFirst){
@@ -1540,10 +1540,14 @@ function sortQuestions(list, yearFirst){
     return paperRank(a) - paperRank(b);
   });
 }
-// True whenever any filter or search narrows the list away from "everything".
-function isFiltered(){
-  return state.year !== "all" || state.paper !== "all" || state.marks !== "all" ||
-    state.strands.size > 0 || state.subtopic !== "all";
+// True only when a strand or sub-strand search is active. This is the one
+// case where "same skill, different question number per year" actually
+// happens (eg long multiplication is Q19/33 in 2022 but Q20/29 in 2023), so
+// it's the only case that needs year pulled ahead of question number.
+// Paper, curriculum year and marks filters don't have that problem - they
+// just narrow the list - so they keep the natural exam-number order.
+function needsYearFirstSort(){
+  return state.strands.size > 0 || state.subtopic !== "all";
 }
 
 function filterSignature(){
@@ -1584,7 +1588,7 @@ function render(){
     lastFilterSignature = sig;
   }
   let list = QUESTIONS.filter(matches);
-  list = sortQuestions(list, isFiltered());
+  list = sortQuestions(list, needsYearFirstSort());
   currentList = list;
   const shown = Math.min(state.visibleCount, list.length);
   document.getElementById("resultsMeta").textContent = list.length === 0
