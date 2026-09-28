@@ -27,25 +27,33 @@ body_class: page-home
   </section>
 
   <section aria-label="What's on Operation Maths">
-    <div class="om-strip">
-      <a class="om-strip-item" style="--sc:var(--blue)" href="{{ site.baseurl }}/worksheets/">
-        <div class="om-strip-title">Worksheets</div>
-        <div class="om-strip-sub">Free worksheet A with every set</div>
-      </a>
-      <a class="om-strip-item" style="--sc:var(--green)" href="{{ site.baseurl }}/maths-sats-papers">
-        <div class="om-strip-title">Maths SATs papers</div>
-        <div class="om-strip-sub">Key Stage 2 practice papers</div>
-      </a>
-      <a class="om-strip-item" style="--sc:var(--blue)" href="{{ site.baseurl }}/online-maths-tests">
-        <div class="om-strip-title">Online maths tests</div>
-        <div class="om-strip-sub">Times tables and more</div>
-      </a>
-      <a class="om-strip-item" style="--sc:var(--orange)" href="{{ site.baseurl }}/books">
-        <div class="om-strip-title">Books</div>
-        <div class="om-strip-sub">Available on Amazon</div>
-      </a>
-    </div>
-  </section>
+  <div class="om-strip">
+    <a class="om-strip-item" style="--sc:var(--blue)" href="{{ site.baseurl }}/worksheets/">
+      <div class="om-strip-title">Worksheets</div>
+      <div class="om-strip-sub">Free worksheet A with every set</div>
+    </a>
+
+    <a class="om-strip-item" style="--sc:var(--green)" href="{{ site.baseurl }}/maths-sats-papers">
+      <div class="om-strip-title">Maths SATs papers</div>
+      <div class="om-strip-sub">Key Stage 2 practice papers</div>
+    </a>
+
+    <a class="om-strip-item" style="--sc:var(--blue)" href="{{ site.baseurl }}/gcse-maths-papers">
+      <div class="om-strip-title">GCSE Maths papers</div>
+      <div class="om-strip-sub">Past papers and mark schemes</div>
+    </a>
+
+    <a class="om-strip-item" style="--sc:var(--purple)" href="{{ site.baseurl }}/online-maths-tests">
+      <div class="om-strip-title">Online maths tests</div>
+      <div class="om-strip-sub">Times tables and more</div>
+    </a>
+
+    <a class="om-strip-item" style="--sc:var(--orange)" href="{{ site.baseurl }}/question-generator">
+      <div class="om-strip-title">Question Generator</div>
+      <div class="om-strip-sub">Create your own worksheets</div>
+    </a>
+  </div>
+</section>
 
   <div class="om-body">
 
