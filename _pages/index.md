@@ -10,7 +10,7 @@ body_class: page-home
   <section class="om-hero" aria-label="Hero">
     <div class="om-hero-content">
       <h1>Free maths practice, <em>made by a teacher.</em></h1>
-      <p>Clear worksheets, question banks and online tests for KS2, SATs and GCSE — plus SATs and GCSE past papers.</p>
+      <p>Clear worksheets, question banks and online tests for KS2, SATs and GCSE<br>— plus SATs and GCSE past papers.</p>
     </div>
     <div class="om-hero-btns">
       <a href="{{ site.baseurl }}/gcse-question-bank/" class="om-btn-blue">GCSE Maths</a>
@@ -43,10 +43,6 @@ body_class: page-home
       <a class="om-strip-item" style="--sc:var(--orange)" href="{{ site.baseurl }}/books">
         <div class="om-strip-title">Books</div>
         <div class="om-strip-sub">Available on Amazon</div>
-      </a>
-      <a class="om-strip-item" style="--sc:var(--purple)" href="{{ site.baseurl }}/sats-course">
-        <div class="om-strip-title">SATs course</div>
-        <div class="om-strip-sub">Revision for Year 6</div>
       </a>
     </div>
   </section>
