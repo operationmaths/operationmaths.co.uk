@@ -9,8 +9,8 @@ body_class: page-home
 <main>
   <section class="om-hero" aria-label="Hero">
     <div class="om-hero-content">
-      <h1>More practice, <em>better results</em></h1>
-      <p>Worksheets, SATs resources and maths books for primary and secondary students. Every worksheet topic includes 7 sheets, so there's always another chance to build confidence and fluency. Worksheet A is always free.</p>
+      <h1>Free maths practice, <em>made by a teacher.</em></h1>
+      <p>Clear worksheets, question banks and online tests for KS2, SATs and GCSE — plus SATs and GCSE past papers.</p>
     </div>
     <div class="om-hero-btns">
       <a href="{{ site.baseurl }}/worksheets/" class="om-btn-green">Browse free worksheets</a>
