@@ -13,7 +13,9 @@ body_class: page-home
       <p>Clear worksheets, question banks and online tests for KS2, SATs and GCSE — plus SATs and GCSE past papers.</p>
     </div>
     <div class="om-hero-btns">
-      <a href="{{ site.baseurl }}/worksheets/" class="om-btn-green">Browse free worksheets</a>
+      <a href="{{ site.baseurl }}/gcse-question-bank/" class="om-btn-green">GCSE Maths</a>
+      <a href="{{ site.baseurl }}/sats-question-bank/" class="om-btn-green">Maths SATs</a>
+      <a href="{{ site.baseurl }}/worksheets/" class="om-btn-green">Find a worksheet</a>
     </div>
     <div class="om-hero-ws-row">
       <div class="om-hero-ws"><img src="{{ site.baseurl }}/assets/images/hero-ws-1.jpg" alt="Expand and factorise worksheet"></div>
