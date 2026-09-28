@@ -38,7 +38,7 @@ body_class: page-home
       <div class="om-strip-sub">Key Stage 2 practice papers</div>
     </a>
 
-    <a class="om-strip-item" style="--sc:var(--blue)" href="{{ site.baseurl }}/gcse-maths-papers">
+    <a class="om-strip-item" style="--sc:var(--blue)" href="{{ site.baseurl }}/maths-gcse-papers">
       <div class="om-strip-title">GCSE Maths papers</div>
       <div class="om-strip-sub">Past papers and mark schemes</div>
     </a>
