@@ -198,6 +198,13 @@ main { flex: 1; }
   background: var(--orange-dark);
 }
 
+.om-hero-btns .om-btn-blue,
+.om-hero-btns .om-btn-green,
+.om-hero-btns .om-btn-orange {
+  padding: 15px 30px;
+  font-size: 16px;
+}
+
 .om-hero-ws-row {
   display: flex;
   gap: 16px;
