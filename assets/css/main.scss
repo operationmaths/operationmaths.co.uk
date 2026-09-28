@@ -122,6 +122,15 @@ main { flex: 1; }
   margin-bottom: 4rem;
 }
 
+.om-hero-btns .om-btn-blue,
+.om-hero-btns .om-btn-green,
+.om-hero-btns .om-btn-orange {
+  padding: 15px 30px;
+  font-size: 16px;
+  width: 170px;
+  text-align: center;
+}
+
 .om-btn-green {
   background: var(--green);
   color: #fff;
