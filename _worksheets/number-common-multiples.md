@@ -1,5 +1,5 @@
 ---
-title: Common multiples
+title: Common multiple
 topic: number
 section: Multiples and factors
 order: 1
