@@ -12,7 +12,7 @@ section_order:
   - Division
   - Multiplication and Division
   - All Operations
-  - Product of prime factors
+  - Multiples and factors
   - Fractions
   - Percentages
   - Metric conversions
