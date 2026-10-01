@@ -316,7 +316,7 @@ body { transition: padding-bottom 0.2s ease; }
           <option value="5">5 questions</option>
         </select>
       </label>
-      <button type="button" class="qg-bar-btn qg-bar-btn-primary" onclick="qgGenerate()">Generate questions</button>
+      <button type="button" id="qg-gen-btn" class="qg-bar-btn qg-bar-btn-primary" onclick="qgGenerate()">Generate questions</button>
     </div>
   </div>
 </div>
@@ -6288,6 +6288,7 @@ function qgClearSelection() {
   if (out.style.display === 'block') {
     out.innerHTML = '';
     out.style.display = 'none';
+    document.getElementById('qg-gen-btn').textContent = 'Generate questions';
     document.querySelector('.qg-controls').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 }
@@ -6482,6 +6483,7 @@ function qgGenerate() {
   out.innerHTML = html;
   out.style.display = 'block';
   out.classList.remove('qg-print-working');
+  document.getElementById('qg-gen-btn').textContent = 'Generate new questions';
   out.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
