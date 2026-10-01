@@ -118,7 +118,8 @@ body { transition: padding-bottom 0.2s ease; }
 .qg-bar-info { font-size: 14px; font-weight: 400; }
 .qg-bar-info strong { color: var(--orange); font-weight: 700; }
 .qg-bar-btn { font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 700; border-radius: 8px; padding: 10px 16px; cursor: pointer; border: 1px solid transparent; transition: background 0.12s, border-color 0.12s; }
-.qg-bar-btn-primary { background: var(--orange); border-color: var(--orange); color: #0f1120; padding-left: 26px; padding-right: 26px; min-width: 220px; }
+.qg-bar-btn-primary { background: var(--orange); border-color: var(--orange); color: #0f1120; padding-left: 26px; padding-right: 26px; white-space: nowrap; }
+@media (min-width: 601px) { .qg-bar-btn-primary { width: 190px; padding-left: 8px; padding-right: 8px; } }
 .qg-bar-btn-primary:hover { background: var(--orange-dark); border-color: var(--orange-dark); }
 .qg-bar-btn-ghost { background: transparent; color: #fff; border-color: #454863; }
 .qg-bar-btn-ghost:hover { background: #1c1e33; }
