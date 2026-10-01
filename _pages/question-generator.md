@@ -35,18 +35,15 @@ main { flex: 1; }
 /* ── QUESTION GENERATOR — page-specific styles ── */
 
 .qg-controls { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 1.5rem; margin-bottom: 2rem; }
-.qg-controls-top { display: flex; flex-wrap: wrap; gap: 1.25rem; align-items: flex-start; margin-bottom: 1.5rem; }
-.qg-field-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin-bottom: 0.4rem; }
+.qg-controls-top { margin-bottom: 1.5rem; }
 
-.qg-select { font-family: 'DM Sans', sans-serif; font-size: 14px; padding: 8px 12px; border: 1.5px solid #e5e7eb; border-radius: 6px; background: #fff; color: #111827; cursor: pointer; }
-.qg-select:focus { outline: none; border-color: var(--blue); }
 
-.qg-pill-row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.qg-pill-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.5rem; width: 100%; }
 .qg-pill {
   display: inline-flex; align-items: center; justify-content: center;
-  border: 1.5px solid transparent; color: #fff;
-  font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 700;
-  padding: 8px 14px; border-radius: 6px; cursor: pointer;
+  border: 2px solid transparent; color: #fff;
+  font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 700;
+  padding: 11px 14px; border-radius: 8px; cursor: pointer;
   transition: background 0.12s, border-color 0.12s;
 }
 .qg-pill.number      { background: var(--blue);   border-color: var(--blue); }
@@ -89,10 +86,47 @@ main { flex: 1; }
   .qg-diagram svg { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
 }
 
-.qg-generate-row { display: flex; align-items: center; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap; }
-#qg-gen-btn { padding: 10px 28px; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 700; border: 1.5px solid #000000; border-radius: 7px; cursor: pointer; background: #000000; color: #fff; transition: background 0.12s, border-color 0.12s; }
-#qg-gen-btn:hover { background: #222222; border-color: #222222; }
-.qg-summary { font-size: 13px; color: #6b7280; font-weight: 300; }
+/* ── SEARCH, STRAND BUTTONS, ANSWERS TICK BOX ── */
+.qg-controls [hidden] { display: none !important; }
+.qg-root-tall { position: relative; padding-left: 0.75em; }
+.qg-radical { position: absolute; left: 0; top: 0; width: 0.75em; height: 100%; overflow: visible; }
+.qg-radical path { fill: none; stroke: currentColor; stroke-width: 1.4px; vector-effect: non-scaling-stroke; stroke-linejoin: miter; stroke-linecap: butt; }
+.qg-root-tall .qg-root-radicand { display: flex; align-items: center; padding-top: 0.2em; padding-bottom: 0.05em; line-height: 1; }
+.qg-root-tall .qg-frac { top: 0; margin: 0 1px; }
+.qg-root-tall .qg-root-radicand::before { top: 0; left: -1px; }
+.qg-search { position: relative; margin-bottom: 1.5rem; }
+.qg-search-input { width: 100%; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 400; padding: 11px 40px 11px 14px; border: 1.5px solid #e5e7eb; border-radius: 8px; background: #fff; color: #111827; }
+.qg-search-input:focus { outline: none; border-color: #6b7280; }
+.qg-search-clear { position: absolute; right: 4px; top: 0; bottom: 0; width: 36px; border: none; background: none; color: #6b7280; font-size: 0.95rem; cursor: pointer; }
+.qg-search-clear:hover { color: #111827; }
+.qg-no-results { padding: 1.25rem; text-align: center; color: #6b7280; font-size: 14px; }
+.qg-subsection { border-top: 1px solid #e9ebef; padding-top: 0.9rem; }
+.qg-subsection.qg-first { border-top: none; padding-top: 0; }
+.qg-topic-head { display: flex; align-items: flex-start; justify-content: space-between; padding-right: 17px; }
+.qg-topic-head .qg-topic-label { display: inline-flex; align-items: center; box-sizing: border-box; height: 24px; padding-top: 0; padding-bottom: 0; }
+#qg-toggle-all-btn { width: 130px; height: 24px; box-sizing: border-box; padding: 0 11px; font-size: 12px; line-height: 1; background: #f9fafb; border-color: #000000; border-radius: 5px; }
+#qg-toggle-all-btn:hover { background: #f3f4f6; }
+.qg-check { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 700; color: #374151; cursor: pointer; white-space: nowrap; }
+.qg-check input { width: 16px; height: 16px; cursor: pointer; }
+
+/* ── STICKY GENERATE BAR (matches the builder bar on the SATs and GCSE question banks) ── */
+body { transition: padding-bottom 0.2s ease; }
+.qg-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; background: #0f1120; color: #fff; padding: 14px 0 calc(14px + env(safe-area-inset-bottom, 0px)); transform: translateY(110%); visibility: hidden; transition: transform 0.25s ease, visibility 0s linear 0.25s; box-shadow: 0 -6px 20px rgba(0,0,0,0.15); }
+.qg-bar.show { transform: translateY(0); visibility: visible; transition: transform 0.25s ease, visibility 0s; }
+.qg-bar-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+.qg-bar-left { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.qg-bar-info { font-size: 14px; font-weight: 400; }
+.qg-bar-info strong { color: var(--orange); font-weight: 700; }
+.qg-bar-btn { font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 700; border-radius: 8px; padding: 10px 16px; cursor: pointer; border: 1px solid transparent; transition: background 0.12s, border-color 0.12s; }
+.qg-bar-btn-primary { background: var(--orange); border-color: var(--orange); color: #0f1120; padding-left: 26px; padding-right: 26px; }
+.qg-bar-btn-primary:hover { background: var(--orange-dark); border-color: var(--orange-dark); }
+.qg-bar-btn-ghost { background: transparent; color: #fff; border-color: #454863; }
+.qg-bar-btn-ghost:hover { background: #1c1e33; }
+.qg-bar-right { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.qg-bar-qcount { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 400; cursor: pointer; }
+.qg-bar-select { font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 400; padding: 9px 12px; border: 1px solid #454863; border-radius: 8px; background: #1c1e33; color: #fff; cursor: pointer; }
+.qg-bar-select:focus { outline: none; }
+.qg-bar-label-short { display: none; }
 
 #qg-output { display: none; }
 .qg-out-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.25rem; }
@@ -100,7 +134,6 @@ main { flex: 1; }
 .qg-out-actions { display: flex; gap: 0.6rem; flex-wrap: wrap; }
 .qg-btn-outline { display: inline-flex; align-items: center; justify-content: center; gap: 5px; background: #fff; border: 1.5px solid #e5e7eb; color: #374151; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 700; padding: 8px 14px; border-radius: 6px; cursor: pointer; transition: background 0.12s; text-align: center; }
 .qg-btn-outline:hover { background: #f3f4f6; }
-#qg-toggle-all-btn { width: 150px; }
 
 .qg-topic-block { margin-bottom: 1.75rem; }
 .qg-topic-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 4px 12px; border-radius: 6px; display: inline-block; margin-bottom: 0.75rem; color: #fff; }
@@ -144,7 +177,7 @@ main { flex: 1; }
 
 /* Working space (printed worksheet mode) — all layout rules scoped to @media print below, so screen view never changes */
 .qg-working-space { display: none; }
-.qg-show-btn { display: inline-flex; align-items: center; justify-content: center; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 700; padding: 4px 11px; border-radius: 5px; border: 1.5px solid #e5e7eb; background: #f9fafb; color: #374151; cursor: pointer; white-space: nowrap; width: 92px; text-align: center; line-height: 1.4; }
+.qg-show-btn { display: inline-flex; align-items: center; justify-content: center; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 700; padding: 0 11px; border-radius: 5px; border: 1.5px solid #e5e7eb; background: #f9fafb; color: #374151; cursor: pointer; white-space: nowrap; width: 130px; height: 24px; box-sizing: border-box; text-align: center; line-height: 1; }
 .qg-show-btn:hover { background: #f3f4f6; }
 .qg-answer { font-size: 15px; font-weight: 700; color: var(--green-dark); display: none; text-align: left; }
 .qg-answer.vis { display: block; }
@@ -171,15 +204,16 @@ main { flex: 1; }
 
 @media print {
   * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
-  .om-nav, .om-nav-drawer, .om-footer, .page-hero, .qg-controls, .qg-generate-row, .qg-out-actions, .qg-out-title, .qg-show-btn { display: none !important; }
-  body { background: #fff !important; display: block !important; }
+  .om-nav, .om-nav-drawer, .om-footer, .page-hero, .qg-controls, .qg-bar, .qg-out-actions, #qg-toggle-all-btn, .qg-out-title, .qg-show-btn { display: none !important; }
+  body { background: #fff !important; display: block !important; padding-bottom: 0 !important; }
   .om-body { padding: 0; max-width: 100%; }
   .qg-q-right { display: none !important; }
   .qg-answer { display: none !important; }
   .qg-q-item { border: none; border-radius: 0; break-inside: avoid; padding: 10px 0; }
   .qg-q-list { gap: 0; }
   .qg-topic-block { break-inside: avoid; }
-  .qg-answer-page { display: block !important; break-before: page; }
+  .qg-answer-page { display: none !important; }
+  .qg-print-answers .qg-answer-page { display: block !important; break-before: page; }
 
   /* Simple page border around the whole printed output, with credit line at the end */
   #qg-output { padding: 0; }
@@ -220,6 +254,18 @@ main { flex: 1; }
   .qg-chip-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .qg-chip { min-height: 84px; font-size: 12px; }
   .qg-subsection-label { font-size: 10px; }
+
+  /* Generate bar: summary on the first row, Clear and Generate on the second */
+  .qg-pill-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .qg-bar-inner { padding: 0 1rem; display: grid; grid-template-columns: 1fr auto; gap: 10px; }
+  .qg-bar-left, .qg-bar-right { display: contents; }
+  .qg-bar-info { grid-column: 1 / -1; grid-row: 1; text-align: center; font-size: 13px; }
+  .qg-bar-qcount { grid-column: 1; grid-row: 2; }
+  .qg-bar-select { flex: 1; min-width: 0; }
+  .qg-bar-label-full { display: none; }
+  .qg-bar-label-short { display: inline; }
+  .qg-bar-btn-ghost { grid-column: 2; grid-row: 2; }
+  .qg-bar-btn-primary { grid-column: 1 / -1; grid-row: 3; }
 }
 </style>
 
@@ -232,37 +278,47 @@ main { flex: 1; }
 <div class="om-body">
   <div class="qg-controls">
     <div class="qg-controls-top">
-      <div>
-        <div class="qg-field-label">Questions per topic</div>
-        <select id="qg-qcount" class="qg-select">
+      <div class="qg-pill-row">
+        <button type="button" class="qg-pill number" onclick="qgScrollToStrand('number')">Number</button>
+        <button type="button" class="qg-pill algebra" onclick="qgScrollToStrand('algebra')">Algebra</button>
+        <button type="button" class="qg-pill statistics" onclick="qgScrollToStrand('statistics')">Statistics</button>
+        <button type="button" class="qg-pill geometry" onclick="qgScrollToStrand('geometry')">Geometry</button>
+      </div>
+    </div>
+
+    <div class="qg-search">
+      <input type="text" id="qg-search" class="qg-search-input" placeholder="Search topics, for example fractions or quadratics" autocomplete="off" aria-label="Search topics">
+      <button type="button" class="qg-search-clear" id="qg-search-clear" aria-label="Clear search" hidden>✕</button>
+    </div>
+
+    <div class="qg-strands" id="qg-strands"></div>
+    <div class="qg-no-results" id="qg-no-results" hidden>No topics match your search.</div>
+
+  </div>
+
+  <div id="qg-output"></div>
+</div>
+
+<div class="qg-bar" id="qg-bar" role="region" aria-label="Generate questions">
+  <div class="qg-bar-inner">
+    <div class="qg-bar-left">
+      <button type="button" class="qg-bar-btn qg-bar-btn-ghost" onclick="qgClearSelection()">Clear selection</button>
+      <div class="qg-bar-info" id="qg-bar-info" aria-live="polite"></div>
+    </div>
+    <div class="qg-bar-right">
+      <label class="qg-bar-qcount" for="qg-qcount">
+        <span class="qg-bar-label-full">Questions per topic</span><span class="qg-bar-label-short">Per topic</span>
+        <select id="qg-qcount" class="qg-bar-select">
           <option value="1">1 question</option>
           <option value="2" selected>2 questions</option>
           <option value="3">3 questions</option>
           <option value="4">4 questions</option>
           <option value="5">5 questions</option>
         </select>
-      </div>
-
-      <div>
-        <div class="qg-field-label" style="visibility:hidden;">Jump to section</div>
-        <div class="qg-pill-row">
-          <button type="button" class="qg-pill number" onclick="qgScrollToStrand('number')">Number</button>
-          <button type="button" class="qg-pill algebra" onclick="qgScrollToStrand('algebra')">Algebra</button>
-          <button type="button" class="qg-pill statistics" onclick="qgScrollToStrand('statistics')">Statistics</button>
-          <button type="button" class="qg-pill geometry" onclick="qgScrollToStrand('geometry')">Geometry</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="qg-strands" id="qg-strands"></div>
-
-    <div class="qg-generate-row">
-      <button id="qg-gen-btn" onclick="qgGenerate()">Generate questions</button>
-      <span class="qg-summary" id="qg-summary">No topics selected</span>
+      </label>
+      <button type="button" class="qg-bar-btn qg-bar-btn-primary" onclick="qgGenerate()">Generate questions</button>
     </div>
   </div>
-
-  <div id="qg-output"></div>
 </div>
 
 
@@ -2546,25 +2602,25 @@ const QG_BANK = {
     { q: "Make a the subject of the formula: b = 5a - 9", a: "a = {b+9/5}" },
     { q: "Make m the subject of the formula: p = 4m + 11", a: "m = {p-11/4}" },
     { q: "Make t the subject of the formula: v = 6t - 13", a: "t = {v+13/6}" },
-    { q: "Make r the subject of the formula: A = 3r^2", a: "r = √A/√3" },
+    { q: "Make r the subject of the formula: A = 3r^2", a: "r = √({A/3})" },
     { q: "Make h the subject of the formula: V = 2h + 15", a: "h = {V-15/2}" },
     { q: "Make b the subject of the formula: c = 7b - 4", a: "b = {c+4/7}" },
     { q: "Make q the subject of the formula: p = q/5 + 6", a: "q = 5(p - 6)" },
     { q: "Make y the subject of the formula: x = 8y + 3", a: "y = {x-3/8}" },
     { q: "Make n the subject of the formula: m = n/4 - 7", a: "n = 4(m + 7)" },
     { q: "Make k the subject of the formula: d = 3k + 12", a: "k = {d-12/3}" },
-    { q: "Make s the subject of the formula: d = 5s^2", a: "s = √d/√5" },
+    { q: "Make s the subject of the formula: d = 5s^2", a: "s = √({d/5})" },
     { q: "Make f the subject of the formula: g = 2f - 17", a: "f = {g+17/2}" },
     { q: "Make w the subject of the formula: P = 9w + 5", a: "w = {P-5/9}" },
     { q: "Make c the subject of the formula: d = c/6 - 2", a: "c = 6(d + 2)" },
-    { q: "Make z the subject of the formula: y = 4z^2", a: "z = √y/2" },
+    { q: "Make z the subject of the formula: y = 4z^2", a: "z = {√y/2}" },
     { q: "Make u the subject of the formula: v = 3u + 14", a: "u = {v-14/3}" },
     { q: "Make p the subject of the formula: q = 7p - 8", a: "p = {q+8/7}" },
-    { q: "Make r the subject of the formula: A = 2r^2 + 5", a: "r = √(A-5)/√2" },
+    { q: "Make r the subject of the formula: A = 2r^2 + 5", a: "r = √({A-5/2})" },
     { q: "Make h the subject of the formula: V = 5h - 16", a: "h = {V+16/5}" },
     { q: "Make a the subject of the formula: b = a/3 + 9", a: "a = 3(b - 9)" },
     { q: "Make v the subject of the formula: u = 4v - 11", a: "v = {u+11/4}" },
-    { q: "Make y the subject of the formula: x = 6y^2", a: "y = √x/√6" },
+    { q: "Make y the subject of the formula: x = 6y^2", a: "y = √({x/6})" },
     { q: "Make m the subject of the formula: n = m/7 + 4", a: "m = 7(n - 4)" },
     { q: "Make c the subject of the formula: d = 3c - 18", a: "c = {d+18/3}" }
   ],
@@ -2578,7 +2634,7 @@ const QG_BANK = {
     { q: "Make r the subject of the formula: A = {4r^2+6/3}", a: "r = {√(3A-6)/2}" },
     { q: "Make m the subject of the formula: n = {2m-5/7}", a: "m = {7n+5/2}" },
     { q: "Make y the subject of the formula: x = {6y+3/4}", a: "y = {4x-3/6}" },
-    { q: "Make s the subject of the formula: d = {5s^2+7/2}", a: "s = {√(2d-7)/√5}" },
+    { q: "Make s the subject of the formula: d = {5s^2+7/2}", a: "s = √({2d-7/5})" },
     { q: "Make b the subject of the formula: c = {3b-11/5}", a: "b = {5c+11/3}" },
 
     { q: "Make x the subject of the formula: x(2+a) = b(x+3)", a: "x = {3b/(a+2-b)}" },
@@ -2601,7 +2657,7 @@ const QG_BANK = {
     { q: "Make x the subject of the formula: y = {3x+5/a} - b", a: "x = {a(y+b)-5/3}" },
     { q: "Make t the subject of the formula: v = {2t-7/3} + c", a: "t = {3(v-c)+7/2}" },
     { q: "Make p the subject of the formula: q = {5p+2/r} - s", a: "p = {r(q+s)-2/5}" },
-    { q: "Make r the subject of the formula: A = {2r^2/3} + c", a: "r = {√(3A-3c)/√2}" },
+    { q: "Make r the subject of the formula: A = {2r^2/3} + c", a: "r = √({3A-3c/2})" },
     { q: "Make t the subject of the formula: V = {πr^2t/3} + k", a: "t = {3(V-k)/(πr^2)}" },
 
     { q: "Make x the subject of the formula: y = √(3x+5)", a: "x = {y^2-5/3}" },
@@ -2611,14 +2667,14 @@ const QG_BANK = {
     { q: "Make a the subject of the formula: b = 3√(a-2)", a: "a = {b^2/9} + 2" },
     { q: "Make h the subject of the formula: V = 4√(h+5)", a: "h = {V^2/16} - 5" },
     { q: "Make x the subject of the formula: y = {√x+3/2}", a: "x = (2y-3)^2" },
-    { q: "Make r the subject of the formula: A = {2r^2+5/3}", a: "r = {√(3A-5)/√2}" },
-    { q: "Make t the subject of the formula: v = {3t^2-4/5}", a: "t = {√(5v+4)/√3}" },
+    { q: "Make r the subject of the formula: A = {2r^2+5/3}", a: "r = √({3A-5/2})" },
+    { q: "Make t the subject of the formula: v = {3t^2-4/5}", a: "t = √({5v+4/3})" },
     { q: "Make m the subject of the formula: n = {(m+2)^2/4}", a: "m = 2√n - 2" },
 
-    { q: "Make x the subject of the formula: y = {3(x-2)^2+5/4}", a: "x = 2 + {√(4y-5)/√3}" },
-    { q: "Make p the subject of the formula: q = {2(p+3)^2-7/5}", a: "p = -3 + {√(5q+7)/√2}" },
-    { q: "Make r the subject of the formula: A = {πr^2+6/4}", a: "r = {√(4A-6)/√π}" },
-    { q: "Make s the subject of the formula: d = {5(s-1)^2+3/2}", a: "s = 1 + {√(2d-3)/√5}" },
+    { q: "Make x the subject of the formula: y = {3(x-2)^2+5/4}", a: "x = 2 + √({4y-5/3})" },
+    { q: "Make p the subject of the formula: q = {2(p+3)^2-7/5}", a: "p = -3 + √({5q+7/2})" },
+    { q: "Make r the subject of the formula: A = {πr^2+6/4}", a: "r = √({4A-6/π})" },
+    { q: "Make s the subject of the formula: d = {5(s-1)^2+3/2}", a: "s = 1 + √({2d-3/5})" },
     { q: "Make x the subject of the formula: y = {2√(x+4)-3/5}", a: "x = {(5y+3)^2/4} - 4" },
     { q: "Make h the subject of the formula: V = {3√(h+2)+4/5}", a: "h = {(5V-4)^2/9} - 2" },
     { q: "Make a the subject of the formula: b = {4(a-3)^2-7/2}", a: "a = 3 + {√(2b+7)/2}" },
@@ -6162,6 +6218,7 @@ function qgSelectedInPageOrder() {
 }
 
 let qgSelected = new Set();
+let qgIncludeAnswers = false;
 
 function qgChipId(topic) { return 'qg-chip-' + topic.toLowerCase().replace(/[^a-z0-9]/g, '-'); }
 
@@ -6178,8 +6235,8 @@ function qgBuildStrands() {
         <span class="qg-strand-name"><span class="qg-strand-dot" style="background:${strand.dotColor}"></span>${strand.name}</span>
       </div>
       <div class="qg-strand-body">
-        ${strand.subsections.map(sub => `
-          <div>
+        ${strand.subsections.map((sub, si) => `
+          <div class="qg-subsection${si === 0 ? ' qg-first' : ''}" data-label="${sub.label || ''}">
             ${sub.label ? `<div class="qg-subsection-label">${sub.label}</div>` : ''}
             <div class="qg-chip-row">
               ${sub.topics.map(t => `<button class="qg-chip ${strand.id}" id="${qgChipId(t)}" onclick="qgToggleChip('${t.replace(/'/g, "\\'")}')">${t}</button>`).join('')}
@@ -6203,9 +6260,77 @@ function qgUpdateSummary() {
   const n = qgSelected.size;
   const qcount = parseInt(document.getElementById('qg-qcount').value);
   const total = n * qcount;
-  document.getElementById('qg-summary').textContent = n === 0
-    ? 'No topics selected'
-    : n + ' topic' + (n > 1 ? 's' : '') + ' selected, ' + total + ' question' + (total > 1 ? 's' : '') + ' total';
+  document.getElementById('qg-bar-info').innerHTML =
+    '<strong>' + n + '</strong> topic' + (n === 1 ? '' : 's') + ' selected &nbsp;·&nbsp; ' +
+    '<strong>' + total + '</strong> question' + (total === 1 ? '' : 's') + ' total';
+  document.getElementById('qg-bar').classList.toggle('show', n > 0);
+  qgSyncBarPadding();
+}
+
+// The bar is position:fixed, so it never pushes the page up on its own. Reserving its height
+// as bottom padding (measured live, as it can wrap on narrow screens) stops it covering content.
+function qgSyncBarPadding() {
+  const bar = document.getElementById('qg-bar');
+  document.body.style.paddingBottom = bar.classList.contains('show') ? bar.offsetHeight + 'px' : '';
+}
+window.addEventListener('resize', qgSyncBarPadding);
+
+function qgClearSelection() {
+  qgSelected.forEach(topic => {
+    const btn = document.getElementById(qgChipId(topic));
+    if (btn) btn.classList.remove('selected');
+  });
+  qgSelected.clear();
+  qgUpdateSummary();
+
+  // Also remove any generated questions and take the user back to the topics
+  const out = document.getElementById('qg-output');
+  if (out.style.display === 'block') {
+    out.innerHTML = '';
+    out.style.display = 'none';
+    document.querySelector('.qg-controls').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+// Search: every word typed must appear in the topic name or its sub-heading
+function qgFilterTopics() {
+  const words = document.getElementById('qg-search').value.toLowerCase().split(/\s+/).filter(Boolean);
+  document.getElementById('qg-search-clear').hidden = words.length === 0;
+  let anyVisible = false;
+  document.querySelectorAll('.qg-strand').forEach(strandEl => {
+    let strandHas = false;
+    strandEl.querySelectorAll('.qg-subsection').forEach(subEl => {
+      const label = (subEl.dataset.label || '').toLowerCase();
+      let subHas = false;
+      subEl.querySelectorAll('.qg-chip').forEach(chip => {
+        const hay = label + ' ' + chip.textContent.toLowerCase();
+        const match = words.every(w => hay.includes(w));
+        chip.hidden = !match;
+        if (match) subHas = true;
+      });
+      subEl.hidden = !subHas;
+      subEl.classList.toggle('qg-first', subHas && !strandHas);
+      if (subHas) strandHas = true;
+    });
+    strandEl.hidden = !strandHas;
+    if (strandHas) anyVisible = true;
+  });
+  document.getElementById('qg-no-results').hidden = anyVisible;
+}
+function qgClearSearch() {
+  const input = document.getElementById('qg-search');
+  input.value = '';
+  qgFilterTopics();
+  input.focus();
+}
+document.getElementById('qg-search').addEventListener('input', qgFilterTopics);
+document.getElementById('qg-search').addEventListener('keydown', e => { if (e.key === 'Escape') qgClearSearch(); });
+document.getElementById('qg-search-clear').addEventListener('click', qgClearSearch);
+if (window.matchMedia) {
+  const qgMq = window.matchMedia('(max-width: 600px)');
+  const qgSetPlaceholder = () => { document.getElementById('qg-search').placeholder = qgMq.matches ? 'Search topics' : 'Search topics, for example fractions or quadratics'; };
+  qgSetPlaceholder();
+  qgMq.addEventListener('change', qgSetPlaceholder);
 }
 
 function qgShuffle(arr) {
@@ -6264,7 +6389,15 @@ function qgFormatInline(str) {
 
   // Square and cube roots: √(number) / ∛(number) and √number / ∛number
 // -> radical with a horizontal vinculum over the entire radicand
-s = s.replace(/√\(([^()]+)\)/g, '<span class="qg-root"><span class="qg-root-symbol">√</span><span class="qg-root-radicand">$1</span></span>');
+// A root over a stacked fraction gets a tall radical sign that stretches to the height of the fraction
+function qgRootHTML(inner) {
+  if (inner.indexOf('qg-frac') !== -1) {
+    return '<span class="qg-root qg-root-tall"><svg class="qg-radical" viewBox="0 0 10 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0.5 27 L2.6 25 L5.6 39 L9.6 1"/></svg><span class="qg-root-radicand">' + inner + '</span></span>';
+  }
+  return '<span class="qg-root"><span class="qg-root-symbol">√</span><span class="qg-root-radicand">' + inner + '</span></span>';
+}
+s = s.replace(/√\(([^()]+)\)/g, (m, inner) => qgRootHTML(inner));
+s = s.replace(/√(<em class="qg-x">x<\/em>|[a-zA-Zπ])(?![a-zA-Z0-9])/g, (m, v) => qgRootHTML(v));
 s = s.replace(/∛\(([^()]+)\)/g, '<span class="qg-root"><span class="qg-root-index">3</span><span class="qg-root-symbol">√</span><span class="qg-root-radicand">$1</span></span>');
 
 s = s.replace(/√(\d+(?:\.\d+)?)/g, '<span class="qg-root"><span class="qg-root-symbol">√</span><span class="qg-root-radicand">$1</span></span>');
@@ -6296,8 +6429,7 @@ function qgGenerate() {
     <div class="qg-out-header">
       <span class="qg-out-title">Generated questions</span>
       <div class="qg-out-actions">
-        <button class="qg-btn-outline" id="qg-toggle-all-btn" onclick="qgToggleAllAnswers()">Show all answers</button>
-        <button class="qg-btn-outline" onclick="qgClear()">Clear questions</button>
+        <label class="qg-check"><input type="checkbox" onchange="qgIncludeAnswers = this.checked" ${qgIncludeAnswers ? 'checked' : ''}>Include answers when printing</label>
         <button class="btn btn-green" onclick="qgPrint(false)">Print worksheet</button>
         <button class="btn btn-blue" onclick="qgPrint(true)">Print with working space</button>
       </div>
@@ -6310,7 +6442,8 @@ function qgGenerate() {
     const bank = QG_BANK[topic] || [];
     const picked = qgShuffle(bank).slice(0, Math.min(qcount, bank.length));
 
-    html += `<div class="qg-topic-block"><span class="qg-topic-label" style="background:${strand.dotColor}">${topic}</span><div class="qg-q-list">`;
+    const toggleBtn = n === 0 ? `<button class="qg-btn-outline" id="qg-toggle-all-btn" onclick="qgToggleAllAnswers()">Show all answers</button>` : '';
+    html += `<div class="qg-topic-block"><div class="qg-topic-head"><span class="qg-topic-label" style="background:${strand.dotColor}">${topic}</span>${toggleBtn}</div><div class="qg-q-list">`;
     answerListHtml += `<div class="qg-ans-topic"><span class="qg-ans-topic-label" style="background:${strand.dotColor}">${topic}</span><div class="qg-ans-page-list">`;
 
     picked.forEach(item => {
@@ -6352,24 +6485,10 @@ function qgGenerate() {
   out.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-function qgClear() {
-  const out = document.getElementById('qg-output');
-  out.innerHTML = '';
-  out.style.display = 'none';
-
-  qgSelected.forEach(topic => {
-    const btn = document.getElementById(qgChipId(topic));
-    if (btn) btn.classList.remove('selected');
-  });
-  qgSelected.clear();
-  qgUpdateSummary();
-
-  document.querySelector('.qg-controls').scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
-
 function qgPrint(withWorking) {
   const out = document.getElementById('qg-output');
   out.classList.toggle('qg-print-working', withWorking);
+  out.classList.toggle('qg-print-answers', qgIncludeAnswers);
   requestAnimationFrame(() => {
     requestAnimationFrame(() => window.print());
   });
