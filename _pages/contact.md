@@ -14,7 +14,8 @@ permalink: /contact/
     <div class="contact-card-full">
       <div class="contact-left">
         <h2>Send me a message</h2>
-        <p>Feel free to get in touch if you have any questions about the worksheets, papers, books or online tools. If you have spotted a mistake or there is anything else I can help with, let me know.</p>
+        <p>Feel free to get in touch if you have any questions about the worksheets, papers, books or online tools.</p>
+        <p>If you have spotted a mistake or there is anything else I can help with, let me know.</p>
         <p>You can fill in the form or email me directly at <a class="email-plain" href="mailto:operationmaths123@gmail.com">operationmaths123@gmail.com</a> and I'll get back to you as soon as possible.</p>
       </div>
       <form id="contact-form" class="contact-form">
