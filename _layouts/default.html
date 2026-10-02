@@ -13,6 +13,16 @@
     window.addEventListener('scroll', function() {
       btn.classList.toggle('visible', window.scrollY > (window.innerWidth <= 600 ? 600 : 800));
     });
+
+    document.addEventListener('click', function(e) {
+      var drawer = document.getElementById('nav-drawer');
+      var hamburger = document.querySelector('.om-nav-hamburger');
+      if (!drawer || !hamburger || !drawer.classList.contains('open')) return;
+      if (hamburger.contains(e.target)) return;
+      var tappedSubmenuArrow = drawer.contains(e.target) && !e.target.closest('a');
+      if (tappedSubmenuArrow) return;
+      drawer.classList.remove('open');
+    });
   </script>
 </body>
 </html>
