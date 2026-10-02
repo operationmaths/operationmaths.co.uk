@@ -14,7 +14,7 @@ permalink: /contact/
     <div class="contact-card-full">
       <div class="contact-left">
         <h2>Send me a message</h2>
-        <p>Feel free to get in touch if you have any questions about the worksheets, papers, books or online tools, if you have spotted a mistake, or if there is anything else I can help with.</p>
+        <p>Feel free to get in touch if you have any questions about the worksheets, papers, books or online tools. If you have spotted a mistake or there is anything else I can help with, let me know.</p>
         <p>You can fill in the form or email me directly at <a class="email-plain" href="mailto:operationmaths123@gmail.com">operationmaths123@gmail.com</a> and I'll get back to you as soon as possible.</p>
       </div>
       <form id="contact-form" class="contact-form">
@@ -33,14 +33,14 @@ permalink: /contact/
           <label for="subject">What is your enquiry about?</label>
           <select id="subject" name="subject">
             <option value="">Please select</option>
-            <option value="worksheets">Worksheets</option>
-            <option value="sats-papers">Maths SATs papers</option>
-            <option value="gcse-papers">GCSE maths papers</option>
-            <option value="online-tests">Online maths tests</option>
-            <option value="question-generator">Question generator</option>
-            <option value="books">Books</option>
-            <option value="mistake">Spotted a mistake</option>
-            <option value="other">Something else</option>
+            <option value="Worksheets">Worksheets</option>
+            <option value="Maths SATs papers">Maths SATs papers</option>
+            <option value="GCSE maths papers">GCSE maths papers</option>
+            <option value="Online maths tests">Online maths tests</option>
+            <option value="Question generator">Question generator</option>
+            <option value="Books">Books</option>
+            <option value="Spotted a mistake">Spotted a mistake</option>
+            <option value="Something else">Something else</option>
           </select>
         </div>
         <div>
