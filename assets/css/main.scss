@@ -67,6 +67,10 @@ main { flex: 1; }
 .om-footer a { color: #9ca3af; text-decoration: none; margin-left: 1.25rem; font-weight: 500; transition: color 0.12s; display: inline-flex; align-items: center; gap: 5px; }
 .om-footer a:hover { color: #fff; }
 .om-footer-fb svg { width: 14px; height: 14px; fill: currentColor; flex-shrink: 0; position: relative; top: -1px; }
+.has-bottom-bar .om-footer { margin-top: 0; border-top: 1px solid #2a2d45; }
+@media (min-width: 601px) {
+  .has-bottom-bar .om-footer { padding-right: 5rem; }
+}
 
 /* BODY */
 .om-body { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; }
