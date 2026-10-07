@@ -10,6 +10,6 @@ show_a_worksheet: true
 show_a_answers: true
 free_pdf: /pdfs/Common-factors.pdf
 answers_pdf: /pdfs/Common-factors-ANSWERS.pdf
-tes_url: ''
-date_added: ''
+tes_url: https://www.tes.com/teaching-resource/-13600833
+date_added: 2026-10-07 12:18:00
 ---
