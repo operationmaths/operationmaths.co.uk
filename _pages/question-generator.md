@@ -3,7 +3,6 @@ layout: default
 title: Question Generator
 description: Generate free primary, secondary and GCSE maths practice questions with answers, covering number, algebra, statistics and more. View on screen or print.
 permalink: /question-generator/
----
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&display=swap');
 
@@ -268,14 +267,11 @@ body { transition: padding-bottom 0.2s ease; }
   .qg-bar-btn-ghost { grid-column: 2; grid-row: 2; }
   .qg-bar-btn-primary { grid-column: 1 / -1; grid-row: 3; }
 }
-</style>
-
 <section class="page-hero">
   <h1>Question <em>generator</em></h1>
   <p>Select topics and generate questions, with answers included.</p>
   <p>View on screen or print.</p>
 </section>
-
 <div class="om-body">
   <div class="qg-controls">
     <div class="qg-controls-top">
@@ -286,7 +282,6 @@ body { transition: padding-bottom 0.2s ease; }
         <button type="button" class="qg-pill geometry" onclick="qgScrollToStrand('geometry')">Geometry</button>
       </div>
     </div>
-
     <div class="qg-search">
       <input type="text" id="qg-search" class="qg-search-input" placeholder="Search topics, for example fractions or quadratics" autocomplete="off" aria-label="Search topics">
       <button type="button" class="qg-search-clear" id="qg-search-clear" aria-label="Clear search" hidden>✕</button>
@@ -295,11 +290,9 @@ body { transition: padding-bottom 0.2s ease; }
     <div class="qg-strands" id="qg-strands"></div>
     <div class="qg-no-results" id="qg-no-results" hidden>No topics match your search.</div>
 
-  </div>
-
-  <div id="qg-output"></div>
 </div>
-
+<div id="qg-output"></div>
+</div>
 <div class="qg-bar" id="qg-bar" role="region" aria-label="Generate questions">
   <div class="qg-bar-inner">
     <div class="qg-bar-left">
@@ -321,7 +314,6 @@ body { transition: padding-bottom 0.2s ease; }
     </div>
   </div>
 </div>
-
 
 <script>
 {% raw %}
@@ -3051,6 +3043,162 @@ const QG_BANK = {
     { q: "Factorise: 12x^2 − 35x + 8", a: "(4x − 1)(3x − 8)" },
     { q: "Factorise: 4x^2 − 6x − 10", a: "(2x + 2)(2x − 5)" },
     { q: "Factorise: 16x^2 − 81", a: "(4x − 9)(4x + 9)" }
+  ],
+  "Complete the square - Harder": [
+    { q: "Write 2x^2 + 8x + 5 in the form a(x + b)^2 + c", a: "2(x + 2)^2 − 3" },
+    { q: "Write 2x^2 − 12x + 7 in the form a(x + b)^2 + c", a: "2(x − 3)^2 − 11" },
+    { q: "Write 3x^2 + 12x + 4 in the form a(x + b)^2 + c", a: "3(x + 2)^2 − 8" },
+    { q: "Write 3x^2 − 18x + 10 in the form a(x + b)^2 + c", a: "3(x − 3)^2 − 17" },
+    { q: "Write 4x^2 + 16x + 3 in the form a(x + b)^2 + c", a: "4(x + 2)^2 − 13" },
+    { q: "Write 4x^2 − 24x + 11 in the form a(x + b)^2 + c", a: "4(x − 3)^2 − 25" },
+    { q: "Write 5x^2 + 20x + 6 in the form a(x + b)^2 + c", a: "5(x + 2)^2 − 14" },
+    { q: "Write 5x^2 − 30x + 8 in the form a(x + b)^2 + c", a: "5(x − 3)^2 − 37" },
+    { q: "Write 2x^2 + 12x + 1 in the form a(x + b)^2 + c", a: "2(x + 3)^2 − 17" },
+    { q: "Write 2x^2 − 16x + 9 in the form a(x + b)^2 + c", a: "2(x − 4)^2 − 23" },
+    { q: "Write 3x^2 + 18x + 5 in the form a(x + b)^2 + c", a: "3(x + 3)^2 − 22" },
+    { q: "Write 3x^2 − 24x + 7 in the form a(x + b)^2 + c", a: "3(x − 4)^2 − 41" },
+    { q: "Write 4x^2 + 24x + 5 in the form a(x + b)^2 + c", a: "4(x + 3)^2 − 31" },
+    { q: "Write 4x^2 − 32x + 9 in the form a(x + b)^2 + c", a: "4(x − 4)^2 − 55" },
+    { q: "Write 5x^2 + 30x + 4 in the form a(x + b)^2 + c", a: "5(x + 3)^2 − 41" },
+    { q: "Write 5x^2 − 40x + 6 in the form a(x + b)^2 + c", a: "5(x − 4)^2 − 74" },
+    { q: "Write 2x^2 + 20x + 6 in the form a(x + b)^2 + c", a: "2(x + 5)^2 − 44" },
+    { q: "Write 2x^2 − 20x + 3 in the form a(x + b)^2 + c", a: "2(x − 5)^2 − 47" },
+    { q: "Write 3x^2 + 30x + 8 in the form a(x + b)^2 + c", a: "3(x + 5)^2 − 67" },
+    { q: "Write 3x^2 − 30x + 4 in the form a(x + b)^2 + c", a: "3(x − 5)^2 − 71" },
+    { q: "Write 4x^2 + 32x + 7 in the form a(x + b)^2 + c", a: "4(x + 4)^2 − 57" },
+    { q: "Write 4x^2 − 40x + 5 in the form a(x + b)^2 + c", a: "4(x − 5)^2 − 95" },
+    { q: "Write 5x^2 + 40x + 9 in the form a(x + b)^2 + c", a: "5(x + 4)^2 − 71" },
+    { q: "Write 5x^2 − 50x + 7 in the form a(x + b)^2 + c", a: "5(x − 5)^2 − 118" },
+    { q: "Write 2x^2 + 4x − 3 in the form a(x + b)^2 + c", a: "2(x + 1)^2 − 5" },
+    { q: "Write 2x^2 − 4x + 7 in the form a(x + b)^2 + c", a: "2(x − 1)^2 + 5" },
+    { q: "Write 3x^2 + 6x − 5 in the form a(x + b)^2 + c", a: "3(x + 1)^2 − 8" },
+    { q: "Write 3x^2 − 6x + 2 in the form a(x + b)^2 + c", a: "3(x − 1)^2 − 1" },
+    { q: "Write 4x^2 + 8x − 1 in the form a(x + b)^2 + c", a: "4(x + 1)^2 − 5" },
+    { q: "Write 4x^2 − 8x + 3 in the form a(x + b)^2 + c", a: "4(x − 1)^2 − 1" },
+    { q: "Write 6x^2 + 12x + 1 in the form a(x + b)^2 + c", a: "6(x + 1)^2 − 5" },
+    { q: "Write 6x^2 − 12x + 5 in the form a(x + b)^2 + c", a: "6(x − 1)^2 − 1" },
+    { q: "Write 7x^2 + 14x − 2 in the form a(x + b)^2 + c", a: "7(x + 1)^2 − 9" },
+    { q: "Write 7x^2 − 14x + 3 in the form a(x + b)^2 + c", a: "7(x − 1)^2 − 4" },
+    { q: "Write 2x^2 + 10x + 4 in the form a(x + b)^2 + c", a: "2(x + 5/2)^2 − 17/2" },
+    { q: "Write 2x^2 − 14x + 6 in the form a(x + b)^2 + c", a: "2(x − 7/2)^2 − 37/2" },
+    { q: "Write 3x^2 + 9x + 2 in the form a(x + b)^2 + c", a: "3(x + 3/2)^2 − 19/4" },
+    { q: "Write 3x^2 − 15x + 4 in the form a(x + b)^2 + c", a: "3(x − 5/2)^2 − 59/4" },
+    { q: "Write 4x^2 + 12x + 1 in the form a(x + b)^2 + c", a: "4(x + 3/2)^2 − 8" },
+    { q: "Write 4x^2 − 20x + 3 in the form a(x + b)^2 + c", a: "4(x − 5/2)^2 − 22" },
+    { q: "Write 5x^2 + 15x + 2 in the form a(x + b)^2 + c", a: "5(x + 3/2)^2 − 37/4" },
+    { q: "Write 5x^2 − 25x + 6 in the form a(x + b)^2 + c", a: "5(x − 5/2)^2 − 101/4" },
+    { q: "Write 6x^2 + 18x + 5 in the form a(x + b)^2 + c", a: "6(x + 3/2)^2 − 17/2" },
+    { q: "Write 6x^2 − 30x + 7 in the form a(x + b)^2 + c", a: "6(x − 5/2)^2 − 61/2" },
+    { q: "Write 8x^2 + 24x + 3 in the form a(x + b)^2 + c", a: "8(x + 3/2)^2 − 15" },
+    { q: "Write 8x^2 − 40x + 5 in the form a(x + b)^2 + c", a: "8(x − 5/2)^2 − 45" },
+    { q: "Write 10x^2 + 30x + 7 in the form a(x + b)^2 + c", a: "10(x + 3/2)^2 − 31/2" },
+    { q: "Write 10x^2 − 50x + 9 in the form a(x + b)^2 + c", a: "10(x − 5/2)^2 − 107/2" },
+    { q: "Write 12x^2 + 36x + 5 in the form a(x + b)^2 + c", a: "12(x + 3/2)^2 − 22" },
+    { q: "Write 12x^2 − 60x + 11 in the form a(x + b)^2 + c", a: "12(x − 5/2)^2 − 64" }
+  ],
+  "Difference of two squares": [
+    { q: "Factorise: x^2 − 1", a: "(x + 1)(x − 1)" },
+    { q: "Factorise: x^2 − 4", a: "(x + 2)(x − 2)" },
+    { q: "Factorise: x^2 − 9", a: "(x + 3)(x − 3)" },
+    { q: "Factorise: x^2 − 16", a: "(x + 4)(x − 4)" },
+    { q: "Factorise: x^2 − 25", a: "(x + 5)(x − 5)" },
+    { q: "Factorise: x^2 − 36", a: "(x + 6)(x − 6)" },
+    { q: "Factorise: x^2 − 49", a: "(x + 7)(x − 7)" },
+    { q: "Factorise: x^2 − 64", a: "(x + 8)(x − 8)" },
+    { q: "Factorise: x^2 − 81", a: "(x + 9)(x − 9)" },
+    { q: "Factorise: x^2 − 100", a: "(x + 10)(x − 10)" },
+    { q: "Factorise: x^2 − 121", a: "(x + 11)(x − 11)" },
+    { q: "Factorise: x^2 − 144", a: "(x + 12)(x − 12)" },
+    { q: "Factorise: 4x^2 − 1", a: "(2x + 1)(2x − 1)" },
+    { q: "Factorise: 4x^2 − 9", a: "(2x + 3)(2x − 3)" },
+    { q: "Factorise: 4x^2 − 25", a: "(2x + 5)(2x − 5)" },
+    { q: "Factorise: 4x^2 − 49", a: "(2x + 7)(2x − 7)" },
+    { q: "Factorise: 4x^2 − 81", a: "(2x + 9)(2x − 9)" },
+    { q: "Factorise: 4x^2 − 121", a: "(2x + 11)(2x − 11)" },
+    { q: "Factorise: 4x^2 − 144", a: "(2x + 12)(2x − 12)" },
+    { q: "Factorise: 9x^2 − 1", a: "(3x + 1)(3x − 1)" },
+    { q: "Factorise: 9x^2 − 4", a: "(3x + 2)(3x − 2)" },
+    { q: "Factorise: 9x^2 − 16", a: "(3x + 4)(3x − 4)" },
+    { q: "Factorise: 9x^2 − 25", a: "(3x + 5)(3x − 5)" },
+    { q: "Factorise: 9x^2 − 49", a: "(3x + 7)(3x − 7)" },
+    { q: "Factorise: 9x^2 − 64", a: "(3x + 8)(3x − 8)" },
+    { q: "Factorise: 9x^2 − 100", a: "(3x + 10)(3x − 10)" },
+    { q: "Factorise: 16x^2 − 9", a: "(4x + 3)(4x − 3)" },
+    { q: "Factorise: 16x^2 − 25", a: "(4x + 5)(4x − 5)" },
+    { q: "Factorise: 16x^2 − 49", a: "(4x + 7)(4x − 7)" },
+    { q: "Factorise: 16x^2 − 81", a: "(4x + 9)(4x − 9)" },
+    { q: "Factorise: x^2 − y^2", a: "(x + y)(x − y)" },
+    { q: "Factorise: x^2 − 4y^2", a: "(x + 2y)(x − 2y)" },
+    { q: "Factorise: x^2 − 9y^2", a: "(x + 3y)(x − 3y)" },
+    { q: "Factorise: x^2 − 16y^2", a: "(x + 4y)(x − 4y)" },
+    { q: "Factorise: 4x^2 − y^2", a: "(2x + y)(2x − y)" },
+    { q: "Factorise: 9x^2 − 4y^2", a: "(3x + 2y)(3x − 2y)" },
+    { q: "Factorise: 16x^2 − 9y^2", a: "(4x + 3y)(4x − 3y)" },
+    { q: "Factorise: 25x^2 − 16y^2", a: "(5x + 4y)(5x − 4y)" },
+    { q: "Factorise: 25x^2 − 49y^2", a: "(5x + 7y)(5x − 7y)" },
+    { q: "Factorise: 36x^2 − 25y^2", a: "(6x + 5y)(6x − 5y)" },
+    { q: "Factorise: x^2 − 4y^4", a: "(x + 2y^2)(x − 2y^2)" },
+    { q: "Factorise: x^2 − 9y^4", a: "(x + 3y^2)(x − 3y^2)" },
+    { q: "Factorise: 4x^2 − 9y^4", a: "(2x + 3y^2)(2x − 3y^2)" },
+    { q: "Factorise: 9x^2 − 16y^4", a: "(3x + 4y^2)(3x − 4y^2)" },
+    { q: "Factorise: 16x^2 − 25y^4", a: "(4x + 5y^2)(4x − 5y^2)" },
+    { q: "Factorise: 25x^2 − 36y^4", a: "(5x + 6y^2)(5x − 6y^2)" },
+    { q: "Factorise: 36x^2 − 49y^4", a: "(6x + 7y^2)(6x − 7y^2)" },
+    { q: "Factorise: 49x^2 − 64y^4", a: "(7x + 8y^2)(7x − 8y^2)" },
+    { q: "Factorise: 64x^2 − 81y^4", a: "(8x + 9y^2)(8x − 9y^2)" },
+    { q: "Factorise: 81x^2 − 100y^4", a: "(9x + 10y^2)(9x − 10y^2)" }
+  ],
+  "Find the turning point": [
+    { q: "Find the turning point of y = x^2 + 6x + 5", a: "(−3, −4)" },
+    { q: "Find the turning point of y = x^2 − 8x + 7", a: "(4, −9)" },
+    { q: "Find the turning point of y = x^2 + 10x + 21", a: "(−5, −4)" },
+    { q: "Find the turning point of y = x^2 − 12x + 20", a: "(6, −16)" },
+    { q: "Find the turning point of y = x^2 + 4x − 5", a: "(−2, −9)" },
+    { q: "Find the turning point of y = x^2 − 14x + 40", a: "(7, −9)" },
+    { q: "Find the turning point of y = x^2 + 8x + 7", a: "(−4, −9)" },
+    { q: "Find the turning point of y = x^2 − 6x + 2", a: "(3, −7)" },
+    { q: "Find the turning point of y = x^2 + 12x + 20", a: "(−6, −16)" },
+    { q: "Find the turning point of y = x^2 − 10x + 13", a: "(5, −12)" },
+    { q: "Find the turning point of y = x^2 + 2x − 8", a: "(−1, −9)" },
+    { q: "Find the turning point of y = x^2 − 4x − 5", a: "(2, −9)" },
+    { q: "Find the turning point of y = x^2 + 14x + 45", a: "(−7, −4)" },
+    { q: "Find the turning point of y = x^2 − 16x + 55", a: "(8, −9)" },
+    { q: "Find the turning point of y = x^2 + 16x + 60", a: "(−8, −4)" },
+    { q: "Find the turning point of y = x^2 − 18x + 77", a: "(9, −4)" },
+    { q: "Find the turning point of y = x^2 + 18x + 77", a: "(−9, −4)" },
+    { q: "Find the turning point of y = x^2 − 20x + 91", a: "(10, −9)" },
+    { q: "Find the turning point of y = x^2 + 20x + 91", a: "(−10, −9)" },
+    { q: "Find the turning point of y = x^2 − 22x + 120", a: "(11, −1)" },
+    { q: "Find the turning point of y = x^2 + 22x + 120", a: "(−11, −1)" },
+    { q: "Find the turning point of y = x^2 − 24x + 130", a: "(12, −14)" },
+    { q: "Find the turning point of y = x^2 + 24x + 130", a: "(−12, −14)" },
+    { q: "Find the turning point of y = x^2 − 2x − 3", a: "(1, −4)" },
+    { q: "Find the turning point of y = x^2 + 2x − 3", a: "(−1, −4)" },
+    { q: "Find the turning point of y = x^2 − 4x + 1", a: "(2, −3)" },
+    { q: "Find the turning point of y = x^2 + 4x + 1", a: "(−2, −3)" },
+    { q: "Find the turning point of y = x^2 − 6x + 5", a: "(3, −4)" },
+    { q: "Find the turning point of y = x^2 + 6x + 5", a: "(−3, −4)" },
+    { q: "Find the turning point of y = x^2 − 8x + 12", a: "(4, −4)" },
+    { q: "Find the turning point of y = x^2 + 8x + 12", a: "(−4, −4)" },
+    { q: "Find the turning point of y = x^2 − 10x + 21", a: "(5, −4)" },
+    { q: "Find the turning point of y = x^2 + 10x + 21", a: "(−5, −4)" },
+    { q: "Find the turning point of y = x^2 − 12x + 35", a: "(6, −1)" },
+    { q: "Find the turning point of y = x^2 + 12x + 35", a: "(−6, −1)" },
+    { q: "Find the turning point of y = x^2 − 14x + 48", a: "(7, −1)" },
+    { q: "Find the turning point of y = x^2 + 14x + 48", a: "(−7, −1)" },
+    { q: "Find the turning point of y = x^2 − 16x + 60", a: "(8, −4)" },
+    { q: "Find the turning point of y = x^2 + 16x + 60", a: "(−8, −4)" },
+    { q: "Find the turning point of y = x^2 − 18x + 80", a: "(9, −1)" },
+    { q: "Find the turning point of y = x^2 + 18x + 80", a: "(−9, −1)" },
+    { q: "Find the turning point of y = x^2 − 20x + 96", a: "(10, −4)" },
+    { q: "Find the turning point of y = x^2 + 20x + 96", a: "(−10, −4)" },
+    { q: "Find the turning point of y = x^2 − 22x + 117", a: "(11, −4)" },
+    { q: "Find the turning point of y = x^2 + 22x + 117", a: "(−11, −4)" },
+    { q: "Find the turning point of y = x^2 − 24x + 140", a: "(12, −4)" },
+    { q: "Find the turning point of y = x^2 + 24x + 140", a: "(−12, −4)" },
+    { q: "Find the turning point of y = x^2 − 6x − 7", a: "(3, −16)" },
+    { q: "Find the turning point of y = x^2 + 6x − 7", a: "(−3, −16)" },
+    { q: "Find the turning point of y = x^2 + 28x + 180", a: "(−14, −16)" }
   ],
   "Solve quadratics": [
     { q: "Solve: x^2 − 6x + 8 = 0", a: "x = 4 or x = 2" },
@@ -6190,13 +6338,13 @@ const QG_STRANDS = [
   { id: 'algebra', name: 'Algebra', dotColor: '#009444', subsections: [
       { label: 'Equation of a straight line', topics: ['Identify gradient and y-intercept', 'Identify perpendicular gradient'] },
       { label: 'Expanding', topics: ['Expand single brackets', 'Expand double brackets', 'Expand triple brackets'] },
-      { label: 'Factorising', topics: ['Factorise into single brackets', 'Factorise quadratics'] },
+      { label: 'Factorising', topics: ['Factorise into single brackets', 'Factorise quadratics', 'Factorise harder quadratics', 'Difference of two squares'] },
       { label: 'Inequalities', topics: ['Integer solutions to an inequality', 'Solve one-step inequalities', 'Solve multistep inequalities'] },
-      { label: 'Quadratics', topics: ['Complete the square', 'Factorise harder quadratics', 'Solve quadratics', 'Quadratic formula'] },
+      { label: 'Complete the square', topics: ['Complete the square', 'Complete the square - Harder', 'Find the turning point'] },
       { label: 'Sequences', topics: ['nth term', 'Finding terms', 'Numbers in sequences', 'Quadratic nth term'] },
       { label: 'Simplifying', topics: ['Collecting like terms', 'Multiplying terms'] },
       { label: 'Rearranging formulae', topics: ['Rearranging formulae - Basic', 'Rearranging formulae - Harder'] },
-      { label: 'Solving equations', topics: ['Solve one-step equations', 'Solve two-step equations', 'Solve equations with brackets', 'Solve equations with unknown on both sides', 'Simultaneous equations'] },
+      { label: 'Solving equations', topics: ['Solve one-step equations', 'Solve two-step equations', 'Solve equations with brackets', 'Solve equations with unknown on both sides', 'Simultaneous equations', 'Solve quadratics', 'Quadratic formula'] },
       { label: 'Substitution', topics: ['Basic substitution', 'Harder substitution'] }
   ]},
   { id: 'statistics', name: 'Statistics', dotColor: '#800080', subsections: [
@@ -6525,4 +6673,3 @@ function qgSyncToggleAllLabel(forceState) {
 
 qgBuildStrands();
 {% endraw %}
-</script>
