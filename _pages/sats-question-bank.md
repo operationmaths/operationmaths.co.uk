@@ -3,7 +3,7 @@ layout: default
 title: SATs maths question bank
 description: Search real KS2 SATs maths past paper questions by curriculum year, paper, strand and sub-strand. View them on screen or print them straight into a worksheet.
 permalink: /sats-question-bank/
-body_class: page-sats-question-bank
+body_class: page-sats-question-bank has-bottom-bar
 ---
 
 <div id="sqb-page">
