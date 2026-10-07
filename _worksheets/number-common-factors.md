@@ -8,8 +8,8 @@ description: List the factors of two numbers, find the common factors, then the 
 thumbnail: /assets/images/worksheets/number/Common-factors.jpg
 show_a_worksheet: true
 show_a_answers: true
-free_pdf: /
-answers_pdf: /
+free_pdf: /pdfs/Common-factors.pdf
+answers_pdf: /pdfs/Common-factors-ANSWERS.pdf
 tes_url: ''
 date_added: ''
 ---
