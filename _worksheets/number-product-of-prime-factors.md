@@ -2,7 +2,7 @@
 title: Product of prime factors
 topic: number
 section: Multiples and factors
-order: 2
+order: 3
 orientation: portrait
 description: Each worksheet contains 9 questions about working out the product of prime factors.
 thumbnail: /assets/images/worksheets/number/Product-of-prime-factors.jpg
