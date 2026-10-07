@@ -216,13 +216,14 @@ body_class: page-sats-question-bank has-bottom-bar
 
   /* Sticky worksheet builder bar - the signature element */
   .builder-bar{
-    position:fixed;left:0;right:0;bottom:0;z-index:30;
+    display:none;
+    position:sticky;bottom:0;z-index:30;
     background:var(--navy);color:#fff;
     padding:14px 0;
-    transform:translateY(110%);transition:transform .25s ease;
     box-shadow:0 -6px 20px rgba(0,0,0,.15);
   }
-  .builder-bar.show{transform:translateY(0);}
+  .builder-bar.show{display:block;animation:builderBarIn .25s ease;}
+  @keyframes builderBarIn{from{transform:translateY(100%);}to{transform:translateY(0);}}
   .builder-bar .wrap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
   .builder-info{font-size:.9rem;}
   .builder-info strong{color:var(--orange);}
@@ -1787,10 +1788,9 @@ function updateBuilderBar(){
   document.getElementById("selMarks").textContent = items.reduce((s,q)=>s+q.marks,0);
   const show = items.length > 0;
   bar.classList.toggle('show', show);
-  // The bar is position:fixed, so it never pushes page content up on its own.
-  // Reserving its own height as page padding (measured live, since it can
-  // wrap to two lines on narrow screens) makes room for it instead.
-  document.body.style.paddingBottom = show ? bar.offsetHeight+'px' : '';
+  // The bar is position:sticky, so it follows the bottom of the screen while
+  // scrolling and settles above the footer at the end of the page. It needs
+  // no padding on the page.
 }
 document.getElementById("clearBtn").addEventListener('click',()=>{state.selected.clear();render();updateBuilderBar();});
 
