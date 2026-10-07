@@ -3,6 +3,7 @@ layout: default
 title: Question Generator
 description: Generate free primary, secondary and GCSE maths practice questions with answers, covering number, algebra, statistics and more. View on screen or print.
 permalink: /question-generator/
+---
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&display=swap');
 
