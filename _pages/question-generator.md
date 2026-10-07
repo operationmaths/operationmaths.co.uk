@@ -268,6 +268,7 @@ body { transition: padding-bottom 0.2s ease; }
   .qg-bar-btn-ghost { grid-column: 2; grid-row: 2; }
   .qg-bar-btn-primary { grid-column: 1 / -1; grid-row: 3; }
 }
+</style>  
 <section class="page-hero">
   <h1>Question <em>generator</em></h1>
   <p>Select topics and generate questions, with answers included.</p>
