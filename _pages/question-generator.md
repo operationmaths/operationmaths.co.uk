@@ -3,6 +3,7 @@ layout: default
 title: Question Generator
 description: Generate free primary, secondary and GCSE maths practice questions with answers, covering number, algebra, statistics and more. View on screen or print.
 permalink: /question-generator/
+body_class: has-bottom-bar
 ---
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&display=swap');
@@ -111,8 +112,9 @@ main { flex: 1; }
 
 /* ── STICKY GENERATE BAR (matches the builder bar on the SATs and GCSE question banks) ── */
 body { transition: padding-bottom 0.2s ease; }
-.qg-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; background: #0f1120; color: #fff; padding: 14px 0 calc(14px + env(safe-area-inset-bottom, 0px)); transform: translateY(110%); visibility: hidden; transition: transform 0.25s ease, visibility 0s linear 0.25s; box-shadow: 0 -6px 20px rgba(0,0,0,0.15); }
-.qg-bar.show { transform: translateY(0); visibility: visible; transition: transform 0.25s ease, visibility 0s; }
+.qg-bar { display: none; position: sticky; bottom: 0; z-index: 30; background: #0f1120; color: #fff; padding: 14px 0 calc(14px + env(safe-area-inset-bottom, 0px)); box-shadow: 0 -6px 20px rgba(0,0,0,0.15); }
+.qg-bar.show { display: block; animation: qgBarIn 0.25s ease; }
+@keyframes qgBarIn { from { transform: translateY(100%); } to { transform: translateY(0); } }
 .qg-bar-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
 .qg-bar-left { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
 .qg-bar-info { font-size: 14px; font-weight: 400; }
@@ -6419,16 +6421,9 @@ function qgUpdateSummary() {
     '<strong>' + n + '</strong> topic' + (n === 1 ? '' : 's') + ' selected &nbsp;·&nbsp; ' +
     '<strong>' + total + '</strong> question' + (total === 1 ? '' : 's') + ' total';
   document.getElementById('qg-bar').classList.toggle('show', n > 0);
-  qgSyncBarPadding();
 }
-
-// The bar is position:fixed, so it never pushes the page up on its own. Reserving its height
-// as bottom padding (measured live, as it can wrap on narrow screens) stops it covering content.
-function qgSyncBarPadding() {
-  const bar = document.getElementById('qg-bar');
-  document.body.style.paddingBottom = bar.classList.contains('show') ? bar.offsetHeight + 'px' : '';
-}
-window.addEventListener('resize', qgSyncBarPadding);
+// The bar is position:sticky, so it follows the bottom of the screen while scrolling and
+// settles above the footer at the end of the page. It needs no padding on the page.
 
 function qgClearSelection() {
   qgSelected.forEach(topic => {
