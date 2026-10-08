@@ -3,7 +3,7 @@ layout: default
 title: GCSE maths question bank
 description: Search real Edexcel GCSE maths past paper questions by tier, paper, strand and sub-strand. View them on screen or print them straight into a worksheet.
 permalink: /gcse-question-bank/
-body_class: page-gcse-question-bank
+body_class: page-gcse-question-bank has-bottom-bar
 ---
 
 <div id="gqb-page">
@@ -270,13 +270,14 @@ body_class: page-gcse-question-bank
 
   /* Sticky worksheet builder bar - the signature element */
   .builder-bar{
-    position:fixed;left:0;right:0;bottom:0;z-index:30;
+    display:none;
+    position:sticky;bottom:0;z-index:30;
     background:var(--navy);color:#fff;
     padding:14px 0;
-    transform:translateY(110%);transition:transform .25s ease;
     box-shadow:0 -6px 20px rgba(0,0,0,.15);
   }
-  .builder-bar.show{transform:translateY(0);}
+  .builder-bar.show{display:block;animation:builderBarIn .25s ease;}
+  @keyframes builderBarIn{from{transform:translateY(100%);}to{transform:translateY(0);}}
   .builder-bar .wrap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
   .builder-info{font-size:.9rem;}
   .builder-info strong{color:var(--orange);}
@@ -490,7 +491,7 @@ body_class: page-gcse-question-bank
   <div class="wrap">
     <div class="builder-left">
       <button class="btn btn-ghost" id="clearBtn">Clear selection</button>
-      <div class="builder-info"><strong id="selCount">0</strong> questions selected &nbsp;·&nbsp; <span id="selMarks">0</span> marks total</div>
+      <div class="builder-info"><strong id="selCount">0</strong> <span id="selWord">questions</span> selected &nbsp;·&nbsp; <span id="selMarks">0</span> <span id="marksWord">marks</span> total</div>
     </div>
     <div class="builder-actions">
       <label class="answers-toggle-label">
@@ -2976,17 +2977,16 @@ function toggleSelect(id){
 function updateBuilderBar(){
   const bar=document.getElementById("builderBar");
   const items=[...state.selected].map(id=>QUESTIONS.find(q=>q.id===id));
+  const totalMarks=items.reduce((s,q)=>s+q.marks,0);
   document.getElementById("selCount").textContent=items.length;
-  document.getElementById("selMarks").textContent=items.reduce((s,q)=>s+q.marks,0);
+  document.getElementById("selWord").textContent=items.length===1?"question":"questions";
+  document.getElementById("selMarks").textContent=totalMarks;
+  document.getElementById("marksWord").textContent=totalMarks===1?"mark":"marks";
   const show=items.length>0;
   bar.classList.toggle('show',show);
-  // The bar is position:fixed, so it's lifted out of normal flow and never
-  // pushes page content up on its own - the "Show more questions" button
-  // sits at the true bottom of the page and the fixed bar simply overlays
-  // whatever happens to be there once you've scrolled that far. Reserving
-  // its own height as page padding (measured live via offsetHeight, since
-  // it can wrap to two lines on narrow screens) makes room for it instead.
-  document.body.style.paddingBottom=show?bar.offsetHeight+'px':'';
+  // The bar is position:sticky, so it follows the bottom of the screen while
+  // scrolling and settles above the footer at the end of the page. It needs
+  // no padding on the page.
 }
 document.getElementById("clearBtn").addEventListener('click',()=>{state.selected.clear();render();updateBuilderBar();});
 
