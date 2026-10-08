@@ -451,7 +451,7 @@ body_class: page-sats-question-bank has-bottom-bar
   <div class="wrap">
     <div class="builder-left">
       <button class="btn btn-ghost" id="clearBtn">Clear selection</button>
-      <div class="builder-info"><strong id="selCount">0</strong> questions selected &nbsp;·&nbsp; <span id="selMarks">0</span> marks total</div>
+      <div class="builder-info"><strong id="selCount">0</strong> <span id="selWord">questions</span> selected &nbsp;·&nbsp; <span id="selMarks">0</span> <span id="marksWord">marks</span> total</div>
     </div>
     <div class="builder-actions">
       <label class="answers-toggle-label">
@@ -1784,8 +1784,11 @@ function toggleSelect(id){
 function updateBuilderBar(){
   const bar = document.getElementById("builderBar");
   const items = [...state.selected].map(id=>QUESTIONS.find(q=>q.id === id));
+  const totalMarks = items.reduce((s,q)=>s+q.marks,0);
   document.getElementById("selCount").textContent = items.length;
-  document.getElementById("selMarks").textContent = items.reduce((s,q)=>s+q.marks,0);
+  document.getElementById("selWord").textContent = items.length === 1 ? "question" : "questions";
+  document.getElementById("selMarks").textContent = totalMarks;
+  document.getElementById("marksWord").textContent = totalMarks === 1 ? "mark" : "marks";
   const show = items.length > 0;
   bar.classList.toggle('show', show);
   // The bar is position:sticky, so it follows the bottom of the screen while
