@@ -1,22 +1,29 @@
+{% comment %} Topic pages (layout: topic-page) build their own search title and description. All other pages are unchanged. {% endcomment %}
+{% assign om_title = page.title %}
+{% assign om_desc = page.description %}
+{% if page.layout == "topic-page" %}
+  {% if page.seo_title %}{% assign om_title = page.seo_title %}{% else %}{% capture om_title %}{{ page.title }} GCSE maths: worksheet and past questions{% endcapture %}{% endif %}
+  {% unless om_desc %}{% capture om_desc %}Free {{ page.title | downcase }} GCSE maths worksheet with answers, a question generator and real past exam questions.{% endcapture %}{% endunless %}
+{% endif %}
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }} | Maths Worksheets &amp; Resources{% endif %}</title>
-<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<title>{% if om_title %}{{ om_title }} | {{ site.title }}{% else %}{{ site.title }} | Maths Worksheets &amp; Resources{% endif %}</title>
+<meta name="description" content="{% if om_desc %}{{ om_desc }}{% else %}{{ site.description }}{% endif %}">
 <!-- Canonical -->
 <link rel="canonical" href="{{ site.url }}{{ page.url | remove: 'index.html' }}">
 <!-- Favicon -->
 <link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/assets/images/favicon-32x32.png">
 <link rel="apple-touch-icon" href="{{ site.baseurl }}/apple-touch-icon.png">
 <!-- Open Graph -->
-<meta property="og:title"       content="{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }} | Maths Worksheets &amp; Resources{% endif %}">
-<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<meta property="og:title"       content="{% if om_title %}{{ om_title }} | {{ site.title }}{% else %}{{ site.title }} | Maths Worksheets &amp; Resources{% endif %}">
+<meta property="og:description" content="{% if om_desc %}{{ om_desc }}{% else %}{{ site.description }}{% endif %}">
 <meta property="og:image"       content="{{ site.url }}/assets/images/og-image.png">
 <meta property="og:url"         content="{{ site.url }}{{ page.url }}">
 <meta property="og:type"        content="website">
 <!-- Twitter Card -->
 <meta name="twitter:card"        content="summary_large_image">
-<meta name="twitter:title"       content="{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }} | Maths Worksheets &amp; Resources{% endif %}">
-<meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<meta name="twitter:title"       content="{% if om_title %}{{ om_title }} | {{ site.title }}{% else %}{{ site.title }} | Maths Worksheets &amp; Resources{% endif %}">
+<meta name="twitter:description" content="{% if om_desc %}{{ om_desc }}{% else %}{{ site.description }}{% endif %}">
 <meta name="twitter:image"       content="{{ site.url }}/assets/images/og-image.png">
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-H1KPNX0M5Y"></script>
