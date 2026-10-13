@@ -13,6 +13,9 @@ collections:
   pages:
     output: true
     permalink: /:name/
+  topics:
+    output: true
+    permalink: /gcse/:name/
 # Defaults
 defaults:
   - scope:
@@ -29,6 +32,11 @@ defaults:
       path: "admin"
     values:
       layout: null
+  - scope:
+      path: ""
+      type: "topics"
+    values:
+      layout: "topic-page"
 # Plugins
 plugins:
   - jekyll-sitemap

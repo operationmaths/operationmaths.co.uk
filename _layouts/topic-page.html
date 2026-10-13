@@ -1,0 +1,225 @@
+---
+layout: default
+---
+{% comment %}
+  MASTER TEMPLATE for every topic page (/gcse/<topic>/).
+  Edit this file to change the layout of ALL topic pages at once.
+  Per-topic content lives in _topics/<topic>.md (see TOPIC-PAGES-README.md).
+
+  Sections, in order: Teaching, Question generator, Worksheet, Past exam questions.
+  A section appears only when its front matter is filled in. The letters (A, B, C, D) are
+  worked out automatically, and the script removes a section that turns out to have no questions.
+{% endcomment %}
+
+{% comment %} ---------- work out which sections this topic has ---------- {% endcomment %}
+{% assign ws = nil %}
+{% if page.worksheet %}
+  {% assign ws_path = '_worksheets/' | append: page.worksheet | append: '.md' %}
+  {% for w in site.worksheets %}{% if w.relative_path == ws_path %}{% assign ws = w %}{% endif %}{% endfor %}
+{% endif %}
+{% assign body_text = content | strip %}
+{% assign has_teaching = false %}
+{% if page.method or page.examples or body_text != "" %}{% assign has_teaching = true %}{% endif %}
+{% assign has_generator = false %}
+{% if page.generator_topics %}{% assign has_generator = true %}{% endif %}
+{% assign has_past = false %}
+{% if page.bank_subtopics %}{% assign has_past = true %}{% endif %}
+
+{% assign letters = "A,B,C,D,E,F" | split: "," %}
+{% assign n = 0 %}
+{% if has_teaching %}{% assign letter_teaching = letters[n] %}{% assign n = n | plus: 1 %}{% endif %}
+{% if has_generator %}{% assign letter_generator = letters[n] %}{% assign n = n | plus: 1 %}{% endif %}
+{% if ws %}{% assign letter_worksheet = letters[n] %}{% assign n = n | plus: 1 %}{% endif %}
+{% if has_past %}{% assign letter_past = letters[n] %}{% assign n = n | plus: 1 %}{% endif %}
+
+<link rel="stylesheet" href="{{ '/assets/css/topic-page.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+
+{% comment %} Breadcrumb data for Google {% endcomment %}
+{% if page.breadcrumb %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {% for c in page.breadcrumb %}{% if c.url %}{ "@type": "ListItem", "position": {{ forloop.index }}, "name": {{ c.title | jsonify }}, "item": {{ c.url | absolute_url | jsonify }} },
+    {% endif %}{% endfor %}{ "@type": "ListItem", "position": {{ page.breadcrumb.size | plus: 1 }}, "name": {{ page.title | jsonify }} }
+  ]
+}
+</script>
+{% endif %}
+
+<div id="tp-page">
+
+<section class="page-hero">
+  <h1>{{ page.title }}</h1>
+  <p>{{ page.intro | default: "Learn the method, practise it, then try real exam questions." }}</p>
+  <nav class="tp-pills" aria-label="Sections on this page">
+    {% if has_teaching %}<a class="tp-pill tp-green" data-tp="teaching" href="#teaching"><span class="tp-lt">{{ letter_teaching }}</span><span class="tp-ht"><b>Teaching</b><small>Worked examples</small></span></a>{% endif %}
+    {% if has_generator %}<a class="tp-pill tp-orange" data-tp="generator" href="#generator"><span class="tp-lt">{{ letter_generator }}</span><span class="tp-ht"><b>Question generator</b><small>Random questions</small></span></a>{% endif %}
+    {% if ws %}<a class="tp-pill tp-blue" data-tp="worksheet" href="#worksheet"><span class="tp-lt">{{ letter_worksheet }}</span><span class="tp-ht"><b>Worksheet</b><small>Free PDF with answers</small></span></a>{% endif %}
+    {% if has_past %}<a class="tp-pill tp-purple" data-tp="past" href="#past-questions"><span class="tp-lt">{{ letter_past }}</span><span class="tp-ht"><b>Past exam questions</b><small>Real GCSE questions</small></span></a>{% endif %}
+  </nav>
+</section>
+
+<div class="om-body">
+
+  {% if page.breadcrumb %}
+  <nav class="tp-crumbs" aria-label="Breadcrumb">
+    {% for c in page.breadcrumb %}{% if c.url %}<a href="{{ c.url | relative_url }}">{{ c.title }}</a>{% else %}<span>{{ c.title }}</span>{% endif %}<span class="tp-sep">›</span>{% endfor %}
+    <span aria-current="page">{{ page.title }}</span>
+  </nav>
+  {% endif %}
+
+  {% comment %} ================= A: TEACHING ================= {% endcomment %}
+  {% if has_teaching %}
+  <section class="tp-sec tp-green" id="teaching" data-tp="teaching">
+    <div class="tp-heading-row"><h2 class="tp-heading"><span class="tp-letter">{{ letter_teaching }}</span>Teaching</h2></div>
+    <div class="tp-card">
+      <div class="tp-card-body">
+        {% if page.method %}<div class="tp-method">{{ page.method | markdownify }}</div>{% endif %}
+        {% if page.examples %}
+        <div class="tp-examples">
+          {% for ex in page.examples %}
+          <div class="tp-example">
+            <div class="tp-eyebrow">Example {{ forloop.index }}</div>
+            <div class="tp-exq">{{ ex.question | markdownify }}</div>
+            {% if ex.steps %}
+            <ol class="tp-steps">
+              {% for st in ex.steps %}<li><span class="tp-n">{{ forloop.index }}</span><span>{{ st | markdownify | remove: '<p>' | remove: '</p>' | strip }}</span></li>
+              {% endfor %}
+            </ol>
+            {% endif %}
+            {% if ex.result %}<div class="tp-result">{{ ex.result | markdownify }}</div>{% endif %}
+            {% if ex.check %}<div class="tp-check">{{ ex.check | markdownify }}</div>{% endif %}
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+        {% if body_text != "" %}<div class="tp-extra">{{ content }}</div>{% endif %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  {% comment %} ================= B: QUESTION GENERATOR ================= {% endcomment %}
+  {% if has_generator %}
+  <section class="tp-sec tp-orange" id="generator" data-tp="generator">
+    <div class="tp-heading-row">
+      <h2 class="tp-heading"><span class="tp-letter">{{ letter_generator }}</span>Question generator</h2>
+      <div class="tp-ctl-row tp-inset"><button class="tp-ctl tp-ctl-outline" id="tp-gen-all" type="button">Show all answers</button></div>
+    </div>
+    <div class="tp-qlist" id="tp-qlist"></div>
+    <div class="tp-actions">
+      <p class="tp-after">Want other topics or a printable sheet? <a class="tp-textlink" href="{{ '/question-generator/' | relative_url }}">Go to Question generator →</a></p>
+      <button class="tp-btn-orange" id="tp-gen-new" type="button">Generate new questions</button>
+    </div>
+  </section>
+  {% endif %}
+
+  {% comment %} ================= C: WORKSHEET ================= {% endcomment %}
+  {% if ws %}
+  <section class="tp-sec tp-blue" id="worksheet" data-tp="worksheet">
+    <div class="tp-heading-row"><h2 class="tp-heading"><span class="tp-letter">{{ letter_worksheet }}</span>Worksheet</h2></div>
+    <div class="worksheet-page">
+    <div class="worksheet-card">
+      <div class="wc-image {% if ws.orientation == 'portrait' %}portrait{% else %}landscape{% endif %}">
+        {% if ws.thumbnail %}<img src="{{ site.baseurl }}{{ ws.thumbnail }}" alt="{{ ws.title }} worksheet">{% endif %}
+      </div>
+      <div class="wc-content">
+        <h3 class="wc-title">{{ ws.title }}</h3>
+        {% if ws.description %}<div class="wc-desc">{{ ws.description | newline_to_br }}</div>{% endif %}
+      </div>
+      <div class="wc-actions">
+        {% assign free_pdf_clean = ws.free_pdf | strip %}
+        {% if free_pdf_clean.size > 0 %}
+          <a href="{{ site.baseurl }}{{ free_pdf_clean }}" class="btn btn-blue">Worksheet{% unless ws.show_a_worksheet == false %} (A){% endunless %}</a>
+        {% endif %}
+        {% assign answers_pdf_clean = ws.answers_pdf | strip %}
+        {% if answers_pdf_clean.size > 0 %}
+          <a href="{{ site.baseurl }}{{ answers_pdf_clean }}" class="btn btn-green">Answers{% unless ws.show_a_answers == false %} (A){% endunless %}</a>
+        {% endif %}
+        {% assign tes_url_clean = ws.tes_url | strip %}
+        {% if tes_url_clean.size > 0 %}
+          <a href="{{ tes_url_clean }}" class="btn btn-orange" target="_blank" rel="noopener noreferrer">Full pack on TES <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
+        {% endif %}
+      </div>
+    </div>
+    </div>
+  </section>
+  {% endif %}
+
+  {% comment %} ================= D: PAST EXAM QUESTIONS ================= {% endcomment %}
+  {% if has_past %}
+  <section class="tp-sec tp-purple" id="past-questions" data-tp="past">
+    <div id="tp-past-section">
+      <div class="tp-heading-row">
+        <h2 class="tp-heading"><span class="tp-letter">{{ letter_past }}</span>Past exam questions</h2>
+        <div class="tp-ctl-row">
+          <label class="tp-check-label"><input type="checkbox" id="tp-print-answers"> Include answers</label>
+          <button class="tp-ctl tp-ctl-purple" id="tp-print-all" type="button">Print all questions</button>
+        </div>
+      </div>
+      <div class="tp-grid" id="tp-past"></div>
+      <p class="tp-after">Want more? <a class="tp-textlink" href="{{ '/gcse-question-bank/' | relative_url }}">Browse the GCSE question bank →</a></p>
+    </div>
+  </section>
+  {% endif %}
+
+  {% comment %} ================= RELATED TOPICS ================= {% endcomment %}
+  {% if page.related %}
+  <section class="tp-sec" id="related">
+    <div class="tp-heading-row"><h2 class="tp-heading">Related topics</h2></div>
+    <div class="tp-related">
+      {% for r in page.related %}
+      {% comment %} A /gcse/ link only becomes clickable once that topic page exists. Until then the card is greyed out. {% endcomment %}
+      {% assign rel_live = true %}
+      {% if r.url contains "/gcse/" %}
+        {% assign rel_target = site.topics | where: "url", r.url | first %}
+        {% unless rel_target %}{% assign rel_live = false %}{% endunless %}
+      {% endif %}
+      {% capture rel_inner %}<div class="tp-bar"></div>
+        <div class="tp-rel-body"><div class="tp-rel-title">{{ r.title }}</div>{% if r.text %}<div class="tp-rel-sub">{{ r.text | markdownify | remove: '<p>' | remove: '</p>' | strip }}</div>{% endif %}{% unless rel_live %}<div class="tp-rel-soon-tag">Coming soon</div>{% endunless %}</div>{% endcapture %}
+      {% if rel_live %}<a href="{{ r.url | relative_url }}" class="tp-card tp-rel tp-green">{{ rel_inner }}</a>{% else %}<div class="tp-card tp-rel tp-rel-soon" aria-disabled="true">{{ rel_inner }}</div>{% endif %}
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+</div>
+
+{% comment %} ---------- question viewer (pop-up), toast and print area. Only used when section D is present ---------- {% endcomment %}
+{% if has_past %}
+<div class="tp-modal" id="tp-modal" role="dialog" aria-modal="true" aria-label="Question viewer" hidden>
+  <div class="tp-modal-box" id="tp-modal-box">
+    <button class="tp-modal-close" id="tp-m-close" type="button" aria-label="Close">✕</button>
+    <div class="tp-modal-header" id="tp-m-head"></div>
+    <div class="tp-modal-body" id="tp-m-body"></div>
+    <div class="tp-modal-footer">
+      <div class="tp-modal-actions">
+        <button class="tp-answer-toggle" id="tp-m-ans" type="button">Show answer</button>
+        <button class="tp-modal-print" id="tp-m-print" type="button">Print this question →</button>
+      </div>
+      <div class="tp-modal-nav">
+        <button id="tp-m-prev" type="button">← Previous</button>
+        <span class="tp-modal-count" id="tp-m-count"></span>
+        <button id="tp-m-next" type="button">Next →</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+</div>
+
+<script type="application/json" id="tp-config">
+{
+  "generator": {{ page.generator_topics | jsonify }},
+  "bank": {{ page.bank_subtopics | jsonify }},
+  "generatorCount": {{ page.generator_count | default: 5 }},
+  "maxPast": {{ page.max_past_questions | default: 4 }},
+  "title": {{ page.title | jsonify }}
+}
+</script>
+{% if has_generator %}<script src="{{ '/assets/js/qg-core.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>{% endif %}
+{% if has_past %}<script src="{{ '/assets/js/gcse-question-core.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>{% endif %}
+<script src="{{ '/assets/js/topic-page.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>

@@ -1,0 +1,319 @@
+/* ==========================================================================
+   Topic pages (layout: topic-page). One stylesheet for every /gcse/<topic>/ page.
+   Sections: 1 page basics  2 hero and pills  3 section headings  4 teaching
+   5 generator  6 past questions  7 viewer  8 related  9 print
+   The site-wide look (nav, footer, .btn, .worksheet-card, .page-hero) comes from main.css.
+   ========================================================================== */
+
+#tp-page{
+  --navy:#0f1120;
+  --bg:#f5f6f8;
+  --card-border:#e5e7eb;
+  --line:#e5e7eb;
+  --ink:#111827;
+  --ink2:#374151;
+  --muted:#6b7280;
+  --faint:#9ca3af;
+  --amber:#a15c1f;
+  --rose:#c43d6b;
+  --green-tint:#f0faf4;
+  --maths:Georgia,'Times New Roman',serif;
+  flex:1;
+}
+#tp-page [hidden]{display:none !important}
+#tp-page a:focus-visible,#tp-page button:focus-visible,#tp-page input:focus-visible,#tp-page [role=button]:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+#tp-page :is(.tp-method,.tp-exq,.tp-steps,.tp-result,.tp-check,.tp-extra,.tp-rel-sub) em{font-family:var(--maths);font-style:italic}
+#tp-page sup{font-size:.7em;line-height:0;position:relative;top:-.5em}
+
+/* 2 HERO AND PILLS (the hero itself is the site-wide .page-hero) */
+.tp-pills{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:2rem}
+.tp-pill{display:inline-flex;align-items:center;gap:10px;padding:8px 20px 8px 8px;border-radius:999px;font-size:16px;font-weight:700;text-decoration:none;color:#fff;background:transparent;border:2px solid var(--accent);transition:background .12s}
+.tp-pill .tp-ht{display:flex;flex-direction:column;line-height:1.2;text-align:left}.tp-pill .tp-ht b{font-size:16px}.tp-pill .tp-ht small{font-size:12.5px;font-weight:400;opacity:.85}
+.tp-pill:hover{background:rgba(255,255,255,.1)}
+.tp-lt{flex:none;width:28px;height:28px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px}
+/* Each section has one logo colour, used by its hero pill and again on the page */
+.tp-green{--accent:var(--green);--accent-dark:var(--green-dark)}
+.tp-blue{--accent:var(--blue);--accent-dark:var(--blue-dark)}
+.tp-orange{--accent:var(--orange);--accent-dark:var(--orange-dark)}
+.tp-purple{--accent:var(--purple);--accent-dark:var(--purple-dark)}
+
+/* 1 BREADCRUMB */
+.tp-crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:13px;color:var(--muted);margin:-1rem 0 1.5rem}
+.tp-crumbs a{color:var(--muted);text-decoration:none}
+.tp-crumbs a:hover{color:var(--blue);text-decoration:underline}
+.tp-crumbs [aria-current]{color:var(--ink2);font-weight:400}
+.tp-sep{color:var(--faint)}
+
+/* 3 SECTIONS */
+.tp-sec{margin-top:3rem}
+.tp-sec:first-of-type{margin-top:0}
+.tp-heading{display:flex;align-items:center;gap:12px;font-size:22px;font-weight:700;color:var(--ink);margin:0;padding:0}
+.tp-heading-row{display:flex;align-items:center;justify-content:space-between;gap:10px 16px;flex-wrap:wrap;margin:0 0 1.25rem;padding-bottom:.5rem;border-bottom:2px solid var(--accent,var(--line))}
+.tp-letter{flex:none;width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.tp-ctl-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.tp-ctl{display:inline-flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;padding:0 11px;border-radius:5px;min-width:130px;height:24px;line-height:1;cursor:pointer;white-space:nowrap}
+.tp-ctl-outline{background:#f9fafb;border:1.5px solid #000;color:#374151}
+.tp-ctl-outline:hover{background:#f3f4f6}
+.tp-ctl-purple{background:var(--purple);border:1.5px solid var(--purple);color:#fff}
+.tp-ctl-purple:hover{background:var(--purple-dark);border-color:var(--purple-dark)}
+/* lines the top-right button up with the Show answer buttons in the rows below (row padding 16px + border 1px) */
+.tp-ctl-row.tp-inset{margin-right:17px}
+.tp-check-label{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;color:#374151;cursor:pointer;white-space:nowrap}
+.tp-check-label input{width:16px;height:16px;cursor:pointer}
+.tp-after{margin:1rem 0 0;font-size:14px;color:var(--muted)}
+.tp-textlink{color:var(--blue);font-weight:700;text-decoration:none}
+.tp-textlink:hover{text-decoration:underline}
+.tp-btn-orange{font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;border-radius:8px;padding:10px 8px;width:190px;cursor:pointer;border:1px solid var(--orange);background:var(--orange);color:var(--navy);white-space:nowrap}
+.tp-btn-orange:hover{background:var(--orange-dark);border-color:var(--orange-dark)}
+.tp-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:1rem}
+.tp-actions .tp-after{margin:0}
+
+/* white card with a coloured bar on top */
+.tp-card{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.tp-bar{height:5px;background:var(--accent,var(--green))}
+
+/* 4 TEACHING */
+.tp-card-body{padding:22px 24px;display:flex;flex-direction:column;gap:20px}
+.tp-method{font-size:15px;line-height:1.6;color:var(--ink);font-weight:400}
+.tp-method p{margin:0}
+.tp-examples{display:flex;flex-wrap:wrap;gap:20px}
+.tp-example{flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:12px;background:#f9fafb;border:1px solid var(--line);border-radius:8px;padding:16px 18px}
+.tp-eyebrow{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.tp-exq{font-size:15px;font-weight:700;color:var(--ink)}
+.tp-exq p,.tp-steps p,.tp-result p,.tp-check p{margin:0}
+.tp-steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;font-size:14px;line-height:1.5;color:var(--ink2);font-weight:400}
+.tp-steps li{display:flex;gap:10px;align-items:flex-start}
+.tp-n{flex:none;width:20px;height:20px;border-radius:50%;background:var(--navy);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.tp-result{background:var(--green-tint);border-left:3px solid var(--green);border-radius:3px;padding:8px 14px;font-size:16px;font-weight:700;color:var(--green-dark)}
+.tp-check{font-size:13px;color:var(--muted)}
+.tp-extra{font-size:15px;line-height:1.6;color:var(--ink);font-weight:400}
+.tp-extra p{margin:0 0 .75rem}
+.tp-extra p:last-child{margin-bottom:0}
+
+/* 5 GENERATOR */
+.tp-qlist{display:flex;flex-direction:column;gap:8px}
+.tp-qitem{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px;display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap}
+.tp-qnum{font-weight:700;color:#d1d5db;font-size:14px;min-width:22px;padding-top:1px}
+.tp-qmain{flex:1 1 200px;min-width:0;display:flex;flex-direction:column;gap:6px}
+.tp-qtext{font-size:15px;color:var(--ink);line-height:1.6;font-weight:400}
+.tp-qans{font-size:15px;font-weight:700;color:var(--green-dark)}
+.tp-show-btn{display:inline-flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;padding:0 11px;border-radius:5px;border:1.5px solid var(--line);background:#f9fafb;color:#374151;cursor:pointer;white-space:nowrap;width:130px;height:24px;line-height:1}
+.tp-show-btn:hover{background:#f3f4f6}
+
+/* 6 PAST QUESTIONS (the same card as the GCSE question bank) */
+#tp-past-section{--strand:var(--green)}
+.tp-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.tp-qcard{background:#fff;border:1px solid var(--card-border);border-left:4px solid var(--strand,#999);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:10px;height:300px;min-width:0;overflow:hidden}
+.tp-qcard:hover{box-shadow:0 3px 12px rgba(0,0,0,.08)}
+.tp-qopen{flex:1;min-height:0;display:flex;flex-direction:column;gap:10px;cursor:pointer;overflow:hidden}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-top-right{display:flex;align-items:center;gap:6px;flex:0 0 auto}
+.tp-qopen .card-body,.tp-modal-body .card-body{flex:1;min-height:0;overflow:hidden;position:relative;display:flex;flex-direction:column;gap:8px;min-width:0}
+.tp-qopen .card-body::after{content:"";position:absolute;left:0;right:0;bottom:0;height:36px;background:linear-gradient(to bottom,rgba(255,255,255,0),#fff);pointer-events:none}
+.source-tag{font-size:.75rem;color:var(--muted);font-weight:400}
+.marks-badge{font-size:.72rem;font-weight:700;background:var(--bg);border:1px solid var(--card-border);border-radius:20px;padding:3px 9px;white-space:nowrap}
+.calc-icon{color:var(--muted);flex:0 0 auto;display:flex;align-items:center}
+.calc-icon svg{display:block;width:20px;height:20px}
+.subtopic-pill{align-self:flex-start;font-size:.72rem;font-weight:700;color:#fff;background:var(--strand,#999);border-radius:6px;padding:3px 9px}
+.tp-qfoot{margin-top:auto;padding-top:8px;border-top:1px solid var(--card-border);display:flex;justify-content:flex-end;align-items:center}
+.tp-print-one{border:none;background:none;color:var(--blue);font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:700;cursor:pointer;padding:0}
+.tp-print-one:hover{text-decoration:underline}
+
+/* question images and maths (copied from the GCSE question bank so the cards look the same) */
+  .q-heading{margin:0;font-size:.95rem;}
+.q-text{font-size:.88rem;line-height:1.5;font-weight:400;white-space:pre-line;flex:0 0 auto;}
+.q-diagram{display:flex;flex-wrap:wrap;justify-content:center;padding:6px 0 14px;flex:0 0 auto;min-width:0;max-width:100%;}
+.q-diagram img{min-width:0;}
+/* Cropped-from-PDF questions: shown left-aligned at a fixed 0.5x of their
+   native pixel size (never stretched to fill the card), with no
+   "Question N" heading since the number is already baked into the crop. */
+.q-diagram.q-crop{justify-content:flex-start;padding:2px 0 14px;}
+.q-diagram.q-crop img{display:block;margin:0;height:auto;}
+/* Modal has far more horizontal room than a grid card, so its crop uses a
+   larger fixed scale (not the grid's 0.5x) - but still a FIXED multiple
+   of native size, not stretched to the container. Stretching to width:100%
+   made every crop's on-screen text a different size depending on that
+   crop's own aspect ratio, which is exactly what a fixed scale avoids. */
+.q-diagram.q-crop-modal{display:block;padding:6px 0 16px;}
+.q-diagram.q-crop-modal img{display:block;max-width:100%;height:auto;margin:0;}
+/* A part without its own baked-in number (e.g. part (b) onwards) gets
+   just the bare question number ("8", not "8(b)") to its left, in the
+   exam paper's own bold serif style, matching the numerals that ARE
+   baked into the crop images. */
+.q-part-row{display:flex;align-items:flex-start;gap:8px;}
+.q-part-number{flex:0 0 auto;font-family:'Times New Roman',Georgia,serif;font-weight:700;line-height:1.3;font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1;}
+/* Algebra letters need the genuine curled serif italic seen on the actual
+   exam papers (e.g. Times New Roman Italic) - a sans-serif italic like DM
+   Sans just slants the upright letterform and never gets that curled
+   shape, regardless of whether a true italic weight is loaded. Maths
+   notation (fractions, exponents, vector arrows) is switched to the same
+   serif stack throughout so numerals match the papers too, not just the
+   italic letters. */
+.q-text em, .answer-box em, .print-answers em, .tp-print-answers em{
+  font-family:'Times New Roman',Times,'Liberation Serif',serif;font-style:italic;
+}
+.frac{display:inline-flex;flex-direction:column;align-items:stretch;vertical-align:middle;font-size:.92em;line-height:1.15;text-align:center;margin:0 2px;position:relative;top:.1em;font-family:'Times New Roman',Times,'Liberation Serif',serif;}
+.frac-sm{display:inline-flex;flex-direction:column;align-items:stretch;vertical-align:middle;font-size:.72em;line-height:.95;text-align:center;margin:0 1px;font-family:'Times New Roman',Times,'Liberation Serif',serif;}
+/* Every previous attempt at raising the exponent relied on vertical-align
+   or baseline-alignment behaviour (native <sup>, position:relative on an
+   inline-flex box, vertical-align on an inline-block) - all of which
+   depend on how a browser computes an element's baseline, which is
+   exactly the part that's been unreliable across attempts. transform is
+   different in kind: it's a plain geometric shift applied after layout
+   is resolved, with no baseline computation involved at all, so there's
+   nothing left for a browser to interpret differently.
+*/
+.exp{
+  display:inline-block;font-size:.68em;line-height:1;
+  font-family:'Times New Roman',Times,'Liberation Serif',serif;
+  transform:translateY(-1.1em);
+}
+.exp .frac{top:0;}
+/* Vector arrows are drawn as a small inline SVG rather than CSS
+   pseudo-elements with absolute positioning. Every previous attempt at
+   the latter depended on how a browser resolves an absolutely-positioned
+   element's containing block inside a nested inline-block, which turned
+   out to behave unpredictably. An SVG's internal coordinates are fixed
+   and rendered identically everywhere - there's no positioning
+   ambiguity left for a browser to get wrong.
+*/
+/* The arrow needs to sit above the letters, purely as a decoration, with
+   the letters themselves behaving as ordinary inline text so they align
+   to the surrounding sentence's baseline exactly like plain text would -
+   that ordinary alignment is unambiguous and reliable, unlike flexbox's
+   baseline synthesis for a column-direction container (which browsers
+   resolve inconsistently: they variously use the first child, the last
+   child, or the container's own margin edge, so the letters would end up
+   floating off the baseline depending on the browser). Taking the arrow
+   out of the flow entirely with absolute positioning sidesteps that: the
+   letters are the only thing left participating in normal text flow, so
+   there's nothing left for a browser to disagree about.
+*/
+.vec{position:relative;display:inline-block;padding-top:9px;margin:0 1px;font-family:'Times New Roman',Times,'Liberation Serif',serif;}
+.vec svg{position:absolute;top:0;left:50%;transform:translateX(-50%);width:1.5em;height:.5em;}
+/* Column vector notation (a numeric pair stacked in round brackets), distinct
+   from .vec above which is the arrow-vector notation (eg vector OA with an
+   arrow drawn above it) -- these are two different notations, do not merge. */
+.cvec{display:inline-flex;align-items:center;margin:0 3px;}
+.cvec-bracket{font-size:1.6em;font-weight:300;}
+.cvec-col{display:inline-flex;flex-direction:column;align-items:center;padding:0 4px;line-height:1.15;}
+.radicand{border-top:1.5px solid currentColor;padding:0 2px;}
+.frac .num{border-bottom:1px solid currentColor;padding:0 3px;}
+.frac .den{padding:0 3px;}
+.frac-sm .num{border-bottom:1px solid currentColor;padding:0 2px;}
+.frac-sm .den{padding:0 2px;}
+
+
+/* 7 QUESTION VIEWER */
+.tp-modal{position:fixed;inset:0;background:rgba(15,17,32,.55);z-index:1000;display:flex;align-items:center;justify-content:center;padding:24px 16px}
+.tp-modal-box{background:#fff;border-radius:12px;max-width:880px;width:100%;height:min(85vh,720px);position:relative;border-left:6px solid var(--strand,#999);display:flex;flex-direction:column;overflow:hidden}
+.tp-modal-header{padding:20px 50px 14px 24px;border-bottom:1px solid var(--card-border);flex-shrink:0}
+.modal-header-top{display:flex;justify-content:space-between;align-items:center;gap:14px}
+.tp-modal-body{overflow-y:auto;flex:1;min-height:0;padding:18px 24px;display:flex;flex-direction:column;gap:10px}
+.tp-modal-body .q-diagram.q-crop-modal{display:block}
+.tp-modal-close{position:absolute;top:16px;right:18px;border:none;background:none;font-size:1.3rem;cursor:pointer;color:var(--muted);line-height:1}
+.tp-modal-footer{flex-shrink:0;border-top:1px solid var(--card-border);background:var(--bg);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding:12px 24px}
+.tp-modal-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.tp-modal-nav{display:flex;align-items:center;gap:12px}
+.tp-modal-nav button{background:var(--navy);color:#fff;border:none;border-radius:10px;padding:8px 14px;font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:700;cursor:pointer}
+.tp-modal-nav button:hover:not(:disabled){background:#1c1e33}
+.tp-modal-nav button:disabled{opacity:.3;cursor:default}
+.tp-modal-count{font-size:.8rem;color:var(--muted);white-space:nowrap}
+.answer-box{margin-top:12px;background:#fff;border:1px solid var(--card-border);border-radius:8px;padding:12px;font-size:.85rem;font-weight:400;white-space:pre-line;color:var(--ink)}
+.tp-answer-toggle{border:none;background:var(--green);color:#fff;font-family:'DM Sans',sans-serif;font-weight:700;font-size:.82rem;cursor:pointer;padding:8px 14px;border-radius:10px;width:112px;text-align:center}
+.tp-answer-toggle:hover{background:#00792f}
+.tp-modal-print{border:none;background:var(--orange);color:#0f1120;font-family:'DM Sans',sans-serif;font-weight:700;font-size:.82rem;cursor:pointer;padding:8px 14px;border-radius:10px}
+.tp-modal-print:hover{background:var(--orange-dark)}
+.tp-toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(88px + env(safe-area-inset-bottom,0px));z-index:300;background:var(--ink);color:#fff;font-size:14px;font-weight:400;padding:10px 16px;border-radius:8px;max-width:calc(100% - 32px);text-align:center}
+
+/* 8 RELATED TOPICS */
+.tp-related{display:flex;flex-wrap:wrap;gap:14px}
+a.tp-rel{text-decoration:none;color:inherit;flex:1 1 260px}
+a.tp-rel:hover{border-color:var(--blue)}
+.tp-rel-soon{flex:1 1 260px;opacity:.6;background:#f1f2f4}
+.tp-rel-soon .tp-bar{background:#b5b9c2}
+.tp-rel-soon .tp-rel-title{color:var(--muted)}
+.tp-rel-soon-tag{align-self:flex-start;font-size:12px;font-weight:700;color:var(--muted);border:1px solid #b5b9c2;border-radius:999px;padding:1px 10px;margin-top:2px}
+.tp-rel-body{padding:16px 18px;display:flex;flex-direction:column;gap:6px}
+.tp-rel-title{font-size:16px;font-weight:700;color:var(--ink)}
+.tp-rel-sub{font-size:14px;color:var(--muted);line-height:1.6;font-weight:400}
+
+/* maths used in the generator questions (copied from the question generator page) */
+.qg-root-tall { position: relative; padding-left: 0.75em; }
+.qg-radical { position: absolute; left: 0; top: 0; width: 0.75em; height: 100%; overflow: visible; }
+.qg-radical path { fill: none; stroke: currentColor; stroke-width: 1.4px; vector-effect: non-scaling-stroke; stroke-linejoin: miter; stroke-linecap: butt; }
+.qg-root-tall .qg-root-radicand { display: flex; align-items: center; padding-top: 0.2em; padding-bottom: 0.05em; line-height: 1; }
+.qg-root-tall .qg-frac { top: 0; margin: 0 1px; }
+.qg-root-tall .qg-root-radicand::before { top: 0; left: -1px; }
+
+/* Maths notation rendering */
+.qg-frac { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; margin: 0 2px; font-size: 0.85em; line-height: 1; position: relative; top: 0.1em; }
+.qg-frac-num { padding: 0 3px 1px; border-bottom: 1.4px solid currentColor; }
+.qg-frac-den { padding: 1px 3px 0; }
+.tp-qtext sup, .tp-qans sup { font-size: 0.7em; position: relative; top: -0.5em; }
+.qg-frac-num sup { font-size: 0.7em; position: relative; top: -0.4em; }
+.qg-frac-den sup { font-size: 0.7em; position: relative; top: 0.1em; }
+.qg-dot { position: relative; display: inline-block; padding-top: 0.28em; }
+.qg-dot::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 3px; height: 3px; border-radius: 50%; background: currentColor; }
+.qg-x { font-style: italic; font-family: Georgia, 'Times New Roman', serif; }
+.qg-l { font-family: "Times New Roman", "Liberation Serif", serif; font-style: normal; }
+.qg-root { display: inline-flex; align-items: flex-start; vertical-align: middle; margin: 0 2px; line-height: 1; }
+.qg-root-symbol { font-family: "Times New Roman", "Liberation Serif", serif; font-size: 1.15em; line-height: 1; margin-right: 1px; }
+.qg-root-index { font-family: "Times New Roman", "Liberation Serif", serif; font-size: 0.55em; line-height: 1; position: relative; top: -0.05em; margin-right: 0.5px; }
+
+.qg-root-radicand {
+  display: inline-block;
+  position: relative;
+  padding: 0 2px 0 1px;
+  line-height: 1.15;
+}
+
+.qg-root-radicand::before {
+  content: "";
+  position: absolute;
+  left: -1.5px;
+  right: 2px;
+  top: -0.15em;
+  border-top: 1.4px solid currentColor;
+}
+
+
+
+/* RESPONSIVE */
+@media (max-width:760px){
+  .tp-grid{grid-template-columns:1fr}
+}
+@media (max-width:600px){
+  .tp-pills{flex-direction:column;align-items:center;gap:10px}
+  .tp-pill{width:100%;max-width:300px}
+  .tp-modal-footer,.tp-modal-body{padding-inline:16px}
+  .tp-ctl-row.tp-inset{margin-right:0}
+}
+@media (prefers-reduced-motion:reduce){#tp-page *{transition:none !important}}
+
+/* 9 PRINT: only the questions (and answers when ticked) */
+.tp-print-area{display:none}
+@media print{
+  body.tp-printing > *:not(#tp-page){display:none !important}
+  body.tp-printing #tp-page > *:not(.tp-print-area){display:none !important}
+  body.tp-printing .tp-print-area{display:block !important}
+  body{background:#fff !important}
+  .tp-print-area h1{font-family:'DM Sans',sans-serif;font-size:1.3rem;margin:0 0 6px}
+  .tp-print-area .tp-print-sub{font-size:.8rem;color:#666;margin:0 0 16px}
+  .tp-pcard{display:block;border:1px solid #999;border-left:4px solid var(--strand,#999);border-radius:6px;padding:12px;margin-bottom:18px;page-break-inside:avoid}
+  .tp-pcard .card-top{display:block;margin-bottom:8px}
+  .tp-pcard .card-top > div{display:inline}
+  .tp-pcard .subtopic-pill{display:inline-block;margin-right:8px}
+  .tp-pcard .source-tag{display:inline}
+  .tp-pcard .card-top-right{display:inline-block;float:right}
+  .tp-pcard .q-diagram{display:block;margin-bottom:10px}
+  .tp-pcard .q-diagram.q-crop img{display:block;margin:0}
+  .tp-pcard .answer-box{display:block}
+  .tp-print-answers{page-break-before:always}
+  .tp-print-answers h2{font-family:'DM Sans',sans-serif;font-weight:700;font-size:1.3rem;margin:0 0 16px}
+  .tp-print-answers .answer-item{margin-bottom:16px;page-break-inside:avoid}
+  .tp-print-answers .answer-source{display:block;font-size:.78rem;color:#666;margin-bottom:4px}
+  .tp-print-answers .answer-box{margin-top:4px}
+  .tp-print-answers .frac{font-size:.72em !important;line-height:.95 !important;margin:0 1px !important}
+  .tp-print-answers .answer-item > div{white-space:pre-line}
+}
