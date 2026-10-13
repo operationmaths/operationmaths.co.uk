@@ -285,6 +285,9 @@ body_class: page-gcse-question-bank has-bottom-bar
   .builder-left{display:flex;gap:14px;align-items:center;}
   .answers-toggle-label{display:flex;align-items:center;gap:7px;font-size:.85rem;color:#fff;white-space:nowrap;cursor:pointer;}
   .print-answers{display:none;}
+  /* Holds the worksheet's cards during printing only (built from the saved
+     selection, not from whatever happens to be on screen). */
+  #printSheet{display:none;}
   .btn{
     border:none;border-radius:8px;padding:10px 16px;font-size:.85rem;cursor:pointer;
   }
@@ -366,6 +369,8 @@ body_class: page-gcse-question-bank has-bottom-bar
        top of, the intended grid-card print output. */
     .modal-overlay{display:none !important;}
     .grid{display:block;}
+    #grid{display:none !important;}
+    #printSheet{display:block !important;}
     .card{
       display:block !important;
       border:1px solid #999;border-left:4px solid var(--strand,#999) !important;page-break-inside:avoid;margin-bottom:18px;
@@ -503,6 +508,7 @@ body_class: page-gcse-question-bank has-bottom-bar
   </div>
 </div>
 
+<div id="printSheet"></div>
 <div id="printAnswers" class="print-answers"></div>
 
 <div class="modal-overlay hidden" id="modalOverlay">
@@ -1179,7 +1185,7 @@ const QUESTIONS = [
 
 {qimg:{src:"Sum2017-3FH-Q16",w:812,h:593,needsHeading:false},higherQimg:{src:"Sum2017-3H-Q2",w:812,h:593,needsHeading:false},crossoverQimg:{src:"Sum2017-3FH-Q16-crossover",w:812,h:593,needsHeading:false},n:"16",higherN:"2",tier:"Crossover",strand:"Algebra",subtopic:"Simultaneous equations",marks:3,paperNum:"3",sitting:"Summer 2017",text:"Solve the simultaneous equations\n3<em>x</em> + <em>y</em> = −4\n3<em>x</em> − 4<em>y</em> = 6",paper:"Papers 2 & 3 (calculator)",answer:"x = −2/3, y = −2",markscheme:"M1 for a method to eliminate one variable (condone one arithmetic error)\nM1 (dep) for substituting found value in one of the equations or appropriate method after starting again (condone one arithmetic error)\nA1 x = −2/3 oe and y = −2"},
 
-{qimg:{src:"Sum2017-3FH-Q17a",w:747,h:293,needsHeading:false},higherQimg:{src:"Sum2017-3H-Q3a",w:747,h:293,needsHeading:false},crossoverQimg:{src:"Sum2017-3FH-Q17a-crossover",w:747,h:293,needsHeading:false},svg:tblDressSizes,n:"17(a)",higherN:"3(a)",tier:"Crossover",strand:"Statistics",subtopic:"Averages (mean, median, mode and range)",marks:1,paperNum:"3",sitting:"Summer 2017",intro:"The table shows some information about the dress sizes of 25 women.\nDress size 8: 2 women; 10: 9 women; 12: 8 women; 14: 6 women",text:"(a) Find the median dress size.",paper:"Papers 2 & 3 (calculator)",answer:"12",markscheme:"B1 cao"},
+{qimg:{src:"Sum2017-3FH-Q17a",w:747,h:293,needsHeading:false},higherQimg:{src:"Sum2017-3H-Q3a",w:747,h:293,needsHeading:false},crossoverQimg:{src:"Sum2017-3FH-Q17a-crossover",w:747,h:293,needsHeading:false},svg:tblDressSizes,n:"17(a)",higherN:"3(a)",tier:"Crossover",strand:"Statistics",subtopic:"Averages from frequency tables",marks:1,paperNum:"3",sitting:"Summer 2017",intro:"The table shows some information about the dress sizes of 25 women.\nDress size 8: 2 women; 10: 9 women; 12: 8 women; 14: 6 women",text:"(a) Find the median dress size.",paper:"Papers 2 & 3 (calculator)",answer:"12",markscheme:"B1 cao"},
 
 {qimg:{src:"Sum2017-3FH-Q17b",w:884,h:241,needsHeading:true},higherQimg:{src:"Sum2017-3H-Q3b",w:884,h:241,needsHeading:true},crossoverQimg:{src:"Sum2017-3FH-Q17b-crossover",w:884,h:241,needsHeading:true},n:"17(b)",higherN:"3(b)",tier:"Crossover",strand:"Probability",subtopic:"Mutually exclusive events",marks:1,paperNum:"3",sitting:"Summer 2017",text:"3 of the 25 women have a shoe size of 7\nZoe says that if you choose at random one of the 25 women, the probability that she has either a shoe size of 7 or a dress size of 14 is 9/25 because 3/25 + 6/25 = 9/25\n(b) Is Zoe correct?\nYou must give a reason for your answer.",paper:"Papers 2 & 3 (calculator)",answer:"Explanation",markscheme:"C1 No with statement about not being mutually exclusive events eg a person could be in both categories"},
 
@@ -1241,7 +1247,7 @@ const QUESTIONS = [
 
 {qimg:{src:"Nov2017-1F-Q26",w:747,h:621,needsHeading:false},higherQimg:{src:"Nov2017-1H-Q4",w:747,h:621,needsHeading:false},crossoverQimg:{src:"Nov2017-1F-Q26-crossover",w:747,h:621,needsHeading:false},n:"26",higherN:"4",tier:"Crossover",strand:"Geometry and measures",subtopic:"Area of circles",marks:4,text:"The diagram shows a logo made from three circles.\nEach circle has centre <em>O</em>.\nDaisy says that exactly <span class=\"frac\"><span class=\"num\">1</span><span class=\"den\">3</span></span> of the logo is shaded.\nIs Daisy correct?\nYou must show all your working.",paper:"Paper 1 (non-calculator)",sitting:"November 2017",answer:"Daisy is wrong (supported)",markscheme:"P1 for process to find area of any relevant circle ie π×4² (=16π), π×7² (=49π), π×10² (=100π), or 7² and 4²\nP1 for completed method to find shaded area eg \"π×7²\"−\"π×4²\" (=33π) or use of radii eg 7²−4² (=33)\nA1 for 2 comparable figures, eg 33π and 100π, or 33 and 100, or 103 to 103.7 and 314 to 314.2, or 103 to 103.7 and 104.6 to 104.8\nC1 statement eg No because it should be 33/100 and their accurate figures (Allow use of π=3 or better)"},
 
-{qimg:{src:"Nov2017-1F-Q27",w:930,h:835,needsHeading:false},higherQimg:{src:"Nov2017-1H-Q5",w:930,h:835,needsHeading:false},crossoverQimg:{src:"Nov2017-1F-Q27-crossover",w:930,h:835,needsHeading:false},n:"27",higherN:"5",tier:"Crossover",strand:"Statistics",subtopic:"Averages (mean, median, mode and range)",marks:4,text:"The table shows information about the weekly earnings of 20 people who work in a shop.\n(a) Work out an estimate for the mean of the weekly earnings.\nNadiya says, \"The mean may not be the best average to use to represent this information.\"\n(b) Do you agree with Nadiya? You must justify your answer.",paper:"Paper 1 (non-calculator)",sitting:"November 2017",answer:"(a) £365&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(b) Comment",markscheme:"(a) M1 fx with x consistent within intervals eg 200×1, 300×11, 400×5, 500×0, 600×3; if 200, 3300, 2000, 0, 1800 are seen without working then condone 1 error\nM1 (dep) Σfx÷Σf eg \"7300\"÷20\nA1 cao\n(b) C1 for comment about outliers affecting mean"},
+{qimg:{src:"Nov2017-1F-Q27",w:930,h:835,needsHeading:false},higherQimg:{src:"Nov2017-1H-Q5",w:930,h:835,needsHeading:false},crossoverQimg:{src:"Nov2017-1F-Q27-crossover",w:930,h:835,needsHeading:false},n:"27",higherN:"5",tier:"Crossover",strand:"Statistics",subtopic:"Averages from frequency tables",marks:4,text:"The table shows information about the weekly earnings of 20 people who work in a shop.\n(a) Work out an estimate for the mean of the weekly earnings.\nNadiya says, \"The mean may not be the best average to use to represent this information.\"\n(b) Do you agree with Nadiya? You must justify your answer.",paper:"Paper 1 (non-calculator)",sitting:"November 2017",answer:"(a) £365&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(b) Comment",markscheme:"(a) M1 fx with x consistent within intervals eg 200×1, 300×11, 400×5, 500×0, 600×3; if 200, 3300, 2000, 0, 1800 are seen without working then condone 1 error\nM1 (dep) Σfx÷Σf eg \"7300\"÷20\nA1 cao\n(b) C1 for comment about outliers affecting mean"},
 
 {qimg:{src:"Nov2017-1F-Q28",w:737,h:544,needsHeading:false},higherQimg:{src:"Nov2017-1H-Q6",w:743,h:544,needsHeading:false},crossoverQimg:{src:"Nov2017-1F-Q28-crossover",w:737,h:544,needsHeading:false},n:"28",higherN:"6",tier:"Crossover",strand:"Algebra",subtopic:"Forming and solving equations",marks:4,text:"Here is a rectangle.\nAll measurements are in centimetres.\nThe area of the rectangle is 48 cm².\nShow that <em>y</em> = 3",paper:"Paper 1 (non-calculator)",sitting:"November 2017",answer:"Shows reasoning to reach y=3",markscheme:"M1 forms equation eg 2x+6=5x−9, OR 3(2x+6)=48 or 3(5x−9)=48 (condone missing bracket), OR 48÷3 (=16)\nM1 isolates x and number terms eg 3x=15, OR forms equation 2x+6=\"16\" or 5x−9=\"16\", OR isolates x and number terms 6x=\"30\" or 15x=\"75\"\nM1 substitutes \"5\" into side length eg 2×5+6 (=16), OR isolates x and number terms 2x=\"10\" or 5x=\"25\", OR forms the second equation\nA1 48÷16=3 or 16×3=48, OR shows x=5 for both solutions (x=5 from 2 different equations)"},
 
@@ -1680,7 +1686,7 @@ const QUESTIONS = [
 
 {qimg:{src:"Nov2018-3FH-Q22",w:951,h:1002,needsHeading:false},higherQimg:{src:"Nov2018-3H-Q3",w:951,h:1002,needsHeading:false},crossoverQimg:{src:"Nov2018-3FH-Q22-crossover",w:951,h:1002,needsHeading:false},n:"22",higherN:"3",tier:"Crossover",strand:"Algebra",subtopic:"Quadratic graphs",marks:5,text:"(a) Complete this table of values for y = x² + x − 4\nx: −3 −2 −1 0 1 2 3, y: −2 (blank at −2) −4 (blank at 0) −2\n(b) On the grid, draw the graph of y = x² + x − 4 for values of x from −3 to 3\n(c) Use your graph to find estimates for the solutions of x² + x − 4 = 0",paper:"Papers 2 & 3 (calculator)",paperNum:"3",sitting:"November 2018",answer:"(a) 2, −4, 2, 8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(b) Graph&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(c) −2.6 or 1.6",markscheme:"(a) B2 all 4 values correct\n(B1 for 2 or 3 correct values)\n(b) M1 (dep B1) for at least 5 points plotted correctly ft from part a\nA1 for a fully correct curve drawn (Accept freehand curves drawn that are not line segments; there must be some attempt to draw the minimum point below y=−4)\n(c) B1 for 1 correct value, ft a non linear graph (Award for −2.6 or 1.6 or both values but do not award the mark if a correct value is given with an incorrect value. Accept 1.56 or −2.56. Note for ft to be applied the graph may be joined by line segments)"},
 
-{qimg:{src:"Nov2018-3FH-Q23",w:1045,h:689,needsHeading:false},higherQimg:{src:"Nov2018-3H-Q4",w:1045,h:689,needsHeading:false},crossoverQimg:{src:"Nov2018-3FH-Q23-crossover",w:1045,h:689,needsHeading:false},n:"23",higherN:"4",tier:"Crossover",strand:"Statistics",subtopic:"Estimating the mean from grouped data",marks:6,intro:"Fran asks each of 40 students how many books they bought last year. A chart shows information about the number of books bought by each of the students, in grouped intervals with class width 5 (0-4, 5-9, 10-14, 15-19, 20-24), and the bar for 20-24 has a height of 2.",text:"(a) Write down the value shown by the bar for 20-24 books.\n(b) Work out an estimate for the mean number of books bought.",paper:"Papers 2 & 3 (calculator)",paperNum:"3",sitting:"November 2018",answer:"(a) 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(b) 9.5 shown",markscheme:"(a) M1 \"2\"÷40×100 (\"2\" comes from their reading of the height of the 20 to 24 column)\nA1 cao\n(b) M1 for frequencies of 11, 8, 13, 6 and 2 (allow one error), OR for midpoints 2, 7, 12, 17 and 22 (May be seen on chart)\nM1 for finding at least 4 products fx consistently within interval (including end points)\nM1 for Σ\"fx\"÷(\"11\"+\"8\"+\"13\"+\"6\"+\"2\") OR (11×2+8×7+13×12+6×17+2×22)÷40, OR Σ\"fx\"(=380) and 9.5×(\"11\"+\"8\"+\"13\"+\"6\"+\"2\") (=380) (Evidence of two different calculations that should lead to 380 are required for this mark)\nC1 for correct figures showing the answer or accurate figures to compare from correct working eg 380 from two calculations"},
+{qimg:{src:"Nov2018-3FH-Q23",w:1045,h:689,needsHeading:false},higherQimg:{src:"Nov2018-3H-Q4",w:1045,h:689,needsHeading:false},crossoverQimg:{src:"Nov2018-3FH-Q23-crossover",w:1045,h:689,needsHeading:false},n:"23",higherN:"4",tier:"Crossover",strand:"Statistics",subtopic:"Averages from frequency tables",marks:6,intro:"Fran asks each of 40 students how many books they bought last year. A chart shows information about the number of books bought by each of the students, in grouped intervals with class width 5 (0-4, 5-9, 10-14, 15-19, 20-24), and the bar for 20-24 has a height of 2.",text:"(a) Write down the value shown by the bar for 20-24 books.\n(b) Work out an estimate for the mean number of books bought.",paper:"Papers 2 & 3 (calculator)",paperNum:"3",sitting:"November 2018",answer:"(a) 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(b) 9.5 shown",markscheme:"(a) M1 \"2\"÷40×100 (\"2\" comes from their reading of the height of the 20 to 24 column)\nA1 cao\n(b) M1 for frequencies of 11, 8, 13, 6 and 2 (allow one error), OR for midpoints 2, 7, 12, 17 and 22 (May be seen on chart)\nM1 for finding at least 4 products fx consistently within interval (including end points)\nM1 for Σ\"fx\"÷(\"11\"+\"8\"+\"13\"+\"6\"+\"2\") OR (11×2+8×7+13×12+6×17+2×22)÷40, OR Σ\"fx\"(=380) and 9.5×(\"11\"+\"8\"+\"13\"+\"6\"+\"2\") (=380) (Evidence of two different calculations that should lead to 380 are required for this mark)\nC1 for correct figures showing the answer or accurate figures to compare from correct working eg 380 from two calculations"},
 
 {qimg:{src:"Nov2018-3FH-Q24",w:910,h:672,needsHeading:false},higherQimg:{src:"Nov2018-3H-Q5",w:910,h:672,needsHeading:false},crossoverQimg:{src:"Nov2018-3FH-Q24-crossover",w:1045,h:672,needsHeading:false},n:"24",higherN:"5",tier:"Crossover",strand:"Ratio, proportion and rates of change",subtopic:"Speed, distance and time",marks:4,intro:"Lara is a skier. She completed a ski race in 1 minute 54 seconds. The race was 475 m in length. Lara assumes that her average speed is the same for a second race, 700 m in length.",text:"(a) Work out the time Lara would take to complete the second race, using her assumption.\n(b) Comment on how this answer might affect a comparison with Lara's actual time for the second race.",paper:"Papers 2 & 3 (calculator)",paperNum:"3",sitting:"November 2018",answer:"(a) 2 mins 48 secs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(b) Statement",markscheme:"(a) P1 for an appropriate first step eg 700÷475 (=1.47..), OR 475÷[time] (=4.16.. m/s), OR [time]÷475 (=0.24 s/m) ([time] what candidate indicates as time of first race. Units are not needed and can be ignored if given)\nP1 for a complete process to find the required time eg 700÷475×[time] (=168), OR 700÷(475÷[time]) (=168), OR [time]÷475×700 (=168) (Allow calculation in stages and appropriate rounding)\nA1 cao\n(b) C1 eg takes less time (Acceptable examples: quicker time; faster time; reduces my answer to part (a). Not acceptable examples: it is an underestimate; the amount of time could/may increase; Laura goes faster)"},
 
@@ -1932,7 +1938,7 @@ const QUESTIONS = [
 
 {qimg:{src:"Sum2019-3F-Q17",w:913,h:719,needsHeading:false},n:"17",tier:"Foundation",strand:"Ratio, proportion and rates of change",subtopic:"Scale drawings",marks:2,text:"The accurate scale diagram shows a telephone mast and a box.\nThe box has a real width of 1.5 metres.\nFind an estimate for the real height, in metres, of the telephone mast.",paper:"Papers 2 & 3 (calculator)",paperNum:"3",sitting:"Summer 2019",answer:"9 metres",markscheme:"M1 for a method to find the scaling factor eg \"10.8\"÷\"1.8\" (=6) or \"1.8\"÷1.5 (=1.2) or 1.5÷\"1.8\" (=0.833..) or a sf given from 5.5 to 6.5 or from 1.06 to 1.4 or from 0.75 to 0.94 eg used with 1.5 (Could be shown on the diagram by appropriate working eg 6 steps. Allow 10.6 to 11.0 and 1.6 to 2.0 for their measured lengths)\nA1 accept an answer in the range 8 to 10"},
 
-{qimg:{src:"Sum2019-3F-Q18",w:928,h:607,needsHeading:false},n:"18",tier:"Foundation",strand:"Statistics",subtopic:"Frequency tables",marks:3,text:"The table shows information about the numbers of points scored by 30 students in a quiz.\nNumber of points: 0,1,2,3,4,5   Frequency: 4,3,7,5,6,5\n(a) Find the modal number of points.\n(b) Work out the total number of points scored.",paper:"Papers 2 & 3 (calculator)",paperNum:"3",sitting:"Summer 2019",answer:"(a) 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(b) 81",markscheme:"(a) B1 cao\n(b) M1 for working with values from the table eg (0×4), (1×3), … with at least 3 products shown correct or (0+), 3, 14, 15, 24, 25 with at least 3 correct\nA1 cao (SC B1 for 85)"},
+{qimg:{src:"Sum2019-3F-Q18",w:928,h:607,needsHeading:false},n:"18",tier:"Foundation",strand:"Statistics",subtopic:"Averages from frequency tables",marks:3,text:"The table shows information about the numbers of points scored by 30 students in a quiz.\nNumber of points: 0,1,2,3,4,5   Frequency: 4,3,7,5,6,5\n(a) Find the modal number of points.\n(b) Work out the total number of points scored.",paper:"Papers 2 & 3 (calculator)",paperNum:"3",sitting:"Summer 2019",answer:"(a) 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(b) 81",markscheme:"(a) B1 cao\n(b) M1 for working with values from the table eg (0×4), (1×3), … with at least 3 products shown correct or (0+), 3, 14, 15, 24, 25 with at least 3 correct\nA1 cao (SC B1 for 85)"},
 
 {qimg:{src:"Sum2019-3F-Q19",w:508,h:28,needsHeading:false},n:"19",tier:"Foundation",strand:"Algebra",subtopic:"Rearranging formulae",marks:2,text:"Make x the subject of the formula y = 2x + 4",paper:"Papers 2 & 3 (calculator)",paperNum:"3",sitting:"Summer 2019",answer:"x = (y−4)/2",markscheme:"M1 for correct first step to rearrange eg y−4=2x+4−4 or y/2=(2x+4)/2 or ambiguously shown eg x=y−4÷2 or answer given as (y−4)/2\nA1 oe"},
 
@@ -1950,7 +1956,7 @@ const QUESTIONS = [
 
 {qimg:{src:"Sum2019-3F-Q25",w:815,h:91,needsHeading:false},higherQimg:{src:"Sum2019-3H-Q2",w:815,h:91,needsHeading:false},crossoverQimg:{src:"Sum2019-3F-Q25-neutral",w:815,h:91,needsHeading:false},n:"25",higherN:"2",tier:"Crossover",strand:"Ratio, proportion and rates of change",subtopic:"Compound interest",marks:3,text:"Katy invests £200 000 in a savings account for 4 years.\nThe account pays compound interest at a rate of 1.5% per annum.\nCalculate the total amount of interest Katy will get at the end of 4 years.",paper:"Papers 2 & 3 (calculator)",paperNum:"3",sitting:"Summer 2019",answer:"£12272.70, 12272.71 or 12272.72",markscheme:"M1 for evidence of using a correct first step eg 200000×0.015 (=3000) or 200000×1.015 (=203000)\nM1 for evidence of a compound interest method eg 203000×0.015 (=3045) or 203000×1.015 (=206045) or 206045×0.015 (=3090.675) or 206045×1.015 (=209135.675) or 209135.675×0.015 (=3137.035…) or 209135.675×1.015 (212272.710…) or 200000×1.015ᵗ, t≥2 (values may be rounded or truncated to 2 dp)\nA1 for 12272.7(0) or 12272.71 or 12272.72 (SC B2 for 212272.7(0) or 212272.71 or 212272.72)"},
 
-{qimg:{src:"Sum2019-3F-Q26a",w:717,h:475,needsHeading:false},higherQimg:{src:"Sum2019-3H-Q3a",w:717,h:475,needsHeading:false},crossoverQimg:{src:"Sum2019-3F-Q26a-neutral",w:717,h:475,needsHeading:false},n:"26(a)",higherN:"3(a)",tier:"Crossover",strand:"Statistics",subtopic:"Estimating the mean from grouped data",marks:1,text:"The table shows information about the heights of 80 plants.\nHeight (h cm): 10<h≤20, 20<h≤30, 30<h≤40, 40<h≤50, 50<h≤60, 60<h≤70\nFrequency: 7, 13, 14, 12, 16, 18\n(a) Find the class interval that contains the median.",paper:"Papers 2 & 3 (calculator)",paperNum:"3",sitting:"Summer 2019",answer:"40 < h ≤ 50",markscheme:"B1 accept 40–50 oe"},
+{qimg:{src:"Sum2019-3F-Q26a",w:717,h:475,needsHeading:false},higherQimg:{src:"Sum2019-3H-Q3a",w:717,h:475,needsHeading:false},crossoverQimg:{src:"Sum2019-3F-Q26a-neutral",w:717,h:475,needsHeading:false},n:"26(a)",higherN:"3(a)",tier:"Crossover",strand:"Statistics",subtopic:"Averages from frequency tables",marks:1,text:"The table shows information about the heights of 80 plants.\nHeight (h cm): 10<h≤20, 20<h≤30, 30<h≤40, 40<h≤50, 50<h≤60, 60<h≤70\nFrequency: 7, 13, 14, 12, 16, 18\n(a) Find the class interval that contains the median.",paper:"Papers 2 & 3 (calculator)",paperNum:"3",sitting:"Summer 2019",answer:"40 < h ≤ 50",markscheme:"B1 accept 40–50 oe"},
 
 {qimg:{src:"Sum2019-3F-Q26b",w:1002,h:589,needsHeading:false},higherQimg:{src:"Sum2019-3H-Q3b",w:1002,h:589,needsHeading:false},crossoverQimg:{src:"Sum2019-3F-Q26b-neutral",w:1002,h:589,needsHeading:false},n:"26(b)",higherN:"3(b)",tier:"Crossover",strand:"Statistics",subtopic:"Frequency polygons",marks:2,text:"The table shows information about the heights of 80 plants.\nHeight (h cm): 10<h≤20, 20<h≤30, 30<h≤40, 40<h≤50, 50<h≤60, 60<h≤70\nFrequency: 7, 13, 14, 12, 16, 18\n(b) On the grid, draw a frequency polygon for the information in the table.",paper:"Papers 2 & 3 (calculator)",paperNum:"3",sitting:"Summer 2019",answer:"Polygon drawn: (15,7), (25,13), (35,14), (45,12), (55,16), (65,18)",markscheme:"B2 for fully correct polygon with points plotted at the midpoints (Joining must be with line segments) (B1 for points plotted correctly but not joined by straight lines or joining points at correct heights consistently within intervals including plotting at end values or correct frequency polygon with one point incorrect or correct frequency polygon with first and last points joined directly)"},
 
@@ -2147,7 +2153,7 @@ const QUESTIONS = [
 {qimg:{src:"Nov2019-3FH-Q22b",w:273,h:28,needsHeading:true},higherQimg:{src:"Nov2019-3H-Q1b-forcrossover",w:273,h:28,needsHeading:true},crossoverQimg:{src:"Nov2019-3FH-Q22b-crossover",w:273,h:28,needsHeading:true},n:"22(b)",higherN:"1(b)",tier:"Crossover",strand:"Algebra",subtopic:"Factorising into single brackets",marks:2,text:"(b) Factorise fully 9x² + 6x",paper:"Papers 2 & 3 (calculator)",paperNum:"3",sitting:"November 2019",answer:"3x(3x + 2)",markscheme:"B2 for 3x(3x+2)\n(B1 for 3(3x²+2x) or x(9x+6) or 3x(ax+b) where a and b are integers or (3x+2) as a factor)"},
 {qimg:{src:"Nov2019-3FH-Q23",w:663,h:304,needsHeading:false},higherQimg:{src:"Nov2019-3H-Q2-forcrossover",w:663,h:303,needsHeading:false},crossoverQimg:{src:"Nov2019-3FH-Q23-crossover",w:1045,h:304,needsHeading:false},n:"23",higherN:"2",tier:"Crossover",strand:"Number",subtopic:"Calculator use",marks:3,text:"(a) Use your calculator to work out (29²-4.6)/√(35-1.9³). Write down all the figures on your calculator display.\n(b) Write your answer to part (a) correct to 4 significant figures.",paper:"Papers 2 & 3 (calculator)",paperNum:"3",sitting:"November 2019",answer:"(a) 157.668(255) (b) 157.7",markscheme:"(a) M1 for 836.4 or 5.304(809139) or 28.141, or a truncated or rounded version of 157.668255 to no less than 3 sf\nA1 for 157.668(255) (answer must be given to at least 3 decimal places rounded or truncated; accept a clear indication of the decimal point; check first 3 decimal places only)\n(b) B1 ft from part (a) provided answer to (a) has at least 5 sf"},
 {qimg:{src:"Nov2019-3FH-Q24",w:1045,h:915,needsHeading:false},higherQimg:{src:"Nov2019-3H-Q3-forcrossover",w:1045,h:915,needsHeading:false},crossoverQimg:{src:"Nov2019-3FH-Q24-crossover",w:1045,h:915,needsHeading:false},n:"24",higherN:"3",tier:"Crossover",strand:"Statistics",subtopic:"Scatter graphs",marks:2,text:"The scatter graph shows information about the marks a group of students got in a Science test and in a Maths test. Jamie got a mark of 34 in the Science test. Using the scatter graph, find an estimate for Jamie's mark in the Maths test.",paper:"Papers 2 & 3 (calculator)",paperNum:"3",sitting:"November 2019",answer:"35 to 42",markscheme:"M1 for drawing a suitable line of best fit, or for a line from x=34, or for a point marked on the grid at (34,y), y in the range 33 to 44\nA1 for answer in the range 35 to 42"},
-{qimg:{src:"Nov2019-3FH-Q25",w:921,h:326,needsHeading:false},higherQimg:{src:"Nov2019-3H-Q4-forcrossover",w:921,h:326,needsHeading:false},crossoverQimg:{src:"Nov2019-3FH-Q25-crossover",w:1047,h:326,needsHeading:false},n:"25",higherN:"4",tier:"Crossover",strand:"Statistics",subtopic:"Estimating the mean from grouped data",marks:3,text:"The table gives information about the times taken, in seconds, by 18 students to run a race. Work out an estimate for the mean time. Give your answer correct to 3 significant figures.",paper:"Papers 2 & 3 (calculator)",paperNum:"3",sitting:"November 2019",answer:"18.6 seconds",markscheme:"M1 for finding 4 products within intervals (including end points)\nM1 for Σ'fx'÷(1+2+7+8) oe, eg (7.5×1+12.5×2+17.5×7+22.5×8)÷(1+2+7+8), or \"7.5\"+\"25\"+\"122.5\"+\"180\"÷\"18\", or \"335\"÷\"18\"\nA1 for 18.6(111...)"},
+{qimg:{src:"Nov2019-3FH-Q25",w:921,h:326,needsHeading:false},higherQimg:{src:"Nov2019-3H-Q4-forcrossover",w:921,h:326,needsHeading:false},crossoverQimg:{src:"Nov2019-3FH-Q25-crossover",w:1047,h:326,needsHeading:false},n:"25",higherN:"4",tier:"Crossover",strand:"Statistics",subtopic:"Averages from frequency tables",marks:3,text:"The table gives information about the times taken, in seconds, by 18 students to run a race. Work out an estimate for the mean time. Give your answer correct to 3 significant figures.",paper:"Papers 2 & 3 (calculator)",paperNum:"3",sitting:"November 2019",answer:"18.6 seconds",markscheme:"M1 for finding 4 products within intervals (including end points)\nM1 for Σ'fx'÷(1+2+7+8) oe, eg (7.5×1+12.5×2+17.5×7+22.5×8)÷(1+2+7+8), or \"7.5\"+\"25\"+\"122.5\"+\"180\"÷\"18\", or \"335\"÷\"18\"\nA1 for 18.6(111...)"},
 {qimg:{src:"Nov2019-3FH-Q26",w:247,h:23,needsHeading:false},higherQimg:{src:"Nov2019-3H-Q5-forcrossover",w:247,h:23,needsHeading:false},crossoverQimg:{src:"Nov2019-3FH-Q26-crossover",w:205,h:23,needsHeading:false},n:"26",higherN:"5",tier:"Crossover",strand:"Ratio, proportion and rates of change",subtopic:"Area and volume conversions",marks:1,text:"Write 37 cm³ in mm³",paper:"Papers 2 & 3 (calculator)",paperNum:"3",sitting:"November 2019",answer:"37000",markscheme:"B1 cao"},
 {qimg:{src:"Nov2019-3FH-Q27",w:724,h:254,needsHeading:false},higherQimg:{src:"Nov2019-3H-Q6-forcrossover",w:724,h:254,needsHeading:false},crossoverQimg:{src:"Nov2019-3FH-Q27-crossover",w:1045,h:254,needsHeading:false},n:"27",higherN:"6",tier:"Crossover",strand:"Ratio, proportion and rates of change",subtopic:"Speed, distance and time",marks:4,text:"Nimer was driving to a hotel. He looked at his Sat Nav at 13 30. Time 13 30, Distance to destination 65 miles. Nimer arrived at the hotel at 14 48. Work out the average speed of the car from 13 30 to 14 48. You must show all your working.",paper:"Papers 2 & 3 (calculator)",paperNum:"3",sitting:"November 2019",answer:"50 mph",markscheme:"B1 for finding the time difference, eg 1hr 18 mins or 78 mins oe (allow 1.18 for this mark; 118 scores B0)\nP1 for correct process to convert minutes to hours, eg 18÷60(=0.3) or 78÷60(=1.3), or for a correct process to convert speed in miles per minute to mph eg \"0.833...\"×60\nP1 for using speed=distance÷time eg 65÷[time] or 65÷78(=0.833...)\nA1 cao\nSCB2 for 83(.333...) seen as the answer"},
 {qimg:{src:"Nov2019-3FH-Q28",w:754,h:595,needsHeading:false},higherQimg:{src:"Nov2019-3H-Q7-forcrossover",w:754,h:595,needsHeading:false},crossoverQimg:{src:"Nov2019-3FH-Q28-crossover",w:1047,h:595,needsHeading:false},n:"28",higherN:"7",tier:"Crossover",strand:"Number",subtopic:"Standard form",marks:3,text:"(a) Write 32460000 in standard form.\n(b) Write 4.96×10⁻³ as an ordinary number.\nAsma was asked to compare the following two numbers. A=6.212×10⁸ and B=4.73×10⁹. She says, \"6.212 is bigger than 4.73 so A is bigger than B.\"\n(c) Is Asma correct? You must give a reason for your answer.",paper:"Papers 2 & 3 (calculator)",paperNum:"3",sitting:"November 2019",answer:"(a) 3.246×10⁷ (b) 0.00496 (c) No with explanation",markscheme:"(a) B1 cao\n(b) B1 cao\n(c) C1 for No and explanation that B is bigger as the power of 10 is bigger (acceptable eg she is incorrect as 10⁸ is smaller than 10⁹, or no because B has more digits than A, or no, A is millions but B is billions)"},
@@ -2189,7 +2195,7 @@ const QUESTIONS = [
 {qimg:{src:"Nov2020-1F-Q13b",w:1005,h:542,needsHeading:false},n:"13(b)",tier:"Foundation",strand:"Ratio, proportion and rates of change",subtopic:"Scale drawings",marks:3,intro:"The diagram shows two points, A and B, on a map.\nScale: 1 to 25 000",text:"(b) Work out the real distance between A and B.\nGive your answer in kilometres.",paper:"Paper 1 (non-calculator)",paperNum:"1",sitting:"November 2020",answer:"1.25 kilometres",markscheme:"M1 for measurement of AB in the range 4.8 to 5.2 (cm) or 48 to 52 (mm) (Could be just seen on the diagram)\nM1 for \"5\" × 25000 (= 125000) or \"50\" × 25000 (= 1250000)\nor \"5\" ÷ 100000 (= 0.00005) or \"50\" ÷ 1000000 (= 0.00005)\nor 25000 ÷ 100000 (= 0.25) or 25000 ÷ 1000000 (= 0.025) (125000 or 1250000 seen implies M1M1. For the award of this mark, \"5\" or \"50\" can be any value in the range 4 to 6 or 40 to 60)\nA1 for answer in the range 1.2 to 1.3"},
 {qimg:{src:"Nov2020-1F-Q14",w:989,h:553,needsHeading:false},n:"14",tier:"Foundation",strand:"Statistics",subtopic:"Two-way tables",marks:3,text:"Ishmael asked 30 students at college to tell him the sport they each like the best from cricket or tennis or swimming.\n11 of the 20 female students said swimming.\n2 of the male students said tennis.\n5 students said cricket.\nThe number of male students who said cricket was the same as the number of male students who said swimming.\nComplete the two-way table.",paper:"Paper 1 (non-calculator)",paperNum:"1",sitting:"November 2020",answer:"Completed table",markscheme:"M1 for correctly entering two of 11, 2, 5, 10 (= 30 − 20)\nM1 (indep) for using the rule for the top row eg. ([10 males] − [2 male tennis]) ÷ 2 (=4) (Award 2nd M1 if top row is correct)\nA1 for complete correct table (Additional guidance table: 4 2 4 10 / 1 8 11 20 / 5 10 15 30)"},
 {qimg:{src:"Nov2020-1F-Q15",w:783,h:161,needsHeading:false},n:"15",tier:"Foundation",strand:"Ratio, proportion and rates of change",subtopic:"Ratio problems",marks:3,text:"Jamil makes a drink by mixing\n1 part of orange squash with 9 parts of water.\nHe uses 750 millilitres of orange squash.\nJamil is going to put the drink he has mixed into 1 litre bottles.\nWork out the greatest number of 1 litre bottles that Jamil can completely fill.",paper:"Paper 1 (non-calculator)",paperNum:"1",sitting:"November 2020",answer:"7",markscheme:"P1 for 750 × 9 (=6750)\nor 1 + 9 (=10)\nor 750 ÷ 1000 (= 0.75)\nP1 (dep) for \"6750\" + 750 (=7500)\nor for \"10\" × 750 (=7500)\nor \"0.75\" × \"1 + 9\" (= 7.5)\nA1 cao\nAlternative\nP1 for 100 + 900 (= 1000) (This can be implied by (1 litre of drink =) 100 (ml) of squash and 900 (ml of water))\nP1 (dep) for 750 ÷ 100 (= 7.5)\nA1 cao"},
-{qimg:{src:"Nov2020-1F-Q16",w:895,h:788,needsHeading:false},n:"16",tier:"Foundation",strand:"Statistics",subtopic:"Frequency tables",marks:2,text:"The table gives information about the number of points scored by each of 16 students in a game.\nNumber of points: 0, 1, 2, 3, 4\nFrequency: 1, 3, 5, 4, 3\nTina worked out the median of the number of points scored to be 5\n(a) Explain why it is not possible for the median to be 5\nTina also worked out the total number of points scored by the 16 students in the game.\nHere is her working.\n(0 × 1) + (1 × 3) + (2 × 5) + (3 × 4) + (4 × 3) = 1 + 3 + 10 + 12 + 12 = 38\nTina made a mistake in her working to find the total number of points scored.\n(b) Describe the mistake that Tina made.",paper:"Paper 1 (non-calculator)",paperNum:"1",sitting:"November 2020",answer:"(a) Explanation&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(b) Explanation",markscheme:"(a) C1 for explanation (Explanations must relate to median number of points and not median of the frequency values)\nAcceptable examples\nthe number of points only goes up to 4\nbecause the median is 2\nno-one scored 5 points (implies number of points scored was less than 5)\nNot acceptable examples\nshe was right since 5 is the middle number\nshe has used the wrong column (insufficient)\nthe median is 3\n(b) C1 for explanation identifying the error in the working\nAcceptable examples\n0 × 1 = 0 or 0 × 1 is not 1\nAnything times zero is zero\nNot acceptable examples\nthe correct answer is 37"},
+{qimg:{src:"Nov2020-1F-Q16",w:895,h:788,needsHeading:false},n:"16",tier:"Foundation",strand:"Statistics",subtopic:"Averages from frequency tables",marks:2,text:"The table gives information about the number of points scored by each of 16 students in a game.\nNumber of points: 0, 1, 2, 3, 4\nFrequency: 1, 3, 5, 4, 3\nTina worked out the median of the number of points scored to be 5\n(a) Explain why it is not possible for the median to be 5\nTina also worked out the total number of points scored by the 16 students in the game.\nHere is her working.\n(0 × 1) + (1 × 3) + (2 × 5) + (3 × 4) + (4 × 3) = 1 + 3 + 10 + 12 + 12 = 38\nTina made a mistake in her working to find the total number of points scored.\n(b) Describe the mistake that Tina made.",paper:"Paper 1 (non-calculator)",paperNum:"1",sitting:"November 2020",answer:"(a) Explanation&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(b) Explanation",markscheme:"(a) C1 for explanation (Explanations must relate to median number of points and not median of the frequency values)\nAcceptable examples\nthe number of points only goes up to 4\nbecause the median is 2\nno-one scored 5 points (implies number of points scored was less than 5)\nNot acceptable examples\nshe was right since 5 is the middle number\nshe has used the wrong column (insufficient)\nthe median is 3\n(b) C1 for explanation identifying the error in the working\nAcceptable examples\n0 × 1 = 0 or 0 × 1 is not 1\nAnything times zero is zero\nNot acceptable examples\nthe correct answer is 37"},
 {qimg:{src:"Nov2020-1F-Q17",w:813,h:278,needsHeading:false},n:"17",tier:"Foundation",strand:"Number",subtopic:"Percentages of amounts",marks:5,text:"In a shop, a TV has a normal price of £500\nThe shop has a sale.\nOn Monday, the normal price of the TV is reduced by 1/10 to give the sale price.\nOn Tuesday, the sale price of the TV is reduced by 20%\nChris wants to buy the TV.\nHe has £400 to spend on the TV.\nDoes Chris have enough money to buy the TV on Tuesday?\nYou must show how you get your answer.",paper:"Paper 1 (non-calculator)",paperNum:"1",sitting:"November 2020",answer:"Conclusion (supported)",markscheme:"P1 for process to find 1/10 of 500\neg. 500 ÷ 10 (= 50)\nor 1 − 0.1 (= 0.9) oe\nP1 (dep) for process to reduce 500 by 1/10 eg. 500 − \"50\" or 500 × \"0.9\" (= 450)\nP1 for process to calculate 20% of [Monday sale price] eg. \"450\" × 20/100 (= 90) oe\nor for use of 100 − 20 (= 80) or 1 − 0.2 (= 0.8) in relation to [Monday sale price]\nP1 (dep on P3) for a fully correct process to find the cost of the TV on Tuesday eg. \"450\" − \"90\" (= 360) or \"450\" × \"0.8\" (= 360)\nC1 for conclusion (Yes) supported by correct figures. (eg Yes, the TV will cost 360; Yes, he will have 40 over left)"},
 {qimg:{src:"Nov2020-1F-Q18",w:411,h:56,needsHeading:false},n:"18",tier:"Foundation",strand:"Number",subtopic:"Estimation (checking calculations)",marks:3,text:"Work out an estimate for (790 × 289)/49",paper:"Paper 1 (non-calculator)",paperNum:"1",sitting:"November 2020",answer:"4550 to 4800",markscheme:"M1 for rounding at least two figures to 800, 50, 300 or 290 (which could be evidenced through partial calculation) (Any attempt to find the exact answer gets NO marks even if followed by rounding)\nM1 (dep) for a correct calculation using their rounded values (Various operations possible)\neg. sight of 240000 (= 800 × 300) or 232000 (= 800 × 290)\nor 229100 (= 790 × 290)\nor 16 (= 800 ÷ 50) or 15.8 = (790 ÷ 50)\nor 6 (= 300 ÷ 50) or 5.8 = (290 ÷ 50)\nA1 for answer in range 4550 to 4800"},
 {qimg:{src:"Nov2020-1F-Q19a",w:249,h:28,needsHeading:false},n:"19(a)",tier:"Foundation",strand:"Algebra",subtopic:"Expanding single brackets",marks:1,text:"(a) Expand x(x − 4)",paper:"Paper 1 (non-calculator)",paperNum:"1",sitting:"November 2020",answer:"x² − 4x",markscheme:"B1 cao"},
@@ -2355,6 +2361,10 @@ let currentList=[];
 let lastFilterSignature=null;
 const INITIAL_PAGE_SIZE=40;
 const LOAD_MORE_SIZE=20;
+// Only this many cards at the top of a results grid load their image
+// immediately (at high priority). The rest are lazy-loaded as you scroll, so
+// the ones you can actually see are not queued behind ones you can't.
+const EAGER_IMAGES=8;
 
 document.getElementById("paperToggle").addEventListener('click',e=>{
   const btn=e.target.closest('button');
@@ -2739,6 +2749,7 @@ function render(){
   const loadMoreWrap=document.getElementById("loadMoreWrap");
   if(list.length===0){
     grid.innerHTML='<div class="no-results">No questions match those filters yet.</div>';
+    _preloadToken++; // cancel any background preloading from the previous search
     loadMoreWrap.innerHTML='';
     return;
   }
@@ -2757,7 +2768,7 @@ function render(){
       </div>
       ${qHeadingHTML(q)}
       <div class="card-body">
-        ${qBodyHTML(q)}
+        ${qBodyHTML(q, false, idx >= EAGER_IMAGES)}
       </div>
       <div class="card-actions">
         <label class="add-label" onclick="event.stopPropagation()">
@@ -2772,6 +2783,7 @@ function render(){
     ? `<button class="btn btn-loadmore" id="loadMoreBtn">Show more questions (${list.length - shown} remaining)</button>`
     : '';
   fixExpClipping();
+  preloadMany(list.slice(shown, shown + LOAD_MORE_SIZE)); // always called, so it also cancels the previous search's queue
   if(shown < list.length){
     document.getElementById("loadMoreBtn").addEventListener('click', ()=>{
       state.visibleCount += LOAD_MORE_SIZE;
@@ -2854,13 +2866,13 @@ function selectQimg(q){
   if((state.tier==="Crossover" || state.tier==="all") && q.crossoverQimg) return q.crossoverQimg;
   return q.qimg;
 }
-function qBodyHTML(q, modal){
+function qBodyHTML(q, modal, lazy){
   if(q.qimg){
     const qimg = selectQimg(q);
     const K = modal ? MODAL_CROP_SCALE : 0.5;
     const cls = modal ? 'q-diagram q-crop q-crop-modal' : 'q-diagram q-crop';
     const w = Math.round(qimg.w * K);
-    const img = `<img src="${QIMG_BASE_PATH}${qimg.src}.png" alt="Question ${displayN(q)}, cropped directly from the original exam paper" style="width:${w}px;max-width:100%;">`;
+    const img = `<img ${lazy?'loading="lazy" fetchpriority="low"':(modal?'':'fetchpriority="high"')} src="${QIMG_BASE_PATH}${qimg.src}.png" alt="Question ${displayN(q)}, cropped directly from the original exam paper" decoding="async" style="width:${w}px;max-width:100%;aspect-ratio:${qimg.w}/${qimg.h};">`;
     // A tiny number of crops have a hairline rule (e.g. a square root's
     // overline) that's proven unreliable as baked-in image pixels in some
     // environments even though the underlying file is correct - as a
@@ -2958,6 +2970,7 @@ function renderModal(){
   document.getElementById("modalAnswerToggle").textContent=answerVisible?'Hide answer':'Show answer';
   document.getElementById("modalAnswerToggle").onclick=()=>{answerVisible=!answerVisible;renderModal();};
   document.getElementById("modalPrintBtn").onclick=()=>{printOne(q.id);};
+  preloadMany([currentList[modalIndex+1],currentList[modalIndex+2],currentList[modalIndex-1]]);
 }
 document.getElementById("modalClose").addEventListener('click',()=>{document.getElementById("modalOverlay").classList.add('hidden');render();});
 document.getElementById("modalOverlay").addEventListener('click',e=>{if(e.target.id==="modalOverlay"){document.getElementById("modalOverlay").classList.add('hidden');render();}});
@@ -2970,8 +2983,62 @@ document.addEventListener('keydown',e=>{
   if(e.key==="ArrowRight" && modalIndex<currentList.length-1){modalIndex++;answerVisible=false;renderModal();}
 });
 
+// ---- Image preloading -------------------------------------------------
+// Question images are separate files. These helpers fetch some of them ahead
+// of time (questions as soon as they are ticked, the next "Show more" batch,
+// and the neighbours of the question open in the popup) so they are already
+// in the browser cache when needed.
+const _imgCache=new Map();
+function qimgUrl(q){
+  if(!q||!q.qimg)return null;
+  const i=selectQimg(q);
+  return i?QIMG_BASE_PATH+i.src+'.png':null;
+}
+function preloadQ(q){
+  const url=qimgUrl(q);
+  if(!url||_imgCache.has(url))return;
+  const im=new Image();
+  im.decoding='async';
+  im.src=url;
+  _imgCache.set(url,im);
+}
+// Background preloading of a list of questions. It deliberately stays out of
+// the way: it waits until the images you can currently see have loaded,
+// downloads only two at a time, and is cancelled the moment anything newer
+// (a new search, another popup question) asks for a preload - so it can
+// never slow down a fresh search by competing with its visible images.
+let _preloadToken=0;
+function preloadMany(arr){
+  const token=++_preloadToken;
+  const urls=[];
+  arr.forEach(q=>{const u=qimgUrl(q);if(u&&!_imgCache.has(u)&&!urls.includes(u))urls.push(u);});
+  if(!urls.length)return;
+  let next=0,active=0;
+  const pump=()=>{
+    while(active<2&&next<urls.length){
+      if(token!==_preloadToken)return;
+      const u=urls[next++];
+      active++;
+      const im=new Image();
+      im.decoding='async';
+      const done=()=>{active--;pump();};
+      im.onload=done;
+      im.onerror=done;
+      im.src=u;
+      _imgCache.set(u,im);
+    }
+  };
+  const visible=[...document.querySelectorAll('#grid img')].filter(im=>im.loading!=='lazy'&&!im.complete);
+  const waits=visible.map(im=>new Promise(r=>{
+    im.addEventListener('load',r,{once:true});
+    im.addEventListener('error',r,{once:true});
+  }));
+  Promise.race([Promise.all(waits),new Promise(r=>setTimeout(r,4000))]).then(()=>{if(token===_preloadToken)pump();});
+}
+
 function toggleSelect(id){
-  if(state.selected.has(id))state.selected.delete(id);else state.selected.add(id);
+  if(state.selected.has(id))state.selected.delete(id);
+  else{state.selected.add(id);preloadQ(QUESTIONS.find(q=>q.id===id));}
   updateBuilderBar();
 }
 function updateBuilderBar(){
@@ -3019,27 +3086,53 @@ function resetPrintAnswers(){
   document.getElementById('printAnswers').innerHTML='';
 }
 
-document.getElementById("printSelected").addEventListener('click',()=>{
-  const ids=[];
-  document.querySelectorAll('.card').forEach(c=>{
-    const cb=c.querySelector('input[type=checkbox]');
-    const show = cb.checked;
-    c.classList.toggle('print-hide', !show);
-    if(show) ids.push(cb.dataset.id);
-  });
-  buildPrintAnswers(ids);
-  window.print();
-  setTimeout(()=>{document.querySelectorAll('.card').forEach(c=>c.classList.remove('print-hide'));resetPrintAnswers();},500);
-});
-function printOne(id){
-  document.querySelectorAll('.card').forEach(c=>{
-    const cb=c.querySelector('input[type=checkbox]');
-    c.classList.toggle('print-hide', cb.dataset.id!==id);
-  });
-  buildPrintAnswers([id], true);
-  window.print();
-  setTimeout(()=>{document.querySelectorAll('.card').forEach(c=>c.classList.remove('print-hide'));resetPrintAnswers();},500);
+// Printing is built from the saved selection (state.selected), NOT from the
+// cards currently drawn in the grid. The grid only holds the current search
+// results, so questions ticked under an earlier search are no longer in the
+// page - reading the grid is what used to drop them from the printout.
+// Cards are built into #printSheet (hidden on screen, the only thing shown
+// when printing), in the order they were added.
+function printCardHTML(q){
+  return `
+    <div class="card" style="--strand:${STRANDS[q.strand]}">
+      <div class="card-top">
+        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-width:0;">
+          <span class="subtopic-pill">${q.subtopic}</span>
+          <span class="source-tag">${sourceTag(q)}</span>
+        </div>
+        <div class="card-top-right">
+          ${calcIconHTML(q)}
+          <span class="marks-badge">${q.marks} mark${q.marks>1?'s':''}</span>
+        </div>
+      </div>
+      ${qHeadingHTML(q)}
+      <div class="card-body">
+        ${qBodyHTML(q)}
+      </div>
+    </div>`;
 }
+// Resolves once every image in the container has loaded (or failed), or
+// after a time limit, so the print dialog never opens with blank gaps.
+function whenImagesReady(container, timeoutMs){
+  const waits=[...container.querySelectorAll('img')].map(im=>im.complete?Promise.resolve():new Promise(r=>{
+    im.addEventListener('load',r,{once:true});
+    im.addEventListener('error',r,{once:true});
+  }));
+  return Promise.race([Promise.all(waits), new Promise(r=>setTimeout(r,timeoutMs))]);
+}
+function printIds(ids, force){
+  const items=ids.map(id=>QUESTIONS.find(q=>q.id===id)).filter(Boolean);
+  if(items.length===0)return;
+  const sheet=document.getElementById('printSheet');
+  sheet.innerHTML=items.map(printCardHTML).join('');
+  buildPrintAnswers(items.map(q=>q.id), force);
+  whenImagesReady(sheet, 8000).then(()=>{
+    window.print();
+    setTimeout(()=>{sheet.innerHTML='';resetPrintAnswers();},500);
+  });
+}
+document.getElementById("printSelected").addEventListener('click',()=>{printIds([...state.selected]);});
+function printOne(id){printIds([id], true);}
 
 buildStrandChips();
 buildSubtopicOptions();
