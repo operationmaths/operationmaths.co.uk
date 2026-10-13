@@ -289,7 +289,9 @@ a.tp-rel:hover{border-color:var(--blue)}
   .tp-pills{flex-direction:column;align-items:center;gap:10px}
   .tp-pill{width:100%;max-width:300px}
   .tp-modal-footer,.tp-modal-body{padding-inline:16px}
-  .tp-ctl-row.tp-inset{margin-right:0}
+  /* keep the controls on the right, as on desktop, even when they wrap under the heading */
+  .tp-heading-row .tp-ctl-row{margin-left:auto;justify-content:flex-end}
+  .tp-show-btn{margin-left:auto}
 }
 @media (prefers-reduced-motion:reduce){#tp-page *{transition:none !important}}
 
