@@ -67,6 +67,11 @@
 .tp-textlink:hover{text-decoration:underline}
 .tp-btn-orange{font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;border-radius:8px;padding:10px 8px;width:190px;cursor:pointer;border:1px solid var(--orange);background:var(--orange);color:var(--navy);white-space:nowrap}
 .tp-btn-orange:hover{background:var(--orange-dark);border-color:var(--orange-dark)}
+/* Full pack on TES: navy text on orange (orange is too light for white text) */
+#tp-page .btn.btn-orange{color:var(--navy)}
+.tp-btn-purple{font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;border-radius:8px;padding:10px 8px;width:190px;cursor:pointer;border:1px solid var(--purple);background:var(--purple);color:#fff;white-space:nowrap}
+.tp-btn-purple:hover{background:var(--purple-dark);border-color:var(--purple-dark)}
+.tp-actions-r{display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:flex-end;margin-left:auto}
 .tp-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:1rem}
 .tp-actions .tp-after{margin:0}
 
