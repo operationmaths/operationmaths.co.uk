@@ -461,7 +461,7 @@ function qgGenerate() {
     <div class="qg-out-header">
       <span class="qg-out-title">Generated questions</span>
       <div class="qg-out-actions">
-        <label class="qg-check"><input type="checkbox" onchange="qgIncludeAnswers = this.checked" ${qgIncludeAnswers ? 'checked' : ''}>Include answers when printing</label>
+        <label class="qg-check"><input type="checkbox" onchange="qgIncludeAnswers = this.checked" ${qgIncludeAnswers ? 'checked' : ''}>Include answers</label>
         <button class="btn btn-green" onclick="qgPrint(false)">Print worksheet</button>
         <button class="btn btn-blue" onclick="qgPrint(true)">Print with working space</button>
       </div>
