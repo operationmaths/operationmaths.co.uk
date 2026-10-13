@@ -154,13 +154,15 @@ layout: default
     <div id="tp-past-section">
       <div class="tp-heading-row">
         <h2 class="tp-heading"><span class="tp-letter">{{ letter_past }}</span>Past exam questions</h2>
-        <div class="tp-ctl-row">
-          <label class="tp-check-label"><input type="checkbox" id="tp-print-answers"> Include answers</label>
-          <button class="tp-ctl tp-ctl-purple" id="tp-print-all" type="button">Print all questions</button>
-        </div>
       </div>
       <div class="tp-grid" id="tp-past"></div>
-      <p class="tp-after">Want more? <a class="tp-textlink" href="{{ '/gcse-question-bank/' | relative_url }}">Browse the GCSE question bank →</a></p>
+      <div class="tp-actions">
+        <p class="tp-after">Want more? <a class="tp-textlink" href="{{ '/gcse-question-bank/' | relative_url }}">Browse the GCSE question bank →</a></p>
+        <div class="tp-actions-r">
+          <label class="tp-check-label"><input type="checkbox" id="tp-print-answers"> Include answers</label>
+          <button class="tp-btn-purple" id="tp-print-all" type="button">Print all questions</button>
+        </div>
+      </div>
     </div>
   </section>
   {% endif %}
