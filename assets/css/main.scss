@@ -381,6 +381,9 @@ main { flex: 1; }
 .btn-green:hover  { background: var(--green-dark);  border-color: var(--green-dark); }
 .btn-orange { background: var(--orange); border-color: var(--orange); }
 .btn-orange:hover { background: var(--orange-dark); border-color: var(--orange-dark); }
+.worksheet-page .btn-orange { color: #0f1120; }
+.btn-purple { background: var(--purple); border-color: var(--purple); }
+.btn-purple:hover { background: var(--purple-dark); border-color: var(--purple-dark); }
 .btn-outline-orange { display: inline-flex; align-items: center; gap: 5px; background: transparent; border: 1.5px solid var(--orange); color: var(--orange); font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 700; padding: 8px 14px; border-radius: 6px; cursor: pointer; transition: background 0.12s, color 0.12s; white-space: nowrap; text-decoration: none; }
 .btn-outline-orange:hover { background: var(--orange); color: #fff; }
 
