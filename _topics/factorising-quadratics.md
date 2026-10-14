@@ -62,11 +62,8 @@ bank_subtopics:
 related:
   - title: Expanding double brackets
     url: /gcse/expanding-double-brackets/
-    text: "The reverse of factorising."
   - title: Difference of two squares
     url: /gcse/difference-of-two-squares/
-    text: "Factorise expressions such as *x*² − 49."
   - title: Factorising harder quadratics
     url: /gcse/factorising-harder-quadratics/
-    text: "Quadratics where the *x*² has a number in front."
 ---
