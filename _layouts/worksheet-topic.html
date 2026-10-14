@@ -94,6 +94,7 @@ layout: default
             <div class="wc-content">
               <h3 class="wc-title">{{ ws.title }}</h3>
               {% if ws.description %}<div class="wc-desc">{{ ws.description | newline_to_br }}</div>{% endif %}
+              {% comment %} Link to the topic page that uses this worksheet (appears automatically once a topic file points to it) {% endcomment %}
             </div>
 
         <div class="wc-actions">
@@ -113,6 +114,9 @@ layout: default
       <a href="{{ site.baseurl }}{{ answers_pdf_clean }}" class="btn btn-green">Answers (A)</a>
     {% endif %}
   {% endif %}
+  {% assign ws_file = ws.relative_path | remove: "_worksheets/" | remove: ".md" %}
+  {% assign ws_topic = site.topics | where: "worksheet", ws_file | first %}
+  {% if ws_topic %}<a href="{{ ws_topic.url | relative_url }}" class="btn btn-purple">Topic page</a>{% endif %}
   {% assign tes_url_clean = ws.tes_url | strip %}
   {% if tes_url_clean.size > 0 %}
     <a href="{{ tes_url_clean }}" class="btn btn-orange" target="_blank" rel="noopener noreferrer">Full pack on TES <span class="btn-arrow" style="display:inline-block; transform:rotate(-135deg);">↓</span></a>
