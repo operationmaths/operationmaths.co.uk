@@ -10,6 +10,6 @@ show_a_worksheet: true
 show_a_answers: true
 free_pdf: /pdfs/Add-and-subtract-decimals.pdf
 answers_pdf: /pdfs/Add-and-subtract-fractions-ANSWERS.pdf
-tes_url: ''
-date_added: now
+tes_url: https://www.tes.com/teaching-resource/-13610619
+date_added: 2026-10-14 13:12:00
 ---
