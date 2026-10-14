@@ -319,7 +319,7 @@ body { transition: padding-bottom 0.2s ease; }
   </div>
 </div>
 
-<script src="{{ '/assets/js/qg-core.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+<script src="{{ '/assets/js/question-generator-core.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
 <script>
 {% raw %}
 document.addEventListener('click', function(e) {
