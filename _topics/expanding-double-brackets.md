@@ -62,11 +62,8 @@ bank_subtopics:
 related:
   - title: Factorising quadratics
     url: /gcse/factorising-quadratics/
-    text: "The reverse of expanding."
   - title: Difference of two squares
     url: /gcse/difference-of-two-squares/
-    text: "Expand and factorise brackets such as (*x* + 8)(*x* − 8)."
   - title: Expanding triple brackets
     url: /gcse/expanding-triple-brackets/
-    text: "Three brackets multiplied together."
 ---
