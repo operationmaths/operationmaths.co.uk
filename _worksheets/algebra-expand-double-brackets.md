@@ -4,7 +4,7 @@ topic: algebra
 section: Expand
 order: 2
 orientation: portrait
-description: Each worksheet contains 12 questions about expanding a double brackets.
+description: Each worksheet contains 12 questions about expanding double brackets.
 thumbnail: /assets/images/worksheets/algebra/Expand-double-brackets.jpg
 show_a_worksheet: true
 show_a_answers: true
