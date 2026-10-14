@@ -222,6 +222,6 @@ layout: default
   "title": {{ page.title | jsonify }}
 }
 </script>
-{% if has_generator %}<script src="{{ '/assets/js/qg-core.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>{% endif %}
+{% if has_generator %}<script src="{{ '/assets/js/question-generator-core.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>{% endif %}
 {% if has_past %}<script src="{{ '/assets/js/gcse-question-core.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>{% endif %}
 <script src="{{ '/assets/js/topic-page.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
