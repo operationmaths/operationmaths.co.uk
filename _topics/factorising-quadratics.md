@@ -8,6 +8,9 @@ layout: topic-page
 # Page name. Used for the big heading, the breadcrumb and the search title.
 title: Factorising quadratics
 
+# Optional. The title shown in the browser tab and in Google results ("| Operation Maths" is added automatically). Aim for under 60 characters in total.
+seo_title: "Factorising Quadratics: GCSE Maths Worksheet"
+
 # One-line description Google may show under the page title. Aim for about 150 characters.
 description: Learn how to factorise quadratics, then practise with a free worksheet and answers, a question generator and real GCSE past exam questions.
 
