@@ -1,7 +1,7 @@
 ---
 title: Add and Subtract decimals
 topic: number
-section: Addition and Subtractio
+section: Addition and Subtraction
 order: 4
 orientation: portrait
 description: Each worksheet contains 5 addition and 5 subtraction questions involving decimals, with squares below each question for working out.
