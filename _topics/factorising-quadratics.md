@@ -60,8 +60,8 @@ bank_subtopics:
 
 # ---------- RELATED TOPICS ----------
 related:
-  - title: Expanding quadratics
-    url: /gcse/expanding-quadratics/
+  - title: Expanding double brackets
+    url: /gcse/expanding-double-brackets/
     text: "The reverse of factorising."
   - title: Difference of two squares
     url: /gcse/difference-of-two-squares/
