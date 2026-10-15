@@ -1,0 +1,15 @@
+---
+title: Difference of two squares
+topic: algebra
+section: Factorise
+order: 3
+orientation: portrait
+description: Each worksheet contains questions on factorising the difference of two squares with the basics, coefficients and mixed forms.
+thumbnail: /assets/images/worksheets/algebra/Difference-of-two-squares.jpg
+show_a_worksheet: true
+show_a_answers: false
+free_pdf: /pdfs/Difference-of-two-squares.pdf
+answers_pdf: /
+tes_url: ''
+date_added: now
+---
