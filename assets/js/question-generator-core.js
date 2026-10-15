@@ -626,6 +626,58 @@ const QG_BANK = {
     { q: "A table now costs £275 following a 10% price increase. What was its original price?", a: "£250" },
     { q: "A population decreases by 25% to 13,500. What was the original population?", a: "18,000" }
   ],
+  "Equivalent fractions": [
+    { q: "Find the missing number: 2/4 = {□/16}", a: "8" },
+    { q: "Find the missing number: 1/9 = {6/□}", a: "54" },
+    { q: "Find the missing number: {□/20} = 3/4", a: "15" },
+    { q: "Find the missing number: {3/□} = 18/30", a: "5" },
+    { q: "Find the missing number: 4/7 = {□/21}", a: "12" },
+    { q: "Find the missing number: 5/8 = {20/□}", a: "32" },
+    { q: "Find the missing number: {□/18} = 2/3", a: "12" },
+    { q: "Find the missing number: {7/□} = 21/36", a: "12" },
+    { q: "Find the missing number: 3/5 = {□/25}", a: "15" },
+    { q: "Find the missing number: 4/9 = {12/□}", a: "27" },
+    { q: "Find the missing number: 6/10 = {□/5}", a: "3" },
+    { q: "Find the missing number: {□/24} = 3/8", a: "9" },
+    { q: "Find the missing number: {5/□} = 15/27", a: "9" },
+    { q: "Find the missing number: 7/12 = {□/36}", a: "21" },
+    { q: "Find the missing number: 8/15 = {24/□}", a: "45" },
+    { q: "Find the missing number: {□/35} = 4/5", a: "28" },
+    { q: "Find the missing number: {9/□} = 3/7", a: "21" },
+    { q: "Find the missing number: 5/6 = {□/42}", a: "35" },
+    { q: "Find the missing number: {□/32} = 3/4", a: "24" },
+    { q: "Find the missing number: 11/15 = {33/□}", a: "45" },
+    { q: "Find the missing number: 3/7 = {□/35}", a: "15" },
+    { q: "Find the missing number: 6/14 = {3/□}", a: "7" },
+    { q: "Find the missing number: 16/20 = {□/5}", a: "4" },
+    { q: "Find the missing number: 21/28 = {3/□}", a: "4" },
+    { q: "Find the missing number: 18/30 = {□/5}", a: "3" },
+    { q: "Find the missing number: {□/45} = 4/9", a: "20" },
+    { q: "Find the missing number: {14/□} = 7/10", a: "20" },
+    { q: "Find the missing number: 5/8 = {□/40}", a: "25" },
+    { q: "Find the missing number: {□/42} = 5/7", a: "30" },
+    { q: "Find the missing number: {8/□} = 4/9", a: "18" },
+    { q: "Find the missing number: 15/25 = {□/5}", a: "3" },
+    { q: "Find the missing number: 7/11 = {□/77}", a: "49" },
+    { q: "Which fraction is equivalent to 3/4: 9/16, 12/16 or 15/24?", a: "12/16" },
+    { q: "Which fraction is not equivalent to 2/5: 4/10, 6/15, 8/20 or 10/20?", a: "10/20" },
+    { q: "Write the fraction that is equivalent to 5/6: 15/24, 20/24 or 25/36", a: "20/24" },
+    { q: "Write the three fractions from this list that are equivalent to 1/4: 2/8, 3/12, 4/12, 5/20, 6/16", a: "2/8, 3/12 and 5/20" },
+    { q: "Write the equivalent fraction for each of these: 10/15, 12/16, 15/25 and 20/24. Choose from 2/3, 3/4, 3/5 and 5/6", a: "10/15 = 2/3, 12/16 = 3/4, 15/25 = 3/5, 20/24 = 5/6" },
+    { q: "Write 3/5 as a fraction with denominator 40", a: "24/40" },
+    { q: "Write 7/8 as a fraction with denominator 64", a: "56/64" },
+    { q: "Write 4/9 as a fraction with numerator 20", a: "20/45" },
+    { q: "Write 5/12 as a fraction with numerator 25", a: "25/60" },
+    { q: "Are 8/12 and 10/15 equivalent? Write yes or no.", a: "Yes" },
+    { q: "Are 9/16 and 27/48 equivalent? Write yes or no.", a: "Yes" },
+    { q: "A student says 3/8 = 6/11. Is the student correct? Write yes or no.", a: "No" },
+    { q: "Which fraction is equivalent to 2/3: 8/12, 6/12 or 10/12?", a: "8/12" },
+    { q: "Put these fractions into equivalent pairs: 2/5, 3/4, 4/10, 9/12", a: "2/5 = 4/10 and 3/4 = 9/12" },
+    { q: "Which fraction is equivalent to 2 3/8: 19/8, 16/8 or 21/8?", a: "19/8" },
+    { q: "Write the improper fraction that is equivalent to 3 2/5: 15/5, 17/5, 18/5 or 19/5", a: "17/5" },
+    { q: "A shape has 12 equal parts and 8 are shaded. Write the shaded part as a fraction, then give an equivalent fraction with denominator 6.", a: "8/12 = 4/6" },
+    { q: "A 10 × 10 grid has 40 squares shaded. Write the fractions from this list that represent the shaded part: 2/5, 4/10, 40/100, 3/5", a: "2/5, 4/10 and 40/100" }
+  ],
   "Simplify fractions": [
     { q: "Simplify: 28/77", a: "4/11" },
     { q: "Simplify: 76/418", a: "2/11" },
@@ -6210,7 +6262,7 @@ const QG_STRANDS = [
       { label: 'Conversions', topics: ['Area conversions', 'FDP conversions', 'Metric conversions', 'Time conversions', 'Volume conversions'] },
       { label: 'Decimals', topics: ['Multiply decimals', 'Multiply decimals - Harder', 'Divide decimals', 'Divide decimals - Harder'] },
       { label: 'Factors, multiples and prime numbers', topics: ['Factors', 'Multiples', 'Prime numbers', 'Product of prime factors', 'Lowest common multiple', 'Highest common factor'] },
-      { label: 'Fractions', topics: ['Simplify fractions', 'Fraction of a number', 'Add and subtract fractions', 'Multiply fractions', 'Divide fractions', 'Mixed numbers and all operations', 'Recurring decimals to fractions'] },
+      { label: 'Fractions', topics: ['Equivalent fractions', 'Simplify fractions', 'Fraction of a number', 'Add and subtract fractions', 'Multiply fractions', 'Divide fractions', 'Mixed numbers and all operations', 'Recurring decimals to fractions'] },
       { label: 'Indices', topics: ['Powers', 'Roots', 'Basic laws of indices', 'Laws of indices - Harder', 'Fractional and negative indices'] },
       { label: 'Negatives', topics: ['Add and subtract negatives', 'Multiply and divide negatives'] },
       { label: 'Operations', topics: ['Multiply by 10, 100 and 1000', 'Divide by 10, 100 and 1000', 'Addition', 'Subtraction', 'Add and subtract decimals', 'Short multiplication', 'Short division', 'Long multiplication', 'Long division', 'BIDMAS'] },
@@ -6269,6 +6321,9 @@ function qgEsc(str) {
    Escaping happens first, then notation is layered on top. */
 function qgFormatInline(str) {
   let s = qgEsc(str);
+
+  // Missing-number box: □ -> small outlined square
+  s = s.replace(/□/g, '<span style="display:inline-block;width:0.9em;height:0.9em;border:1.5px solid currentColor;box-sizing:border-box;vertical-align:middle;"></span>');
 
   // Explicit stacked fraction: {numerator/denominator}, for terms too complex for the plain digit/digit rule below
   s = s.replace(/\{([^{}\/]+)\/([^{}]+)\}/g, function(m, num, den) {
