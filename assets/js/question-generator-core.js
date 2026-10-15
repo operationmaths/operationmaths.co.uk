@@ -659,11 +659,11 @@ const QG_BANK = {
     { q: "Find the missing number: {8/□} = 4/9", a: "18" },
     { q: "Find the missing number: 15/25 = {□/5}", a: "3" },
     { q: "Find the missing number: 7/11 = {□/77}", a: "49" },
-    { q: "Which fraction is equivalent to 3/4: 9/16, 12/16 or 15/24?", a: "12/16" },
-    { q: "Which fraction is not equivalent to 2/5: 4/10, 6/15, 8/20 or 10/20?", a: "10/20" },
-    { q: "Write the fraction that is equivalent to 5/6: 15/24, 20/24 or 25/36", a: "20/24" },
-    { q: "Write the three fractions from this list that are equivalent to 1/4: 2/8, 3/12, 4/12, 5/20, 6/16", a: "2/8, 3/12 and 5/20" },
-    { q: "Write the equivalent fraction for each of these: 10/15, 12/16, 15/25 and 20/24. Choose from 2/3, 3/4, 3/5 and 5/6", a: "10/15 = 2/3, 12/16 = 3/4, 15/25 = 3/5, 20/24 = 5/6" },
+    { q: "Which fraction is equivalent to 3/4:||9/16, 12/16, 15/24", a: "12/16" },
+    { q: "Which fraction is not equivalent to 2/5:||4/10, 6/15, 8/20, 10/20", a: "10/20" },
+    { q: "Write the fraction that is equivalent to 5/6:||15/24, 20/24, 25/36", a: "20/24" },
+    { q: "Write the three fractions from this list that are equivalent to 1/4:||2/8, 3/12, 4/12, 5/20, 6/16", a: "2/8, 3/12, 5/20" },
+    { q: "Write the equivalent fraction for each of 10/15, 12/16, 15/25, 20/24. Choose from these:||2/3, 3/4, 3/5, 5/6", a: "10/15 = 2/3, 12/16 = 3/4, 15/25 = 3/5, 20/24 = 5/6" },
     { q: "Write 3/5 as a fraction with denominator 40", a: "24/40" },
     { q: "Write 7/8 as a fraction with denominator 64", a: "56/64" },
     { q: "Write 4/9 as a fraction with numerator 20", a: "20/45" },
@@ -671,12 +671,12 @@ const QG_BANK = {
     { q: "Are 8/12 and 10/15 equivalent? Write yes or no.", a: "Yes" },
     { q: "Are 9/16 and 27/48 equivalent? Write yes or no.", a: "Yes" },
     { q: "A student says 3/8 = 6/11. Is the student correct? Write yes or no.", a: "No" },
-    { q: "Which fraction is equivalent to 2/3: 8/12, 6/12 or 10/12?", a: "8/12" },
-    { q: "Put these fractions into equivalent pairs: 2/5, 3/4, 4/10, 9/12", a: "2/5 = 4/10 and 3/4 = 9/12" },
-    { q: "Which fraction is equivalent to 2 3/8: 19/8, 16/8 or 21/8?", a: "19/8" },
-    { q: "Write the improper fraction that is equivalent to 3 2/5: 15/5, 17/5, 18/5 or 19/5", a: "17/5" },
+    { q: "Which fraction is equivalent to 2/3:||8/12, 6/12, 10/12", a: "8/12" },
+    { q: "Put these fractions into equivalent pairs:||2/5, 3/4, 4/10, 9/12", a: "2/5 = 4/10 and 3/4 = 9/12" },
+    { q: "Which fraction is equivalent to 2 3/8:||19/8, 16/8, 21/8", a: "19/8" },
+    { q: "Write the improper fraction that is equivalent to 3 2/5:||15/5, 17/5, 18/5, 19/5", a: "17/5" },
     { q: "A shape has 12 equal parts and 8 are shaded. Write the shaded part as a fraction, then give an equivalent fraction with denominator 6.", a: "8/12 = 4/6" },
-    { q: "A 10 × 10 grid has 40 squares shaded. Write the fractions from this list that represent the shaded part: 2/5, 4/10, 40/100, 3/5", a: "2/5, 4/10 and 40/100" }
+    { q: "A 10 × 10 grid has 40 squares shaded. Write the fractions from this list that represent the shaded part:||2/5, 4/10, 40/100, 3/5", a: "2/5, 4/10, 40/100" }
   ],
   "Simplify fractions": [
     { q: "Simplify: 28/77", a: "4/11" },
@@ -6375,6 +6375,11 @@ s = s.replace(/∛(\d+(?:\.\d+)?)/g, '<span class="qg-root"><span class="qg-root
 }
 
 function qgFormatMaths(str) {
+  // Options on their own line: "Question text:||x, y or z" -> options sit under the question and never split across lines
+  let optLine = String(str).match(/^(.+?)\|\|(.+)$/);
+  if (optLine) {
+    return '<span>' + qgFormatInline(optLine[1].trim()) + '</span><span style="display:block;margin-top:10px;white-space:nowrap;">' + qgFormatInline(optLine[2].trim()) + '</span>';
+  }
   // Two-line layout: "Prefix: eq1~~eq2" -> eq2 sits on its own line, aligned under eq1
   let twoLine = String(str).match(/^([^:]+:\s+)([^~]+)~~(.+)$/);
   if (twoLine) {
