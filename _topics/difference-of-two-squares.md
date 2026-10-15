@@ -33,15 +33,15 @@ examples:
       - "Notice that there are two square terms (a square letter and a square number) with a subtraction sign between them."
       - "This is the difference of two squares and is factorised into double brackets. Write the double brackets:<br>(&emsp;&emsp;&emsp;)(&emsp;&emsp;&emsp;)"
       - "Work out the square root of <em>x</em>² and write this at the start of each bracket:<br>√<span style='display:inline-block;width:1.0em;height:1em;border-top:1.5px solid currentColor;margin:0 -0.97em 0 -0.03em'></span><em>x</em>² = <em>x</em><br>(<em>x</em>&emsp;&emsp;)(<em>x</em>&emsp;&emsp;)"
-      - "Work out the square root of 49 and write this at the end of each bracket:<br>√<span style='display:inline-block;width:1.28em;height:1em;border-top:1.5px solid currentColor;margin:0 -1.25em 0 -0.03em'></span>49 = 7<br>(<em>x</em>&emsp;7)(<em>x</em>&emsp;7)"
+      - "Work out the square root of 49 and write this at the end of each bracket:<br>√<span style='display:inline-block;width:1.28em;height:0.9em;border-top:1.5px solid currentColor;margin:0 -1.25em 0 -0.03em'></span>49 = 7<br>(<em>x</em>&emsp;7)(<em>x</em>&emsp;7)"
       - "Put a + between the terms in one bracket and a − in the other."
     result: "(*x* + 7)(*x* − 7)"
   - question: "Factorise 4*x*² − 25"
     steps:
       - "Notice that there are two square terms (a squared term and a square number) with a subtraction sign between them."
       - "This is the difference of two squares and is factorised into double brackets. Write the double brackets:<br>(&emsp;&emsp;&emsp;)(&emsp;&emsp;&emsp;)"
-      - "Work out the square root of 4<em>x</em>² and write this at the start of each bracket:<br>√<span style='display:inline-block;width:1.6em;height:0.78em;border-top:1.5px solid currentColor;margin:0 -1.57em 0 -0.03em'></span>4<em>x</em>² = 2<em>x</em><br>(2<em>x</em>&emsp;&emsp;)(2<em>x</em>&emsp;&emsp;)"
-      - "Work out the square root of 25 and write this at the end of each bracket:<br>√<span style='display:inline-block;width:1.28em;height:0.82em;border-top:1.5px solid currentColor;margin:0 -1.25em 0 -0.03em'></span>25 = 5<br>(2<em>x</em>&emsp;5)(2<em>x</em>&emsp;5)"
+      - "Work out the square root of 4<em>x</em>² and write this at the start of each bracket:<br>√<span style='display:inline-block;width:1.6em;height:1em;border-top:1.5px solid currentColor;margin:0 -1.57em 0 -0.03em'></span>4<em>x</em>² = 2<em>x</em><br>(2<em>x</em>&emsp;&emsp;)(2<em>x</em>&emsp;&emsp;)"
+      - "Work out the square root of 25 and write this at the end of each bracket:<br>√<span style='display:inline-block;width:1.28em;height:0.9em;border-top:1.5px solid currentColor;margin:0 -1.25em 0 -0.03em'></span>25 = 5<br>(2<em>x</em>&emsp;5)(2<em>x</em>&emsp;5)"
       - "Put a + between the terms in one bracket and a − in the other."
     result: "(2*x* + 5)(2*x* − 5)"
 
