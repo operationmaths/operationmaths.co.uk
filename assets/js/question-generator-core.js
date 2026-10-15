@@ -6322,13 +6322,13 @@ function qgEsc(str) {
 function qgFormatInline(str) {
   let s = qgEsc(str);
 
-  // Missing-number box: □ -> small outlined square
-  s = s.replace(/□/g, '<span style="display:inline-block;width:0.9em;height:0.9em;border:1.5px solid currentColor;box-sizing:border-box;vertical-align:middle;"></span>');
-
   // Explicit stacked fraction: {numerator/denominator}, for terms too complex for the plain digit/digit rule below
   s = s.replace(/\{([^{}\/]+)\/([^{}]+)\}/g, function(m, num, den) {
     return '<span class="qg-frac"><span class="qg-frac-num">' + num.trim() + '</span><span class="qg-frac-den">' + den.trim() + '</span></span>';
   });
+
+  // Missing-number box: □ -> small outlined square
+  s = s.replace(/□/g, '<span style="display:inline-block;width:0.9em;height:0.9em;border:1.5px solid currentColor;box-sizing:border-box;vertical-align:middle;"></span>');
 
   // Fractional / negative fractional exponents: base^(content) -> superscript, stacking a plain fraction inside if present
   s = s.replace(/\^\(([^)]+)\)/g, function(m, content) {
