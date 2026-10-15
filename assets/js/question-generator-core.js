@@ -663,7 +663,7 @@ const QG_BANK = {
     { q: "Which fraction is not equivalent to 2/5:||4/10, 6/15, 8/20, 10/20", a: "10/20" },
     { q: "Write the fraction that is equivalent to 5/6:||15/24, 20/24, 25/36", a: "20/24" },
     { q: "Write the three fractions from this list that are equivalent to 1/4:||2/8, 3/12, 4/12, 5/20, 6/16", a: "2/8, 3/12, 5/20" },
-    { q: "Write the equivalent fraction for each of 10/15, 12/16, 15/25, 20/24. Choose from these:||2/3, 3/4, 3/5, 5/6", a: "10/15 = 2/3, 12/16 = 3/4, 15/25 = 3/5, 20/24 = 5/6" },
+    { q: "Which fraction is equivalent to 15/25?||2/3, 3/4, 3/5, 5/6", a: "3/5" },
     { q: "Write 3/5 as a fraction with denominator 40", a: "24/40" },
     { q: "Write 7/8 as a fraction with denominator 64", a: "56/64" },
     { q: "Write 4/9 as a fraction with numerator 20", a: "20/45" },
