@@ -53,7 +53,7 @@ generator_topics:
 # ---------- C: WORKSHEET ----------
 # File name (without .md) of the worksheet in the _worksheets folder. Remove this line to leave the section out.
 # When the worksheet is made, put its real file name below and remove the # at the start of the line.
-# worksheet: algebra-difference-of-two-squares
+worksheet: algebra-difference-of-two-squares
 
 # ---------- D: PAST EXAM QUESTIONS ----------
 # Sub-strand name(s) exactly as they appear in the GCSE question bank. Remove these lines to leave the section out.
