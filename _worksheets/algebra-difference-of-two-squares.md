@@ -11,5 +11,5 @@ show_a_answers: false
 free_pdf: /pdfs/Difference-of-two-squares.pdf
 answers_pdf: /
 tes_url: ''
-date_added: now
+date_added: 2026-10-15 21:56:00
 ---
