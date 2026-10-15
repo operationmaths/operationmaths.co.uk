@@ -180,7 +180,7 @@ layout: default
         {% unless rel_target %}{% assign rel_live = false %}{% endunless %}
       {% endif %}
       {% capture rel_inner %}<div class="tp-bar"></div>
-        <div class="tp-rel-body"><div class="tp-rel-title">{{ r.title }}</div>{% unless rel_live %}<div class="tp-rel-soon-tag">Coming soon</div>{% endunless %}</div>{% endcapture %}
+        <div class="tp-rel-body"><div class="tp-rel-title">{{ r.title }}{% if rel_live %}<span class="tp-rel-arrow" aria-hidden="true">→</span>{% endif %}</div>{% unless rel_live %}<div class="tp-rel-soon-tag">Coming soon</div>{% endunless %}</div>{% endcapture %}
       {% if rel_live %}<a href="{{ r.url | relative_url }}" class="tp-card tp-rel tp-green">{{ rel_inner }}</a>{% else %}<div class="tp-card tp-rel tp-rel-soon" aria-disabled="true">{{ rel_inner }}</div>{% endif %}
       {% endfor %}
     </div>
