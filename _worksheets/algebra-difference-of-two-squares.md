@@ -7,9 +7,9 @@ orientation: portrait
 description: Each worksheet contains questions on factorising the difference of two squares with the basics, coefficients and mixed forms.
 thumbnail: /assets/images/worksheets/algebra/Difference-of-two-squares.jpg
 show_a_worksheet: true
-show_a_answers: false
+show_a_answers: true
 free_pdf: /pdfs/Difference-of-two-squares.pdf
-answers_pdf: /
+answers_pdf: /pdfs/Difference-of-two-squares-ANSWERS.pdf
 tes_url: ''
 date_added: 2026-10-15 21:56:00
 ---
