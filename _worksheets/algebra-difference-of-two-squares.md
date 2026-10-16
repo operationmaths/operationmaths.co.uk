@@ -10,6 +10,6 @@ show_a_worksheet: true
 show_a_answers: true
 free_pdf: /pdfs/Difference-of-two-squares.pdf
 answers_pdf: /pdfs/Difference-of-two-squares-ANSWERS.pdf
-tes_url: ''
+tes_url: https://www.tes.com/teaching-resource/-13612830
 date_added: 2026-10-15 21:56:00
 ---
