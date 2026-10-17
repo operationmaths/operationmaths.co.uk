@@ -52,7 +52,6 @@ main { flex: 1; }
 .om-nav-drawer.open { display: flex; }
 .om-nav-drawer > a { color: #374151; font-size: 16px; font-weight: 700; text-decoration: none; padding: 12px 0; border-bottom: 1px solid #f3f4f6; }
 .om-nav-drawer > a:last-child { border-bottom: none; }
-.om-nav-drawer > a:last-child { display: block; background: #1c75bc; color: #fff !important; border-radius: 6px; padding: 10px 14px; margin-top: 8px; text-align: center; }
 .om-drawer-section { border-bottom: 1px solid #f3f4f6; }
 .om-drawer-section-title { font-size: 16px; font-weight: 700; color: #374151; padding: 12px 0 8px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; }
 .om-drawer-sub { padding-left: 0; border-left: none; margin: 0 0 8px; display: none; flex-direction: column; }
