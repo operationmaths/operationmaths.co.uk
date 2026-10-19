@@ -2787,8 +2787,8 @@ const QG_BANK = {
     { q: "Factorise: x^2 − 4x", a: "x(x − 4)" },
     { q: "Factorise: x^2 − 5x", a: "x(x − 5)" },
     { q: "Factorise: 15x^2 + 5x", a: "5x(3x + 1)" },
-    { q: "Factorise: 36x + 18", a: "9(4x + 2)" },
-    { q: "Factorise: 12x + 6", a: "3(4x + 2)" },
+    { q: "Factorise: 8x + 8", a: "8(x + 1)" },
+    { q: "Factorise: 12x + 6", a: "6(2x + 1)" },
     { q: "Factorise: 36hp + 30p^2", a: "6p(6h + 5p)" },
     { q: "Factorise: 20hm − 15m^2", a: "5m(4h − 3m)" },
     { q: "Factorise: x^2 + 3x", a: "x(x + 3)" },
@@ -2809,11 +2809,11 @@ const QG_BANK = {
     { q: "Factorise: 21rs − 14s^2", a: "7s(3r − 2s)" },
     { q: "Factorise: 45x + 72", a: "9(5x + 8)" },
     { q: "Factorise: x^2 − 7x", a: "x(x − 7)" },
-    { q: "Factorise: 30x − 30", a: "6(5x − 5)" },
+    { q: "Factorise: 6x − 6", a: "6(x − 1)" },
     { q: "Factorise: 42x + 12", a: "6(7x + 2)" },
     { q: "Factorise: 16x^2 − 2x", a: "2x(8x − 1)" },
     { q: "Factorise: x^2 + 5x", a: "x(x + 5)" },
-    { q: "Factorise: 16x − 4", a: "2(8x − 2)" },
+    { q: "Factorise: 16x − 4", a: "4(4x − 1)" },
     { q: "Factorise: 15gq + 12q^2", a: "3q(5g + 4q)" },
     { q: "Factorise: 12x^2 − 4x", a: "4x(3x − 1)" },
     { q: "Factorise: 12x^2 + 4x", a: "4x(3x + 1)" },
@@ -6259,7 +6259,7 @@ const QG_BANK = {
 /* ── STRAND / TOPIC STRUCTURE ── */
 const QG_STRANDS = [
   { id: 'number', name: 'Number', dotColor: '#1c75bc', subsections: [
-      { label: 'Conversions', topics: ['Area conversions', 'FDP conversions', 'Metric conversions', 'Time conversions', 'Volume conversions'] },
+      { label: 'Conversions', topics: ['FDP conversions', 'Metric conversions', 'Time conversions'] },
       { label: 'Decimals', topics: ['Multiply decimals', 'Multiply decimals - Harder', 'Divide decimals', 'Divide decimals - Harder'] },
       { label: 'Factors, multiples and prime numbers', topics: ['Factors', 'Multiples', 'Prime numbers', 'Product of prime factors', 'Lowest common multiple', 'Highest common factor'] },
       { label: 'Fractions', topics: ['Equivalent fractions', 'Simplify fractions', 'Fraction of a number', 'Add and subtract fractions', 'Multiply fractions', 'Divide fractions', 'Mixed numbers and all operations', 'Recurring decimals to fractions'] },
@@ -6292,6 +6292,7 @@ const QG_STRANDS = [
       { label: 'Angles in polygons', topics: ['Interior angles', 'Exterior angles', 'Polygon angle problems'] },
       { label: 'Area', topics: ['Area of a square', 'Area of a rectangle', 'Area of a triangle', 'Area of a parallelogram', 'Area of a trapezium', 'Area of a kite', 'Area of compound shapes'] },
       { label: 'Circles', topics: ['Area of a circle', 'Circumference of a circle'] },
+      { label: 'Conversions', topics: ['Area conversions', 'Volume conversions'] },
       { label: 'Perimeter', topics: ['Perimeter of polygons', 'Perimeter of compound shapes'] },
       { label: 'Triangles', topics: ['Pythagoras', 'Trigonometry'] }
   ]}
