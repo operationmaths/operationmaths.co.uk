@@ -6341,7 +6341,7 @@ function qgFormatInline(str) {
   s = s.replace(/(\d+)\/(\d+)/g, '<span class="qg-frac"><span class="qg-frac-num">$1</span><span class="qg-frac-den">$2</span></span>');
 
   // Mixed numbers: tighten the gap between the whole number and the stacked fraction
-  s = s.replace(/(\d+) (<span class="qg-frac"><span class="qg-frac-num">)/g, '$1<span style="display:inline-block;width:0;margin-right:-0.18em"></span>$2');
+  s = s.replace(/(\d+) (<span class="qg-frac"><span class="qg-frac-num">)/g, '$1<span style="display:inline-block;width:0;margin-right:-0.07em"></span>$2');
 
   // Recurring decimal dot: [4] -> dot above that digit
   s = s.replace(/\[(\d)\]/g, '<span class="qg-dot">$1</span>');
