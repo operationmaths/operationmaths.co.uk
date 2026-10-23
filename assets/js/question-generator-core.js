@@ -5042,7 +5042,7 @@ const QG_BANK = {
     { q: "The diameter of the circle is 20 cm. Find its circumference. Write your answer in terms of π.", a: "20π cm", diagram: `<svg width="170" height="140" viewBox="0 0 170 140" xmlns="http://www.w3.org/2000/svg"> <circle cx="75" cy="72" r="58" fill="#fff3e0" stroke="#f7941e" stroke-width="2"/> <line x1="17" y1="72" x2="133" y2="72" stroke="#f7941e" stroke-width="1.5"/> <circle cx="75" cy="72" r="3" fill="#f7941e"/> <text x="75" y="66" text-anchor="middle" font-size="12" fill="#111" font-family="sans-serif">20 cm</text>
 </svg>` },
     { q: "A circle has a radius of 10 cm. Find its circumference. Write your answer in terms of π.", a: "20π cm" },
-    { q: "A circle has a diameter of 35 mm. Find its circumference. Give your answer to 1 decimal place.", a: "109.9 mm" },
+    { q: "A circle has a diameter of 35 mm. Find its circumference. Give your answer to 1 decimal place.", a: "110.0 mm" },
     { q: "A circle has a radius of 7.5 m. Find its circumference. Give your answer to 2 decimal places.", a: "47.12 m" },
     { q: "A circle has a diameter of 60 cm. Find its circumference. Give your answer to 3 significant figures.", a: "188 cm" },
     { q: "A circle has a radius of 14 mm. Find its circumference. Write your answer in terms of π.", a: "28π mm" },
@@ -5051,7 +5051,7 @@ const QG_BANK = {
     { q: "A circle has a radius of 0.5 m. Find its circumference. Write your answer in terms of π.", a: "π m" },
     { q: "A circle has a diameter of 28 cm. Find its circumference. Give your answer to 3 significant figures.", a: "88.0 cm" },
     { q: "A circle has a radius of 16 mm. Find its circumference. Give your answer to 1 decimal place.", a: "100.5 mm" },
-    { q: "A semicircle has a diameter of 14 m. Find the total perimeter of the semicircle (the curved part plus the diameter). Give your answer to 2 decimal places.", a: "35.98 m" },
+    { q: "A semicircle has a diameter of 14 m. Find the total perimeter of the semicircle (the curved part plus the diameter). Give your answer to 2 decimal places.", a: "35.99 m" },
     { q: "A circle has a diameter of 200 mm. Find its circumference. Write your answer in terms of π.", a: "200π mm" },
     { q: "A circle has a circumference of 18π cm. Find its radius.", a: "9 cm" },
     { q: "A circle has a circumference of 50π mm. Find its diameter.", a: "50 mm" },
