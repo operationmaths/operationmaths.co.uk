@@ -26,7 +26,7 @@ main { flex: 1; }
 [id] { scroll-margin-top: 20px; }
 
 /* ── BODY / PAGE HERO (matches main.scss conventions) ── */
-.om-body { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem 4rem; }
+.om-body { width: 100%; max-width: 1100px; margin: 0 auto; padding: 3rem 2rem 4rem; flex: 1 0 auto; }
 .page-hero { background: #0f1120; padding: 4rem 2rem 0; text-align: center; }
 .page-hero h1 { font-size: 46px; font-weight: 700; color: #fff; line-height: 1.15; margin-bottom: 1rem; }
 .page-hero h1 em { font-style: normal; color: var(--orange); }
