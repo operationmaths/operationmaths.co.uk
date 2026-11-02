@@ -5,6 +5,19 @@ description: Get in touch with Operation Maths about worksheets, papers, books o
 permalink: /contact/
 ---
 
+<style>
+  .contact-form .btn-submit {
+    background: var(--orange);
+    border-color: var(--orange);
+    color: #ffffff;
+  }
+  .contact-form .btn-submit:hover,
+  .contact-form .btn-submit:focus-visible {
+    background: var(--orange-dark);
+    border-color: var(--orange-dark);
+  }
+</style>
+
 <section class="om-hero" style="min-height:0; padding: 4rem 2rem 1rem;">
   <h1>Get in <em>touch</em></h1>
 </section>
