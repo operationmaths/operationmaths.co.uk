@@ -54,7 +54,7 @@ worksheet: algebra-solve-one-step-equations
 # Sub-strand name(s) exactly as they appear in the GCSE question bank. Remove these lines to leave the section out.
 # The page shows up to 4 of the matching questions, in a different order each time it loads.
 bank_subtopics:
-  - Solving linear equations
+  - Solving one-step equations
 
 # ---------- RELATED TOPICS ----------
 related:
