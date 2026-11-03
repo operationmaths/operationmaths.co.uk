@@ -31,15 +31,17 @@ examples:
   - question: "Factorise 12*x* + 18"
     steps:
       - "Find the highest common factor (HCF) of 12 and 18:<br>6"
-      - "Write this outside the bracket:<br>6(&emsp;&emsp;&emsp;)"
-      - "Divide each term by 6 and write the answers inside the bracket:<br>12*x* ÷ 6 = 2*x*<br>18 ÷ 6 = 3"
+      - "Write this in front of a single bracket:<br>6(&emsp;&emsp;&emsp;)"
+      - "Work out what you times 6 by to make 12*x* and write this at the start of the bracket:<br>6(2*x*&emsp;&emsp;)"
+      - "Work out what you times 6 by to make 18 and write this at the end of the bracket:<br>6(2*x* + 3)"
     result: "6(2*x* + 3)"
   - question: "Factorise 15*x*² − 10*x*"
     steps:
       - "Find the highest common factor (HCF) of 15 and 10:<br>5"
-      - "Both terms contain *x*, so the common factor is 5*x*."
-      - "Write this outside the bracket:<br>5*x*(&emsp;&emsp;&emsp;)"
-      - "Divide each term by 5*x* and write the answers inside the bracket:<br>15*x*² ÷ 5*x* = 3*x*<br>−10*x* ÷ 5*x* = −2"
+      - "Both terms contain *x*, so *x* is also a common factor and needs to be written with the 5:<br>5*x*"
+      - "Write this in front of a single bracket:<br>5*x*(&emsp;&emsp;&emsp;)"
+      - "Work out what you times 5*x* by to make 15*x*² and write this at the start of the bracket:<br>5*x*(3*x*&emsp;&emsp;)"
+      - "Work out what you times 5*x* by to make −10*x* and write this at the end of the bracket:<br>5*x*(3*x* − 2)"
     result: "5*x*(3*x* − 2)"
 
 # ---------- B: QUESTION GENERATOR ----------
