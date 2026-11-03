@@ -31,13 +31,13 @@ examples:
   - question: "Solve *x* + 7 = 12"
     steps:
       - "Look at what is being done to *x*:<br>7 is being added"
-      - "Do the inverse (opposite) operation to both sides to get *x* on its own:<svg width='102' height='52' viewBox='0 0 102 52' style='display:block;margin:4px 0 2px' role='img' aria-hidden='true'><text x='16' y='20' font-size='17' fill='currentColor'><tspan style='font-family:Georgia,serif;font-style:italic'>x</tspan> + 7 = 12</text><text x='14' y='44' text-anchor='middle' font-size='17' font-weight='700' fill='#009444'>− 7</text><text x='79.5' y='44' text-anchor='middle' font-size='17' font-weight='700' fill='#009444'>− 7</text></svg>"
+      - "Do the inverse (opposite) operation to both sides to get *x* on its own:<svg width='106' height='52' viewBox='0 0 106 52' style='display:block;margin:4px 0 2px' role='img' aria-hidden='true'><text x='16' y='20' font-size='17' fill='currentColor'><tspan style='font-family:Georgia,serif;font-style:italic'>x</tspan> + 7 = 12</text><text x='14.3' y='44' text-anchor='middle' font-size='17' fill='#009444'>− 7</text><text x='85.5' y='44' text-anchor='middle' font-size='17' fill='#009444'>− 7</text></svg>"
       - "Simplify both sides:<br>*x* = 5"
     result: "*x* = 5"
   - question: "Solve 4*x* = 24"
     steps:
       - "Look at what is being done to *x*:<br>*x* is being multiplied by 4"
-      - "Do the inverse (opposite) operation to both sides to get *x* on its own:<svg width='80' height='52' viewBox='0 0 80 52' style='display:block;margin:4px 0 2px' role='img' aria-hidden='true'><text x='10' y='20' font-size='17' fill='currentColor'>4<tspan style='font-family:Georgia,serif;font-style:italic'>x</tspan> = 24</text><text x='17' y='44' text-anchor='middle' font-size='17' font-weight='700' fill='#009444'>÷ 4</text><text x='59' y='44' text-anchor='middle' font-size='17' font-weight='700' fill='#009444'>÷ 4</text></svg>"
+      - "Do the inverse (opposite) operation to both sides to get *x* on its own:<svg width='86' height='52' viewBox='0 0 86 52' style='display:block;margin:4px 0 2px' role='img' aria-hidden='true'><text x='16' y='20' font-size='17' fill='currentColor'>4<tspan style='font-family:Georgia,serif;font-style:italic'>x</tspan> = 24</text><text x='22.9' y='44' text-anchor='middle' font-size='17' fill='#009444'>÷ 4</text><text x='65.2' y='44' text-anchor='middle' font-size='17' fill='#009444'>÷ 4</text></svg>"
       - "Simplify both sides:<br>*x* = 6"
     result: "*x* = 6"
 
