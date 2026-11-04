@@ -1,0 +1,69 @@
+---
+# ==========================================================================
+# TOPIC PAGE: Simultaneous equations   ->   /gcse/simultaneous-equations/
+# Copy this file to start a new topic page. See TOPIC-PAGES-README.md.
+# ==========================================================================
+layout: topic-page
+
+# Page name. Used for the big heading, the breadcrumb and the search title.
+title: Simultaneous equations
+
+# Optional. The title shown in the browser tab and in Google results ("| Operation Maths" is added automatically). Aim for under 60 characters in total.
+seo_title: "Simultaneous Equations: GCSE Maths Worksheet"
+
+# One-line description Google may show under the page title. Aim for about 150 characters.
+description: Learn how to solve simultaneous equations with worked examples, then practise with a free worksheet and answers, a question generator and GCSE past exam questions.
+
+# Line under the heading. Optional (a default is used if you leave it out).
+intro: Learn the method, practise it, then try real exam questions.
+
+# Breadcrumb above section A. The current page is added automatically. Leave out "url" for plain text.
+breadcrumb:
+  - title: GCSE maths
+    url: /maths-gcse-papers/
+  - title: Algebra
+    url: /worksheets-algebra/
+
+# ---------- A: TEACHING ----------
+# Type maths with *asterisks* for italic letters and ² ³ for powers, for example *x*² + 7*x* + 12
+# **Double asterisks** make bold. <br> starts a new line inside a step.
+examples:
+  - question: "Solve <span style='display:inline-block;vertical-align:top;text-align:left;line-height:inherit;margin-left:6px'><span style='display:block'><em>x</em> + 3<em>y</em> = 14</span><span style='display:block'>2<em>x</em> + <em>y</em> = 13</span></span>"
+    steps:
+      - "Choose a letter to eliminate (here *x*). Multiply the top equation by 2 to make the *x* terms the same:<svg width='138' height='54' viewBox='0 0 138 54' style='display:block;margin:4px 0 2px' role='img' aria-hidden='true'><text x='57.34375' y='20' text-anchor='end' font-size='17' fill='currentColor'><tspan style='font-family:Georgia,serif;font-style:italic'>x</tspan></text><text x='67.0234375' y='20' text-anchor='middle' font-size='17' fill='currentColor'>+</text><text x='94.3125' y='20' text-anchor='end' font-size='17' fill='currentColor'>3<tspan style='font-family:Georgia,serif;font-style:italic'>y</tspan></text><text x='103.9921875' y='20' text-anchor='middle' font-size='17' fill='currentColor'>=</text><text x='129.296875' y='20' text-anchor='end' font-size='17' fill='currentColor'>14</text><text x='17' y='20' text-anchor='middle' font-size='17' fill='#009444'>× 2</text><text x='57.34375' y='46' text-anchor='end' font-size='17' fill='currentColor'>2<tspan style='font-family:Georgia,serif;font-style:italic'>x</tspan></text><text x='67.0234375' y='46' text-anchor='middle' font-size='17' fill='currentColor'>+</text><text x='94.3125' y='46' text-anchor='end' font-size='17' fill='currentColor'><tspan style='font-family:Georgia,serif;font-style:italic'>y</tspan></text><text x='103.9921875' y='46' text-anchor='middle' font-size='17' fill='currentColor'>=</text><text x='129.296875' y='46' text-anchor='end' font-size='17' fill='currentColor'>13</text></svg>"
+      - "Write the new top equation above the bottom equation. The signs are the same, so subtract:<svg width='143' height='84' viewBox='0 0 143 84' style='display:block;margin:4px 0 2px' role='img' aria-hidden='true'><text x='57.34375' y='20' text-anchor='end' font-size='17' fill='currentColor'>2<tspan style='font-family:Georgia,serif;font-style:italic'>x</tspan></text><text x='67.0234375' y='20' text-anchor='middle' font-size='17' fill='currentColor'>+</text><text x='94.9375' y='20' text-anchor='end' font-size='17' fill='currentColor'>6<tspan style='font-family:Georgia,serif;font-style:italic'>y</tspan></text><text x='104.6171875' y='20' text-anchor='middle' font-size='17' fill='currentColor'>=</text><text x='134.140625' y='20' text-anchor='end' font-size='17' fill='currentColor'>28</text><text x='57.34375' y='46' text-anchor='end' font-size='17' fill='currentColor'>2<tspan style='font-family:Georgia,serif;font-style:italic'>x</tspan></text><text x='67.0234375' y='46' text-anchor='middle' font-size='17' fill='currentColor'>+</text><text x='94.9375' y='46' text-anchor='end' font-size='17' fill='currentColor'><tspan style='font-family:Georgia,serif;font-style:italic'>y</tspan></text><text x='104.6171875' y='46' text-anchor='middle' font-size='17' fill='currentColor'>=</text><text x='134.140625' y='46' text-anchor='end' font-size='17' fill='currentColor'>13</text><text x='94.9375' y='76' text-anchor='end' font-size='17' fill='currentColor'>5<tspan style='font-family:Georgia,serif;font-style:italic'>y</tspan></text><text x='104.6171875' y='76' text-anchor='middle' font-size='17' fill='currentColor'>=</text><text x='134.140625' y='76' text-anchor='end' font-size='17' fill='currentColor'>15</text><line x1='34' y1='55' x2='138.140625' y2='55' stroke='currentColor' stroke-width='1.3'/><text x='17' y='46' text-anchor='middle' font-size='17' fill='#009444'>−</text></svg>"
+      - "Divide both sides by 5 to find *y*:<br>*y* = 15 ÷ 5<br>*y* = 3"
+      - "Substitute *y* = 3 into the top equation from the start:<svg width='129' height='104' viewBox='0 0 129 104' style='display:block;margin:4px 0 2px' role='img' aria-hidden='true'><text x='72.71875' y='20' text-anchor='end' font-size='17' fill='currentColor'><tspan style='font-family:Georgia,serif;font-style:italic'>x</tspan> + 3(3)</text><text x='82.3984375' y='20' text-anchor='middle' font-size='17' fill='currentColor'>=</text><text x='92.078125' y='20' font-size='17' fill='currentColor'>14</text><text x='72.71875' y='46' text-anchor='end' font-size='17' fill='currentColor'><tspan style='font-family:Georgia,serif;font-style:italic'>x</tspan> + 9</text><text x='82.3984375' y='46' text-anchor='middle' font-size='17' fill='currentColor'>=</text><text x='92.078125' y='46' font-size='17' fill='currentColor'>14</text><text x='34.4' y='70' text-anchor='middle' font-size='17' fill='#009444'>− 9</text><text x='108.4' y='70' text-anchor='middle' font-size='17' fill='#009444'>− 9</text><text x='72.71875' y='96' text-anchor='end' font-size='17' fill='currentColor'><tspan style='font-family:Georgia,serif;font-style:italic'>x</tspan></text><text x='82.3984375' y='96' text-anchor='middle' font-size='17' fill='currentColor'>=</text><text x='92.078125' y='96' font-size='17' fill='currentColor'>5</text></svg>"
+    result: "*x* = 5 and *y* = 3"
+  - question: "Solve <span style='display:inline-block;vertical-align:top;text-align:left;line-height:inherit;margin-left:6px'><span style='display:block'>2<em>x</em> + 3<em>y</em> = 12</span><span style='display:block'>3<em>x</em> − 2<em>y</em> = 5</span></span>"
+    steps:
+      - "Choose a letter to eliminate (here *y*). Multiply the top equation by 2 and the bottom equation by 3 to make the *y* terms the same size:<svg width='138' height='54' viewBox='0 0 138 54' style='display:block;margin:4px 0 2px' role='img' aria-hidden='true'><text x='57.609375' y='20' text-anchor='end' font-size='17' fill='currentColor'>2<tspan style='font-family:Georgia,serif;font-style:italic'>x</tspan></text><text x='67.2890625' y='20' text-anchor='middle' font-size='17' fill='currentColor'>+</text><text x='94.578125' y='20' text-anchor='end' font-size='17' fill='currentColor'>3<tspan style='font-family:Georgia,serif;font-style:italic'>y</tspan></text><text x='104.2578125' y='20' text-anchor='middle' font-size='17' fill='currentColor'>=</text><text x='129.046875' y='20' text-anchor='end' font-size='17' fill='currentColor'>12</text><text x='17' y='20' text-anchor='middle' font-size='17' fill='#009444'>× 2</text><text x='57.609375' y='46' text-anchor='end' font-size='17' fill='currentColor'>3<tspan style='font-family:Georgia,serif;font-style:italic'>x</tspan></text><text x='67.2890625' y='46' text-anchor='middle' font-size='17' fill='currentColor'>−</text><text x='94.578125' y='46' text-anchor='end' font-size='17' fill='currentColor'>2<tspan style='font-family:Georgia,serif;font-style:italic'>y</tspan></text><text x='104.2578125' y='46' text-anchor='middle' font-size='17' fill='currentColor'>=</text><text x='129.046875' y='46' text-anchor='end' font-size='17' fill='currentColor'>5</text><text x='17' y='46' text-anchor='middle' font-size='17' fill='#009444'>× 3</text></svg>"
+      - "Write the new equations. The signs are different, so add:<svg width='149' height='84' viewBox='0 0 149 84' style='display:block;margin:4px 0 2px' role='img' aria-hidden='true'><text x='58.234375' y='20' text-anchor='end' font-size='17' fill='currentColor'>4<tspan style='font-family:Georgia,serif;font-style:italic'>x</tspan></text><text x='67.9140625' y='20' text-anchor='middle' font-size='17' fill='currentColor'>+</text><text x='100.5' y='20' text-anchor='end' font-size='17' fill='currentColor'>6<tspan style='font-family:Georgia,serif;font-style:italic'>y</tspan></text><text x='110.1796875' y='20' text-anchor='middle' font-size='17' fill='currentColor'>=</text><text x='140.09375' y='20' text-anchor='end' font-size='17' fill='currentColor'>24</text><text x='58.234375' y='46' text-anchor='end' font-size='17' fill='currentColor'>9<tspan style='font-family:Georgia,serif;font-style:italic'>x</tspan></text><text x='67.9140625' y='46' text-anchor='middle' font-size='17' fill='currentColor'>−</text><text x='100.5' y='46' text-anchor='end' font-size='17' fill='currentColor'>6<tspan style='font-family:Georgia,serif;font-style:italic'>y</tspan></text><text x='110.1796875' y='46' text-anchor='middle' font-size='17' fill='currentColor'>=</text><text x='140.09375' y='46' text-anchor='end' font-size='17' fill='currentColor'>15</text><text x='100.5' y='76' text-anchor='end' font-size='17' fill='currentColor'>13<tspan style='font-family:Georgia,serif;font-style:italic'>x</tspan></text><text x='110.1796875' y='76' text-anchor='middle' font-size='17' fill='currentColor'>=</text><text x='140.09375' y='76' text-anchor='end' font-size='17' fill='currentColor'>39</text><line x1='34' y1='55' x2='144.09375' y2='55' stroke='currentColor' stroke-width='1.3'/><text x='17' y='46' text-anchor='middle' font-size='17' fill='#009444'>+</text></svg>"
+      - "Divide both sides by 13 to find *x*:<br>*x* = 39 ÷ 13<br>*x* = 3"
+      - "Substitute *x* = 3 into the top equation from the start:<svg width='138' height='154' viewBox='0 0 138 154' style='display:block;margin:4px 0 2px' role='img' aria-hidden='true'><text x='82.515625' y='20' text-anchor='end' font-size='17' fill='currentColor'>2(3) + 3<tspan style='font-family:Georgia,serif;font-style:italic'>y</tspan></text><text x='92.1953125' y='20' text-anchor='middle' font-size='17' fill='currentColor'>=</text><text x='101.875' y='20' font-size='17' fill='currentColor'>12</text><text x='82.515625' y='46' text-anchor='end' font-size='17' fill='currentColor'>6 + 3<tspan style='font-family:Georgia,serif;font-style:italic'>y</tspan></text><text x='92.1953125' y='46' text-anchor='middle' font-size='17' fill='currentColor'>=</text><text x='101.875' y='46' font-size='17' fill='currentColor'>12</text><text x='63.7' y='70' text-anchor='middle' font-size='17' fill='#009444'>− 6</text><text x='117.9' y='70' text-anchor='middle' font-size='17' fill='#009444'>− 6</text><text x='82.515625' y='96' text-anchor='end' font-size='17' fill='currentColor'>3<tspan style='font-family:Georgia,serif;font-style:italic'>y</tspan></text><text x='92.1953125' y='96' text-anchor='middle' font-size='17' fill='currentColor'>=</text><text x='101.875' y='96' font-size='17' fill='currentColor'>6</text><text x='68.2' y='120' text-anchor='middle' font-size='17' fill='#009444'>÷ 3</text><text x='115.7' y='120' text-anchor='middle' font-size='17' fill='#009444'>÷ 3</text><text x='82.515625' y='146' text-anchor='end' font-size='17' fill='currentColor'><tspan style='font-family:Georgia,serif;font-style:italic'>y</tspan></text><text x='92.1953125' y='146' text-anchor='middle' font-size='17' fill='currentColor'>=</text><text x='101.875' y='146' font-size='17' fill='currentColor'>2</text></svg>"
+    result: "*x* = 3 and *y* = 2"
+
+# ---------- B: QUESTION GENERATOR ----------
+# Topic name(s) exactly as they appear in the Question generator. Remove these lines to leave the section out.
+generator_topics:
+  - Simultaneous equations
+
+# ---------- C: WORKSHEET ----------
+# File name (without .md) of the worksheet in the _worksheets folder. Remove this line to leave the section out.
+worksheet: algebra-simultaneous-equations
+
+# ---------- D: PAST EXAM QUESTIONS ----------
+# Sub-strand name(s) exactly as they appear in the GCSE question bank. Remove these lines to leave the section out.
+# The page shows up to 4 of the matching questions, in a different order each time it loads.
+bank_subtopics:
+  - Simultaneous equations
+
+# ---------- RELATED TOPICS ----------
+related:
+  - title: Solving two-step equations
+    url: /gcse/solving-two-step-equations/
+  - title: Solving one-step equations
+    url: /gcse/solving-one-step-equations/
+  - title: Expanding single brackets
+    url: /gcse/expanding-single-brackets/
+---
