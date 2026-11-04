@@ -4313,9 +4313,9 @@ const QG_BANK = {
     { q: "A rectangle has an area of 120 m² and a length of 15 m. Find its width.", a: "8 m" },
     { q: "A rectangle has an area of 1950 mm² and a width of 30 mm. Find its length.", a: "65 mm" },
     { q: "A rectangle has an area of 136 cm² and a length of 17 cm. Find its width.", a: "8 cm" },
-    { q: "A rectangular room has an area of 35 m². The room is 5 m wide. A carpet costs £18 per m². What is the total cost to carpet the room?", a: "£630" },
+    { q: "A rectangular room measures 7 m by 5 m. What is its floor area?", a: "35 m²" },
     { q: "A rectangle has an area of 4.5 m² and a length of 3 m. Find its width.", a: "1.5 m" },
-    { q: "Two identical rectangles each have an area of 48 cm². Each rectangle is 6 cm wide. What is the total length of both rectangles placed end to end?", a: "16 cm" },
+    { q: "A rectangle has an area of 48 cm² and a width of 6 cm. Find its length.", a: "8 cm" },
     { q: "A rectangle has an area of 357 mm² and a length of 21 mm. Find its width.", a: "17 mm" }
   ],
   "Area of a triangle": [
