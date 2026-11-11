@@ -9,10 +9,10 @@ layout: topic-page
 title: Dividing terms
 
 # Optional. The title shown in the browser tab and in Google results ("| Operation Maths" is added automatically). Aim for under 60 characters in total.
-seo_title: "Dividing Terms: GCSE Maths Questions"
+seo_title: "Dividing Terms: GCSE Maths Worksheet"
 
 # One-line description Google may show under the page title. Aim for about 150 characters.
-description: Learn how to divide algebraic terms with worked examples, then practise with a question generator.
+description: Learn how to divide algebraic terms with worked examples, then practise with a free worksheet and answers, a question generator and GCSE past exam questions.
 
 # Line under the heading. Optional (a default is used if you leave it out).
 intro: Learn the method, practise it, then try real exam questions.
@@ -45,13 +45,17 @@ examples:
 # ---------- B: QUESTION GENERATOR ----------
 # Topic name(s) exactly as they appear in the Question generator. Remove these lines to leave the section out.
 generator_topics:
-  - Divide terms
+  - Dividing terms
 
 # ---------- C: WORKSHEET ----------
-# No dividing terms worksheet yet. Add  worksheet: file-name  here when there is one.
+# File name (without .md) of the worksheet in the _worksheets folder. Remove this line to leave the section out.
+worksheet: algebra-dividing-terms
 
 # ---------- D: PAST EXAM QUESTIONS ----------
-# No past exam questions are tagged for this topic yet. Add  bank_subtopics:  and the exact sub-strand name when there are.
+# Sub-strand name(s) exactly as they appear in the GCSE question bank. Remove these lines to leave the section out.
+# The page shows up to 4 of the matching questions, in a different order each time it loads.
+bank_subtopics:
+  - Dividing terms
 
 # ---------- RELATED TOPICS ----------
 related:
