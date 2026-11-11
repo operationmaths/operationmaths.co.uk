@@ -44,7 +44,7 @@ examples:
 # ---------- B: QUESTION GENERATOR ----------
 # Topic name(s) exactly as they appear in the Question generator. Remove these lines to leave the section out.
 generator_topics:
-  - Collect like terms
+  - Collecting like terms
 
 # ---------- C: WORKSHEET ----------
 # File name (without .md) of the worksheet in the _worksheets folder. Remove this line to leave the section out.
