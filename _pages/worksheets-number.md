@@ -12,6 +12,7 @@ section_order:
   - Division
   - Multiplication and Division
   - All Operations
+  - Negatives
   - Multiples and factors
   - Fractions
   - Percentages
