@@ -38,8 +38,7 @@ examples:
   - question: "Work out 10 − 6"
     steps:
       - "Recognise that 10 and 6 are part of a number bond to 10:<br>6 + ? = 10"
-      - "Work out what you add to 6 to make 10:<br>6 + 4 = 10"
-      - "Use the number bond to write the answer to the subtraction:<br>10 − 6 = 4"
+      - "Work out what you add to 6 to make 10:<br>6 + <span style='color:#009444'>4</span> = 10"
     result: "4"
 
 # ---------- B: QUESTION GENERATOR ----------
