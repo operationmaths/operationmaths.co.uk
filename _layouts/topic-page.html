@@ -21,7 +21,7 @@ layout: default
 {% assign has_teaching = false %}
 {% if page.method or page.examples or body_text != "" %}{% assign has_teaching = true %}{% endif %}
 {% assign has_generator = false %}
-{% if page.generator_topics %}{% assign has_generator = true %}{% endif %}
+{% if page.generator_topics or page.static_questions %}{% assign has_generator = true %}{% endif %}
 {% assign has_past = false %}
 {% if page.bank_subtopics %}{% assign has_past = true %}{% endif %}
 
@@ -216,6 +216,7 @@ layout: default
 <script type="application/json" id="tp-config">
 {
   "generator": {{ page.generator_topics | jsonify }},
+  "staticQuestions": {{ page.static_questions | jsonify }},
   "bank": {{ page.bank_subtopics | jsonify }},
   "generatorCount": {{ page.generator_count | default: 5 }},
   "maxPast": {{ page.max_past_questions | default: 4 }},
