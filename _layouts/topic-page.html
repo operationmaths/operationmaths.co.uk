@@ -7,6 +7,8 @@ layout: default
   Per-topic content lives in _topics/<topic>.md (see TOPIC-PAGES-README.md).
 
   Sections, in order: Teaching, Question generator, Worksheet, Past exam questions.
+  Past questions come from the GCSE bank (front matter bank_subtopics) or from the SATs bank (front matter
+  bank_questions, a list of question image names such as 2016-P1-Q2).
   A section appears only when its front matter is filled in. The letters (A, B, C, D) are
   worked out automatically, and the script removes a section that turns out to have no questions.
 {% endcomment %}
@@ -23,7 +25,9 @@ layout: default
 {% assign has_generator = false %}
 {% if page.generator_topics or page.static_questions %}{% assign has_generator = true %}{% endif %}
 {% assign has_past = false %}
-{% if page.bank_subtopics %}{% assign has_past = true %}{% endif %}
+{% if page.bank_subtopics or page.bank_questions %}{% assign has_past = true %}{% endif %}
+{% assign is_sats = false %}
+{% if page.bank_questions %}{% assign is_sats = true %}{% endif %}
 
 {% assign letters = "A,B,C,D,E,F" | split: "," %}
 {% assign n = 0 %}
@@ -57,7 +61,7 @@ layout: default
     {% if has_teaching %}<a class="tp-pill tp-green" data-tp="teaching" href="#teaching"><span class="tp-lt">{{ letter_teaching }}</span><span class="tp-ht"><b>Teaching</b><small>Worked examples</small></span></a>{% endif %}
     {% if has_generator %}<a class="tp-pill tp-orange" data-tp="generator" href="#generator"><span class="tp-lt">{{ letter_generator }}</span><span class="tp-ht"><b>Question generator</b><small>Random questions</small></span></a>{% endif %}
     {% if ws %}<a class="tp-pill tp-blue" data-tp="worksheet" href="#worksheet"><span class="tp-lt">{{ letter_worksheet }}</span><span class="tp-ht"><b>Worksheet</b><small>Free PDF with answers</small></span></a>{% endif %}
-    {% if has_past %}<a class="tp-pill tp-purple" data-tp="past" href="#past-questions"><span class="tp-lt">{{ letter_past }}</span><span class="tp-ht"><b>Past exam questions</b><small>Real GCSE questions</small></span></a>{% endif %}
+    {% if has_past %}<a class="tp-pill tp-purple" data-tp="past" href="#past-questions"><span class="tp-lt">{{ letter_past }}</span><span class="tp-ht">{% if is_sats %}<b>Past SATs questions</b><small>Real SATs questions</small>{% else %}<b>Past exam questions</b><small>Real GCSE questions</small>{% endif %}</span></a>{% endif %}
   </nav>
 </section>
 
@@ -153,11 +157,11 @@ layout: default
   <section class="tp-sec tp-purple" id="past-questions" data-tp="past">
     <div id="tp-past-section">
       <div class="tp-heading-row">
-        <h2 class="tp-heading"><span class="tp-letter">{{ letter_past }}</span>Past exam questions</h2>
+        <h2 class="tp-heading"><span class="tp-letter">{{ letter_past }}</span>{% if is_sats %}Past SATs questions{% else %}Past exam questions{% endif %}</h2>
       </div>
       <div class="tp-grid" id="tp-past"></div>
       <div class="tp-actions">
-        <p class="tp-after">Want more? <a class="tp-textlink" href="{{ '/gcse-question-bank/' | relative_url }}">Browse the GCSE question bank →</a></p>
+        <p class="tp-after">Want more? {% if is_sats %}<a class="tp-textlink" href="{{ '/sats-question-bank/' | relative_url }}">Browse the SATs question bank →</a>{% else %}<a class="tp-textlink" href="{{ '/gcse-question-bank/' | relative_url }}">Browse the GCSE question bank →</a>{% endif %}</p>
         <div class="tp-actions-r">
           <label class="tp-check-label"><input type="checkbox" id="tp-print-answers"> Include answers</label>
           <button class="tp-btn-purple" id="tp-print-all" type="button">Print all questions</button>
@@ -218,11 +222,12 @@ layout: default
   "generator": {{ page.generator_topics | jsonify }},
   "staticQuestions": {{ page.static_questions | jsonify }},
   "bank": {{ page.bank_subtopics | jsonify }},
+  "bankQuestions": {{ page.bank_questions | jsonify }},
   "generatorCount": {{ page.generator_count | default: 5 }},
   "maxPast": {{ page.max_past_questions | default: 4 }},
   "title": {{ page.title | jsonify }}
 }
 </script>
 {% if has_generator %}<script src="{{ '/assets/js/question-generator-core.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>{% endif %}
-{% if has_past %}<script src="{{ '/assets/js/gcse-question-core.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>{% endif %}
+{% if has_past %}{% if is_sats %}<script src="{{ '/assets/js/sats-question-core.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>{% else %}<script src="{{ '/assets/js/gcse-question-core.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>{% endif %}{% endif %}
 <script src="{{ '/assets/js/topic-page.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
