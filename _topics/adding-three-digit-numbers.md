@@ -157,7 +157,16 @@ static_questions:
 worksheet: number-add-three-digit-numbers
 
 # ---------- D: PAST EXAM QUESTIONS ----------
-# Not used yet. To come from the SATs question bank (Written addition and subtraction).
+# Questions from the SATs question bank (Written addition and subtraction) that are three-digit + three-digit
+# or three-digit + two-digit. Each name is the question image name in sats-question-core.js.
+# The page shows up to 4 of them, in a different order each time it loads.
+bank_questions:
+  - 2016-P1-Q2   # 46 + 304
+  - 2016-P1-Q5   # 936 + 285
+  - 2016-P2-Q3   # missing digits in a column addition
+  - 2018-P1-Q1   # 39 + 673
+  - 2024-P1-Q1   # 689 + 38
+  - 2026-P1-Q1   # 87 + 327
 
 # ---------- RELATED TOPICS ----------
 related:
