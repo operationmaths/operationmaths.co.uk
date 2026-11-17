@@ -1,6 +1,7 @@
 /* Topic pages (layout: topic-page). One script for every /gcse/<topic>/ page.
    Reads the topic's settings from #tp-config, then:
-   - B  fills the question generator rows from QG_BANK (assets/js/qg-core.js)
+   - B  fills the question generator rows from QG_BANK (assets/js/question-generator-core.js)
+       and from any fixed questions in the topic file (static_questions)
    - D  fills the past question cards from QUESTIONS (assets/js/gcse-question-core.js)
    - removes a section that has no questions and re-letters the others
    - runs the question viewer and the printing */
@@ -57,6 +58,8 @@
     (cfg.generator || []).forEach(function (topic) {
       ((typeof QG_BANK !== 'undefined' && QG_BANK[topic]) || []).forEach(function (item) { pool.push(item); });
     });
+    /* fixed questions written in the topic file (static_questions: q and a). They do not come from QG_BANK. */
+    (cfg.staticQuestions || []).forEach(function (item) { pool.push(item); });
     return pool;
   }
   function genAllShown() {
@@ -83,8 +86,12 @@
     });
     $('tp-gen-all').textContent = genAllShown() ? 'Hide all answers' : 'Show all answers';
   }
+  /* Questions are dealt from a shuffled pile, so none repeat until the whole pool has been used. */
+  var genDeck = [];
   function genNew(pool) {
-    genPicks = shuffled(pool).slice(0, cfg.generatorCount || 5);
+    var count = cfg.generatorCount || 5;
+    if (genDeck.length < count) genDeck = shuffled(pool);
+    genPicks = genDeck.splice(0, count);
     genShown = {};
     genRender();
   }
