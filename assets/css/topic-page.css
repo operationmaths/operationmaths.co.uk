@@ -16,6 +16,10 @@
   --faint:#9ca3af;
   --amber:#a15c1f;
   --rose:#c43d6b;
+  --teal:#0e8a8a;
+  --gold:#c49012;
+  --vermilion:#e0592b;
+  --indigo:#4b4fb8;
   --green-tint:#f0faf4;
   --maths:Georgia,'Times New Roman',serif;
   flex:1;
@@ -211,6 +215,16 @@
 .frac-sm .den{padding:0 2px;}
 
 
+/* SATs questions (answers, mark schemes and example images copied from the SATs question bank) */
+.ms-bullet{display:flex;gap:.5em;margin-left:.4em;white-space:normal}
+.ms-dot{flex:none}
+.ms-bullet-img .ms-dot{margin-top:.5em}
+.ms-bcontent{flex:1;min-width:0}
+.ms-bcontent .answer-img{margin-top:2px}
+.frac.mixed,.frac-sm.mixed{margin-left:0}
+.answer-img{margin-top:10px}
+.answer-img img{display:block;max-width:100%;height:auto}
+
 /* 7 QUESTION VIEWER */
 .tp-modal{position:fixed;inset:0;background:rgba(15,17,32,.55);z-index:1000;display:flex;align-items:center;justify-content:center;padding:24px 16px}
 .tp-modal-box{background:#fff;border-radius:12px;max-width:880px;width:100%;height:min(85vh,720px);position:relative;border-left:6px solid var(--strand,#999);display:flex;flex-direction:column;overflow:hidden}
@@ -321,6 +335,7 @@ a.tp-rel:hover .tp-rel-arrow{transform:translateX(4px)}
   .tp-pcard .q-diagram{display:block;margin-bottom:10px}
   .tp-pcard .q-diagram.q-crop img{display:block;margin:0}
   .tp-pcard .answer-box{display:block}
+  .tp-print-answers .answer-img img{display:block !important}
   .tp-print-answers{page-break-before:always}
   .tp-print-answers h2{font-family:'DM Sans',sans-serif;font-weight:700;font-size:1.3rem;margin:0 0 16px}
   .tp-print-answers .answer-item{margin-bottom:16px;page-break-inside:avoid}
