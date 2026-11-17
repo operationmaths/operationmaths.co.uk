@@ -2,7 +2,8 @@
    Reads the topic's settings from #tp-config, then:
    - B  fills the question generator rows from QG_BANK (assets/js/question-generator-core.js)
        and from any fixed questions in the topic file (static_questions)
-   - D  fills the past question cards from QUESTIONS (assets/js/gcse-question-core.js)
+   - D  fills the past question cards from QUESTIONS (assets/js/gcse-question-core.js),
+       or, when the topic file has bank_questions, from the SATs bank (assets/js/sats-question-core.js)
    - removes a section that has no questions and re-letters the others
    - runs the question viewer and the printing */
 (function () {
@@ -110,6 +111,15 @@
 
   /* ================= D: PAST EXAM QUESTIONS ================= */
   var past = [];
+  /* A topic file with bank_questions (a list of question image names such as 2016-P1-Q2) uses the SATs question bank. */
+  var isSats = !!(cfg.bankQuestions && cfg.bankQuestions.length);
+  function pastPills(q) {
+    var subs = isSats ? q.subtopics : [q.subtopic];
+    return subs.map(function (t) { return '<span class="subtopic-pill">' + esc(t) + '</span>'; }).join('');
+  }
+  function pastIcons(q) { return isSats ? '' : calcIconHTML(q); }
+  function pastHeading(q) { return isSats ? '' : qHeadingHTML(q); }
+  function pastNumber(q) { return isSats ? q.n : displayN(q); }
   var modal = { open: false, i: 0, ans: false, opener: null };
   var toastTimer;
 
@@ -119,18 +129,18 @@
     var open = el('div', 'tp-qopen');
     open.setAttribute('role', 'button');
     open.tabIndex = 0;
-    open.setAttribute('aria-label', 'Open question ' + displayN(q) + ', ' + sourceTag(q));
+    open.setAttribute('aria-label', 'Open question ' + pastNumber(q) + ', ' + sourceTag(q));
     open.innerHTML =
       '<div class="card-top">' +
         '<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-width:0;">' +
-          '<span class="subtopic-pill">' + esc(q.subtopic) + '</span>' +
+          pastPills(q) +
           '<span class="source-tag">' + esc(sourceTag(q)) + '</span>' +
         '</div>' +
-        '<div class="card-top-right">' + calcIconHTML(q) +
+        '<div class="card-top-right">' + pastIcons(q) +
           '<span class="marks-badge">' + q.marks + ' mark' + (q.marks > 1 ? 's' : '') + '</span>' +
         '</div>' +
       '</div>' +
-      qHeadingHTML(q) +
+      pastHeading(q) +
       '<div class="card-body">' + qBodyHTML(q) + '</div>';
     open.addEventListener('click', function () { openModal(i, open); });
     open.addEventListener('keydown', function (e) {
@@ -152,7 +162,10 @@
   }
   function initPast() {
     var subs = cfg.bank || [];
-    var pool = (typeof QUESTIONS !== 'undefined' ? QUESTIONS : []).filter(function (q) { return subs.indexOf(q.subtopic) > -1; });
+    var ids = cfg.bankQuestions || [];
+    var pool = (typeof QUESTIONS !== 'undefined' ? QUESTIONS : []).filter(function (q) {
+      return isSats ? ids.indexOf(q.qimg.src) > -1 : subs.indexOf(q.subtopic) > -1;
+    });
     if (!pool.length) { removeSection('past'); return; }
     var max = cfg.maxPast || 4;
     past = shuffled(pool).slice(0, max);
@@ -164,6 +177,7 @@
   /* ---------- question viewer ---------- */
   function renderModal() {
     var q = past[modal.i];
+    if (isSats && typeof preloadAnswerImages === 'function') preloadAnswerImages(q);
     $('tp-modal-box').style.setProperty('--strand', STRANDS[q.strand]);
     $('tp-m-head').innerHTML = questionHeaderHTML(q);
     $('tp-m-body').innerHTML = questionCardHTML(q, modal.ans);
@@ -210,18 +224,21 @@
   function printQuestions(list, withAnswers) {
     if (!list.length) return;
     var area = el('div', 'tp-print-area');
-    var html = '<h1>' + esc(cfg.title || 'Exam questions') + ' – exam questions</h1>' +
+    var html = '<h1>' + esc(cfg.title || 'Exam questions') + (isSats ? ' – SATs questions' : ' – exam questions') + '</h1>' +
                '<p class="tp-print-sub">Operation Maths · operationmaths.co.uk</p>';
     list.forEach(function (q) {
       html += '<div class="tp-pcard" style="--strand:' + STRANDS[q.strand] + '">' +
-        '<div class="card-top"><div><span class="subtopic-pill">' + esc(q.subtopic) + '</span>' +
+        '<div class="card-top"><div>' + pastPills(q) +
         '<span class="source-tag">' + esc(sourceTag(q)) + '</span></div>' +
-        '<div class="card-top-right">' + calcIconHTML(q) +
+        '<div class="card-top-right">' + pastIcons(q) +
         '<span class="marks-badge">' + q.marks + ' mark' + (q.marks > 1 ? 's' : '') + '</span></div></div>' +
-        qHeadingHTML(q) + qBodyHTML(q) + '</div>';
+        pastHeading(q) + qBodyHTML(q) + '</div>';
     });
     if (withAnswers) {
       html += '<div class="tp-print-answers"><h2>Answers</h2>' + list.map(function (q) {
+        if (isSats) {
+          return '<div class="answer-item"><span class="answer-source">' + esc(sourceTag(q)) + '</span>' + answerHTML(q) + '</div>';
+        }
         return '<div class="answer-item"><span class="answer-source">' + esc(sourceTag(q)) + '</span>' +
           '<div class="answer-box"><strong>Answer:</strong> ' + mathText(q.answer) +
           '<hr style="border:none;border-top:1px solid var(--card-border);margin:10px 0;">' +
