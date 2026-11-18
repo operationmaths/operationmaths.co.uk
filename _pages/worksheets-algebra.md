@@ -8,6 +8,7 @@ section_order:
   - Expand
   - Factorise
   - Expand and factorise
+  - Sequences
 layout: worksheet-topic
 permalink: /worksheets-algebra/
 topic_key: algebra
