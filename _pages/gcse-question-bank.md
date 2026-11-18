@@ -285,6 +285,9 @@ body_class: page-gcse-question-bank has-bottom-bar
   .builder-left{display:flex;gap:14px;align-items:center;}
   .answers-toggle-label{display:flex;align-items:center;gap:7px;font-size:.85rem;color:#fff;white-space:nowrap;cursor:pointer;}
   .print-answers{display:none;}
+  /* Holds the worksheet's cards during printing only. It is built from the
+     saved selection, not from whatever happens to be drawn in the grid. */
+  #printSheet{display:none;}
   .btn{
     border:none;border-radius:8px;padding:10px 16px;font-size:.85rem;cursor:pointer;
   }
@@ -359,13 +362,15 @@ body_class: page-gcse-question-bank has-bottom-bar
     body > *:not(#gqb-page){display:none !important;}
     .om-hero,.filters,.builder-bar,.card-actions,.results-meta,.load-more-wrap{display:none !important;}
     /* Printing must always show exactly what printSelected()/printOne()
-       build from the grid cards - never the modal's own rendering (which
+       build into #printSheet - never the modal's own rendering (which
        uses a different, larger fill-width image scale). Without this, a
        print triggered from the popup's own "Print this question" button
        would show the modal's fixed-position content instead of, or on
        top of, the intended grid-card print output. */
     .modal-overlay{display:none !important;}
     .grid{display:block;}
+    #grid{display:none !important;}
+    #printSheet{display:block !important;}
     .card{
       display:block !important;
       border:1px solid #999;border-left:4px solid var(--strand,#999) !important;page-break-inside:avoid;margin-bottom:18px;
@@ -503,6 +508,7 @@ body_class: page-gcse-question-bank has-bottom-bar
   </div>
 </div>
 
+<div id="printSheet"></div>
 <div id="printAnswers" class="print-answers"></div>
 
 <div class="modal-overlay hidden" id="modalOverlay">
@@ -538,6 +544,10 @@ let currentList=[];
 let lastFilterSignature=null;
 const INITIAL_PAGE_SIZE=40;
 const LOAD_MORE_SIZE=20;
+// Only this many cards at the top of a results grid load their image
+// immediately, at high priority. The rest are lazy-loaded as you scroll, so
+// the ones you can actually see are not queued behind ones you cannot.
+const EAGER_IMAGES=8;
 
 document.getElementById("paperToggle").addEventListener('click',e=>{
   const btn=e.target.closest('button');
@@ -738,6 +748,50 @@ function filterSignature(){
   return JSON.stringify([state.tier, state.paper, [...state.strands].sort(), state.subtopic]);
 }
 
+// One question card. Used for the on-screen grid and, with forPrint=true,
+// for the print-only copy (no click-to-open and no add/print buttons).
+// Adds loading/fetchpriority hints to every <img> in a block of card HTML
+// (only where the image tag does not already carry them), so this works
+// whatever markup qBodyHTML() produces.
+function imgHints(html, lazy){
+  return html.replace(/<img\b([^>]*)>/g,(m,attrs)=>{
+    let add='';
+    if(!/\bfetchpriority=/.test(attrs))add+=` fetchpriority="${lazy?'low':'high'}"`;
+    if(lazy && !/\bloading=/.test(attrs))add+=' loading="lazy"';
+    return add?`<img${add}${attrs}>`:m;
+  });
+}
+
+function cardHTML(q, idx, forPrint){
+  const lazy = !forPrint && idx>=EAGER_IMAGES;
+  const body = forPrint ? qBodyHTML(q) : imgHints(qBodyHTML(q, false, lazy), lazy);
+  return `
+    <div class="card" style="--strand:${STRANDS[q.strand]}"${forPrint?'':` onclick="openModal(${idx})"`}>
+      <div class="card-top">
+        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-width:0;">
+          <span class="subtopic-pill">${q.subtopic}</span>
+          <span class="source-tag">${sourceTag(q)}</span>
+        </div>
+        <div class="card-top-right">
+          ${calcIconHTML(q)}
+          <span class="marks-badge">${q.marks} mark${q.marks>1?'s':''}</span>
+        </div>
+      </div>
+      ${qHeadingHTML(q)}
+      <div class="card-body">
+        ${body}
+      </div>
+      ${forPrint?'':`<div class="card-actions">
+        <label class="add-label" onclick="event.stopPropagation()">
+          <input type="checkbox" data-id="${q.id}" ${state.selected.has(q.id)?'checked':''} onchange="toggleSelect('${q.id}')">
+          Add to worksheet
+        </label>
+        <button class="print-one" onclick="event.stopPropagation();printOne('${q.id}')">Print this question →</button>
+      </div>`}
+    </div>
+  `;
+}
+
 function render(){
   const sig = filterSignature();
   if(sig !== lastFilterSignature){
@@ -787,39 +841,17 @@ function render(){
   const loadMoreWrap=document.getElementById("loadMoreWrap");
   if(list.length===0){
     grid.innerHTML='<div class="no-results">No questions match those filters yet.</div>';
+    _preloadToken++; // cancel any background preloading from the previous search
     loadMoreWrap.innerHTML='';
     return;
   }
   const visible = list.slice(0, shown);
-  grid.innerHTML=visible.map((q,idx)=>`
-    <div class="card" style="--strand:${STRANDS[q.strand]}" onclick="openModal(${idx})">
-      <div class="card-top">
-        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-width:0;">
-          <span class="subtopic-pill">${q.subtopic}</span>
-          <span class="source-tag">${sourceTag(q)}</span>
-        </div>
-        <div class="card-top-right">
-          ${calcIconHTML(q)}
-          <span class="marks-badge">${q.marks} mark${q.marks>1?'s':''}</span>
-        </div>
-      </div>
-      ${qHeadingHTML(q)}
-      <div class="card-body">
-        ${qBodyHTML(q)}
-      </div>
-      <div class="card-actions">
-        <label class="add-label" onclick="event.stopPropagation()">
-          <input type="checkbox" data-id="${q.id}" ${state.selected.has(q.id)?'checked':''} onchange="toggleSelect('${q.id}')">
-          Add to worksheet
-        </label>
-        <button class="print-one" onclick="event.stopPropagation();printOne('${q.id}')">Print this question →</button>
-      </div>
-    </div>
-  `).join('');
+  grid.innerHTML=visible.map((q,idx)=>cardHTML(q,idx)).join('');
   loadMoreWrap.innerHTML = shown < list.length
     ? `<button class="btn btn-loadmore" id="loadMoreBtn">Show more questions (${list.length - shown} remaining)</button>`
     : '';
   fixExpClipping();
+  preloadMany(list.slice(shown, shown + LOAD_MORE_SIZE)); // always called, so it also cancels the previous queue
   if(shown < list.length){
     document.getElementById("loadMoreBtn").addEventListener('click', ()=>{
       state.visibleCount += LOAD_MORE_SIZE;
@@ -871,6 +903,7 @@ function renderModal(){
   document.getElementById("modalAnswerToggle").textContent=answerVisible?'Hide answer':'Show answer';
   document.getElementById("modalAnswerToggle").onclick=()=>{answerVisible=!answerVisible;renderModal();};
   document.getElementById("modalPrintBtn").onclick=()=>{printOne(q.id);};
+  preloadMany([currentList[modalIndex+1],currentList[modalIndex+2],currentList[modalIndex-1]]);
 }
 document.getElementById("modalClose").addEventListener('click',()=>{document.getElementById("modalOverlay").classList.add('hidden');render();});
 document.getElementById("modalOverlay").addEventListener('click',e=>{if(e.target.id==="modalOverlay"){document.getElementById("modalOverlay").classList.add('hidden');render();}});
@@ -883,8 +916,62 @@ document.addEventListener('keydown',e=>{
   if(e.key==="ArrowRight" && modalIndex<currentList.length-1){modalIndex++;answerVisible=false;renderModal();}
 });
 
+// ---- Image preloading -------------------------------------------------
+// Question images are separate files. These helpers fetch some of them ahead
+// of time (a question as soon as it is ticked, the next "Show more" batch, and
+// the neighbours of the question open in the popup) so they are already in the
+// browser cache when needed.
+const _imgCache=new Map();
+function qimgUrl(q){
+  if(!q||!q.qimg||typeof QIMG_BASE_PATH==='undefined')return null;
+  const i=selectQimg(q);
+  return i?QIMG_BASE_PATH+i.src+'.png':null;
+}
+function preloadQ(q){
+  const url=qimgUrl(q);
+  if(!url||_imgCache.has(url))return;
+  const im=new Image();
+  im.decoding='async';
+  im.src=url;
+  _imgCache.set(url,im);
+}
+// Background preloading of a list of questions. It deliberately stays out of
+// the way: it waits until the images you can currently see have loaded,
+// downloads only two at a time, and is cancelled the moment anything newer
+// (a new search, another popup question) asks for a preload, so it can never
+// slow down a fresh search by competing with its visible images.
+let _preloadToken=0;
+function preloadMany(arr){
+  const token=++_preloadToken;
+  const urls=[];
+  arr.forEach(q=>{const u=qimgUrl(q);if(u&&!_imgCache.has(u)&&!urls.includes(u))urls.push(u);});
+  if(!urls.length)return;
+  let next=0,active=0;
+  const pump=()=>{
+    while(active<2&&next<urls.length){
+      if(token!==_preloadToken)return;
+      const u=urls[next++];
+      active++;
+      const im=new Image();
+      im.decoding='async';
+      const done=()=>{active--;pump();};
+      im.onload=done;
+      im.onerror=done;
+      im.src=u;
+      _imgCache.set(u,im);
+    }
+  };
+  const visible=[...document.querySelectorAll('#grid img')].filter(im=>im.loading!=='lazy'&&!im.complete);
+  const waits=visible.map(im=>new Promise(r=>{
+    im.addEventListener('load',r,{once:true});
+    im.addEventListener('error',r,{once:true});
+  }));
+  Promise.race([Promise.all(waits),new Promise(r=>setTimeout(r,4000))]).then(()=>{if(token===_preloadToken)pump();});
+}
+
 function toggleSelect(id){
-  if(state.selected.has(id))state.selected.delete(id);else state.selected.add(id);
+  if(state.selected.has(id))state.selected.delete(id);
+  else{state.selected.add(id);preloadQ(QUESTIONS.find(q=>q.id===id));}
   updateBuilderBar();
 }
 function updateBuilderBar(){
@@ -932,26 +1019,47 @@ function resetPrintAnswers(){
   document.getElementById('printAnswers').innerHTML='';
 }
 
-document.getElementById("printSelected").addEventListener('click',()=>{
-  const ids=[];
-  document.querySelectorAll('.card').forEach(c=>{
-    const cb=c.querySelector('input[type=checkbox]');
-    const show = cb.checked;
-    c.classList.toggle('print-hide', !show);
-    if(show) ids.push(cb.dataset.id);
+// Printing is built from the saved selection (state.selected), NOT from the
+// cards currently drawn in the grid. The grid only holds the current search
+// (and only the first 40 or so results), so questions ticked under an earlier
+// search, or ticked in the popup, are not in it. The cards are drawn into
+// #printSheet in the order they were added, and the print dialog opens once
+// their images have loaded.
+function printQuestions(ids, forceAnswers){
+  const items = ids.map(id=>QUESTIONS.find(q=>q.id===id)).filter(Boolean);
+  if(items.length===0)return;
+  const sheet = document.getElementById('printSheet');
+  sheet.innerHTML = items.map(q=>cardHTML(q, 0, true)).join('');
+  buildPrintAnswers(items.map(q=>q.id), forceAnswers);
+  const imgs = [...sheet.querySelectorAll('img')];
+  // Images inside a hidden container are never fetched while they are marked
+  // lazy, so make sure every one starts loading now.
+  imgs.forEach(im=>{ im.loading='eager'; });
+  const pending = imgs.filter(im=>!(im.complete && im.naturalWidth>0));
+  const done = ()=>{
+    window.print();
+    setTimeout(cleanupPrint, 500);
+  };
+  if(pending.length===0){ done(); return; }
+  let finished=false;
+  const finish=()=>{ if(finished)return; finished=true; done(); };
+  let left=pending.length;
+  const one=()=>{ if(--left<=0) finish(); };
+  pending.forEach(im=>{
+    im.addEventListener('load', one, {once:true});
+    im.addEventListener('error', one, {once:true});
   });
-  buildPrintAnswers(ids);
-  window.print();
-  setTimeout(()=>{document.querySelectorAll('.card').forEach(c=>c.classList.remove('print-hide'));resetPrintAnswers();},500);
+  setTimeout(finish, 8000); // never hang if an image fails to answer
+}
+function cleanupPrint(){
+  document.getElementById('printSheet').innerHTML='';
+  resetPrintAnswers();
+}
+document.getElementById("printSelected").addEventListener('click',()=>{
+  printQuestions([...state.selected], false);
 });
 function printOne(id){
-  document.querySelectorAll('.card').forEach(c=>{
-    const cb=c.querySelector('input[type=checkbox]');
-    c.classList.toggle('print-hide', cb.dataset.id!==id);
-  });
-  buildPrintAnswers([id], true);
-  window.print();
-  setTimeout(()=>{document.querySelectorAll('.card').forEach(c=>c.classList.remove('print-hide'));resetPrintAnswers();},500);
+  printQuestions([id], true);
 }
 
 buildStrandChips();
