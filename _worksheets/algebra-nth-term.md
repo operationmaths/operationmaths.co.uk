@@ -4,7 +4,7 @@ topic: algebra
 section: Sequences
 order: 1
 orientation: portrait
-description: 'Each worksheet contains 3 columns: nth term, find a term in a sequence and is a number in a sequence.'
+description: 'Each worksheet contains 3 columns: finding the nth term of a sequence, finding a term in a sequence and deciding whether a number is in a sequence.'
 thumbnail: /assets/images/worksheets/algebra/nth term.jpg
 show_a_worksheet: true
 show_a_answers: true
