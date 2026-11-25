@@ -10,6 +10,6 @@ show_a_worksheet: true
 show_a_answers: true
 free_pdf: /pdfs/Quadratic-sequences.pdf
 answers_pdf: /pdfs/Quadratic-sequences-ANSWERS.pdf
-tes_url: ''
-date_added: now
+tes_url: https://www.tes.com/teaching-resource/-13691240
+date_added: 2026-11-25 15:22:00
 ---
