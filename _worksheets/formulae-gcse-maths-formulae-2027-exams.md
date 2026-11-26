@@ -8,7 +8,7 @@ description: This document contains information about formulae which is provided
 thumbnail: /assets/images/worksheets/formulae/GCSE Maths Formulae - 2027 exams.jpg
 show_a_worksheet: false
 show_a_answers: true
-free_pdf: /pdfs/GCSE Maths Formulae - 2027 exams.pdf
+free_pdf: /pdfs/GCSE-Maths-Formulae-2027-exams.pdf
 answers_pdf: ''
 tes_url: ''
 date_added: 2026-11-26 10:23:00
