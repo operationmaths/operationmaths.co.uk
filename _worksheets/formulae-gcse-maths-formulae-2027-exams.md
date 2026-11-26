@@ -11,5 +11,5 @@ show_a_answers: true
 free_pdf: /pdfs/GCSE-Maths-Formulae-2027-exams.pdf
 answers_pdf: ''
 tes_url: ''
-date_added: now
+date_added: 2026-11-26 10:23:00
 ---
