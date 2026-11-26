@@ -5,7 +5,7 @@ section: GCSE Maths formulae
 order: 1
 orientation: portrait
 description: This document contains information about formulae which is provided within GCSE exam questions and formulae which is not provided and must be memorised.
-thumbnail: /assets/images/worksheets/formulae/GCSE Maths Formulae - 2027 exams.jpg
+thumbnail: /assets/images/worksheets/formulae/GCSE-Maths-Formulae-2027-exams.jpg
 show_a_worksheet: false
 show_a_answers: true
 free_pdf: /pdfs/GCSE-Maths-Formulae-2027-exams.pdf
